@@ -51,7 +51,7 @@ export function AuroraServicesGrid({ title = 'Our Services', items, className }:
 
                 <Link
                   href={item.href}
-                  className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--aurora-accent,var(--brand))] hover:text-[color:var(--aurora-accent-hover,var(--brand-dark))]"
+                  className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-red-600 hover:text-red-700"
                 >
                   Learn More <ArrowRight className="h-4 w-4" />
                 </Link>

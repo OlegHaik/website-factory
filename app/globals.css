@@ -5,8 +5,8 @@
 
 :root {
   /* Brand Colors */
-  --brand: oklch(0.85 0.15 85); /* Yellow #F4C20D */
-  --brand-dark: oklch(0.75 0.15 85); /* Darker Yellow for hover */
+  --brand: #dc2626; /* Red-600 */
+  --brand-dark: #b91c1c; /* Red-700 */
 
   /* Aurora (base tokens)
      These power the new aurora-* components. For now they map to existing brand/neutrals.
@@ -17,12 +17,12 @@
 
   --aurora-warm: oklch(0.92 0.06 55);
   --aurora-cool: oklch(0.92 0.06 235);
-  --aurora-warm-dark: var(--black);
-  --aurora-cool-dark: var(--neutral-dark);
+  --aurora-warm-dark: #450a0a; /* Red-950 */
+  --aurora-cool-dark: #1c1917; /* Stone-900 */
   
   /* Neutrals */
-  --black: oklch(0.1 0 0); /* Black #000000 */
-  --neutral-dark: oklch(0.15 0 0); /* Dark Gray #111111 */
+  --black: #0a0a0a;
+  --neutral-dark: #171717;
   --neutral: oklch(0.5 0 0); /* Mid Gray */
   --neutral-light: oklch(0.9 0 0); /* Light Gray */
   --white: oklch(1 0 0); /* White #FFFFFF */

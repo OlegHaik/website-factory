@@ -27,12 +27,12 @@ export function AuroraEmergencyCard({ title, blurb, phone }: { title: string; bl
   return (
     <AuroraSidebarCard
       title={title}
-      className="bg-[linear-gradient(90deg,var(--aurora-warm-dark,var(--black)),var(--aurora-cool-dark,var(--neutral-dark)))] text-white"
+      className="bg-gradient-to-r from-red-950 via-red-900 to-stone-900 text-white"
     >
       <p className="text-xs leading-relaxed text-white/75">{blurb}</p>
       <Button
         asChild
-        className="mt-4 w-full bg-[color:var(--aurora-accent,var(--brand))] text-white hover:bg-[color:var(--aurora-accent-hover,var(--brand-dark))]"
+        className="mt-4 w-full bg-red-600 text-white hover:bg-red-700"
       >
         <a href={`tel:${phone.replace(/\D/g, '')}`} className="flex items-center justify-center gap-2">
           <Phone className="h-4 w-4" />
@@ -49,7 +49,7 @@ export function AuroraWhyChooseCard({ items }: { items: string[] }) {
       <ul className="space-y-2 text-sm text-slate-700">
         {items.map((item) => (
           <li key={item} className="flex gap-2">
-            <span className="mt-1 inline-block h-2 w-2 rounded-full bg-[color:var(--aurora-bullet,var(--brand))]" />
+            <span className="mt-1 inline-block h-2 w-2 rounded-full bg-red-600" />
             <span>{item}</span>
           </li>
         ))}
@@ -66,7 +66,7 @@ export function AuroraLinksCard({ title, links }: { title: string; links: { labe
           <li key={l.href}>
             <Link
               href={l.href}
-              className="text-slate-700 hover:text-[color:var(--aurora-accent,var(--brand))]"
+              className="text-slate-700 hover:text-red-600"
             >
               {l.label}
             </Link>

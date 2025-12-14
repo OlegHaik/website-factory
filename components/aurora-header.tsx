@@ -33,15 +33,15 @@ export function AuroraHeader({ businessName, nav, phone, className }: AuroraHead
   return (
     <header
       className={cn(
-        'fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black/20 backdrop-blur supports-[backdrop-filter]:bg-black/10',
+        'fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-gradient-to-r from-red-950 via-red-900 to-stone-900',
         className,
       )}
     >
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <div className="flex items-center gap-2">
           <Link href="/" className="text-sm font-extrabold tracking-wide text-white">
-            <span className="text-[color:var(--aurora-accent,var(--brand))]">{brandLead}</span>
-            {brandRest ? <> <span className="italic">{brandRest}</span></> : null}
+            <span className="text-white">{brandLead}</span>
+            {brandRest ? <> <span className="italic text-white/90">{brandRest}</span></> : null}
           </Link>
         </div>
 
@@ -60,7 +60,7 @@ export function AuroraHeader({ businessName, nav, phone, className }: AuroraHead
         <div className="hidden md:flex">
           <Button
             asChild
-            className="bg-[color:var(--aurora-accent,var(--brand))] text-white hover:bg-[color:var(--aurora-accent-hover,var(--brand-dark))]"
+            className="bg-red-600 text-white hover:bg-red-700"
           >
             <a href={`tel:${phone.replace(/\D/g, '')}`} className="flex items-center gap-2">
               <Phone className="h-4 w-4" />
@@ -80,7 +80,7 @@ export function AuroraHeader({ businessName, nav, phone, className }: AuroraHead
       </div>
 
       {open && (
-        <div className="border-t border-white/10 bg-black/40 md:hidden">
+        <div className="border-t border-white/10 bg-gradient-to-r from-red-950 via-red-900 to-stone-900 md:hidden">
           <div className="container mx-auto flex flex-col gap-2 px-4 py-4">
             {nav.map((item) => (
               <Link
@@ -95,7 +95,7 @@ export function AuroraHeader({ businessName, nav, phone, className }: AuroraHead
 
             <Button
               asChild
-              className="mt-2 bg-[color:var(--aurora-accent,var(--brand))] text-white hover:bg-[color:var(--aurora-accent-hover,var(--brand-dark))]"
+              className="mt-2 bg-red-600 text-white hover:bg-red-700"
             >
               <a
                 href={`tel:${phone.replace(/\D/g, '')}`}

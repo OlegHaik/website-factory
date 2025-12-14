@@ -17,12 +17,11 @@ export function AuroraHero({ badge, title, description, primaryCta, secondaryCta
       <div
         className={cn(
           'relative py-20 md:py-24',
-          // Aurora gradient: warm -> cool
-          'bg-[linear-gradient(90deg,var(--aurora-warm-dark,var(--black)),var(--aurora-cool-dark,var(--neutral-dark)))]',
+          'bg-gradient-to-br from-red-950 via-red-900 to-stone-900',
         )}
       >
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,var(--aurora-warm-med,var(--neutral-dark))_0%,transparent_55%),radial-gradient(circle_at_80%_30%,var(--aurora-cool-med,var(--neutral-dark))_0%,transparent_55%)] opacity-70" />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/30" />
 
         <div className="container relative z-10 mx-auto px-4">
           <div className="mx-auto max-w-3xl text-center">
@@ -45,7 +44,7 @@ export function AuroraHero({ badge, title, description, primaryCta, secondaryCta
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Button
                 asChild
-                className="bg-[color:var(--aurora-accent,var(--brand))] text-white hover:bg-[color:var(--aurora-accent-hover,var(--brand-dark))]"
+                className="bg-red-600 text-white hover:bg-red-700"
               >
                 <a href={primaryCta.href} className="flex items-center gap-2">
                   <Phone className="h-4 w-4" />

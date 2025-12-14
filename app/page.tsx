@@ -140,7 +140,7 @@ export default async function Home() {
             </p>
             <div className="mt-6 flex justify-center">
               <a
-                className="inline-flex items-center justify-center rounded-md bg-[color:var(--aurora-accent,var(--brand))] px-6 py-3 text-sm font-bold text-white hover:bg-[color:var(--aurora-accent-hover,var(--brand-dark))]"
+                className="inline-flex items-center justify-center rounded-md bg-red-600 px-6 py-3 text-sm font-bold text-white hover:bg-red-700"
                 href={`tel:${phone.replace(/\D/g, '')}`}
               >
                 Call {vars.phone || 'Now'}

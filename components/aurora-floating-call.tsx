@@ -12,7 +12,7 @@ export function AuroraFloatingCall({ phone, className }: { phone: string; classN
     <a
       href={tel}
       className={cn(
-        'fixed bottom-6 right-6 z-40 inline-flex h-10 items-center gap-2 rounded-full bg-[color:var(--aurora-accent,var(--brand))] px-4 text-xs font-bold text-white shadow-lg hover:bg-[color:var(--aurora-accent-hover,var(--brand-dark))]',
+        'fixed bottom-6 right-6 z-40 inline-flex h-10 items-center gap-2 rounded-full bg-red-600 px-4 text-xs font-bold text-white shadow-lg hover:bg-red-700',
         className,
       )}
       aria-label="Call now"
