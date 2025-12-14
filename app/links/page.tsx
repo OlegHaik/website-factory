@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation'
-import { resolveSiteContext } from '@/lib/sites'
+import { getCitationsForSite, resolveSiteContext } from '@/lib/sites'
 import { AuroraHeader } from '@/components/aurora-header'
 import { AuroraFooter } from '@/components/aurora-footer'
 
@@ -7,7 +7,7 @@ export const dynamic = 'force-dynamic'
 
 export default async function LinksPage() {
   const { site } = await resolveSiteContext()
-  if (!site) notFound()
+  if (!site) return notFound()
 
   if (!site.business_name) throw new Error('Site is missing required field: business_name')
 
@@ -18,7 +18,8 @@ export default async function LinksPage() {
     { label: 'Contact', href: '/#contact' },
   ]
 
-  const links = site.links
+  const citations = await getCitationsForSite(site.id)
+  const links = citations.length > 0 ? citations : site.links ?? []
   if (!links || links.length === 0) notFound()
 
   return (
@@ -41,7 +42,6 @@ export default async function LinksPage() {
                       href={l.href}
                       target="_blank"
                       rel="nofollow"
-                      className="text-sm font-semibold text-slate-800 hover:text-[color:var(--aurora-accent,var(--brand))]"
                     >
                       {l.label}
                     </a>

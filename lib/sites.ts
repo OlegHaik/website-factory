@@ -25,6 +25,12 @@ export interface SiteRow {
   category: string | null
   owner: string | null
   email: string | null
+
+  facebook_url?: string | null
+  youtube_url?: string | null
+  pinterest_url?: string | null
+  google_business_url?: string | null
+
   service_areas?: string | null
   links?: string | null
   social_links?: string | null
@@ -51,6 +57,24 @@ function createSupabaseClient() {
   }
 
   return createClient(url, anonKey)
+}
+
+function buildDomainCandidates(domain: string): string[] {
+  const normalized = normalizeDomainUrl(domain)
+  const candidates = Array.from(
+    new Set(
+      [
+        normalized,
+        `https://${normalized}`,
+        `http://${normalized}`,
+        `www.${normalized}`,
+        `https://www.${normalized}`,
+        `http://www.${normalized}`,
+      ].filter(Boolean),
+    ),
+  )
+
+  return candidates
 }
 
 function toServiceAreasList(value: string | null): string[] {
@@ -162,6 +186,31 @@ function toSiteLinks(value: string | null | undefined): SiteLink[] {
     .filter((x): x is SiteLink => Boolean(x))
 }
 
+function mergeUniqueLinks(...groups: Array<SiteLink[] | undefined | null>): SiteLink[] {
+  const seen = new Set<string>()
+  const out: SiteLink[] = []
+
+  for (const group of groups) {
+    for (const item of group ?? []) {
+      const key = (item.href || '').trim().toLowerCase()
+      if (!key || seen.has(key)) continue
+      seen.add(key)
+      out.push(item)
+    }
+  }
+
+  return out
+}
+
+function socialLinksFromColumns(row: SiteRow): SiteLink[] {
+  const links: SiteLink[] = []
+  if (row.google_business_url) links.push({ label: 'Google Business', href: row.google_business_url })
+  if (row.facebook_url) links.push({ label: 'Facebook', href: row.facebook_url })
+  if (row.youtube_url) links.push({ label: 'YouTube', href: row.youtube_url })
+  if (row.pinterest_url) links.push({ label: 'Pinterest', href: row.pinterest_url })
+  return links
+}
+
 function withComputedFields(row: SiteRow, resolvedDomain: string): SiteData {
   const phone = row.phone?.trim() || null
   const phoneDisplay = phone ? formatPhone(phone) : null
@@ -174,19 +223,49 @@ function withComputedFields(row: SiteRow, resolvedDomain: string): SiteData {
     resolvedDomain,
 
     links: toSiteLinks(row.links),
-    socialLinks: toSiteLinks(row.social_links),
+    socialLinks: mergeUniqueLinks(socialLinksFromColumns(row), toSiteLinks(row.social_links)),
   }
+}
+
+export async function getCitationsForSite(siteId: number): Promise<SiteLink[]> {
+  const supabase = createSupabaseClient()
+
+  const { data, error } = await supabase
+    .from('citations')
+    .select('name,url')
+    .eq('site_id', siteId)
+    .order('id', { ascending: true })
+
+  if (error) {
+    // If the table doesn't exist yet (pre-MVP), keep the app functional.
+    // Other Supabase errors should still fail loudly.
+    const msg = error.message || ''
+    if (msg.toLowerCase().includes('does not exist')) return []
+    throw new Error(`Supabase error fetching citations: ${error.message}`)
+  }
+
+  return (data ?? [])
+    .map((row) => {
+      const r = row as { name?: unknown; url?: unknown }
+      const label = String(r.name ?? '').trim()
+      const href = String(r.url ?? '').trim()
+      if (!label || !href) return null
+      return { label, href }
+    })
+    .filter((x): x is SiteLink => Boolean(x))
 }
 
 export async function getSiteBySlug(slug: string): Promise<SiteData | null> {
   const resolvedDomain = await getCurrentDomain()
   const supabase = createSupabaseClient()
 
-  const { data, error } = await supabase
-    .from('sites')
-    .select('*')
-    .eq('slug', slug)
-    .limit(1)
+  // With UNIQUE(domain_url, slug) a slug can repeat across sites.
+  // If we can resolve the current domain, scope the lookup to it.
+  const candidates = resolvedDomain ? buildDomainCandidates(resolvedDomain) : []
+
+  const query = supabase.from('sites').select('*').eq('slug', slug)
+  const { data, error } =
+    candidates.length > 0 ? await query.in('domain_url', candidates).limit(1) : await query.limit(1)
 
   if (error) {
     throw new Error(`Supabase error fetching site by slug: ${error.message}`)
@@ -202,19 +281,7 @@ export async function getSiteByDomain(domain: string): Promise<SiteData | null> 
   const resolvedDomain = await getCurrentDomain()
   const supabase = createSupabaseClient()
 
-  const normalized = normalizeDomainUrl(domain)
-  const candidates = Array.from(
-    new Set(
-      [
-        normalized,
-        `https://${normalized}`,
-        `http://${normalized}`,
-        `www.${normalized}`,
-        `https://www.${normalized}`,
-        `http://www.${normalized}`,
-      ].filter(Boolean),
-    ),
-  )
+  const candidates = buildDomainCandidates(domain)
 
   if (candidates.length === 0) return null
 

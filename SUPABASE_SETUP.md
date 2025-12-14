@@ -27,8 +27,14 @@ Optional fields supported:
 - `address`, `zip_code`, `email`
 - `meta_title`, `meta_description`
 - `service_areas` (text)
-- `links` (text)
-- `social_links` (text)
+- `links` (text) — legacy fallback if `citations` table is empty/not present
+- `social_links` (text) — legacy fallback (newline/JSON)
+- `facebook_url` (text)
+- `youtube_url` (text)
+- `pinterest_url` (text)
+- `google_business_url` (text)
+
+The `/links` page prefers the `citations` table (below) and falls back to `sites.links`.
 
 ### Recommended formats
 
@@ -57,10 +63,22 @@ Optional fields supported:
 Run this in Supabase SQL Editor (safe for existing tables):
 
 ```sql
+-- Recommended uniqueness for multi-tenant slugs
+-- (A slug can repeat across different domains)
+create unique index if not exists sites_domain_url_slug_unique
+  on public.sites (domain_url, slug);
+
 -- Optional columns used by the Website Factory
 alter table public.sites add column if not exists service_areas text;
 alter table public.sites add column if not exists links text;
 alter table public.sites add column if not exists social_links text;
+
+-- Social profile columns
+alter table public.sites
+  add column if not exists facebook_url text,
+  add column if not exists youtube_url text,
+  add column if not exists pinterest_url text,
+  add column if not exists google_business_url text;
 
 -- Optional SEO fields
 alter table public.sites add column if not exists meta_title text;
@@ -73,6 +91,26 @@ alter table public.sites enable row level security;
 drop policy if exists "public read sites" on public.sites;
 create policy "public read sites"
   on public.sites
+  for select
+  using (true);
+
+-- Citations table for /links
+create table if not exists public.citations (
+  id bigserial primary key,
+  site_id bigint not null references public.sites(id) on delete cascade,
+  name text not null,
+  url text not null,
+  created_at timestamptz not null default now()
+);
+
+create index if not exists citations_site_id_idx
+  on public.citations (site_id);
+
+alter table public.citations enable row level security;
+
+drop policy if exists "public read citations" on public.citations;
+create policy "public read citations"
+  on public.citations
   for select
   using (true);
 ```
