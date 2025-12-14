@@ -66,20 +66,20 @@ function createSupabaseClient() {
 
 function buildDomainCandidates(domain: string): string[] {
   const normalized = normalizeDomainUrl(domain)
-  const candidates = Array.from(
-    new Set(
-      [
-        normalized,
-        `https://${normalized}`,
-        `http://${normalized}`,
-        `www.${normalized}`,
-        `https://www.${normalized}`,
-        `http://www.${normalized}`,
-      ].filter(Boolean),
-    ),
-  )
+  const base = [
+    normalized,
+    `https://${normalized}`,
+    `http://${normalized}`,
+    `www.${normalized}`,
+    `https://www.${normalized}`,
+    `http://www.${normalized}`,
+  ].filter(Boolean)
 
-  return candidates
+  // Some users store domain_url with a trailing slash in Supabase.
+  // Include both forms so lookups don't fail.
+  const withSlash = base.map((v) => (v.endsWith('/') ? v : `${v}/`))
+
+  return Array.from(new Set([...base, ...withSlash]))
 }
 
 function toServiceAreasList(value: string | null): string[] {
@@ -317,7 +317,8 @@ async function getMainSiteByDomain(domain: string): Promise<SiteData | null> {
     .from('sites')
     .select('*')
     .in('domain_url', candidates)
-    .in('slug', ['', 'home'])
+    // Accept "" or "home" (required), and also tolerate NULL to avoid accidental 404s.
+    .or('slug.eq.,slug.eq.home,slug.is.null')
     .limit(1)
 
   if (error) {
