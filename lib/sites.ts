@@ -25,9 +25,9 @@ export interface SiteRow {
   category: string | null
   owner: string | null
   email: string | null
-  service_areas: string | null
-  links: string | null
-  social_links: string | null
+  service_areas?: string | null
+  links?: string | null
+  social_links?: string | null
   meta_title: string | null
   meta_description: string | null
   created_at: string | null
@@ -72,7 +72,7 @@ function slugify(value: string): string {
     .replace(/^-|-$/g, '')
 }
 
-function toServiceAreas(value: string | null): ServiceArea[] {
+function toServiceAreas(value: string | null | undefined): ServiceArea[] {
   if (!value) return []
 
   const raw = value.trim()
@@ -122,7 +122,7 @@ function toServiceAreas(value: string | null): ServiceArea[] {
     .filter((x): x is ServiceArea => Boolean(x))
 }
 
-function toSiteLinks(value: string | null): SiteLink[] {
+function toSiteLinks(value: string | null | undefined): SiteLink[] {
   if (!value) return []
 
   const raw = value.trim()

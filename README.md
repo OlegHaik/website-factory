@@ -1,16 +1,15 @@
-# Roofing Business Multi-Location Website
+# Water Damage Location Website Factory
 
-A modern, dynamic multi-location roofing business website template built with Next.js 16, React 19, and Supabase.
+A multi-tenant, multi-location **water damage / restoration** website built with Next.js 16, React 19, and Supabase.
 
 ## Features
 
-- 🏠 **Multi-Domain Support** - Serve multiple roofing businesses from a single codebase
-- 📍 **Location-Based Content** - Dynamic content generation based on city/state
-- 🎨 **Color Theming** - Automatic color theme assignment per domain
-- 📱 **Responsive Design** - Mobile-first design with sticky CTAs
-- 🔍 **SEO Optimized** - Built-in meta tags and structured data (Schema.org)
-- ⚡ **Fast Performance** - Built with Next.js 16 and React Server Components
-- 🗄️ **Supabase Integration** - Centralized location data management
+- 🏠 **Multi-Domain Support** - Serve multiple brands from a single codebase (domain-based routing)
+- 📍 **Per-Site Service Areas** - Areas come from Supabase and can include stable slugs
+- 🧩 **Spintext Templates** - `{a|b|c}` + `{{vars}}` for controlled content variety
+- 🔍 **SEO Ready** - Metadata support and clean URLs
+- ⚡ **Fast Performance** - Next.js App Router + server rendering
+- 🗄️ **Supabase Integration** - Centralized site configuration in a `sites` table
 
 ## Tech Stack
 
@@ -44,34 +43,18 @@ A modern, dynamic multi-location roofing business website template built with Ne
 
 4. Update your Supabase credentials in `.env.local`:
    ```
-   NEXT_PUBLIC_SUPABASE_URL=your-project-url.supabase.co
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
-   NEXT_PUBLIC_DOMAIN=generalroofing.com
+   NEXT_PUBLIC_SUPABASE_URL=https://your-project-ref.supabase.co
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your-publishable-anon-key
    ```
 
 ### Supabase Database Setup
 
-Create a table named `locations_template` in your Supabase database with the following schema:
+This app reads site configuration from a table named `sites`.
 
-```sql
-create table locations_template (
-  id uuid default gen_random_uuid() primary key,
-  slug text not null,
-  domain text not null,
-  city text not null,
-  state text not null,
-  phone text not null,
-  address text,
-  postal_code text,
-  business_name text not null,
-  is_active boolean default true,
-  meta_title text,
-  meta_description text,
-  created_at timestamp with time zone default timezone('utc'::text, now()) not null
-);
-```
-
-Add your location data to this table.
+See [SUPABASE_SETUP.md](SUPABASE_SETUP.md) for:
+- required columns
+- recommended formats for `service_areas`, `links`, and `social_links`
+- optional RLS policy SQL
 
 ### Running Locally
 
