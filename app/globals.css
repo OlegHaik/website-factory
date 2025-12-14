@@ -1,0 +1,126 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Brand Colors */
+  --brand: oklch(0.85 0.15 85); /* Yellow #F4C20D */
+  --brand-dark: oklch(0.75 0.15 85); /* Darker Yellow for hover */
+
+  /* Aurora (base tokens)
+     These power the new aurora-* components. For now they map to existing brand/neutrals.
+     Per-site presets can override these later. */
+  --aurora-accent: var(--brand);
+  --aurora-accent-hover: var(--brand-dark);
+  --aurora-bullet: var(--brand);
+
+  --aurora-warm: oklch(0.92 0.06 55);
+  --aurora-cool: oklch(0.92 0.06 235);
+  --aurora-warm-dark: var(--black);
+  --aurora-cool-dark: var(--neutral-dark);
+  
+  /* Neutrals */
+  --black: oklch(0.1 0 0); /* Black #000000 */
+  --neutral-dark: oklch(0.15 0 0); /* Dark Gray #111111 */
+  --neutral: oklch(0.5 0 0); /* Mid Gray */
+  --neutral-light: oklch(0.9 0 0); /* Light Gray */
+  --white: oklch(1 0 0); /* White #FFFFFF */
+  
+  /* Semantic Tokens */
+  --background: var(--white);
+  --foreground: var(--black);
+  --card: var(--white);
+  --card-foreground: var(--black);
+  --popover: var(--white);
+  --popover-foreground: var(--black);
+  --primary: var(--brand);
+  --primary-foreground: var(--black);
+  --secondary: var(--neutral-light);
+  --secondary-foreground: var(--black);
+  --muted: var(--neutral-light);
+  --muted-foreground: var(--neutral);
+  --accent: var(--brand);
+  --accent-foreground: var(--black);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: var(--neutral-light);
+  --input: var(--neutral-light);
+  --ring: var(--brand);
+  --radius: 0.75rem;
+}
+
+.dark {
+  --background: var(--black);
+  --foreground: var(--white);
+  --card: var(--neutral-dark);
+  --card-foreground: var(--white);
+  --popover: var(--neutral-dark);
+  --popover-foreground: var(--white);
+  --primary: var(--brand);
+  --primary-foreground: var(--black);
+  --secondary: var(--neutral-dark);
+  --secondary-foreground: var(--white);
+  --muted: var(--neutral-dark);
+  --muted-foreground: var(--neutral);
+  --accent: var(--brand);
+  --accent-foreground: var(--black);
+  --border: var(--neutral-dark);
+  --input: var(--neutral-dark);
+  --ring: var(--brand);
+}
+
+@theme inline {
+  --font-heading: 'Montserrat', 'Montserrat Fallback', sans-serif;
+  --font-body: 'Open Sans', 'Open Sans Fallback', sans-serif;
+  --font-sans: var(--font-body);
+  
+  /* Brand Colors */
+  --color-brand: var(--brand);
+  --color-brand-dark: var(--brand-dark);
+  
+  /* Neutrals */
+  --color-black: var(--black);
+  --color-neutral-dark: var(--neutral-dark);
+  --color-neutral: var(--neutral);
+  --color-neutral-light: var(--neutral-light);
+  --color-white: var(--white);
+  
+  /* Semantic Tokens */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
