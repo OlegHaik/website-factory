@@ -1,14 +1,15 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { resolveSiteContext } from '@/lib/sites'
+import { getServiceAreaIndexForCurrentDomain, resolveSiteContext } from '@/lib/sites'
 import { renderSpintextStable } from '@/lib/spintext'
 import type { SpintextVariables } from '@/lib/spintext'
 import {
-  AREA_HERO_DESCRIPTION,
-  AREA_HERO_TITLE,
   DEFAULT_SERVICES,
   DEFAULT_WHY_CHOOSE,
+  SERVICE_HERO_DESCRIPTION,
+  SERVICE_HERO_TITLE,
   buildSpinVars,
+  getServiceBySlug,
 } from '@/lib/water-damage'
 import { AuroraHeader } from '@/components/aurora-header'
 import { AuroraHero } from '@/components/aurora-hero'
@@ -19,37 +20,36 @@ import { AuroraFooter } from '@/components/aurora-footer'
 
 export const dynamic = 'force-dynamic'
 
+export async function generateStaticParams() {
+  return DEFAULT_SERVICES.map((s) => ({ service: s.slug }))
+}
+
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ area: string }>
+  params: Promise<{ service: string }>
 }): Promise<Metadata> {
-  const { area: areaSlug } = await params
+  const { service: serviceSlug } = await params
   const { site } = await resolveSiteContext()
 
-  if (!site) {
-    return { title: 'Site Not Found', description: 'The requested site could not be found.' }
+  const service = getServiceBySlug(serviceSlug)
+  if (!site || !service) {
+    return { title: 'Not Found', description: 'The requested page could not be found.' }
   }
 
-  const area = site.serviceAreas.find((a) => a.slug === areaSlug)
   const businessName = site.business_name || 'Restoration Services'
-
   return {
-    title: `${area?.name || 'Service Area'} | ${businessName}`,
-    description:
-      site.meta_description ||
-      (area?.name
-        ? `Water damage restoration and cleanup services in ${area.name}. Fast response and professional technicians.`
-        : 'Water damage restoration and cleanup services. Fast response and professional technicians.'),
+    title: `${service.title} | ${businessName}`,
+    description: site.meta_description || service.shortDescription,
   }
 }
 
-export default async function AreaPage({
+export default async function ServicePage({
   params,
 }: {
-  params: Promise<{ area: string }>
+  params: Promise<{ service: string }>
 }) {
-  const { area: areaSlug } = await params
+  const { service: serviceSlug } = await params
   const { site } = await resolveSiteContext()
   if (!site) notFound()
 
@@ -58,12 +58,13 @@ export default async function AreaPage({
   if (!site.city) throw new Error('Site is missing required field: city')
   if (!site.state) throw new Error('Site is missing required field: state')
 
-  const area = site.serviceAreas.find((a) => a.slug === areaSlug)
-  if (!area) notFound()
+  const service = getServiceBySlug(serviceSlug)
+  if (!service) notFound()
 
-  const vars: SpintextVariables = { ...buildSpinVars(site), area_title: area.name }
-  const heroTitle = renderSpintextStable(AREA_HERO_TITLE, vars, `${site.slug}:area:${areaSlug}:title`)
-  const heroDesc = renderSpintextStable(AREA_HERO_DESCRIPTION, vars, `${site.slug}:area:${areaSlug}:desc`)
+  const seedPrefix = site.slug || 'home'
+  const vars: SpintextVariables = { ...buildSpinVars(site), service_title: service.title }
+  const heroTitle = renderSpintextStable(SERVICE_HERO_TITLE, vars, `${seedPrefix}:service:${serviceSlug}:title`)
+  const heroDesc = renderSpintextStable(SERVICE_HERO_DESCRIPTION, vars, `${seedPrefix}:service:${serviceSlug}:desc`)
 
   const nav = [
     { label: 'Home', href: '/' },
@@ -75,16 +76,16 @@ export default async function AreaPage({
   const phone = site.phone
   const phoneLabel = site.phoneDisplay || String(vars.phone || '')
 
-  const sidebarServices = DEFAULT_SERVICES.map((s) => ({
-    label: s.title,
-    href: `/services/${s.slug}`,
+  const areaIndex = await getServiceAreaIndexForCurrentDomain()
+  const sidebarAreas = areaIndex.map((a) => ({
+    label: a.city,
+    href: `/service-area/${a.slug}`,
   }))
 
-  const sidebarAreas = site.serviceAreas
-    .filter((a) => a.slug !== area.slug)
-    .map((a) => ({ label: a.name, href: `/areas/${a.slug}` }))
-
-  const socialLinks = site.socialLinks
+  const sidebarServices = DEFAULT_SERVICES.filter((s) => s.slug !== service.slug).map((s) => ({
+    label: s.title,
+    href: `/${s.slug}`,
+  }))
 
   return (
     <div className="min-h-screen bg-white">
@@ -100,45 +101,43 @@ export default async function AreaPage({
         sidebar={
           <>
             <AuroraEmergencyCard
-              title="Emergency Help"
-              blurb={`Call now for immediate response in ${area.name}.`}
+              title="24/7 Emergency Response"
+              blurb="Water damage spreads fast. Call now for rapid dispatch and professional restoration."
               phone={phone}
             />
             <AuroraWhyChooseCard items={DEFAULT_WHY_CHOOSE} />
-            <AuroraLinksCard title="Popular Services" links={sidebarServices} />
-            {sidebarAreas.length > 0 && <AuroraLinksCard title="Other Service Areas" links={sidebarAreas} />}
+            {sidebarAreas.length > 0 && <AuroraLinksCard title="Service Areas" links={sidebarAreas} />}
+            <AuroraLinksCard title="Other Services" links={sidebarServices} />
           </>
         }
       >
         <div className="space-y-6">
           <div>
-            <h2 className="text-2xl font-extrabold text-slate-900">Water Damage Restoration in {area.name}</h2>
-            <p className="mt-2 text-slate-600">
-              Trusted local help for cleanup, drying, and repairs in {area.name}.
-            </p>
+            <h2 className="text-2xl font-extrabold text-slate-900">{service.title}</h2>
+            <p className="mt-2 text-slate-600">{service.shortDescription}</p>
           </div>
 
           <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
-            <h3 className="text-lg font-extrabold text-slate-900">How We Help</h3>
+            <h3 className="text-lg font-extrabold text-slate-900">What’s Included</h3>
             <ul className="mt-3 space-y-2 text-sm text-slate-700">
-              <li>Emergency response in {area.name} and surrounding areas</li>
-              <li>Water extraction and structural drying</li>
-              <li>Mold prevention and odor control</li>
-              <li>Documentation support for insurance claims</li>
+              <li>Rapid on-site assessment and damage documentation</li>
+              <li>Professional-grade equipment and proven processes</li>
+              <li>Clear communication and project updates</li>
+              <li>Support for insurance workflows when applicable</li>
             </ul>
           </div>
 
           <div>
             <h3 className="text-lg font-extrabold text-slate-900">Serving {site.city}</h3>
             <p className="mt-2 text-sm text-slate-600">
-              We serve {area.name} and nearby communities across {site.city}, {site.state}.
+              We provide {service.title.toLowerCase()} for homes and businesses in {site.city}, {site.state}.
             </p>
           </div>
         </div>
       </AuroraContentLayout>
 
       <AuroraFloatingCall phone={phone} />
-      <AuroraFooter businessName={site.business_name} city={site.city} state={site.state} socialLinks={socialLinks} />
+      <AuroraFooter businessName={site.business_name} city={site.city} state={site.state} socialLinks={site.socialLinks} />
     </div>
   )
 }

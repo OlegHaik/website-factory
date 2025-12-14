@@ -39,6 +39,11 @@ export interface SiteRow {
   created_at: string | null
 }
 
+export interface ServiceAreaIndexItem {
+  slug: string
+  city: string
+}
+
 export type SiteData = Omit<SiteRow, 'links' | 'social_links' | 'service_areas'> & {
   phoneDisplay: string | null
   serviceAreas: ServiceArea[]
@@ -301,6 +306,85 @@ export async function getSiteByDomain(domain: string): Promise<SiteData | null> 
   return withComputedFields(row, resolvedDomain)
 }
 
+async function getMainSiteByDomain(domain: string): Promise<SiteData | null> {
+  const resolvedDomain = await getCurrentDomain()
+  const supabase = createSupabaseClient()
+
+  const candidates = buildDomainCandidates(domain)
+  if (candidates.length === 0) return null
+
+  const { data, error } = await supabase
+    .from('sites')
+    .select('*')
+    .in('domain_url', candidates)
+    .in('slug', ['', 'home'])
+    .limit(1)
+
+  if (error) {
+    throw new Error(`Supabase error fetching main site by domain: ${error.message}`)
+  }
+
+  const row = (data?.[0] as SiteRow | undefined) ?? null
+  if (!row) return null
+
+  return withComputedFields(row, resolvedDomain)
+}
+
+export async function getSiteByDomainAndSlug(domain: string, slug: string): Promise<SiteData | null> {
+  const resolvedDomain = await getCurrentDomain()
+  const supabase = createSupabaseClient()
+
+  const candidates = buildDomainCandidates(domain)
+  if (candidates.length === 0) return null
+
+  const { data, error } = await supabase
+    .from('sites')
+    .select('*')
+    .in('domain_url', candidates)
+    .eq('slug', slug)
+    .limit(1)
+
+  if (error) {
+    throw new Error(`Supabase error fetching site by domain+slug: ${error.message}`)
+  }
+
+  const row = (data?.[0] as SiteRow | undefined) ?? null
+  if (!row) return null
+
+  return withComputedFields(row, resolvedDomain)
+}
+
+export async function getServiceAreaIndexForCurrentDomain(): Promise<ServiceAreaIndexItem[]> {
+  const domain = await getCurrentDomain()
+  if (!domain) return []
+
+  const supabase = createSupabaseClient()
+  const candidates = buildDomainCandidates(domain)
+  if (candidates.length === 0) return []
+
+  const { data, error } = await supabase
+    .from('sites')
+    .select('slug,city')
+    .in('domain_url', candidates)
+    .neq('slug', '')
+    .neq('slug', 'home')
+    .order('city', { ascending: true })
+
+  if (error) {
+    throw new Error(`Supabase error fetching service area index: ${error.message}`)
+  }
+
+  return (data ?? [])
+    .map((row) => {
+      const r = row as { slug?: unknown; city?: unknown }
+      const slug = String(r.slug ?? '').trim()
+      const city = String(r.city ?? '').trim()
+      if (!slug || !city) return null
+      return { slug, city }
+    })
+    .filter((x): x is ServiceAreaIndexItem => Boolean(x))
+}
+
 /**
  * Convenience resolver for request-driven pages.
  *
@@ -327,6 +411,6 @@ export async function resolveSiteContext(input?: { slug?: string }) {
     return { site, domain }
   }
 
-  const site = domain ? await getSiteByDomain(domain) : null
+  const site = domain ? await getMainSiteByDomain(domain) : null
   return { site, domain }
 }

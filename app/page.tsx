@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { resolveSiteContext } from '@/lib/sites'
+import { getServiceAreaIndexForCurrentDomain, resolveSiteContext } from '@/lib/sites'
 import { renderSpintextStable } from '@/lib/spintext'
 import {
   DEFAULT_SERVICES,
@@ -52,10 +52,10 @@ export default async function Home() {
   if (!site.city) throw new Error('Site is missing required field: city')
   if (!site.state) throw new Error('Site is missing required field: state')
 
-  const slug = site.slug
+  const slugKey = site.slug || 'home'
   const vars = buildSpinVars(site)
-  const heroTitle = renderSpintextStable(HOME_HERO_TITLE, vars, `${slug}:home:title`)
-  const heroDesc = renderSpintextStable(HOME_HERO_DESCRIPTION, vars, `${slug}:home:desc`)
+  const heroTitle = renderSpintextStable(HOME_HERO_TITLE, vars, `${slugKey}:home:title`)
+  const heroDesc = renderSpintextStable(HOME_HERO_DESCRIPTION, vars, `${slugKey}:home:desc`)
 
   const nav = [
     { label: 'Home', href: `/` },
@@ -70,13 +70,14 @@ export default async function Home() {
     key: s.key,
     title: s.title,
     description: s.shortDescription,
-    href: `/services/${s.slug}`,
+    href: `/${s.slug}`,
     icon: s.icon,
   }))
 
-  const areaLinks = site.serviceAreas.map((a) => ({
-    label: a.name,
-    href: `/areas/${a.slug}`,
+  const areaIndex = await getServiceAreaIndexForCurrentDomain()
+  const areaLinks = areaIndex.map((a) => ({
+    label: a.city,
+    href: `/service-area/${a.slug}`,
   }))
 
   return (

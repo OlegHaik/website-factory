@@ -55,10 +55,10 @@ export function AuroraFooter({ businessName, city, state, socialLinks = [], clas
         <div className="mt-8 flex flex-col items-start justify-between gap-4 border-t border-slate-200 pt-6 text-xs text-slate-500 md:flex-row md:items-center">
           <div>© {new Date().getFullYear()} {businessName}. All rights reserved.</div>
           <div className="flex gap-6">
-            <Link href="/privacy" className="hover:text-slate-700">
+            <Link href="/privacy-policy" className="hover:text-slate-700">
               Privacy
             </Link>
-            <Link href="/terms" className="hover:text-slate-700">
+            <Link href="/terms-of-use" className="hover:text-slate-700">
               Terms
             </Link>
             <Link href="/links" className="hover:text-slate-700">
