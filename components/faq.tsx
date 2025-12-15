@@ -1,113 +1,57 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion'
-import type { LocationData } from "@/lib/get-location-data";
+"use client"
 
-interface FAQProps {
-  locationData?: LocationData;
-}
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 
-export function FAQ({ locationData }: FAQProps) {
-  const city = locationData?.city;
-  const state = locationData?.state;
-  const business_name = locationData?.business_name || 'Our team';
+const faqs = [
+  {
+    question: "How fast can your team arrive at my property?",
+    answer:
+      "Our emergency response team is available 24/7 and can typically arrive at your property within 45-60 minutes anywhere in our service area. For locations outside our immediate service area, we provide an estimated arrival time when you call.",
+  },
+  {
+    question: "Do you handle the insurance billing directly?",
+    answer:
+      "Yes, we work directly with all major insurance companies. Our team will document all damage thoroughly, provide detailed estimates, and communicate with your insurance adjuster to ensure you receive fair coverage for your claim. This takes the stress off you during an already difficult time.",
+  },
+  {
+    question: "Is the mold in my house dangerous to my family?",
+    answer:
+      "Certain types of mold, particularly black mold (Stachybotrys), can pose serious health risks including respiratory issues, allergic reactions, and other symptoms. We recommend having any visible mold professionally assessed. Our team uses air quality testing to determine the type and severity of mold present.",
+  },
+  {
+    question: "Can you save my hardwood floors after a flood?",
+    answer:
+      "In many cases, yes. Using specialized drying techniques including mat systems and controlled temperature/humidity environments, we can often save hardwood floors that other companies would tear out. The key is acting quickly—the sooner we begin the drying process, the better the outcome.",
+  },
+  {
+    question: "What should I do while I wait for you to arrive?",
+    answer:
+      "If safe to do so, turn off the water source if it's a plumbing issue. Move valuables and important documents to a dry area. Take photos of all damage for insurance purposes. Do not use electrical appliances in affected areas. Open windows if weather permits to improve ventilation.",
+  },
+]
 
-  const faqs = [
-    {
-      question: 'How often should I have my roof inspected?',
-      answer:
-        'We recommend having your roof professionally inspected at least once a year, ideally in spring or fall. Additionally, you should schedule an inspection after any major storm or weather event. Regular inspections help identify minor issues before they become costly repairs.',
-    },
-    {
-      question: 'What does a roof inspection include?',
-      answer:
-        'Our comprehensive roof inspection includes examining the shingles, flashing, gutters, ventilation, underlayment, and structural integrity. We check for leaks, damaged or missing shingles, signs of water damage, and potential problem areas. You\'ll receive a detailed report with our findings and recommendations.',
-    },
-    {
-      question: 'How long does a roof replacement take?',
-      answer:
-        'Most residential roof replacements take 1-3 days depending on the size of your roof, weather conditions, and the complexity of the job. We work efficiently while ensuring quality installation and will keep you informed throughout the entire process.',
-    },
-    {
-      question: 'Do you offer emergency roof repair services?',
-      answer:
-        'Yes! We provide 24/7 emergency roof repair services for urgent situations like storm damage, severe leaks, or structural issues. Our team responds quickly to prevent further damage to your property and protect your home.',
-    },
-    {
-      question: 'Are you licensed and insured?',
-      answer:
-        `Absolutely. ${business_name} is fully licensed, bonded, and insured. Our roofing contractors are trained professionals who follow industry best practices and comply with all local building codes and safety standards.`,
-    },
-    {
-      question: 'Do you help with insurance claims for roof damage?',
-      answer:
-        'Yes, we have extensive experience working with insurance companies. We can provide detailed documentation, photos, and assessments needed for your claim. Our team will work with you and your insurance adjuster throughout the entire process.',
-    },
-    {
-      question: 'What areas do you service?',
-      answer:
-        city && state
-          ? `We proudly serve ${city}, ${state} and surrounding communities. Contact us to confirm service in your specific area.`
-          : 'We proudly serve the local area and surrounding communities. Contact us to confirm service in your specific area.',
-    },
-  ];
-
+export function FAQ() {
   return (
-    <section className="py-20 bg-neutral-light">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-6">
-            Frequently Asked Questions
-          </h2>
-          <p className="text-lg text-neutral-dark text-center mb-12 leading-relaxed">
-            {city
-              ? `Get answers to common questions about our roofing installation, repair, and maintenance services in ${city}.`
-              : 'Get answers to common questions about our roofing installation, repair, and maintenance services.'
-            }
-          </p>
-
-          <Accordion type="single" collapsible className="space-y-4">
-            {faqs.map((faq, index) => (
-              <AccordionItem
-                key={index}
-                value={`item-${index}`}
-                className="bg-white rounded-lg px-6 border-neutral-light"
-              >
-                <AccordionTrigger className="text-left font-bold hover:no-underline">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-neutral-dark leading-relaxed">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
+    <section id="faq" className="py-24 lg:py-36 bg-white">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-16">Frequently Asked Questions</h2>
+        <Accordion type="single" collapsible className="space-y-5">
+          {faqs.map((faq, index) => (
+            <AccordionItem
+              key={index}
+              value={`item-${index}`}
+              className="border border-slate-200 rounded-xl px-8 data-[state=open]:bg-slate-50"
+            >
+              <AccordionTrigger className="text-left font-medium text-slate-900 hover:no-underline py-6 text-lg">
+                {faq.question}
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-600 pb-6 leading-relaxed text-base">
+                {faq.answer}
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
       </div>
-
-      {/* FAQ Structured Data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'FAQPage',
-            mainEntity: faqs.map((faq) => ({
-              '@type': 'Question',
-              name: faq.question,
-              acceptedAnswer: {
-                '@type': 'Answer',
-                text: faq.answer,
-              },
-            })),
-          }),
-        }}
-      />
     </section>
   )
 }
-
-export default FAQ

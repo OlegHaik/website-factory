@@ -1,183 +1,222 @@
-'use client'
-// Updated: 2024-12-05 - All roofing menu items
-import { useState } from 'react'
-import Link from 'next/link'
-import { Button } from '@/components/ui/button'
-import { Menu, X, Phone } from 'lucide-react'
-import { formatPhone } from '@/lib/format-phone'
-import type { ColorTheme } from '@/lib/color-themes'
+"use client"
+
+import { useState } from "react"
+import { Phone, Menu, X, ChevronDown } from "lucide-react"
+import Link from "next/link"
+
+interface ServiceArea {
+  name: string
+  slug: string
+}
 
 interface HeaderProps {
-  phone?: string;
-  businessName?: string;
-  domain?: string;
-  colorTheme: ColorTheme;
+  businessName: string
+  phone: string
+  phoneDisplay?: string
+  serviceAreas?: ServiceArea[]
 }
 
-function getMenuItemsForDomain(domain: string) {
-  // Different roofing service focus per domain for variety
-  const menuVariations = [
-    [
-      { href: '#', label: 'Home', nonClickable: true },
-      { href: '#about', label: 'About', nonClickable: false },
-      { href: '#services', label: 'Roof Installation', nonClickable: false },
-      { href: '#reviews', label: 'Reviews', nonClickable: false },
-      { href: '#contact', label: 'Free Quote', nonClickable: false },
-    ],
-    [
-      { href: '#', label: 'Home', nonClickable: true },
-      { href: '#about', label: 'About', nonClickable: false },
-      { href: '#services', label: 'Roof Repair', nonClickable: false },
-      { href: '#reviews', label: 'Reviews', nonClickable: false },
-      { href: '#contact', label: 'Free Estimate', nonClickable: false },
-    ],
-    [
-      { href: '#', label: 'Home', nonClickable: true },
-      { href: '#about', label: 'About', nonClickable: false },
-      { href: '#services', label: 'Roof Replacement', nonClickable: false },
-      { href: '#reviews', label: 'Testimonials', nonClickable: false },
-      { href: '#contact', label: 'Get Quote', nonClickable: false },
-    ],
-    [
-      { href: '#', label: 'Home', nonClickable: true },
-      { href: '#about', label: 'About Us', nonClickable: false },
-      { href: '#services', label: 'Roofing Services', nonClickable: false },
-      { href: '#reviews', label: 'Reviews', nonClickable: false },
-      { href: '#contact', label: 'Contact', nonClickable: false },
-    ],
-    [
-      { href: '#', label: 'Home', nonClickable: true },
-      { href: '#about', label: 'Our Company', nonClickable: false },
-      { href: '#services', label: 'Storm Damage', nonClickable: false },
-      { href: '#reviews', label: 'Customer Reviews', nonClickable: false },
-      { href: '#contact', label: 'Free Inspection', nonClickable: false },
-    ],
-  ];
+const servicesLinks = [
+  { label: "Water Damage Restoration", href: "/water-damage-restoration" },
+  { label: "Fire & Smoke Damage", href: "/fire-smoke-damage" },
+  { label: "Mold Remediation", href: "/mold-remediation" },
+  { label: "Biohazard Cleanup", href: "/biohazard-cleanup" },
+  { label: "Burst Pipe Repair", href: "/burst-pipe-repair" },
+  { label: "Sewage Cleanup", href: "/sewage-cleanup" },
+]
 
-  // Hash domain to get consistent menu variation
-  let hash = 0;
-  for (let i = 0; i < domain.length; i++) {
-    hash = domain.charCodeAt(i) + ((hash << 5) - hash);
-  }
-  const index = Math.abs(hash) % menuVariations.length;
-  return menuVariations[index];
-}
+export function Header({ businessName, phone, phoneDisplay, serviceAreas = [] }: HeaderProps) {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null)
+  const [mobileDropdown, setMobileDropdown] = useState<string | null>(null)
 
-export default function Header({ 
-  phone = '18884330263',
-  businessName = 'CHIMNEY SWEEP SERVICES',
-  domain = 'default',
-  colorTheme
-}: HeaderProps) {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const formattedPhone = formatPhone(phone);
-  const menuItems = getMenuItemsForDomain(domain);
-
-
+  const phoneHref = `tel:${phone.replace(/\D/g, '')}`
+  const displayPhone = phoneDisplay || phone
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 ${colorTheme.headerBg} border-b ${colorTheme.headerBorder} shadow-md`}>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo - Non-clickable */}
-          <div className="flex items-center gap-2 sm:gap-3 cursor-default">
-            <div className="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center flex-shrink-0">
-              <img
-                src="/apple-touch-icon.png"
-                alt="Location Pin"
-                className="w-8 h-8 sm:w-10 sm:h-10 object-contain brightness-0 invert"
-              />
-            </div>
-            <span className={`text-base sm:text-lg md:text-xl lg:text-2xl font-bold ${colorTheme.headerText} uppercase tracking-tight leading-tight`}>
-              {businessName}
-            </span>
-          </div>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
-            {menuItems.map((item) => (
-              item.nonClickable ? (
-                <span
-                  key={item.label}
-                  className={`text-sm font-semibold ${colorTheme.headerText} cursor-default`}
-                >
-                  {item.label}
-                </span>
-              ) : (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`text-sm font-semibold ${colorTheme.headerText} hover:text-red-400 transition-colors`}
-                >
-                  {item.label}
-                </Link>
-              )
-            ))}
-          </nav>
-
-          {/* Phone Button Desktop */}
-          <div className="hidden lg:block">
-            <Button
-              asChild
-              size="lg"
-              className={`${colorTheme.buttonBg} ${colorTheme.buttonHover} text-white font-bold shadow-lg transition-all duration-200 rounded-lg`}
-            >
-              <a href={`tel:${phone.replace(/\D/g, '')}`} className="flex items-center gap-2">
-                <Phone className="w-4 h-4" />
-                <span className="text-sm">{formattedPhone}</span>
-              </a>
-            </Button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className={`lg:hidden p-2 ${colorTheme.headerText} hover:bg-white/10 rounded-md transition-colors`}
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+    <>
+      <header className="sticky top-0 z-50 relative">
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950 to-slate-950" />
+          <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-red-950/60 via-red-900/30 to-transparent" />
+          <div className="absolute top-0 left-0 w-[300px] h-[300px] bg-[#BA1C1C]/20 rounded-full blur-[80px]" />
+          <div className="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-l from-blue-950/60 via-blue-900/30 to-transparent" />
+          <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-blue-800/25 rounded-full blur-[80px]" />
         </div>
-      </div>
 
-      {/* Mobile Navigation */}
-      {isMenuOpen && (
-        <div className={`lg:hidden ${colorTheme.mobileBg} border-t ${colorTheme.headerBorder} shadow-lg`}>
-          <nav className="container mx-auto px-4 py-6 flex flex-col gap-2">
-            {menuItems.map((item) => (
-              item.nonClickable ? (
-                <span
-                  key={item.label}
-                  className={`text-base font-semibold ${colorTheme.headerText} py-3 px-4 cursor-default`}
-                >
-                  {item.label}
-                </span>
-              ) : (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`text-base font-semibold ${colorTheme.headerText} py-3 px-4 rounded-md ${colorTheme.mobileHover} hover:text-red-400 transition-colors`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              )
-            ))}
-            <Button
-              asChild
-              size="lg"
-              className={`mt-4 ${colorTheme.buttonBg} ${colorTheme.buttonHover} text-white font-bold shadow-lg rounded-lg`}
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center h-20 lg:h-24">
+            <Link href="/" className="flex items-baseline flex-shrink-0 min-w-fit pr-6">
+              <span
+                className="text-[22px] lg:text-[28px] tracking-tight font-black uppercase whitespace-nowrap text-white"
+                style={{
+                  fontFamily: "'Cal Sans', 'Cabinet Grotesk', system-ui, sans-serif",
+                  fontStyle: "italic",
+                  transform: "skewX(-6deg)",
+                }}
+              >
+                {businessName}
+              </span>
+            </Link>
+
+            <nav className="hidden lg:flex items-center space-x-1 ml-auto mr-6">
+              <Link href="/" className="px-4 py-2 text-white/90 hover:text-white font-medium transition-colors">
+                Home
+              </Link>
+
+              <div
+                className="relative"
+                onMouseEnter={() => setOpenDropdown("services")}
+                onMouseLeave={() => setOpenDropdown(null)}
+              >
+                <button className="flex items-center gap-1 px-4 py-2 text-white/90 hover:text-white font-medium transition-colors">
+                  Services
+                  <ChevronDown
+                    className={`w-4 h-4 transition-transform ${openDropdown === "services" ? "rotate-180" : ""}`}
+                  />
+                </button>
+                {openDropdown === "services" && (
+                  <div className="absolute top-full left-0 pt-2">
+                    <div className="absolute -top-2 left-0 right-0 h-4"></div>
+                    <div className="bg-white rounded-xl shadow-xl border border-slate-200 py-2 min-w-[240px]">
+                      {servicesLinks.map((item) => (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          className="block px-4 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-red-600 transition-colors"
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              <div
+                className="relative"
+                onMouseEnter={() => setOpenDropdown("areas")}
+                onMouseLeave={() => setOpenDropdown(null)}
+              >
+                <button className="flex items-center gap-1 px-4 py-2 text-white/90 hover:text-white font-medium transition-colors">
+                  Service Areas
+                  <ChevronDown
+                    className={`w-4 h-4 transition-transform ${openDropdown === "areas" ? "rotate-180" : ""}`}
+                  />
+                </button>
+                {openDropdown === "areas" && serviceAreas.length > 0 && (
+                  <div className="absolute top-full left-0 pt-2">
+                    <div className="absolute -top-2 left-0 right-0 h-4"></div>
+                    <div className="bg-white rounded-xl shadow-xl border border-slate-200 py-2 min-w-[200px]">
+                      {serviceAreas.map((area) => (
+                        <Link
+                          key={area.slug}
+                          href={`/service-area/${area.slug}`}
+                          className="block px-4 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-red-600 transition-colors"
+                        >
+                          {area.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              <Link href="/#cta" className="px-4 py-2 text-white/90 hover:text-white font-medium transition-colors">
+                Contact
+              </Link>
+            </nav>
+
+            <Link
+              href={phoneHref}
+              className="hidden lg:inline-flex items-center justify-center bg-[#BA1C1C] hover:bg-red-700 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors"
             >
-              <a href={`tel:${phone.replace(/\D/g, '')}`} className="flex items-center justify-center gap-2">
-                <Phone className="w-5 h-5" />
-                {formattedPhone}
-              </a>
-            </Button>
-          </nav>
+              <Phone className="w-4 h-4 mr-2" />
+              {displayPhone}
+            </Link>
+
+            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="lg:hidden ml-auto p-2 text-white">
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {mobileMenuOpen && (
+        <div className="lg:hidden fixed inset-0 z-40 bg-slate-950">
+          <div className="pt-24 px-4 pb-6 space-y-4">
+            <Link href="/" className="block py-3 text-white text-lg font-medium border-b border-slate-800">
+              Home
+            </Link>
+
+            <div className="border-b border-slate-800">
+              <button
+                onClick={() => setMobileDropdown(mobileDropdown === "services" ? null : "services")}
+                className="flex items-center justify-between w-full py-3 text-white text-lg font-medium"
+              >
+                Services
+                <ChevronDown
+                  className={`w-5 h-5 transition-transform ${mobileDropdown === "services" ? "rotate-180" : ""}`}
+                />
+              </button>
+              {mobileDropdown === "services" && (
+                <div className="pb-3 space-y-2">
+                  {servicesLinks.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="block py-2 pl-4 text-slate-400 hover:text-white"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {serviceAreas.length > 0 && (
+              <div className="border-b border-slate-800">
+                <button
+                  onClick={() => setMobileDropdown(mobileDropdown === "areas" ? null : "areas")}
+                  className="flex items-center justify-between w-full py-3 text-white text-lg font-medium"
+                >
+                  Service Areas
+                  <ChevronDown
+                    className={`w-5 h-5 transition-transform ${mobileDropdown === "areas" ? "rotate-180" : ""}`}
+                  />
+                </button>
+                {mobileDropdown === "areas" && (
+                  <div className="pb-3 space-y-2">
+                    {serviceAreas.map((area) => (
+                      <Link
+                        key={area.slug}
+                        href={`/service-area/${area.slug}`}
+                        className="block py-2 pl-4 text-slate-400 hover:text-white"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {area.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+
+            <Link href="/#cta" className="block py-3 text-white text-lg font-medium border-b border-slate-800">
+              Contact
+            </Link>
+
+            <Link
+              href={phoneHref}
+              className="flex items-center justify-center bg-[#BA1C1C] text-white font-semibold py-3 rounded-lg mt-6"
+            >
+              <Phone className="w-5 h-5 mr-2" />
+              {displayPhone}
+            </Link>
+          </div>
         </div>
       )}
-    </header>
+    </>
   )
 }
-
-export { Header }

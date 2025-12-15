@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { getServiceAreaIndexForCurrentDomain, resolveSiteContext } from '@/lib/sites'
-import { DEFAULT_SERVICES } from '@/lib/water-damage'
-import { AuroraHeader } from '@/components/aurora-header'
-import { AuroraFooter } from '@/components/aurora-footer'
+import { Header } from '@/components/header'
+import Footer from '@/components/footer'
+import { FloatingCall } from '@/components/floating-call'
 
 export const dynamic = 'force-dynamic'
 
@@ -16,46 +16,17 @@ export default async function PrivacyPolicyPage() {
   const { site } = await resolveSiteContext()
   if (!site) notFound()
   if (!site.business_name) throw new Error('Site is missing required field: business_name')
-
-  const nav = [
-    { label: 'Home', href: '/' },
-    { label: 'Services', href: '/#services' },
-    { label: 'Service Areas', href: '/#areas' },
-    { label: 'Contact', href: '/#contact' },
-  ]
-
-  const servicesDropdown = DEFAULT_SERVICES.map((s) => ({
-    label: s.title,
-    href: `/${s.slug}`,
-  }))
+  if (!site.phone) throw new Error('Site is missing required field: phone')
 
   const areaIndex = await getServiceAreaIndexForCurrentDomain()
-  const areaLinks = areaIndex.map((a) => ({
-    label: a.city,
-    href: `/service-area/${a.slug}`,
-  }))
-
-  const footerServiceAreas = areaLinks
-
-  const footerServices = servicesDropdown
-
-  const footerContact = {
-    address: site.address,
-    phone: site.phoneDisplay || site.phone,
-  }
+  const serviceAreas = areaIndex.map((a) => ({ name: a.city, slug: a.slug }))
 
   const phoneDisplay = site.phoneDisplay || site.phone || ''
   const phoneDigits = (site.phone || '').replace(/\D/g, '')
 
   return (
     <div className="min-h-screen bg-white">
-      <AuroraHeader
-        businessName={site.business_name}
-        nav={nav}
-        phone={site.phone || ''}
-        services={servicesDropdown}
-        serviceAreas={areaLinks}
-      />
+      <Header businessName={site.business_name} phone={site.phone} phoneDisplay={site.phoneDisplay || undefined} serviceAreas={serviceAreas} />
 
       <main className="pt-24">
         <div className="container mx-auto px-4 py-12">
@@ -107,12 +78,14 @@ export default async function PrivacyPolicyPage() {
         </div>
       </main>
 
-      <AuroraFooter
+      <Footer
         businessName={site.business_name}
-        services={footerServices}
-        serviceAreas={footerServiceAreas}
-        contact={footerContact}
+        phone={site.phone}
+        phoneDisplay={site.phoneDisplay || undefined}
+        address={site.address}
+        serviceAreas={serviceAreas}
       />
+      <FloatingCall phone={site.phone} />
     </div>
   )
 }

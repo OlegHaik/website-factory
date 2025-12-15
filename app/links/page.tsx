@@ -1,7 +1,8 @@
 import { notFound } from 'next/navigation'
 import { getCitationsForSite, getServiceAreaIndexForCurrentDomain, resolveSiteContext } from '@/lib/sites'
-import { AuroraHeader } from '@/components/aurora-header'
-import { AuroraFooter } from '@/components/aurora-footer'
+import { Header } from '@/components/header'
+import Footer from '@/components/footer'
+import { FloatingCall } from '@/components/floating-call'
 import { DEFAULT_SERVICES } from '@/lib/water-damage'
 import { ExternalLink } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
@@ -13,18 +14,9 @@ export default async function LinksPage() {
   if (!site) return notFound()
 
   if (!site.business_name) throw new Error('Site is missing required field: business_name')
+  if (!site.phone) throw new Error('Site is missing required field: phone')
 
-  const nav = [
-    { label: 'Home', href: '/' },
-    { label: 'Services', href: '/#services' },
-    { label: 'Service Areas', href: '/#areas' },
-    { label: 'Contact', href: '/#contact' },
-  ]
-
-  const servicesDropdown = DEFAULT_SERVICES.map((s) => ({
-    label: s.title,
-    href: `/${s.slug}`,
-  }))
+  const servicesDropdown = DEFAULT_SERVICES.map((s) => ({ label: s.title, href: `/${s.slug}` }))
 
   const citationsFromDb = await getCitationsForSite(site.id)
 
@@ -44,29 +36,11 @@ export default async function LinksPage() {
   ]
 
   const areaIndex = await getServiceAreaIndexForCurrentDomain()
-  const areaLinks = areaIndex.map((a) => ({
-    label: a.city,
-    href: `/service-area/${a.slug}`,
-  }))
-
-  const serviceAreasDropdown = areaLinks
-  const footerServices = servicesDropdown
-  const footerServiceAreas = areaLinks
-
-  const footerContact = {
-    address: site.address,
-    phone: site.phoneDisplay || site.phone,
-  }
+  const serviceAreas = areaIndex.map((a) => ({ name: a.city, slug: a.slug }))
 
   return (
     <div className="min-h-screen bg-white">
-      <AuroraHeader
-        businessName={site.business_name}
-        nav={nav}
-        phone={site.phone || ''}
-        services={servicesDropdown}
-        serviceAreas={serviceAreasDropdown}
-      />
+      <Header businessName={site.business_name} phone={site.phone} phoneDisplay={site.phoneDisplay || undefined} serviceAreas={serviceAreas} />
 
       <main className="pt-24">
         <div className="container mx-auto px-4 py-12">
@@ -100,12 +74,14 @@ export default async function LinksPage() {
         </div>
       </main>
 
-      <AuroraFooter
+      <Footer
         businessName={site.business_name}
-        services={footerServices}
-        serviceAreas={footerServiceAreas}
-        contact={footerContact}
+        phone={site.phone}
+        phoneDisplay={site.phoneDisplay || undefined}
+        address={site.address}
+        serviceAreas={serviceAreas}
       />
+      <FloatingCall phone={site.phone} />
     </div>
   )
 }

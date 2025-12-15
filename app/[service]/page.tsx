@@ -1,23 +1,15 @@
-import type { Metadata } from 'next'
-import { notFound } from 'next/navigation'
-import { getServiceAreaIndexForCurrentDomain, resolveSiteContext } from '@/lib/sites'
-import { renderSpintextStable } from '@/lib/spintext'
-import type { SpintextVariables } from '@/lib/spintext'
-import {
-  DEFAULT_SERVICES,
-  DEFAULT_WHY_CHOOSE,
-  SERVICE_HERO_DESCRIPTION,
-  SERVICE_HERO_TITLE,
-  buildSpinVars,
-  getServiceBySlug,
-} from '@/lib/water-damage'
-import { AuroraHeader } from '@/components/aurora-header'
-import { AuroraHero } from '@/components/aurora-hero'
-import { AuroraContentLayout } from '@/components/aurora-content-layout'
-import { AuroraEmergencyCard, AuroraLicensedCard, AuroraLinksCard, AuroraWhyChooseCard } from '@/components/aurora-sidebar'
-import { AuroraFloatingCall } from '@/components/aurora-floating-call'
-import { AuroraFooter } from '@/components/aurora-footer'
-import { formatPhoneDashed } from '@/lib/format-phone'
+import type { Metadata } from "next"
+import { notFound } from "next/navigation"
+
+import { getServiceAreaIndexForCurrentDomain, resolveSiteContext } from "@/lib/sites"
+import { DEFAULT_SERVICES, getServiceBySlug } from "@/lib/water-damage"
+
+import { Header } from "@/components/header"
+import { ServiceHero } from "@/components/service-hero"
+import { ServiceContent } from "@/components/service-content"
+import { CTASection } from "@/components/cta-section"
+import Footer from "@/components/footer"
+import { FloatingCall } from "@/components/floating-call"
 
 export const dynamic = 'force-dynamic'
 
@@ -62,119 +54,52 @@ export default async function ServicePage({
   const service = getServiceBySlug(serviceSlug)
   if (!service) notFound()
 
-  const seedPrefix = site.slug || 'home'
-  const vars: SpintextVariables = { ...buildSpinVars(site), service_title: service.title }
-  const heroTitle = renderSpintextStable(SERVICE_HERO_TITLE, vars, `${seedPrefix}:service:${serviceSlug}:title`)
-  const heroDesc = renderSpintextStable(SERVICE_HERO_DESCRIPTION, vars, `${seedPrefix}:service:${serviceSlug}:desc`)
-
-  const nav = [
-    { label: 'Home', href: '/' },
-    { label: 'Services', href: '/#services' },
-    { label: 'Service Areas', href: '/#areas' },
-    { label: 'Contact', href: '/#contact' },
-  ]
-
-  const phone = site.phone
-  const phoneLabel = site.phoneDisplay || String(vars.phone || '')
-  const phoneDisplay = site.phoneDisplay || site.phone
-
-  const servicesDropdown = DEFAULT_SERVICES.map((s) => ({
-    label: s.title,
-    href: `/${s.slug}`,
-  }))
-
-    const safeName = (site.business_name || '').replace(/&/g, 'and')
-    const smsMessage = `Hello, I am visiting ${safeName} at ${site.resolvedDomain || 'our website'}. I am looking for a free estimate.`
-  const smsHref = `sms:+19492675767?body=${encodeURIComponent(smsMessage)}`
-
   const areaIndex = await getServiceAreaIndexForCurrentDomain()
-  const sidebarAreas = areaIndex.map((a) => ({
-    label: a.city,
-    href: `/service-area/${a.slug}`,
-  }))
-
-  const serviceAreasDropdown = sidebarAreas
-
-    const footerServiceAreas = areaIndex.map((a) => ({
-      label: a.city,
-      href: `/service-area/${a.slug}`,
-    }))
-
-  const footerServices = servicesDropdown
-
-  const footerContact = {
-    address: site.address,
-    phone: site.phoneDisplay || formatPhoneDashed(site.phone),
-  }
-
-  const sidebarServices = DEFAULT_SERVICES.filter((s) => s.slug !== service.slug).map((s) => ({
+  const serviceAreas = areaIndex.map((a) => ({ name: a.city, slug: a.slug }))
+  const otherServices = DEFAULT_SERVICES.filter((s) => s.slug !== service.slug).map((s) => ({
     label: s.title,
     href: `/${s.slug}`,
   }))
 
   return (
     <div className="min-h-screen bg-white">
-      <AuroraHeader
+      <Header
         businessName={site.business_name}
-        nav={nav}
-        phone={phoneDisplay}
-        services={servicesDropdown}
-        serviceAreas={serviceAreasDropdown}
+        phone={site.phone}
+        phoneDisplay={site.phoneDisplay || undefined}
+        serviceAreas={serviceAreas}
       />
-      <AuroraHero
-        title={heroTitle}
-        description={heroDesc}
-        primaryCta={{ href: `tel:${phone.replace(/\D/g, '')}`, label: phoneLabel || 'Call Now' }}
-        secondaryCta={{ href: smsHref, label: 'Chat With Us' }}
-      />
-
-      <AuroraContentLayout
-        sidebar={
-          <>
-            <AuroraEmergencyCard
-              title="24/7 Emergency Response"
-              blurb="Water damage spreads fast. Call now for rapid dispatch and professional restoration."
-              phone={phone}
-            />
-            <AuroraWhyChooseCard items={DEFAULT_WHY_CHOOSE} />
-            {sidebarAreas.length > 0 && <AuroraLinksCard title="Service Areas" links={sidebarAreas} />}
-            <AuroraLicensedCard />
-            <AuroraLinksCard title="Other Services" links={sidebarServices} />
-          </>
-        }
-      >
-        <div className="space-y-6">
-          <div>
-            <h2 className="text-2xl font-bold text-slate-900 md:text-3xl">{service.title}</h2>
-            <p className="mt-2 text-base text-slate-600 md:text-lg">{service.shortDescription}</p>
-          </div>
-
-          <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
-            <h3 className="text-xl font-bold text-slate-900">What’s Included</h3>
-            <ul className="mt-3 space-y-2 text-base text-slate-700">
-              <li>Rapid on-site assessment and damage documentation</li>
-              <li>Professional-grade equipment and proven processes</li>
-              <li>Clear communication and project updates</li>
-              <li>Support for insurance workflows when applicable</li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-xl font-bold text-slate-900">Serving {site.city}</h3>
-            <p className="mt-2 text-base text-slate-600 md:text-lg">
-              We provide {service.title.toLowerCase()} for homes and businesses in {site.city}, {site.state}.
-            </p>
-          </div>
-        </div>
-      </AuroraContentLayout>
-
-      <AuroraFloatingCall phone={phone} />
-      <AuroraFooter
+      <ServiceHero
+        serviceTitle={service.title}
+        city={site.city}
+        state={site.state}
+        phone={site.phone}
+        phoneDisplay={site.phoneDisplay || undefined}
         businessName={site.business_name}
-        services={footerServices}
-        contact={footerContact}
-        serviceAreas={footerServiceAreas}
+        domain={site.resolvedDomain}
       />
+      <ServiceContent
+        serviceTitle={service.title}
+        serviceDescription={service.shortDescription}
+        city={site.city}
+        state={site.state}
+        serviceAreas={serviceAreas}
+        otherServices={otherServices}
+      />
+      <CTASection
+        phone={site.phone}
+        phoneDisplay={site.phoneDisplay || undefined}
+        businessName={site.business_name}
+        domain={site.resolvedDomain}
+      />
+      <Footer
+        businessName={site.business_name}
+        phone={site.phone}
+        phoneDisplay={site.phoneDisplay || undefined}
+        address={site.address}
+        serviceAreas={serviceAreas}
+      />
+      <FloatingCall phone={site.phone} />
     </div>
   )
 }

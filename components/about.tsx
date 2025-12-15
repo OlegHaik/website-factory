@@ -1,75 +1,91 @@
-'use client'
-import { Shield, Award, Users, Clock } from 'lucide-react'
-import type { ColorTheme } from '@/lib/color-themes'
+import { ShieldCheck, MapPin } from "lucide-react"
+import Link from "next/link"
 
-interface AboutProps {
-  locationData: {
-    city: string
-    state: string
-    colorTheme: ColorTheme
-  }
+interface ServiceArea {
+  name: string
+  slug: string
 }
 
-export function About({ locationData }: AboutProps) {
-  const { city, state, colorTheme } = locationData
+interface AboutProps {
+  businessName: string
+  city: string
+  state: string
+  serviceAreas: ServiceArea[]
+}
 
-  const features = [
-    {
-      icon: Shield,
-      title: 'Licensed & Insured',
-      description: 'Fully certified and insured for your peace of mind',
-    },
-    {
-      icon: Award,
-      title: 'Top-Rated Service',
-      description: 'Highest quality workmanship guaranteed',
-    },
-    {
-      icon: Users,
-      title: 'Expert Team',
-      description: 'Certified professionals you can trust',
-    },
-    {
-      icon: Clock,
-      title: '24/7 Emergency',
-      description: 'Available when you need us most',
-    },
-  ]
-
+export function About({ businessName, city, state, serviceAreas }: AboutProps) {
   return (
-    <section id="about" className="py-20 md:py-28 bg-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center mb-16">
-          <div className="inline-block mb-4">
-            <span className="text-sm font-bold uppercase tracking-wide text-red-600">
-              About Us
-            </span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6">
-            Trusted Roofing Services in {city}
-          </h2>
-          <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-            We are dedicated to providing exceptional roofing installation, repair, and replacement services to {city}, {state}. Our team of certified professionals brings decades of combined experience to ensure your roof is durable, weather-resistant, and compliant with all building codes.
-          </p>
-        </div>
+    <section id="about" className="py-24 lg:py-36 bg-slate-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
+          <div className="lg:col-span-2 space-y-10">
+            <div>
+              <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-8">
+                Professional Water Damage Services in {city}
+              </h2>
+              <p className="text-slate-600 text-lg leading-relaxed">
+                When disaster strikes, every second counts. At {businessName}, we understand the urgency of water
+                damage, fire incidents, and mold growth. Our team of certified professionals is dedicated to restoring
+                your property to its pre-loss condition as quickly and efficiently as possible. Serving {city} and
+                the surrounding areas, we are your local experts in emergency mitigation.
+              </p>
+            </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
-          {features.map((feature, index) => {
-            const Icon = feature.icon
-            return (
-              <div key={index} className="text-center group">
-                <div className={`w-20 h-20 ${colorTheme.buttonBg} rounded-2xl flex items-center justify-center mx-auto mb-5 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                  <Icon className="w-10 h-10 text-white" strokeWidth={2.5} />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {feature.description}
-                </p>
+            <div>
+              <h3 className="text-2xl font-semibold text-slate-900 mb-5">Why Choose Our Restoration Team?</h3>
+              <p className="text-slate-600 text-lg leading-relaxed">
+                Choosing the right restoration company can make the difference between a quick recovery and a long,
+                drawn-out nightmare. We pride ourselves on transparency, speed, and quality craftsmanship. Unlike
+                general contractors, we specialize specifically in disaster recovery. We utilize thermal imaging
+                technology to detect hidden moisture that the naked eye cannot see, ensuring that no wet pockets are
+                left behind to cause mold growth later. Our technicians are IICRC certified and undergo rigorous
+                training to handle everything from burst frozen pipes to sewage backups.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-2xl font-semibold text-slate-900 mb-5">The Restoration Process</h3>
+              <p className="text-slate-600 text-lg leading-relaxed">
+                Our process begins with a thorough inspection. We document everything for your insurance claim to ensure
+                you get the coverage you deserve. Next, we begin water extraction using truck-mounted pumps. Once
+                standing water is gone, we install industrial air movers and dehumidifiers. Finally, we perform any
+                necessary repairs to bring your home back to normal.
+              </p>
+            </div>
+          </div>
+
+          <div className="space-y-8">
+            <div className="bg-slate-800 rounded-2xl p-8 text-white">
+              <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
+                <MapPin className="w-5 h-5 text-teal-400" />
+                Service Areas
+              </h3>
+              <div className="grid grid-cols-2 gap-4">
+                {serviceAreas.map((area) => (
+                  <Link
+                    key={area.slug}
+                    href={`/service-area/${area.slug}`}
+                    className="flex items-center gap-2 text-slate-300 hover:text-teal-400 transition-colors text-sm"
+                  >
+                    <span className="w-2 h-2 rounded-full bg-teal-400"></span>
+                    {area.name}
+                  </Link>
+                ))}
               </div>
-            )
-          })}
+            </div>
+
+            <div className="bg-white rounded-2xl p-8 border border-slate-200">
+              <div className="flex justify-center mb-4">
+                <div className="w-14 h-14 bg-teal-50 rounded-full flex items-center justify-center">
+                  <ShieldCheck className="w-7 h-7 text-teal-500" />
+                </div>
+              </div>
+              <h3 className="text-xl font-semibold text-slate-900 text-center mb-3">Licensed & Insured</h3>
+              <p className="text-slate-600 text-center leading-relaxed">
+                We are fully certified to handle hazardous water and mold situations in {state}.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -1,73 +1,91 @@
-import Link from 'next/link'
-import { Phone, Mail, MapPin, Clock } from 'lucide-react'
+import Link from "next/link"
+import { MapPin, Phone } from "lucide-react"
 
-export default function Footer() {
+interface FooterProps {
+  businessName: string
+  phone: string
+  phoneDisplay?: string
+  address?: string | null
+  serviceAreas?: Array<{ name: string; slug: string }>
+}
+
+const servicesLinks = [
+  { label: "Water Damage Restoration", href: "/water-damage-restoration" },
+  { label: "Fire & Smoke Damage", href: "/fire-smoke-damage" },
+  { label: "Mold Remediation", href: "/mold-remediation" },
+  { label: "Biohazard Cleanup", href: "/biohazard-cleanup" },
+  { label: "Burst Pipe Repair", href: "/burst-pipe-repair" },
+  { label: "Sewage Cleanup", href: "/sewage-cleanup" },
+]
+
+export default function Footer({ businessName, phone, phoneDisplay, address, serviceAreas = [] }: FooterProps) {
+  const cleanPhone = phone.replace(/\D/g, "")
+  const displayPhone = phoneDisplay || phone
+
   return (
-    <footer className="bg-black text-white pt-16 pb-8">
-      <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          {/* Company Info */}
+    <footer className="bg-slate-950 text-white pt-20 pb-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div>
-            <h3 className="text-xl font-bold mb-4">General Chimney Sweep</h3>
-            <p className="text-neutral-light mb-4 leading-relaxed">
-              Your trusted partner for professional chimney cleaning, inspection, and repair
-              services.
+            <h3 className="text-2xl font-bold mb-4">{businessName}</h3>
+            <p className="text-slate-300 leading-relaxed">
+              24/7 emergency restoration services. Fast response, expert technicians, and complete property restoration.
             </p>
           </div>
 
-          {/* Contact Info */}
-          
-
-          {/* Hours */}
           <div>
-            <h4 className="text-lg font-bold mb-4">Business Hours</h4>
-            <div className="flex items-start gap-3">
-              <Clock className="w-5 h-5 text-brand flex-shrink-0 mt-0.5" />
-              <div className="space-y-1">
-                <p className="text-neutral-light">Mon - Sat: 7:00 AM - 6:00 PM</p>
-                <p className="text-neutral-light">Sunday: Closed</p>
-                <p className="text-brand font-semibold mt-2">Emergency Services Available</p>
-              </div>
-            </div>
+            <h4 className="text-lg font-bold mb-6">Services</h4>
+            <nav className="space-y-3">
+              {servicesLinks.map((item) => (
+                <Link key={item.href} href={item.href} className="block text-slate-300 hover:text-white">
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
           </div>
 
-          {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-bold mb-4">Quick Links</h4>
-            <nav className="flex flex-col gap-2">
-              <Link href="/" className="text-neutral-light hover:text-brand transition-colors">
-                Home
-              </Link>
-              <Link href="#services" className="text-neutral-light hover:text-brand transition-colors">
-                Services
-              </Link>
-              <Link href="#about" className="text-neutral-light hover:text-brand transition-colors">
-                About Us
-              </Link>
-              <Link href="#service-areas" className="text-neutral-light hover:text-brand transition-colors">
-                Service Areas
-              </Link>
-              <Link href="#contact" className="text-neutral-light hover:text-brand transition-colors">
-                Contact
-              </Link>
+            <h4 className="text-lg font-bold mb-6">Service Areas</h4>
+            <nav className="space-y-3">
+              {serviceAreas.length === 0 ? (
+                <span className="text-slate-300">Serving the local area</span>
+              ) : (
+                serviceAreas.map((area) => (
+                  <Link key={area.slug} href={`/service-area/${area.slug}`} className="block text-slate-300 hover:text-white">
+                    {area.name}
+                  </Link>
+                ))
+              )}
             </nav>
+          </div>
+
+          <div>
+            <h4 className="text-lg font-bold mb-6">Contact</h4>
+            <div className="space-y-4">
+              <Link href={`tel:${cleanPhone}`} className="flex items-center gap-3 text-slate-300 hover:text-white">
+                <Phone className="w-5 h-5" />
+                {displayPhone}
+              </Link>
+              {address && (
+                <div className="flex items-start gap-3 text-slate-300">
+                  <MapPin className="w-5 h-5 mt-0.5" />
+                  <span>{address}</span>
+                </div>
+              )}
+              <p className="text-slate-300">Emergency Services Available</p>
+            </div>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-neutral-dark pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-neutral-light text-sm text-center md:text-left">
-              © {new Date().getFullYear()} General Chimney Sweep. All rights reserved.
-            </p>
-            <div className="flex gap-6 text-sm">
-              <Link href="/privacy" className="text-neutral-light hover:text-brand transition-colors">
-                Privacy Policy
-              </Link>
-              <Link href="/terms" className="text-neutral-light hover:text-brand transition-colors">
-                Terms of Service
-              </Link>
-            </div>
+        <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-slate-400 text-sm">© {new Date().getFullYear()} {businessName}. All rights reserved.</p>
+          <div className="flex gap-6 text-sm">
+            <Link href="/privacy-policy" className="text-slate-400 hover:text-white">
+              Privacy Policy
+            </Link>
+            <Link href="/terms-of-use" className="text-slate-400 hover:text-white">
+              Terms of Use
+            </Link>
           </div>
         </div>
       </div>

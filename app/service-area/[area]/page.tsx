@@ -1,22 +1,15 @@
-import type { Metadata } from 'next'
-import { notFound } from 'next/navigation'
-import { getServiceAreaIndexForCurrentDomain, getSiteByDomainAndSlug, resolveSiteContext } from '@/lib/sites'
-import { renderSpintextStable } from '@/lib/spintext'
-import type { SpintextVariables } from '@/lib/spintext'
-import {
-  AREA_HERO_DESCRIPTION,
-  AREA_HERO_TITLE,
-  DEFAULT_SERVICES,
-  DEFAULT_WHY_CHOOSE,
-  buildSpinVars,
-} from '@/lib/water-damage'
-import { AuroraHeader } from '@/components/aurora-header'
-import { AuroraHero } from '@/components/aurora-hero'
-import { AuroraContentLayout } from '@/components/aurora-content-layout'
-import { AuroraEmergencyCard, AuroraLicensedCard, AuroraLinksCard, AuroraWhyChooseCard } from '@/components/aurora-sidebar'
-import { AuroraFloatingCall } from '@/components/aurora-floating-call'
-import { AuroraFooter } from '@/components/aurora-footer'
-import { formatPhoneDashed } from '@/lib/format-phone'
+import type { Metadata } from "next"
+import { notFound } from "next/navigation"
+
+import { getServiceAreaIndexForCurrentDomain, getSiteByDomainAndSlug, resolveSiteContext } from "@/lib/sites"
+import { DEFAULT_SERVICES } from "@/lib/water-damage"
+
+import { Header } from "@/components/header"
+import { ServiceAreaHero } from "@/components/service-area-hero"
+import { ServiceAreaContent } from "@/components/service-area-content"
+import { CTASection } from "@/components/cta-section"
+import Footer from "@/components/footer"
+import { FloatingCall } from "@/components/floating-call"
 
 export const dynamic = 'force-dynamic'
 
@@ -65,119 +58,45 @@ export default async function ServiceAreaPage({
   if (!areaSite.state) throw new Error('Site is missing required field: state')
 
   const areaName = areaSite.city
-
-  const seedPrefix = (mainSite.slug || 'home').trim() || 'home'
-  const vars: SpintextVariables = {
-    ...buildSpinVars(areaSite),
-    area_title: areaName,
-    city1: areaName,
-    city2: mainSite.city || '',
-  }
-
-  const heroTitle = renderSpintextStable(AREA_HERO_TITLE, vars, `${seedPrefix}:service-area:${areaSlug}:title`)
-  const heroDesc = renderSpintextStable(AREA_HERO_DESCRIPTION, vars, `${seedPrefix}:service-area:${areaSlug}:desc`)
-
-  const nav = [
-    { label: 'Home', href: '/' },
-    { label: 'Services', href: '/#services' },
-    { label: 'Service Areas', href: '/#areas' },
-    { label: 'Contact', href: '/#contact' },
-  ]
-
-  const phone = areaSite.phone
-  const phoneLabel = areaSite.phoneDisplay || String(vars.phone || '')
-  const phoneDisplay = areaSite.phoneDisplay || areaSite.phone
-
-  const servicesDropdown = DEFAULT_SERVICES.map((s) => ({
-    label: s.title,
-    href: `/${s.slug}`,
-  }))
-
-    const safeName = (areaSite.business_name || '').replace(/&/g, 'and')
-    const smsMessage = `Hello, I am visiting ${safeName} at ${areaSite.resolvedDomain || 'our website'}. I am looking for a free estimate.`
-  const smsHref = `sms:+19492675767?body=${encodeURIComponent(smsMessage)}`
-
-  const sidebarServices = DEFAULT_SERVICES.map((s) => ({
-    label: s.title,
-    href: `/${s.slug}`,
-  }))
-
   const areaIndex = await getServiceAreaIndexForCurrentDomain()
-  const sidebarAreas = areaIndex
+  const serviceAreas = areaIndex.map((a) => ({ name: a.city, slug: a.slug }))
+  const otherAreas = areaIndex
     .filter((a) => a.slug !== areaSlug)
-    .map((a) => ({ label: a.city, href: `/service-area/${a.slug}` }))
+    .map((a) => ({ name: a.city, slug: a.slug }))
 
-  const serviceAreasDropdown = [{ label: areaSite.city, href: `/service-area/${areaSlug}` }, ...sidebarAreas]
-
-
-  const footerServices = servicesDropdown
-
-  const footerContact = {
-    address: areaSite.address,
-    phone: areaSite.phoneDisplay || formatPhoneDashed(areaSite.phone),
-  }
+  const services = DEFAULT_SERVICES.map((s) => ({ label: s.title, href: `/${s.slug}` }))
 
   return (
     <div className="min-h-screen bg-white">
-      <AuroraHeader
+      <Header
         businessName={areaSite.business_name}
-        nav={nav}
-        phone={phoneDisplay}
-        services={servicesDropdown}
-        serviceAreas={serviceAreasDropdown}
+        phone={areaSite.phone}
+        phoneDisplay={areaSite.phoneDisplay || undefined}
+        serviceAreas={serviceAreas}
       />
-      <AuroraHero
-        title={heroTitle}
-        description={heroDesc}
-        primaryCta={{ href: `tel:${phone.replace(/\D/g, '')}`, label: phoneLabel || 'Call Now' }}
-        secondaryCta={{ href: smsHref, label: 'Chat With Us' }}
-      />
-
-      <AuroraContentLayout
-        sidebar={
-          <>
-            <AuroraEmergencyCard title="Emergency Help" blurb={`Call now for immediate response in ${areaName}.`} phone={phone} />
-            <AuroraWhyChooseCard items={DEFAULT_WHY_CHOOSE} />
-            <AuroraLinksCard title="Popular Services" links={sidebarServices} />
-            {sidebarAreas.length > 0 && <AuroraLinksCard title="Other Service Areas" links={sidebarAreas} />}
-            <AuroraLicensedCard />
-          </>
-        }
-      >
-        <div className="space-y-6">
-          <div>
-            <h2 className="text-2xl font-bold text-slate-900 md:text-3xl">Water Damage Restoration in {areaName}</h2>
-            <p className="mt-2 text-base text-slate-600 md:text-lg">Trusted local help for cleanup, drying, and repairs in {areaName}.</p>
-          </div>
-
-          <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
-            <h3 className="text-xl font-bold text-slate-900">How We Help</h3>
-            <ul className="mt-3 space-y-2 text-base text-slate-700">
-              <li>Emergency response in {areaName} and surrounding areas</li>
-              <li>Water extraction and structural drying</li>
-              <li>Mold prevention and odor control</li>
-              <li>Documentation support for insurance claims</li>
-            </ul>
-          </div>
-
-          {mainSite.city && mainSite.state && (
-            <div>
-              <h3 className="text-xl font-bold text-slate-900">Serving Greater {mainSite.city}</h3>
-              <p className="mt-2 text-base text-slate-600 md:text-lg">
-                We serve {areaName} and nearby communities across {mainSite.city}, {mainSite.state}.
-              </p>
-            </div>
-          )}
-        </div>
-      </AuroraContentLayout>
-
-      <AuroraFloatingCall phone={phone} />
-      <AuroraFooter
+      <ServiceAreaHero
+        areaName={areaName}
+        state={areaSite.state}
+        phone={areaSite.phone}
+        phoneDisplay={areaSite.phoneDisplay || undefined}
         businessName={areaSite.business_name}
-        services={footerServices}
-        contact={footerContact}
-          serviceAreas={serviceAreasDropdown}
+        domain={areaSite.resolvedDomain}
       />
+      <ServiceAreaContent areaName={areaName} state={areaSite.state} services={services} otherAreas={otherAreas} />
+      <CTASection
+        phone={areaSite.phone}
+        phoneDisplay={areaSite.phoneDisplay || undefined}
+        businessName={areaSite.business_name}
+        domain={areaSite.resolvedDomain}
+      />
+      <Footer
+        businessName={areaSite.business_name}
+        phone={areaSite.phone}
+        phoneDisplay={areaSite.phoneDisplay || undefined}
+        address={areaSite.address}
+        serviceAreas={serviceAreas}
+      />
+      <FloatingCall phone={areaSite.phone} />
     </div>
   )
 }
