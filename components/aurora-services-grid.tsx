@@ -42,8 +42,8 @@ export function AuroraServicesGrid({ title = 'Our Services', items, className }:
                 key={item.key}
                 className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-slate-700">
-                  <Icon className="h-5 w-5" />
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-teal-50">
+                  <Icon className="h-6 w-6 text-teal-500" />
                 </div>
 
                 <h3 className="mt-4 text-base font-bold text-slate-900">{item.title}</h3>
@@ -51,7 +51,7 @@ export function AuroraServicesGrid({ title = 'Our Services', items, className }:
 
                 <Link
                   href={item.href}
-                  className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-red-600 hover:text-red-700"
+                  className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-teal-500 hover:text-teal-600"
                 >
                   Learn More <ArrowRight className="h-4 w-4" />
                 </Link>

@@ -17,7 +17,7 @@ export function AuroraHero({ badge, title, description, primaryCta, secondaryCta
       <div
         className={cn(
           'relative',
-          'bg-gradient-to-r from-red-950 via-slate-950 to-blue-950',
+          'bg-[linear-gradient(135deg,var(--aurora-hero-1)_0%,var(--aurora-hero-2)_30%,var(--aurora-hero-3)_70%,var(--aurora-hero-4)_100%)]',
         )}
       >
         <div className="absolute inset-0 bg-black/30" />

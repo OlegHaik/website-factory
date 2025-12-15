@@ -13,9 +13,10 @@ import {
 import { AuroraHeader } from '@/components/aurora-header'
 import { AuroraHero } from '@/components/aurora-hero'
 import { AuroraContentLayout } from '@/components/aurora-content-layout'
-import { AuroraEmergencyCard, AuroraLinksCard, AuroraWhyChooseCard } from '@/components/aurora-sidebar'
+import { AuroraEmergencyCard, AuroraLicensedCard, AuroraLinksCard, AuroraWhyChooseCard } from '@/components/aurora-sidebar'
 import { AuroraFloatingCall } from '@/components/aurora-floating-call'
 import { AuroraFooter } from '@/components/aurora-footer'
+import { formatPhoneDashed } from '@/lib/format-phone'
 
 export const dynamic = 'force-dynamic'
 
@@ -119,7 +120,7 @@ export default async function ServiceAreaPage({
 
   const footerContact = {
     address: areaSite.address,
-    phone: areaSite.phoneDisplay || areaSite.phone,
+    phone: areaSite.phoneDisplay || formatPhoneDashed(areaSite.phone),
     email: areaSite.email,
   }
 
@@ -146,6 +147,7 @@ export default async function ServiceAreaPage({
             <AuroraWhyChooseCard items={DEFAULT_WHY_CHOOSE} />
             <AuroraLinksCard title="Popular Services" links={sidebarServices} />
             {sidebarAreas.length > 0 && <AuroraLinksCard title="Other Service Areas" links={sidebarAreas} />}
+            <AuroraLicensedCard />
           </>
         }
       >

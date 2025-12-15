@@ -8,6 +8,12 @@
   --brand: #dc2626; /* Red-600 */
   --brand-dark: #b91c1c; /* Red-700 */
 
+  /* Reference hero gradient stops */
+  --aurora-hero-1: #450a0a; /* red-950 */
+  --aurora-hero-2: #7f1d1d; /* red-900 */
+  --aurora-hero-3: #1e1b4b; /* indigo-950 */
+  --aurora-hero-4: #0f172a; /* slate-900 */
+
   /* Aurora (base tokens)
      These power the new aurora-* components. For now they map to existing brand/neutrals.
      Per-site presets can override these later. */

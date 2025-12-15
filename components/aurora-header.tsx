@@ -50,16 +50,17 @@ export function AuroraHeader({ businessName, nav, phone, services, serviceAreas,
   return (
     <header
       className={cn(
-        'fixed inset-x-0 top-0 z-50 bg-gradient-to-r from-red-950/90 via-slate-950/90 to-blue-950/90 backdrop-blur-md',
+        'fixed inset-x-0 top-0 z-50 bg-red-900',
         className,
       )}
     >
       <div className="container mx-auto flex h-20 items-center gap-4 px-4">
         <Link
           href="/"
-          className="shrink-0 text-base font-extrabold italic tracking-tight text-red-500 md:text-lg"
+          className="shrink-0 text-base font-bold italic tracking-tight md:text-lg"
         >
-          {(brandRest ? `${brandLead} ${brandRest}` : brandLead).toUpperCase()}
+          <span className="text-red-500">{brandLead.toUpperCase()}</span>
+          {brandRest ? <span className="text-white"> {brandRest.toUpperCase()}</span> : <span className="text-white" />}
         </Link>
 
         <nav className="hidden flex-1 items-center justify-center gap-6 md:flex">
@@ -195,7 +196,7 @@ export function AuroraHeader({ businessName, nav, phone, services, serviceAreas,
       </div>
 
       {open && (
-        <div className="border-t border-white/10 bg-gradient-to-r from-red-950/90 via-slate-950/90 to-blue-950/90 backdrop-blur-md md:hidden">
+        <div className="border-t border-white/10 bg-red-900 md:hidden">
           <div className="container mx-auto flex flex-col gap-2 px-4 py-4">
             {nav.map((item) => {
               const isServices = item.label.toLowerCase() === 'services'

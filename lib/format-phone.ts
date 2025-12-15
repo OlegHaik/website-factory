@@ -15,3 +15,14 @@ export function formatPhone(phone: string): string {
   // Return original if not standard format
   return phone;
 }
+
+export function formatPhoneDashed(phone: string): string {
+  const cleaned = phone.replace(/\D/g, '')
+  const digits = cleaned.length === 11 && cleaned[0] === '1' ? cleaned.slice(1) : cleaned
+
+  if (digits.length === 10) {
+    return `${digits.slice(0, 3)}-${digits.slice(3, 6)}-${digits.slice(6)}`
+  }
+
+  return phone
+}
