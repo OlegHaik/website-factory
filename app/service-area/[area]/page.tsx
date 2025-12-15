@@ -92,7 +92,8 @@ export default async function ServiceAreaPage({
   }))
 
   const smsNumber = '+19492675767'
-  const smsMessage = `Hello, I am visiting ${areaSite.business_name} at ${areaSite.resolvedDomain || 'connorwaterfirerestoration.homes'}. I am looking for a free estimate.`
+    const safeName = (areaSite.business_name || '').replace(/&/g, 'and')
+    const smsMessage = `Hello, I am visiting ${safeName} at ${areaSite.resolvedDomain || 'our website'}. I am looking for a free estimate.`
   const smsHref = `sms:${smsNumber}?body=${encodeURIComponent(smsMessage)}`
 
   const sidebarServices = DEFAULT_SERVICES.map((s) => ({

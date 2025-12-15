@@ -67,7 +67,8 @@ export default async function Home() {
   const phone = site.phone
 
   const smsNumber = '+19492675767'
-  const smsMessage = `Hello, I am visiting ${site.business_name} at ${site.resolvedDomain || 'connorwaterfirerestoration.homes'}. I am looking for a free estimate.`
+  const safeName = (site.business_name || '').replace(/&/g, 'and')
+  const smsMessage = `Hello, I am visiting ${safeName} at ${site.resolvedDomain || 'our website'}. I am looking for a free estimate.`
   const smsHref = `sms:${smsNumber}?body=${encodeURIComponent(smsMessage)}`
 
   const servicesForHome = DEFAULT_SERVICES.map((s) => ({
