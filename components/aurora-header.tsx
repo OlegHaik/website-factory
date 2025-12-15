@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from 'react'
 import Link from 'next/link'
-import { Menu, Phone, X } from 'lucide-react'
+import { ChevronDown, Menu, Phone, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { formatPhone } from '@/lib/format-phone'
@@ -16,11 +16,17 @@ export interface AuroraHeaderProps {
   businessName: string
   nav: AuroraNavItem[]
   phone: string
+  services?: AuroraNavItem[]
+  serviceAreas?: AuroraNavItem[]
   className?: string
 }
 
-export function AuroraHeader({ businessName, nav, phone, className }: AuroraHeaderProps) {
+export function AuroraHeader({ businessName, nav, phone, services, serviceAreas, className }: AuroraHeaderProps) {
   const [open, setOpen] = useState(false)
+  const [servicesOpen, setServicesOpen] = useState(false)
+  const [areasOpen, setAreasOpen] = useState(false)
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
+  const [mobileAreasOpen, setMobileAreasOpen] = useState(false)
   const phoneDisplay = useMemo(() => formatPhone(phone), [phone])
   const [brandLead, brandRest] = useMemo(() => {
     const trimmed = businessName.trim()
@@ -29,6 +35,11 @@ export function AuroraHeader({ businessName, nav, phone, className }: AuroraHead
     if (parts.length === 1) return [parts[0], '']
     return [parts[0], parts.slice(1).join(' ')]
   }, [businessName])
+
+  const normalizedPhone = useMemo(() => phone.replace(/\D/g, ''), [phone])
+
+  const hasServicesDropdown = Boolean(services && services.length > 0)
+  const hasServiceAreasDropdown = Boolean(serviceAreas && serviceAreas.length > 0)
 
   return (
     <header
@@ -46,15 +57,112 @@ export function AuroraHeader({ businessName, nav, phone, className }: AuroraHead
         </div>
 
         <nav className="hidden items-center gap-6 md:flex">
-          {nav.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="text-sm font-medium text-white/80 hover:text-white"
-            >
-              {item.label}
-            </Link>
-          ))}
+          {nav.map((item) => {
+            const isServices = item.label.toLowerCase() === 'services'
+            const isAreas = item.label.toLowerCase() === 'service areas'
+
+            if (isServices && hasServicesDropdown) {
+              return (
+                <div
+                  key={item.label}
+                  className="relative"
+                  onMouseEnter={() => setServicesOpen(true)}
+                  onMouseLeave={() => setServicesOpen(false)}
+                >
+                  <button
+                    type="button"
+                    className="inline-flex items-center gap-1 text-sm font-medium text-white/80 hover:text-white"
+                    onClick={() => {
+                      setServicesOpen((v) => !v)
+                      setAreasOpen(false)
+                    }}
+                    aria-haspopup="menu"
+                    aria-expanded={servicesOpen}
+                  >
+                    {item.label}
+                    <ChevronDown className="h-4 w-4" />
+                  </button>
+
+                  <div
+                    className={cn(
+                      'absolute left-0 top-full mt-2 w-64 overflow-hidden rounded-xl border border-white/10 bg-white shadow-lg',
+                      servicesOpen ? 'block' : 'hidden',
+                    )}
+                    role="menu"
+                  >
+                    <div className="p-2">
+                      {services?.map((s) => (
+                        <Link
+                          key={s.href}
+                          href={s.href}
+                          className="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-900"
+                          onClick={() => setServicesOpen(false)}
+                        >
+                          {s.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )
+            }
+
+            if (isAreas && hasServiceAreasDropdown) {
+              return (
+                <div
+                  key={item.label}
+                  className="relative"
+                  onMouseEnter={() => setAreasOpen(true)}
+                  onMouseLeave={() => setAreasOpen(false)}
+                >
+                  <button
+                    type="button"
+                    className="inline-flex items-center gap-1 text-sm font-medium text-white/80 hover:text-white"
+                    onClick={() => {
+                      setAreasOpen((v) => !v)
+                      setServicesOpen(false)
+                    }}
+                    aria-haspopup="menu"
+                    aria-expanded={areasOpen}
+                  >
+                    {item.label}
+                    <ChevronDown className="h-4 w-4" />
+                  </button>
+
+                  <div
+                    className={cn(
+                      'absolute left-0 top-full mt-2 w-64 overflow-hidden rounded-xl border border-white/10 bg-white shadow-lg',
+                      areasOpen ? 'block' : 'hidden',
+                    )}
+                    role="menu"
+                  >
+                    <div className="max-h-80 overflow-auto p-2">
+                      {serviceAreas?.map((a) => (
+                        <Link
+                          key={a.href}
+                          href={a.href}
+                          className="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-900"
+                          onClick={() => setAreasOpen(false)}
+                        >
+                          {a.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )
+            }
+
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="text-sm font-medium text-white/80 hover:text-white"
+              >
+                {item.label}
+              </Link>
+            )
+          })}
         </nav>
 
         <div className="hidden md:flex">
@@ -62,7 +170,7 @@ export function AuroraHeader({ businessName, nav, phone, className }: AuroraHead
             asChild
             className="bg-red-600 text-white hover:bg-red-700"
           >
-            <a href={`tel:${phone.replace(/\D/g, '')}`} className="flex items-center gap-2">
+            <a href={`tel:${normalizedPhone}`} className="flex items-center gap-2">
               <Phone className="h-4 w-4" />
               {phoneDisplay}
             </a>
@@ -82,23 +190,88 @@ export function AuroraHeader({ businessName, nav, phone, className }: AuroraHead
       {open && (
         <div className="border-t border-white/10 bg-gradient-to-r from-red-950 via-red-900 to-stone-900 md:hidden">
           <div className="container mx-auto flex flex-col gap-2 px-4 py-4">
-            {nav.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="rounded-md px-3 py-2 text-sm font-medium text-white/80 hover:bg-white/10 hover:text-white"
-                onClick={() => setOpen(false)}
-              >
-                {item.label}
-              </Link>
-            ))}
+            {nav.map((item) => {
+              const isServices = item.label.toLowerCase() === 'services'
+              const isAreas = item.label.toLowerCase() === 'service areas'
+
+              if (isServices && hasServicesDropdown) {
+                return (
+                  <div key={item.label} className="rounded-md border border-white/10">
+                    <button
+                      type="button"
+                      className="flex w-full items-center justify-between px-3 py-2 text-left text-sm font-medium text-white/80"
+                      onClick={() => setMobileServicesOpen((v) => !v)}
+                      aria-expanded={mobileServicesOpen}
+                    >
+                      {item.label}
+                      <ChevronDown className={cn('h-4 w-4 transition-transform', mobileServicesOpen ? 'rotate-180' : '')} />
+                    </button>
+                    {mobileServicesOpen && (
+                      <div className="flex flex-col gap-1 border-t border-white/10 p-2">
+                        {services?.map((s) => (
+                          <Link
+                            key={s.href}
+                            href={s.href}
+                            className="rounded-md px-3 py-2 text-sm font-medium text-white/80 hover:bg-white/10 hover:text-white"
+                            onClick={() => setOpen(false)}
+                          >
+                            {s.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )
+              }
+
+              if (isAreas && hasServiceAreasDropdown) {
+                return (
+                  <div key={item.label} className="rounded-md border border-white/10">
+                    <button
+                      type="button"
+                      className="flex w-full items-center justify-between px-3 py-2 text-left text-sm font-medium text-white/80"
+                      onClick={() => setMobileAreasOpen((v) => !v)}
+                      aria-expanded={mobileAreasOpen}
+                    >
+                      {item.label}
+                      <ChevronDown className={cn('h-4 w-4 transition-transform', mobileAreasOpen ? 'rotate-180' : '')} />
+                    </button>
+                    {mobileAreasOpen && (
+                      <div className="flex max-h-60 flex-col gap-1 overflow-auto border-t border-white/10 p-2">
+                        {serviceAreas?.map((a) => (
+                          <Link
+                            key={a.href}
+                            href={a.href}
+                            className="rounded-md px-3 py-2 text-sm font-medium text-white/80 hover:bg-white/10 hover:text-white"
+                            onClick={() => setOpen(false)}
+                          >
+                            {a.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )
+              }
+
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="rounded-md px-3 py-2 text-sm font-medium text-white/80 hover:bg-white/10 hover:text-white"
+                  onClick={() => setOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              )
+            })}
 
             <Button
               asChild
               className="mt-2 bg-red-600 text-white hover:bg-red-700"
             >
               <a
-                href={`tel:${phone.replace(/\D/g, '')}`}
+                href={`tel:${normalizedPhone}`}
                 className="flex items-center justify-center gap-2"
               >
                 <Phone className="h-4 w-4" />

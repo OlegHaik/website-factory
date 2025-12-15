@@ -76,6 +76,11 @@ export default async function ServicePage({
   const phone = site.phone
   const phoneLabel = site.phoneDisplay || String(vars.phone || '')
 
+  const servicesDropdown = DEFAULT_SERVICES.map((s) => ({
+    label: s.title,
+    href: `/${s.slug}`,
+  }))
+
   const smsNumber = '+19492675767'
   const smsMessage = `Hello, I am visiting ${site.business_name} at ${site.resolvedDomain || 'connorwaterfirerestoration.homes'}. I am looking for a free estimate.`
   const smsHref = `sms:${smsNumber}?body=${encodeURIComponent(smsMessage)}`
@@ -86,6 +91,21 @@ export default async function ServicePage({
     href: `/service-area/${a.slug}`,
   }))
 
+  const serviceAreasDropdown = sidebarAreas
+  const preferredFooterCities = ['Jersey City', 'Hoboken', 'North Bergen', 'West New York', 'Edgewater']
+  const preferredFooterAreas = preferredFooterCities
+    .map((name) => sidebarAreas.find((a) => a.label.toLowerCase() === name.toLowerCase()))
+    .filter((x): x is { label: string; href: string } => Boolean(x))
+  const remainingFooterAreas = sidebarAreas.filter((a) => !preferredFooterAreas.some((p) => p.href === a.href))
+  const footerServiceAreas = [...preferredFooterAreas, ...remainingFooterAreas].slice(0, 5)
+  const footerFallbackAreas = [
+    { label: 'Jersey City', href: '/service-area/jersey-city' },
+    { label: 'Hoboken', href: '/service-area/hoboken' },
+    { label: 'North Bergen', href: '/service-area/north-bergen' },
+    { label: 'West New York', href: '/service-area/west-new-york' },
+    { label: 'Edgewater', href: '/service-area/edgewater' },
+  ]
+
   const sidebarServices = DEFAULT_SERVICES.filter((s) => s.slug !== service.slug).map((s) => ({
     label: s.title,
     href: `/${s.slug}`,
@@ -93,7 +113,13 @@ export default async function ServicePage({
 
   return (
     <div className="min-h-screen bg-white">
-      <AuroraHeader businessName={site.business_name} nav={nav} phone={phone} />
+      <AuroraHeader
+        businessName={site.business_name}
+        nav={nav}
+        phone={phone}
+        services={servicesDropdown}
+        serviceAreas={serviceAreasDropdown}
+      />
       <AuroraHero
         title={heroTitle}
         description={heroDesc}
@@ -141,7 +167,13 @@ export default async function ServicePage({
       </AuroraContentLayout>
 
       <AuroraFloatingCall phone={phone} />
-      <AuroraFooter businessName={site.business_name} city={site.city} state={site.state} socialLinks={site.socialLinks} />
+      <AuroraFooter
+        businessName={site.business_name}
+        city={site.city}
+        state={site.state}
+        serviceAreas={footerServiceAreas.length > 0 ? footerServiceAreas : footerFallbackAreas}
+        socialLinks={site.socialLinks}
+      />
     </div>
   )
 }

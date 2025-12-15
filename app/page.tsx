@@ -78,15 +78,41 @@ export default async function Home() {
     icon: s.icon,
   }))
 
+  const servicesDropdown = DEFAULT_SERVICES.map((s) => ({
+    label: s.title,
+    href: `/${s.slug}`,
+  }))
+
   const areaIndex = await getServiceAreaIndexForCurrentDomain()
   const areaLinks = areaIndex.map((a) => ({
     label: a.city,
     href: `/service-area/${a.slug}`,
   }))
 
+  const serviceAreasDropdown = areaLinks
+  const preferredFooterCities = ['Jersey City', 'Hoboken', 'North Bergen', 'West New York', 'Edgewater']
+  const preferredFooterAreas = preferredFooterCities
+    .map((name) => areaLinks.find((a) => a.label.toLowerCase() === name.toLowerCase()))
+    .filter((x): x is { label: string; href: string } => Boolean(x))
+  const remainingFooterAreas = areaLinks.filter((a) => !preferredFooterAreas.some((p) => p.href === a.href))
+  const footerServiceAreas = [...preferredFooterAreas, ...remainingFooterAreas].slice(0, 5)
+  const footerFallbackAreas = [
+    { label: 'Jersey City', href: '/service-area/jersey-city' },
+    { label: 'Hoboken', href: '/service-area/hoboken' },
+    { label: 'North Bergen', href: '/service-area/north-bergen' },
+    { label: 'West New York', href: '/service-area/west-new-york' },
+    { label: 'Edgewater', href: '/service-area/edgewater' },
+  ]
+
   return (
     <div className="min-h-screen bg-white">
-      <AuroraHeader businessName={site.business_name || 'Restoration'} nav={nav} phone={phone} />
+      <AuroraHeader
+        businessName={site.business_name || 'Restoration'}
+        nav={nav}
+        phone={phone}
+        services={servicesDropdown}
+        serviceAreas={serviceAreasDropdown}
+      />
       <AuroraHero
         title={heroTitle}
         description={heroDesc}
@@ -155,7 +181,13 @@ export default async function Home() {
       </div>
 
       <AuroraFloatingCall phone={phone} />
-      <AuroraFooter businessName={site.business_name} city={site.city} state={site.state} socialLinks={site.socialLinks} />
+      <AuroraFooter
+        businessName={site.business_name}
+        city={site.city}
+        state={site.state}
+        serviceAreas={footerServiceAreas.length > 0 ? footerServiceAreas : footerFallbackAreas}
+        socialLinks={site.socialLinks}
+      />
     </div>
   )
 }
