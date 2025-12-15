@@ -21,18 +21,20 @@ const servicesLinks = [
 export default function Footer({ businessName, phone, phoneDisplay, address, serviceAreas = [] }: FooterProps) {
   const cleanPhone = phone.replace(/\D/g, "")
   const displayPhone = phoneDisplay || phone
+  const firstWord = businessName.split(" ")[0] || businessName
+  const restWords = businessName.split(" ").slice(1).join(" ")
 
   return (
     <footer className="bg-slate-950 text-white pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-          <div>
+          <div className="min-w-0">
             <Link href="/" className="inline-flex items-baseline mb-4">
               <span
-                className="v0-logo-mark text-[18px] lg:text-[20px] tracking-tight font-black uppercase whitespace-nowrap"
+                className="v0-logo-mark text-[18px] lg:text-[20px] tracking-tight font-black uppercase max-w-full inline-flex flex-wrap"
               >
-                <span className="text-[#BA1C1C] text-[18px] lg:text-[20px]">{businessName.split(' ')[0]}</span>
-                <span className="text-white text-[18px] lg:text-[20px]">&nbsp;{businessName.split(' ').slice(1).join(' ')}</span>
+                <span className="text-[#BA1C1C]">{firstWord}</span>
+                {restWords ? <span className="text-white"> {restWords}</span> : null}
               </span>
             </Link>
             <p className="text-slate-300 leading-relaxed">
