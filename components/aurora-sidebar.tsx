@@ -16,7 +16,7 @@ export function AuroraSidebarCard({
 }) {
   return (
     <div className={cn('rounded-xl border border-slate-200 bg-white p-5 shadow-sm', className)}>
-      <h3 className="text-sm font-extrabold text-slate-900">{title}</h3>
+      <h3 className="text-base font-bold text-slate-900">{title}</h3>
       <div className="mt-3">{children}</div>
     </div>
   )
@@ -29,7 +29,7 @@ export function AuroraEmergencyCard({ title, blurb, phone }: { title: string; bl
       title={title}
       className="bg-gradient-to-r from-red-950 via-red-900 to-stone-900 text-white"
     >
-      <p className="text-xs leading-relaxed text-white/75">{blurb}</p>
+      <p className="text-sm leading-relaxed text-white/75">{blurb}</p>
       <Button
         asChild
         className="mt-4 w-full bg-red-600 text-white hover:bg-red-700"
@@ -50,7 +50,7 @@ export function AuroraLicensedCard() {
         <div className="flex h-10 w-10 items-center justify-center rounded-full bg-teal-50">
           <CheckCircle2 className="h-5 w-5 text-teal-500" />
         </div>
-        <p className="text-sm leading-relaxed text-slate-700">
+        <p className="text-base leading-relaxed text-slate-700">
           Fully licensed and insured restoration team. We follow industry best practices and safety protocols.
         </p>
       </div>
@@ -61,7 +61,7 @@ export function AuroraLicensedCard() {
 export function AuroraWhyChooseCard({ items }: { items: string[] }) {
   return (
     <AuroraSidebarCard title="Why Choose Us">
-      <ul className="space-y-2 text-sm text-slate-700">
+      <ul className="space-y-2 text-base text-slate-700">
         {items.map((item) => (
           <li key={item} className="flex gap-2">
             <span className="mt-1 inline-block h-2 w-2 rounded-full bg-red-600" />
@@ -84,7 +84,7 @@ export function AuroraLinksCard({ title, links }: { title: string; links: { labe
           {links.map((l) => (
             <div key={l.href} className="flex items-center gap-2">
               <span className="h-2 w-2 rounded-full bg-green-500" />
-              <Link href={l.href} className="text-sm text-white hover:text-white/70">
+              <Link href={l.href} className="text-base text-white hover:text-white/70">
                 {l.label}
               </Link>
             </div>
@@ -96,7 +96,7 @@ export function AuroraLinksCard({ title, links }: { title: string; links: { labe
 
   return (
     <AuroraSidebarCard title={title}>
-      <ul className="space-y-2 text-sm">
+      <ul className="space-y-2 text-base">
         {links.map((l) => (
           <li key={l.href}>
             <Link href={l.href} className="text-slate-700 hover:text-red-600">

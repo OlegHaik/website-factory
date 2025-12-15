@@ -60,8 +60,8 @@ export function AuroraFooter({
       <div className="container mx-auto px-4 py-10">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <div className="text-sm font-extrabold text-slate-900">{businessName}</div>
-            <p className="mt-3 text-sm leading-relaxed text-slate-600">
+            <div className="text-lg font-bold text-slate-900">{businessName}</div>
+            <p className="mt-3 text-base leading-relaxed text-slate-600">
               {city && state
                 ? `Serving ${city}, ${state} and nearby communities with 24/7 emergency response.`
                 : '24/7 emergency restoration services. Fast response. Certified technicians.'}
@@ -90,8 +90,8 @@ export function AuroraFooter({
           </div>
 
           <div>
-            <div className="text-sm font-extrabold text-slate-900">Quick Links</div>
-            <div className="mt-3 flex flex-col gap-2 text-sm">
+            <div className="text-lg font-bold text-slate-900">Quick Links</div>
+            <div className="mt-3 flex flex-col gap-2 text-base">
               {quickLinks.map((l) => (
                 <Link
                   key={l.href}
@@ -105,8 +105,8 @@ export function AuroraFooter({
           </div>
 
           <div>
-            <div className="text-sm font-extrabold text-slate-900">Services</div>
-            <div className="mt-3 flex flex-col gap-2 text-sm">
+            <div className="text-lg font-bold text-slate-900">Services</div>
+            <div className="mt-3 flex flex-col gap-2 text-base">
               {services.map((l) => (
                 <Link
                   key={l.href}
@@ -120,8 +120,8 @@ export function AuroraFooter({
           </div>
 
           <div>
-            <div className="text-sm font-extrabold text-slate-900">Contact</div>
-            <div className="mt-3 space-y-2 text-sm text-slate-700">
+            <div className="text-lg font-bold text-slate-900">Contact</div>
+            <div className="mt-3 space-y-2 text-base text-slate-700">
               {contact?.address && (
                 <div className="flex gap-2">
                   <MapPin className="mt-0.5 h-4 w-4 text-slate-500" />

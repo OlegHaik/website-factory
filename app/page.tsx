@@ -145,8 +145,8 @@ export default async function Home() {
             }
           >
             <div className="space-y-6">
-              <h2 className="text-xl font-extrabold text-slate-900">Areas We Serve</h2>
-              <p className="text-sm leading-relaxed text-slate-600">
+              <h2 className="text-2xl font-bold text-slate-900 md:text-3xl">Areas We Serve</h2>
+              <p className="text-base leading-relaxed text-slate-600 md:text-lg">
                 We provide 24/7 emergency restoration across {site.city}, {site.state} and nearby communities.
               </p>
 
@@ -155,7 +155,7 @@ export default async function Home() {
                   <a
                     key={a.href}
                     href={a.href}
-                    className="rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-800 hover:border-slate-300"
+                    className="rounded-lg border border-slate-200 bg-white px-4 py-3 text-base font-semibold text-slate-800 hover:border-slate-300"
                   >
                     {a.label}
                   </a>
@@ -169,13 +169,13 @@ export default async function Home() {
       <div id="contact" className="bg-slate-50 py-16">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-3xl rounded-2xl border border-slate-200 bg-white p-8 text-center shadow-sm">
-            <h2 className="text-2xl font-extrabold text-slate-900">Get Help Now</h2>
-            <p className="mt-2 text-sm text-slate-600">
+            <h2 className="text-3xl font-bold text-slate-900">Get Help Now</h2>
+            <p className="mt-2 text-base text-slate-600">
               24/7 emergency response. Fast arrival. Certified technicians.
             </p>
             <div className="mt-6 flex justify-center">
               <a
-                className="inline-flex items-center justify-center rounded-md bg-red-600 px-6 py-3 text-sm font-bold text-white hover:bg-red-700"
+                className="inline-flex items-center justify-center rounded-md bg-red-600 px-6 py-3 text-base font-bold text-white hover:bg-red-700"
                 href={`tel:${phone.replace(/\D/g, '')}`}
               >
                 Call {vars.phone || 'Now'}

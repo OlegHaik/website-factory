@@ -78,7 +78,7 @@ export function AuroraHeader({ businessName, nav, phone, services, serviceAreas,
                 >
                   <button
                     type="button"
-                    className="inline-flex items-center gap-1 text-sm font-medium text-white/80 hover:text-white"
+                    className="inline-flex items-center gap-1 text-base font-medium text-white/80 hover:text-white"
                     onClick={() => {
                       setServicesOpen((v) => !v)
                       setAreasOpen(false)
@@ -105,7 +105,7 @@ export function AuroraHeader({ businessName, nav, phone, services, serviceAreas,
                         <Link
                           key={s.href}
                           href={s.href}
-                          className="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-900"
+                          className="block rounded-lg px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-900"
                           onClick={() => setServicesOpen(false)}
                         >
                           {s.label}
@@ -128,7 +128,7 @@ export function AuroraHeader({ businessName, nav, phone, services, serviceAreas,
                 >
                   <button
                     type="button"
-                    className="inline-flex items-center gap-1 text-sm font-medium text-white/80 hover:text-white"
+                    className="inline-flex items-center gap-1 text-base font-medium text-white/80 hover:text-white"
                     onClick={() => {
                       setAreasOpen((v) => !v)
                       setServicesOpen(false)
@@ -155,7 +155,7 @@ export function AuroraHeader({ businessName, nav, phone, services, serviceAreas,
                         <Link
                           key={a.href}
                           href={a.href}
-                          className="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-900"
+                          className="block rounded-lg px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-900"
                           onClick={() => setAreasOpen(false)}
                         >
                           {a.label}
@@ -172,7 +172,7 @@ export function AuroraHeader({ businessName, nav, phone, services, serviceAreas,
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium text-white/80 hover:text-white"
+                className="text-base font-medium text-white/80 hover:text-white"
               >
                 {item.label}
               </Link>
@@ -184,7 +184,7 @@ export function AuroraHeader({ businessName, nav, phone, services, serviceAreas,
           <Button
             asChild
             size="lg"
-            className="rounded-lg bg-red-600 text-white shadow-none hover:bg-red-700"
+            className="rounded-lg bg-red-600 text-base font-semibold text-white shadow-none hover:bg-red-700"
           >
             <a href={`tel:${normalizedPhone}`} className="flex items-center gap-2">
               <Phone className="h-4 w-4" />

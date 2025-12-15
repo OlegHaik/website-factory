@@ -31,12 +31,12 @@ export function AuroraHero({ badge, title, description, primaryCta, secondaryCta
               </div>
             )}
 
-            <h1 className="text-balance text-4xl font-extrabold tracking-tight text-white md:text-6xl">
+            <h1 className="text-balance text-5xl font-bold leading-tight tracking-tight text-white md:text-6xl">
               {title}
             </h1>
 
             {description && (
-              <p className="mx-auto mt-4 max-w-2xl text-pretty text-sm leading-relaxed text-white/70 md:text-base">
+              <p className="mx-auto mt-4 max-w-2xl text-pretty text-lg leading-relaxed text-white/70 md:text-xl">
                 {description}
               </p>
             )}

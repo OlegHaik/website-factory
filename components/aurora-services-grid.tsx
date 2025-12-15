@@ -46,12 +46,12 @@ export function AuroraServicesGrid({ title = 'Our Services', items, className }:
                   <Icon className="h-6 w-6 text-teal-500" />
                 </div>
 
-                <h3 className="mt-4 text-base font-bold text-slate-900">{item.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate-600">{item.description}</p>
+                <h3 className="text-xl font-bold text-slate-900">{item.title}</h3>
+                <p className="mt-2 text-base leading-relaxed text-slate-600">{item.description}</p>
 
                 <Link
                   href={item.href}
-                  className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-teal-500 hover:text-teal-600"
+                  className="mt-4 inline-flex items-center gap-2 text-base font-semibold text-teal-500 hover:text-teal-600"
                 >
                   Learn More <ArrowRight className="h-4 w-4" />
                 </Link>

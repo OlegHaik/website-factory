@@ -148,13 +148,13 @@ export default async function ServicePage({
       >
         <div className="space-y-6">
           <div>
-            <h2 className="text-2xl font-extrabold text-slate-900">{service.title}</h2>
-            <p className="mt-2 text-slate-600">{service.shortDescription}</p>
+            <h2 className="text-2xl font-bold text-slate-900 md:text-3xl">{service.title}</h2>
+            <p className="mt-2 text-base text-slate-600 md:text-lg">{service.shortDescription}</p>
           </div>
 
           <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
-            <h3 className="text-lg font-extrabold text-slate-900">What’s Included</h3>
-            <ul className="mt-3 space-y-2 text-sm text-slate-700">
+            <h3 className="text-xl font-bold text-slate-900">What’s Included</h3>
+            <ul className="mt-3 space-y-2 text-base text-slate-700">
               <li>Rapid on-site assessment and damage documentation</li>
               <li>Professional-grade equipment and proven processes</li>
               <li>Clear communication and project updates</li>
@@ -163,8 +163,8 @@ export default async function ServicePage({
           </div>
 
           <div>
-            <h3 className="text-lg font-extrabold text-slate-900">Serving {site.city}</h3>
-            <p className="mt-2 text-sm text-slate-600">
+            <h3 className="text-xl font-bold text-slate-900">Serving {site.city}</h3>
+            <p className="mt-2 text-base text-slate-600 md:text-lg">
               We provide {service.title.toLowerCase()} for homes and businesses in {site.city}, {site.state}.
             </p>
           </div>

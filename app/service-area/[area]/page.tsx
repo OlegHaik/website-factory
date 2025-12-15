@@ -153,13 +153,13 @@ export default async function ServiceAreaPage({
       >
         <div className="space-y-6">
           <div>
-            <h2 className="text-2xl font-extrabold text-slate-900">Water Damage Restoration in {areaName}</h2>
-            <p className="mt-2 text-slate-600">Trusted local help for cleanup, drying, and repairs in {areaName}.</p>
+            <h2 className="text-2xl font-bold text-slate-900 md:text-3xl">Water Damage Restoration in {areaName}</h2>
+            <p className="mt-2 text-base text-slate-600 md:text-lg">Trusted local help for cleanup, drying, and repairs in {areaName}.</p>
           </div>
 
           <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
-            <h3 className="text-lg font-extrabold text-slate-900">How We Help</h3>
-            <ul className="mt-3 space-y-2 text-sm text-slate-700">
+            <h3 className="text-xl font-bold text-slate-900">How We Help</h3>
+            <ul className="mt-3 space-y-2 text-base text-slate-700">
               <li>Emergency response in {areaName} and surrounding areas</li>
               <li>Water extraction and structural drying</li>
               <li>Mold prevention and odor control</li>
@@ -169,8 +169,8 @@ export default async function ServiceAreaPage({
 
           {mainSite.city && mainSite.state && (
             <div>
-              <h3 className="text-lg font-extrabold text-slate-900">Serving Greater {mainSite.city}</h3>
-              <p className="mt-2 text-sm text-slate-600">
+              <h3 className="text-xl font-bold text-slate-900">Serving Greater {mainSite.city}</h3>
+              <p className="mt-2 text-base text-slate-600 md:text-lg">
                 We serve {areaName} and nearby communities across {mainSite.city}, {mainSite.state}.
               </p>
             </div>
