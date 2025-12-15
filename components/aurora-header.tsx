@@ -5,7 +5,6 @@ import Link from 'next/link'
 import { ChevronDown, Menu, Phone, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import { formatPhone } from '@/lib/format-phone'
 
 export interface AuroraNavItem {
   label: string
@@ -27,7 +26,14 @@ export function AuroraHeader({ businessName, nav, phone, services, serviceAreas,
   const [areasOpen, setAreasOpen] = useState(false)
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
   const [mobileAreasOpen, setMobileAreasOpen] = useState(false)
-  const phoneDisplay = useMemo(() => formatPhone(phone), [phone])
+  const phoneDisplay = useMemo(() => {
+    const cleaned = phone.replace(/\D/g, '')
+    const digits = cleaned.length === 11 && cleaned.startsWith('1') ? cleaned.slice(1) : cleaned
+    if (digits.length === 10) {
+      return `${digits.slice(0, 3)}-${digits.slice(3, 6)}-${digits.slice(6)}`
+    }
+    return phone
+  }, [phone])
   const [brandLead, brandRest] = useMemo(() => {
     const trimmed = businessName.trim()
     if (!trimmed) return ['Business', '']
@@ -44,14 +50,14 @@ export function AuroraHeader({ businessName, nav, phone, services, serviceAreas,
   return (
     <header
       className={cn(
-        'fixed inset-x-0 top-0 z-50 bg-gradient-to-r from-red-950 via-slate-950 to-blue-950',
+        'fixed inset-x-0 top-0 z-50 bg-gradient-to-r from-red-950/90 via-slate-950/90 to-blue-950/90 backdrop-blur-md',
         className,
       )}
     >
       <div className="container mx-auto flex h-20 items-center gap-4 px-4">
         <Link
           href="/"
-          className="shrink-0 text-sm font-extrabold italic tracking-tight text-red-500 md:text-base"
+          className="shrink-0 text-base font-extrabold italic tracking-tight text-red-500 md:text-lg"
         >
           {(brandRest ? `${brandLead} ${brandRest}` : brandLead).toUpperCase()}
         </Link>
@@ -168,7 +174,8 @@ export function AuroraHeader({ businessName, nav, phone, services, serviceAreas,
         <div className="hidden shrink-0 md:flex">
           <Button
             asChild
-            className="rounded-full bg-red-600 text-white shadow-none hover:bg-red-700"
+            size="lg"
+            className="rounded-lg bg-red-600 text-white shadow-none hover:bg-red-700"
           >
             <a href={`tel:${normalizedPhone}`} className="flex items-center gap-2">
               <Phone className="h-4 w-4" />
@@ -188,7 +195,7 @@ export function AuroraHeader({ businessName, nav, phone, services, serviceAreas,
       </div>
 
       {open && (
-        <div className="border-t border-white/10 bg-gradient-to-r from-red-950 via-slate-950 to-blue-950 md:hidden">
+        <div className="border-t border-white/10 bg-gradient-to-r from-red-950/90 via-slate-950/90 to-blue-950/90 backdrop-blur-md md:hidden">
           <div className="container mx-auto flex flex-col gap-2 px-4 py-4">
             {nav.map((item) => {
               const isServices = item.label.toLowerCase() === 'services'
@@ -268,7 +275,8 @@ export function AuroraHeader({ businessName, nav, phone, services, serviceAreas,
 
             <Button
               asChild
-              className="mt-2 rounded-full bg-red-600 text-white shadow-none hover:bg-red-700"
+              size="lg"
+              className="mt-2 rounded-lg bg-red-600 text-white shadow-none hover:bg-red-700"
             >
               <a
                 href={`tel:${normalizedPhone}`}

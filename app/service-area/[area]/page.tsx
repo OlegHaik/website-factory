@@ -85,6 +85,7 @@ export default async function ServiceAreaPage({
 
   const phone = areaSite.phone
   const phoneLabel = areaSite.phoneDisplay || String(vars.phone || '')
+  const phoneDisplay = areaSite.phoneDisplay || areaSite.phone
 
   const servicesDropdown = DEFAULT_SERVICES.map((s) => ({
     label: s.title,
@@ -127,14 +128,14 @@ export default async function ServiceAreaPage({
       <AuroraHeader
         businessName={areaSite.business_name}
         nav={nav}
-        phone={phone}
+        phone={phoneDisplay}
         services={servicesDropdown}
         serviceAreas={serviceAreasDropdown}
       />
       <AuroraHero
         title={heroTitle}
         description={heroDesc}
-        primaryCta={{ href: `tel:${phone.replace(/\D/g, '')}`, label: phoneLabel ? `Call ${phoneLabel}` : 'Call Now' }}
+        primaryCta={{ href: `tel:${phone.replace(/\D/g, '')}`, label: phoneLabel || 'Call Now' }}
         secondaryCta={{ href: smsHref, label: 'Chat With Us' }}
       />
 

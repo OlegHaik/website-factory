@@ -1,4 +1,4 @@
-import { MessageCircle, Phone } from 'lucide-react'
+import { MessageSquare, Phone } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 
@@ -45,7 +45,7 @@ export function AuroraHero({ badge, title, description, primaryCta, secondaryCta
               <Button
                 asChild
                 size="lg"
-                className="rounded-lg bg-red-600 text-white shadow-none hover:bg-red-700"
+                className="rounded-md bg-red-600 text-white shadow-none hover:bg-red-700"
               >
                 <a href={primaryCta.href} className="flex items-center gap-2">
                   <Phone className="h-4 w-4" />
@@ -58,10 +58,10 @@ export function AuroraHero({ badge, title, description, primaryCta, secondaryCta
                   asChild
                   variant="outline"
                   size="lg"
-                  className="rounded-lg border-white bg-white text-slate-900 shadow-none hover:bg-white/90 hover:text-slate-900"
+                  className="rounded-md border-slate-200 bg-white text-slate-900 shadow-none hover:bg-slate-50 hover:text-slate-900"
                 >
                   <a href={secondaryCta.href} className="flex items-center gap-2">
-                    <MessageCircle className="h-4 w-4" />
+                    <MessageSquare className="h-4 w-4" />
                     {secondaryCta.label}
                   </a>
                 </Button>

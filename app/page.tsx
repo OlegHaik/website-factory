@@ -65,6 +65,7 @@ export default async function Home() {
   ]
 
   const phone = site.phone
+  const phoneDisplay = site.phoneDisplay || site.phone
 
   const safeName = (site.business_name || '').replace(/&/g, 'and')
   const smsMessage = `Hello, I am visiting ${safeName} at ${site.resolvedDomain || 'our website'}. I am looking for a free estimate.`
@@ -111,14 +112,14 @@ export default async function Home() {
       <AuroraHeader
         businessName={site.business_name || 'Restoration'}
         nav={nav}
-        phone={phone}
+        phone={phoneDisplay}
         services={servicesDropdown}
         serviceAreas={serviceAreasDropdown}
       />
       <AuroraHero
         title={heroTitle}
         description={heroDesc}
-        primaryCta={{ href: `tel:${phone.replace(/\D/g, '')}`, label: vars.phone ? `Call ${vars.phone}` : 'Call Now' }}
+        primaryCta={{ href: `tel:${phone.replace(/\D/g, '')}`, label: phoneDisplay || 'Call Now' }}
         secondaryCta={{ href: smsHref, label: 'Chat With Us' }}
       />
 
