@@ -31,8 +31,8 @@ export default function Footer({ businessName, phone, phoneDisplay, address, ser
               <span
                 className="v0-logo-mark text-[18px] lg:text-[20px] tracking-tight font-black uppercase whitespace-nowrap"
               >
-                <span className="text-[#BA1C1C]">{businessName.split(' ')[0]}</span>
-                <span className="text-white">&nbsp;{businessName.split(' ').slice(1).join(' ')}</span>
+                <span className="text-[#BA1C1C] text-[18px] lg:text-[20px]">{businessName.split(' ')[0]}</span>
+                <span className="text-white text-[18px] lg:text-[20px]">&nbsp;{businessName.split(' ').slice(1).join(' ')}</span>
               </span>
             </Link>
             <p className="text-slate-300 leading-relaxed">
