@@ -35,19 +35,20 @@ export default async function TermsOfUsePage() {
     href: `/service-area/${a.slug}`,
   }))
 
-  const preferredFooterCities = ['Jersey City', 'Hoboken', 'North Bergen', 'West New York', 'Edgewater']
-  const preferredFooterAreas = preferredFooterCities
-    .map((name) => areaLinks.find((a) => a.label.toLowerCase() === name.toLowerCase()))
-    .filter((x): x is { label: string; href: string } => Boolean(x))
-  const remainingFooterAreas = areaLinks.filter((a) => !preferredFooterAreas.some((p) => p.href === a.href))
-  const footerServiceAreas = [...preferredFooterAreas, ...remainingFooterAreas].slice(0, 5)
-  const footerFallbackAreas = [
-    { label: 'Jersey City', href: '/service-area/jersey-city' },
-    { label: 'Hoboken', href: '/service-area/hoboken' },
-    { label: 'North Bergen', href: '/service-area/north-bergen' },
-    { label: 'West New York', href: '/service-area/west-new-york' },
-    { label: 'Edgewater', href: '/service-area/edgewater' },
+  const footerQuickLinks = [
+    { label: 'Home', href: '/' },
+    { label: 'Services', href: '/#services' },
+    { label: 'Service Areas', href: '/#areas' },
+    { label: 'Contact', href: '/#contact' },
   ]
+
+  const footerServices = servicesDropdown
+
+  const footerContact = {
+    address: site.address,
+    phone: site.phoneDisplay || site.phone,
+    email: site.email,
+  }
 
   const phoneDisplay = site.phoneDisplay || site.phone || ''
   const phoneDigits = (site.phone || '').replace(/\D/g, '')
@@ -66,47 +67,25 @@ export default async function TermsOfUsePage() {
         <div className="container mx-auto px-4 py-12">
           <div className="mx-auto max-w-3xl">
             <h1 className="text-3xl font-extrabold text-slate-900">Terms of Use</h1>
-            <p className="mt-2 text-sm text-slate-600">
-              These Terms of Use govern your access to and use of this website operated by {site.business_name}.
-            </p>
+            <p className="mt-2 text-sm text-slate-600">Last updated: December 2024</p>
 
             <div className="mt-8 space-y-8 text-sm leading-relaxed text-slate-700">
+              <p>By using this website, you agree to these terms.</p>
+
               <section>
-                <h2 className="text-lg font-extrabold text-slate-900">Acceptance of terms</h2>
-                <p className="mt-2">
-                  By accessing or using this website, you agree to these Terms. If you do not agree, do not use the
-                  website.
-                </p>
+                <h2 className="text-lg font-extrabold text-slate-900">Services</h2>
+                <p className="mt-2">We provide water damage, fire damage, and related restoration services.</p>
               </section>
 
               <section>
-                <h2 className="text-lg font-extrabold text-slate-900">Service description</h2>
-                <p className="mt-2">
-                  This website provides information about restoration services and ways to contact us. Any estimates or
-                  service details are provided for informational purposes and may change based on an on-site assessment.
-                </p>
+                <h2 className="text-lg font-extrabold text-slate-900">Limitation of Liability</h2>
+                <p className="mt-2">Our liability is limited to the services we provide.</p>
               </section>
 
               <section>
-                <h2 className="text-lg font-extrabold text-slate-900">User responsibilities</h2>
+                <h2 className="text-lg font-extrabold text-slate-900">Contact</h2>
                 <p className="mt-2">
-                  You agree not to misuse the website, attempt unauthorized access, or interfere with its operation. You
-                  are responsible for ensuring the information you provide to us is accurate.
-                </p>
-              </section>
-
-              <section>
-                <h2 className="text-lg font-extrabold text-slate-900">Limitation of liability</h2>
-                <p className="mt-2">
-                  To the maximum extent permitted by law, {site.business_name} is not liable for indirect, incidental,
-                  special, or consequential damages arising out of your use of the website.
-                </p>
-              </section>
-
-              <section>
-                <h2 className="text-lg font-extrabold text-slate-900">Contact information</h2>
-                <p className="mt-2">
-                  Questions about these Terms can be directed to {site.business_name}
+                  For questions, call us
                   {phoneDigits ? (
                     <>
                       {' '}at{' '}
@@ -129,7 +108,9 @@ export default async function TermsOfUsePage() {
         businessName={site.business_name}
         city={site.city}
         state={site.state}
-        serviceAreas={footerServiceAreas.length > 0 ? footerServiceAreas : footerFallbackAreas}
+        quickLinks={footerQuickLinks}
+        services={footerServices}
+        contact={footerContact}
         socialLinks={site.socialLinks}
       />
     </div>

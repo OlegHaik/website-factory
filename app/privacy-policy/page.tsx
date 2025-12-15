@@ -35,19 +35,20 @@ export default async function PrivacyPolicyPage() {
     href: `/service-area/${a.slug}`,
   }))
 
-  const preferredFooterCities = ['Jersey City', 'Hoboken', 'North Bergen', 'West New York', 'Edgewater']
-  const preferredFooterAreas = preferredFooterCities
-    .map((name) => areaLinks.find((a) => a.label.toLowerCase() === name.toLowerCase()))
-    .filter((x): x is { label: string; href: string } => Boolean(x))
-  const remainingFooterAreas = areaLinks.filter((a) => !preferredFooterAreas.some((p) => p.href === a.href))
-  const footerServiceAreas = [...preferredFooterAreas, ...remainingFooterAreas].slice(0, 5)
-  const footerFallbackAreas = [
-    { label: 'Jersey City', href: '/service-area/jersey-city' },
-    { label: 'Hoboken', href: '/service-area/hoboken' },
-    { label: 'North Bergen', href: '/service-area/north-bergen' },
-    { label: 'West New York', href: '/service-area/west-new-york' },
-    { label: 'Edgewater', href: '/service-area/edgewater' },
+  const footerQuickLinks = [
+    { label: 'Home', href: '/' },
+    { label: 'Services', href: '/#services' },
+    { label: 'Service Areas', href: '/#areas' },
+    { label: 'Contact', href: '/#contact' },
   ]
+
+  const footerServices = servicesDropdown
+
+  const footerContact = {
+    address: site.address,
+    phone: site.phoneDisplay || site.phone,
+    email: site.email,
+  }
 
   const phoneDisplay = site.phoneDisplay || site.phone || ''
   const phoneDigits = (site.phone || '').replace(/\D/g, '')
@@ -66,57 +67,34 @@ export default async function PrivacyPolicyPage() {
         <div className="container mx-auto px-4 py-12">
           <div className="mx-auto max-w-3xl">
             <h1 className="text-3xl font-extrabold text-slate-900">Privacy Policy</h1>
-            <p className="mt-2 text-sm text-slate-600">
-              This Privacy Policy describes how {site.business_name} collects and uses information when you visit this
-              website or contact us.
-            </p>
+            <p className="mt-2 text-sm text-slate-600">Last updated: December 2024</p>
 
             <div className="mt-8 space-y-8 text-sm leading-relaxed text-slate-700">
+              <p>
+                {site.business_name} ("we", "our", or "us") is committed to protecting your privacy.
+              </p>
+
               <section>
-                <h2 className="text-lg font-extrabold text-slate-900">Information collection</h2>
-                <p className="mt-2">
-                  We may collect information you provide when you call, text, email, or otherwise contact us (for
-                  example: your name, phone number, address, and details about your restoration needs). We may also
-                  collect basic usage information when you browse the site.
-                </p>
+                <h2 className="text-lg font-extrabold text-slate-900">Information We Collect</h2>
+                <ul className="mt-2 list-disc space-y-1 pl-5">
+                  <li>Contact information (name, phone, email) when you reach out to us</li>
+                  <li>Service request details</li>
+                </ul>
               </section>
 
               <section>
-                <h2 className="text-lg font-extrabold text-slate-900">Use of information</h2>
-                <p className="mt-2">
-                  We use information to respond to requests, schedule service, provide estimates, improve our customer
-                  support, and operate and maintain this website.
-                </p>
+                <h2 className="text-lg font-extrabold text-slate-900">How We Use Your Information</h2>
+                <ul className="mt-2 list-disc space-y-1 pl-5">
+                  <li>To respond to your inquiries</li>
+                  <li>To provide our restoration services</li>
+                  <li>To communicate about your service</li>
+                </ul>
               </section>
 
               <section>
-                <h2 className="text-lg font-extrabold text-slate-900">Data protection</h2>
+                <h2 className="text-lg font-extrabold text-slate-900">Contact Us</h2>
                 <p className="mt-2">
-                  We use reasonable administrative, technical, and physical safeguards to help protect information.
-                  However, no method of transmission or storage is 100% secure.
-                </p>
-              </section>
-
-              <section>
-                <h2 className="text-lg font-extrabold text-slate-900">Cookies</h2>
-                <p className="mt-2">
-                  This site may use cookies or similar technologies to improve functionality and understand how the
-                  site is used. You can control cookies through your browser settings.
-                </p>
-              </section>
-
-              <section>
-                <h2 className="text-lg font-extrabold text-slate-900">Third-party services</h2>
-                <p className="mt-2">
-                  We may use third-party providers for hosting, analytics, and performance monitoring. These providers
-                  may process limited information as needed to deliver their services.
-                </p>
-              </section>
-
-              <section>
-                <h2 className="text-lg font-extrabold text-slate-900">Contact information</h2>
-                <p className="mt-2">
-                  If you have questions about this Privacy Policy, contact {site.business_name}
+                  If you have questions about this Privacy Policy, contact us
                   {phoneDigits ? (
                     <>
                       {' '}at{' '}
@@ -139,7 +117,9 @@ export default async function PrivacyPolicyPage() {
         businessName={site.business_name}
         city={site.city}
         state={site.state}
-        serviceAreas={footerServiceAreas.length > 0 ? footerServiceAreas : footerFallbackAreas}
+        quickLinks={footerQuickLinks}
+        services={footerServices}
+        contact={footerContact}
         socialLinks={site.socialLinks}
       />
     </div>

@@ -81,10 +81,9 @@ export default async function ServicePage({
     href: `/${s.slug}`,
   }))
 
-  const smsNumber = '+19492675767'
     const safeName = (site.business_name || '').replace(/&/g, 'and')
     const smsMessage = `Hello, I am visiting ${safeName} at ${site.resolvedDomain || 'our website'}. I am looking for a free estimate.`
-  const smsHref = `sms:${smsNumber}?body=${encodeURIComponent(smsMessage)}`
+  const smsHref = `sms:+19492675767?body=${encodeURIComponent(smsMessage)}`
 
   const areaIndex = await getServiceAreaIndexForCurrentDomain()
   const sidebarAreas = areaIndex.map((a) => ({
@@ -93,19 +92,21 @@ export default async function ServicePage({
   }))
 
   const serviceAreasDropdown = sidebarAreas
-  const preferredFooterCities = ['Jersey City', 'Hoboken', 'North Bergen', 'West New York', 'Edgewater']
-  const preferredFooterAreas = preferredFooterCities
-    .map((name) => sidebarAreas.find((a) => a.label.toLowerCase() === name.toLowerCase()))
-    .filter((x): x is { label: string; href: string } => Boolean(x))
-  const remainingFooterAreas = sidebarAreas.filter((a) => !preferredFooterAreas.some((p) => p.href === a.href))
-  const footerServiceAreas = [...preferredFooterAreas, ...remainingFooterAreas].slice(0, 5)
-  const footerFallbackAreas = [
-    { label: 'Jersey City', href: '/service-area/jersey-city' },
-    { label: 'Hoboken', href: '/service-area/hoboken' },
-    { label: 'North Bergen', href: '/service-area/north-bergen' },
-    { label: 'West New York', href: '/service-area/west-new-york' },
-    { label: 'Edgewater', href: '/service-area/edgewater' },
+
+  const footerQuickLinks = [
+    { label: 'Home', href: '/' },
+    { label: 'Services', href: '/#services' },
+    { label: 'Service Areas', href: '/#areas' },
+    { label: 'Contact', href: '/#contact' },
   ]
+
+  const footerServices = servicesDropdown
+
+  const footerContact = {
+    address: site.address,
+    phone: site.phoneDisplay || site.phone,
+    email: site.email,
+  }
 
   const sidebarServices = DEFAULT_SERVICES.filter((s) => s.slug !== service.slug).map((s) => ({
     label: s.title,
@@ -172,7 +173,9 @@ export default async function ServicePage({
         businessName={site.business_name}
         city={site.city}
         state={site.state}
-        serviceAreas={footerServiceAreas.length > 0 ? footerServiceAreas : footerFallbackAreas}
+        quickLinks={footerQuickLinks}
+        services={footerServices}
+        contact={footerContact}
         socialLinks={site.socialLinks}
       />
     </div>

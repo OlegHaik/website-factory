@@ -26,21 +26,22 @@ export default async function LinksPage() {
     href: `/${s.slug}`,
   }))
 
-  const citations = await getCitationsForSite(site.id)
+  const citationsFromDb = await getCitationsForSite(site.id)
 
-  const placeholderLinks = [
+  const citations = citationsFromDb.length > 0 ? citationsFromDb : [
+    { label: 'Google Business', href: site.google_business_url || '#' },
+    { label: 'Yelp', href: 'https://www.yelp.com/' },
+    { label: 'Facebook', href: site.facebook_url || '#' },
     { label: 'Hotfrog', href: 'https://www.hotfrog.com/' },
     { label: 'Brownbook', href: 'https://www.brownbook.net/' },
     { label: 'EZ Local', href: 'https://ezlocal.com/' },
     { label: 'City Squares', href: 'https://citysquares.com/' },
-    { label: 'Yelp', href: 'https://www.yelp.com/' },
-    { label: 'Google Business', href: site.google_business_url || 'https://www.google.com/business/' },
     { label: 'Find Us Here', href: 'https://www.find-us-here.com/' },
     { label: 'N49', href: 'https://www.n49.com/' },
     { label: 'Bizidex', href: 'https://www.bizidex.com/' },
+    { label: 'Local Business Nation', href: 'https://www.localbusinessnation.com/' },
+    { label: 'Cataloxy', href: 'https://www.cataloxy.us/' },
   ]
-
-  const links = citations.length > 0 ? citations : placeholderLinks
 
   const areaIndex = await getServiceAreaIndexForCurrentDomain()
   const areaLinks = areaIndex.map((a) => ({
@@ -49,19 +50,20 @@ export default async function LinksPage() {
   }))
 
   const serviceAreasDropdown = areaLinks
-  const preferredFooterCities = ['Jersey City', 'Hoboken', 'North Bergen', 'West New York', 'Edgewater']
-  const preferredFooterAreas = preferredFooterCities
-    .map((name) => areaLinks.find((a) => a.label.toLowerCase() === name.toLowerCase()))
-    .filter((x): x is { label: string; href: string } => Boolean(x))
-  const remainingFooterAreas = areaLinks.filter((a) => !preferredFooterAreas.some((p) => p.href === a.href))
-  const footerServiceAreas = [...preferredFooterAreas, ...remainingFooterAreas].slice(0, 5)
-  const footerFallbackAreas = [
-    { label: 'Jersey City', href: '/service-area/jersey-city' },
-    { label: 'Hoboken', href: '/service-area/hoboken' },
-    { label: 'North Bergen', href: '/service-area/north-bergen' },
-    { label: 'West New York', href: '/service-area/west-new-york' },
-    { label: 'Edgewater', href: '/service-area/edgewater' },
+  const footerQuickLinks = [
+    { label: 'Home', href: '/' },
+    { label: 'Services', href: '/#services' },
+    { label: 'Service Areas', href: '/#areas' },
+    { label: 'Contact', href: '/#contact' },
   ]
+
+  const footerServices = servicesDropdown
+
+  const footerContact = {
+    address: site.address,
+    phone: site.phoneDisplay || site.phone,
+    email: site.email,
+  }
 
   return (
     <div className="min-h-screen bg-white">
@@ -80,7 +82,7 @@ export default async function LinksPage() {
             <p className="mt-2 text-sm text-slate-600">Business directory links and citations for {site.business_name}.</p>
 
             <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {links.map((l) => (
+              {citations.map((l) => (
                 <Card key={l.href} className="border-slate-200 py-0">
                   <a
                     href={l.href}
@@ -109,7 +111,9 @@ export default async function LinksPage() {
         businessName={site.business_name}
         city={site.city}
         state={site.state}
-        serviceAreas={footerServiceAreas.length > 0 ? footerServiceAreas : footerFallbackAreas}
+        quickLinks={footerQuickLinks}
+        services={footerServices}
+        contact={footerContact}
         socialLinks={site.socialLinks}
       />
     </div>
