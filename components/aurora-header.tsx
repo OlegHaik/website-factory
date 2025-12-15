@@ -92,12 +92,15 @@ export function AuroraHeader({ businessName, nav, phone, services, serviceAreas,
 
                   <div
                     className={cn(
-                      'absolute left-0 top-full mt-2 w-64 overflow-hidden rounded-xl border border-white/10 bg-white shadow-lg',
+                      'absolute left-0 top-full z-50 w-64 pt-2',
                       servicesOpen ? 'block' : 'hidden',
                     )}
                     role="menu"
                   >
-                    <div className="p-2">
+                    {/* Hover bridge: prevents gap between trigger and menu */}
+                    <div className="absolute -top-2 left-0 right-0 h-2" />
+                    <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-lg">
+                      <div className="p-2">
                       {services?.map((s) => (
                         <Link
                           key={s.href}
@@ -108,6 +111,7 @@ export function AuroraHeader({ businessName, nav, phone, services, serviceAreas,
                           {s.label}
                         </Link>
                       ))}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -138,12 +142,15 @@ export function AuroraHeader({ businessName, nav, phone, services, serviceAreas,
 
                   <div
                     className={cn(
-                      'absolute left-0 top-full mt-2 w-64 overflow-hidden rounded-xl border border-white/10 bg-white shadow-lg',
+                      'absolute left-0 top-full z-50 w-64 pt-2',
                       areasOpen ? 'block' : 'hidden',
                     )}
                     role="menu"
                   >
-                    <div className="max-h-80 overflow-auto p-2">
+                    {/* Hover bridge: prevents gap between trigger and menu */}
+                    <div className="absolute -top-2 left-0 right-0 h-2" />
+                    <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-lg">
+                      <div className="max-h-80 overflow-auto p-2">
                       {serviceAreas?.map((a) => (
                         <Link
                           key={a.href}
@@ -154,6 +161,7 @@ export function AuroraHeader({ businessName, nav, phone, services, serviceAreas,
                           {a.label}
                         </Link>
                       ))}
+                      </div>
                     </div>
                   </div>
                 </div>
