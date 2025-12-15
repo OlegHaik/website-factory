@@ -27,7 +27,19 @@ export default function Footer({ businessName, phone, phoneDisplay, address, ser
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div>
-            <h3 className="text-2xl font-bold mb-4">{businessName}</h3>
+            <Link href="/" className="inline-flex items-baseline mb-4">
+              <span
+                className="text-[22px] lg:text-[28px] tracking-tight font-black uppercase whitespace-nowrap"
+                style={{
+                  fontFamily: "'Cal Sans', 'Cabinet Grotesk', system-ui, sans-serif",
+                  fontStyle: "italic",
+                  transform: "skewX(-6deg)",
+                }}
+              >
+                <span className="text-[#BA1C1C]">{businessName.split(' ')[0]}</span>
+                <span className="text-white">&nbsp;{businessName.split(' ').slice(1).join(' ')}</span>
+              </span>
+            </Link>
             <p className="text-slate-300 leading-relaxed">
               24/7 emergency restoration services. Fast response, expert technicians, and complete property restoration.
             </p>

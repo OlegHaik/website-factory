@@ -48,14 +48,15 @@ export function Header({ businessName, phone, phoneDisplay, serviceAreas = [] }:
           <div className="flex items-center h-20 lg:h-24">
             <Link href="/" className="flex items-baseline flex-shrink-0 min-w-fit pr-6">
               <span
-                className="text-[22px] lg:text-[28px] tracking-tight font-black uppercase whitespace-nowrap text-white"
+                className="text-[22px] lg:text-[28px] tracking-tight font-black uppercase whitespace-nowrap"
                 style={{
                   fontFamily: "'Cal Sans', 'Cabinet Grotesk', system-ui, sans-serif",
                   fontStyle: "italic",
                   transform: "skewX(-6deg)",
                 }}
               >
-                {businessName}
+                <span className="text-[#BA1C1C]">{businessName.split(' ')[0]}</span>
+                <span className="text-white">&nbsp;{businessName.split(' ').slice(1).join(' ')}</span>
               </span>
             </Link>
 
