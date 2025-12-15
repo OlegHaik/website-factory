@@ -35,19 +35,13 @@ export default async function TermsOfUsePage() {
     href: `/service-area/${a.slug}`,
   }))
 
-  const footerQuickLinks = [
-    { label: 'Home', href: '/' },
-    { label: 'Services', href: '/#services' },
-    { label: 'Service Areas', href: '/#areas' },
-    { label: 'Contact', href: '/#contact' },
-  ]
+  const footerServiceAreas = areaLinks
 
   const footerServices = servicesDropdown
 
   const footerContact = {
     address: site.address,
     phone: site.phoneDisplay || site.phone,
-    email: site.email,
   }
 
   const phoneDisplay = site.phoneDisplay || site.phone || ''
@@ -106,12 +100,9 @@ export default async function TermsOfUsePage() {
 
       <AuroraFooter
         businessName={site.business_name}
-        city={site.city}
-        state={site.state}
-        quickLinks={footerQuickLinks}
         services={footerServices}
+        serviceAreas={footerServiceAreas}
         contact={footerContact}
-        socialLinks={site.socialLinks}
       />
     </div>
   )

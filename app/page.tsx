@@ -12,11 +12,13 @@ import {
 import { AuroraHeader } from '@/components/aurora-header'
 import { AuroraHero } from '@/components/aurora-hero'
 import { AuroraServicesGrid } from '@/components/aurora-services-grid'
-import { AuroraContentLayout } from '@/components/aurora-content-layout'
-import { AuroraEmergencyCard, AuroraLicensedCard, AuroraLinksCard, AuroraWhyChooseCard } from '@/components/aurora-sidebar'
+import { ContentSection } from '@/components/content-section'
+import { FaqSection } from '@/components/faq-section'
+import { TestimonialsSection } from '@/components/testimonials-section'
 import { AuroraFloatingCall } from '@/components/aurora-floating-call'
 import { AuroraFooter } from '@/components/aurora-footer'
 import { formatPhoneDashed } from '@/lib/format-phone'
+import { MessageSquare, Phone } from 'lucide-react'
 
 export const dynamic = 'force-dynamic'
 
@@ -66,7 +68,7 @@ export default async function Home() {
   ]
 
   const phone = site.phone
-  const phoneDisplay = site.phoneDisplay || site.phone
+  const phoneDisplay = site.phoneDisplay || formatPhoneDashed(site.phone)
 
   const safeName = (site.business_name || '').replace(/&/g, 'and')
   const smsMessage = `Hello, I am visiting ${safeName} at ${site.resolvedDomain || 'our website'}. I am looking for a free estimate.`
@@ -93,19 +95,12 @@ export default async function Home() {
 
   const serviceAreasDropdown = areaLinks
 
-  const footerQuickLinks = [
-    { label: 'Home', href: '/' },
-    { label: 'Services', href: '/#services' },
-    { label: 'Service Areas', href: '/#areas' },
-    { label: 'Contact', href: '/#contact' },
-  ]
-
   const footerServices = servicesDropdown
+  const footerServiceAreas = areaLinks
 
   const footerContact = {
     address: site.address,
     phone: site.phoneDisplay || formatPhoneDashed(site.phone),
-    email: site.email,
   }
 
   return (
@@ -128,72 +123,48 @@ export default async function Home() {
         <AuroraServicesGrid items={servicesForHome} />
       </div>
 
-      <div id="areas">
-        {areaLinks.length > 0 && (
-          <AuroraContentLayout
-            sidebar={
-              <>
-                <AuroraEmergencyCard
-                  title="Need Emergency Service?"
-                  blurb="Our team responds within 60 minutes, 24/7."
-                  phone={phone}
-                />
-                <AuroraWhyChooseCard items={DEFAULT_WHY_CHOOSE} />
-                <AuroraLinksCard title="Service Areas" links={areaLinks} />
-                <AuroraLicensedCard />
-              </>
-            }
-          >
-            <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-slate-900 md:text-3xl">Areas We Serve</h2>
-              <p className="text-base leading-relaxed text-slate-600 md:text-lg">
-                We provide 24/7 emergency restoration across {site.city}, {site.state} and nearby communities.
-              </p>
+      <ContentSection
+        city={site.city}
+        state={site.state}
+        businessName={site.business_name}
+        serviceAreas={areaIndex.map((a) => ({ slug: a.slug, city: a.city }))}
+      />
 
-              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-                {areaLinks.map((a) => (
-                  <a
-                    key={a.href}
-                    href={a.href}
-                    className="rounded-lg border border-slate-200 bg-white px-4 py-3 text-base font-semibold text-slate-800 hover:border-slate-300"
-                  >
-                    {a.label}
-                  </a>
-                ))}
-              </div>
-            </div>
-          </AuroraContentLayout>
-        )}
-      </div>
+      <FaqSection />
 
-      <div id="contact" className="bg-slate-50 py-16">
+      <TestimonialsSection businessName={site.business_name} city={site.city} />
+
+      <section id="contact" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="mx-auto max-w-3xl rounded-2xl border border-slate-200 bg-white p-8 text-center shadow-sm">
-            <h2 className="text-3xl font-bold text-slate-900">Get Help Now</h2>
-            <p className="mt-2 text-base text-slate-600">
-              24/7 emergency response. Fast arrival. Certified technicians.
-            </p>
-            <div className="mt-6 flex justify-center">
+          <div className="max-w-2xl mx-auto text-center">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Ready to Restore Your Property?</h2>
+            <p className="text-gray-600 mb-8">Our {site.city} team is on standby 24/7. Don't let the damage get worse.</p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                className="inline-flex items-center justify-center rounded-md bg-red-600 px-6 py-3 text-base font-bold text-white hover:bg-red-700"
                 href={`tel:${phone.replace(/\D/g, '')}`}
+                className="inline-flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold"
               >
-                Call {vars.phone || 'Now'}
+                <Phone className="w-5 h-5" />
+                {phoneDisplay}
+              </a>
+              <a
+                href={smsHref}
+                className="inline-flex items-center justify-center gap-2 bg-white border border-gray-300 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-50"
+              >
+                <MessageSquare className="w-5 h-5" />
+                Chat With Us
               </a>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       <AuroraFloatingCall phone={phone} />
       <AuroraFooter
         businessName={site.business_name}
-        city={site.city}
-        state={site.state}
-        quickLinks={footerQuickLinks}
         services={footerServices}
+        serviceAreas={footerServiceAreas}
         contact={footerContact}
-        socialLinks={site.socialLinks}
       />
     </div>
   )

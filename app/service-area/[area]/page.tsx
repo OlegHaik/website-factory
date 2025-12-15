@@ -109,19 +109,12 @@ export default async function ServiceAreaPage({
 
   const serviceAreasDropdown = [{ label: areaSite.city, href: `/service-area/${areaSlug}` }, ...sidebarAreas]
 
-  const footerQuickLinks = [
-    { label: 'Home', href: '/' },
-    { label: 'Services', href: '/#services' },
-    { label: 'Service Areas', href: '/#areas' },
-    { label: 'Contact', href: '/#contact' },
-  ]
 
   const footerServices = servicesDropdown
 
   const footerContact = {
     address: areaSite.address,
     phone: areaSite.phoneDisplay || formatPhoneDashed(areaSite.phone),
-    email: areaSite.email,
   }
 
   return (
@@ -181,12 +174,9 @@ export default async function ServiceAreaPage({
       <AuroraFloatingCall phone={phone} />
       <AuroraFooter
         businessName={areaSite.business_name}
-        city={areaSite.city}
-        state={areaSite.state}
-        quickLinks={footerQuickLinks}
         services={footerServices}
         contact={footerContact}
-        socialLinks={areaSite.socialLinks}
+          serviceAreas={serviceAreasDropdown}
       />
     </div>
   )

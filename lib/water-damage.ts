@@ -14,7 +14,7 @@ export const DEFAULT_SERVICES: ServiceDefinition[] = [
     slug: 'water-damage-restoration',
     title: 'Water Damage Restoration',
     shortDescription:
-      'Emergency water extraction and rapid drying services. We use industry-leading equipment to restore your property fast.',
+      'Emergency water extraction and rapid drying services. We use hospital-grade dehumidifiers and thermal imaging to ensure zero hidden moisture remains in your property.',
     icon: 'water',
   },
   {
@@ -22,7 +22,7 @@ export const DEFAULT_SERVICES: ServiceDefinition[] = [
     slug: 'fire-smoke-damage',
     title: 'Fire & Smoke Damage',
     shortDescription:
-      'Comprehensive fire and smoke damage recovery. We handle soot removal, odor control, and structural cleanup.',
+      'Comprehensive fire and smoke damage recovery. Our team handles soot removal, structural cleaning, and complete deodorization to return your property to pre-loss condition.',
     icon: 'fire',
   },
   {
@@ -30,7 +30,7 @@ export const DEFAULT_SERVICES: ServiceDefinition[] = [
     slug: 'mold-remediation',
     title: 'Mold Remediation',
     shortDescription:
-      'Certified mold inspection, containment, and removal. We follow strict protocols to improve indoor air quality.',
+      'Certified mold inspection, containment, and removal. We follow strict IICRC protocols to safely eliminate black mold and restore healthy indoor air quality.',
     icon: 'mold',
   },
   {
@@ -38,7 +38,7 @@ export const DEFAULT_SERVICES: ServiceDefinition[] = [
     slug: 'biohazard-cleanup',
     title: 'Biohazard Cleanup',
     shortDescription:
-      'Professional biohazard remediation for affected spaces. Safe handling and thorough sanitization.',
+      'Professional biohazard remediation for crime scenes, trauma, and hazardous materials. Our certified team follows OSHA protocols to safely decontaminate affected areas.',
     icon: 'biohazard',
   },
   {
@@ -46,7 +46,7 @@ export const DEFAULT_SERVICES: ServiceDefinition[] = [
     slug: 'burst-pipe-repair',
     title: 'Burst Pipe Repair',
     shortDescription:
-      '24/7 response for burst pipes and plumbing emergencies. Stop the leak and begin restoration immediately.',
+      '24/7 Response for frozen or burst plumbing pipes. We stop the water source immediately, repair the plumbing, and handle the full water damage cleanup process.',
     icon: 'burst-pipe',
   },
   {
@@ -54,7 +54,7 @@ export const DEFAULT_SERVICES: ServiceDefinition[] = [
     slug: 'sewage-cleanup',
     title: 'Sewage Cleanup',
     shortDescription:
-      'Emergency sewage and black water cleanup. We safely remove contamination and restore affected areas.',
+      'Emergency sewage and black water cleanup services. We safely remove contaminated water, sanitize affected areas, and restore your property to safe living conditions.',
     icon: 'sewage',
   },
 ]

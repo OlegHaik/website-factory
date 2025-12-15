@@ -95,19 +95,16 @@ export default async function ServicePage({
 
   const serviceAreasDropdown = sidebarAreas
 
-  const footerQuickLinks = [
-    { label: 'Home', href: '/' },
-    { label: 'Services', href: '/#services' },
-    { label: 'Service Areas', href: '/#areas' },
-    { label: 'Contact', href: '/#contact' },
-  ]
+    const footerServiceAreas = areaIndex.map((a) => ({
+      label: a.city,
+      href: `/service-area/${a.slug}`,
+    }))
 
   const footerServices = servicesDropdown
 
   const footerContact = {
     address: site.address,
     phone: site.phoneDisplay || formatPhoneDashed(site.phone),
-    email: site.email,
   }
 
   const sidebarServices = DEFAULT_SERVICES.filter((s) => s.slug !== service.slug).map((s) => ({
@@ -174,12 +171,9 @@ export default async function ServicePage({
       <AuroraFloatingCall phone={phone} />
       <AuroraFooter
         businessName={site.business_name}
-        city={site.city}
-        state={site.state}
-        quickLinks={footerQuickLinks}
         services={footerServices}
         contact={footerContact}
-        socialLinks={site.socialLinks}
+        serviceAreas={footerServiceAreas}
       />
     </div>
   )

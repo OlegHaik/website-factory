@@ -50,19 +50,12 @@ export default async function LinksPage() {
   }))
 
   const serviceAreasDropdown = areaLinks
-  const footerQuickLinks = [
-    { label: 'Home', href: '/' },
-    { label: 'Services', href: '/#services' },
-    { label: 'Service Areas', href: '/#areas' },
-    { label: 'Contact', href: '/#contact' },
-  ]
-
   const footerServices = servicesDropdown
+  const footerServiceAreas = areaLinks
 
   const footerContact = {
     address: site.address,
     phone: site.phoneDisplay || site.phone,
-    email: site.email,
   }
 
   return (
@@ -109,12 +102,9 @@ export default async function LinksPage() {
 
       <AuroraFooter
         businessName={site.business_name}
-        city={site.city}
-        state={site.state}
-        quickLinks={footerQuickLinks}
         services={footerServices}
+        serviceAreas={footerServiceAreas}
         contact={footerContact}
-        socialLinks={site.socialLinks}
       />
     </div>
   )
