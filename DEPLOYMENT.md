@@ -11,10 +11,14 @@ This guide shows how to deploy this Next.js app to Vercel safely (no secrets com
 ## Step 1: Supabase project + data
 
 1. In Supabase, create/verify a table named `sites`.
-2. Ensure there is at least one row with:
-   - `slug` (e.g. `denver-pros`)
+2. Ensure there is at least one “homepage” row per domain with:
+   - `slug` = `NULL` or empty string (`''`) or `home`
    - `business_name`, `phone`, `city`, `state`
    - `domain_url` (the domain you will attach in Vercel, e.g. `example.com`)
+
+3. For service-area pages, add additional rows per city/service area:
+   - `slug` = the area slug used in `/service-area/<area>` (e.g. `irvine-ca`)
+   - `domain_url` must match the same domain
 
 Note: this app resolves the current site by request domain and looks up `sites.domain_url`.
 
@@ -62,6 +66,10 @@ Click **"Deploy"** and wait 2-3 minutes. Vercel will:
 3. Ensure the domain exists in `sites.domain_url`
 4. Visit the domain root `/` — it should render the correct site
 
+Optional smoke checks:
+- Visit a service page: `/<service>`
+- Visit a service-area page: `/service-area/<area>`
+
 ## Step 4: Connect Custom Domain (Optional)
 
 If you have a custom domain:
@@ -90,7 +98,17 @@ Each location will automatically get:
 
 ### 404 on location pages
 - For domain-based routing: verify the current domain matches `sites.domain_url`
-- For slug-based routing: ensure the `slug` in the URL matches `sites.slug`
+- For service pages: ensure the service slug is one of the supported routes (see the service slug list in code)
+- For service-area pages: ensure there is a `sites` row with `slug = <area>` for that `domain_url`
+
+### Vercel deployment canceled ("unverified commit")
+If Vercel shows: “The Deployment was canceled because it was created with an unverified commit”, your Vercel project likely has **Require Verified Commits** enabled.
+
+Fix options:
+- Disable it: Vercel Project → Settings → Git → turn off **Require Verified Commits**.
+- Or sign commits so GitHub marks them **Verified** (GPG or S/MIME), then push a new commit.
+
+Also ensure the commit author email is linked to the GitHub account (often easiest is a GitHub `noreply` email), otherwise Vercel/GitHub checks may fail.
 
 ### Changes not showing
 - Redeploy from Vercel dashboard
@@ -98,7 +116,7 @@ Each location will automatically get:
 
 ## Success!
 
-Your roofing website is now live! 🎉
+Your website is now live.
 
 You can:
 - Add unlimited locations via Supabase
