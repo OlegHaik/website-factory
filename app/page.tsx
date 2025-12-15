@@ -66,6 +66,10 @@ export default async function Home() {
 
   const phone = site.phone
 
+  const smsNumber = '+19492675767'
+  const smsMessage = `Hello, I am visiting ${site.business_name} at ${site.resolvedDomain || 'connorwaterfirerestoration.homes'}. I am looking for a free estimate.`
+  const smsHref = `sms:${smsNumber}?body=${encodeURIComponent(smsMessage)}`
+
   const servicesForHome = DEFAULT_SERVICES.map((s) => ({
     key: s.key,
     title: s.title,
@@ -87,7 +91,7 @@ export default async function Home() {
         title={heroTitle}
         description={heroDesc}
         primaryCta={{ href: `tel:${phone.replace(/\D/g, '')}`, label: vars.phone ? `Call ${vars.phone}` : 'Call Now' }}
-        secondaryCta={{ href: '#contact', label: 'Chat With Us' }}
+        secondaryCta={{ href: smsHref, label: 'Chat With Us' }}
       />
 
       <div id="services">

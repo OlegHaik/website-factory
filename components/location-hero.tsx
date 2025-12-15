@@ -34,7 +34,7 @@ export function LocationHero({ locationData }: LocationHeroProps) {
           <div className="mx-auto max-w-5xl text-center">
             {/* Location badge */}
             <div className="mb-6 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
-              <MapPin className="h-4 w-4 text-orange-400" />
+              <MapPin className="h-4 w-4 text-red-400" />
               <span className="text-sm font-semibold uppercase tracking-wide text-white/90">
                 Serving {loc}
               </span>
@@ -47,7 +47,7 @@ export function LocationHero({ locationData }: LocationHeroProps) {
 
             {/* Subheadline */}
             {subheadline && (
-              <p className="mb-4 text-xl md:text-2xl lg:text-3xl font-bold text-orange-400">
+              <p className="mb-4 text-xl md:text-2xl lg:text-3xl font-bold text-red-400">
                 {subheadline}
               </p>
             )}
@@ -59,7 +59,7 @@ export function LocationHero({ locationData }: LocationHeroProps) {
 
             {/* Two-button CTA layout */}
             <div className="mb-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-              {/* Primary solid orange button */}
+              {/* Primary solid brand button */}
               <Button
                 size="lg"
                 className={`gap-2 ${colorTheme.buttonBg} ${colorTheme.buttonHover} text-white font-bold text-lg px-8 py-6 rounded-lg shadow-xl transition-all duration-200`}
@@ -87,7 +87,7 @@ export function LocationHero({ locationData }: LocationHeroProps) {
             {/* Address and service info */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-gray-400">
               <div className="flex items-center gap-2">
-                <MapPin className="h-4 w-4 text-orange-400" />
+                <MapPin className="h-4 w-4 text-red-400" />
                 <span>
                   {address}, {city}, {state} {postal_code}
                 </span>

@@ -22,16 +22,16 @@ export const dynamic = 'force-dynamic'
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ city: string }>
+  params: Promise<{ area: string }>
 }): Promise<Metadata> {
-  const { city: citySlug } = await params
+  const { area: areaSlug } = await params
   const { site: mainSite, domain } = await resolveSiteContext()
 
   if (!domain) {
     return { title: 'Not Found', description: 'The requested page could not be found.' }
   }
 
-  const areaSite = await getSiteByDomainAndSlug(domain, citySlug)
+  const areaSite = await getSiteByDomainAndSlug(domain, areaSlug)
   if (!mainSite || !areaSite) {
     return { title: 'Not Found', description: 'The requested page could not be found.' }
   }
@@ -49,13 +49,13 @@ export async function generateMetadata({
 export default async function ServiceAreaPage({
   params,
 }: {
-  params: Promise<{ city: string }>
+  params: Promise<{ area: string }>
 }) {
-  const { city: citySlug } = await params
+  const { area: areaSlug } = await params
   const { site: mainSite, domain } = await resolveSiteContext()
   if (!mainSite || !domain) notFound()
 
-  const areaSite = await getSiteByDomainAndSlug(domain, citySlug)
+  const areaSite = await getSiteByDomainAndSlug(domain, areaSlug)
   if (!areaSite) notFound()
 
   if (!areaSite.business_name) throw new Error('Site is missing required field: business_name')
@@ -73,8 +73,8 @@ export default async function ServiceAreaPage({
     city2: mainSite.city || '',
   }
 
-  const heroTitle = renderSpintextStable(AREA_HERO_TITLE, vars, `${seedPrefix}:service-area:${citySlug}:title`)
-  const heroDesc = renderSpintextStable(AREA_HERO_DESCRIPTION, vars, `${seedPrefix}:service-area:${citySlug}:desc`)
+  const heroTitle = renderSpintextStable(AREA_HERO_TITLE, vars, `${seedPrefix}:service-area:${areaSlug}:title`)
+  const heroDesc = renderSpintextStable(AREA_HERO_DESCRIPTION, vars, `${seedPrefix}:service-area:${areaSlug}:desc`)
 
   const nav = [
     { label: 'Home', href: '/' },
@@ -86,6 +86,10 @@ export default async function ServiceAreaPage({
   const phone = areaSite.phone
   const phoneLabel = areaSite.phoneDisplay || String(vars.phone || '')
 
+  const smsNumber = '+19492675767'
+  const smsMessage = `Hello, I am visiting ${areaSite.business_name} at ${areaSite.resolvedDomain || 'connorwaterfirerestoration.homes'}. I am looking for a free estimate.`
+  const smsHref = `sms:${smsNumber}?body=${encodeURIComponent(smsMessage)}`
+
   const sidebarServices = DEFAULT_SERVICES.map((s) => ({
     label: s.title,
     href: `/${s.slug}`,
@@ -93,7 +97,7 @@ export default async function ServiceAreaPage({
 
   const areaIndex = await getServiceAreaIndexForCurrentDomain()
   const sidebarAreas = areaIndex
-    .filter((a) => a.slug !== citySlug)
+    .filter((a) => a.slug !== areaSlug)
     .map((a) => ({ label: a.city, href: `/service-area/${a.slug}` }))
 
   return (
@@ -103,7 +107,7 @@ export default async function ServiceAreaPage({
         title={heroTitle}
         description={heroDesc}
         primaryCta={{ href: `tel:${phone.replace(/\D/g, '')}`, label: phoneLabel ? `Call ${phoneLabel}` : 'Call Now' }}
-        secondaryCta={{ href: '/#contact', label: 'Get a Quote' }}
+        secondaryCta={{ href: smsHref, label: 'Chat With Us' }}
       />
 
       <AuroraContentLayout
@@ -144,12 +148,7 @@ export default async function ServiceAreaPage({
       </AuroraContentLayout>
 
       <AuroraFloatingCall phone={phone} />
-      <AuroraFooter
-        businessName={areaSite.business_name}
-        city={areaSite.city}
-        state={areaSite.state}
-        socialLinks={areaSite.socialLinks}
-      />
+      <AuroraFooter businessName={areaSite.business_name} city={areaSite.city} state={areaSite.state} socialLinks={areaSite.socialLinks} />
     </div>
   )
 }

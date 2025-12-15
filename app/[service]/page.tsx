@@ -76,6 +76,10 @@ export default async function ServicePage({
   const phone = site.phone
   const phoneLabel = site.phoneDisplay || String(vars.phone || '')
 
+  const smsNumber = '+19492675767'
+  const smsMessage = `Hello, I am visiting ${site.business_name} at ${site.resolvedDomain || 'connorwaterfirerestoration.homes'}. I am looking for a free estimate.`
+  const smsHref = `sms:${smsNumber}?body=${encodeURIComponent(smsMessage)}`
+
   const areaIndex = await getServiceAreaIndexForCurrentDomain()
   const sidebarAreas = areaIndex.map((a) => ({
     label: a.city,
@@ -94,7 +98,7 @@ export default async function ServicePage({
         title={heroTitle}
         description={heroDesc}
         primaryCta={{ href: `tel:${phone.replace(/\D/g, '')}`, label: phoneLabel ? `Call ${phoneLabel}` : 'Call Now' }}
-        secondaryCta={{ href: '/#contact', label: 'Get a Quote' }}
+        secondaryCta={{ href: smsHref, label: 'Chat With Us' }}
       />
 
       <AuroraContentLayout

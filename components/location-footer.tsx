@@ -38,7 +38,7 @@ export function LocationFooter({ locationData }: LocationFooterProps) {
             <div className="space-y-3">
               <a
                 href={`tel:${phone.replace(/\D/g, '')}`}
-                className="flex items-center gap-2 text-sm text-gray-400 hover:text-orange-400 transition-colors"
+                className="flex items-center gap-2 text-sm text-gray-400 hover:text-red-400 transition-colors"
               >
                 <Phone className="h-4 w-4" />
                 {formattedPhone}
@@ -46,7 +46,7 @@ export function LocationFooter({ locationData }: LocationFooterProps) {
               {email && (
                 <a
                   href={`mailto:${email}`}
-                  className="flex items-center gap-2 text-sm text-gray-400 hover:text-orange-400 transition-colors"
+                  className="flex items-center gap-2 text-sm text-gray-400 hover:text-red-400 transition-colors"
                 >
                   <Mail className="h-4 w-4" />
                   {email}
@@ -59,7 +59,7 @@ export function LocationFooter({ locationData }: LocationFooterProps) {
           <div>
             <h3 className="mb-4 text-lg font-bold text-white">Location</h3>
             <div className="flex items-start gap-2 text-sm text-gray-400">
-              <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-orange-400" />
+              <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-red-400" />
               <address className="not-italic">
                 {address}<br />
                 {city}, {state} {postal_code}
@@ -71,7 +71,7 @@ export function LocationFooter({ locationData }: LocationFooterProps) {
           <div>
             <h3 className="mb-4 text-lg font-bold text-white">Hours</h3>
             <div className="space-y-2 text-sm text-gray-400">
-              <div className="flex items-center gap-2 text-orange-400 font-semibold">
+              <div className="flex items-center gap-2 text-red-400 font-semibold">
                 <Clock className="h-4 w-4" />
                 <span>24/7 Emergency Service</span>
               </div>
@@ -90,10 +90,10 @@ export function LocationFooter({ locationData }: LocationFooterProps) {
               © {currentYear} {business_name}. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm text-gray-500">
-              <a href="/privacy" className="hover:text-orange-400 transition-colors">
+              <a href="/privacy" className="hover:text-red-400 transition-colors">
                 Privacy Policy
               </a>
-              <a href="/terms" className="hover:text-orange-400 transition-colors">
+              <a href="/terms" className="hover:text-red-400 transition-colors">
                 Terms of Service
               </a>
             </div>

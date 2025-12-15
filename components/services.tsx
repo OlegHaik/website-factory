@@ -55,7 +55,7 @@ export function Services({ locationData }: ServicesProps) {
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-block mb-4">
-            <span className={`text-sm font-bold uppercase tracking-wide ${colorTheme.buttonBg} bg-clip-text text-transparent`} style={{backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', background: '#F97316'}}>
+            <span className={`text-sm font-bold uppercase tracking-wide ${colorTheme.buttonBg} bg-clip-text text-transparent`} style={{backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', background: '#dc2626'}}>
               What We Offer
             </span>
           </div>
@@ -94,7 +94,7 @@ export function Services({ locationData }: ServicesProps) {
                 {/* Learn More Link */}
                 <a
                   href="#contact"
-                  className="inline-flex items-center gap-2 text-orange-600 font-semibold text-sm hover:gap-3 transition-all duration-200 group/link"
+                  className="inline-flex items-center gap-2 text-red-600 font-semibold text-sm hover:gap-3 transition-all duration-200 group/link"
                 >
                   <span>Learn more</span>
                   <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />

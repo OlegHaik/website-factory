@@ -7,9 +7,9 @@ export default function Hero() {
   const colorTheme = getColorThemeForDomain('generalroofing.com')
   return (
     <section className="relative min-h-screen">
-      {/* Top Yellow Bar */}
+      {/* Top Brand Bar */}
       <div className="bg-brand py-3 text-center">
-        <p className="text-black font-bold text-sm md:text-base">
+        <p className="text-white font-bold text-sm md:text-base">
           ⭐ PROFESSIONAL CHIMNEY SERVICES ⭐
         </p>
       </div>
@@ -41,7 +41,7 @@ export default function Hero() {
               <Button
                 asChild
                 size="lg"
-                className="bg-brand hover:bg-brand-dark text-black font-bold text-lg px-8"
+                className="bg-brand hover:bg-brand-dark text-white font-bold text-lg px-8"
               >
                 <a href="tel:18884330263" className="flex items-center justify-center gap-2">
                   <Phone className="w-5 h-5" />

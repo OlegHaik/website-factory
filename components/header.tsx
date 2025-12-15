@@ -107,7 +107,7 @@ export default function Header({
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`text-sm font-semibold ${colorTheme.headerText} hover:text-orange-400 transition-colors`}
+                  className={`text-sm font-semibold ${colorTheme.headerText} hover:text-red-400 transition-colors`}
                 >
                   {item.label}
                 </Link>
@@ -156,7 +156,7 @@ export default function Header({
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`text-base font-semibold ${colorTheme.headerText} py-3 px-4 rounded-md ${colorTheme.mobileHover} hover:text-orange-400 transition-colors`}
+                  className={`text-base font-semibold ${colorTheme.headerText} py-3 px-4 rounded-md ${colorTheme.mobileHover} hover:text-red-400 transition-colors`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}
