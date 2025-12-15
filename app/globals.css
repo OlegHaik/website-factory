@@ -131,6 +131,15 @@
   }
 }
 
+@layer utilities {
+  .v0-logo-mark {
+    font-family: 'Cal Sans', 'Cabinet Grotesk', system-ui, sans-serif;
+    font-style: italic;
+    transform: skewX(-6deg);
+    display: inline-block;
+  }
+}
+
 @keyframes accordion-down {
   from {
     height: 0;
