@@ -27,9 +27,9 @@ export interface AuroraServicesGridProps {
 
 export function AuroraServicesGrid({ title = 'Our Services', items, className }: AuroraServicesGridProps) {
   return (
-    <section className={cn('bg-white py-16', className)}>
+    <section className={cn('bg-white py-20', className)}>
       <div className="container mx-auto px-4">
-        <h2 className="text-center text-2xl font-extrabold tracking-tight text-slate-900 md:text-3xl">
+        <h2 className="text-center text-3xl font-extrabold tracking-tight text-slate-900 md:text-4xl">
           {title}
         </h2>
 
@@ -42,7 +42,7 @@ export function AuroraServicesGrid({ title = 'Our Services', items, className }:
                 key={item.key}
                 className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-100 text-slate-700">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-slate-700">
                   <Icon className="h-5 w-5" />
                 </div>
 

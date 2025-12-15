@@ -44,19 +44,19 @@ export function AuroraHeader({ businessName, nav, phone, services, serviceAreas,
   return (
     <header
       className={cn(
-        'fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-gradient-to-r from-red-950 via-red-900 to-stone-900',
+        'fixed inset-x-0 top-0 z-50 bg-gradient-to-r from-red-950 via-slate-950 to-blue-950',
         className,
       )}
     >
-      <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <div className="flex items-center gap-2">
-          <Link href="/" className="text-sm font-extrabold tracking-wide text-white">
-            <span className="text-white">{brandLead}</span>
-            {brandRest ? <> <span className="italic text-white/90">{brandRest}</span></> : null}
-          </Link>
-        </div>
+      <div className="container mx-auto flex h-20 items-center gap-4 px-4">
+        <Link
+          href="/"
+          className="shrink-0 text-sm font-extrabold italic tracking-tight text-red-500 md:text-base"
+        >
+          {(brandRest ? `${brandLead} ${brandRest}` : brandLead).toUpperCase()}
+        </Link>
 
-        <nav className="hidden items-center gap-6 md:flex">
+        <nav className="hidden flex-1 items-center justify-center gap-6 md:flex">
           {nav.map((item) => {
             const isServices = item.label.toLowerCase() === 'services'
             const isAreas = item.label.toLowerCase() === 'service areas'
@@ -165,10 +165,10 @@ export function AuroraHeader({ businessName, nav, phone, services, serviceAreas,
           })}
         </nav>
 
-        <div className="hidden md:flex">
+        <div className="hidden shrink-0 md:flex">
           <Button
             asChild
-            className="bg-red-600 text-white hover:bg-red-700"
+            className="rounded-full bg-red-600 text-white shadow-none hover:bg-red-700"
           >
             <a href={`tel:${normalizedPhone}`} className="flex items-center gap-2">
               <Phone className="h-4 w-4" />
@@ -188,7 +188,7 @@ export function AuroraHeader({ businessName, nav, phone, services, serviceAreas,
       </div>
 
       {open && (
-        <div className="border-t border-white/10 bg-gradient-to-r from-red-950 via-red-900 to-stone-900 md:hidden">
+        <div className="border-t border-white/10 bg-gradient-to-r from-red-950 via-slate-950 to-blue-950 md:hidden">
           <div className="container mx-auto flex flex-col gap-2 px-4 py-4">
             {nav.map((item) => {
               const isServices = item.label.toLowerCase() === 'services'
@@ -268,7 +268,7 @@ export function AuroraHeader({ businessName, nav, phone, services, serviceAreas,
 
             <Button
               asChild
-              className="mt-2 bg-red-600 text-white hover:bg-red-700"
+              className="mt-2 rounded-full bg-red-600 text-white shadow-none hover:bg-red-700"
             >
               <a
                 href={`tel:${normalizedPhone}`}
