@@ -9,14 +9,18 @@ interface ServiceContentProps {
   serviceTitle: string
   serviceDescription: string
   intro?: string
+  sectionHeadline?: string
+  sectionBody?: string
   city: string
   state: string
   serviceAreas: Array<{ name: string; slug: string }>
   otherServices: LinkItem[]
 }
 
-export function ServiceContent({ serviceTitle, serviceDescription, intro, city, state, serviceAreas, otherServices }: ServiceContentProps) {
+export function ServiceContent({ serviceTitle, serviceDescription, intro, sectionHeadline, sectionBody, city, state, serviceAreas, otherServices }: ServiceContentProps) {
   const introText = intro || serviceDescription
+  const headlineText = sectionHeadline || serviceTitle
+  const bodyText = sectionBody || introText
 
   return (
     <section className="py-24 lg:py-32 bg-white">
@@ -24,8 +28,8 @@ export function ServiceContent({ serviceTitle, serviceDescription, intro, city, 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           <div className="lg:col-span-2 space-y-10">
             <div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">{serviceTitle}</h2>
-              <p className="mt-4 text-lg text-slate-600 leading-relaxed">{introText}</p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">{headlineText}</h2>
+              <p className="mt-4 text-lg text-slate-600 leading-relaxed">{bodyText}</p>
             </div>
 
             <div className="rounded-2xl border border-slate-200 bg-slate-50 p-8">

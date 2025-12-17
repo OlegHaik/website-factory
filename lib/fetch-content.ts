@@ -40,17 +40,19 @@ export interface ContentCTA {
 }
 
 export interface ContentServicePage {
-  id: number
+  id?: number
   service_slug: string
   hero_headline_spintax: string | null
-  hero_description_spintax: string | null
-  intro_spintax: string | null
-  process_title_spintax: string | null
-  process_spintax: string | null
-  why_choose_title_spintax: string | null
-  why_choose_spintax: string | null
-  cta_headline_spintax: string | null
-  cta_description_spintax: string | null
+  hero_subheadline_spintax: string | null
+  hero_cta_secondary_spintax: string | null
+  section_headline_spintax: string | null
+  section_body_spintax: string | null
+  process_headline_spintax: string | null
+  process_body_spintax: string | null
+  midpage_cta_headline_spintax: string | null
+  midpage_cta_subtext_spintax: string | null
+  why_choose_headline_spintax: string | null
+  trust_points_spintax: string | null
 }
 
 export interface ContentServiceArea {

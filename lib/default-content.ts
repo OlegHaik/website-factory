@@ -25,34 +25,101 @@ export const DEFAULT_SERVICE_NAV = {
 
 export const DEFAULT_SERVICE_PAGE = {
   water: {
-    hero_headline: "{Professional|Expert|Certified} Water Damage Restoration in {{city}}, {{state}}",
-    hero_description: "{Fast water extraction and drying|Immediate flood response} by certified technicians.",
-    intro: "Water damage can strike at any moment. Our {{city}} team specializes in water damage restoration.",
+    hero_headline: "{Professional|Expert|Certified|24/7} Water Damage Restoration in {{city}}, {{state}}",
+    hero_subheadline:
+      "{Fast water extraction and drying|Immediate flood response|Rapid moisture removal} by certified technicians.",
+    hero_cta_secondary: "{Chat With Us|Message Us|Text Us|Get a Free Estimate}",
+    section_headline: "{Water Damage Restoration|Emergency Water Cleanup} for {{city}} Homes & Businesses",
+    section_body:
+      "{Water damage can strike at any moment|Flooding emergencies require immediate action}. Our {{city}} team helps {extract water, dry structures, and prevent mold|mitigate damage fast and restore your property}.",
+    process_headline: "{Our Water Damage Process|How We Restore Water Damage}",
+    process_body:
+      "We start with an inspection and moisture mapping, then perform water extraction, structural drying, and ongoing monitoring until your property is fully restored.",
+    midpage_cta_headline: "{Need Water Damage Help Now?|Emergency Water Damage? We're Ready}",
+    midpage_cta_subtext: "Call now for immediate dispatch. Our team is available 24/7 in {{city}}.",
+    why_choose_headline: "{Why {{city}} Residents Choose Us|Why Trust Our Team}",
+    trust_points:
+      "24/7 emergency response\nCertified technicians\nAdvanced drying equipment\nClear communication\nInsurance-friendly documentation",
   },
   fire: {
-    hero_headline: "{Professional|Expert|Certified} Fire & Smoke Restoration in {{city}}, {{state}}",
-    hero_description: "{Comprehensive fire damage recovery|Complete smoke removal} services.",
-    intro: "After a fire, the damage extends beyond what you can see. Our {{city}} team restores your property.",
+    hero_headline: "{Professional|Expert|Certified|24/7} Fire & Smoke Damage Restoration in {{city}}, {{state}}",
+    hero_subheadline: "{Smoke, soot, and odor removal|Complete fire damage recovery} with a clear plan start-to-finish.",
+    hero_cta_secondary: "{Chat With Us|Message Us|Text Us|Get a Free Estimate}",
+    section_headline: "{Fire & Smoke Restoration|Fire Damage Cleanup} in {{city}}",
+    section_body:
+      "{Fire damage is stressful and time-sensitive|Smoke and soot can keep causing damage}. We help secure the site, remove soot and odors, and guide you through the restoration process.",
+    process_headline: "{Our Fire Restoration Process|How We Handle Fire & Smoke Damage}",
+    process_body:
+      "We begin with an assessment, then handle debris removal, soot cleanup, deodorization, and repairs to return your property to pre-loss condition.",
+    midpage_cta_headline: "{Need Fire Damage Help?|Call for Fire & Smoke Restoration}",
+    midpage_cta_subtext: "Call now for 24/7 response in {{city}}.",
+    why_choose_headline: "{Why Choose Our Fire Restoration Team?|Why Trust Us After a Fire?}",
+    trust_points:
+      "24/7 emergency response\nDetailed documentation\nProfessional deodorization\nClear timelines\nInsurance coordination support",
   },
   mold: {
     hero_headline: "{Certified|Professional|Expert} Mold Remediation in {{city}}, {{state}}",
-    hero_description: "{Safe mold removal|Certified mold inspection} and prevention.",
-    intro: "Mold growth poses serious health risks. Our {{city}} team safely eliminates mold.",
+    hero_subheadline: "{Safe mold removal|Professional containment and cleanup} to protect your indoor air quality.",
+    hero_cta_secondary: "{Chat With Us|Message Us|Text Us|Get a Free Estimate}",
+    section_headline: "{Mold Removal & Remediation|Professional Mold Cleanup} in {{city}}",
+    section_body:
+      "Mold can spread quickly when moisture is present. Our team helps identify the source, contain affected areas, and remediate mold safely.",
+    process_headline: "{Our Mold Remediation Process|How We Remove Mold Safely}",
+    process_body:
+      "We assess moisture, set up containment, remove contaminated materials as needed, clean and treat surfaces, and recommend steps to prevent recurrence.",
+    midpage_cta_headline: "{Concerned About Mold?|Schedule Mold Remediation}",
+    midpage_cta_subtext: "Call now to speak with our {{city}} team.",
+    why_choose_headline: "{Why Homeowners Choose Us for Mold Remediation|Why Trust Our Mold Team}",
+    trust_points:
+      "Certified technicians\nContainment-first approach\nMoisture source guidance\nProfessional cleanup\nClear next steps",
   },
   biohazard: {
     hero_headline: "{Professional|Certified|Discreet} Biohazard Cleanup in {{city}}, {{state}}",
-    hero_description: "{Safe biohazard removal|Professional trauma cleanup} services.",
-    intro: "Biohazard situations require specialized training. Our {{city}} team provides discreet service.",
+    hero_subheadline: "{Discreet, compliant cleanup|Professional decontamination} handled with care and urgency.",
+    hero_cta_secondary: "{Chat With Us|Message Us|Text Us|Get a Free Estimate}",
+    section_headline: "{Biohazard Cleanup|Professional Decontamination} Services in {{city}}",
+    section_body:
+      "Biohazard situations require trained technicians and proper procedures. We provide discreet cleanup, sanitation, and safe disposal.",
+    process_headline: "{Our Biohazard Cleanup Process|How We Handle Biohazard Situations}",
+    process_body:
+      "We assess the scene, isolate affected areas, remove and dispose of contaminated materials, disinfect surfaces, and verify cleanliness before completion.",
+    midpage_cta_headline: "{Need Discreet Biohazard Cleanup?|Call for Immediate Help}",
+    midpage_cta_subtext: "Call now for confidential 24/7 support.",
+    why_choose_headline: "{Why Families Trust Our Biohazard Team|Why Choose Us for Biohazard Cleanup}",
+    trust_points:
+      "Discreet service\nCertified technicians\nProper disposal procedures\nFast response\nClear communication",
   },
   burst: {
     hero_headline: "{Emergency|24/7|Rapid} Burst Pipe Repair in {{city}}, {{state}}",
-    hero_description: "{Fast response to pipe emergencies|Immediate water shutoff and repair}.",
-    intro: "A burst pipe can release hundreds of gallons per hour. Our {{city}} team responds fast.",
+    hero_subheadline: "{Stop the damage fast|Immediate response} to minimize water loss and protect your property.",
+    hero_cta_secondary: "{Chat With Us|Message Us|Text Us|Get a Free Estimate}",
+    section_headline: "{Burst Pipe Emergency Response|Frozen / Burst Pipe Repair} in {{city}}",
+    section_body:
+      "A burst pipe can release hundreds of gallons per hour. We respond quickly to help stop the damage and start drying and cleanup.",
+    process_headline: "{Our Burst Pipe Response Process|What Happens When You Call Us}",
+    process_body:
+      "We arrive quickly, help stabilize the situation, assess moisture, begin extraction and drying, and document everything for a smoother recovery.",
+    midpage_cta_headline: "{Pipe Burst Emergency?|Call for Immediate Response}",
+    midpage_cta_subtext: "Call now—our team is on call 24/7.",
+    why_choose_headline: "{Why Choose Us for Burst Pipe Emergencies|Why Trust Our Emergency Team}",
+    trust_points:
+      "Fast response\nProfessional drying\nMoisture monitoring\nClear documentation\nHelpful guidance",
   },
   sewage: {
     hero_headline: "{Professional|Emergency|Certified} Sewage Cleanup in {{city}}, {{state}}",
-    hero_description: "{Safe sewage removal|Professional black water cleanup} services.",
-    intro: "Sewage backups pose serious health risks. Our {{city}} team safely removes contamination.",
+    hero_subheadline: "{Safe contaminated water removal|Professional sanitation and disinfection} to protect your property.",
+    hero_cta_secondary: "{Chat With Us|Message Us|Text Us|Get a Free Estimate}",
+    section_headline: "{Sewage Backup Cleanup|Black Water Cleanup} in {{city}}",
+    section_body:
+      "Sewage backups pose serious health risks. We remove contaminated water, sanitize affected areas, and help restore your space safely.",
+    process_headline: "{Our Sewage Cleanup Process|How We Handle Sewage Damage}",
+    process_body:
+      "We assess contamination, extract sewage, remove affected materials as needed, disinfect thoroughly, and help restore the area to safe conditions.",
+    midpage_cta_headline: "{Need Sewage Cleanup Now?|Call for Emergency Sewage Cleanup}",
+    midpage_cta_subtext: "Call now for immediate dispatch in {{city}}.",
+    why_choose_headline: "{Why Trust Us for Sewage Cleanup|Why Choose Our Cleanup Team}",
+    trust_points:
+      "Safety-first procedures\nProfessional disinfection\nFast emergency response\nClear scope and updates\nExperienced technicians",
   },
 }
 

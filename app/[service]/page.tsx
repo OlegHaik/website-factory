@@ -12,7 +12,9 @@ import { parseSocialLinks } from "@/lib/types"
 import { Header } from "@/components/header"
 import { ServiceHero } from "@/components/service-hero"
 import { ServiceContent } from "@/components/service-content"
-import { CTASection } from "@/components/cta-section"
+import { ServiceProcess } from "@/components/service-process"
+import { ServiceTrust } from "@/components/service-trust"
+import { ServiceCTA } from "@/components/service-cta"
 import Footer from "@/components/footer"
 import { FloatingCall } from "@/components/floating-call"
 
@@ -127,13 +129,38 @@ export default async function ServicePage({
   const pageContent = await getContentServicePage(serviceSlug)
   const defaults = DEFAULT_SERVICE_PAGE[serviceKey]
 
-  const heroTitle = processContent(pageContent?.hero_headline_spintax || defaults.hero_headline, domain, variables)
-  const heroDescription = processContent(
-    pageContent?.hero_description_spintax || defaults.hero_description,
-    domain,
-    variables,
-  )
-  const introText = processContent(pageContent?.intro_spintax || defaults.intro, domain, variables)
+  const seed = `${domain}:${serviceSlug}`
+
+  // Process all fields with spintax
+  const content = {
+    heroHeadline: processContent(pageContent?.hero_headline_spintax || defaults.hero_headline, seed, variables),
+    heroSubheadline: processContent(pageContent?.hero_subheadline_spintax || defaults.hero_subheadline, seed, variables),
+    heroCtaSecondary: processContent(
+      pageContent?.hero_cta_secondary_spintax || defaults.hero_cta_secondary,
+      seed,
+      variables,
+    ),
+    sectionHeadline: processContent(pageContent?.section_headline_spintax || defaults.section_headline, seed, variables),
+    sectionBody: processContent(pageContent?.section_body_spintax || defaults.section_body, seed, variables),
+    processHeadline: processContent(pageContent?.process_headline_spintax || defaults.process_headline, seed, variables),
+    processBody: processContent(pageContent?.process_body_spintax || defaults.process_body, seed, variables),
+    midpageCtaHeadline: processContent(
+      pageContent?.midpage_cta_headline_spintax || defaults.midpage_cta_headline,
+      seed,
+      variables,
+    ),
+    midpageCtaSubtext: processContent(
+      pageContent?.midpage_cta_subtext_spintax || defaults.midpage_cta_subtext,
+      seed,
+      variables,
+    ),
+    whyChooseHeadline: processContent(
+      pageContent?.why_choose_headline_spintax || defaults.why_choose_headline,
+      seed,
+      variables,
+    ),
+    trustPoints: processContent(pageContent?.trust_points_spintax || defaults.trust_points, seed, variables),
+  }
 
   const socialLinks = parseSocialLinks(site)
 
@@ -149,8 +176,9 @@ export default async function ServicePage({
         serviceNavLabels={serviceNavLabels}
       />
       <ServiceHero
-        title={heroTitle}
-        description={heroDescription}
+        headline={content.heroHeadline}
+        subheadline={content.heroSubheadline}
+        ctaSecondaryText={content.heroCtaSecondary}
         phone={site.phone}
         phoneDisplay={site.phoneDisplay || undefined}
         businessName={site.business_name}
@@ -159,17 +187,24 @@ export default async function ServicePage({
       <ServiceContent
         serviceTitle={service.title}
         serviceDescription={service.shortDescription}
-        intro={introText}
+        sectionHeadline={content.sectionHeadline}
+        sectionBody={content.sectionBody}
         city={site.city}
         state={site.state}
         serviceAreas={serviceAreas}
         otherServices={otherServices}
       />
-      <CTASection
+
+      <ServiceProcess headline={content.processHeadline} body={content.processBody} />
+      <ServiceTrust headline={content.whyChooseHeadline} trustPoints={content.trustPoints} />
+
+      <ServiceCTA
         phone={site.phone}
         phoneDisplay={site.phoneDisplay || undefined}
         businessName={site.business_name}
         domain={site.resolvedDomain}
+        headline={content.midpageCtaHeadline}
+        subheadline={content.midpageCtaSubtext}
       />
       <Footer
         businessName={site.business_name}

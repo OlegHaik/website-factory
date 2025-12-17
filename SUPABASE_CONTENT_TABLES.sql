@@ -195,29 +195,203 @@ CREATE TABLE IF NOT EXISTS content_service_pages (
   id SERIAL PRIMARY KEY,
   service_slug TEXT NOT NULL,
   hero_headline_spintax TEXT,
-  hero_description_spintax TEXT,
-  intro_spintax TEXT,
-  process_title_spintax TEXT,
-  process_spintax TEXT,
-  why_choose_title_spintax TEXT,
-  why_choose_spintax TEXT,
-  cta_headline_spintax TEXT,
-  cta_description_spintax TEXT
+  hero_subheadline_spintax TEXT,
+  hero_cta_secondary_spintax TEXT,
+  section_headline_spintax TEXT,
+  section_body_spintax TEXT,
+  process_headline_spintax TEXT,
+  process_body_spintax TEXT,
+  midpage_cta_headline_spintax TEXT,
+  midpage_cta_subtext_spintax TEXT,
+  why_choose_headline_spintax TEXT,
+  trust_points_spintax TEXT
 );
 
--- Insert default content for each service
-INSERT INTO content_service_pages (service_slug, hero_headline_spintax, hero_description_spintax, intro_spintax) VALUES
-('water-damage-restoration',
+ALTER TABLE content_service_pages ADD COLUMN IF NOT EXISTS hero_subheadline_spintax TEXT;
+ALTER TABLE content_service_pages ADD COLUMN IF NOT EXISTS hero_cta_secondary_spintax TEXT;
+ALTER TABLE content_service_pages ADD COLUMN IF NOT EXISTS section_headline_spintax TEXT;
+ALTER TABLE content_service_pages ADD COLUMN IF NOT EXISTS section_body_spintax TEXT;
+ALTER TABLE content_service_pages ADD COLUMN IF NOT EXISTS process_headline_spintax TEXT;
+ALTER TABLE content_service_pages ADD COLUMN IF NOT EXISTS process_body_spintax TEXT;
+ALTER TABLE content_service_pages ADD COLUMN IF NOT EXISTS midpage_cta_headline_spintax TEXT;
+ALTER TABLE content_service_pages ADD COLUMN IF NOT EXISTS midpage_cta_subtext_spintax TEXT;
+ALTER TABLE content_service_pages ADD COLUMN IF NOT EXISTS why_choose_headline_spintax TEXT;
+ALTER TABLE content_service_pages ADD COLUMN IF NOT EXISTS trust_points_spintax TEXT;
+
+-- Insert default content for each service (idempotent per service_slug)
+INSERT INTO content_service_pages (
+  service_slug,
+  hero_headline_spintax,
+  hero_subheadline_spintax,
+  hero_cta_secondary_spintax,
+  section_headline_spintax,
+  section_body_spintax,
+  process_headline_spintax,
+  process_body_spintax,
+  midpage_cta_headline_spintax,
+  midpage_cta_subtext_spintax,
+  why_choose_headline_spintax,
+  trust_points_spintax
+)
+SELECT
+  'water-damage-restoration',
   '{Professional|Expert|Certified|Emergency|24/7} Water Damage Restoration in {{city}}, {{state}}',
   '{Fast water extraction and drying|Immediate flood response|Rapid moisture removal} by certified technicians. We {respond within 60 minutes|are available 24/7|handle insurance claims directly}.',
-  '{Water damage can strike at any moment|Flooding emergencies require immediate action|When water invades your property}, causing {devastating effects|serious structural damage|costly repairs} if not addressed quickly. Our {{city}} team {specializes in|is expert at|provides professional} water damage restoration services.'
-),
-('fire-smoke-damage',
+  '{Chat With Us|Message Us|Text Us|Get a Free Estimate}',
+  '{Water Damage Restoration|Emergency Water Cleanup} for {{city}} Homes & Businesses',
+  '{Water damage can strike at any moment|Flooding emergencies require immediate action}. Our {{city}} team helps {extract water, dry structures, and prevent mold|mitigate damage fast and restore your property}.',
+  '{Our Water Damage Process|How We Restore Water Damage}',
+  'We start with an inspection and moisture mapping, then perform water extraction, structural drying, and ongoing monitoring until your property is fully restored.',
+  '{Need Water Damage Help Now?|Emergency Water Damage? We\'re Ready}',
+  'Call now for immediate dispatch. Our team is available 24/7 in {{city}}.',
+  '{Why {{city}} Residents Choose Us|Why Trust Our Team}',
+  '24/7 emergency response\nCertified technicians\nAdvanced drying equipment\nClear communication\nInsurance-friendly documentation'
+WHERE NOT EXISTS (SELECT 1 FROM content_service_pages WHERE service_slug = 'water-damage-restoration');
+
+INSERT INTO content_service_pages (
+  service_slug,
+  hero_headline_spintax,
+  hero_subheadline_spintax,
+  hero_cta_secondary_spintax,
+  section_headline_spintax,
+  section_body_spintax,
+  process_headline_spintax,
+  process_body_spintax,
+  midpage_cta_headline_spintax,
+  midpage_cta_subtext_spintax,
+  why_choose_headline_spintax,
+  trust_points_spintax
+)
+SELECT
+  'fire-smoke-damage',
   '{Professional|Expert|Certified|Complete} Fire & Smoke Damage Restoration in {{city}}, {{state}}',
   '{Comprehensive fire damage recovery|Complete smoke and soot removal|Expert fire restoration services}. We {restore your property to pre-loss condition|handle everything from cleanup to rebuild|work with your insurance company}.',
-  '{After a fire, the damage extends beyond what you can see|Fire and smoke leave lasting damage|The aftermath of a fire can be overwhelming}. Our {{city}} fire restoration team {removes soot, eliminates odors, and repairs structural damage|provides complete fire damage recovery|restores your property professionally}.'
-),
-('mold-remediation',
+  '{Chat With Us|Message Us|Text Us|Get a Free Estimate}',
+  '{Fire & Smoke Restoration|Fire Damage Cleanup} in {{city}}',
+  '{Fire damage is stressful and time-sensitive|Smoke and soot can keep causing damage}. We help secure the site, remove soot and odors, and guide you through the restoration process.',
+  '{Our Fire Restoration Process|How We Handle Fire & Smoke Damage}',
+  'We begin with an assessment, then handle debris removal, soot cleanup, deodorization, and repairs to return your property to pre-loss condition.',
+  '{Need Fire Damage Help?|Call for Fire & Smoke Restoration}',
+  'Call now for 24/7 response in {{city}}.',
+  '{Why Choose Our Fire Restoration Team?|Why Trust Us After a Fire?}',
+  '24/7 emergency response\nDetailed documentation\nProfessional deodorization\nClear timelines\nInsurance coordination support'
+WHERE NOT EXISTS (SELECT 1 FROM content_service_pages WHERE service_slug = 'fire-smoke-damage');
+
+INSERT INTO content_service_pages (
+  service_slug,
+  hero_headline_spintax,
+  hero_subheadline_spintax,
+  hero_cta_secondary_spintax,
+  section_headline_spintax,
+  section_body_spintax,
+  process_headline_spintax,
+  process_body_spintax,
+  midpage_cta_headline_spintax,
+  midpage_cta_subtext_spintax,
+  why_choose_headline_spintax,
+  trust_points_spintax
+)
+SELECT
+  'mold-remediation',
+  '{Certified|Professional|Expert} Mold Remediation in {{city}}, {{state}}',
+  '{Safe mold removal|Professional containment and cleanup} to protect your indoor air quality.',
+  '{Chat With Us|Message Us|Text Us|Get a Free Estimate}',
+  '{Mold Removal & Remediation|Professional Mold Cleanup} in {{city}}',
+  'Mold can spread quickly when moisture is present. Our team helps identify the source, contain affected areas, and remediate mold safely.',
+  '{Our Mold Remediation Process|How We Remove Mold Safely}',
+  'We assess moisture, set up containment, remove contaminated materials as needed, clean and treat surfaces, and recommend steps to prevent recurrence.',
+  '{Concerned About Mold?|Schedule Mold Remediation}',
+  'Call now to speak with our {{city}} team.',
+  '{Why Homeowners Choose Us for Mold Remediation|Why Trust Our Mold Team}',
+  'Certified technicians\nContainment-first approach\nMoisture source guidance\nProfessional cleanup\nClear next steps'
+WHERE NOT EXISTS (SELECT 1 FROM content_service_pages WHERE service_slug = 'mold-remediation');
+
+INSERT INTO content_service_pages (
+  service_slug,
+  hero_headline_spintax,
+  hero_subheadline_spintax,
+  hero_cta_secondary_spintax,
+  section_headline_spintax,
+  section_body_spintax,
+  process_headline_spintax,
+  process_body_spintax,
+  midpage_cta_headline_spintax,
+  midpage_cta_subtext_spintax,
+  why_choose_headline_spintax,
+  trust_points_spintax
+)
+SELECT
+  'biohazard-cleanup',
+  '{Professional|Certified|Discreet} Biohazard Cleanup in {{city}}, {{state}}',
+  '{Discreet, compliant cleanup|Professional decontamination} handled with care and urgency.',
+  '{Chat With Us|Message Us|Text Us|Get a Free Estimate}',
+  '{Biohazard Cleanup|Professional Decontamination} Services in {{city}}',
+  'Biohazard situations require trained technicians and proper procedures. We provide discreet cleanup, sanitation, and safe disposal.',
+  '{Our Biohazard Cleanup Process|How We Handle Biohazard Situations}',
+  'We assess the scene, isolate affected areas, remove and dispose of contaminated materials, disinfect surfaces, and verify cleanliness before completion.',
+  '{Need Discreet Biohazard Cleanup?|Call for Immediate Help}',
+  'Call now for confidential 24/7 support.',
+  '{Why Families Trust Our Biohazard Team|Why Choose Us for Biohazard Cleanup}',
+  'Discreet service\nCertified technicians\nProper disposal procedures\nFast response\nClear communication'
+WHERE NOT EXISTS (SELECT 1 FROM content_service_pages WHERE service_slug = 'biohazard-cleanup');
+
+INSERT INTO content_service_pages (
+  service_slug,
+  hero_headline_spintax,
+  hero_subheadline_spintax,
+  hero_cta_secondary_spintax,
+  section_headline_spintax,
+  section_body_spintax,
+  process_headline_spintax,
+  process_body_spintax,
+  midpage_cta_headline_spintax,
+  midpage_cta_subtext_spintax,
+  why_choose_headline_spintax,
+  trust_points_spintax
+)
+SELECT
+  'burst-pipe-repair',
+  '{Emergency|24/7|Rapid} Burst Pipe Repair in {{city}}, {{state}}',
+  '{Stop the damage fast|Immediate response} to minimize water loss and protect your property.',
+  '{Chat With Us|Message Us|Text Us|Get a Free Estimate}',
+  '{Burst Pipe Emergency Response|Frozen / Burst Pipe Repair} in {{city}}',
+  'A burst pipe can release hundreds of gallons per hour. We respond quickly to help stop the damage and start drying and cleanup.',
+  '{Our Burst Pipe Response Process|What Happens When You Call Us}',
+  'We arrive quickly, help stabilize the situation, assess moisture, begin extraction and drying, and document everything for a smoother recovery.',
+  '{Pipe Burst Emergency?|Call for Immediate Response}',
+  'Call now—our team is on call 24/7.',
+  '{Why Choose Us for Burst Pipe Emergencies|Why Trust Our Emergency Team}',
+  'Fast response\nProfessional drying\nMoisture monitoring\nClear documentation\nHelpful guidance'
+WHERE NOT EXISTS (SELECT 1 FROM content_service_pages WHERE service_slug = 'burst-pipe-repair');
+
+INSERT INTO content_service_pages (
+  service_slug,
+  hero_headline_spintax,
+  hero_subheadline_spintax,
+  hero_cta_secondary_spintax,
+  section_headline_spintax,
+  section_body_spintax,
+  process_headline_spintax,
+  process_body_spintax,
+  midpage_cta_headline_spintax,
+  midpage_cta_subtext_spintax,
+  why_choose_headline_spintax,
+  trust_points_spintax
+)
+SELECT
+  'sewage-cleanup',
+  '{Professional|Emergency|Certified} Sewage Cleanup in {{city}}, {{state}}',
+  '{Safe contaminated water removal|Professional sanitation and disinfection} to protect your property.',
+  '{Chat With Us|Message Us|Text Us|Get a Free Estimate}',
+  '{Sewage Backup Cleanup|Black Water Cleanup} in {{city}}',
+  'Sewage backups pose serious health risks. We remove contaminated water, sanitize affected areas, and help restore your space safely.',
+  '{Our Sewage Cleanup Process|How We Handle Sewage Damage}',
+  'We assess contamination, extract sewage, remove affected materials as needed, disinfect thoroughly, and help restore the area to safe conditions.',
+  '{Need Sewage Cleanup Now?|Call for Emergency Sewage Cleanup}',
+  'Call now for immediate dispatch in {{city}}.',
+  '{Why Trust Us for Sewage Cleanup|Why Choose Our Cleanup Team}',
+  'Safety-first procedures\nProfessional disinfection\nFast emergency response\nClear scope and updates\nExperienced technicians'
+WHERE NOT EXISTS (SELECT 1 FROM content_service_pages WHERE service_slug = 'sewage-cleanup');
   '{Professional|Certified|Expert|Complete} Mold Remediation in {{city}}, {{state}}',
   '{Safe mold removal and prevention|Certified mold inspection and cleanup|Professional mold remediation services}. We {eliminate mold at the source|ensure your indoor air quality|follow strict IICRC protocols}.',
   '{Mold growth poses serious health risks|Hidden mold can spread quickly|Mold infestations require professional treatment}. Our {{city}} mold remediation team {uses advanced techniques|follows certified protocols|safely eliminates mold} to protect your family.'
