@@ -198,6 +198,17 @@ export default async function Home() {
     process: processContent(seoBodyContent?.process_spintax || DEFAULT_SEO_BODY.process_spintax, domain, variables),
   }
 
+  const normalizeForCompare = (value: string) =>
+    String(value ?? '')
+      .toLowerCase()
+      .replace(/\s+/g, ' ')
+      .trim()
+
+  if (normalizeForCompare(seoData.whyChoose) === normalizeForCompare(seoData.process)) {
+    seoData.processTitle = processContent(DEFAULT_SEO_BODY.process_title_spintax, domain, variables)
+    seoData.process = processContent(DEFAULT_SEO_BODY.process_spintax, domain, variables)
+  }
+
   const faqItems = parseFAQItems(faqContent?.items ?? DEFAULT_FAQ.items).map((item) => ({
     question: processContent(item.question_spintax, domain, variables),
     answer: processContent(item.answer_spintax, domain, variables),

@@ -56,19 +56,29 @@ export const DEFAULT_FAQ = {
   heading_spintax: "{Frequently Asked Questions|Common Questions|Questions Homeowners Ask}",
   items: [
     {
-      question_spintax: "{How fast can your team arrive|How quickly can you respond|What's your response time}?",
+      question_spintax: "{How fast can your team arrive at my property?|What is your response time?|How quickly can you get here?}",
       answer_spintax:
-        "Our emergency response team is available 24/7 and can typically arrive within {45-60 minutes|about an hour} in {{city}} and nearby areas. For locations outside our immediate service area, we provide an estimated arrival time when you call.",
+        "{We offer 24/7 emergency response|Our team is available around the clock|We respond to emergencies 24/7} and can typically arrive within {60 minutes|one hour|30-60 minutes} in the {{city}} area.",
     },
     {
-      question_spintax: "{Do you work with insurance|Do you bill insurance directly|Can you help with my claim}?",
+      question_spintax: "{Do you handle the insurance billing directly?|Can you work with my insurance company?|Do you bill insurance?}",
       answer_spintax:
-        "Yes. We work directly with {all major insurance companies|most carriers}. We document damage thoroughly, provide detailed estimates, and coordinate with your adjuster to reduce stress during the process.",
+        "{Yes, we work directly with all major insurance companies|We handle insurance claims for you|We bill your insurance directly} to make the process as {stress-free|simple|easy} as possible.",
     },
     {
-      question_spintax: "{Is mold dangerous|Should I worry about mold|How serious is mold}?",
+      question_spintax: "{Is the mold in my house dangerous to my family?|Is mold harmful to health?|Should I be worried about mold?}",
       answer_spintax:
-        "Certain types of mold can pose health risks. We recommend having any visible mold professionally assessed. Our team uses {proper containment|industry-standard remediation methods} to address the problem safely.",
+        "{Certain types of mold can pose health risks|Mold can be harmful, especially to those with allergies|Some mold species are dangerous}, which is why {professional remediation|expert removal|certified cleanup} is essential.",
+    },
+    {
+      question_spintax: "{Can you save my hardwood floors after a flood?|Will my flooring survive water damage?|Can flooded floors be saved?}",
+      answer_spintax:
+        "{In many cases, yes|Often we can save hardwood floors|It depends on how quickly we respond}. Quick action and {proper drying techniques|professional equipment|specialized drying} can often save hardwood floors from permanent damage.",
+    },
+    {
+      question_spintax: "{What should I do while I wait for you to arrive?|How can I prepare before you get here?|What immediate steps should I take?}",
+      answer_spintax:
+        "{If safe, turn off the water source|Stop the water if possible|Shut off water supply} and {move valuables to dry areas|protect important items|relocate belongings}. {Avoid electrical hazards|Stay away from electrical outlets|Don't touch electrical equipment} in wet areas.",
     },
   ],
 }
