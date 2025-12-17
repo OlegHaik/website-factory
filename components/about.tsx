@@ -11,7 +11,7 @@ interface AboutProps {
   city: string
   state: string
   serviceAreas: ServiceArea[]
-  seoContent?: {
+  seoContent: {
     intro: string
     whyChooseTitle: string
     whyChoose: string
@@ -21,17 +21,11 @@ interface AboutProps {
 }
 
 export function About({ businessName, city, state, serviceAreas, seoContent }: AboutProps) {
-  const introText =
-    seoContent?.intro ||
-    `When disaster strikes, every second counts. At ${businessName}, we understand the urgency of water damage, fire incidents, and mold growth. Our team of certified professionals is dedicated to restoring your property to its pre-loss condition as quickly and efficiently as possible. Serving ${city} and the surrounding areas, we are your local experts in emergency mitigation.`
-  const whyChooseTitleText = seoContent?.whyChooseTitle || "Why Choose Our Restoration Team?"
-  const whyChooseText =
-    seoContent?.whyChoose ||
-    "Choosing the right restoration company can make the difference between a quick recovery and a long, drawn-out nightmare. We pride ourselves on transparency, speed, and quality craftsmanship. Unlike general contractors, we specialize specifically in disaster recovery. We utilize thermal imaging technology to detect hidden moisture that the naked eye cannot see, ensuring that no wet pockets are left behind to cause mold growth later. Our technicians are IICRC certified and undergo rigorous training to handle everything from burst frozen pipes to sewage backups."
-  const processTitleText = seoContent?.processTitle || "The Restoration Process"
-  const processText =
-    seoContent?.process ||
-    "Our process begins with a thorough inspection. We document everything for your insurance claim to ensure you get the coverage you deserve. Next, we begin water extraction using truck-mounted pumps. Once standing water is gone, we install industrial air movers and dehumidifiers. Finally, we perform any necessary repairs to bring your home back to normal."
+  const introText = seoContent.intro
+  const whyChooseTitleText = seoContent.whyChooseTitle
+  const whyChooseText = seoContent.whyChoose
+  const processTitleText = seoContent.processTitle
+  const processText = seoContent.process
 
   return (
     <section id="about" className="py-24 lg:py-36 bg-slate-50">

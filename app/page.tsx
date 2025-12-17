@@ -209,7 +209,14 @@ export default async function Home() {
     seoData.process = processContent(DEFAULT_SEO_BODY.process_spintax, domain, variables)
   }
 
-  const faqItems = parseFAQItems(faqContent?.items ?? DEFAULT_FAQ.items).map((item) => ({
+  const baseFaqItems = parseFAQItems(faqContent?.items ?? DEFAULT_FAQ.items)
+
+  const mergedFaqItems = [...baseFaqItems]
+  if (mergedFaqItems.length < 5) {
+    mergedFaqItems.push(...DEFAULT_FAQ.items.slice(mergedFaqItems.length, 5))
+  }
+
+  const faqItems = mergedFaqItems.map((item) => ({
     question: processContent(item.question_spintax, domain, variables),
     answer: processContent(item.answer_spintax, domain, variables),
   }))
