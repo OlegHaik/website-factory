@@ -11,16 +11,29 @@ interface ServiceContentProps {
   intro?: string
   sectionHeadline?: string
   sectionBody?: string
+  processHeadline?: string
+  processBody?: string
   city: string
   state: string
   serviceAreas: Array<{ name: string; slug: string }>
   otherServices: LinkItem[]
 }
 
-export function ServiceContent({ serviceTitle, serviceDescription, intro, sectionHeadline, sectionBody, city, state, serviceAreas, otherServices }: ServiceContentProps) {
+function splitParagraphs(text: string): string[] {
+  const normalized = String(text || '').replace(/\r\n/g, '\n')
+  const parts = normalized
+    .split(/\n\s*\n/)
+    .map((p) => p.trim())
+    .filter(Boolean)
+
+  return parts.length > 0 ? parts : [String(text || '')]
+}
+
+export function ServiceContent({ serviceTitle, serviceDescription, intro, sectionHeadline, sectionBody, processHeadline, processBody, city, state, serviceAreas, otherServices }: ServiceContentProps) {
   const introText = intro || serviceDescription
   const headlineText = sectionHeadline || serviceTitle
   const bodyText = sectionBody || introText
+  const processParagraphs = processBody ? splitParagraphs(processBody) : []
 
   return (
     <section className="py-24 lg:py-32 bg-white">
@@ -31,6 +44,17 @@ export function ServiceContent({ serviceTitle, serviceDescription, intro, sectio
               <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">{headlineText}</h2>
               <p className="mt-4 text-lg text-slate-600 leading-relaxed">{bodyText}</p>
             </div>
+
+            {processHeadline && processParagraphs.length > 0 && (
+              <div>
+                <h3 className="text-2xl font-bold text-slate-900">{processHeadline}</h3>
+                <div className="mt-4 space-y-4 text-lg text-slate-600 leading-relaxed">
+                  {processParagraphs.map((p) => (
+                    <p key={p}>{p}</p>
+                  ))}
+                </div>
+              </div>
+            )}
 
             <div className="rounded-2xl border border-slate-200 bg-slate-50 p-8">
               <h3 className="text-xl font-bold text-slate-900">What’s Included</h3>

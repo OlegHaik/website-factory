@@ -12,7 +12,6 @@ import { parseSocialLinks } from "@/lib/types"
 import { Header } from "@/components/header"
 import { ServiceHero } from "@/components/service-hero"
 import { ServiceContent } from "@/components/service-content"
-import { ServiceProcess } from "@/components/service-process"
 import { ServiceTrust } from "@/components/service-trust"
 import { ServiceCTA } from "@/components/service-cta"
 import Footer from "@/components/footer"
@@ -189,13 +188,13 @@ export default async function ServicePage({
         serviceDescription={service.shortDescription}
         sectionHeadline={content.sectionHeadline}
         sectionBody={content.sectionBody}
+        processHeadline={content.processHeadline}
+        processBody={content.processBody}
         city={site.city}
         state={site.state}
         serviceAreas={serviceAreas}
         otherServices={otherServices}
       />
-
-      <ServiceProcess headline={content.processHeadline} body={content.processBody} />
       <ServiceTrust headline={content.whyChooseHeadline} trustPoints={content.trustPoints} />
 
       <ServiceCTA
