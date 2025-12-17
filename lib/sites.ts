@@ -399,7 +399,24 @@ export async function getServiceAreaIndexForCurrentDomain(): Promise<ServiceArea
  * - If slug is not provided, attempts to resolve by current domain.
  */
 export async function resolveSiteContext(input?: { slug?: string }) {
-  const domain = await getCurrentDomain()
+  const requestDomain = await getCurrentDomain()
+
+  // Vercel preview/deployment URLs often use a *.vercel.app hostname (or another
+  // non-custom hostname). In that case, domain-based DB lookups should fall back
+  // to a configured custom domain.
+  const configuredDomain = normalizeDomainUrl(process.env.NEXT_PUBLIC_DOMAIN ?? '')
+  const isVercelEnv = Boolean(process.env.VERCEL)
+  const looksLikePreviewDomain =
+    !requestDomain || requestDomain.includes('vercel.app') || (isVercelEnv && configuredDomain && requestDomain !== configuredDomain)
+
+  const domain = looksLikePreviewDomain && configuredDomain ? configuredDomain : requestDomain
+
+  if (process.env.SITE_DEBUG === '1') {
+    console.log('=== RESOLVE SITE CONTEXT DEBUG ===')
+    console.log('requestDomain:', requestDomain)
+    console.log('configuredDomain:', configuredDomain)
+    console.log('usingDomain:', domain)
+  }
 
   if (input?.slug) {
     const site = await getSiteBySlug(input.slug)
