@@ -29,7 +29,7 @@ export default function Footer({ businessName, phone, phoneDisplay, address, ser
           <div className="min-w-0">
             <Link href="/" className="inline-flex items-baseline mb-4">
               <span
-                className="v0-logo-mark text-[22px] lg:text-[28px] tracking-tight font-black uppercase whitespace-nowrap"
+                className="v0-logo-mark text-[16px] lg:text-[18px] tracking-tight font-black uppercase whitespace-nowrap"
               >
                 <span className="text-[var(--accent-primary)]">{businessName.split(' ')[0]}</span>
                 <span className="text-white">&nbsp;{businessName.split(' ').slice(1).join(' ')}</span>

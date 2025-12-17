@@ -60,18 +60,24 @@ export function About({ businessName, city, state, serviceAreas }: AboutProps) {
                 <MapPin className="w-5 h-5 text-[var(--accent-hover)]" />
                 Service Areas
               </h3>
-              <div className="grid grid-cols-2 gap-4">
-                {serviceAreas.map((area) => (
-                  <Link
-                    key={area.slug}
-                    href={`/service-area/${area.slug}`}
-                    className="flex items-center gap-2 text-slate-300 hover:text-[var(--accent-hover)] transition-colors text-sm"
-                  >
-                    <span className="w-2 h-2 rounded-full bg-[var(--accent-hover)]"></span>
-                    {area.name}
-                  </Link>
-                ))}
-              </div>
+              {serviceAreas.length === 0 ? (
+                <p className="text-slate-300 text-sm leading-relaxed">
+                  Serving {city} and surrounding areas.
+                </p>
+              ) : (
+                <div className="grid grid-cols-2 gap-4">
+                  {serviceAreas.map((area) => (
+                    <Link
+                      key={area.slug}
+                      href={`/service-area/${area.slug}`}
+                      className="flex items-center gap-2 text-slate-300 hover:text-[var(--accent-hover)] transition-colors text-sm"
+                    >
+                      <span className="w-2 h-2 rounded-full bg-[var(--accent-hover)]"></span>
+                      {area.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
             </div>
 
             <div className="bg-white rounded-2xl p-8 border border-slate-200">

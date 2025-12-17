@@ -155,7 +155,7 @@ export function Header({ businessName, phone, phoneDisplay, serviceAreas = [], n
       </header>
 
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 z-40 bg-slate-950">
+        <div className="lg:hidden fixed inset-0 z-[60] bg-slate-950">
           <div className="pt-24 px-4 pb-6 space-y-4">
             <Link href="/" className="block py-3 text-white text-lg font-medium border-b border-slate-800">
               {labels.home}

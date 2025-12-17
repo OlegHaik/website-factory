@@ -51,7 +51,10 @@ export default async function Home() {
   if (!site.state) throw new Error('Site is missing required field: state')
 
   const areaIndex = await getServiceAreaIndexForCurrentDomain()
-  const serviceAreas = areaIndex.map((a) => ({ name: a.city, slug: a.slug }))
+  const serviceAreas =
+    areaIndex.length > 0
+      ? areaIndex.map((a) => ({ name: a.city, slug: a.slug }))
+      : (site.serviceAreas ?? [])
 
   const domain = site.resolvedDomain || site.domain_url || "default"
   const contentMap = parseContentMap(site.content_map)
