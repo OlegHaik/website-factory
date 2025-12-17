@@ -11,6 +11,7 @@ interface FooterProps {
   address?: string | null
   serviceAreas?: Array<{ name: string; slug: string }>
   socialLinks?: SocialLinks
+  ourLinksLabel?: string
 }
 
 const servicesLinks = [
@@ -22,9 +23,10 @@ const servicesLinks = [
   { label: "Sewage Cleanup", href: "/sewage-cleanup" },
 ]
 
-export default function Footer({ businessName, phone, phoneDisplay, address, serviceAreas = [], socialLinks }: FooterProps) {
+export default function Footer({ businessName, phone, phoneDisplay, address, serviceAreas = [], socialLinks, ourLinksLabel }: FooterProps) {
   const cleanPhone = phone.replace(/\D/g, "")
   const displayPhone = phoneDisplay || phone
+  const ourLinksText = ourLinksLabel || "Our Links"
 
   return (
     <footer className="bg-slate-950 text-white pt-20 pb-10">
@@ -45,12 +47,6 @@ export default function Footer({ businessName, phone, phoneDisplay, address, ser
 
             {socialLinks ? (
               <div className="mt-5">
-                <Link
-                  href="/links"
-                  className="inline-flex items-center justify-center bg-[var(--accent-primary)] hover:bg-[var(--warm-med)] text-white font-semibold px-4 py-2 rounded-lg transition-colors"
-                >
-                  Our Links
-                </Link>
                 <SocialIcons links={socialLinks} className="mt-4" iconClassName="w-5 h-5" />
               </div>
             ) : null}
@@ -108,6 +104,9 @@ export default function Footer({ businessName, phone, phoneDisplay, address, ser
             </Link>
             <Link href="/terms-of-use" className="text-slate-400 hover:text-white">
               Terms of Use
+            </Link>
+            <Link href="/links" className="text-slate-400 hover:text-white">
+              {ourLinksText}
             </Link>
           </div>
         </div>

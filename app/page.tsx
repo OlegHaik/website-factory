@@ -19,6 +19,7 @@ import {
 import {
   DEFAULT_CTA,
   DEFAULT_FAQ,
+  DEFAULT_HEADER,
   DEFAULT_HERO,
   DEFAULT_NAV,
   DEFAULT_SEO_BODY,
@@ -109,6 +110,8 @@ export default async function Home() {
     contact: processContent(headerContent?.nav_contact || DEFAULT_NAV.contact, domain, variables),
     callButton: processContent(headerContent?.call_button_text || DEFAULT_NAV.callButton, domain, variables),
   }
+
+  const ourLinksLabel = processContent(headerContent?.our_links_spintax || DEFAULT_HEADER.ourLinks, domain, variables)
 
   const serviceNavLabels = {
     water: processContent(DEFAULT_SERVICE_NAV.water, domain, variables),
@@ -317,6 +320,7 @@ export default async function Home() {
         address={site.address}
         serviceAreas={serviceAreas}
         socialLinks={socialLinks}
+        ourLinksLabel={ourLinksLabel}
       />
       <FloatingCall phone={site.phone} />
     </div>

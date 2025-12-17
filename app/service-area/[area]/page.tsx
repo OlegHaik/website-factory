@@ -6,7 +6,7 @@ import { DEFAULT_SERVICES } from "@/lib/water-damage"
 import { processContent } from "@/lib/spintax"
 import { generatePageMetadata } from "@/lib/generate-metadata"
 import { getContentHeader, getContentServiceArea, parseContentMap } from "@/lib/fetch-content"
-import { DEFAULT_NAV, DEFAULT_SERVICE_AREA, DEFAULT_SERVICE_NAV } from "@/lib/default-content"
+import { DEFAULT_HEADER, DEFAULT_NAV, DEFAULT_SERVICE_AREA, DEFAULT_SERVICE_NAV } from "@/lib/default-content"
 import { parseSocialLinks } from "@/lib/types"
 
 import { Header } from "@/components/header"
@@ -61,7 +61,6 @@ export default async function ServiceAreaPage({
   const { site: mainSite, domain } = await resolveSiteContext()
 
   if (process.env.SITE_DEBUG === '1') {
-    console.log('=== SERVICE AREA DEBUG ===')
     console.log('Area slug:', areaSlug)
     console.log('Main site:', mainSite?.business_name)
     console.log('Domain:', domain)
@@ -180,6 +179,8 @@ export default async function ServiceAreaPage({
     callButton: processContent(headerContent?.call_button_text || DEFAULT_NAV.callButton, resolvedDomain, variables),
   }
 
+  const ourLinksLabel = processContent(headerContent?.our_links_spintax || DEFAULT_HEADER.ourLinks, resolvedDomain, variables)
+
   const serviceNavLabels = {
     water: processContent(DEFAULT_SERVICE_NAV.water, resolvedDomain, variables),
     fire: processContent(DEFAULT_SERVICE_NAV.fire, resolvedDomain, variables),
@@ -238,6 +239,7 @@ export default async function ServiceAreaPage({
         address={areaSite.address}
         serviceAreas={serviceAreas}
         socialLinks={socialLinks}
+           ourLinksLabel={ourLinksLabel}
       />
       <FloatingCall phone={areaSite.phone} />
     </div>

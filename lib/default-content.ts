@@ -4,6 +4,7 @@ export const DEFAULT_HEADER = {
   nav_areas: "Service Areas",
   nav_contact: "Contact",
   call_button_text: "Call Now",
+  ourLinks: "{Our Links|Links|Citations|Backlinks|References|Online References|External Links|Resources}",
 }
 
 export const DEFAULT_NAV = {

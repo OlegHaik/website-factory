@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 import { getServiceAreaIndexForCurrentDomain, resolveSiteContext } from '@/lib/sites'
 import { processContent } from '@/lib/spintax'
 import { getContentHeader, getContentLegal, parseContentMap } from '@/lib/fetch-content'
-import { DEFAULT_LEGAL, DEFAULT_NAV, DEFAULT_SERVICE_NAV } from '@/lib/default-content'
+import { DEFAULT_HEADER, DEFAULT_LEGAL, DEFAULT_NAV, DEFAULT_SERVICE_NAV } from '@/lib/default-content'
 import { generatePageMetadata } from '@/lib/generate-metadata'
 import { parseSocialLinks } from '@/lib/types'
 import { Header } from '@/components/header'
@@ -75,6 +75,7 @@ export default async function PrivacyPolicyPage() {
     contact: processContent(headerContent?.nav_contact || DEFAULT_NAV.contact, domain, variables),
     callButton: processContent(headerContent?.call_button_text || DEFAULT_NAV.callButton, domain, variables),
   }
+  const ourLinksLabel = processContent(headerContent?.our_links_spintax || DEFAULT_HEADER.ourLinks, domain, variables)
 
   const serviceNavLabels = {
     water: processContent(DEFAULT_SERVICE_NAV.water, domain, variables),
@@ -120,6 +121,7 @@ export default async function PrivacyPolicyPage() {
         address={site.address}
         serviceAreas={serviceAreas}
         socialLinks={socialLinks}
+        ourLinksLabel={ourLinksLabel}
       />
       <FloatingCall phone={site.phone} />
     </div>

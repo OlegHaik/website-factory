@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 import { getCitationsForSite, getServiceAreaIndexForCurrentDomain, resolveSiteContext } from '@/lib/sites'
 import { processContent } from '@/lib/spintax'
 import { getContentHeader, parseContentMap } from '@/lib/fetch-content'
-import { DEFAULT_NAV, DEFAULT_SERVICE_NAV } from '@/lib/default-content'
+import { DEFAULT_HEADER, DEFAULT_NAV, DEFAULT_SERVICE_NAV } from '@/lib/default-content'
 import { parseSocialLinks } from '@/lib/types'
 import { Header } from '@/components/header'
 import Footer from '@/components/footer'
@@ -71,6 +71,8 @@ export default async function LinksPage() {
     callButton: processContent(headerContent?.call_button_text || DEFAULT_NAV.callButton, domain, variables),
   }
 
+  const ourLinksLabel = processContent(headerContent?.our_links_spintax || DEFAULT_HEADER.ourLinks, domain, variables)
+
   const serviceNavLabels = {
     water: processContent(DEFAULT_SERVICE_NAV.water, domain, variables),
     fire: processContent(DEFAULT_SERVICE_NAV.fire, domain, variables),
@@ -133,6 +135,7 @@ export default async function LinksPage() {
         address={site.address}
         serviceAreas={serviceAreas}
         socialLinks={socialLinks}
+        ourLinksLabel={ourLinksLabel}
       />
       <FloatingCall phone={site.phone} />
     </div>

@@ -7,6 +7,7 @@ export interface ContentHeader {
   nav_areas: string
   nav_contact: string
   call_button_text: string
+  our_links_spintax?: string | null
 }
 
 export interface ContentHero {
