@@ -35,13 +35,13 @@ export function Header({ businessName, phone, phoneDisplay, serviceAreas = [] }:
 
   return (
     <>
-      <header className="sticky top-0 z-50 relative">
+      <header className="sticky top-0 z-50 relative overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950 to-slate-950" />
-          <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-red-950/60 via-red-900/30 to-transparent" />
-          <div className="absolute top-0 left-0 w-[300px] h-[300px] bg-[#BA1C1C]/20 rounded-full blur-[80px]" />
-          <div className="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-l from-blue-950/60 via-blue-900/30 to-transparent" />
-          <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-blue-800/25 rounded-full blur-[80px]" />
+          <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-[var(--warm-dark)]/60 via-[var(--warm-med)]/30 to-transparent" />
+          <div className="absolute top-0 left-0 w-[300px] h-[300px] bg-[var(--warm-bright)]/20 rounded-full blur-[80px]" />
+          <div className="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-l from-[var(--cool-dark)]/60 via-[var(--cool-accent)]/30 to-transparent" />
+          <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-[var(--cool-med)]/25 rounded-full blur-[80px]" />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -50,7 +50,7 @@ export function Header({ businessName, phone, phoneDisplay, serviceAreas = [] }:
               <span
                 className="v0-logo-mark text-[22px] lg:text-[28px] tracking-tight font-black uppercase whitespace-nowrap"
               >
-                <span className="text-[#BA1C1C]">{businessName.split(' ')[0]}</span>
+                <span className="text-[var(--accent-primary)]">{businessName.split(' ')[0]}</span>
                 <span className="text-white">&nbsp;{businessName.split(' ').slice(1).join(' ')}</span>
               </span>
             </Link>
@@ -79,7 +79,7 @@ export function Header({ businessName, phone, phoneDisplay, serviceAreas = [] }:
                         <Link
                           key={item.href}
                           href={item.href}
-                          className="block px-4 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-red-600 transition-colors"
+                          className="block px-4 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-[var(--accent-primary)] transition-colors"
                         >
                           {item.label}
                         </Link>
@@ -108,7 +108,7 @@ export function Header({ businessName, phone, phoneDisplay, serviceAreas = [] }:
                         <Link
                           key={area.slug}
                           href={`/service-area/${area.slug}`}
-                          className="block px-4 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-red-600 transition-colors"
+                          className="block px-4 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-[var(--accent-primary)] transition-colors"
                         >
                           {area.name}
                         </Link>
@@ -125,7 +125,7 @@ export function Header({ businessName, phone, phoneDisplay, serviceAreas = [] }:
 
             <Link
               href={phoneHref}
-              className="hidden lg:inline-flex items-center justify-center bg-[#BA1C1C] hover:bg-red-700 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors"
+              className="hidden lg:inline-flex items-center justify-center bg-[var(--accent-primary)] hover:bg-[var(--warm-med)] text-white font-semibold px-5 py-2.5 rounded-lg transition-colors"
             >
               <Phone className="w-4 h-4 mr-2" />
               {displayPhone}
@@ -205,7 +205,7 @@ export function Header({ businessName, phone, phoneDisplay, serviceAreas = [] }:
 
             <Link
               href={phoneHref}
-              className="flex items-center justify-center bg-[#BA1C1C] text-white font-semibold py-3 rounded-lg mt-6"
+              className="flex items-center justify-center bg-[var(--accent-primary)] text-white font-semibold py-3 rounded-lg mt-6"
             >
               <Phone className="w-5 h-5 mr-2" />
               {displayPhone}

@@ -34,6 +34,8 @@ export interface SiteRow {
   service_areas?: string | null
   links?: string | null
   social_links?: string | null
+  style_id?: number | null
+  content_map?: Record<string, number> | null
   meta_title: string | null
   meta_description: string | null
   created_at: string | null

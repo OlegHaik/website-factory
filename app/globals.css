@@ -14,6 +14,7 @@
   --aurora-hero-3: #1e1b4b; /* indigo-950 */
   --aurora-hero-4: #0f172a; /* slate-900 */
 
+
   /* Aurora (base tokens)
      These power the new aurora-* components. For now they map to existing brand/neutrals.
      Per-site presets can override these later. */
@@ -54,6 +55,16 @@
   --input: var(--neutral-light);
   --ring: var(--brand);
   --radius: 0.75rem;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 .dark {
@@ -125,6 +136,7 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-family);
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
@@ -133,7 +145,7 @@
 
 @layer utilities {
   .v0-logo-mark {
-    font-family: 'Cal Sans', 'Cabinet Grotesk', system-ui, sans-serif;
+    font-family: var(--font-family);
     font-style: italic;
     transform: skewX(-6deg);
     display: inline-block;

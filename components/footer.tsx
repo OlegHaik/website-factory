@@ -21,8 +21,6 @@ const servicesLinks = [
 export default function Footer({ businessName, phone, phoneDisplay, address, serviceAreas = [] }: FooterProps) {
   const cleanPhone = phone.replace(/\D/g, "")
   const displayPhone = phoneDisplay || phone
-  const firstWord = businessName.split(" ")[0] || businessName
-  const restWords = businessName.split(" ").slice(1).join(" ")
 
   return (
     <footer className="bg-slate-950 text-white pt-20 pb-10">
@@ -31,10 +29,10 @@ export default function Footer({ businessName, phone, phoneDisplay, address, ser
           <div className="min-w-0">
             <Link href="/" className="inline-flex items-baseline mb-4">
               <span
-                className="v0-logo-mark text-[18px] lg:text-[20px] tracking-tight font-black uppercase max-w-full inline-flex flex-wrap"
+                className="v0-logo-mark text-[22px] lg:text-[28px] tracking-tight font-black uppercase whitespace-nowrap"
               >
-                <span className="text-[#BA1C1C]">{firstWord}</span>
-                {restWords ? <span className="text-white"> {restWords}</span> : null}
+                <span className="text-[var(--accent-primary)]">{businessName.split(' ')[0]}</span>
+                <span className="text-white">&nbsp;{businessName.split(' ').slice(1).join(' ')}</span>
               </span>
             </Link>
             <p className="text-slate-300 leading-relaxed">

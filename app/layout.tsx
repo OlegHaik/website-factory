@@ -1,11 +1,11 @@
 import type { Metadata } from 'next'
-import { Montserrat, Open_Sans } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { headers } from 'next/headers'
+import { ThemeProvider } from '@/components/theme-provider'
+import { getThemeByStyleId } from '@/lib/fetch-theme'
+import { DEFAULT_THEME } from '@/lib/theme'
+import { resolveSiteContext } from '@/lib/sites'
 import './globals.css'
-
-const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-heading' })
-const openSans = Open_Sans({ subsets: ['latin'], variable: '--font-body' })
 
 async function getCurrentDomain() {
   const headersList = await headers()
@@ -44,16 +44,22 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const { site } = await resolveSiteContext()
+
+  const theme = site?.style_id ? await getThemeByStyleId(site.style_id) : DEFAULT_THEME
+
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${montserrat.variable} ${openSans.variable} font-body antialiased`}>
-        {children}
-        <Analytics />
+      <body className="antialiased">
+        <ThemeProvider theme={theme}>
+          {children}
+          <Analytics />
+        </ThemeProvider>
       </body>
     </html>
   )

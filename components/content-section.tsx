@@ -63,7 +63,7 @@ export function ContentSection({ city, state, businessName, serviceAreas }: Cont
                     href={`/service-area/${area.slug}`}
                     className="flex items-center gap-2 text-white hover:text-gray-300"
                   >
-                    <span className="w-2 h-2 rounded-full bg-teal-400"></span>
+                    <span className="w-2 h-2 rounded-full bg-[var(--accent-hover)]"></span>
                     {area.city}
                   </a>
                 ))}
@@ -72,7 +72,7 @@ export function ContentSection({ city, state, businessName, serviceAreas }: Cont
 
             <div className="bg-white rounded-xl border border-gray-200 p-6 text-center">
               <div className="w-12 h-12 rounded-full bg-teal-50 flex items-center justify-center mx-auto mb-4">
-                <CheckCircle className="w-6 h-6 text-teal-500" />
+                <CheckCircle className="w-6 h-6 text-[var(--accent-hover)]" />
               </div>
               <h3 className="font-bold text-lg text-gray-900 mb-2">Licensed & Insured</h3>
               <p className="text-gray-600 text-sm">

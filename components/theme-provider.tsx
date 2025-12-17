@@ -1,11 +1,28 @@
-'use client'
+"use client"
 
-import * as React from 'react'
-import {
-  ThemeProvider as NextThemesProvider,
-  type ThemeProviderProps,
-} from 'next-themes'
+import type { ReactNode } from "react"
 
-export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
-  return <NextThemesProvider {...props}>{children}</NextThemesProvider>
+import { generateCSSVariables, type ThemeColors } from "@/lib/theme"
+
+interface ThemeProviderProps {
+  theme: ThemeColors
+  children: ReactNode
+}
+
+export function ThemeProvider({ theme, children }: ThemeProviderProps) {
+  return (
+    <>
+      <style jsx global>{`
+        @import url('https://fonts.googleapis.com/css2?family=${theme.font_family.replace(
+          / /g,
+          '+',
+        )}:wght@400;500;600;700;800&display=swap');
+
+        :root {
+          ${generateCSSVariables(theme)}
+        }
+      `}</style>
+      {children}
+    </>
+  )
 }

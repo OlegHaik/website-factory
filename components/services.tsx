@@ -89,13 +89,13 @@ export function Services() {
               className="group bg-white rounded-2xl p-8 border border-slate-200 hover:border-slate-300 hover:shadow-xl transition-all duration-300"
             >
               <div className="w-14 h-14 bg-teal-50 rounded-2xl flex items-center justify-center mb-6">
-                <service.icon className="w-7 h-7 text-teal-500" />
+                <service.icon className="w-7 h-7 text-[var(--accent-hover)]" />
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-4">{service.title}</h3>
               <p className="text-slate-600 leading-relaxed mb-6">{service.description}</p>
               <Link
                 href={service.href}
-                className="inline-flex items-center text-teal-500 font-semibold hover:text-teal-600 transition-colors"
+                className="inline-flex items-center text-[var(--accent-hover)] font-semibold hover:text-[var(--accent-hover)] transition-colors"
               >
                 Learn More
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />

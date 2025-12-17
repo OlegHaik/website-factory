@@ -57,7 +57,7 @@ export function About({ businessName, city, state, serviceAreas }: AboutProps) {
           <div className="space-y-8">
             <div className="bg-slate-800 rounded-2xl p-8 text-white">
               <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
-                <MapPin className="w-5 h-5 text-teal-400" />
+                <MapPin className="w-5 h-5 text-[var(--accent-hover)]" />
                 Service Areas
               </h3>
               <div className="grid grid-cols-2 gap-4">
@@ -65,9 +65,9 @@ export function About({ businessName, city, state, serviceAreas }: AboutProps) {
                   <Link
                     key={area.slug}
                     href={`/service-area/${area.slug}`}
-                    className="flex items-center gap-2 text-slate-300 hover:text-teal-400 transition-colors text-sm"
+                    className="flex items-center gap-2 text-slate-300 hover:text-[var(--accent-hover)] transition-colors text-sm"
                   >
-                    <span className="w-2 h-2 rounded-full bg-teal-400"></span>
+                    <span className="w-2 h-2 rounded-full bg-[var(--accent-hover)]"></span>
                     {area.name}
                   </Link>
                 ))}
@@ -77,7 +77,7 @@ export function About({ businessName, city, state, serviceAreas }: AboutProps) {
             <div className="bg-white rounded-2xl p-8 border border-slate-200">
               <div className="flex justify-center mb-4">
                 <div className="w-14 h-14 bg-teal-50 rounded-full flex items-center justify-center">
-                  <ShieldCheck className="w-7 h-7 text-teal-500" />
+                  <ShieldCheck className="w-7 h-7 text-[var(--accent-hover)]" />
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-slate-900 text-center mb-3">Licensed & Insured</h3>
