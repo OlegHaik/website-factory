@@ -14,7 +14,16 @@ import {
   parseFAQItems,
   parseTestimonialItems,
 } from "@/lib/fetch-content"
-import { DEFAULT_CTA, DEFAULT_FAQ, DEFAULT_HEADER, DEFAULT_HERO, DEFAULT_SEO_BODY, DEFAULT_SERVICES, DEFAULT_TESTIMONIALS } from "@/lib/default-content"
+import {
+  DEFAULT_CTA,
+  DEFAULT_FAQ,
+  DEFAULT_HERO,
+  DEFAULT_NAV,
+  DEFAULT_SEO_BODY,
+  DEFAULT_SERVICE_NAV,
+  DEFAULT_SERVICES,
+  DEFAULT_TESTIMONIALS,
+} from "@/lib/default-content"
 
 import { Header } from "@/components/header"
 import { Hero } from "@/components/hero"
@@ -92,11 +101,20 @@ export default async function Home() {
   const testimonialsContent = contentMap.testimonials ? await getContentTestimonials(contentMap.testimonials) : null
 
   const navLabels = {
-    home: processContent(headerContent?.nav_home || DEFAULT_HEADER.nav_home, domain, variables),
-    services: processContent(headerContent?.nav_services || DEFAULT_HEADER.nav_services, domain, variables),
-    areas: processContent(headerContent?.nav_areas || DEFAULT_HEADER.nav_areas, domain, variables),
-    contact: processContent(headerContent?.nav_contact || DEFAULT_HEADER.nav_contact, domain, variables),
-    callButton: processContent(headerContent?.call_button_text || DEFAULT_HEADER.call_button_text, domain, variables),
+    home: processContent(headerContent?.nav_home || DEFAULT_NAV.home, domain, variables),
+    services: processContent(headerContent?.nav_services || DEFAULT_NAV.services, domain, variables),
+    areas: processContent(headerContent?.nav_areas || DEFAULT_NAV.areas, domain, variables),
+    contact: processContent(headerContent?.nav_contact || DEFAULT_NAV.contact, domain, variables),
+    callButton: processContent(headerContent?.call_button_text || DEFAULT_NAV.callButton, domain, variables),
+  }
+
+  const serviceNavLabels = {
+    water: processContent(DEFAULT_SERVICE_NAV.water, domain, variables),
+    fire: processContent(DEFAULT_SERVICE_NAV.fire, domain, variables),
+    mold: processContent(DEFAULT_SERVICE_NAV.mold, domain, variables),
+    biohazard: processContent(DEFAULT_SERVICE_NAV.biohazard, domain, variables),
+    burst: processContent(DEFAULT_SERVICE_NAV.burst, domain, variables),
+    sewage: processContent(DEFAULT_SERVICE_NAV.sewage, domain, variables),
   }
 
   const heroTitle = processContent(heroContent?.headline_spintax || DEFAULT_HERO.headline_spintax, domain, variables)
@@ -256,6 +274,7 @@ export default async function Home() {
         serviceAreas={serviceAreas}
         domain={domain}
         navLabels={navLabels}
+        serviceNavLabels={serviceNavLabels}
       />
       <Hero
         title={heroTitle}

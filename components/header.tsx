@@ -22,21 +22,25 @@ interface HeaderProps {
     contact: string
     callButton: string
   }
+  serviceNavLabels?: {
+    water: string
+    fire: string
+    mold: string
+    biohazard: string
+    burst: string
+    sewage: string
+  }
 }
 
-const servicesLinks = [
-  { label: "Water Damage Restoration", href: "/water-damage-restoration" },
-  { label: "Fire & Smoke Damage", href: "/fire-smoke-damage" },
-  { label: "Mold Remediation", href: "/mold-remediation" },
-  { label: "Biohazard Cleanup", href: "/biohazard-cleanup" },
-  { label: "Burst Pipe Repair", href: "/burst-pipe-repair" },
-  { label: "Sewage Cleanup", href: "/sewage-cleanup" },
-]
-
-export function Header({ businessName, phone, phoneDisplay, serviceAreas = [], navLabels }: HeaderProps) {
+export function Header({ businessName, phone, phoneDisplay, serviceAreas = [], navLabels, serviceNavLabels }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
   const [mobileDropdown, setMobileDropdown] = useState<string | null>(null)
+
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false)
+    setMobileDropdown(null)
+  }
 
   const phoneHref = `tel:${phone.replace(/\D/g, '')}`
   const displayPhone = phoneDisplay || phone
@@ -49,10 +53,19 @@ export function Header({ businessName, phone, phoneDisplay, serviceAreas = [], n
     callButton: navLabels?.callButton || "Call Now",
   }
 
+  const servicesLinks = [
+    { href: "/water-damage-restoration", label: serviceNavLabels?.water || "Water Damage Restoration" },
+    { href: "/fire-smoke-damage", label: serviceNavLabels?.fire || "Fire & Smoke Damage" },
+    { href: "/mold-remediation", label: serviceNavLabels?.mold || "Mold Remediation" },
+    { href: "/biohazard-cleanup", label: serviceNavLabels?.biohazard || "Biohazard Cleanup" },
+    { href: "/burst-pipe-repair", label: serviceNavLabels?.burst || "Burst Pipe Repair" },
+    { href: "/sewage-cleanup", label: serviceNavLabels?.sewage || "Sewage Cleanup" },
+  ]
+
   return (
     <>
       <header className="sticky top-0 z-50 overflow-visible">
-        <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950 to-slate-950" />
           <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-[var(--warm-dark)]/60 via-[var(--warm-med)]/30 to-transparent" />
           <div className="absolute top-0 left-0 w-[300px] h-[300px] bg-[var(--warm-bright)]/20 rounded-full blur-[80px]" />
@@ -147,7 +160,12 @@ export function Header({ businessName, phone, phoneDisplay, serviceAreas = [], n
               {labels.callButton}
             </Link>
 
-            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="lg:hidden ml-auto p-2 text-white">
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="lg:hidden ml-auto p-2 text-white"
+              aria-label="Toggle menu"
+            >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
@@ -156,76 +174,91 @@ export function Header({ businessName, phone, phoneDisplay, serviceAreas = [], n
 
       {mobileMenuOpen && (
         <div className="lg:hidden fixed inset-0 z-[60] bg-slate-950">
-          <div className="pt-24 px-4 pb-6 space-y-4">
-            <Link href="/" className="block py-3 text-white text-lg font-medium border-b border-slate-800">
-              {labels.home}
-            </Link>
-
-            <div className="border-b border-slate-800">
-              <button
-                onClick={() => setMobileDropdown(mobileDropdown === "services" ? null : "services")}
-                className="flex items-center justify-between w-full py-3 text-white text-lg font-medium"
-              >
-                {labels.services}
-                <ChevronDown
-                  className={`w-5 h-5 transition-transform ${mobileDropdown === "services" ? "rotate-180" : ""}`}
-                />
+          <div className="flex flex-col h-full">
+            <div className="flex items-center justify-between p-4 border-b border-white/10">
+              <span className="text-white font-bold">{businessName}</span>
+              <button type="button" onClick={closeMobileMenu} className="p-2 text-white" aria-label="Close menu">
+                <X className="w-6 h-6" />
               </button>
-              {mobileDropdown === "services" && (
-                <div className="pb-3 space-y-2">
-                  {servicesLinks.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      className="block py-2 pl-4 text-slate-400 hover:text-white"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
-                </div>
-              )}
             </div>
 
-            {serviceAreas.length > 0 && (
-              <div className="border-b border-slate-800">
+            <nav className="flex-1 overflow-y-auto p-4">
+              <Link href="/" className="block py-3 text-white text-lg" onClick={closeMobileMenu}>
+                {labels.home}
+              </Link>
+
+              <div className="border-t border-white/10">
                 <button
-                  onClick={() => setMobileDropdown(mobileDropdown === "areas" ? null : "areas")}
-                  className="flex items-center justify-between w-full py-3 text-white text-lg font-medium"
+                  type="button"
+                  onClick={() => setMobileDropdown(mobileDropdown === "services" ? null : "services")}
+                  className="flex items-center justify-between w-full py-3 text-white text-lg"
                 >
-                  {labels.areas}
+                  {labels.services}
                   <ChevronDown
-                    className={`w-5 h-5 transition-transform ${mobileDropdown === "areas" ? "rotate-180" : ""}`}
+                    className={`w-5 h-5 transition-transform ${mobileDropdown === "services" ? "rotate-180" : ""}`}
                   />
                 </button>
-                {mobileDropdown === "areas" && (
-                  <div className="pb-3 space-y-2">
-                    {serviceAreas.map((area) => (
+                {mobileDropdown === "services" && (
+                  <div className="pb-2">
+                    {servicesLinks.map((item) => (
                       <Link
-                        key={area.slug}
-                        href={`/service-area/${area.slug}`}
-                        className="block py-2 pl-4 text-slate-400 hover:text-white"
-                        onClick={() => setMobileMenuOpen(false)}
+                        key={item.href}
+                        href={item.href}
+                        className="block py-2 pl-4 text-white/80"
+                        onClick={closeMobileMenu}
                       >
-                        {area.name}
+                        {item.label}
                       </Link>
                     ))}
                   </div>
                 )}
               </div>
-            )}
 
-            <Link href="/#cta" className="block py-3 text-white text-lg font-medium border-b border-slate-800">
-              {labels.contact}
-            </Link>
+              {serviceAreas.length > 0 && (
+                <div className="border-t border-white/10">
+                  <button
+                    type="button"
+                    onClick={() => setMobileDropdown(mobileDropdown === "areas" ? null : "areas")}
+                    className="flex items-center justify-between w-full py-3 text-white text-lg"
+                  >
+                    {labels.areas}
+                    <ChevronDown
+                      className={`w-5 h-5 transition-transform ${mobileDropdown === "areas" ? "rotate-180" : ""}`}
+                    />
+                  </button>
+                  {mobileDropdown === "areas" && (
+                    <div className="pb-2">
+                      {serviceAreas.map((area) => (
+                        <Link
+                          key={area.slug}
+                          href={`/service-area/${area.slug}`}
+                          className="block py-2 pl-4 text-white/80"
+                          onClick={closeMobileMenu}
+                        >
+                          {area.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
 
-            <Link
-              href={phoneHref}
-              className="flex items-center justify-center bg-[var(--accent-primary)] text-white font-semibold py-3 rounded-lg mt-6"
-            >
-              <Phone className="w-5 h-5 mr-2" />
-              {labels.callButton}
-            </Link>
+              <div className="border-t border-white/10">
+                <Link href="/#cta" className="block py-3 text-white text-lg" onClick={closeMobileMenu}>
+                  {labels.contact}
+                </Link>
+              </div>
+            </nav>
+
+            <div className="p-4 border-t border-white/10">
+              <a
+                href={phoneHref}
+                className="block w-full py-3 bg-[var(--accent-primary)] text-white text-center rounded-lg"
+                onClick={closeMobileMenu}
+              >
+                {labels.callButton}
+              </a>
+            </div>
           </div>
         </div>
       )}

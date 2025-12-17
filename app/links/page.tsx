@@ -1,5 +1,8 @@
 import { notFound } from 'next/navigation'
 import { getCitationsForSite, getServiceAreaIndexForCurrentDomain, resolveSiteContext } from '@/lib/sites'
+import { processContent } from '@/lib/spintax'
+import { getContentHeader, parseContentMap } from '@/lib/fetch-content'
+import { DEFAULT_NAV, DEFAULT_SERVICE_NAV } from '@/lib/default-content'
 import { Header } from '@/components/header'
 import Footer from '@/components/footer'
 import { FloatingCall } from '@/components/floating-call'
@@ -10,7 +13,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 export const dynamic = 'force-dynamic'
 
 export default async function LinksPage() {
-  const { site } = await resolveSiteContext()
+  const { site, domain: requestDomain } = await resolveSiteContext()
   if (!site) return notFound()
 
   if (!site.business_name) throw new Error('Site is missing required field: business_name')
@@ -38,9 +41,45 @@ export default async function LinksPage() {
   const areaIndex = await getServiceAreaIndexForCurrentDomain()
   const serviceAreas = areaIndex.map((a) => ({ name: a.city, slug: a.slug }))
 
+  const domain = site.resolvedDomain || site.domain_url || requestDomain || 'default'
+  const variables = {
+    city: site.city || '',
+    state: site.state || '',
+    business_name: site.business_name,
+    phone: site.phone,
+  }
+
+  const contentMap = parseContentMap(site.content_map)
+  const headerContent = contentMap.header ? await getContentHeader(contentMap.header) : null
+
+  const navLabels = {
+    home: processContent(headerContent?.nav_home || DEFAULT_NAV.home, domain, variables),
+    services: processContent(headerContent?.nav_services || DEFAULT_NAV.services, domain, variables),
+    areas: processContent(headerContent?.nav_areas || DEFAULT_NAV.areas, domain, variables),
+    contact: processContent(headerContent?.nav_contact || DEFAULT_NAV.contact, domain, variables),
+    callButton: processContent(headerContent?.call_button_text || DEFAULT_NAV.callButton, domain, variables),
+  }
+
+  const serviceNavLabels = {
+    water: processContent(DEFAULT_SERVICE_NAV.water, domain, variables),
+    fire: processContent(DEFAULT_SERVICE_NAV.fire, domain, variables),
+    mold: processContent(DEFAULT_SERVICE_NAV.mold, domain, variables),
+    biohazard: processContent(DEFAULT_SERVICE_NAV.biohazard, domain, variables),
+    burst: processContent(DEFAULT_SERVICE_NAV.burst, domain, variables),
+    sewage: processContent(DEFAULT_SERVICE_NAV.sewage, domain, variables),
+  }
+
   return (
     <div className="min-h-screen bg-white">
-      <Header businessName={site.business_name} phone={site.phone} phoneDisplay={site.phoneDisplay || undefined} serviceAreas={serviceAreas} />
+      <Header
+        businessName={site.business_name}
+        phone={site.phone}
+        phoneDisplay={site.phoneDisplay || undefined}
+        serviceAreas={serviceAreas}
+        domain={domain}
+        navLabels={navLabels}
+        serviceNavLabels={serviceNavLabels}
+      />
 
       <main className="pt-24">
         <div className="container mx-auto px-4 py-12">

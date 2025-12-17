@@ -3,6 +3,9 @@ import { notFound } from "next/navigation"
 
 import { getServiceAreaIndexForCurrentDomain, getSiteByDomainAndSlug, resolveSiteContext } from "@/lib/sites"
 import { DEFAULT_SERVICES } from "@/lib/water-damage"
+import { processContent } from "@/lib/spintax"
+import { getContentHeader, parseContentMap } from "@/lib/fetch-content"
+import { DEFAULT_NAV, DEFAULT_SERVICE_NAV } from "@/lib/default-content"
 
 import { Header } from "@/components/header"
 import { ServiceAreaHero } from "@/components/service-area-hero"
@@ -77,6 +80,34 @@ export default async function ServiceAreaPage({
 
   const services = DEFAULT_SERVICES.map((s) => ({ label: s.title, href: `/${s.slug}` }))
 
+  const resolvedDomain = areaSite.resolvedDomain || areaSite.domain_url || domain || "default"
+  const variables = {
+    city: areaSite.city,
+    state: areaSite.state,
+    business_name: areaSite.business_name,
+    phone: areaSite.phone,
+  }
+
+  const contentMap = parseContentMap(areaSite.content_map)
+  const headerContent = contentMap.header ? await getContentHeader(contentMap.header) : null
+
+  const navLabels = {
+    home: processContent(headerContent?.nav_home || DEFAULT_NAV.home, resolvedDomain, variables),
+    services: processContent(headerContent?.nav_services || DEFAULT_NAV.services, resolvedDomain, variables),
+    areas: processContent(headerContent?.nav_areas || DEFAULT_NAV.areas, resolvedDomain, variables),
+    contact: processContent(headerContent?.nav_contact || DEFAULT_NAV.contact, resolvedDomain, variables),
+    callButton: processContent(headerContent?.call_button_text || DEFAULT_NAV.callButton, resolvedDomain, variables),
+  }
+
+  const serviceNavLabels = {
+    water: processContent(DEFAULT_SERVICE_NAV.water, resolvedDomain, variables),
+    fire: processContent(DEFAULT_SERVICE_NAV.fire, resolvedDomain, variables),
+    mold: processContent(DEFAULT_SERVICE_NAV.mold, resolvedDomain, variables),
+    biohazard: processContent(DEFAULT_SERVICE_NAV.biohazard, resolvedDomain, variables),
+    burst: processContent(DEFAULT_SERVICE_NAV.burst, resolvedDomain, variables),
+    sewage: processContent(DEFAULT_SERVICE_NAV.sewage, resolvedDomain, variables),
+  }
+
   return (
     <div className="min-h-screen bg-white">
       <Header
@@ -84,6 +115,9 @@ export default async function ServiceAreaPage({
         phone={areaSite.phone}
         phoneDisplay={areaSite.phoneDisplay || undefined}
         serviceAreas={serviceAreas}
+        domain={resolvedDomain}
+        navLabels={navLabels}
+        serviceNavLabels={serviceNavLabels}
       />
       <ServiceAreaHero
         areaName={areaName}

@@ -6,6 +6,23 @@ export const DEFAULT_HEADER = {
   call_button_text: "Call Now",
 }
 
+export const DEFAULT_NAV = {
+  home: "{Home|Home Page|Main|Start}",
+  services: "{Services|Our Services|What We Do|Solutions}",
+  areas: "{Service Areas|Areas We Serve|Locations|Coverage}",
+  contact: "{Contact|Contact Us|Get Help|Reach Us}",
+  callButton: "{Call Now|Call 24/7|Emergency Line|Get Help Now}",
+}
+
+export const DEFAULT_SERVICE_NAV = {
+  water: "{Water Damage Restoration|Water Damage Repair|Water Cleanup|Flood Restoration}",
+  fire: "{Fire & Smoke Damage|Fire Restoration|Fire Damage Repair|Smoke Cleanup}",
+  mold: "{Mold Remediation|Mold Removal|Mold Cleanup|Mold Services}",
+  biohazard: "{Biohazard Cleanup|Biohazard Services|Biohazard Removal|Trauma Cleanup}",
+  burst: "{Burst Pipe Repair|Pipe Damage|Frozen Pipe Repair|Emergency Plumbing}",
+  sewage: "{Sewage Cleanup|Sewage Removal|Sewer Backup|Black Water Cleanup}",
+}
+
 export const DEFAULT_HERO = {
   headline_spintax: "{Trusted|Professional|Expert|Certified} Fire & Water Restoration in {{city}}, {{state}}",
   subheadline_spintax:
