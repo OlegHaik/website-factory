@@ -2,8 +2,8 @@ import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { getServiceAreaIndexForCurrentDomain, resolveSiteContext } from "@/lib/sites"
 import { processContent } from "@/lib/spintax"
-import { getContentHeader, getContentHero, getContentServices, parseContentMap } from "@/lib/fetch-content"
-import { DEFAULT_HEADER, DEFAULT_HERO, DEFAULT_SERVICES } from "@/lib/default-content"
+import { getContentCTA, getContentHeader, getContentHero, getContentServices, parseContentMap } from "@/lib/fetch-content"
+import { DEFAULT_CTA, DEFAULT_HEADER, DEFAULT_HERO, DEFAULT_SERVICES } from "@/lib/default-content"
 
 import { Header } from "@/components/header"
 import { Hero } from "@/components/hero"
@@ -66,6 +66,7 @@ export default async function Home() {
   const headerContent = contentMap.header ? await getContentHeader(contentMap.header) : null
   const heroContent = contentMap.hero ? await getContentHero(contentMap.hero) : null
   const servicesContent = contentMap.services ? await getContentServices(contentMap.services) : null
+  const ctaContent = contentMap.cta ? await getContentCTA(contentMap.cta) : null
 
   const navLabels = {
     home: processContent(headerContent?.nav_home || DEFAULT_HEADER.nav_home, domain, variables),
@@ -142,6 +143,18 @@ export default async function Home() {
     },
   }
 
+  const ctaHeadline = processContent(ctaContent?.headline_spintax || DEFAULT_CTA.headline_spintax, domain, variables)
+  const ctaSubheadline = processContent(
+    ctaContent?.subheadline_spintax || DEFAULT_CTA.subheadline_spintax,
+    domain,
+    variables,
+  )
+  const ctaChatButtonText = processContent(
+    ctaContent?.chat_button_spintax || DEFAULT_CTA.chat_button_spintax,
+    domain,
+    variables,
+  )
+
   return (
     <div className="min-h-screen bg-white">
       <Header
@@ -176,6 +189,9 @@ export default async function Home() {
         phoneDisplay={site.phoneDisplay || undefined}
         businessName={site.business_name}
         domain={site.resolvedDomain}
+        headline={ctaHeadline}
+        subheadline={ctaSubheadline}
+        chatButtonText={ctaChatButtonText}
       />
 
       <Footer

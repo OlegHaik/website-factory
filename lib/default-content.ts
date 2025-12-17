@@ -33,3 +33,10 @@ export const DEFAULT_SERVICES = {
   sewage_description:
     "{Emergency sewage and black water cleanup services|Professional sewage removal}. We safely {remove contaminated water|extract sewage}, {sanitize affected areas|disinfect your property}, and restore your property.",
 }
+
+export const DEFAULT_CTA = {
+  headline_spintax: "{Need Help Right Now?|Need Emergency Help?|Request Immediate Service|Get Help Fast}",
+  subheadline_spintax:
+    "{Call for immediate dispatch|Call now for fast response}. Our team is {available 24/7|on call day and night} for {emergency cleanup, drying, and restoration|water, fire, and mold emergencies}.",
+  chat_button_spintax: "{Chat With Us|Message Us|Text Us|Get Free Estimate}",
+}

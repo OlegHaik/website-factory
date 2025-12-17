@@ -32,6 +32,13 @@ export interface ContentService {
   sewage_description: string
 }
 
+export interface ContentCTA {
+  id: number
+  headline_spintax: string
+  subheadline_spintax: string
+  chat_button_spintax: string
+}
+
 export interface ContentMap {
   header?: number
   hero?: number
@@ -73,6 +80,17 @@ export async function getContentServices(id: number): Promise<ContentService | n
     return null
   }
   return data as ContentService
+}
+
+export async function getContentCTA(id: number): Promise<ContentCTA | null> {
+  const supabase = await createClient()
+  const { data, error } = await supabase.from("content_cta").select("*").eq("id", id).single()
+
+  if (error) {
+    console.error("Failed to fetch content_cta:", error)
+    return null
+  }
+  return data as ContentCTA
 }
 
 export function parseContentMap(jsonData: unknown): ContentMap {
