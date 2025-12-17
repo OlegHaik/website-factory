@@ -16,8 +16,10 @@ function normalizeHostToDomain(host: string): string {
  */
 export async function getCurrentDomain(): Promise<string> {
   const headersList = await headers()
+  const forwardedHost = headersList.get('x-forwarded-host') ?? ''
   const host = headersList.get('host') ?? ''
-  const domain = normalizeHostToDomain(host)
+  const rawHost = (forwardedHost || host).split(',')[0].trim()
+  const domain = normalizeHostToDomain(rawHost)
 
   if (!domain || domain.includes('localhost') || domain.includes('vercel.app')) {
     return normalizeHostToDomain(process.env.NEXT_PUBLIC_DOMAIN ?? '')

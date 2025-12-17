@@ -337,14 +337,18 @@ export async function getSiteByDomainAndSlug(domain: string, slug: string): Prom
   const resolvedDomain = await getCurrentDomain()
   const supabase = createSupabaseClient()
 
-  const candidates = buildDomainCandidates(domain)
+  const domainForCandidates = (domain || '').trim() || resolvedDomain
+  const candidates = buildDomainCandidates(domainForCandidates)
   if (candidates.length === 0) return null
+
+  const normalizedSlug = String(slug ?? '').trim().toLowerCase()
+  if (!normalizedSlug) return null
 
   const { data, error } = await supabase
     .from('sites')
     .select('*')
     .in('domain_url', candidates)
-    .eq('slug', slug)
+    .ilike('slug', normalizedSlug)
     .limit(1)
 
   if (error) {
@@ -414,6 +418,6 @@ export async function resolveSiteContext(input?: { slug?: string }) {
     return { site, domain }
   }
 
-  const site = domain ? await getMainSiteByDomain(domain) : null
+  const site = domain ? (await getMainSiteByDomain(domain)) ?? (await getSiteByDomain(domain)) : null
   return { site, domain }
 }

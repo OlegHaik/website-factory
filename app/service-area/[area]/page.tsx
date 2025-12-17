@@ -47,9 +47,20 @@ export default async function ServiceAreaPage({
 }) {
   const { area: areaSlug } = await params
   const { site: mainSite, domain } = await resolveSiteContext()
+
+  if (process.env.SITE_DEBUG === '1') {
+    console.log('=== SERVICE AREA DEBUG ===')
+    console.log('Area slug:', areaSlug)
+    console.log('Main site:', mainSite?.business_name)
+    console.log('Domain:', domain)
+  }
+
   if (!mainSite || !domain) notFound()
 
   const areaSite = await getSiteByDomainAndSlug(domain, areaSlug)
+  if (process.env.SITE_DEBUG === '1') {
+    console.log('Area site found:', areaSite ? 'YES' : 'NO')
+  }
   if (!areaSite) notFound()
 
   if (!areaSite.business_name) throw new Error('Site is missing required field: business_name')

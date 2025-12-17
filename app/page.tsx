@@ -52,7 +52,13 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Home() {
-  const { site } = await resolveSiteContext()
+  const { site, domain: requestDomain } = await resolveSiteContext()
+  if (process.env.SITE_DEBUG === '1') {
+    console.log('=== HOMEPAGE DEBUG ===')
+    console.log('Domain:', requestDomain)
+    console.log('Site:', site)
+    if (!site) console.log('NO SITE FOUND - this causes 404')
+  }
 
   if (!site) notFound()
 
@@ -67,7 +73,7 @@ export default async function Home() {
       ? areaIndex.map((a) => ({ name: a.city, slug: a.slug }))
       : (site.serviceAreas ?? [])
 
-  const domain = site.resolvedDomain || site.domain_url || "default"
+  const domain = site.resolvedDomain || site.domain_url || requestDomain || "default"
   const contentMap = parseContentMap(site.content_map)
 
   const variables = {
