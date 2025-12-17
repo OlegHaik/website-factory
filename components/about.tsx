@@ -11,9 +11,28 @@ interface AboutProps {
   city: string
   state: string
   serviceAreas: ServiceArea[]
+  seoContent?: {
+    intro: string
+    whyChooseTitle: string
+    whyChoose: string
+    processTitle: string
+    process: string
+  }
 }
 
-export function About({ businessName, city, state, serviceAreas }: AboutProps) {
+export function About({ businessName, city, state, serviceAreas, seoContent }: AboutProps) {
+  const introText =
+    seoContent?.intro ||
+    `When disaster strikes, every second counts. At ${businessName}, we understand the urgency of water damage, fire incidents, and mold growth. Our team of certified professionals is dedicated to restoring your property to its pre-loss condition as quickly and efficiently as possible. Serving ${city} and the surrounding areas, we are your local experts in emergency mitigation.`
+  const whyChooseTitleText = seoContent?.whyChooseTitle || "Why Choose Our Restoration Team?"
+  const whyChooseText =
+    seoContent?.whyChoose ||
+    "Choosing the right restoration company can make the difference between a quick recovery and a long, drawn-out nightmare. We pride ourselves on transparency, speed, and quality craftsmanship. Unlike general contractors, we specialize specifically in disaster recovery. We utilize thermal imaging technology to detect hidden moisture that the naked eye cannot see, ensuring that no wet pockets are left behind to cause mold growth later. Our technicians are IICRC certified and undergo rigorous training to handle everything from burst frozen pipes to sewage backups."
+  const processTitleText = seoContent?.processTitle || "The Restoration Process"
+  const processText =
+    seoContent?.process ||
+    "Our process begins with a thorough inspection. We document everything for your insurance claim to ensure you get the coverage you deserve. Next, we begin water extraction using truck-mounted pumps. Once standing water is gone, we install industrial air movers and dehumidifiers. Finally, we perform any necessary repairs to bring your home back to normal."
+
   return (
     <section id="about" className="py-24 lg:py-36 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -23,34 +42,17 @@ export function About({ businessName, city, state, serviceAreas }: AboutProps) {
               <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-8">
                 Professional Water Damage Services in {city}
               </h2>
-              <p className="text-slate-600 text-lg leading-relaxed">
-                When disaster strikes, every second counts. At {businessName}, we understand the urgency of water
-                damage, fire incidents, and mold growth. Our team of certified professionals is dedicated to restoring
-                your property to its pre-loss condition as quickly and efficiently as possible. Serving {city} and
-                the surrounding areas, we are your local experts in emergency mitigation.
-              </p>
+              <p className="text-slate-600 text-lg leading-relaxed">{introText}</p>
             </div>
 
             <div>
-              <h3 className="text-2xl font-semibold text-slate-900 mb-5">Why Choose Our Restoration Team?</h3>
-              <p className="text-slate-600 text-lg leading-relaxed">
-                Choosing the right restoration company can make the difference between a quick recovery and a long,
-                drawn-out nightmare. We pride ourselves on transparency, speed, and quality craftsmanship. Unlike
-                general contractors, we specialize specifically in disaster recovery. We utilize thermal imaging
-                technology to detect hidden moisture that the naked eye cannot see, ensuring that no wet pockets are
-                left behind to cause mold growth later. Our technicians are IICRC certified and undergo rigorous
-                training to handle everything from burst frozen pipes to sewage backups.
-              </p>
+              <h3 className="text-2xl font-semibold text-slate-900 mb-5">{whyChooseTitleText}</h3>
+              <p className="text-slate-600 text-lg leading-relaxed">{whyChooseText}</p>
             </div>
 
             <div>
-              <h3 className="text-2xl font-semibold text-slate-900 mb-5">The Restoration Process</h3>
-              <p className="text-slate-600 text-lg leading-relaxed">
-                Our process begins with a thorough inspection. We document everything for your insurance claim to ensure
-                you get the coverage you deserve. Next, we begin water extraction using truck-mounted pumps. Once
-                standing water is gone, we install industrial air movers and dehumidifiers. Finally, we perform any
-                necessary repairs to bring your home back to normal.
-              </p>
+              <h3 className="text-2xl font-semibold text-slate-900 mb-5">{processTitleText}</h3>
+              <p className="text-slate-600 text-lg leading-relaxed">{processText}</p>
             </div>
           </div>
 

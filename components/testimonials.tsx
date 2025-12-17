@@ -23,6 +23,21 @@ const testimonials = [
   },
 ]
 
+interface TestimonialItem {
+  name: string
+  location: string
+  text: string
+  rating: number
+}
+
+interface TestimonialsProps {
+  content?: {
+    heading: string
+    subheading: string
+    items: TestimonialItem[]
+  }
+}
+
 function Stars({ rating }: { rating: number }) {
   return (
     <div className="flex items-center gap-1">
@@ -35,17 +50,21 @@ function Stars({ rating }: { rating: number }) {
   )
 }
 
-export function Testimonials() {
+export function Testimonials({ content }: TestimonialsProps) {
+  const heading = content?.heading || "Trusted by Homeowners"
+  const subheading = content?.subheading || "Real reviews from customers we’ve helped across the region."
+  const items = content?.items?.length ? content.items : testimonials
+
   return (
     <section id="testimonials" className="py-24 lg:py-36 bg-slate-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12">
-          <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-4">Trusted by Homeowners</h2>
-          <p className="text-lg text-slate-600">Real reviews from customers we’ve helped across the region.</p>
+          <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-4">{heading}</h2>
+          <p className="text-lg text-slate-600">{subheading}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {testimonials.map((t) => (
+          {items.map((t) => (
             <Card key={t.name} className="border-slate-200">
               <CardContent className="p-8">
                 <Stars rating={t.rating} />

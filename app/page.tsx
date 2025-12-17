@@ -2,8 +2,19 @@ import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { getServiceAreaIndexForCurrentDomain, resolveSiteContext } from "@/lib/sites"
 import { processContent } from "@/lib/spintax"
-import { getContentCTA, getContentHeader, getContentHero, getContentServices, parseContentMap } from "@/lib/fetch-content"
-import { DEFAULT_CTA, DEFAULT_HEADER, DEFAULT_HERO, DEFAULT_SERVICES } from "@/lib/default-content"
+import {
+  getContentCTA,
+  getContentFAQ,
+  getContentHeader,
+  getContentHero,
+  getContentSeoBody,
+  getContentServices,
+  getContentTestimonials,
+  parseContentMap,
+  parseFAQItems,
+  parseTestimonialItems,
+} from "@/lib/fetch-content"
+import { DEFAULT_CTA, DEFAULT_FAQ, DEFAULT_HEADER, DEFAULT_HERO, DEFAULT_SEO_BODY, DEFAULT_SERVICES, DEFAULT_TESTIMONIALS } from "@/lib/default-content"
 
 import { Header } from "@/components/header"
 import { Hero } from "@/components/hero"
@@ -70,6 +81,9 @@ export default async function Home() {
   const heroContent = contentMap.hero ? await getContentHero(contentMap.hero) : null
   const servicesContent = contentMap.services ? await getContentServices(contentMap.services) : null
   const ctaContent = contentMap.cta ? await getContentCTA(contentMap.cta) : null
+  const seoBodyContent = contentMap.seo_body ? await getContentSeoBody(contentMap.seo_body) : null
+  const faqContent = contentMap.faq ? await getContentFAQ(contentMap.faq) : null
+  const testimonialsContent = contentMap.testimonials ? await getContentTestimonials(contentMap.testimonials) : null
 
   const navLabels = {
     home: processContent(headerContent?.nav_home || DEFAULT_HEADER.nav_home, domain, variables),
@@ -158,6 +172,57 @@ export default async function Home() {
     variables,
   )
 
+  const seoData = {
+    intro: processContent(seoBodyContent?.intro_spintax || DEFAULT_SEO_BODY.intro_spintax, domain, variables),
+    whyChooseTitle: processContent(
+      seoBodyContent?.why_choose_title_spintax || DEFAULT_SEO_BODY.why_choose_title_spintax,
+      domain,
+      variables,
+    ),
+    whyChoose: processContent(
+      seoBodyContent?.why_choose_spintax || DEFAULT_SEO_BODY.why_choose_spintax,
+      domain,
+      variables,
+    ),
+    processTitle: processContent(
+      seoBodyContent?.process_title_spintax || DEFAULT_SEO_BODY.process_title_spintax,
+      domain,
+      variables,
+    ),
+    process: processContent(seoBodyContent?.process_spintax || DEFAULT_SEO_BODY.process_spintax, domain, variables),
+  }
+
+  const faqItems = parseFAQItems(faqContent?.items ?? DEFAULT_FAQ.items).map((item) => ({
+    question: processContent(item.question_spintax, domain, variables),
+    answer: processContent(item.answer_spintax, domain, variables),
+  }))
+
+  const faqData = {
+    heading: processContent(faqContent?.heading_spintax || DEFAULT_FAQ.heading_spintax, domain, variables),
+    items: faqItems,
+  }
+
+  const testimonialItems = parseTestimonialItems(testimonialsContent?.items ?? DEFAULT_TESTIMONIALS.items).map((item) => ({
+    name: item.name,
+    location: processContent(item.location_spintax, domain, variables),
+    text: processContent(item.text_spintax, domain, variables),
+    rating: item.rating,
+  }))
+
+  const testimonialsData = {
+    heading: processContent(
+      testimonialsContent?.heading_spintax || DEFAULT_TESTIMONIALS.heading_spintax,
+      domain,
+      variables,
+    ),
+    subheading: processContent(
+      testimonialsContent?.subheading_spintax || DEFAULT_TESTIMONIALS.subheading_spintax,
+      domain,
+      variables,
+    ),
+    items: testimonialItems,
+  }
+
   return (
     <div className="min-h-screen bg-white">
       <Header
@@ -184,9 +249,10 @@ export default async function Home() {
         city={site.city}
         state={site.state}
         serviceAreas={serviceAreas}
+        seoContent={seoData}
       />
-      <FAQ />
-      <Testimonials />
+      <FAQ content={faqData} />
+      <Testimonials content={testimonialsData} />
       <CTASection
         phone={site.phone}
         phoneDisplay={site.phoneDisplay || undefined}

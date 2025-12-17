@@ -39,6 +39,40 @@ export interface ContentCTA {
   chat_button_spintax: string
 }
 
+export interface ContentSeoBody {
+  id: number
+  intro_spintax: string
+  why_choose_title_spintax: string
+  why_choose_spintax: string
+  process_title_spintax: string
+  process_spintax: string
+}
+
+export interface ContentFAQItem {
+  question_spintax: string
+  answer_spintax: string
+}
+
+export interface ContentFAQ {
+  id: number
+  heading_spintax: string
+  items: ContentFAQItem[] | unknown
+}
+
+export interface ContentTestimonialItem {
+  name: string
+  location_spintax: string
+  text_spintax: string
+  rating: number
+}
+
+export interface ContentTestimonials {
+  id: number
+  heading_spintax: string
+  subheading_spintax: string
+  items: ContentTestimonialItem[] | unknown
+}
+
 export interface ContentMap {
   header?: number
   hero?: number
@@ -91,6 +125,84 @@ export async function getContentCTA(id: number): Promise<ContentCTA | null> {
     return null
   }
   return data as ContentCTA
+}
+
+export async function getContentSeoBody(id: number): Promise<ContentSeoBody | null> {
+  const supabase = await createClient()
+  const { data, error } = await supabase.from("content_seo_body").select("*").eq("id", id).single()
+
+  if (error) {
+    console.error("Failed to fetch content_seo_body:", error)
+    return null
+  }
+  return data as ContentSeoBody
+}
+
+export async function getContentFAQ(id: number): Promise<ContentFAQ | null> {
+  const supabase = await createClient()
+  const { data, error } = await supabase.from("content_faq").select("*").eq("id", id).single()
+
+  if (error) {
+    console.error("Failed to fetch content_faq:", error)
+    return null
+  }
+  return data as ContentFAQ
+}
+
+export async function getContentTestimonials(id: number): Promise<ContentTestimonials | null> {
+  const supabase = await createClient()
+  const { data, error } = await supabase.from("content_testimonials").select("*").eq("id", id).single()
+
+  if (error) {
+    console.error("Failed to fetch content_testimonials:", error)
+    return null
+  }
+  return data as ContentTestimonials
+}
+
+function safeArray<T>(value: unknown): T[] {
+  if (!value) return []
+  if (Array.isArray(value)) return value as T[]
+  if (typeof value === "string") {
+    try {
+      const parsed = JSON.parse(value) as unknown
+      return Array.isArray(parsed) ? (parsed as T[]) : []
+    } catch {
+      return []
+    }
+  }
+  return []
+}
+
+export function parseFAQItems(value: unknown): ContentFAQItem[] {
+  return safeArray<ContentFAQItem>(value)
+    .map((item) => {
+      const it = item as Partial<ContentFAQItem>
+      const question_spintax = String(it.question_spintax ?? "").trim()
+      const answer_spintax = String(it.answer_spintax ?? "").trim()
+      if (!question_spintax || !answer_spintax) return null
+      return { question_spintax, answer_spintax }
+    })
+    .filter((x): x is ContentFAQItem => Boolean(x))
+}
+
+export function parseTestimonialItems(value: unknown): ContentTestimonialItem[] {
+  return safeArray<ContentTestimonialItem>(value)
+    .map((item) => {
+      const it = item as Partial<ContentTestimonialItem>
+      const name = String(it.name ?? "").trim()
+      const location_spintax = String(it.location_spintax ?? "").trim()
+      const text_spintax = String(it.text_spintax ?? "").trim()
+      const rating = Number(it.rating ?? 5)
+      if (!name || !text_spintax) return null
+      return {
+        name,
+        location_spintax: location_spintax || "{{city}}, {{state}}",
+        text_spintax,
+        rating: Number.isFinite(rating) ? Math.max(1, Math.min(5, rating)) : 5,
+      }
+    })
+    .filter((x): x is ContentTestimonialItem => Boolean(x))
 }
 
 export function parseContentMap(jsonData: unknown): ContentMap {

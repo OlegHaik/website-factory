@@ -30,13 +30,28 @@ const faqs = [
   },
 ]
 
-export function FAQ() {
+interface FAQItem {
+  question: string
+  answer: string
+}
+
+interface FAQProps {
+  content?: {
+    heading: string
+    items: FAQItem[]
+  }
+}
+
+export function FAQ({ content }: FAQProps) {
+  const heading = content?.heading || "Frequently Asked Questions"
+  const items = content?.items?.length ? content.items : faqs
+
   return (
     <section id="faq" className="py-24 lg:py-36 bg-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-16">Frequently Asked Questions</h2>
+        <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-16">{heading}</h2>
         <Accordion type="single" collapsible className="space-y-5">
-          {faqs.map((faq, index) => (
+          {items.map((faq, index) => (
             <AccordionItem
               key={index}
               value={`item-${index}`}

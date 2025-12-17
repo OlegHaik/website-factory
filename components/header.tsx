@@ -51,7 +51,7 @@ export function Header({ businessName, phone, phoneDisplay, serviceAreas = [], n
 
   return (
     <>
-      <header className="sticky top-0 z-50 relative overflow-visible">
+      <header className="sticky top-0 z-50 overflow-visible">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950 to-slate-950" />
           <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-[var(--warm-dark)]/60 via-[var(--warm-med)]/30 to-transparent" />
