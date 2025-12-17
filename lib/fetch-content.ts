@@ -56,17 +56,19 @@ export interface ContentServicePage {
 }
 
 export interface ContentServiceArea {
-  id: number
-  hero_headline_spintax: string | null
-  hero_description_spintax: string | null
-  intro_title_spintax: string | null
-  intro_spintax: string | null
-  services_title_spintax: string | null
-  services_intro_spintax: string | null
-  why_choose_title_spintax: string | null
-  why_choose_spintax: string | null
-  cta_headline_spintax: string | null
-  cta_description_spintax: string | null
+  id?: number
+  headline_spintax: string | null
+  paragraph1_spintax: string | null
+  paragraph2_spintax: string | null
+  paragraph3_spintax: string | null
+  paragraph4_spintax: string | null
+  why_city_headline_spintax: string | null
+  why_city_paragraph_spintax: string | null
+  midpage_cta_headline_spintax: string | null
+  midpage_cta_subtext_spintax: string | null
+  why_choose_headline_spintax: string | null
+  trust_points_spintax: string | null
+  services_list_headline_spintax: string | null
 }
 
 export interface ContentMeta {
@@ -80,9 +82,8 @@ export interface ContentLegal {
   id: number
   page_type: "privacy_policy" | "terms_of_use" | (string & {})
   title: string | null
-  intro_spintax: string | null
+  last_updated_spintax: string | null
   content_spintax: string | null
-  last_updated: string | null
 }
 
 export interface ContentSeoBody {

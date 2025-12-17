@@ -51,27 +51,45 @@ CREATE TABLE IF NOT EXISTS content_legal (
   id SERIAL PRIMARY KEY,
   page_type TEXT NOT NULL,
   title TEXT,
-  intro_spintax TEXT,
-  content_spintax TEXT,
-  last_updated TEXT DEFAULT 'January 1, 2025'
+  last_updated_spintax TEXT,
+  content_spintax TEXT
 );
+
+ALTER TABLE content_legal ADD COLUMN IF NOT EXISTS last_updated_spintax TEXT;
+ALTER TABLE content_legal DROP COLUMN IF EXISTS intro_spintax;
+ALTER TABLE content_legal DROP COLUMN IF EXISTS last_updated;
 
 -- =============================
 -- Service Area Page Spintax Content
 -- =============================
 CREATE TABLE IF NOT EXISTS content_service_area (
   id SERIAL PRIMARY KEY,
-  hero_headline_spintax TEXT,
-  hero_description_spintax TEXT,
-  intro_title_spintax TEXT,
-  intro_spintax TEXT,
-  services_title_spintax TEXT,
-  services_intro_spintax TEXT,
-  why_choose_title_spintax TEXT,
-  why_choose_spintax TEXT,
-  cta_headline_spintax TEXT,
-  cta_description_spintax TEXT
+  headline_spintax TEXT,
+  paragraph1_spintax TEXT,
+  paragraph2_spintax TEXT,
+  paragraph3_spintax TEXT,
+  paragraph4_spintax TEXT,
+  why_city_headline_spintax TEXT,
+  why_city_paragraph_spintax TEXT,
+  midpage_cta_headline_spintax TEXT,
+  midpage_cta_subtext_spintax TEXT,
+  why_choose_headline_spintax TEXT,
+  trust_points_spintax TEXT,
+  services_list_headline_spintax TEXT
 );
+
+ALTER TABLE content_service_area ADD COLUMN IF NOT EXISTS headline_spintax TEXT;
+ALTER TABLE content_service_area ADD COLUMN IF NOT EXISTS paragraph1_spintax TEXT;
+ALTER TABLE content_service_area ADD COLUMN IF NOT EXISTS paragraph2_spintax TEXT;
+ALTER TABLE content_service_area ADD COLUMN IF NOT EXISTS paragraph3_spintax TEXT;
+ALTER TABLE content_service_area ADD COLUMN IF NOT EXISTS paragraph4_spintax TEXT;
+ALTER TABLE content_service_area ADD COLUMN IF NOT EXISTS why_city_headline_spintax TEXT;
+ALTER TABLE content_service_area ADD COLUMN IF NOT EXISTS why_city_paragraph_spintax TEXT;
+ALTER TABLE content_service_area ADD COLUMN IF NOT EXISTS midpage_cta_headline_spintax TEXT;
+ALTER TABLE content_service_area ADD COLUMN IF NOT EXISTS midpage_cta_subtext_spintax TEXT;
+ALTER TABLE content_service_area ADD COLUMN IF NOT EXISTS why_choose_headline_spintax TEXT;
+ALTER TABLE content_service_area ADD COLUMN IF NOT EXISTS trust_points_spintax TEXT;
+ALTER TABLE content_service_area ADD COLUMN IF NOT EXISTS services_list_headline_spintax TEXT;
 
 -- sites already has content_map in the theming SQL, but keep this idempotent
 ALTER TABLE sites ADD COLUMN IF NOT EXISTS content_map JSONB DEFAULT '{}';
@@ -140,51 +158,67 @@ SELECT
   '{{business_name}} {serves|provides restoration services to} {{city}}, {{state}}. {24/7 emergency response|Fast water damage repair|Professional fire restoration}. {Call now for immediate help|Free estimates}!'
 WHERE NOT EXISTS (SELECT 1 FROM content_meta WHERE page_type = 'service_area');
 
+INSERT INTO content_meta (page_type, title_spintax, description_spintax)
+SELECT
+  'privacy_policy',
+  'Privacy Policy | {{business_name}}',
+  'Learn how {{business_name}} collects, uses, and protects your information.'
+WHERE NOT EXISTS (SELECT 1 FROM content_meta WHERE page_type = 'privacy_policy');
+
+INSERT INTO content_meta (page_type, title_spintax, description_spintax)
+SELECT
+  'terms_of_use',
+  'Terms of Use | {{business_name}}',
+  'Read the terms and conditions for using {{business_name}}''s website and services.'
+WHERE NOT EXISTS (SELECT 1 FROM content_meta WHERE page_type = 'terms_of_use');
+
 -- Insert Privacy Policy + Terms of Use templates
-INSERT INTO content_legal (page_type, title, intro_spintax, content_spintax, last_updated)
+INSERT INTO content_legal (page_type, title, last_updated_spintax, content_spintax)
 SELECT
   'privacy_policy',
   'Privacy Policy',
-  '{At|Here at} {{business_name}}, we {take your privacy seriously|are committed to protecting your privacy|value your trust and privacy}. This Privacy Policy {explains|describes|outlines} how we {collect, use, and protect|handle|manage} your {personal information|data|information} when you {use our services|visit our website|contact us}.',
+  '{January 1, 2024|March 10, 2024|June 1, 2024|September 5, 2024|January 1, 2025|March 15, 2025|June 1, 2025|August 10, 2025}',
   '## Information We Collect\n\n{We collect information you provide directly|When you contact us, we collect information} such as:\n- {Name and contact information|Your name, email, phone number, and address}\n- {Property details|Information about your property and the damage}\n- {Insurance information|Details about your insurance coverage}\n- {Communication records|Records of our communications with you}\n\n## How We Use Your Information\n\n{{business_name}} uses your information to:\n- {Provide restoration services|Deliver the services you requested}\n- {Communicate with you|Keep you updated on your project}\n- {Process insurance claims|Work with your insurance company}\n- {Improve our services|Enhance our customer experience}\n\n## Information Sharing\n\nWe {may share|share} your information with:\n- {Insurance companies|Your insurance provider} (with your consent)\n- {Service partners|Contractors and vendors} who help us deliver services\n- {Legal authorities|Law enforcement} when required by law\n\n## Data Security\n\nWe {implement|use} {industry-standard|appropriate} security measures to protect your {personal information|data}. {However, no method of transmission over the Internet is 100% secure|While we strive to protect your information, we cannot guarantee absolute security}.\n\n## Your Rights\n\nYou have the right to:\n- {Access your personal information|Request a copy of your data}\n- {Correct inaccurate information|Update your information}\n- {Request deletion|Ask us to delete your data}\n- {Opt out of marketing communications|Unsubscribe from our emails}\n\n## Contact Us\n\nIf you have questions about this Privacy Policy, {contact us at|please reach out}:\n\n{{business_name}}\n{{address}}\n{{city}}, {{state}} {{zip_code}}\nPhone: {{phone}}\nEmail: {{email}}',
-  'January 1, 2025'
 WHERE NOT EXISTS (SELECT 1 FROM content_legal WHERE page_type = 'privacy_policy');
 
-INSERT INTO content_legal (page_type, title, intro_spintax, content_spintax, last_updated)
+INSERT INTO content_legal (page_type, title, last_updated_spintax, content_spintax)
 SELECT
   'terms_of_use',
   'Terms of Use',
-  '{Welcome to|Thank you for visiting} {{business_name}}. {By using our website and services|By accessing this website}, you agree to {these Terms of Use|the following terms and conditions}. {Please read them carefully|Review these terms before using our services}.',
+  '{January 1, 2024|March 15, 2024|June 1, 2024|September 10, 2024|January 1, 2025|March 20, 2025|June 1, 2025|August 15, 2025}',
   '## Services\n\n{{business_name}} provides {water damage restoration, fire damage restoration, mold remediation, and related services|property restoration and emergency cleanup services} in {{city}}, {{state}} and surrounding areas. {Service availability may vary by location|Not all services are available in all areas}.\n\n## Service Agreement\n\n{When you request our services|Upon booking}, you agree to:\n- {Provide accurate information|Give us correct details about the damage}\n- {Grant access to your property|Allow our technicians access to perform work}\n- {Pay for services rendered|Fulfill payment obligations}\n- {Follow safety instructions|Comply with our safety guidelines}\n\n## Estimates and Pricing\n\n- {We provide free estimates|Estimates are provided at no cost}\n- {Final pricing may vary|Actual costs may differ from estimates} based on {the extent of damage discovered|conditions found during work}\n- {We work directly with insurance companies|Insurance billing is available}\n- {Payment terms will be discussed|We offer flexible payment options} before work begins\n\n## Limitation of Liability\n\n{To the maximum extent permitted by law|Within legal limits}, {{business_name}} {shall not be liable|is not responsible} for:\n- {Indirect or consequential damages|Secondary damages}\n- {Pre-existing conditions|Damage that existed before our arrival}\n- {Delays beyond our control|Force majeure events}\n- {Third-party actions|Actions of your insurance company}\n\n## Intellectual Property\n\n{All content on this website|Website content} including {text, images, logos|all materials} is owned by {{business_name}} and {protected by copyright|may not be reproduced without permission}.\n\n## Dispute Resolution\n\nAny disputes {shall be resolved|will be handled} through:\n1. {Direct negotiation|Good faith discussions}\n2. {Mediation|Third-party mediation} if necessary\n3. {Binding arbitration|Arbitration} in {{state}}\n\n## Changes to Terms\n\n{We reserve the right to|{{business_name}} may} update these Terms {at any time|periodically}. {Continued use constitutes acceptance|Your continued use means you accept changes}.\n\n## Contact Us\n\n{Questions about these Terms|For inquiries}? Contact us:\n\n{{business_name}}\n{{address}}\n{{city}}, {{state}} {{zip_code}}\nPhone: {{phone}}\nEmail: {{email}}',
-  'January 1, 2025'
 WHERE NOT EXISTS (SELECT 1 FROM content_legal WHERE page_type = 'terms_of_use');
 
 -- Insert default content (generic template for all service areas)
 INSERT INTO content_service_area (
   id,
-  hero_headline_spintax,
-  hero_description_spintax,
-  intro_title_spintax,
-  intro_spintax,
-  services_title_spintax,
-  services_intro_spintax,
-  why_choose_title_spintax,
-  why_choose_spintax,
-  cta_headline_spintax,
-  cta_description_spintax
+  headline_spintax,
+  paragraph1_spintax,
+  paragraph2_spintax,
+  paragraph3_spintax,
+  paragraph4_spintax,
+  why_city_headline_spintax,
+  why_city_paragraph_spintax,
+  midpage_cta_headline_spintax,
+  midpage_cta_subtext_spintax,
+  why_choose_headline_spintax,
+  trust_points_spintax,
+  services_list_headline_spintax
 )
 SELECT
   1,
   '{Trusted|Professional|Expert|Certified|Licensed|24/7} {Fire & Water Restoration|Water Damage Restoration|Disaster Recovery|Emergency Restoration} in {{city}}, {{state}}',
   '{When disaster strikes in|Emergencies don''t wait in|Property damage in} {{city}}, you need {fast, reliable restoration|immediate professional help|experts you can trust}. Our team {responds within 60 minutes|is available 24/7|provides complete restoration services} to {protect your property|minimize damage|restore your home or business}.',
-  '{Professional Restoration Services|Expert Damage Recovery|Complete Restoration Solutions} in {{city}}',
-  '{Water damage, fire incidents, and mold growth|Disasters like flooding, fire, and mold|Property emergencies} can {happen without warning|strike at any time|cause devastating damage} in {{city}}. Our {certified restoration professionals|licensed technicians|expert team} {understand the unique challenges|know the local area|serve the community} and {respond quickly to minimize damage|provide fast, effective restoration|are committed to restoring your property}. {We work with all insurance companies|Direct insurance billing available|We handle your insurance claim}.',
-  '{Our {{city}} Services|What We Offer in {{city}}|Restoration Services Available}',
-  '{We provide comprehensive restoration services|Our {{city}} team handles all types of damage|From water damage to fire restoration} including {water extraction, fire cleanup, mold remediation|emergency response, structural drying, complete repairs|all phases of disaster recovery}.',
-  '{Why {{city}} Residents Choose Us|Why Trust Our {{city}} Team|Your Local Restoration Experts}',
-  '{Homeowners and businesses in {{city}} trust us|We''ve served the {{city}} community for years|{{city}} residents choose us} because we {respond fast, work professionally, and deliver results|provide honest pricing and expert craftsmanship|treat every property like our own}. Our {IICRC certified technicians|trained professionals|licensed team} use {advanced equipment|state-of-the-art technology|professional-grade tools} to {ensure complete restoration|get the job done right|restore your property quickly}.',
+  '{Water damage, fire incidents, and mold growth|Disasters like flooding, fire, and mold|Property emergencies} can {happen without warning|strike at any time|cause devastating damage} in {{city}}. Our {certified restoration professionals|licensed technicians|expert team} {respond quickly to minimize damage|provide fast, effective restoration|are committed to restoring your property}.',
+  'We use {advanced equipment|professional tools} and proven processes to {dry structures, remove odors, and restore damaged areas|complete mitigation and restoration} safely and efficiently.',
+  'Call {{phone}} for {24/7 emergency help|immediate dispatch} in {{city}}.',
+  '{Why {{city}} Homeowners Call Us|Why {{city}} Residents Choose Us|Your Local Restoration Experts}',
+  'We combine {fast response times|rapid dispatch} with {clear communication|honest guidance} and {experienced technicians|proven processes} for properties in {{city}}, {{state}}.',
   '{Need Help in {{city}}?|{{city}} Emergency? We''re Here|Get Immediate Help in {{city}}}',
-  '{Our {{city}} team is standing by 24/7|Don''t wait - call our {{city}} experts now|Immediate response available in {{city}}}. {Free estimates, direct insurance billing|We handle everything from cleanup to paperwork|Fast response, professional service}.'
+  'Call for immediate dispatch. Our team is available 24/7 for emergency cleanup, drying, and restoration.',
+  '{Trusted by {{city}} Homeowners|Why People Recommend Us in {{city}}}',
+  '24/7 emergency response\nClear communication\nCertified technicians\nProfessional equipment\nInsurance-friendly documentation',
+  '{Popular Services|Services We Provide in {{city}}}'
 WHERE NOT EXISTS (SELECT 1 FROM content_service_area WHERE id = 1);
 
 

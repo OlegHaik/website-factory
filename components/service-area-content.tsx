@@ -11,9 +11,10 @@ interface ServiceAreaContentProps {
   services: LinkItem[]
   otherAreas: Array<{ name: string; slug: string }>
   content?: {
-    intro: { title: string; text: string }
-    services: { title: string; intro: string }
-    whyChoose: { title: string; text: string }
+    introTitle: string
+    paragraphs: string[]
+    whyCity: { headline: string; paragraph: string }
+    servicesListHeadline: string
   }
 }
 
@@ -25,18 +26,26 @@ export function ServiceAreaContent({ areaName, state, services, otherAreas, cont
           <div className="lg:col-span-2 space-y-10">
             <div>
               <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">
-                {content?.intro.title || `Water Damage Restoration in ${areaName}`}
+                {content?.introTitle || `Water Damage Restoration in ${areaName}`}
               </h2>
-              <p className="mt-4 text-lg text-slate-600 leading-relaxed">
-                {content?.intro.text || `Trusted local help for cleanup, drying, and repairs in ${areaName}, ${state}.`}
-              </p>
+              {content?.paragraphs?.length ? (
+                <div className="mt-4 space-y-4 text-lg text-slate-600 leading-relaxed">
+                  {content.paragraphs.map((p) => (
+                    <p key={p}>{p}</p>
+                  ))}
+                </div>
+              ) : (
+                <p className="mt-4 text-lg text-slate-600 leading-relaxed">
+                  {`Trusted local help for cleanup, drying, and repairs in ${areaName}, ${state}.`}
+                </p>
+              )}
             </div>
 
             <div className="rounded-2xl border border-slate-200 bg-slate-50 p-8">
               {content ? (
                 <>
-                  <h3 className="text-xl font-bold text-slate-900">{content.whyChoose.title}</h3>
-                  <p className="mt-4 text-slate-700 leading-relaxed">{content.whyChoose.text}</p>
+                  <h3 className="text-xl font-bold text-slate-900">{content.whyCity.headline}</h3>
+                  <p className="mt-4 text-slate-700 leading-relaxed">{content.whyCity.paragraph}</p>
                 </>
               ) : (
                 <>
@@ -52,10 +61,7 @@ export function ServiceAreaContent({ areaName, state, services, otherAreas, cont
             </div>
 
             <div>
-              <h3 className="text-xl font-bold text-slate-900">{content?.services.title || "Popular Services"}</h3>
-              {content?.services.intro ? (
-                <p className="mt-3 text-slate-600 leading-relaxed">{content.services.intro}</p>
-              ) : null}
+              <h3 className="text-xl font-bold text-slate-900">{content?.servicesListHeadline || "Popular Services"}</h3>
               <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {services.map((s) => (
                   <Link key={s.href} href={s.href} className="rounded-xl border border-slate-200 px-4 py-3 text-slate-700 hover:border-slate-300 hover:text-red-600">

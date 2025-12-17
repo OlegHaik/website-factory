@@ -4,6 +4,7 @@ import { getServiceAreaIndexForCurrentDomain, resolveSiteContext } from '@/lib/s
 import { processContent } from '@/lib/spintax'
 import { getContentHeader, getContentLegal, parseContentMap } from '@/lib/fetch-content'
 import { DEFAULT_LEGAL, DEFAULT_NAV, DEFAULT_SERVICE_NAV } from '@/lib/default-content'
+import { generatePageMetadata } from '@/lib/generate-metadata'
 import { parseSocialLinks } from '@/lib/types'
 import { Header } from '@/components/header'
 import Footer from '@/components/footer'
@@ -12,12 +13,19 @@ import { FloatingCall } from '@/components/floating-call'
 export const dynamic = 'force-dynamic'
 
 export async function generateMetadata(): Promise<Metadata> {
-  const { site } = await resolveSiteContext()
-  const businessName = site?.business_name || 'Company'
-  return {
-    title: `Terms of Use | ${businessName}`,
-    description: `Terms of use for ${businessName}. Read our terms and conditions.`,
-  }
+  const { site, domain: requestDomain } = await resolveSiteContext()
+  const domain = site?.resolvedDomain || site?.domain_url || requestDomain || 'default'
+  return generatePageMetadata(
+    'terms_of_use',
+    domain,
+    {
+      city: site?.city || '',
+      state: site?.state || '',
+      business_name: site?.business_name || 'Company',
+      phone: site?.phone || '',
+    },
+    'terms-of-use',
+  )
 }
 
 export default async function TermsOfUsePage() {
@@ -28,9 +36,6 @@ export default async function TermsOfUsePage() {
 
   const areaIndex = await getServiceAreaIndexForCurrentDomain()
   const serviceAreas = areaIndex.map((a) => ({ name: a.city, slug: a.slug }))
-
-  const phoneDisplay = site.phoneDisplay || site.phone || ''
-  const phoneDigits = (site.phone || '').replace(/\D/g, '')
 
   const domain = site.resolvedDomain || site.domain_url || requestDomain || 'default'
   const variables = {
@@ -51,9 +56,12 @@ export default async function TermsOfUsePage() {
   const legalContent = await getContentLegal('terms_of_use')
   const defaults = DEFAULT_LEGAL.terms_of_use
   const title = legalContent?.title || defaults.title
-  const intro = processContent(legalContent?.intro_spintax || defaults.intro, domain, variables)
   const content = processContent(legalContent?.content_spintax || defaults.content, domain, variables)
-  const lastUpdated = legalContent?.last_updated || defaults.last_updated
+  const lastUpdated = processContent(
+    legalContent?.last_updated_spintax || defaults.last_updated_spintax,
+    domain,
+    variables,
+  )
 
   const socialLinks = parseSocialLinks(site)
 
@@ -96,8 +104,6 @@ export default async function TermsOfUsePage() {
             <p className="mt-2 text-sm text-slate-600">Last updated: {lastUpdated}</p>
 
             <div className="mt-8 text-sm leading-relaxed text-slate-700">
-              <p className="text-lg text-slate-700 mb-8">{intro}</p>
-
               <div
                 className="legal-content space-y-6"
                 dangerouslySetInnerHTML={{ __html: formatLegalContent(content) }}

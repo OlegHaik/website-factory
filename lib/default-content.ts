@@ -124,21 +124,25 @@ export const DEFAULT_SERVICE_PAGE = {
 }
 
 export const DEFAULT_SERVICE_AREA = {
-  hero_headline: "{Trusted|Professional|Expert|Certified} Fire & Water Restoration in {{city}}, {{state}}",
-  hero_description:
-    "{When disaster strikes in|Emergencies don't wait in} {{city}}, you need {fast, reliable restoration|immediate professional help}. Our team {responds within 60 minutes|is available 24/7}.",
-  intro_title: "{Professional Restoration Services|Expert Damage Recovery} in {{city}}",
-  intro:
-    "{Water damage, fire incidents, and mold growth|Disasters like flooding, fire, and mold} can {happen without warning|strike at any time} in {{city}}. Our {certified professionals|expert team} {respond quickly|provide fast restoration} and {work with all insurance companies|handle your insurance claim}.",
-  services_title: "{Our {{city}} Services|What We Offer in {{city}}}",
-  services_intro:
-    "{We provide comprehensive restoration services|Our {{city}} team handles all types of damage} including {water extraction, fire cleanup, mold remediation|emergency response, structural drying, repairs}.",
-  why_choose_title: "{Why {{city}} Residents Choose Us|Why Trust Our {{city}} Team}",
-  why_choose:
-    "{Homeowners in {{city}} trust us|We've served {{city}} for years} because we {respond fast and deliver results|provide honest pricing and expert work}. Our {IICRC certified|trained professional} technicians use {advanced equipment|professional tools} to {ensure complete restoration|get the job done right}.",
-  cta_headline: "{Need Help in {{city}}?|{{city}} Emergency? We're Here}",
-  cta_description:
-    "{Our {{city}} team is standing by 24/7|Don't wait - call now}. {Free estimates, direct insurance billing|We handle everything}.",
+  headline: "{Trusted|Professional|Expert|Certified|Local} Fire & Water Restoration in {{city}}, {{state}}",
+  paragraph1:
+    "{When disaster strikes in|Emergencies don't wait in} {{city}}, you need {fast, reliable restoration|immediate professional help}. Our team is {available 24/7|ready around the clock}.",
+  paragraph2:
+    "{Water damage, fire incidents, and mold growth|Disasters like flooding, fire, and mold} can {happen without warning|strike at any time}. We help {stabilize the property, document damage, and begin mitigation|start cleanup fast and guide you through the next steps}.",
+  paragraph3:
+    "Our technicians use {professional-grade equipment|advanced drying and cleaning methods} to {reduce downtime|minimize disruption} and restore your property {safely and efficiently|to pre-loss condition}.",
+  paragraph4:
+    "{Need immediate help|Ready to get started}? Call {{phone}} for {rapid dispatch|24/7 support} in {{city}}.",
+  why_city_headline: "{Why {{city}} Homeowners Call Us|Why {{city}} Residents Choose Us}",
+  why_city_paragraph:
+    "We combine {fast response times|rapid dispatch} with {clear communication|honest guidance} and {experienced technicians|proven processes} for properties in {{city}}, {{state}}.",
+  midpage_cta_headline: "{Need Help in {{city}}?|{{city}} Emergency? We're Here}",
+  midpage_cta_subtext:
+    "Call for immediate dispatch. Our team is available 24/7 for emergency cleanup, drying, and restoration.",
+  why_choose_headline: "{Trusted by {{city}} Homeowners|Why People Recommend Us in {{city}}}",
+  trust_points:
+    "24/7 emergency response\nClear communication\nCertified technicians\nProfessional equipment\nInsurance-friendly documentation",
+  services_list_headline: "{Popular Services|Services We Provide in {{city}}}",
 }
 
 export const DEFAULT_META = {
@@ -181,61 +185,56 @@ export const DEFAULT_META = {
     description:
       "{{business_name}} serves {{city}}, {{state}} with 24/7 emergency restoration. Call for immediate help!",
   },
+  privacy_policy: {
+    title: "Privacy Policy | {{business_name}}",
+    description: "Learn how {{business_name}} collects, uses, and protects your information.",
+  },
+  terms_of_use: {
+    title: "Terms of Use | {{business_name}}",
+    description: "Read the terms and conditions for using {{business_name}}'s website and services.",
+  },
 }
 
 export const DEFAULT_LEGAL = {
   privacy_policy: {
     title: "Privacy Policy",
-    intro:
-      "{At|Here at} {{business_name}}, we {take your privacy seriously|are committed to protecting your privacy}. This Privacy Policy {explains|describes} how we {collect, use, and protect|handle} your {personal information|data}.",
-    content: `## Information We Collect
+    last_updated_spintax:
+      "{January 1, 2024|March 10, 2024|June 1, 2024|September 5, 2024|January 1, 2025|March 15, 2025|June 1, 2025|August 10, 2025}",
+    content: `## 1. Introduction
 
-We collect information you provide directly such as:
-- Name and contact information
-- Property details and damage information
-- Insurance information
-- Communication records
+{{business_name}} {respects|values} your privacy and is committed to protecting your personal information.
 
-## How We Use Your Information
+## 2. Information We Collect
 
-{{business_name}} uses your information to:
-- Provide restoration services
-- Communicate with you about your project
-- Process insurance claims
-- Improve our services
+We may collect: Personal Information, Property Information, Payment Information, Insurance Information, Technical Data.
 
-## Contact Us
+## 3. Contact Us
 
 {{business_name}}
 {{address}}
-{{city}}, {{state}} {{zip_code}}
+{{city}}, {{state}}
 Phone: {{phone}}
 Email: {{email}}`,
-    last_updated: "January 1, 2025",
   },
   terms_of_use: {
     title: "Terms of Use",
-    intro:
-      "{Welcome to|Thank you for visiting} {{business_name}}. {By using our website and services|By accessing this website}, you agree to {these Terms of Use|the following terms and conditions}.",
-    content: `## Services
+    last_updated_spintax:
+      "{January 1, 2024|March 15, 2024|June 1, 2024|September 10, 2024|January 1, 2025|March 20, 2025|June 1, 2025|August 15, 2025}",
+    content: `## 1. Acceptance of Terms
 
-{{business_name}} provides water damage restoration, fire damage restoration, mold remediation, and related services in {{city}}, {{state}} and surrounding areas.
+Welcome to {{business_name}}. By accessing or using our {website|site} and {services|service offerings}, you agree to be bound by these Terms of Use.
 
-## Service Agreement
+## 2. Description of Services
 
-When you request our services, you agree to:
-- Provide accurate information
-- Grant access to your property
-- Pay for services rendered
+{{business_name}} provides {professional|certified} restoration services including water damage restoration, fire and smoke damage restoration, mold remediation, biohazard cleanup, burst pipe repair, and sewage cleanup. Our services are available {24/7|around the clock} in {{city}}, {{state}}.
 
-## Contact Us
+## 3. Contact Information
 
 {{business_name}}
 {{address}}
-{{city}}, {{state}} {{zip_code}}
+{{city}}, {{state}}
 Phone: {{phone}}
 Email: {{email}}`,
-    last_updated: "January 1, 2025",
   },
 }
 

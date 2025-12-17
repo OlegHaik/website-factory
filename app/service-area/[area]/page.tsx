@@ -13,6 +13,7 @@ import { Header } from "@/components/header"
 import { ServiceAreaHero } from "@/components/service-area-hero"
 import { ServiceAreaContent } from "@/components/service-area-content"
 import { CTASection } from "@/components/cta-section"
+import { ServiceTrust } from "@/components/service-trust"
 import Footer from "@/components/footer"
 import { FloatingCall } from "@/components/floating-call"
 
@@ -94,6 +95,13 @@ export default async function ServiceAreaPage({
     state: areaSite.state,
     business_name: areaSite.business_name,
     phone: areaSite.phone,
+    address: areaSite.address || "",
+    email:
+      areaSite.email ||
+      `info@${String(areaSite.domain_url || resolvedDomain)
+        .replace(/^https?:\/\//, "")
+        .replace(/\/$/, "")
+        .replace(/^www\./, "")}`,
   }
 
   const mainContentMap = parseContentMap(mainSite.content_map)
@@ -103,60 +111,61 @@ export default async function ServiceAreaPage({
   const headerContent = contentMap.header ? await getContentHeader(contentMap.header) : null
   const areaContent = await getContentServiceArea(contentMap.service_area || 1)
 
-  const areaSeed = resolvedDomain + areaSlug
+  const areaSeed = `${resolvedDomain}:${areaSlug}`
 
-  const heroTitle = processContent(
-    areaContent?.hero_headline_spintax || DEFAULT_SERVICE_AREA.hero_headline,
+  const headline = processContent(areaContent?.headline_spintax || DEFAULT_SERVICE_AREA.headline, areaSeed, variables)
+  const paragraph1 = processContent(
+    areaContent?.paragraph1_spintax || DEFAULT_SERVICE_AREA.paragraph1,
     areaSeed,
     variables,
   )
-
-  const heroDescription = processContent(
-    areaContent?.hero_description_spintax || DEFAULT_SERVICE_AREA.hero_description,
+  const paragraph2 = processContent(
+    areaContent?.paragraph2_spintax || DEFAULT_SERVICE_AREA.paragraph2,
     areaSeed,
     variables,
   )
-
-  const introTitle = processContent(
-    areaContent?.intro_title_spintax || DEFAULT_SERVICE_AREA.intro_title,
+  const paragraph3 = processContent(
+    areaContent?.paragraph3_spintax || DEFAULT_SERVICE_AREA.paragraph3,
     areaSeed,
     variables,
   )
-
-  const introText = processContent(areaContent?.intro_spintax || DEFAULT_SERVICE_AREA.intro, areaSeed, variables)
-
-  const servicesTitle = processContent(
-    areaContent?.services_title_spintax || DEFAULT_SERVICE_AREA.services_title,
+  const paragraph4 = processContent(
+    areaContent?.paragraph4_spintax || DEFAULT_SERVICE_AREA.paragraph4,
     areaSeed,
     variables,
   )
-
-  const servicesIntro = processContent(
-    areaContent?.services_intro_spintax || DEFAULT_SERVICE_AREA.services_intro,
+  const whyCityHeadline = processContent(
+    areaContent?.why_city_headline_spintax || DEFAULT_SERVICE_AREA.why_city_headline,
     areaSeed,
     variables,
   )
-
-  const whyChooseTitle = processContent(
-    areaContent?.why_choose_title_spintax || DEFAULT_SERVICE_AREA.why_choose_title,
+  const whyCityParagraph = processContent(
+    areaContent?.why_city_paragraph_spintax || DEFAULT_SERVICE_AREA.why_city_paragraph,
     areaSeed,
     variables,
   )
-
-  const whyChooseText = processContent(
-    areaContent?.why_choose_spintax || DEFAULT_SERVICE_AREA.why_choose,
+  const servicesListHeadline = processContent(
+    areaContent?.services_list_headline_spintax || DEFAULT_SERVICE_AREA.services_list_headline,
     areaSeed,
     variables,
   )
-
+  const whyChooseHeadline = processContent(
+    areaContent?.why_choose_headline_spintax || DEFAULT_SERVICE_AREA.why_choose_headline,
+    areaSeed,
+    variables,
+  )
+  const trustPoints = processContent(
+    areaContent?.trust_points_spintax || DEFAULT_SERVICE_AREA.trust_points,
+    areaSeed,
+    variables,
+  )
   const ctaHeadline = processContent(
-    areaContent?.cta_headline_spintax || DEFAULT_SERVICE_AREA.cta_headline,
+    areaContent?.midpage_cta_headline_spintax || DEFAULT_SERVICE_AREA.midpage_cta_headline,
     areaSeed,
     variables,
   )
-
   const ctaDescription = processContent(
-    areaContent?.cta_description_spintax || DEFAULT_SERVICE_AREA.cta_description,
+    areaContent?.midpage_cta_subtext_spintax || DEFAULT_SERVICE_AREA.midpage_cta_subtext,
     areaSeed,
     variables,
   )
@@ -192,8 +201,8 @@ export default async function ServiceAreaPage({
         serviceNavLabels={serviceNavLabels}
       />
       <ServiceAreaHero
-        title={heroTitle}
-        description={heroDescription}
+        title={headline}
+        description={paragraph1}
         phone={areaSite.phone}
         phoneDisplay={areaSite.phoneDisplay || undefined}
         businessName={areaSite.business_name}
@@ -205,11 +214,15 @@ export default async function ServiceAreaPage({
         services={services}
         otherAreas={otherAreas}
         content={{
-          intro: { title: introTitle, text: introText },
-          services: { title: servicesTitle, intro: servicesIntro },
-          whyChoose: { title: whyChooseTitle, text: whyChooseText },
+          introTitle: headline,
+          paragraphs: [paragraph2, paragraph3, paragraph4].filter(Boolean),
+          whyCity: { headline: whyCityHeadline, paragraph: whyCityParagraph },
+          servicesListHeadline,
         }}
       />
+
+      <ServiceTrust headline={whyChooseHeadline} trustPoints={trustPoints} />
+
       <CTASection
         phone={areaSite.phone}
         phoneDisplay={areaSite.phoneDisplay || undefined}
