@@ -4,8 +4,8 @@ import { notFound } from "next/navigation"
 import { getServiceAreaIndexForCurrentDomain, getSiteByDomainAndSlug, resolveSiteContext } from "@/lib/sites"
 import { DEFAULT_SERVICES } from "@/lib/water-damage"
 import { processContent } from "@/lib/spintax"
-import { getContentHeader, parseContentMap } from "@/lib/fetch-content"
-import { DEFAULT_NAV, DEFAULT_SERVICE_NAV } from "@/lib/default-content"
+import { getContentHeader, getContentServiceArea, parseContentMap } from "@/lib/fetch-content"
+import { DEFAULT_NAV, DEFAULT_SERVICE_AREA, DEFAULT_SERVICE_NAV } from "@/lib/default-content"
 
 import { Header } from "@/components/header"
 import { ServiceAreaHero } from "@/components/service-area-hero"
@@ -88,8 +88,70 @@ export default async function ServiceAreaPage({
     phone: areaSite.phone,
   }
 
-  const contentMap = parseContentMap(areaSite.content_map)
+  const mainContentMap = parseContentMap(mainSite.content_map)
+  const areaContentMap = parseContentMap(areaSite.content_map)
+  const contentMap = { ...mainContentMap, ...areaContentMap }
+
   const headerContent = contentMap.header ? await getContentHeader(contentMap.header) : null
+  const areaContent = await getContentServiceArea(contentMap.service_area || 1)
+
+  const areaSeed = resolvedDomain + areaSlug
+
+  const heroTitle = processContent(
+    areaContent?.hero_headline_spintax || DEFAULT_SERVICE_AREA.hero_headline,
+    areaSeed,
+    variables,
+  )
+
+  const heroDescription = processContent(
+    areaContent?.hero_description_spintax || DEFAULT_SERVICE_AREA.hero_description,
+    areaSeed,
+    variables,
+  )
+
+  const introTitle = processContent(
+    areaContent?.intro_title_spintax || DEFAULT_SERVICE_AREA.intro_title,
+    areaSeed,
+    variables,
+  )
+
+  const introText = processContent(areaContent?.intro_spintax || DEFAULT_SERVICE_AREA.intro, areaSeed, variables)
+
+  const servicesTitle = processContent(
+    areaContent?.services_title_spintax || DEFAULT_SERVICE_AREA.services_title,
+    areaSeed,
+    variables,
+  )
+
+  const servicesIntro = processContent(
+    areaContent?.services_intro_spintax || DEFAULT_SERVICE_AREA.services_intro,
+    areaSeed,
+    variables,
+  )
+
+  const whyChooseTitle = processContent(
+    areaContent?.why_choose_title_spintax || DEFAULT_SERVICE_AREA.why_choose_title,
+    areaSeed,
+    variables,
+  )
+
+  const whyChooseText = processContent(
+    areaContent?.why_choose_spintax || DEFAULT_SERVICE_AREA.why_choose,
+    areaSeed,
+    variables,
+  )
+
+  const ctaHeadline = processContent(
+    areaContent?.cta_headline_spintax || DEFAULT_SERVICE_AREA.cta_headline,
+    areaSeed,
+    variables,
+  )
+
+  const ctaDescription = processContent(
+    areaContent?.cta_description_spintax || DEFAULT_SERVICE_AREA.cta_description,
+    areaSeed,
+    variables,
+  )
 
   const navLabels = {
     home: processContent(headerContent?.nav_home || DEFAULT_NAV.home, resolvedDomain, variables),
@@ -120,19 +182,31 @@ export default async function ServiceAreaPage({
         serviceNavLabels={serviceNavLabels}
       />
       <ServiceAreaHero
-        areaName={areaName}
-        state={areaSite.state}
+        title={heroTitle}
+        description={heroDescription}
         phone={areaSite.phone}
         phoneDisplay={areaSite.phoneDisplay || undefined}
         businessName={areaSite.business_name}
         domain={areaSite.resolvedDomain}
       />
-      <ServiceAreaContent areaName={areaName} state={areaSite.state} services={services} otherAreas={otherAreas} />
+      <ServiceAreaContent
+        areaName={areaName}
+        state={areaSite.state}
+        services={services}
+        otherAreas={otherAreas}
+        content={{
+          intro: { title: introTitle, text: introText },
+          services: { title: servicesTitle, intro: servicesIntro },
+          whyChoose: { title: whyChooseTitle, text: whyChooseText },
+        }}
+      />
       <CTASection
         phone={areaSite.phone}
         phoneDisplay={areaSite.phoneDisplay || undefined}
         businessName={areaSite.business_name}
         domain={areaSite.resolvedDomain}
+        headline={ctaHeadline}
+        subheadline={ctaDescription}
       />
       <Footer
         businessName={areaSite.business_name}

@@ -53,6 +53,20 @@ export interface ContentServicePage {
   cta_description_spintax: string | null
 }
 
+export interface ContentServiceArea {
+  id: number
+  hero_headline_spintax: string | null
+  hero_description_spintax: string | null
+  intro_title_spintax: string | null
+  intro_spintax: string | null
+  services_title_spintax: string | null
+  services_intro_spintax: string | null
+  why_choose_title_spintax: string | null
+  why_choose_spintax: string | null
+  cta_headline_spintax: string | null
+  cta_description_spintax: string | null
+}
+
 export interface ContentSeoBody {
   id: number
   intro_spintax: string
@@ -95,6 +109,7 @@ export interface ContentMap {
   testimonials?: number
   cta?: number
   seo_body?: number
+  service_area?: number
 }
 
 export async function getContentHeader(id: number): Promise<ContentHeader | null> {
@@ -121,6 +136,17 @@ export async function getContentServicePage(serviceSlug: string): Promise<Conten
     return null
   }
   return data as ContentServicePage
+}
+
+export async function getContentServiceArea(id: number = 1): Promise<ContentServiceArea | null> {
+  const supabase = await createClient()
+  const { data, error } = await supabase.from("content_service_area").select("*").eq("id", id).single()
+
+  if (error) {
+    console.error("Failed to fetch service area content:", error)
+    return null
+  }
+  return data as ContentServiceArea
 }
 
 export async function getContentHero(id: number): Promise<ContentHero | null> {

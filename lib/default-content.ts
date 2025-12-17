@@ -56,6 +56,24 @@ export const DEFAULT_SERVICE_PAGE = {
   },
 }
 
+export const DEFAULT_SERVICE_AREA = {
+  hero_headline: "{Trusted|Professional|Expert|Certified} Fire & Water Restoration in {{city}}, {{state}}",
+  hero_description:
+    "{When disaster strikes in|Emergencies don't wait in} {{city}}, you need {fast, reliable restoration|immediate professional help}. Our team {responds within 60 minutes|is available 24/7}.",
+  intro_title: "{Professional Restoration Services|Expert Damage Recovery} in {{city}}",
+  intro:
+    "{Water damage, fire incidents, and mold growth|Disasters like flooding, fire, and mold} can {happen without warning|strike at any time} in {{city}}. Our {certified professionals|expert team} {respond quickly|provide fast restoration} and {work with all insurance companies|handle your insurance claim}.",
+  services_title: "{Our {{city}} Services|What We Offer in {{city}}}",
+  services_intro:
+    "{We provide comprehensive restoration services|Our {{city}} team handles all types of damage} including {water extraction, fire cleanup, mold remediation|emergency response, structural drying, repairs}.",
+  why_choose_title: "{Why {{city}} Residents Choose Us|Why Trust Our {{city}} Team}",
+  why_choose:
+    "{Homeowners in {{city}} trust us|We've served {{city}} for years} because we {respond fast and deliver results|provide honest pricing and expert work}. Our {IICRC certified|trained professional} technicians use {advanced equipment|professional tools} to {ensure complete restoration|get the job done right}.",
+  cta_headline: "{Need Help in {{city}}?|{{city}} Emergency? We're Here}",
+  cta_description:
+    "{Our {{city}} team is standing by 24/7|Don't wait - call now}. {Free estimates, direct insurance billing|We handle everything}.",
+}
+
 export const DEFAULT_HERO = {
   headline_spintax: "{Trusted|Professional|Expert|Certified} Fire & Water Restoration in {{city}}, {{state}}",
   subheadline_spintax:

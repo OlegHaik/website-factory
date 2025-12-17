@@ -34,6 +34,23 @@ CREATE TABLE IF NOT EXISTS content_services (
   sewage_description TEXT
 );
 
+-- =============================
+-- Service Area Page Spintax Content
+-- =============================
+CREATE TABLE IF NOT EXISTS content_service_area (
+  id SERIAL PRIMARY KEY,
+  hero_headline_spintax TEXT,
+  hero_description_spintax TEXT,
+  intro_title_spintax TEXT,
+  intro_spintax TEXT,
+  services_title_spintax TEXT,
+  services_intro_spintax TEXT,
+  why_choose_title_spintax TEXT,
+  why_choose_spintax TEXT,
+  cta_headline_spintax TEXT,
+  cta_description_spintax TEXT
+);
+
 -- sites already has content_map in the theming SQL, but keep this idempotent
 ALTER TABLE sites ADD COLUMN IF NOT EXISTS content_map JSONB DEFAULT '{}';
 
@@ -43,6 +60,34 @@ INSERT INTO content_header (nav_home, nav_services, nav_areas, nav_contact, call
 ('Main', 'Solutions', 'Locations', 'Get Help', 'Call Expert'),
 ('Start', 'What We Do', 'Coverage', 'Reach Us', 'Emergency Line'),
 ('Welcome', 'Expertise', 'Local Areas', 'Support', 'Speak to a Pro');
+
+-- Insert default content (generic template for all service areas)
+INSERT INTO content_service_area (
+  id,
+  hero_headline_spintax,
+  hero_description_spintax,
+  intro_title_spintax,
+  intro_spintax,
+  services_title_spintax,
+  services_intro_spintax,
+  why_choose_title_spintax,
+  why_choose_spintax,
+  cta_headline_spintax,
+  cta_description_spintax
+)
+SELECT
+  1,
+  '{Trusted|Professional|Expert|Certified|Licensed|24/7} {Fire & Water Restoration|Water Damage Restoration|Disaster Recovery|Emergency Restoration} in {{city}}, {{state}}',
+  '{When disaster strikes in|Emergencies don''t wait in|Property damage in} {{city}}, you need {fast, reliable restoration|immediate professional help|experts you can trust}. Our team {responds within 60 minutes|is available 24/7|provides complete restoration services} to {protect your property|minimize damage|restore your home or business}.',
+  '{Professional Restoration Services|Expert Damage Recovery|Complete Restoration Solutions} in {{city}}',
+  '{Water damage, fire incidents, and mold growth|Disasters like flooding, fire, and mold|Property emergencies} can {happen without warning|strike at any time|cause devastating damage} in {{city}}. Our {certified restoration professionals|licensed technicians|expert team} {understand the unique challenges|know the local area|serve the community} and {respond quickly to minimize damage|provide fast, effective restoration|are committed to restoring your property}. {We work with all insurance companies|Direct insurance billing available|We handle your insurance claim}.',
+  '{Our {{city}} Services|What We Offer in {{city}}|Restoration Services Available}',
+  '{We provide comprehensive restoration services|Our {{city}} team handles all types of damage|From water damage to fire restoration} including {water extraction, fire cleanup, mold remediation|emergency response, structural drying, complete repairs|all phases of disaster recovery}.',
+  '{Why {{city}} Residents Choose Us|Why Trust Our {{city}} Team|Your Local Restoration Experts}',
+  '{Homeowners and businesses in {{city}} trust us|We''ve served the {{city}} community for years|{{city}} residents choose us} because we {respond fast, work professionally, and deliver results|provide honest pricing and expert craftsmanship|treat every property like our own}. Our {IICRC certified technicians|trained professionals|licensed team} use {advanced equipment|state-of-the-art technology|professional-grade tools} to {ensure complete restoration|get the job done right|restore your property quickly}.',
+  '{Need Help in {{city}}?|{{city}} Emergency? We''re Here|Get Immediate Help in {{city}}}',
+  '{Our {{city}} team is standing by 24/7|Don''t wait - call our {{city}} experts now|Immediate response available in {{city}}}. {Free estimates, direct insurance billing|We handle everything from cleanup to paperwork|Fast response, professional service}.'
+WHERE NOT EXISTS (SELECT 1 FROM content_service_area WHERE id = 1);
 
 
 -- =============================
