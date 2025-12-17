@@ -14,6 +14,14 @@ interface HeaderProps {
   phone: string
   phoneDisplay?: string
   serviceAreas?: ServiceArea[]
+  domain?: string
+  navLabels?: {
+    home: string
+    services: string
+    areas: string
+    contact: string
+    callButton: string
+  }
 }
 
 const servicesLinks = [
@@ -25,13 +33,21 @@ const servicesLinks = [
   { label: "Sewage Cleanup", href: "/sewage-cleanup" },
 ]
 
-export function Header({ businessName, phone, phoneDisplay, serviceAreas = [] }: HeaderProps) {
+export function Header({ businessName, phone, phoneDisplay, serviceAreas = [], navLabels }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
   const [mobileDropdown, setMobileDropdown] = useState<string | null>(null)
 
   const phoneHref = `tel:${phone.replace(/\D/g, '')}`
   const displayPhone = phoneDisplay || phone
+
+  const labels = {
+    home: navLabels?.home || "Home",
+    services: navLabels?.services || "Services",
+    areas: navLabels?.areas || "Service Areas",
+    contact: navLabels?.contact || "Contact",
+    callButton: navLabels?.callButton || "Call Now",
+  }
 
   return (
     <>
@@ -57,7 +73,7 @@ export function Header({ businessName, phone, phoneDisplay, serviceAreas = [] }:
 
             <nav className="hidden lg:flex items-center space-x-1 ml-auto mr-6">
               <Link href="/" className="px-4 py-2 text-white/90 hover:text-white font-medium transition-colors">
-                Home
+                {labels.home}
               </Link>
 
               <div
@@ -66,7 +82,7 @@ export function Header({ businessName, phone, phoneDisplay, serviceAreas = [] }:
                 onMouseLeave={() => setOpenDropdown(null)}
               >
                 <button className="flex items-center gap-1 px-4 py-2 text-white/90 hover:text-white font-medium transition-colors">
-                  Services
+                  {labels.services}
                   <ChevronDown
                     className={`w-4 h-4 transition-transform ${openDropdown === "services" ? "rotate-180" : ""}`}
                   />
@@ -95,7 +111,7 @@ export function Header({ businessName, phone, phoneDisplay, serviceAreas = [] }:
                 onMouseLeave={() => setOpenDropdown(null)}
               >
                 <button className="flex items-center gap-1 px-4 py-2 text-white/90 hover:text-white font-medium transition-colors">
-                  Service Areas
+                  {labels.areas}
                   <ChevronDown
                     className={`w-4 h-4 transition-transform ${openDropdown === "areas" ? "rotate-180" : ""}`}
                   />
@@ -119,7 +135,7 @@ export function Header({ businessName, phone, phoneDisplay, serviceAreas = [] }:
               </div>
 
               <Link href="/#cta" className="px-4 py-2 text-white/90 hover:text-white font-medium transition-colors">
-                Contact
+                {labels.contact}
               </Link>
             </nav>
 
@@ -128,7 +144,7 @@ export function Header({ businessName, phone, phoneDisplay, serviceAreas = [] }:
               className="hidden lg:inline-flex items-center justify-center bg-[var(--accent-primary)] hover:bg-[var(--warm-med)] text-white font-semibold px-5 py-2.5 rounded-lg transition-colors"
             >
               <Phone className="w-4 h-4 mr-2" />
-              {displayPhone}
+              {labels.callButton}
             </Link>
 
             <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="lg:hidden ml-auto p-2 text-white">
@@ -142,7 +158,7 @@ export function Header({ businessName, phone, phoneDisplay, serviceAreas = [] }:
         <div className="lg:hidden fixed inset-0 z-40 bg-slate-950">
           <div className="pt-24 px-4 pb-6 space-y-4">
             <Link href="/" className="block py-3 text-white text-lg font-medium border-b border-slate-800">
-              Home
+              {labels.home}
             </Link>
 
             <div className="border-b border-slate-800">
@@ -150,7 +166,7 @@ export function Header({ businessName, phone, phoneDisplay, serviceAreas = [] }:
                 onClick={() => setMobileDropdown(mobileDropdown === "services" ? null : "services")}
                 className="flex items-center justify-between w-full py-3 text-white text-lg font-medium"
               >
-                Services
+                {labels.services}
                 <ChevronDown
                   className={`w-5 h-5 transition-transform ${mobileDropdown === "services" ? "rotate-180" : ""}`}
                 />
@@ -177,7 +193,7 @@ export function Header({ businessName, phone, phoneDisplay, serviceAreas = [] }:
                   onClick={() => setMobileDropdown(mobileDropdown === "areas" ? null : "areas")}
                   className="flex items-center justify-between w-full py-3 text-white text-lg font-medium"
                 >
-                  Service Areas
+                  {labels.areas}
                   <ChevronDown
                     className={`w-5 h-5 transition-transform ${mobileDropdown === "areas" ? "rotate-180" : ""}`}
                   />
@@ -200,7 +216,7 @@ export function Header({ businessName, phone, phoneDisplay, serviceAreas = [] }:
             )}
 
             <Link href="/#cta" className="block py-3 text-white text-lg font-medium border-b border-slate-800">
-              Contact
+              {labels.contact}
             </Link>
 
             <Link
@@ -208,7 +224,7 @@ export function Header({ businessName, phone, phoneDisplay, serviceAreas = [] }:
               className="flex items-center justify-center bg-[var(--accent-primary)] text-white font-semibold py-3 rounded-lg mt-6"
             >
               <Phone className="w-5 h-5 mr-2" />
-              {displayPhone}
+              {labels.callButton}
             </Link>
           </div>
         </div>

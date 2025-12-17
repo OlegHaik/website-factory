@@ -1,6 +1,9 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { getServiceAreaIndexForCurrentDomain, resolveSiteContext } from "@/lib/sites"
+import { processContent } from "@/lib/spintax"
+import { getContentHeader, getContentHero, getContentServices, parseContentMap } from "@/lib/fetch-content"
+import { DEFAULT_HEADER, DEFAULT_HERO, DEFAULT_SERVICES } from "@/lib/default-content"
 
 import { Header } from "@/components/header"
 import { Hero } from "@/components/hero"
@@ -50,9 +53,94 @@ export default async function Home() {
   const areaIndex = await getServiceAreaIndexForCurrentDomain()
   const serviceAreas = areaIndex.map((a) => ({ name: a.city, slug: a.slug }))
 
-  const heroTitle = `24/7 Emergency Restoration in ${site.city}, ${site.state}`
-  const heroDesc =
-    "Fast response, expert technicians, and complete property restoration. Direct insurance billing available."
+  const domain = site.resolvedDomain || site.domain_url || "default"
+  const contentMap = parseContentMap(site.content_map)
+
+  const variables = {
+    city: site.city,
+    state: site.state,
+    business_name: site.business_name,
+    phone: site.phone,
+  }
+
+  const headerContent = contentMap.header ? await getContentHeader(contentMap.header) : null
+  const heroContent = contentMap.hero ? await getContentHero(contentMap.hero) : null
+  const servicesContent = contentMap.services ? await getContentServices(contentMap.services) : null
+
+  const navLabels = {
+    home: processContent(headerContent?.nav_home || DEFAULT_HEADER.nav_home, domain, variables),
+    services: processContent(headerContent?.nav_services || DEFAULT_HEADER.nav_services, domain, variables),
+    areas: processContent(headerContent?.nav_areas || DEFAULT_HEADER.nav_areas, domain, variables),
+    contact: processContent(headerContent?.nav_contact || DEFAULT_HEADER.nav_contact, domain, variables),
+    callButton: processContent(headerContent?.call_button_text || DEFAULT_HEADER.call_button_text, domain, variables),
+  }
+
+  const heroTitle = processContent(heroContent?.headline_spintax || DEFAULT_HERO.headline_spintax, domain, variables)
+  const heroDesc = processContent(
+    heroContent?.subheadline_spintax || DEFAULT_HERO.subheadline_spintax,
+    domain,
+    variables,
+  )
+  const chatButtonText = processContent(
+    heroContent?.chat_button_spintax || DEFAULT_HERO.chat_button_spintax,
+    domain,
+    variables,
+  )
+
+  const serviceData = {
+    water: {
+      title: processContent(servicesContent?.water_title || DEFAULT_SERVICES.water_title, domain, variables),
+      description: processContent(
+        servicesContent?.water_description || DEFAULT_SERVICES.water_description,
+        domain,
+        variables,
+      ),
+    },
+    fire: {
+      title: processContent(servicesContent?.fire_title || DEFAULT_SERVICES.fire_title, domain, variables),
+      description: processContent(
+        servicesContent?.fire_description || DEFAULT_SERVICES.fire_description,
+        domain,
+        variables,
+      ),
+    },
+    mold: {
+      title: processContent(servicesContent?.mold_title || DEFAULT_SERVICES.mold_title, domain, variables),
+      description: processContent(
+        servicesContent?.mold_description || DEFAULT_SERVICES.mold_description,
+        domain,
+        variables,
+      ),
+    },
+    biohazard: {
+      title: processContent(
+        servicesContent?.biohazard_title || DEFAULT_SERVICES.biohazard_title,
+        domain,
+        variables,
+      ),
+      description: processContent(
+        servicesContent?.biohazard_description || DEFAULT_SERVICES.biohazard_description,
+        domain,
+        variables,
+      ),
+    },
+    burst: {
+      title: processContent(servicesContent?.burst_title || DEFAULT_SERVICES.burst_title, domain, variables),
+      description: processContent(
+        servicesContent?.burst_description || DEFAULT_SERVICES.burst_description,
+        domain,
+        variables,
+      ),
+    },
+    sewage: {
+      title: processContent(servicesContent?.sewage_title || DEFAULT_SERVICES.sewage_title, domain, variables),
+      description: processContent(
+        servicesContent?.sewage_description || DEFAULT_SERVICES.sewage_description,
+        domain,
+        variables,
+      ),
+    },
+  }
 
   return (
     <div className="min-h-screen bg-white">
@@ -61,6 +149,8 @@ export default async function Home() {
         phone={site.phone}
         phoneDisplay={site.phoneDisplay || undefined}
         serviceAreas={serviceAreas}
+        domain={domain}
+        navLabels={navLabels}
       />
       <Hero
         title={heroTitle}
@@ -68,10 +158,11 @@ export default async function Home() {
         phone={site.phone}
         phoneDisplay={site.phoneDisplay || undefined}
         businessName={site.business_name}
-        domain={site.resolvedDomain}
+        domain={domain}
+        chatButtonText={chatButtonText}
       />
 
-      <Services />
+      <Services domain={domain} serviceContent={serviceData} />
       <About
         businessName={site.business_name}
         city={site.city}

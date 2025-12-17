@@ -1,6 +1,23 @@
 import { Droplets, Flame, Biohazard, Trash2, Wrench, ArrowRight } from "lucide-react"
 import Link from "next/link"
 
+interface ServiceData {
+  title: string
+  description: string
+}
+
+interface ServicesProps {
+  domain?: string
+  serviceContent?: {
+    water: ServiceData
+    fire: ServiceData
+    mold: ServiceData
+    biohazard: ServiceData
+    burst: ServiceData
+    sewage: ServiceData
+  }
+}
+
 const VirusIcon = ({ className }: { className?: string }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -32,52 +49,58 @@ const VirusIcon = ({ className }: { className?: string }) => (
   </svg>
 )
 
-const services = [
-  {
-    icon: Droplets,
-    title: "Water Damage Restoration",
-    href: "/water-damage-restoration",
-    description:
-      "Emergency water extraction and rapid drying services. We use hospital-grade dehumidifiers and thermal imaging to ensure zero hidden moisture remains in your property.",
-  },
-  {
-    icon: Flame,
-    title: "Fire & Smoke Damage",
-    href: "/fire-smoke-damage",
-    description:
-      "Comprehensive fire and smoke damage recovery. Our team handles soot removal, structural cleaning, and complete deodorization to return your property to pre-loss condition.",
-  },
-  {
-    icon: VirusIcon,
-    title: "Mold Remediation",
-    href: "/mold-remediation",
-    description:
-      "Certified mold inspection, containment, and removal. We follow strict IICRC protocols to safely eliminate black mold and restore healthy indoor air quality.",
-  },
-  {
-    icon: Biohazard,
-    title: "Biohazard Cleanup",
-    href: "/biohazard-cleanup",
-    description:
-      "Professional biohazard remediation for crime scenes, trauma, and hazardous materials. Our certified team follows OSHA protocols to safely decontaminate affected areas.",
-  },
-  {
-    icon: Wrench,
-    title: "Burst Pipe Repair",
-    href: "/burst-pipe-repair",
-    description:
-      "24/7 Response for frozen or burst plumbing pipes. We stop the water source immediately, repair the plumbing, and handle the full water damage cleanup process.",
-  },
-  {
-    icon: Trash2,
-    title: "Sewage Cleanup",
-    href: "/sewage-cleanup",
-    description:
-      "Emergency sewage and black water cleanup services. We safely remove contaminated water, sanitize affected areas, and restore your property to safe living conditions.",
-  },
-]
+export function Services({ serviceContent }: ServicesProps) {
+  const services = [
+    {
+      icon: Droplets,
+      title: serviceContent?.water.title || "Water Damage Restoration",
+      href: "/water-damage-restoration",
+      description:
+        serviceContent?.water.description ||
+        "Emergency water extraction and rapid drying services. We use hospital-grade dehumidifiers and thermal imaging to ensure zero hidden moisture remains in your property.",
+    },
+    {
+      icon: Flame,
+      title: serviceContent?.fire.title || "Fire & Smoke Damage",
+      href: "/fire-smoke-damage",
+      description:
+        serviceContent?.fire.description ||
+        "Comprehensive fire and smoke damage recovery. Our team handles soot removal, structural cleaning, and complete deodorization to return your property to pre-loss condition.",
+    },
+    {
+      icon: VirusIcon,
+      title: serviceContent?.mold.title || "Mold Remediation",
+      href: "/mold-remediation",
+      description:
+        serviceContent?.mold.description ||
+        "Certified mold inspection, containment, and removal. We follow strict IICRC protocols to safely eliminate black mold and restore healthy indoor air quality.",
+    },
+    {
+      icon: Biohazard,
+      title: serviceContent?.biohazard.title || "Biohazard Cleanup",
+      href: "/biohazard-cleanup",
+      description:
+        serviceContent?.biohazard.description ||
+        "Professional biohazard remediation for crime scenes, trauma, and hazardous materials. Our certified team follows OSHA protocols to safely decontaminate affected areas.",
+    },
+    {
+      icon: Wrench,
+      title: serviceContent?.burst.title || "Burst Pipe Repair",
+      href: "/burst-pipe-repair",
+      description:
+        serviceContent?.burst.description ||
+        "24/7 Response for frozen or burst plumbing pipes. We stop the water source immediately, repair the plumbing, and handle the full water damage cleanup process.",
+    },
+    {
+      icon: Trash2,
+      title: serviceContent?.sewage.title || "Sewage Cleanup",
+      href: "/sewage-cleanup",
+      description:
+        serviceContent?.sewage.description ||
+        "Emergency sewage and black water cleanup services. We safely remove contaminated water, sanitize affected areas, and restore your property to safe living conditions.",
+    },
+  ]
 
-export function Services() {
   return (
     <section id="services" className="py-24 lg:py-36 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

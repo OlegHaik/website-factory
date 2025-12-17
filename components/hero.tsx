@@ -8,9 +8,10 @@ interface HeroProps {
   phoneDisplay?: string
   businessName: string
   domain?: string
+  chatButtonText?: string
 }
 
-export function Hero({ title, description, phone, phoneDisplay, businessName, domain }: HeroProps) {
+export function Hero({ title, description, phone, phoneDisplay, businessName, domain, chatButtonText }: HeroProps) {
   const smsNumber = "+19492675767"
   const smsMessage = encodeURIComponent(
     `Hello, I'm reaching out from ${(businessName || '').replace(/&/g, 'and')} (${domain || 'our website'}), and would like to request a free estimate.`,
@@ -18,6 +19,7 @@ export function Hero({ title, description, phone, phoneDisplay, businessName, do
   const smsLink = `sms:${smsNumber}?body=${smsMessage}`
   const phoneHref = `tel:${phone.replace(/\D/g, '')}`
   const displayPhone = phoneDisplay || phone
+  const chatText = chatButtonText || 'Chat With Us'
 
   return (
     <section className="relative bg-slate-950 overflow-hidden">
@@ -30,9 +32,9 @@ export function Hero({ title, description, phone, phoneDisplay, businessName, do
         <div className="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-l from-[var(--cool-dark)]/60 via-[var(--cool-accent)]/30 to-transparent" />
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[var(--cool-med)]/25 rounded-full blur-[120px]" />
         <div className="absolute bottom-0 right-[10%] w-[400px] h-[400px] bg-[var(--cool-accent)]/20 rounded-full blur-[100px]" />
-        <div className="absolute top-1/2 right-[5%] w-[350px] h-[350px] bg-indigo-900/15 rounded-full blur-[90px]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-slate-900/50 rounded-full blur-[150px]" />
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[400px] h-[200px] bg-purple-900/10 rounded-full blur-[100px]" />
+        <div className="absolute top-1/2 right-[5%] w-[350px] h-[350px] bg-[var(--cool-accent)]/15 rounded-full blur-[90px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[var(--cool-dark)]/50 rounded-full blur-[150px]" />
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[400px] h-[200px] bg-[var(--cool-accent)]/10 rounded-full blur-[100px]" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 lg:py-40">
@@ -56,7 +58,7 @@ export function Hero({ title, description, phone, phoneDisplay, businessName, do
               className="inline-flex items-center justify-center border-2 border-white text-slate-900 bg-white hover:bg-[var(--accent-hover)] hover:border-[var(--accent-hover)] font-semibold px-6 py-3 text-base rounded-lg w-full sm:w-auto transition-all duration-300"
             >
               <MessageSquare className="w-4 h-4 mr-2" />
-              Chat With Us
+              {chatText}
             </Link>
           </div>
         </div>

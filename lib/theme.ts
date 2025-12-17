@@ -33,5 +33,13 @@ export function generateCSSVariables(theme: ThemeColors): string {
     --accent-primary: ${theme.accent_primary};
     --accent-hover: ${theme.accent_hover};
     --font-family: '${theme.font_family}', system-ui, sans-serif;
+
+    /* Aurora aliases for backwards compatibility */
+    --aurora-warm-dark: ${theme.warm_dark};
+    --aurora-warm: ${theme.warm_med};
+    --aurora-cool-dark: ${theme.cool_dark};
+    --aurora-cool: ${theme.cool_med};
+    --aurora-accent: ${theme.accent_primary};
+    --aurora-accent-hover: ${theme.accent_hover};
   `
 }
