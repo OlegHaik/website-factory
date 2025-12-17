@@ -17,6 +17,7 @@ export interface SiteRow {
   slug: string
   business_name: string | null
   domain_url: string | null
+  is_main?: boolean | null
   address: string | null
   city: string | null
   zip_code: string | null
@@ -296,6 +297,8 @@ export async function getSiteByDomain(domain: string): Promise<SiteData | null> 
     .from('sites')
     .select('*')
     .in('domain_url', candidates)
+    .order('is_main', { ascending: false, nullsFirst: false })
+    .order('id', { ascending: true })
     .limit(1)
 
   if (error) {
@@ -321,6 +324,8 @@ async function getMainSiteByDomain(domain: string): Promise<SiteData | null> {
     .in('domain_url', candidates)
     // Accept "" or "home" (required), and also tolerate NULL to avoid accidental 404s.
     .or('slug.eq.,slug.eq.home,slug.is.null')
+    .order('is_main', { ascending: false, nullsFirst: false })
+    .order('id', { ascending: true })
     .limit(1)
 
   if (error) {

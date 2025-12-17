@@ -30,14 +30,20 @@ export default async function LinksPage() {
   if (!site.business_name) throw new Error('Site is missing required field: business_name')
   if (!site.phone) throw new Error('Site is missing required field: phone')
 
-  const servicesDropdown = DEFAULT_SERVICES.map((s) => ({ label: s.title, href: `/${s.slug}` }))
+  // Keep /links page resilient: if citations table isn't available (or RLS blocks it),
+  // fall back to per-site links and then to a safe default list.
+  let citationsFromDb: Array<{ label: string; href: string }> = []
+  try {
+    citationsFromDb = await getCitationsForSite(site.id)
+  } catch (err) {
+    console.error('Failed to fetch citations for /links page. Falling back to defaults.', err)
+    citationsFromDb = []
+  }
 
-  const citationsFromDb = await getCitationsForSite(site.id)
-
-  const citations = citationsFromDb.length > 0 ? citationsFromDb : [
-    { label: 'Google Business', href: site.google_business_url || '#' },
+  const defaultCitations = [
+    { label: 'Google Business', href: site.google_business_url || '' },
+    { label: 'Facebook', href: site.facebook_url || '' },
     { label: 'Yelp', href: 'https://www.yelp.com/' },
-    { label: 'Facebook', href: site.facebook_url || '#' },
     { label: 'Hotfrog', href: 'https://www.hotfrog.com/' },
     { label: 'Brownbook', href: 'https://www.brownbook.net/' },
     { label: 'EZ Local', href: 'https://ezlocal.com/' },
@@ -48,6 +54,23 @@ export default async function LinksPage() {
     { label: 'Local Business Nation', href: 'https://www.localbusinessnation.com/' },
     { label: 'Cataloxy', href: 'https://www.cataloxy.us/' },
   ]
+
+  const normalize = (items: Array<{ label?: string; href?: string }>) =>
+    items
+      .map((l) => ({ label: String(l.label || '').trim(), href: String(l.href || '').trim() }))
+      .filter((l) => Boolean(l.label) && Boolean(l.href))
+
+  const merged = [...normalize(citationsFromDb), ...normalize((site as any).links ?? [])]
+  const deduped: Array<{ label: string; href: string }> = []
+  const seen = new Set<string>()
+  for (const item of merged) {
+    const key = item.href.toLowerCase()
+    if (seen.has(key)) continue
+    seen.add(key)
+    deduped.push(item)
+  }
+
+  const citations = deduped.length > 0 ? deduped : normalize(defaultCitations)
 
   const areaIndex = await getServiceAreaIndexForCurrentDomain()
   const serviceAreas = areaIndex.map((a) => ({ name: a.city, slug: a.slug }))
@@ -104,7 +127,7 @@ export default async function LinksPage() {
 
             <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {citations.map((l) => (
-                <Card key={l.href} className="border-slate-200 py-0">
+                <Card key={`${l.href}-${l.label}`} className="border-slate-200 py-0">
                   <a
                     href={l.href}
                     target="_blank"
