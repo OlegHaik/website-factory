@@ -51,7 +51,7 @@ export function Header({ businessName, phone, phoneDisplay, serviceAreas = [], n
 
   return (
     <>
-      <header className="sticky top-0 z-50 relative overflow-hidden">
+      <header className="sticky top-0 z-50 relative overflow-visible">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950 to-slate-950" />
           <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-[var(--warm-dark)]/60 via-[var(--warm-med)]/30 to-transparent" />
@@ -88,8 +88,8 @@ export function Header({ businessName, phone, phoneDisplay, serviceAreas = [], n
                   />
                 </button>
                 {openDropdown === "services" && (
-                  <div className="absolute top-full left-0 pt-2">
-                    <div className="absolute -top-2 left-0 right-0 h-4"></div>
+                  <div className="absolute top-full left-0 pt-2 z-50">
+                    <div className="absolute -top-2 left-0 right-0 h-4 bg-transparent" />
                     <div className="bg-white rounded-xl shadow-xl border border-slate-200 py-2 min-w-[240px]">
                       {servicesLinks.map((item) => (
                         <Link
@@ -117,8 +117,8 @@ export function Header({ businessName, phone, phoneDisplay, serviceAreas = [], n
                   />
                 </button>
                 {openDropdown === "areas" && serviceAreas.length > 0 && (
-                  <div className="absolute top-full left-0 pt-2">
-                    <div className="absolute -top-2 left-0 right-0 h-4"></div>
+                  <div className="absolute top-full left-0 pt-2 z-50">
+                    <div className="absolute -top-2 left-0 right-0 h-4 bg-transparent" />
                     <div className="bg-white rounded-xl shadow-xl border border-slate-200 py-2 min-w-[200px]">
                       {serviceAreas.map((area) => (
                         <Link
