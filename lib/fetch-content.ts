@@ -39,6 +39,20 @@ export interface ContentCTA {
   chat_button_spintax: string
 }
 
+export interface ContentServicePage {
+  id: number
+  service_slug: string
+  hero_headline_spintax: string | null
+  hero_description_spintax: string | null
+  intro_spintax: string | null
+  process_title_spintax: string | null
+  process_spintax: string | null
+  why_choose_title_spintax: string | null
+  why_choose_spintax: string | null
+  cta_headline_spintax: string | null
+  cta_description_spintax: string | null
+}
+
 export interface ContentSeoBody {
   id: number
   intro_spintax: string
@@ -92,6 +106,21 @@ export async function getContentHeader(id: number): Promise<ContentHeader | null
     return null
   }
   return data as ContentHeader
+}
+
+export async function getContentServicePage(serviceSlug: string): Promise<ContentServicePage | null> {
+  const supabase = await createClient()
+  const { data, error } = await supabase
+    .from("content_service_pages")
+    .select("*")
+    .eq("service_slug", serviceSlug)
+    .single()
+
+  if (error) {
+    console.error("Failed to fetch service page content:", error)
+    return null
+  }
+  return data as ContentServicePage
 }
 
 export async function getContentHero(id: number): Promise<ContentHero | null> {

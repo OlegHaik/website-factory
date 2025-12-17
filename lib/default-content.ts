@@ -23,6 +23,39 @@ export const DEFAULT_SERVICE_NAV = {
   sewage: "{Sewage Cleanup|Sewage Removal|Sewer Backup|Black Water Cleanup}",
 }
 
+export const DEFAULT_SERVICE_PAGE = {
+  water: {
+    hero_headline: "{Professional|Expert|Certified} Water Damage Restoration in {{city}}, {{state}}",
+    hero_description: "{Fast water extraction and drying|Immediate flood response} by certified technicians.",
+    intro: "Water damage can strike at any moment. Our {{city}} team specializes in water damage restoration.",
+  },
+  fire: {
+    hero_headline: "{Professional|Expert|Certified} Fire & Smoke Restoration in {{city}}, {{state}}",
+    hero_description: "{Comprehensive fire damage recovery|Complete smoke removal} services.",
+    intro: "After a fire, the damage extends beyond what you can see. Our {{city}} team restores your property.",
+  },
+  mold: {
+    hero_headline: "{Certified|Professional|Expert} Mold Remediation in {{city}}, {{state}}",
+    hero_description: "{Safe mold removal|Certified mold inspection} and prevention.",
+    intro: "Mold growth poses serious health risks. Our {{city}} team safely eliminates mold.",
+  },
+  biohazard: {
+    hero_headline: "{Professional|Certified|Discreet} Biohazard Cleanup in {{city}}, {{state}}",
+    hero_description: "{Safe biohazard removal|Professional trauma cleanup} services.",
+    intro: "Biohazard situations require specialized training. Our {{city}} team provides discreet service.",
+  },
+  burst: {
+    hero_headline: "{Emergency|24/7|Rapid} Burst Pipe Repair in {{city}}, {{state}}",
+    hero_description: "{Fast response to pipe emergencies|Immediate water shutoff and repair}.",
+    intro: "A burst pipe can release hundreds of gallons per hour. Our {{city}} team responds fast.",
+  },
+  sewage: {
+    hero_headline: "{Professional|Emergency|Certified} Sewage Cleanup in {{city}}, {{state}}",
+    hero_description: "{Safe sewage removal|Professional black water cleanup} services.",
+    intro: "Sewage backups pose serious health risks. Our {{city}} team safely removes contamination.",
+  },
+}
+
 export const DEFAULT_HERO = {
   headline_spintax: "{Trusted|Professional|Expert|Certified} Fire & Water Restoration in {{city}}, {{state}}",
   subheadline_spintax:

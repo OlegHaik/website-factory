@@ -8,13 +8,16 @@ interface LinkItem {
 interface ServiceContentProps {
   serviceTitle: string
   serviceDescription: string
+  intro?: string
   city: string
   state: string
   serviceAreas: Array<{ name: string; slug: string }>
   otherServices: LinkItem[]
 }
 
-export function ServiceContent({ serviceTitle, serviceDescription, city, state, serviceAreas, otherServices }: ServiceContentProps) {
+export function ServiceContent({ serviceTitle, serviceDescription, intro, city, state, serviceAreas, otherServices }: ServiceContentProps) {
+  const introText = intro || serviceDescription
+
   return (
     <section className="py-24 lg:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -22,7 +25,7 @@ export function ServiceContent({ serviceTitle, serviceDescription, city, state, 
           <div className="lg:col-span-2 space-y-10">
             <div>
               <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">{serviceTitle}</h2>
-              <p className="mt-4 text-lg text-slate-600 leading-relaxed">{serviceDescription}</p>
+              <p className="mt-4 text-lg text-slate-600 leading-relaxed">{introText}</p>
             </div>
 
             <div className="rounded-2xl border border-slate-200 bg-slate-50 p-8">

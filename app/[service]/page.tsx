@@ -4,8 +4,8 @@ import { notFound } from "next/navigation"
 import { getServiceAreaIndexForCurrentDomain, resolveSiteContext } from "@/lib/sites"
 import { DEFAULT_SERVICES, getServiceBySlug } from "@/lib/water-damage"
 import { processContent } from "@/lib/spintax"
-import { getContentHeader, parseContentMap } from "@/lib/fetch-content"
-import { DEFAULT_NAV, DEFAULT_SERVICE_NAV } from "@/lib/default-content"
+import { getContentHeader, getContentServicePage, parseContentMap } from "@/lib/fetch-content"
+import { DEFAULT_NAV, DEFAULT_SERVICE_NAV, DEFAULT_SERVICE_PAGE } from "@/lib/default-content"
 
 import { Header } from "@/components/header"
 import { ServiceHero } from "@/components/service-hero"
@@ -40,6 +40,15 @@ export async function generateMetadata({
   }
 }
 
+const serviceKeyMap: Record<string, keyof typeof DEFAULT_SERVICE_PAGE> = {
+  "water-damage-restoration": "water",
+  "fire-smoke-damage": "fire",
+  "mold-remediation": "mold",
+  "biohazard-cleanup": "biohazard",
+  "burst-pipe-repair": "burst",
+  "sewage-cleanup": "sewage",
+}
+
 export default async function ServicePage({
   params,
 }: {
@@ -56,6 +65,9 @@ export default async function ServicePage({
 
   const service = getServiceBySlug(serviceSlug)
   if (!service) notFound()
+
+  const serviceKey = serviceKeyMap[serviceSlug]
+  if (!serviceKey) notFound()
 
   const areaIndex = await getServiceAreaIndexForCurrentDomain()
   const serviceAreas = areaIndex.map((a) => ({ name: a.city, slug: a.slug }))
@@ -92,6 +104,17 @@ export default async function ServicePage({
     sewage: processContent(DEFAULT_SERVICE_NAV.sewage, domain, variables),
   }
 
+  const pageContent = await getContentServicePage(serviceSlug)
+  const defaults = DEFAULT_SERVICE_PAGE[serviceKey]
+
+  const heroTitle = processContent(pageContent?.hero_headline_spintax || defaults.hero_headline, domain, variables)
+  const heroDescription = processContent(
+    pageContent?.hero_description_spintax || defaults.hero_description,
+    domain,
+    variables,
+  )
+  const introText = processContent(pageContent?.intro_spintax || defaults.intro, domain, variables)
+
   return (
     <div className="min-h-screen bg-white">
       <Header
@@ -104,9 +127,8 @@ export default async function ServicePage({
         serviceNavLabels={serviceNavLabels}
       />
       <ServiceHero
-        serviceTitle={service.title}
-        city={site.city}
-        state={site.state}
+        title={heroTitle}
+        description={heroDescription}
         phone={site.phone}
         phoneDisplay={site.phoneDisplay || undefined}
         businessName={site.business_name}
@@ -115,6 +137,7 @@ export default async function ServicePage({
       <ServiceContent
         serviceTitle={service.title}
         serviceDescription={service.shortDescription}
+        intro={introText}
         city={site.city}
         state={site.state}
         serviceAreas={serviceAreas}
