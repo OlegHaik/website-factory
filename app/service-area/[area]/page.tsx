@@ -7,6 +7,7 @@ import { processContent } from "@/lib/spintax"
 import { generatePageMetadata } from "@/lib/generate-metadata"
 import { getContentHeader, getContentServiceArea, parseContentMap } from "@/lib/fetch-content"
 import { DEFAULT_NAV, DEFAULT_SERVICE_AREA, DEFAULT_SERVICE_NAV } from "@/lib/default-content"
+import { parseSocialLinks } from "@/lib/types"
 
 import { Header } from "@/components/header"
 import { ServiceAreaHero } from "@/components/service-area-hero"
@@ -160,6 +161,8 @@ export default async function ServiceAreaPage({
     variables,
   )
 
+  const socialLinks = parseSocialLinks(areaSite)
+
   const navLabels = {
     home: processContent(headerContent?.nav_home || DEFAULT_NAV.home, resolvedDomain, variables),
     services: processContent(headerContent?.nav_services || DEFAULT_NAV.services, resolvedDomain, variables),
@@ -221,6 +224,7 @@ export default async function ServiceAreaPage({
         phoneDisplay={areaSite.phoneDisplay || undefined}
         address={areaSite.address}
         serviceAreas={serviceAreas}
+        socialLinks={socialLinks}
       />
       <FloatingCall phone={areaSite.phone} />
     </div>

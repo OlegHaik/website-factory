@@ -74,6 +74,15 @@ export interface ContentMeta {
   description_spintax: string | null
 }
 
+export interface ContentLegal {
+  id: number
+  page_type: "privacy_policy" | "terms_of_use" | (string & {})
+  title: string | null
+  intro_spintax: string | null
+  content_spintax: string | null
+  last_updated: string | null
+}
+
 export interface ContentSeoBody {
   id: number
   intro_spintax: string
@@ -165,6 +174,17 @@ export async function getContentMeta(pageType: string): Promise<ContentMeta | nu
     return null
   }
   return data as ContentMeta
+}
+
+export async function getContentLegal(pageType: "privacy_policy" | "terms_of_use"): Promise<ContentLegal | null> {
+  const supabase = await createClient()
+  const { data, error } = await supabase.from("content_legal").select("*").eq("page_type", pageType).single()
+
+  if (error) {
+    console.error("Failed to fetch legal content:", error)
+    return null
+  }
+  return data as ContentLegal
 }
 
 export async function getContentHero(id: number): Promise<ContentHero | null> {

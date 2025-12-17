@@ -2,8 +2,9 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { getServiceAreaIndexForCurrentDomain, resolveSiteContext } from '@/lib/sites'
 import { processContent } from '@/lib/spintax'
-import { getContentHeader, parseContentMap } from '@/lib/fetch-content'
-import { DEFAULT_NAV, DEFAULT_SERVICE_NAV } from '@/lib/default-content'
+import { getContentHeader, getContentLegal, parseContentMap } from '@/lib/fetch-content'
+import { DEFAULT_LEGAL, DEFAULT_NAV, DEFAULT_SERVICE_NAV } from '@/lib/default-content'
+import { parseSocialLinks } from '@/lib/types'
 import { Header } from '@/components/header'
 import Footer from '@/components/footer'
 import { FloatingCall } from '@/components/floating-call'
@@ -37,7 +38,24 @@ export default async function PrivacyPolicyPage() {
     state: site.state || '',
     business_name: site.business_name,
     phone: site.phone,
+    address: site.address || '',
+    zip_code: site.zip_code || '',
+    email:
+      site.email ||
+      `info@${String(site.domain_url || domain)
+        .replace(/^https?:\/\//, '')
+        .replace(/\/$/, '')
+        .replace(/^www\./, '')}`,
   }
+
+  const legalContent = await getContentLegal('privacy_policy')
+  const defaults = DEFAULT_LEGAL.privacy_policy
+  const title = legalContent?.title || defaults.title
+  const intro = processContent(legalContent?.intro_spintax || defaults.intro, domain, variables)
+  const content = processContent(legalContent?.content_spintax || defaults.content, domain, variables)
+  const lastUpdated = legalContent?.last_updated || defaults.last_updated
+
+  const socialLinks = parseSocialLinks(site)
 
   const contentMap = parseContentMap(site.content_map)
   const headerContent = contentMap.header ? await getContentHeader(contentMap.header) : null
@@ -74,48 +92,16 @@ export default async function PrivacyPolicyPage() {
       <main className="pt-24">
         <div className="container mx-auto px-4 py-12">
           <div className="mx-auto max-w-3xl">
-            <h1 className="text-3xl font-extrabold text-slate-900">Privacy Policy</h1>
-            <p className="mt-2 text-sm text-slate-600">Last updated: December 2024</p>
+            <h1 className="text-3xl font-extrabold text-slate-900">{title}</h1>
+            <p className="mt-2 text-sm text-slate-600">Last updated: {lastUpdated}</p>
 
-            <div className="mt-8 space-y-8 text-sm leading-relaxed text-slate-700">
-              <p>
-                {site.business_name} ("we", "our", or "us") is committed to protecting your privacy.
-              </p>
+            <div className="mt-8 text-sm leading-relaxed text-slate-700">
+              <p className="text-lg text-slate-700 mb-8">{intro}</p>
 
-              <section>
-                <h2 className="text-lg font-extrabold text-slate-900">Information We Collect</h2>
-                <ul className="mt-2 list-disc space-y-1 pl-5">
-                  <li>Contact information (name, phone, email) when you reach out to us</li>
-                  <li>Service request details</li>
-                </ul>
-              </section>
-
-              <section>
-                <h2 className="text-lg font-extrabold text-slate-900">How We Use Your Information</h2>
-                <ul className="mt-2 list-disc space-y-1 pl-5">
-                  <li>To respond to your inquiries</li>
-                  <li>To provide our restoration services</li>
-                  <li>To communicate about your service</li>
-                </ul>
-              </section>
-
-              <section>
-                <h2 className="text-lg font-extrabold text-slate-900">Contact Us</h2>
-                <p className="mt-2">
-                  If you have questions about this Privacy Policy, contact us
-                  {phoneDigits ? (
-                    <>
-                      {' '}at{' '}
-                      <a className="font-semibold text-red-700 hover:text-red-800" href={`tel:${phoneDigits}`}>
-                        {phoneDisplay}
-                      </a>
-                      .
-                    </>
-                  ) : (
-                    '.'
-                  )}
-                </p>
-              </section>
+              <div
+                className="legal-content space-y-6"
+                dangerouslySetInnerHTML={{ __html: formatLegalContent(content) }}
+              />
             </div>
           </div>
         </div>
@@ -127,8 +113,20 @@ export default async function PrivacyPolicyPage() {
         phoneDisplay={site.phoneDisplay || undefined}
         address={site.address}
         serviceAreas={serviceAreas}
+        socialLinks={socialLinks}
       />
       <FloatingCall phone={site.phone} />
     </div>
   )
+}
+
+function formatLegalContent(content: string): string {
+  return String(content || '')
+    .replace(/^## (.+)$/gm, '<h2 class="text-xl font-semibold text-slate-900 mt-8 mb-4">$1</h2>')
+    .replace(/^### (.+)$/gm, '<h3 class="text-lg font-semibold text-slate-900 mt-6 mb-3">$1</h3>')
+    .replace(/^- (.+)$/gm, '<li class="text-slate-700">$1</li>')
+    .replace(/(<li.*<\/li>\n?)+/g, '<ul class="list-disc pl-6 space-y-2 mb-4">$&</ul>')
+    .replace(/^\d+\. (.+)$/gm, '<li class="text-slate-700">$1</li>')
+    .replace(/^(?!<[uh]|<li)(.+)$/gm, '<p class="text-slate-700 mb-4">$1</p>')
+    .replace(/<p class="text-slate-700 mb-4"><\/p>/g, '')
 }

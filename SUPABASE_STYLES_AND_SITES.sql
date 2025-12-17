@@ -39,6 +39,16 @@ ON CONFLICT (id) DO NOTHING;
 ALTER TABLE sites ADD COLUMN IF NOT EXISTS style_id INT DEFAULT 1;
 ALTER TABLE sites ADD COLUMN IF NOT EXISTS content_map JSONB DEFAULT '{}';
 
+-- Social media profile URLs (used for footer icons)
+ALTER TABLE sites ADD COLUMN IF NOT EXISTS social_google TEXT;
+ALTER TABLE sites ADD COLUMN IF NOT EXISTS social_facebook TEXT;
+ALTER TABLE sites ADD COLUMN IF NOT EXISTS social_pinterest TEXT;
+ALTER TABLE sites ADD COLUMN IF NOT EXISTS social_youtube TEXT;
+ALTER TABLE sites ADD COLUMN IF NOT EXISTS social_instagram TEXT;
+ALTER TABLE sites ADD COLUMN IF NOT EXISTS social_twitter TEXT;
+ALTER TABLE sites ADD COLUMN IF NOT EXISTS social_linkedin TEXT;
+ALTER TABLE sites ADD COLUMN IF NOT EXISTS social_yelp TEXT;
+
 -- Optional FK (only if you want strict referential integrity)
 -- ALTER TABLE sites
 --   ADD CONSTRAINT sites_style_id_fkey

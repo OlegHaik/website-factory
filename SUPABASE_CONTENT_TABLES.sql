@@ -45,6 +45,18 @@ CREATE TABLE IF NOT EXISTS content_meta (
 );
 
 -- =============================
+-- Legal Pages (Privacy / Terms)
+-- =============================
+CREATE TABLE IF NOT EXISTS content_legal (
+  id SERIAL PRIMARY KEY,
+  page_type TEXT NOT NULL,
+  title TEXT,
+  intro_spintax TEXT,
+  content_spintax TEXT,
+  last_updated TEXT DEFAULT 'January 1, 2025'
+);
+
+-- =============================
 -- Service Area Page Spintax Content
 -- =============================
 CREATE TABLE IF NOT EXISTS content_service_area (
@@ -127,6 +139,25 @@ SELECT
   '{Trusted|Professional|Local|Expert} Fire & Water Restoration in {{city}}, {{state}} | {{business_name}}',
   '{{business_name}} {serves|provides restoration services to} {{city}}, {{state}}. {24/7 emergency response|Fast water damage repair|Professional fire restoration}. {Call now for immediate help|Free estimates}!'
 WHERE NOT EXISTS (SELECT 1 FROM content_meta WHERE page_type = 'service_area');
+
+-- Insert Privacy Policy + Terms of Use templates
+INSERT INTO content_legal (page_type, title, intro_spintax, content_spintax, last_updated)
+SELECT
+  'privacy_policy',
+  'Privacy Policy',
+  '{At|Here at} {{business_name}}, we {take your privacy seriously|are committed to protecting your privacy|value your trust and privacy}. This Privacy Policy {explains|describes|outlines} how we {collect, use, and protect|handle|manage} your {personal information|data|information} when you {use our services|visit our website|contact us}.',
+  '## Information We Collect\n\n{We collect information you provide directly|When you contact us, we collect information} such as:\n- {Name and contact information|Your name, email, phone number, and address}\n- {Property details|Information about your property and the damage}\n- {Insurance information|Details about your insurance coverage}\n- {Communication records|Records of our communications with you}\n\n## How We Use Your Information\n\n{{business_name}} uses your information to:\n- {Provide restoration services|Deliver the services you requested}\n- {Communicate with you|Keep you updated on your project}\n- {Process insurance claims|Work with your insurance company}\n- {Improve our services|Enhance our customer experience}\n\n## Information Sharing\n\nWe {may share|share} your information with:\n- {Insurance companies|Your insurance provider} (with your consent)\n- {Service partners|Contractors and vendors} who help us deliver services\n- {Legal authorities|Law enforcement} when required by law\n\n## Data Security\n\nWe {implement|use} {industry-standard|appropriate} security measures to protect your {personal information|data}. {However, no method of transmission over the Internet is 100% secure|While we strive to protect your information, we cannot guarantee absolute security}.\n\n## Your Rights\n\nYou have the right to:\n- {Access your personal information|Request a copy of your data}\n- {Correct inaccurate information|Update your information}\n- {Request deletion|Ask us to delete your data}\n- {Opt out of marketing communications|Unsubscribe from our emails}\n\n## Contact Us\n\nIf you have questions about this Privacy Policy, {contact us at|please reach out}:\n\n{{business_name}}\n{{address}}\n{{city}}, {{state}} {{zip_code}}\nPhone: {{phone}}\nEmail: {{email}}',
+  'January 1, 2025'
+WHERE NOT EXISTS (SELECT 1 FROM content_legal WHERE page_type = 'privacy_policy');
+
+INSERT INTO content_legal (page_type, title, intro_spintax, content_spintax, last_updated)
+SELECT
+  'terms_of_use',
+  'Terms of Use',
+  '{Welcome to|Thank you for visiting} {{business_name}}. {By using our website and services|By accessing this website}, you agree to {these Terms of Use|the following terms and conditions}. {Please read them carefully|Review these terms before using our services}.',
+  '## Services\n\n{{business_name}} provides {water damage restoration, fire damage restoration, mold remediation, and related services|property restoration and emergency cleanup services} in {{city}}, {{state}} and surrounding areas. {Service availability may vary by location|Not all services are available in all areas}.\n\n## Service Agreement\n\n{When you request our services|Upon booking}, you agree to:\n- {Provide accurate information|Give us correct details about the damage}\n- {Grant access to your property|Allow our technicians access to perform work}\n- {Pay for services rendered|Fulfill payment obligations}\n- {Follow safety instructions|Comply with our safety guidelines}\n\n## Estimates and Pricing\n\n- {We provide free estimates|Estimates are provided at no cost}\n- {Final pricing may vary|Actual costs may differ from estimates} based on {the extent of damage discovered|conditions found during work}\n- {We work directly with insurance companies|Insurance billing is available}\n- {Payment terms will be discussed|We offer flexible payment options} before work begins\n\n## Limitation of Liability\n\n{To the maximum extent permitted by law|Within legal limits}, {{business_name}} {shall not be liable|is not responsible} for:\n- {Indirect or consequential damages|Secondary damages}\n- {Pre-existing conditions|Damage that existed before our arrival}\n- {Delays beyond our control|Force majeure events}\n- {Third-party actions|Actions of your insurance company}\n\n## Intellectual Property\n\n{All content on this website|Website content} including {text, images, logos|all materials} is owned by {{business_name}} and {protected by copyright|may not be reproduced without permission}.\n\n## Dispute Resolution\n\nAny disputes {shall be resolved|will be handled} through:\n1. {Direct negotiation|Good faith discussions}\n2. {Mediation|Third-party mediation} if necessary\n3. {Binding arbitration|Arbitration} in {{state}}\n\n## Changes to Terms\n\n{We reserve the right to|{{business_name}} may} update these Terms {at any time|periodically}. {Continued use constitutes acceptance|Your continued use means you accept changes}.\n\n## Contact Us\n\n{Questions about these Terms|For inquiries}? Contact us:\n\n{{business_name}}\n{{address}}\n{{city}}, {{state}} {{zip_code}}\nPhone: {{phone}}\nEmail: {{email}}',
+  'January 1, 2025'
+WHERE NOT EXISTS (SELECT 1 FROM content_legal WHERE page_type = 'terms_of_use');
 
 -- Insert default content (generic template for all service areas)
 INSERT INTO content_service_area (

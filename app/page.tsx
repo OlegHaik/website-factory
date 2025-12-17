@@ -3,6 +3,7 @@ import { notFound } from "next/navigation"
 import { getServiceAreaIndexForCurrentDomain, resolveSiteContext } from "@/lib/sites"
 import { processContent } from "@/lib/spintax"
 import { generatePageMetadata } from "@/lib/generate-metadata"
+import { parseSocialLinks } from "@/lib/types"
 import {
   getContentCTA,
   getContentFAQ,
@@ -266,6 +267,8 @@ export default async function Home() {
     items: testimonialItems,
   }
 
+  const socialLinks = parseSocialLinks(site)
+
   return (
     <div className="min-h-screen bg-white">
       <Header
@@ -313,6 +316,7 @@ export default async function Home() {
         phoneDisplay={site.phoneDisplay || undefined}
         address={site.address}
         serviceAreas={serviceAreas}
+        socialLinks={socialLinks}
       />
       <FloatingCall phone={site.phone} />
     </div>

@@ -4,6 +4,7 @@ import { getCitationsForSite, getServiceAreaIndexForCurrentDomain, resolveSiteCo
 import { processContent } from '@/lib/spintax'
 import { getContentHeader, parseContentMap } from '@/lib/fetch-content'
 import { DEFAULT_NAV, DEFAULT_SERVICE_NAV } from '@/lib/default-content'
+import { parseSocialLinks } from '@/lib/types'
 import { Header } from '@/components/header'
 import Footer from '@/components/footer'
 import { FloatingCall } from '@/components/floating-call'
@@ -79,6 +80,8 @@ export default async function LinksPage() {
     sewage: processContent(DEFAULT_SERVICE_NAV.sewage, domain, variables),
   }
 
+  const socialLinks = parseSocialLinks(site)
+
   return (
     <div className="min-h-screen bg-white">
       <Header
@@ -129,6 +132,7 @@ export default async function LinksPage() {
         phoneDisplay={site.phoneDisplay || undefined}
         address={site.address}
         serviceAreas={serviceAreas}
+        socialLinks={socialLinks}
       />
       <FloatingCall phone={site.phone} />
     </div>

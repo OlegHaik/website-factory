@@ -116,6 +116,62 @@ export const DEFAULT_META = {
   },
 }
 
+export const DEFAULT_LEGAL = {
+  privacy_policy: {
+    title: "Privacy Policy",
+    intro:
+      "{At|Here at} {{business_name}}, we {take your privacy seriously|are committed to protecting your privacy}. This Privacy Policy {explains|describes} how we {collect, use, and protect|handle} your {personal information|data}.",
+    content: `## Information We Collect
+
+We collect information you provide directly such as:
+- Name and contact information
+- Property details and damage information
+- Insurance information
+- Communication records
+
+## How We Use Your Information
+
+{{business_name}} uses your information to:
+- Provide restoration services
+- Communicate with you about your project
+- Process insurance claims
+- Improve our services
+
+## Contact Us
+
+{{business_name}}
+{{address}}
+{{city}}, {{state}} {{zip_code}}
+Phone: {{phone}}
+Email: {{email}}`,
+    last_updated: "January 1, 2025",
+  },
+  terms_of_use: {
+    title: "Terms of Use",
+    intro:
+      "{Welcome to|Thank you for visiting} {{business_name}}. {By using our website and services|By accessing this website}, you agree to {these Terms of Use|the following terms and conditions}.",
+    content: `## Services
+
+{{business_name}} provides water damage restoration, fire damage restoration, mold remediation, and related services in {{city}}, {{state}} and surrounding areas.
+
+## Service Agreement
+
+When you request our services, you agree to:
+- Provide accurate information
+- Grant access to your property
+- Pay for services rendered
+
+## Contact Us
+
+{{business_name}}
+{{address}}
+{{city}}, {{state}} {{zip_code}}
+Phone: {{phone}}
+Email: {{email}}`,
+    last_updated: "January 1, 2025",
+  },
+}
+
 export const DEFAULT_HERO = {
   headline_spintax: "{Trusted|Professional|Expert|Certified} Fire & Water Restoration in {{city}}, {{state}}",
   subheadline_spintax:

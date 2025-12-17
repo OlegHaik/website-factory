@@ -7,6 +7,7 @@ import { processContent } from "@/lib/spintax"
 import { getContentHeader, getContentServicePage, parseContentMap } from "@/lib/fetch-content"
 import { DEFAULT_NAV, DEFAULT_SERVICE_NAV, DEFAULT_SERVICE_PAGE } from "@/lib/default-content"
 import { generatePageMetadata } from "@/lib/generate-metadata"
+import { parseSocialLinks } from "@/lib/types"
 
 import { Header } from "@/components/header"
 import { ServiceHero } from "@/components/service-hero"
@@ -134,6 +135,8 @@ export default async function ServicePage({
   )
   const introText = processContent(pageContent?.intro_spintax || defaults.intro, domain, variables)
 
+  const socialLinks = parseSocialLinks(site)
+
   return (
     <div className="min-h-screen bg-white">
       <Header
@@ -174,6 +177,7 @@ export default async function ServicePage({
         phoneDisplay={site.phoneDisplay || undefined}
         address={site.address}
         serviceAreas={serviceAreas}
+        socialLinks={socialLinks}
       />
       <FloatingCall phone={site.phone} />
     </div>

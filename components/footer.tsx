@@ -1,5 +1,8 @@
 import Link from "next/link"
 import { MapPin, Phone } from "lucide-react"
+import { SocialIcons } from "@/components/social-icons"
+
+import type { SocialLinks } from "@/lib/types"
 
 interface FooterProps {
   businessName: string
@@ -7,6 +10,7 @@ interface FooterProps {
   phoneDisplay?: string
   address?: string | null
   serviceAreas?: Array<{ name: string; slug: string }>
+  socialLinks?: SocialLinks
 }
 
 const servicesLinks = [
@@ -18,7 +22,7 @@ const servicesLinks = [
   { label: "Sewage Cleanup", href: "/sewage-cleanup" },
 ]
 
-export default function Footer({ businessName, phone, phoneDisplay, address, serviceAreas = [] }: FooterProps) {
+export default function Footer({ businessName, phone, phoneDisplay, address, serviceAreas = [], socialLinks }: FooterProps) {
   const cleanPhone = phone.replace(/\D/g, "")
   const displayPhone = phoneDisplay || phone
 
@@ -38,6 +42,10 @@ export default function Footer({ businessName, phone, phoneDisplay, address, ser
             <p className="text-slate-300 leading-relaxed">
               24/7 emergency restoration services. Fast response, expert technicians, and complete property restoration.
             </p>
+
+            {socialLinks ? (
+              <SocialIcons links={socialLinks} className="mt-5" iconClassName="w-5 h-5" />
+            ) : null}
           </div>
 
           <div>
