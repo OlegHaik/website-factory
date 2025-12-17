@@ -44,7 +44,15 @@ export default function Footer({ businessName, phone, phoneDisplay, address, ser
             </p>
 
             {socialLinks ? (
-              <SocialIcons links={socialLinks} className="mt-5" iconClassName="w-5 h-5" />
+              <div className="mt-5">
+                <Link
+                  href="/links"
+                  className="inline-flex items-center justify-center bg-[var(--accent-primary)] hover:bg-[var(--warm-med)] text-white font-semibold px-4 py-2 rounded-lg transition-colors"
+                >
+                  Our Links
+                </Link>
+                <SocialIcons links={socialLinks} className="mt-4" iconClassName="w-5 h-5" />
+              </div>
             ) : null}
           </div>
 

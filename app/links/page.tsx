@@ -18,7 +18,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const { site } = await resolveSiteContext()
   const businessName = site?.business_name || 'Company'
   return {
-    title: `Links | ${businessName}`,
+    title: `Our Links | ${businessName}`,
     description: `Business directory links and citations for ${businessName}.`,
   }
 }
@@ -97,7 +97,7 @@ export default async function LinksPage() {
       <main className="pt-24">
         <div className="container mx-auto px-4 py-12">
           <div className="mx-auto max-w-5xl">
-            <h1 className="text-3xl font-extrabold text-slate-900">Find Us Around the Web</h1>
+            <h1 className="text-3xl font-extrabold text-slate-900">Our Links</h1>
             <p className="mt-2 text-sm text-slate-600">Business directory links and citations for {site.business_name}.</p>
 
             <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

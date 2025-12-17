@@ -17,6 +17,7 @@ interface HeaderProps {
   domain?: string
   navLabels?: {
     home: string
+    links?: string
     services: string
     areas: string
     contact: string
@@ -47,6 +48,7 @@ export function Header({ businessName, phone, phoneDisplay, serviceAreas = [], n
 
   const labels = {
     home: navLabels?.home || "Home",
+    links: navLabels?.links || "Our Links",
     services: navLabels?.services || "Services",
     areas: navLabels?.areas || "Service Areas",
     contact: navLabels?.contact || "Contact",
@@ -87,6 +89,13 @@ export function Header({ businessName, phone, phoneDisplay, serviceAreas = [], n
             <nav className="hidden lg:flex items-center space-x-1 ml-auto mr-6">
               <Link href="/" className="px-4 py-2 text-white/90 hover:text-white font-medium transition-colors">
                 {labels.home}
+              </Link>
+
+              <Link
+                href="/links"
+                className="px-4 py-2 rounded-lg bg-white/10 hover:bg-white/15 text-white font-semibold transition-colors"
+              >
+                {labels.links}
               </Link>
 
               <div
@@ -185,6 +194,10 @@ export function Header({ businessName, phone, phoneDisplay, serviceAreas = [], n
             <nav className="flex-1 overflow-y-auto p-4">
               <Link href="/" className="block py-3 text-white text-lg" onClick={closeMobileMenu}>
                 {labels.home}
+              </Link>
+
+              <Link href="/links" className="block py-3 text-white text-lg" onClick={closeMobileMenu}>
+                {labels.links}
               </Link>
 
               <div className="border-t border-white/10">
