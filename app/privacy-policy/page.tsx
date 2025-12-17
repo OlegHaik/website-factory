@@ -10,9 +10,13 @@ import { FloatingCall } from '@/components/floating-call'
 
 export const dynamic = 'force-dynamic'
 
-export const metadata: Metadata = {
-  title: 'Privacy Policy',
-  description: 'Privacy policy for our restoration services website.',
+export async function generateMetadata(): Promise<Metadata> {
+  const { site } = await resolveSiteContext()
+  const businessName = site?.business_name || 'Company'
+  return {
+    title: `Privacy Policy | ${businessName}`,
+    description: `Privacy policy for ${businessName}. Learn how we protect your information.`,
+  }
 }
 
 export default async function PrivacyPolicyPage() {

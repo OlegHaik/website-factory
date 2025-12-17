@@ -4,6 +4,7 @@ import { notFound } from "next/navigation"
 import { getServiceAreaIndexForCurrentDomain, getSiteByDomainAndSlug, resolveSiteContext } from "@/lib/sites"
 import { DEFAULT_SERVICES } from "@/lib/water-damage"
 import { processContent } from "@/lib/spintax"
+import { generatePageMetadata } from "@/lib/generate-metadata"
 import { getContentHeader, getContentServiceArea, parseContentMap } from "@/lib/fetch-content"
 import { DEFAULT_NAV, DEFAULT_SERVICE_AREA, DEFAULT_SERVICE_NAV } from "@/lib/default-content"
 
@@ -34,13 +35,19 @@ export async function generateMetadata({
   }
 
   const businessName = areaSite.business_name || mainSite.business_name || 'Restoration Services'
-  const title = areaSite.meta_title || `Service Area | ${businessName}`
-  const description =
-    areaSite.meta_description ||
-    mainSite.meta_description ||
-    '24/7 emergency water damage restoration. Fast response and professional technicians.'
+  const resolvedDomain = areaSite.resolvedDomain || areaSite.domain_url || domain || "default"
 
-  return { title, description }
+  return generatePageMetadata(
+    "service_area",
+    resolvedDomain,
+    {
+      city: areaSite.city || mainSite.city || "",
+      state: areaSite.state || mainSite.state || "",
+      business_name: businessName,
+      phone: areaSite.phone || mainSite.phone || "",
+    },
+    areaSlug,
+  )
 }
 
 export default async function ServiceAreaPage({

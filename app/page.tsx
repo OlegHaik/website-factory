@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { getServiceAreaIndexForCurrentDomain, resolveSiteContext } from "@/lib/sites"
 import { processContent } from "@/lib/spintax"
+import { generatePageMetadata } from "@/lib/generate-metadata"
 import {
   getContentCTA,
   getContentFAQ,
@@ -38,7 +39,7 @@ import { FloatingCall } from "@/components/floating-call"
 export const dynamic = 'force-dynamic'
 
 export async function generateMetadata(): Promise<Metadata> {
-  const { site } = await resolveSiteContext()
+  const { site, domain: requestDomain } = await resolveSiteContext()
   if (!site) {
     return {
       title: 'Restoration Services',
@@ -46,18 +47,18 @@ export async function generateMetadata(): Promise<Metadata> {
     }
   }
 
-  const businessName = site.business_name || 'Restoration Services'
-  const description = site.meta_description || 'Professional water damage restoration services. Fast response, expert technicians, and complete property restoration.'
-
-  return {
-    title: site.meta_title || businessName,
-    description,
-    openGraph: {
-      title: site.meta_title || businessName,
-      description,
-      type: 'website',
+  const domain = site.resolvedDomain || site.domain_url || requestDomain || "default"
+  return generatePageMetadata(
+    "homepage",
+    domain,
+    {
+      city: site.city || "",
+      state: site.state || "",
+      business_name: site.business_name || "Restoration Services",
+      phone: site.phone || "",
     },
-  }
+    "",
+  )
 }
 
 export default async function Home() {

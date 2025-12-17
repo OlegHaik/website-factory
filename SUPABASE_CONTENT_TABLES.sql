@@ -35,6 +35,16 @@ CREATE TABLE IF NOT EXISTS content_services (
 );
 
 -- =============================
+-- Meta Tags (Title/Description)
+-- =============================
+CREATE TABLE IF NOT EXISTS content_meta (
+  id SERIAL PRIMARY KEY,
+  page_type TEXT NOT NULL,
+  title_spintax TEXT,
+  description_spintax TEXT
+);
+
+-- =============================
 -- Service Area Page Spintax Content
 -- =============================
 CREATE TABLE IF NOT EXISTS content_service_area (
@@ -60,6 +70,63 @@ INSERT INTO content_header (nav_home, nav_services, nav_areas, nav_contact, call
 ('Main', 'Solutions', 'Locations', 'Get Help', 'Call Expert'),
 ('Start', 'What We Do', 'Coverage', 'Reach Us', 'Emergency Line'),
 ('Welcome', 'Expertise', 'Local Areas', 'Support', 'Speak to a Pro');
+
+-- Insert meta content for each page type
+INSERT INTO content_meta (page_type, title_spintax, description_spintax)
+SELECT
+  'homepage',
+  '{Trusted|Professional|Expert|Certified|#1 Rated} Fire & Water Restoration in {{city}}, {{state}} | {{business_name}}',
+  '{{business_name}} {provides|offers|delivers} {24/7 emergency|professional|expert} water damage restoration, fire cleanup, and mold remediation in {{city}}, {{state}}. {Call now for fast response|Free estimates available|We work with all insurance companies}.'
+WHERE NOT EXISTS (SELECT 1 FROM content_meta WHERE page_type = 'homepage');
+
+INSERT INTO content_meta (page_type, title_spintax, description_spintax)
+SELECT
+  'service_water',
+  '{Professional|Expert|24/7|Emergency} Water Damage Restoration in {{city}}, {{state}} | {{business_name}}',
+  '{Fast water extraction|Emergency flood response|Professional water damage repair} in {{city}}. {{business_name}} {responds within 60 minutes|offers 24/7 service|handles insurance claims}. {Call now|Get a free estimate}!'
+WHERE NOT EXISTS (SELECT 1 FROM content_meta WHERE page_type = 'service_water');
+
+INSERT INTO content_meta (page_type, title_spintax, description_spintax)
+SELECT
+  'service_fire',
+  '{Professional|Expert|Certified} Fire & Smoke Damage Restoration in {{city}}, {{state}} | {{business_name}}',
+  '{Complete fire damage restoration|Smoke and soot removal|Fire cleanup services} in {{city}}. {{business_name}} {restores your property|handles full reconstruction|works with your insurance}. {Call 24/7|Free estimates}!'
+WHERE NOT EXISTS (SELECT 1 FROM content_meta WHERE page_type = 'service_fire');
+
+INSERT INTO content_meta (page_type, title_spintax, description_spintax)
+SELECT
+  'service_mold',
+  '{Certified|Professional|Expert} Mold Remediation in {{city}}, {{state}} | {{business_name}}',
+  '{Safe mold removal|Professional mold remediation|Certified mold cleanup} in {{city}}. {{business_name}} {eliminates mold at the source|follows IICRC protocols|ensures safe indoor air}. {Call now|Free inspection}!'
+WHERE NOT EXISTS (SELECT 1 FROM content_meta WHERE page_type = 'service_mold');
+
+INSERT INTO content_meta (page_type, title_spintax, description_spintax)
+SELECT
+  'service_biohazard',
+  '{Professional|Certified|Discreet} Biohazard Cleanup in {{city}}, {{state}} | {{business_name}}',
+  '{Biohazard cleanup|Trauma scene cleanup|Professional biohazard removal} in {{city}}. {{business_name}} {handles sensitive situations|follows OSHA protocols|provides discreet service}. {Call 24/7}!'
+WHERE NOT EXISTS (SELECT 1 FROM content_meta WHERE page_type = 'service_biohazard');
+
+INSERT INTO content_meta (page_type, title_spintax, description_spintax)
+SELECT
+  'service_burst',
+  '{Emergency|24/7|Fast} Burst Pipe Repair in {{city}}, {{state}} | {{business_name}}',
+  '{Burst pipe emergency response|Frozen pipe repair|Pipe damage restoration} in {{city}}. {{business_name}} {responds in 60 minutes|stops damage fast|handles water cleanup}. {Call now}!'
+WHERE NOT EXISTS (SELECT 1 FROM content_meta WHERE page_type = 'service_burst');
+
+INSERT INTO content_meta (page_type, title_spintax, description_spintax)
+SELECT
+  'service_sewage',
+  '{Professional|Emergency|Certified} Sewage Cleanup in {{city}}, {{state}} | {{business_name}}',
+  '{Sewage backup cleanup|Black water removal|Sewage damage restoration} in {{city}}. {{business_name}} {safely removes contamination|sanitizes your property|uses EPA-approved methods}. {Call 24/7}!'
+WHERE NOT EXISTS (SELECT 1 FROM content_meta WHERE page_type = 'service_sewage');
+
+INSERT INTO content_meta (page_type, title_spintax, description_spintax)
+SELECT
+  'service_area',
+  '{Trusted|Professional|Local|Expert} Fire & Water Restoration in {{city}}, {{state}} | {{business_name}}',
+  '{{business_name}} {serves|provides restoration services to} {{city}}, {{state}}. {24/7 emergency response|Fast water damage repair|Professional fire restoration}. {Call now for immediate help|Free estimates}!'
+WHERE NOT EXISTS (SELECT 1 FROM content_meta WHERE page_type = 'service_area');
 
 -- Insert default content (generic template for all service areas)
 INSERT INTO content_service_area (

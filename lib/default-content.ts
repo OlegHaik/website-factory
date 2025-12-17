@@ -74,6 +74,48 @@ export const DEFAULT_SERVICE_AREA = {
     "{Our {{city}} team is standing by 24/7|Don't wait - call now}. {Free estimates, direct insurance billing|We handle everything}.",
 }
 
+export const DEFAULT_META = {
+  homepage: {
+    title: "{Trusted|Professional|Expert} Fire & Water Restoration in {{city}}, {{state}} | {{business_name}}",
+    description:
+      "{{business_name}} provides 24/7 water damage restoration, fire cleanup, and mold remediation in {{city}}, {{state}}. Call now for fast response!",
+  },
+  service_water: {
+    title: "{Professional|Expert|24/7} Water Damage Restoration in {{city}}, {{state}} | {{business_name}}",
+    description:
+      "Fast water extraction and flood response in {{city}}. {{business_name}} responds within 60 minutes. Call now!",
+  },
+  service_fire: {
+    title: "{Professional|Expert} Fire & Smoke Restoration in {{city}}, {{state}} | {{business_name}}",
+    description:
+      "Complete fire damage restoration in {{city}}. {{business_name}} handles cleanup to reconstruction. Call 24/7!",
+  },
+  service_mold: {
+    title: "{Certified|Professional} Mold Remediation in {{city}}, {{state}} | {{business_name}}",
+    description: "Safe mold removal in {{city}}. {{business_name}} follows IICRC protocols. Free inspection!",
+  },
+  service_biohazard: {
+    title: "{Professional|Certified} Biohazard Cleanup in {{city}}, {{state}} | {{business_name}}",
+    description:
+      "Biohazard and trauma cleanup in {{city}}. {{business_name}} provides discreet, professional service. Call 24/7!",
+  },
+  service_burst: {
+    title: "{Emergency|24/7} Burst Pipe Repair in {{city}}, {{state}} | {{business_name}}",
+    description:
+      "Burst pipe emergency response in {{city}}. {{business_name}} responds in 60 minutes. Call now!",
+  },
+  service_sewage: {
+    title: "{Professional|Emergency} Sewage Cleanup in {{city}}, {{state}} | {{business_name}}",
+    description:
+      "Sewage backup cleanup in {{city}}. {{business_name}} safely removes contamination. Call 24/7!",
+  },
+  service_area: {
+    title: "{Trusted|Professional} Fire & Water Restoration in {{city}}, {{state}} | {{business_name}}",
+    description:
+      "{{business_name}} serves {{city}}, {{state}} with 24/7 emergency restoration. Call for immediate help!",
+  },
+}
+
 export const DEFAULT_HERO = {
   headline_spintax: "{Trusted|Professional|Expert|Certified} Fire & Water Restoration in {{city}}, {{state}}",
   subheadline_spintax:

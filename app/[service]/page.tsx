@@ -6,6 +6,7 @@ import { DEFAULT_SERVICES, getServiceBySlug } from "@/lib/water-damage"
 import { processContent } from "@/lib/spintax"
 import { getContentHeader, getContentServicePage, parseContentMap } from "@/lib/fetch-content"
 import { DEFAULT_NAV, DEFAULT_SERVICE_NAV, DEFAULT_SERVICE_PAGE } from "@/lib/default-content"
+import { generatePageMetadata } from "@/lib/generate-metadata"
 
 import { Header } from "@/components/header"
 import { ServiceHero } from "@/components/service-hero"
@@ -26,18 +27,36 @@ export async function generateMetadata({
   params: Promise<{ service: string }>
 }): Promise<Metadata> {
   const { service: serviceSlug } = await params
-  const { site } = await resolveSiteContext()
+  const { site, domain: requestDomain } = await resolveSiteContext()
 
   const service = getServiceBySlug(serviceSlug)
   if (!site || !service) {
     return { title: 'Not Found', description: 'The requested page could not be found.' }
   }
 
-  const businessName = site.business_name || 'Restoration Services'
-  return {
-    title: `${service.title} | ${businessName}`,
-    description: site.meta_description || service.shortDescription,
+  const domain = site.resolvedDomain || site.domain_url || requestDomain || "default"
+
+  const serviceMetaMap: Record<string, "service_water" | "service_fire" | "service_mold" | "service_biohazard" | "service_burst" | "service_sewage"> = {
+    "water-damage-restoration": "service_water",
+    "fire-smoke-damage": "service_fire",
+    "mold-remediation": "service_mold",
+    "biohazard-cleanup": "service_biohazard",
+    "burst-pipe-repair": "service_burst",
+    "sewage-cleanup": "service_sewage",
   }
+
+  const metaType = serviceMetaMap[serviceSlug] || "service_water"
+  return generatePageMetadata(
+    metaType,
+    domain,
+    {
+      city: site.city || "",
+      state: site.state || "",
+      business_name: site.business_name || "Restoration Services",
+      phone: site.phone || "",
+    },
+    serviceSlug,
+  )
 }
 
 const serviceKeyMap: Record<string, keyof typeof DEFAULT_SERVICE_PAGE> = {

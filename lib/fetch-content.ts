@@ -67,6 +67,13 @@ export interface ContentServiceArea {
   cta_description_spintax: string | null
 }
 
+export interface ContentMeta {
+  id: number
+  page_type: string
+  title_spintax: string | null
+  description_spintax: string | null
+}
+
 export interface ContentSeoBody {
   id: number
   intro_spintax: string
@@ -147,6 +154,17 @@ export async function getContentServiceArea(id: number = 1): Promise<ContentServ
     return null
   }
   return data as ContentServiceArea
+}
+
+export async function getContentMeta(pageType: string): Promise<ContentMeta | null> {
+  const supabase = await createClient()
+  const { data, error } = await supabase.from("content_meta").select("*").eq("page_type", pageType).single()
+
+  if (error) {
+    console.error("Failed to fetch meta content:", error)
+    return null
+  }
+  return data as ContentMeta
 }
 
 export async function getContentHero(id: number): Promise<ContentHero | null> {

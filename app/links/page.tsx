@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { getCitationsForSite, getServiceAreaIndexForCurrentDomain, resolveSiteContext } from '@/lib/sites'
 import { processContent } from '@/lib/spintax'
@@ -11,6 +12,15 @@ import { ExternalLink } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
 export const dynamic = 'force-dynamic'
+
+export async function generateMetadata(): Promise<Metadata> {
+  const { site } = await resolveSiteContext()
+  const businessName = site?.business_name || 'Company'
+  return {
+    title: `Links | ${businessName}`,
+    description: `Business directory links and citations for ${businessName}.`,
+  }
+}
 
 export default async function LinksPage() {
   const { site, domain: requestDomain } = await resolveSiteContext()

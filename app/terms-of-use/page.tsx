@@ -10,9 +10,13 @@ import { FloatingCall } from '@/components/floating-call'
 
 export const dynamic = 'force-dynamic'
 
-export const metadata: Metadata = {
-  title: 'Terms of Use',
-  description: 'Terms of use for our restoration services website.',
+export async function generateMetadata(): Promise<Metadata> {
+  const { site } = await resolveSiteContext()
+  const businessName = site?.business_name || 'Company'
+  return {
+    title: `Terms of Use | ${businessName}`,
+    description: `Terms of use for ${businessName}. Read our terms and conditions.`,
+  }
 }
 
 export default async function TermsOfUsePage() {
