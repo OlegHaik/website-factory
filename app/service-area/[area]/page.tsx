@@ -239,6 +239,10 @@ export default async function ServiceAreaPage({
         phone={areaSite.phone}
         phoneDisplay={areaSite.phoneDisplay || undefined}
         address={areaSite.address}
+        city={areaSite.city}
+        state={areaSite.state}
+        zipCode={areaSite.zip_code}
+        email={areaSite.email}
         serviceAreas={serviceAreas}
         socialLinks={socialLinks}
         ourLinksLabel={ourLinksLabel}

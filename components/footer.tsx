@@ -11,6 +11,10 @@ interface FooterProps {
   phone: string
   phoneDisplay?: string
   address?: string | null
+  city?: string | null
+  state?: string | null
+  zipCode?: string | null
+  email?: string | null
   serviceAreas?: Array<{ name: string; slug: string }>
   socialLinks?: SocialLinks
   ourLinksLabel?: string
@@ -25,10 +29,50 @@ const servicesLinks = [
   { label: "Sewage Cleanup", href: "/sewage-cleanup" },
 ]
 
-export default function Footer({ businessName, siteId, domain, phone, phoneDisplay, address, serviceAreas = [], socialLinks, ourLinksLabel }: FooterProps) {
+export default function Footer({
+  businessName,
+  siteId,
+  domain,
+  phone,
+  phoneDisplay,
+  address,
+  city,
+  state,
+  zipCode,
+  email,
+  serviceAreas = [],
+  socialLinks,
+  ourLinksLabel,
+}: FooterProps) {
   const cleanPhone = phone.replace(/\D/g, "")
   const displayPhone = phoneDisplay || phone
   const ourLinksText = ourLinksLabel || "Our Links"
+
+  const formatFullAddress = (
+    street: string | null | undefined,
+    city: string | null | undefined,
+    state: string | null | undefined,
+    zipCode: string | null | undefined,
+  ) => {
+    const streetClean = String(street ?? '').trim()
+    if (!streetClean) return null
+
+    // If the address already looks like a full address, keep it.
+    if (streetClean.includes(',')) return streetClean
+
+    const cityClean = String(city ?? '').trim()
+    const stateClean = String(state ?? '').trim()
+    const zipClean = String(zipCode ?? '').trim()
+
+    const parts: string[] = [streetClean]
+    const cityStateZip = [cityClean, stateClean].filter(Boolean).join(', ') + (zipClean ? ` ${zipClean}` : '')
+    if (cityStateZip.trim()) parts.push(cityStateZip.trim())
+
+    return parts.join(', ')
+  }
+
+  const fullAddress = formatFullAddress(address, city, state, zipCode)
+  const emailClean = String(email ?? '').trim() || null
 
   return (
     <footer className="bg-slate-950 text-white pt-20 pb-10">
@@ -93,12 +137,17 @@ export default function Footer({ businessName, siteId, domain, phone, phoneDispl
                 <Phone className="w-5 h-5" />
                 {displayPhone}
               </Link>
-              {address && (
+              {fullAddress && (
                 <div className="flex items-start gap-3 text-slate-300">
                   <MapPin className="w-5 h-5 mt-0.5" />
-                  <span>{address}</span>
+                  <span>{fullAddress}</span>
                 </div>
               )}
+              {emailClean ? (
+                <a href={`mailto:${emailClean}`} className="text-slate-300 hover:text-white break-all">
+                  {emailClean}
+                </a>
+              ) : null}
               <p className="text-slate-300">Emergency Services Available</p>
             </div>
           </div>

@@ -283,13 +283,14 @@ export default async function Home() {
         navLabels={navLabels}
         serviceNavLabels={serviceNavLabels}
       />
+
       <Hero
         title={heroTitle}
         description={heroDesc}
         phone={site.phone}
         phoneDisplay={site.phoneDisplay || undefined}
         businessName={site.business_name}
-        domain={domain}
+        domain={site.resolvedDomain}
         chatButtonText={chatButtonText}
       />
 
@@ -320,6 +321,10 @@ export default async function Home() {
         phone={site.phone}
         phoneDisplay={site.phoneDisplay || undefined}
         address={site.address}
+        city={site.city}
+        state={site.state}
+        zipCode={site.zip_code}
+        email={site.email}
         serviceAreas={serviceAreas}
         socialLinks={socialLinks}
         ourLinksLabel={ourLinksLabel}

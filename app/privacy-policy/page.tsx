@@ -121,6 +121,10 @@ export default async function PrivacyPolicyPage() {
         phone={site.phone}
         phoneDisplay={site.phoneDisplay || undefined}
         address={site.address}
+        city={site.city}
+        state={site.state}
+        zipCode={site.zip_code}
+        email={site.email}
         serviceAreas={serviceAreas}
         socialLinks={socialLinks}
         ourLinksLabel={ourLinksLabel}
