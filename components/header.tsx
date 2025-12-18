@@ -76,8 +76,8 @@ export function Header({ businessName, phone, phoneDisplay, serviceAreas = [], n
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 overflow-visible transition-all duration-200 bg-slate-950/85 backdrop-blur ${
-          isScrolled ? 'shadow-lg border-b border-white/10' : ''
+        className={`fixed top-0 left-0 right-0 z-50 overflow-visible transition-all duration-200 bg-slate-950/90 backdrop-blur-lg border-b border-white/10 ${
+          isScrolled ? 'shadow-lg' : ''
         }`}
       >
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -178,7 +178,7 @@ export function Header({ businessName, phone, phoneDisplay, serviceAreas = [], n
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden ml-auto p-2 text-white"
+              className="lg:hidden ml-auto p-2 text-white bg-white/10 border border-white/15 rounded-lg"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
