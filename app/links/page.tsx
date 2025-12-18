@@ -167,32 +167,32 @@ export default async function LinksPage() {
                   const items = grouped.get(category) ?? []
                   if (items.length === 0) return null
 
+                  const showCategoryHeading = sortedCategories.length > 1
+
                   return (
-                    <section key={category}>
-                      <h2 className="text-xl font-semibold text-slate-900">{category}</h2>
-                      <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                    <section key={category} className="space-y-4">
+                      {showCategoryHeading ? (
+                        <h2 className="text-xl font-semibold text-slate-900">{category}</h2>
+                      ) : null}
+
+                      <div className="grid gap-3 sm:grid-cols-2">
                         {items.map((l) => (
-                          <Card key={l.id} className="border-slate-200 py-0">
-                            <a
-                              href={l.href}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="block h-full rounded-xl p-0 transition-colors hover:bg-slate-50"
-                            >
-                              <CardHeader className="pb-4">
-                                <CardTitle className="flex items-center justify-between text-base text-slate-900">
-                                  <span>{l.title}</span>
-                                  <ExternalLink className="h-4 w-4 text-slate-500" />
-                                </CardTitle>
-                              </CardHeader>
-                              <CardContent className="pb-6">
-                                {l.description ? (
-                                  <p className="text-sm text-slate-600">{l.description}</p>
-                                ) : null}
-                                <div className="mt-2 break-all text-xs text-slate-500">{l.href}</div>
-                              </CardContent>
-                            </a>
-                          </Card>
+                          <a
+                            key={l.id}
+                            href={l.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group flex items-center justify-between gap-3 rounded-lg border border-slate-200 bg-white px-4 py-3 transition-colors hover:border-slate-300 hover:bg-slate-50"
+                          >
+                            <div className="min-w-0">
+                              <div className="text-sm font-semibold text-slate-900 truncate">{l.title}</div>
+                              {l.description ? (
+                                <p className="text-xs text-slate-600 truncate">{l.description}</p>
+                              ) : null}
+                              <div className="text-[11px] text-slate-500 truncate">{l.href}</div>
+                            </div>
+                            <ExternalLink className="h-4 w-4 text-slate-400 group-hover:text-slate-600" />
+                          </a>
                         ))}
                       </div>
                     </section>
