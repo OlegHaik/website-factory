@@ -11,6 +11,7 @@ import { FloatingCall } from '@/components/floating-call'
 import { DEFAULT_SERVICES } from '@/lib/water-damage'
 import { ExternalLink } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { normalizeUrl } from '@/lib/normalize-url'
 
 export const dynamic = 'force-dynamic'
 
@@ -55,12 +56,32 @@ export default async function LinksPage() {
     { label: 'Cataloxy', href: 'https://www.cataloxy.us/' },
   ]
 
-  const normalize = (items: Array<{ label?: string; href?: string }>) =>
+  const domain = site.resolvedDomain || requestDomain || 'default'
+
+  const normalize = (items: Array<{ label?: string; href?: string }>, sourceKey: string) =>
     items
-      .map((l) => ({ label: String(l.label || '').trim(), href: String(l.href || '').trim() }))
+      .map((l) => {
+        const label = String(l.label || '').trim()
+        const rawHref = typeof l.href === 'string' ? l.href : String(l.href ?? '')
+        const href =
+          normalizeUrl(rawHref, {
+            allowedProtocols: ['http', 'https'],
+            defaultProtocol: 'https',
+            context: {
+              domain,
+              siteId: site.id,
+              sourceKey,
+            },
+          }) ?? ''
+
+        return { label, href }
+      })
       .filter((l) => Boolean(l.label) && Boolean(l.href))
 
-  const merged = [...normalize(citationsFromDb), ...normalize((site as any).links ?? [])]
+  const merged = [
+    ...normalize(citationsFromDb, 'links.citations_db'),
+    ...normalize(((site as any).links ?? []) as Array<{ label?: string; href?: string }>, 'links.site_links'),
+  ]
   const deduped: Array<{ label: string; href: string }> = []
   const seen = new Set<string>()
   for (const item of merged) {
@@ -70,12 +91,11 @@ export default async function LinksPage() {
     deduped.push(item)
   }
 
-  const citations = deduped.length > 0 ? deduped : normalize(defaultCitations)
+  const citations = deduped.length > 0 ? deduped : normalize(defaultCitations, 'links.defaults')
 
   const areaIndex = await getServiceAreaIndexForCurrentDomain()
   const serviceAreas = areaIndex.map((a) => ({ name: a.city, slug: a.slug }))
 
-  const domain = site.resolvedDomain || site.domain_url || requestDomain || 'default'
   const variables = {
     city: site.city || '',
     state: site.state || '',
@@ -125,34 +145,45 @@ export default async function LinksPage() {
             <h1 className="text-3xl font-extrabold text-slate-900">Our Links</h1>
             <p className="mt-2 text-sm text-slate-600">Business directory links and citations for {site.business_name}.</p>
 
-            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {citations.map((l) => (
-                <Card key={`${l.href}-${l.label}`} className="border-slate-200 py-0">
-                  <a
-                    href={l.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block h-full rounded-xl p-0 transition-colors hover:bg-slate-50"
-                  >
-                    <CardHeader className="pb-4">
-                      <CardTitle className="flex items-center justify-between text-base text-slate-900">
-                        <span>{l.label}</span>
-                        <ExternalLink className="h-4 w-4 text-slate-500" />
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent className="pb-6">
-                      <div className="break-all text-sm text-slate-600">{l.href}</div>
-                    </CardContent>
-                  </a>
-                </Card>
-              ))}
-            </div>
+            {citations.length === 0 ? (
+              <div className="mt-8 rounded-xl border border-slate-200 bg-white p-6 text-slate-700">
+                <h2 className="text-base font-semibold text-slate-900">No links available yet</h2>
+                <p className="mt-2 text-sm text-slate-600">
+                  This site doesn&apos;t have citations/links configured yet.
+                </p>
+              </div>
+            ) : (
+              <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {citations.map((l) => (
+                  <Card key={`${l.href}-${l.label}`} className="border-slate-200 py-0">
+                    <a
+                      href={l.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block h-full rounded-xl p-0 transition-colors hover:bg-slate-50"
+                    >
+                      <CardHeader className="pb-4">
+                        <CardTitle className="flex items-center justify-between text-base text-slate-900">
+                          <span>{l.label}</span>
+                          <ExternalLink className="h-4 w-4 text-slate-500" />
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent className="pb-6">
+                        <div className="break-all text-sm text-slate-600">{l.href}</div>
+                      </CardContent>
+                    </a>
+                  </Card>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </main>
 
       <Footer
         businessName={site.business_name}
+        siteId={site.id}
+        domain={domain}
         phone={site.phone}
         phoneDisplay={site.phoneDisplay || undefined}
         address={site.address}

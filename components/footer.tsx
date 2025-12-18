@@ -6,6 +6,8 @@ import type { SocialLinks } from "@/lib/types"
 
 interface FooterProps {
   businessName: string
+  siteId?: number | string
+  domain?: string
   phone: string
   phoneDisplay?: string
   address?: string | null
@@ -23,7 +25,7 @@ const servicesLinks = [
   { label: "Sewage Cleanup", href: "/sewage-cleanup" },
 ]
 
-export default function Footer({ businessName, phone, phoneDisplay, address, serviceAreas = [], socialLinks, ourLinksLabel }: FooterProps) {
+export default function Footer({ businessName, siteId, domain, phone, phoneDisplay, address, serviceAreas = [], socialLinks, ourLinksLabel }: FooterProps) {
   const cleanPhone = phone.replace(/\D/g, "")
   const displayPhone = phoneDisplay || phone
   const ourLinksText = ourLinksLabel || "Our Links"
@@ -47,7 +49,13 @@ export default function Footer({ businessName, phone, phoneDisplay, address, ser
 
             {socialLinks ? (
               <div className="mt-5">
-                <SocialIcons links={socialLinks} className="mt-4" iconClassName="w-5 h-5" />
+                <SocialIcons
+                  links={socialLinks}
+                  domain={domain}
+                  siteId={siteId}
+                  className="mt-4"
+                  iconClassName="w-5 h-5"
+                />
               </div>
             ) : null}
           </div>

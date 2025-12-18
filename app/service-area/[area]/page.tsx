@@ -37,7 +37,7 @@ export async function generateMetadata({
   }
 
   const businessName = areaSite.business_name || mainSite.business_name || 'Restoration Services'
-  const resolvedDomain = areaSite.resolvedDomain || areaSite.domain_url || domain || "default"
+  const resolvedDomain = areaSite.resolvedDomain || domain || "default"
 
   return generatePageMetadata(
     "service_area",
@@ -88,7 +88,7 @@ export default async function ServiceAreaPage({
 
   const services = DEFAULT_SERVICES.map((s) => ({ label: s.title, href: `/${s.slug}` }))
 
-  const resolvedDomain = areaSite.resolvedDomain || areaSite.domain_url || domain || "default"
+  const resolvedDomain = areaSite.resolvedDomain || domain || "default"
   const variables = {
     city: areaSite.city,
     state: areaSite.state,
@@ -234,12 +234,14 @@ export default async function ServiceAreaPage({
       />
       <Footer
         businessName={areaSite.business_name}
+        siteId={areaSite.id}
+        domain={areaSite.resolvedDomain}
         phone={areaSite.phone}
         phoneDisplay={areaSite.phoneDisplay || undefined}
         address={areaSite.address}
         serviceAreas={serviceAreas}
         socialLinks={socialLinks}
-           ourLinksLabel={ourLinksLabel}
+        ourLinksLabel={ourLinksLabel}
       />
       <FloatingCall phone={areaSite.phone} />
     </div>

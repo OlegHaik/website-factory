@@ -271,9 +271,14 @@ export async function getSiteBySlug(slug: string): Promise<SiteData | null> {
   // If we can resolve the current domain, scope the lookup to it.
   const candidates = resolvedDomain ? buildDomainCandidates(resolvedDomain) : []
 
-  const query = supabase.from('sites').select('*').eq('slug', slug)
-  const { data, error } =
-    candidates.length > 0 ? await query.in('domain_url', candidates).limit(1) : await query.limit(1)
+  const query = supabase
+    .from('sites')
+    .select('*')
+    .eq('slug', slug)
+    .order('is_main', { ascending: false, nullsFirst: false })
+    .order('id', { ascending: true })
+
+  const { data, error } = candidates.length > 0 ? await query.in('domain_url', candidates).limit(1) : await query.limit(1)
 
   if (error) {
     throw new Error(`Supabase error fetching site by slug: ${error.message}`)
@@ -318,24 +323,42 @@ async function getMainSiteByDomain(domain: string): Promise<SiteData | null> {
   const candidates = buildDomainCandidates(domain)
   if (candidates.length === 0) return null
 
-  const { data, error } = await supabase
+  // Deterministic selection:
+  // 1) Prefer explicit "home" / "" slugs.
+  // 2) Only then fall back to NULL slug (legacy/migrated rows).
+  const q1 = await supabase
     .from('sites')
     .select('*')
     .in('domain_url', candidates)
-    // Accept "" or "home" (required), and also tolerate NULL to avoid accidental 404s.
-    .or('slug.eq.,slug.eq.home,slug.is.null')
+    .or('slug.eq.,slug.eq.home')
     .order('is_main', { ascending: false, nullsFirst: false })
     .order('id', { ascending: true })
     .limit(1)
 
-  if (error) {
-    throw new Error(`Supabase error fetching main site by domain: ${error.message}`)
+  if (q1.error) {
+    throw new Error(`Supabase error fetching main site by domain: ${q1.error.message}`)
   }
 
-  const row = (data?.[0] as SiteRow | undefined) ?? null
-  if (!row) return null
+  const row1 = (q1.data?.[0] as SiteRow | undefined) ?? null
+  if (row1) return withComputedFields(row1, resolvedDomain)
 
-  return withComputedFields(row, resolvedDomain)
+  const q2 = await supabase
+    .from('sites')
+    .select('*')
+    .in('domain_url', candidates)
+    .is('slug', null)
+    .order('is_main', { ascending: false, nullsFirst: false })
+    .order('id', { ascending: true })
+    .limit(1)
+
+  if (q2.error) {
+    throw new Error(`Supabase error fetching main site by domain (NULL slug fallback): ${q2.error.message}`)
+  }
+
+  const row2 = (q2.data?.[0] as SiteRow | undefined) ?? null
+  if (!row2) return null
+
+  return withComputedFields(row2, resolvedDomain)
 }
 
 export async function getSiteByDomainAndSlug(domain: string, slug: string): Promise<SiteData | null> {
@@ -354,6 +377,8 @@ export async function getSiteByDomainAndSlug(domain: string, slug: string): Prom
     .select('*')
     .in('domain_url', candidates)
     .ilike('slug', normalizedSlug)
+    .order('is_main', { ascending: false, nullsFirst: false })
+    .order('id', { ascending: true })
     .limit(1)
 
   if (error) {

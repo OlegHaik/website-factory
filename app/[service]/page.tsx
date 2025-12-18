@@ -36,7 +36,7 @@ export async function generateMetadata({
     return { title: 'Not Found', description: 'The requested page could not be found.' }
   }
 
-  const domain = site.resolvedDomain || site.domain_url || requestDomain || "default"
+  const domain = site.resolvedDomain || requestDomain || "default"
 
   const serviceMetaMap: Record<string, "service_water" | "service_fire" | "service_mold" | "service_biohazard" | "service_burst" | "service_sewage"> = {
     "water-damage-restoration": "service_water",
@@ -209,6 +209,8 @@ export default async function ServicePage({
       />
       <Footer
         businessName={site.business_name}
+        siteId={site.id}
+        domain={site.resolvedDomain}
         phone={site.phone}
         phoneDisplay={site.phoneDisplay || undefined}
         address={site.address}

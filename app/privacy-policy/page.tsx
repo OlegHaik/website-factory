@@ -116,6 +116,8 @@ export default async function PrivacyPolicyPage() {
 
       <Footer
         businessName={site.business_name}
+        siteId={site.id}
+        domain={domain}
         phone={site.phone}
         phoneDisplay={site.phoneDisplay || undefined}
         address={site.address}

@@ -1,3 +1,5 @@
+import { normalizeUrl } from '@/lib/normalize-url'
+
 export interface SocialLinks {
   google?: string | null
   facebook?: string | null
@@ -14,10 +16,10 @@ export function parseSocialLinks(site: unknown): SocialLinks {
 
   return {
     // New requested columns
-    google: s.social_google || s.google_business_url || null,
-    facebook: s.social_facebook || s.facebook_url || null,
-    pinterest: s.social_pinterest || s.pinterest_url || null,
-    youtube: s.social_youtube || s.youtube_url || null,
+    google: normalizeUrl(s.social_google || s.google_business_url || null) ?? null,
+    facebook: normalizeUrl(s.social_facebook || s.facebook_url || null) ?? null,
+    pinterest: normalizeUrl(s.social_pinterest || s.pinterest_url || null) ?? null,
+    youtube: normalizeUrl(s.social_youtube || s.youtube_url || null) ?? null,
     instagram: s.social_instagram || null,
     twitter: s.social_twitter || null,
     linkedin: s.social_linkedin || null,

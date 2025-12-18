@@ -49,7 +49,7 @@ export async function generateMetadata(): Promise<Metadata> {
     }
   }
 
-  const domain = site.resolvedDomain || site.domain_url || requestDomain || "default"
+  const domain = site.resolvedDomain || requestDomain || "default"
   return generatePageMetadata(
     "homepage",
     domain,
@@ -315,6 +315,8 @@ export default async function Home() {
 
       <Footer
         businessName={site.business_name}
+        siteId={site.id}
+        domain={domain}
         phone={site.phone}
         phoneDisplay={site.phoneDisplay || undefined}
         address={site.address}

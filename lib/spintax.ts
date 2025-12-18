@@ -56,10 +56,28 @@ export function replaceVariables(text: string, variables: Record<string, string>
   return result
 }
 
-export function processContent(spintaxText: string, domain: string, variables: Record<string, string>): string {
+export function processContent(
+  spintaxText: string | null | undefined,
+  seed: string,
+  variables: Record<string, string>,
+): string {
+  const input = String(spintaxText ?? '')
+
+  // Optional server-only diagnostics
+  if (process.env.SITE_DEBUG === '1' && typeof window === 'undefined') {
+    const wantsCity = /\{\{\s*city\s*\}\}|\{\s*city\s*\}/i.test(input)
+    if (wantsCity && !variables.city) {
+      console.warn('processContent missing variable: city', {
+        seed,
+        keys: Object.keys(variables),
+        city: variables.city,
+      })
+    }
+  }
+
   // First replace variables like {{city}}, {{business_name}}
-  let result = replaceVariables(spintaxText, variables)
+  let result = replaceVariables(input, variables)
   // Then parse spintax {option1|option2}
-  result = parseSpintax(result, domain)
+  result = parseSpintax(result, seed)
   return result
 }

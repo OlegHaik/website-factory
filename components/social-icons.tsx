@@ -1,4 +1,4 @@
-import Link from "next/link"
+import { normalizeUrl } from "@/lib/normalize-url"
 
 interface SocialIconsProps {
   links: {
@@ -13,6 +13,10 @@ interface SocialIconsProps {
   }
   className?: string
   iconClassName?: string
+
+  // Optional diagnostics context (server only)
+  domain?: string
+  siteId?: number | string
 }
 
 const GoogleIcon = ({ className }: { className?: string }) => (
@@ -77,27 +81,46 @@ const socialIcons = {
   yelp: YelpIcon,
 }
 
-export function SocialIcons({ links, className = "", iconClassName = "w-5 h-5" }: SocialIconsProps) {
-  const activeLinks = Object.entries(links).filter(([, url]) => Boolean(url))
-  if (activeLinks.length === 0) return null
+export function SocialIcons({
+  links,
+  className = "",
+  iconClassName = "w-5 h-5",
+  domain,
+  siteId,
+}: SocialIconsProps) {
+  const normalizedLinks = Object.entries(links)
+    .map(([platform, raw]) => {
+      const href = normalizeUrl(raw, {
+        allowedProtocols: ["http", "https"],
+        context: {
+          domain,
+          siteId,
+          sourceKey: `social.${platform}`,
+        },
+      })
+      return href ? ([platform, href] as const) : null
+    })
+    .filter((x): x is readonly [string, string] => Boolean(x))
+
+  if (normalizedLinks.length === 0) return null
 
   return (
     <div className={`flex items-center gap-3 ${className}`.trim()}>
-      {activeLinks.map(([platform, url]) => {
+      {normalizedLinks.map(([platform, href]) => {
         const Icon = socialIcons[platform as keyof typeof socialIcons]
-        if (!Icon || !url) return null
+        if (!Icon) return null
 
         return (
-          <Link
+          <a
             key={platform}
-            href={url}
+            href={href}
             target="_blank"
             rel="noopener noreferrer"
             className="text-slate-300 hover:text-white transition-colors"
             aria-label={`Visit our ${platform} page`}
           >
             <Icon className={iconClassName} />
-          </Link>
+          </a>
         )
       })}
     </div>
