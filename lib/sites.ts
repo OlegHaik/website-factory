@@ -298,11 +298,27 @@ export async function getSiteByDomain(domain: string): Promise<SiteData | null> 
 
   if (candidates.length === 0) return null
 
+  // If the tenant has an explicit main row, always prefer it.
+  const main = await supabase
+    .from('sites')
+    .select('*')
+    .in('domain_url', candidates)
+    .eq('is_main', true)
+    .order('id', { ascending: true })
+    .limit(1)
+
+  if (main.error) {
+    throw new Error(`Supabase error fetching main site by domain (is_main=true): ${main.error.message}`)
+  }
+
+  const mainRow = (main.data?.[0] as SiteRow | undefined) ?? null
+  if (mainRow) return withComputedFields(mainRow, resolvedDomain)
+
   const { data, error } = await supabase
     .from('sites')
     .select('*')
     .in('domain_url', candidates)
-    .order('is_main', { ascending: false, nullsFirst: false })
+    .order('is_main', { ascending: false })
     .order('id', { ascending: true })
     .limit(1)
 
@@ -323,6 +339,22 @@ async function getMainSiteByDomain(domain: string): Promise<SiteData | null> {
   const candidates = buildDomainCandidates(domain)
   if (candidates.length === 0) return null
 
+  // If there is an explicit is_main row, that is the main site.
+  const main = await supabase
+    .from('sites')
+    .select('*')
+    .in('domain_url', candidates)
+    .eq('is_main', true)
+    .order('id', { ascending: true })
+    .limit(1)
+
+  if (main.error) {
+    throw new Error(`Supabase error fetching main site by domain (is_main=true): ${main.error.message}`)
+  }
+
+  const mainRow = (main.data?.[0] as SiteRow | undefined) ?? null
+  if (mainRow) return withComputedFields(mainRow, resolvedDomain)
+
   // Deterministic selection:
   // 1) Prefer explicit "home" / "" slugs.
   // 2) Only then fall back to NULL slug (legacy/migrated rows).
@@ -331,7 +363,7 @@ async function getMainSiteByDomain(domain: string): Promise<SiteData | null> {
     .select('*')
     .in('domain_url', candidates)
     .or('slug.eq.,slug.eq.home')
-    .order('is_main', { ascending: false, nullsFirst: false })
+    .order('is_main', { ascending: false })
     .order('id', { ascending: true })
     .limit(1)
 
@@ -347,7 +379,7 @@ async function getMainSiteByDomain(domain: string): Promise<SiteData | null> {
     .select('*')
     .in('domain_url', candidates)
     .is('slug', null)
-    .order('is_main', { ascending: false, nullsFirst: false })
+    .order('is_main', { ascending: false })
     .order('id', { ascending: true })
     .limit(1)
 
