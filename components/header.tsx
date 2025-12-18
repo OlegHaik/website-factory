@@ -38,6 +38,10 @@ export function Header({ businessName, phone, phoneDisplay, serviceAreas = [], n
   const [mobileDropdown, setMobileDropdown] = useState<string | null>(null)
   const [isScrolled, setIsScrolled] = useState(false)
 
+  const nameParts = businessName.split(' ').filter(Boolean)
+  const mobileName = nameParts.length > 1 ? `${nameParts[0]} ${nameParts[1].charAt(0).toUpperCase()}.` : businessName
+  const desktopRemainder = nameParts.slice(1).join(' ')
+
   useEffect(() => {
     const onScroll = () => {
       setIsScrolled(window.scrollY > 8)
@@ -76,9 +80,10 @@ export function Header({ businessName, phone, phoneDisplay, serviceAreas = [], n
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 overflow-visible transition-all duration-200 bg-slate-950/90 backdrop-blur-lg border-b border-white/10 ${
+        className={`fixed top-0 left-0 right-0 z-50 overflow-visible transition-all duration-200 bg-slate-950/95 backdrop-blur-lg border-b border-white/15 ${
           isScrolled ? 'shadow-lg' : ''
         }`}
+        style={{ paddingTop: 'env(safe-area-inset-top)' }}
       >
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950 to-slate-950" />
@@ -89,13 +94,16 @@ export function Header({ businessName, phone, phoneDisplay, serviceAreas = [], n
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center h-20 lg:h-24">
-            <Link href="/" className="flex items-baseline flex-shrink-0 min-w-fit pr-6">
-              <span
-                className="v0-logo-mark text-[22px] lg:text-[28px] tracking-tight font-black uppercase whitespace-nowrap"
-              >
-                <span className="text-[var(--accent-primary)]">{businessName.split(' ')[0]}</span>
-                <span className="text-white">&nbsp;{businessName.split(' ').slice(1).join(' ')}</span>
+          <div className="flex items-center h-14 lg:h-20">
+            <Link href="/" className="flex items-baseline flex-shrink-0 pr-4" title={businessName}>
+              <span className="v0-logo-mark font-black uppercase tracking-tight whitespace-nowrap">
+                <span className="text-[var(--accent-primary)] text-[18px] sm:text-[20px] lg:text-[28px]">
+                  {nameParts[0] || businessName}
+                </span>
+                <span className="text-white text-[18px] sm:text-[20px] lg:text-[28px]">
+                  <span className="sm:hidden">&nbsp;{desktopRemainder ? mobileName.split(' ').slice(1).join(' ') : ''}</span>
+                  <span className="hidden sm:inline">&nbsp;{desktopRemainder}</span>
+                </span>
               </span>
             </Link>
 
@@ -178,7 +186,7 @@ export function Header({ businessName, phone, phoneDisplay, serviceAreas = [], n
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden ml-auto p-2 text-white bg-white/10 border border-white/15 rounded-lg"
+              className="lg:hidden ml-auto p-2 text-white bg-white/20 border border-white/25 rounded-lg shadow-sm"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -187,8 +195,11 @@ export function Header({ businessName, phone, phoneDisplay, serviceAreas = [], n
         </div>
       </header>
 
-      {/* Spacer to offset the fixed header height */}
-      <div className="h-20 lg:h-24" />
+      {/* Spacer to offset the fixed header height (includes safe area inset on mobile) */}
+      <div
+        className="h-14 lg:h-20"
+        style={{ height: 'calc(3.5rem + env(safe-area-inset-top))' }}
+      />
 
       {mobileMenuOpen && (
         <div className="lg:hidden fixed inset-0 z-[60] bg-slate-950">
