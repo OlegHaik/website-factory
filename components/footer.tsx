@@ -111,7 +111,7 @@ export default function Footer({
                 </Link>
               ))}
               <a
-                href="https://pasadenaroofing.biz/links"
+                href="https://www.connorwaterfirerestoration.homes/links"
                 className="block text-slate-300 hover:text-white font-semibold"
               >
                 {ourLinksText}
