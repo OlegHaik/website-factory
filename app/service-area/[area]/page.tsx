@@ -190,6 +190,15 @@ export default async function ServiceAreaPage({
     sewage: processContent(DEFAULT_SERVICE_NAV.sewage, resolvedDomain, variables),
   }
 
+  // Always show the primary business address in the footer (even on service-area pages).
+  const footerAddress = {
+    address: mainSite.address || areaSite.address || null,
+    city: mainSite.city || areaSite.city,
+    state: mainSite.state || areaSite.state,
+    zipCode: mainSite.zip_code || areaSite.zip_code,
+    email: mainSite.email || areaSite.email,
+  }
+
   return (
     <div className="min-h-screen bg-white">
       <Header
@@ -238,11 +247,11 @@ export default async function ServiceAreaPage({
         domain={areaSite.resolvedDomain}
         phone={areaSite.phone}
         phoneDisplay={areaSite.phoneDisplay || undefined}
-        address={areaSite.address}
-        city={areaSite.city}
-        state={areaSite.state}
-        zipCode={areaSite.zip_code}
-        email={areaSite.email}
+        address={footerAddress.address}
+        city={footerAddress.city}
+        state={footerAddress.state}
+        zipCode={footerAddress.zipCode}
+        email={footerAddress.email}
         serviceAreas={serviceAreas}
         socialLinks={socialLinks}
         ourLinksLabel={ourLinksLabel}
