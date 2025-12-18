@@ -190,13 +190,14 @@ export default async function ServiceAreaPage({
     sewage: processContent(DEFAULT_SERVICE_NAV.sewage, resolvedDomain, variables),
   }
 
-  // Always show the primary business address in the footer (even on service-area pages).
+  // Default to main-site address; allow per-area override if the area row has an address populated.
+  const areaHasAddress = Boolean(String(areaSite.address ?? '').trim())
   const footerAddress = {
-    address: mainSite.address || areaSite.address || null,
-    city: mainSite.city || areaSite.city,
-    state: mainSite.state || areaSite.state,
-    zipCode: mainSite.zip_code || areaSite.zip_code,
-    email: mainSite.email || areaSite.email,
+    address: areaHasAddress ? areaSite.address : mainSite.address,
+    city: areaHasAddress ? areaSite.city : mainSite.city,
+    state: areaHasAddress ? areaSite.state : mainSite.state,
+    zipCode: areaHasAddress ? areaSite.zip_code : mainSite.zip_code,
+    email: areaHasAddress ? areaSite.email : mainSite.email,
   }
 
   return (
