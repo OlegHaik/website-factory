@@ -76,7 +76,7 @@ export function Header({ businessName, phone, phoneDisplay, serviceAreas = [], n
   return (
     <>
       <header
-        className={`sticky top-0 z-50 overflow-visible transition-all duration-200 bg-slate-950/85 backdrop-blur ${
+        className={`fixed top-0 left-0 right-0 z-50 overflow-visible transition-all duration-200 bg-slate-950/85 backdrop-blur ${
           isScrolled ? 'shadow-lg border-b border-white/10' : ''
         }`}
       >
@@ -186,6 +186,9 @@ export function Header({ businessName, phone, phoneDisplay, serviceAreas = [], n
           </div>
         </div>
       </header>
+
+      {/* Spacer to offset the fixed header height */}
+      <div className="h-20 lg:h-24" />
 
       {mobileMenuOpen && (
         <div className="lg:hidden fixed inset-0 z-[60] bg-slate-950">
