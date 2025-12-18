@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Phone, Menu, X, ChevronDown } from "lucide-react"
 import Link from "next/link"
 
@@ -36,6 +36,16 @@ export function Header({ businessName, phone, phoneDisplay, serviceAreas = [], n
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
   const [mobileDropdown, setMobileDropdown] = useState<string | null>(null)
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => {
+      setIsScrolled(window.scrollY > 8)
+    }
+    onScroll()
+    window.addEventListener('scroll', onScroll)
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   const closeMobileMenu = () => {
     setMobileMenuOpen(false)
@@ -65,7 +75,11 @@ export function Header({ businessName, phone, phoneDisplay, serviceAreas = [], n
 
   return (
     <>
-      <header className="sticky top-0 z-50 overflow-visible">
+      <header
+        className={`sticky top-0 z-50 overflow-visible transition-all duration-200 ${
+          isScrolled ? 'bg-slate-950/90 backdrop-blur shadow-lg border-b border-white/10' : ''
+        }`}
+      >
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950 to-slate-950" />
           <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-[var(--warm-dark)]/60 via-[var(--warm-med)]/30 to-transparent" />
