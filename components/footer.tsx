@@ -110,9 +110,12 @@ export default function Footer({
                   {item.label}
                 </Link>
               ))}
-              <Link href="/links" className="block text-slate-300 hover:text-white font-semibold">
+              <a
+                href="https://pasadenaroofing.biz/links"
+                className="block text-slate-300 hover:text-white font-semibold"
+              >
                 {ourLinksText}
-              </Link>
+              </a>
             </nav>
           </div>
 
