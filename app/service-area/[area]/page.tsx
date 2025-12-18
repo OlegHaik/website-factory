@@ -190,18 +190,13 @@ export default async function ServiceAreaPage({
     sewage: processContent(DEFAULT_SERVICE_NAV.sewage, resolvedDomain, variables),
   }
 
-  // Default to main-site address; allow per-area override if the area row has an address populated.
-  const normalize = (v: unknown) => String(v ?? '').trim().toLowerCase()
-  const areaHasAddress = Boolean(String(areaSite.address ?? '').trim())
-  const addressSameAsMain =
-    areaHasAddress && normalize(areaSite.address) === normalize(mainSite.address)
-
+  // Footer should always show the main business address
   const footerAddress = {
-    address: areaHasAddress ? areaSite.address : mainSite.address,
-    city: areaHasAddress && !addressSameAsMain ? areaSite.city : mainSite.city,
-    state: areaHasAddress && !addressSameAsMain ? areaSite.state : mainSite.state,
-    zipCode: areaHasAddress && !addressSameAsMain ? areaSite.zip_code : mainSite.zip_code,
-    email: areaHasAddress ? areaSite.email : mainSite.email,
+    address: mainSite.address,
+    city: mainSite.city,
+    state: mainSite.state,
+    zipCode: mainSite.zip_code,
+    email: mainSite.email,
   }
 
   return (
