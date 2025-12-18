@@ -76,8 +76,8 @@ export function Header({ businessName, phone, phoneDisplay, serviceAreas = [], n
   return (
     <>
       <header
-        className={`sticky top-0 z-50 overflow-visible transition-all duration-200 ${
-          isScrolled ? 'bg-slate-950/90 backdrop-blur shadow-lg border-b border-white/10' : ''
+        className={`sticky top-0 z-50 overflow-visible transition-all duration-200 bg-slate-950/85 backdrop-blur ${
+          isScrolled ? 'shadow-lg border-b border-white/10' : ''
         }`}
       >
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
