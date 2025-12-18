@@ -39,7 +39,6 @@ export function Header({ businessName, phone, phoneDisplay, serviceAreas = [], n
   const [isScrolled, setIsScrolled] = useState(false)
 
   const nameParts = businessName.split(' ').filter(Boolean)
-  const mobileName = nameParts.length > 1 ? `${nameParts[0]} ${nameParts[1].charAt(0).toUpperCase()}.` : businessName
   const desktopRemainder = nameParts.slice(1).join(' ')
 
   useEffect(() => {
@@ -94,15 +93,14 @@ export function Header({ businessName, phone, phoneDisplay, serviceAreas = [], n
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center h-14 lg:h-20">
-            <Link href="/" className="flex items-baseline flex-shrink-0 pr-4" title={businessName}>
-              <span className="v0-logo-mark font-black uppercase tracking-tight whitespace-nowrap">
+          <div className="flex items-center h-16 lg:h-20">
+            <Link href="/" className="flex items-baseline flex-shrink min-w-0 pr-4" title={businessName}>
+              <span className="v0-logo-mark font-black uppercase tracking-tight whitespace-normal sm:whitespace-nowrap leading-tight">
                 <span className="text-[var(--accent-primary)] text-[18px] sm:text-[20px] lg:text-[28px]">
                   {nameParts[0] || businessName}
                 </span>
                 <span className="text-white text-[18px] sm:text-[20px] lg:text-[28px]">
-                  <span className="sm:hidden">&nbsp;{desktopRemainder ? mobileName.split(' ').slice(1).join(' ') : ''}</span>
-                  <span className="hidden sm:inline">&nbsp;{desktopRemainder}</span>
+                  {desktopRemainder ? ` ${desktopRemainder}` : ''}
                 </span>
               </span>
             </Link>
@@ -197,8 +195,8 @@ export function Header({ businessName, phone, phoneDisplay, serviceAreas = [], n
 
       {/* Spacer to offset the fixed header height (includes safe area inset on mobile) */}
       <div
-        className="h-14 lg:h-20"
-        style={{ height: 'calc(3.5rem + env(safe-area-inset-top))' }}
+        className="h-16 lg:h-20"
+        style={{ height: 'calc(4rem + env(safe-area-inset-top))' }}
       />
 
       {mobileMenuOpen && (
