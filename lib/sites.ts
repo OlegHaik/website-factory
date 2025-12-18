@@ -27,6 +27,16 @@ export interface SiteRow {
   owner: string | null
   email: string | null
 
+  // Social profile columns (newer schema)
+  social_google?: string | null
+  social_facebook?: string | null
+  social_youtube?: string | null
+  social_pinterest?: string | null
+  social_instagram?: string | null
+  social_twitter?: string | null
+  social_linkedin?: string | null
+  social_yelp?: string | null
+
   facebook_url?: string | null
   youtube_url?: string | null
   pinterest_url?: string | null

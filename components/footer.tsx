@@ -77,11 +77,11 @@ export default function Footer({
   return (
     <footer className="bg-slate-950 text-white pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-x-16 mb-16">
           <div className="min-w-0">
-            <Link href="/" className="inline-flex items-baseline mb-4">
+            <Link href="/" className="inline-flex items-baseline mb-4 max-w-full">
               <span
-                className="v0-logo-mark text-[16px] lg:text-[18px] tracking-tight font-black uppercase whitespace-nowrap"
+                className="v0-logo-mark text-[16px] lg:text-[18px] tracking-tight font-black uppercase whitespace-normal break-words leading-tight"
               >
                 <span className="text-[var(--accent-primary)]">{businessName.split(' ')[0]}</span>
                 <span className="text-white">&nbsp;{businessName.split(' ').slice(1).join(' ')}</span>
@@ -91,17 +91,15 @@ export default function Footer({
               24/7 emergency restoration services. Fast response, expert technicians, and complete property restoration.
             </p>
 
-            {socialLinks ? (
-              <div className="mt-5">
-                <SocialIcons
-                  links={socialLinks}
-                  domain={domain}
-                  siteId={siteId}
-                  className="mt-4"
-                  iconClassName="w-5 h-5"
-                />
-              </div>
-            ) : null}
+            <div className="mt-5">
+              <SocialIcons
+                links={socialLinks ?? {}}
+                domain={domain}
+                siteId={siteId}
+                className="mt-4"
+                iconClassName="w-5 h-5"
+              />
+            </div>
           </div>
 
           <div>
@@ -112,6 +110,9 @@ export default function Footer({
                   {item.label}
                 </Link>
               ))}
+              <Link href="/links" className="block text-slate-300 hover:text-white font-semibold">
+                {ourLinksText}
+              </Link>
             </nav>
           </div>
 
@@ -161,9 +162,6 @@ export default function Footer({
             </Link>
             <Link href="/terms-of-use" className="text-slate-400 hover:text-white">
               Terms of Use
-            </Link>
-            <Link href="/links" className="text-slate-400 hover:text-white">
-              {ourLinksText}
             </Link>
           </div>
         </div>

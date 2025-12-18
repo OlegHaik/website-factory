@@ -20,9 +20,9 @@ export function parseSocialLinks(site: unknown): SocialLinks {
     facebook: normalizeUrl(s.social_facebook || s.facebook_url || null) ?? null,
     pinterest: normalizeUrl(s.social_pinterest || s.pinterest_url || null) ?? null,
     youtube: normalizeUrl(s.social_youtube || s.youtube_url || null) ?? null,
-    instagram: s.social_instagram || null,
-    twitter: s.social_twitter || null,
-    linkedin: s.social_linkedin || null,
-    yelp: s.social_yelp || null,
+    instagram: normalizeUrl(s.social_instagram || null) ?? null,
+    twitter: normalizeUrl(s.social_twitter || null) ?? null,
+    linkedin: normalizeUrl(s.social_linkedin || null) ?? null,
+    yelp: normalizeUrl(s.social_yelp || null) ?? null,
   }
 }
