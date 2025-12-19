@@ -12,7 +12,6 @@ import {
   getContentSeoBody,
   getContentServices,
   getContentTestimonials,
-  parseContentMap,
   parseFAQItems,
   parseTestimonialItems,
 } from "@/lib/fetch-content"
@@ -50,6 +49,7 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 
   const domain = site.resolvedDomain || requestDomain || "default"
+  const category = site.category || 'water_damage'
   return generatePageMetadata(
     "homepage",
     domain,
@@ -60,6 +60,7 @@ export async function generateMetadata(): Promise<Metadata> {
       phone: site.phone || "",
     },
     "",
+    category,
   )
 }
 
@@ -79,6 +80,8 @@ export default async function Home() {
   if (!site.city) throw new Error('Site is missing required field: city')
   if (!site.state) throw new Error('Site is missing required field: state')
 
+  const category = site.category || 'water_damage'
+
   const areaIndex = await getServiceAreaIndexForCurrentDomain()
   const serviceAreas =
     areaIndex.length > 0
@@ -86,7 +89,6 @@ export default async function Home() {
       : (site.serviceAreas ?? [])
 
   const domain = site.resolvedDomain || site.domain_url || requestDomain || "default"
-  const contentMap = parseContentMap(site.content_map)
 
   const variables = {
     city: site.city,
@@ -95,13 +97,13 @@ export default async function Home() {
     phone: site.phone,
   }
 
-  const headerContent = contentMap.header ? await getContentHeader(contentMap.header) : null
-  const heroContent = contentMap.hero ? await getContentHero(contentMap.hero) : null
-  const servicesContent = contentMap.services ? await getContentServices(contentMap.services) : null
-  const ctaContent = contentMap.cta ? await getContentCTA(contentMap.cta) : null
-  const seoBodyContent = contentMap.seo_body ? await getContentSeoBody(contentMap.seo_body) : null
-  const faqContent = contentMap.faq ? await getContentFAQ(contentMap.faq) : null
-  const testimonialsContent = contentMap.testimonials ? await getContentTestimonials(contentMap.testimonials) : null
+  const headerContent = await getContentHeader(category)
+  const heroContent = await getContentHero(category)
+  const servicesContent = await getContentServices(category)
+  const ctaContent = await getContentCTA(category)
+  const seoBodyContent = await getContentSeoBody(category)
+  const faqContent = await getContentFAQ(category)
+  const testimonialsContent = await getContentTestimonials(category)
 
   const navLabels = {
     home: processContent(headerContent?.nav_home || DEFAULT_NAV.home, domain, variables),

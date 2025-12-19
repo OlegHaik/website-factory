@@ -132,52 +132,73 @@ export interface ContentMap {
   service_area?: number
 }
 
-export async function getContentHeader(id: number): Promise<ContentHeader | null> {
+export async function getContentHeader(category: string = "water_damage"): Promise<ContentHeader | null> {
   const supabase = await createClient()
-  const { data, error } = await supabase.from("content_header").select("*").eq("id", id).single()
+  const { data, error } = await supabase
+    .from("content_header")
+    .select("*")
+    .eq("category", category)
+    .limit(1)
+    .maybeSingle()
 
   if (error) {
     console.error("Failed to fetch content_header:", error)
     return null
   }
-  return data as ContentHeader
+  return (data as ContentHeader) ?? null
 }
 
-export async function getContentServicePage(serviceSlug: string): Promise<ContentServicePage | null> {
+export async function getContentServicePage(
+  serviceSlug: string,
+  category: string = "water_damage",
+): Promise<ContentServicePage | null> {
   const supabase = await createClient()
   const { data, error } = await supabase
     .from("content_service_pages")
     .select("*")
     .eq("service_slug", serviceSlug)
-    .single()
+    .eq("category", category)
+    .limit(1)
+    .maybeSingle()
 
   if (error) {
     console.error("Failed to fetch service page content:", error)
     return null
   }
-  return data as ContentServicePage
+  return (data as ContentServicePage) ?? null
 }
 
-export async function getContentServiceArea(id: number = 1): Promise<ContentServiceArea | null> {
+export async function getContentServiceArea(category: string = "water_damage"): Promise<ContentServiceArea | null> {
   const supabase = await createClient()
-  const { data, error } = await supabase.from("content_service_area").select("*").eq("id", id).single()
+  const { data, error } = await supabase
+    .from("content_service_area")
+    .select("*")
+    .eq("category", category)
+    .limit(1)
+    .maybeSingle()
 
   if (error) {
     console.error("Failed to fetch service area content:", error)
     return null
   }
-  return data as ContentServiceArea
+  return (data as ContentServiceArea) ?? null
 }
 
-export async function getContentMeta(pageType: string): Promise<ContentMeta | null> {
+export async function getContentMeta(pageType: string, category: string = "water_damage"): Promise<ContentMeta | null> {
   const supabase = await createClient()
-  const { data, error } = await supabase.from("content_meta").select("*").eq("page_type", pageType).single()
+  const { data, error } = await supabase
+    .from("content_meta")
+    .select("*")
+    .eq("page_type", pageType)
+    .eq("category", category)
+    .limit(1)
+    .maybeSingle()
 
   if (error) {
     console.error("Failed to fetch meta content:", error)
     return null
   }
-  return data as ContentMeta
+  return (data as ContentMeta) ?? null
 }
 
 export async function getContentLegal(pageType: "privacy_policy" | "terms_of_use"): Promise<ContentLegal | null> {
@@ -191,70 +212,100 @@ export async function getContentLegal(pageType: "privacy_policy" | "terms_of_use
   return data as ContentLegal
 }
 
-export async function getContentHero(id: number): Promise<ContentHero | null> {
+export async function getContentHero(category: string = "water_damage"): Promise<ContentHero | null> {
   const supabase = await createClient()
-  const { data, error } = await supabase.from("content_hero").select("*").eq("id", id).single()
+  const { data, error } = await supabase
+    .from("content_hero")
+    .select("*")
+    .eq("category", category)
+    .limit(1)
+    .maybeSingle()
 
   if (error) {
     console.error("Failed to fetch content_hero:", error)
     return null
   }
-  return data as ContentHero
+  return (data as ContentHero) ?? null
 }
 
-export async function getContentServices(id: number): Promise<ContentService | null> {
+export async function getContentServices(category: string = "water_damage"): Promise<ContentService | null> {
   const supabase = await createClient()
-  const { data, error } = await supabase.from("content_services").select("*").eq("id", id).single()
+  const { data, error } = await supabase
+    .from("content_services")
+    .select("*")
+    .eq("category", category)
+    .limit(1)
+    .maybeSingle()
 
   if (error) {
     console.error("Failed to fetch content_services:", error)
     return null
   }
-  return data as ContentService
+  return (data as ContentService) ?? null
 }
 
-export async function getContentCTA(id: number): Promise<ContentCTA | null> {
+export async function getContentCTA(category: string = "water_damage"): Promise<ContentCTA | null> {
   const supabase = await createClient()
-  const { data, error } = await supabase.from("content_cta").select("*").eq("id", id).single()
+  const { data, error } = await supabase
+    .from("content_cta")
+    .select("*")
+    .eq("category", category)
+    .limit(1)
+    .maybeSingle()
 
   if (error) {
     console.error("Failed to fetch content_cta:", error)
     return null
   }
-  return data as ContentCTA
+  return (data as ContentCTA) ?? null
 }
 
-export async function getContentSeoBody(id: number): Promise<ContentSeoBody | null> {
+export async function getContentSeoBody(category: string = "water_damage"): Promise<ContentSeoBody | null> {
   const supabase = await createClient()
-  const { data, error } = await supabase.from("content_seo_body").select("*").eq("id", id).single()
+  const { data, error } = await supabase
+    .from("content_seo_body")
+    .select("*")
+    .eq("category", category)
+    .limit(1)
+    .maybeSingle()
 
   if (error) {
     console.error("Failed to fetch content_seo_body:", error)
     return null
   }
-  return data as ContentSeoBody
+  return (data as ContentSeoBody) ?? null
 }
 
-export async function getContentFAQ(id: number): Promise<ContentFAQ | null> {
+export async function getContentFAQ(category: string = "water_damage"): Promise<ContentFAQ | null> {
   const supabase = await createClient()
-  const { data, error } = await supabase.from("content_faq").select("*").eq("id", id).single()
+  const { data, error } = await supabase
+    .from("content_faq")
+    .select("*")
+    .eq("category", category)
+    .limit(1)
+    .maybeSingle()
 
   if (error) {
     console.error("Failed to fetch content_faq:", error)
     return null
   }
-  return data as ContentFAQ
+  return (data as ContentFAQ) ?? null
 }
 
-export async function getContentTestimonials(id: number): Promise<ContentTestimonials | null> {
+export async function getContentTestimonials(category: string = "water_damage"): Promise<ContentTestimonials | null> {
   const supabase = await createClient()
-  const { data, error } = await supabase.from("content_testimonials").select("*").eq("id", id).single()
+  const { data, error } = await supabase
+    .from("content_testimonials")
+    .select("*")
+    .eq("category", category)
+    .limit(1)
+    .maybeSingle()
 
   if (error) {
     console.error("Failed to fetch content_testimonials:", error)
     return null
   }
-  return data as ContentTestimonials
+  return (data as ContentTestimonials) ?? null
 }
 
 function safeArray<T>(value: unknown): T[] {

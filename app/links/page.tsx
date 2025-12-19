@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { getServiceAreaIndexForCurrentDomain, resolveSiteContext } from '@/lib/sites'
 import { processContent } from '@/lib/spintax'
-import { getContentHeader, parseContentMap } from '@/lib/fetch-content'
+import { getContentHeader } from '@/lib/fetch-content'
 import { DEFAULT_HEADER, DEFAULT_NAV, DEFAULT_SERVICE_NAV } from '@/lib/default-content'
 import { parseSocialLinks } from '@/lib/types'
 import { Header } from '@/components/header'
@@ -32,6 +32,7 @@ export default async function LinksPage() {
   if (!site.phone) throw new Error('Site is missing required field: phone')
 
   const domain = site.resolvedDomain || requestDomain || 'default'
+  const category = site.category || 'water_damage'
 
   type DbLinkRow = {
     id: number
@@ -108,8 +109,7 @@ export default async function LinksPage() {
     phone: site.phone,
   }
 
-  const contentMap = parseContentMap(site.content_map)
-  const headerContent = contentMap.header ? await getContentHeader(contentMap.header) : null
+  const headerContent = await getContentHeader(category)
 
   const navLabels = {
     home: processContent(headerContent?.nav_home || DEFAULT_NAV.home, domain, variables),

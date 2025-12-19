@@ -4,7 +4,7 @@ import { notFound } from "next/navigation"
 import { getServiceAreaIndexForCurrentDomain, resolveSiteContext } from "@/lib/sites"
 import { DEFAULT_SERVICES, getServiceBySlug } from "@/lib/water-damage"
 import { processContent } from "@/lib/spintax"
-import { getContentHeader, getContentServicePage, parseContentMap } from "@/lib/fetch-content"
+import { getContentHeader, getContentServicePage } from "@/lib/fetch-content"
 import { DEFAULT_HEADER, DEFAULT_NAV, DEFAULT_SERVICE_NAV, DEFAULT_SERVICE_PAGE } from "@/lib/default-content"
 import { generatePageMetadata } from "@/lib/generate-metadata"
 import { parseSocialLinks } from "@/lib/types"
@@ -37,6 +37,7 @@ export async function generateMetadata({
   }
 
   const domain = site.resolvedDomain || requestDomain || "default"
+  const category = site.category || 'water_damage'
 
   const serviceMetaMap: Record<string, "service_water" | "service_fire" | "service_mold" | "service_biohazard" | "service_burst" | "service_sewage"> = {
     "water-damage-restoration": "service_water",
@@ -58,6 +59,7 @@ export async function generateMetadata({
       phone: site.phone || "",
     },
     serviceSlug,
+    category,
   )
 }
 
@@ -83,6 +85,7 @@ export default async function ServicePage({
   if (!site.phone) throw new Error('Site is missing required field: phone')
   if (!site.city) throw new Error('Site is missing required field: city')
   if (!site.state) throw new Error('Site is missing required field: state')
+  const category = site.category || 'water_damage'
 
   const service = getServiceBySlug(serviceSlug)
   if (!service) notFound()
@@ -105,8 +108,7 @@ export default async function ServicePage({
     phone: site.phone,
   }
 
-  const contentMap = parseContentMap(site.content_map)
-  const headerContent = contentMap.header ? await getContentHeader(contentMap.header) : null
+  const headerContent = await getContentHeader(category)
 
   const navLabels = {
     home: processContent(headerContent?.nav_home || DEFAULT_NAV.home, domain, variables),
@@ -127,7 +129,7 @@ export default async function ServicePage({
     sewage: processContent(DEFAULT_SERVICE_NAV.sewage, domain, variables),
   }
 
-  const pageContent = await getContentServicePage(serviceSlug)
+  const pageContent = await getContentServicePage(serviceSlug, category)
   const defaults = DEFAULT_SERVICE_PAGE[serviceKey]
 
   const seed = `${domain}:${serviceSlug}`

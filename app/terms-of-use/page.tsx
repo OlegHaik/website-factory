@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { getServiceAreaIndexForCurrentDomain, resolveSiteContext } from '@/lib/sites'
 import { processContent } from '@/lib/spintax'
-import { getContentHeader, getContentLegal, parseContentMap } from '@/lib/fetch-content'
+import { getContentHeader, getContentLegal } from '@/lib/fetch-content'
 import { DEFAULT_HEADER, DEFAULT_LEGAL, DEFAULT_NAV, DEFAULT_SERVICE_NAV } from '@/lib/default-content'
 import { generatePageMetadata } from '@/lib/generate-metadata'
 import { parseSocialLinks } from '@/lib/types'
@@ -15,6 +15,7 @@ export const dynamic = 'force-dynamic'
 export async function generateMetadata(): Promise<Metadata> {
   const { site, domain: requestDomain } = await resolveSiteContext()
   const domain = site?.resolvedDomain || site?.domain_url || requestDomain || 'default'
+  const category = site?.category || 'water_damage'
   return generatePageMetadata(
     'terms_of_use',
     domain,
@@ -25,6 +26,7 @@ export async function generateMetadata(): Promise<Metadata> {
       phone: site?.phone || '',
     },
     'terms-of-use',
+    category,
   )
 }
 
@@ -38,6 +40,7 @@ export default async function TermsOfUsePage() {
   const serviceAreas = areaIndex.map((a) => ({ name: a.city, slug: a.slug }))
 
   const domain = site.resolvedDomain || site.domain_url || requestDomain || 'default'
+  const category = site.category || 'water_damage'
   const variables = {
     city: site.city || '',
     state: site.state || '',
@@ -65,8 +68,7 @@ export default async function TermsOfUsePage() {
 
   const socialLinks = parseSocialLinks(site)
 
-  const contentMap = parseContentMap(site.content_map)
-  const headerContent = contentMap.header ? await getContentHeader(contentMap.header) : null
+  const headerContent = await getContentHeader(category)
 
   const navLabels = {
     home: processContent(headerContent?.nav_home || DEFAULT_NAV.home, domain, variables),

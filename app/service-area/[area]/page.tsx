@@ -5,7 +5,7 @@ import { getServiceAreaIndexForCurrentDomain, getSiteByDomainAndSlug, resolveSit
 import { DEFAULT_SERVICES } from "@/lib/water-damage"
 import { processContent } from "@/lib/spintax"
 import { generatePageMetadata } from "@/lib/generate-metadata"
-import { getContentHeader, getContentServiceArea, parseContentMap } from "@/lib/fetch-content"
+import { getContentHeader, getContentServiceArea } from "@/lib/fetch-content"
 import { DEFAULT_HEADER, DEFAULT_NAV, DEFAULT_SERVICE_AREA, DEFAULT_SERVICE_NAV } from "@/lib/default-content"
 import { parseSocialLinks } from "@/lib/types"
 
@@ -38,6 +38,7 @@ export async function generateMetadata({
 
   const businessName = areaSite.business_name || mainSite.business_name || 'Restoration Services'
   const resolvedDomain = areaSite.resolvedDomain || domain || "default"
+  const category = areaSite.category || mainSite.category || 'water_damage'
 
   return generatePageMetadata(
     "service_area",
@@ -49,6 +50,7 @@ export async function generateMetadata({
       phone: areaSite.phone || mainSite.phone || "",
     },
     areaSlug,
+    category,
   )
 }
 
@@ -78,6 +80,7 @@ export default async function ServiceAreaPage({
   if (!areaSite.phone) throw new Error('Site is missing required field: phone')
   if (!areaSite.city) throw new Error('Site is missing required field: city')
   if (!areaSite.state) throw new Error('Site is missing required field: state')
+  const category = areaSite.category || mainSite.category || 'water_damage'
 
   const areaName = areaSite.city
   const areaIndex = await getServiceAreaIndexForCurrentDomain()
@@ -103,12 +106,8 @@ export default async function ServiceAreaPage({
         .replace(/^www\./, "")}`,
   }
 
-  const mainContentMap = parseContentMap(mainSite.content_map)
-  const areaContentMap = parseContentMap(areaSite.content_map)
-  const contentMap = { ...mainContentMap, ...areaContentMap }
-
-  const headerContent = contentMap.header ? await getContentHeader(contentMap.header) : null
-  const areaContent = await getContentServiceArea(contentMap.service_area || 1)
+  const headerContent = await getContentHeader(category)
+  const areaContent = await getContentServiceArea(category)
 
   const areaSeed = `${resolvedDomain}:${areaSlug}`
 
