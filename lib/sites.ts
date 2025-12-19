@@ -474,12 +474,13 @@ export async function resolveSiteContext(input?: { slug?: string }) {
   const requestDomain = await getCurrentDomain()
 
   // Vercel preview/deployment URLs often use a *.vercel.app hostname (or another
-  // non-custom hostname). In that case, domain-based DB lookups should fall back
-  // to a configured custom domain.
+  // non-custom hostname). Only fall back to NEXT_PUBLIC_DOMAIN when the request
+  // host looks like a preview/non-custom host. On production custom domains we
+  // must trust the request host; otherwise every custom domain would be forced
+  // to the configured domain and show the wrong tenant (the current bug).
   const configuredDomain = normalizeDomainUrl(process.env.NEXT_PUBLIC_DOMAIN ?? '')
-  const isVercelEnv = Boolean(process.env.VERCEL)
   const looksLikePreviewDomain =
-    !requestDomain || requestDomain.includes('vercel.app') || (isVercelEnv && configuredDomain && requestDomain !== configuredDomain)
+    !requestDomain || requestDomain.includes('vercel.app') || requestDomain.includes('localhost')
 
   const domain = looksLikePreviewDomain && configuredDomain ? configuredDomain : requestDomain
 
