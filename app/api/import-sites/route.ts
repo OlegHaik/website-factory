@@ -13,11 +13,24 @@ const CATEGORY_CONTENT_TABLES = [
   'content_testimonials',
   'content_cta',
   'content_seo_body',
-  'content_header',
   'content_service_pages',
   'content_service_area',
   'content_meta',
+  'content_legal',
 ]
+
+const CONTENT_CONFLICT_KEYS: Record<string, string | undefined> = {
+  content_cta: 'category',
+  content_faq: 'category',
+  content_hero: 'category',
+  content_seo_body: 'category',
+  content_service_area: 'category',
+  content_services: 'category',
+  content_testimonials: 'category',
+  content_service_pages: 'category,service_slug',
+  content_legal: 'category,page_type',
+  content_meta: 'category,page_type',
+}
 
 type RequiredField = (typeof REQUIRED_FIELDS)[number]
 
@@ -241,9 +254,13 @@ async function ensureCategoryContent(category: string, supabase: ReturnType<type
       return clone
     })
 
-    const inserted = await supabase.from(table).insert(sanitized)
-    if (inserted.error) {
-      throw new Error(`Failed to seed ${table} for category ${category}: ${inserted.error.message}`)
+    const onConflict = CONTENT_CONFLICT_KEYS[table]
+    const insertion = onConflict
+      ? await supabase.from(table).upsert(sanitized, { onConflict })
+      : await supabase.from(table).insert(sanitized)
+
+    if (insertion.error) {
+      throw new Error(`Failed to seed ${table} for category ${category}: ${insertion.error.message}`)
     }
   }
 }
