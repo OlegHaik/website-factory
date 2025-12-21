@@ -227,9 +227,18 @@ export async function getContentMeta(pageType: string, category: string = "water
   return (data as ContentMeta) ?? null
 }
 
-export async function getContentLegal(pageType: "privacy_policy" | "terms_of_use"): Promise<ContentLegal | null> {
+export async function getContentLegal(
+  pageType: "privacy_policy" | "terms_of_use",
+  category: string = "water_damage",
+): Promise<ContentLegal | null> {
   const supabase = await createClient()
-  const { data, error } = await supabase.from("content_legal").select("*").eq("page_type", pageType).single()
+  const { data, error } = await supabase
+    .from("content_legal")
+    .select("*")
+    .eq("page_type", pageType)
+    .eq("category", category)
+    .limit(1)
+    .maybeSingle()
 
   if (error) {
     console.error("Failed to fetch legal content:", error)
