@@ -74,7 +74,7 @@ export function ServiceAreaContent({ areaName, state, services, otherAreas, cont
 
           <aside className="space-y-6">
             {otherAreas.length > 0 && (
-              <div className="rounded-2xl bg-slate-950 text-white p-8">
+              <div className="aurora-card rounded-2xl text-white p-8">
                 <h3 className="text-xl font-bold mb-6">Other Service Areas</h3>
                 <div className="space-y-3">
                   {otherAreas.map((area) => (

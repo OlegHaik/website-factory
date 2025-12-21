@@ -321,24 +321,24 @@ export const DEFAULT_TESTIMONIALS = {
   subheading_spintax: "{Real reviews from customers we've helped|Verified feedback from local homeowners}.",
   items: [
     {
-      name: "Sarah M.",
+      name: "{Sarah|Jennifer|Michelle|Amanda|Lisa} {M|R|T|S|K}.",
       location_spintax: "{{city}}, {{state}}",
       text_spintax:
-        "{They arrived fast|Their response was quick} and explained everything clearly. The team was professional and helped us through the insurance process. Our home looks better than before.",
+        "{They arrived fast and explained everything clearly|Professional service from start to finish|Quick response and thorough work}. The team was {professional|helpful|knowledgeable} and {helped us through|guided us through|assisted with} the {insurance process|entire process|restoration work}.",
       rating: 5,
     },
     {
-      name: "Michael R.",
+      name: "{David|Michael|Jason|Carlos|Anthony} {P|L|V|H|N}.",
       location_spintax: "{{city}}, {{state}}",
       text_spintax:
-        "We discovered mold and they contained the area properly, removed it safely, and explained what caused it. {Highly recommend|Would recommend} their remediation service.",
+        "{They arrived fast and explained everything clearly|Professional service from start to finish|Quick response and thorough work}. The team was {professional|helpful|knowledgeable} and {helped us through|guided us through|assisted with} the {insurance process|entire process|restoration work}.",
       rating: 5,
     },
     {
-      name: "Jennifer T.",
+      name: "{Lauren|Emily|Rachel|Natalie|Kim} {B|C|D|F|G}.",
       location_spintax: "{{city}}, {{state}}",
       text_spintax:
-        "After a fire, they handled cleanup and odor removal thoroughly. The crew was respectful and finished {ahead of schedule|on time}.",
+        "{They arrived fast and explained everything clearly|Professional service from start to finish|Quick response and thorough work}. The team was {professional|helpful|knowledgeable} and {helped us through|guided us through|assisted with} the {insurance process|entire process|restoration work}.",
       rating: 5,
     },
   ],

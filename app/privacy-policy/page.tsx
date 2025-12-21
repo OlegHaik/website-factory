@@ -9,6 +9,7 @@ import { parseSocialLinks } from '@/lib/types'
 import { Header } from '@/components/header'
 import Footer from '@/components/footer'
 import { FloatingCall } from '@/components/floating-call'
+import { SchemaMarkup } from '@/components/schema-markup'
 
 export const dynamic = 'force-dynamic'
 
@@ -90,6 +91,20 @@ export default async function PrivacyPolicyPage() {
 
   return (
     <div className="min-h-screen bg-white">
+      <SchemaMarkup
+        site={site}
+        domain={domain}
+        faq={[]}
+        reviews={[]}
+        services={[]}
+        headline={title}
+        description={content}
+        pageType="legal"
+        breadcrumbs={[
+          { name: 'Home', url: `https://${domain}` },
+          { name: title, url: `https://${domain}/privacy-policy` },
+        ]}
+      />
       <Header
         businessName={site.business_name}
         phone={site.phone}

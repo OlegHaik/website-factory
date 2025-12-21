@@ -76,7 +76,7 @@ export function ServiceContent({ serviceTitle, serviceDescription, intro, sectio
 
           <aside className="space-y-6">
             {serviceAreas.length > 0 && (
-              <div className="rounded-2xl bg-slate-950 text-white p-8">
+              <div className="aurora-card rounded-2xl text-white p-8">
                 <h3 className="text-xl font-bold mb-6">Service Areas</h3>
                 <div className="space-y-3">
                   {serviceAreas.map((area) => (

@@ -16,6 +16,7 @@ import { CTASection } from "@/components/cta-section"
 import { ServiceTrust } from "@/components/service-trust"
 import Footer from "@/components/footer"
 import { FloatingCall } from "@/components/floating-call"
+import { SchemaMarkup } from "@/components/schema-markup"
 
 export const dynamic = 'force-dynamic'
 
@@ -198,8 +199,29 @@ export default async function ServiceAreaPage({
     email: mainSite.email,
   }
 
+  const faqItems: { question: string; answer: string }[] = []
+  const testimonialItems: { name: string; text: string; location?: string; rating?: number }[] = []
+  const breadcrumbs = [
+    { name: "Home", url: `https://${resolvedDomain}` },
+    { name: areaName || "Service Area", url: `https://${resolvedDomain}/service-area/${areaSlug}` },
+  ]
+
   return (
     <div className="min-h-screen bg-white">
+      <SchemaMarkup
+        site={areaSite}
+        domain={resolvedDomain}
+        faq={faqItems}
+        reviews={testimonialItems}
+        services={services.map((s) => s.label)}
+        headline={headline}
+        description={paragraph1}
+        pageType="service-area"
+        areaServedOverride={`${areaName}, ${areaSite.state}`.trim()}
+        breadcrumbs={breadcrumbs}
+        parentOrgName={mainSite.business_name || undefined}
+        parentOrgUrl={`https://${resolvedDomain}`}
+      />
       <Header
         businessName={areaSite.business_name}
         phone={areaSite.phone}

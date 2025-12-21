@@ -38,7 +38,7 @@ export function CTASection({
   const chatText = chatButtonText || "Chat With Us"
 
   return (
-    <section id="cta" className="relative py-24 lg:py-36 bg-slate-950 overflow-hidden">
+    <section id="cta" className="aurora-surface py-24 lg:py-36 overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="rounded-3xl border border-slate-800 bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 p-10 md:p-14">
           <div className="max-w-3xl">

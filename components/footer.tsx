@@ -75,7 +75,7 @@ export default function Footer({
   const emailClean = String(email ?? '').trim() || null
 
   return (
-    <footer className="bg-slate-950 text-white pt-20 pb-10">
+    <footer className="aurora-surface text-white pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-x-16 mb-16">
           <div className="min-w-0">

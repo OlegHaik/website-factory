@@ -88,9 +88,9 @@ body {
 }
 
 @theme inline {
-  --font-heading: 'Montserrat', 'Montserrat Fallback', sans-serif;
-  --font-body: 'Open Sans', 'Open Sans Fallback', sans-serif;
-  --font-sans: var(--font-body);
+  --font-heading: var(--font-family);
+  --font-body: var(--font-family);
+  --font-sans: var(--font-family);
   
   /* Brand Colors */
   --color-brand: var(--brand);
@@ -139,7 +139,7 @@ body {
     font-family: var(--font-family);
   }
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-heading);
+    font-family: var(--font-family);
   }
 }
 
@@ -149,6 +149,56 @@ body {
     font-style: italic;
     transform: skewX(-6deg);
     display: inline-block;
+  }
+
+  /* Reusable aurora dark gradient surface to sync hero/footer/cta/panels */
+  .aurora-surface {
+    position: relative;
+    overflow: hidden;
+    background: #0f172a;
+  }
+
+  .aurora-surface::before {
+    content: "";
+    position: absolute;
+    inset: -15%;
+    z-index: 0;
+    background:
+      radial-gradient(circle at 20% 20%, color-mix(in srgb, var(--warm-bright) 25%, transparent) 0 30%, transparent 55%),
+      radial-gradient(circle at 80% 15%, color-mix(in srgb, var(--cool-med) 22%, transparent) 0 25%, transparent 50%),
+      radial-gradient(circle at 70% 65%, color-mix(in srgb, var(--cool-accent) 18%, transparent) 0 28%, transparent 55%),
+      radial-gradient(circle at 30% 70%, color-mix(in srgb, var(--warm-med) 18%, transparent) 0 28%, transparent 55%),
+      linear-gradient(120deg, color-mix(in srgb, var(--warm-dark) 65%, transparent), color-mix(in srgb, var(--cool-dark) 55%, transparent));
+    filter: blur(0px);
+  }
+
+  .aurora-surface > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .aurora-card {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, color-mix(in srgb, var(--warm-dark) 55%, #0a0a0a 45%), color-mix(in srgb, var(--cool-dark) 55%, #0a0a0a 45%));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .aurora-card::before {
+    content: "";
+    position: absolute;
+    inset: -20%;
+    z-index: 0;
+    background:
+      radial-gradient(circle at 25% 25%, color-mix(in srgb, var(--warm-bright) 22%, transparent) 0 32%, transparent 55%),
+      radial-gradient(circle at 80% 20%, color-mix(in srgb, var(--cool-accent) 18%, transparent) 0 28%, transparent 52%),
+      radial-gradient(circle at 60% 70%, color-mix(in srgb, var(--cool-med) 16%, transparent) 0 30%, transparent 55%);
+    filter: blur(0px);
+  }
+
+  .aurora-card > * {
+    position: relative;
+    z-index: 1;
   }
 }
 

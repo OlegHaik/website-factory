@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { getServiceAreaIndexForCurrentDomain, resolveSiteContext } from '@/lib/sites'
 import { processContent } from '@/lib/spintax'
-import { getContentHeader } from '@/lib/fetch-content'
+import { fetchLinks, getContentHeader } from '@/lib/fetch-content'
 import { DEFAULT_HEADER, DEFAULT_NAV, DEFAULT_SERVICE_NAV } from '@/lib/default-content'
 import { parseSocialLinks } from '@/lib/types'
 import { Header } from '@/components/header'
@@ -12,6 +12,7 @@ import { ExternalLink } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { normalizeUrl } from '@/lib/normalize-url'
 import { createClient } from '@/lib/supabase/server'
+import { normalizeDomainUrl } from '@/lib/domain'
 
 export const dynamic = 'force-dynamic'
 
@@ -34,38 +35,47 @@ export default async function LinksPage() {
   const domain = site.resolvedDomain || requestDomain || 'default'
   const category = site.category || 'water_damage'
 
-  type DbLinkRow = {
-    id: number
-    site_id: number
-    title: string | null
-    url: string | null
-    description: string | null
-    category: string | null
-    created_at: string | null
-  }
+  const supabase = await createClient()
 
-  let links: DbLinkRow[] = []
-  try {
-    const supabase = await createClient()
+  async function getMainSiteIdForDomain(): Promise<number> {
+    if (site.is_main) return site.id
+
+    const normalizedDomain = normalizeDomainUrl(site.domain_url || requestDomain || '')
+    if (!normalizedDomain) return site.id
+
+    const candidates = [
+      normalizedDomain,
+      `https://${normalizedDomain}`,
+      `http://${normalizedDomain}`,
+      `www.${normalizedDomain}`,
+      `https://www.${normalizedDomain}`,
+      `http://www.${normalizedDomain}`,
+    ].filter(Boolean)
+
     const { data, error } = await supabase
-      .from('links')
-      .select('id,site_id,title,url,description,category,created_at')
-      .eq('site_id', site.id)
-      .order('category', { ascending: true, nullsFirst: true })
-      .order('created_at', { ascending: true, nullsFirst: true })
+      .from('sites')
+      .select('id')
+      .in('domain_url', candidates)
+      .eq('is_main', true)
+      .order('id', { ascending: true })
+      .limit(1)
 
     if (error) {
-      const msg = error.message || ''
-      // If the table isn't present yet in some environments, keep the route stable.
-      if (!msg.toLowerCase().includes('does not exist')) {
-        console.error('Supabase error fetching links for /links page', { siteId: site.id, domain, error })
-      }
-      links = []
-    } else {
-      links = (data ?? []) as DbLinkRow[]
+      console.error('Supabase error resolving main site for links', { domain, error })
+      return site.id
     }
+
+    const mainRow = data?.[0] as { id?: number } | undefined
+    return mainRow?.id ?? site.id
+  }
+
+  const mainSiteId = await getMainSiteIdForDomain()
+
+  let links = [] as Awaited<ReturnType<typeof fetchLinks>>
+  try {
+    links = await fetchLinks(mainSiteId)
   } catch (err) {
-    console.error('Failed to fetch links for /links page', { siteId: site.id, domain, err })
+    console.error('Failed to fetch links for /links page', { siteId: mainSiteId, domain, err })
     links = []
   }
 

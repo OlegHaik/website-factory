@@ -16,6 +16,7 @@ import { ServiceTrust } from "@/components/service-trust"
 import { ServiceCTA } from "@/components/service-cta"
 import Footer from "@/components/footer"
 import { FloatingCall } from "@/components/floating-call"
+import { SchemaMarkup } from "@/components/schema-markup"
 
 export const dynamic = 'force-dynamic'
 
@@ -167,8 +168,29 @@ export default async function ServicePage({
 
   const socialLinks = parseSocialLinks(site)
 
+  const faqItems: { question: string; answer: string }[] = []
+  const testimonialItems: { name: string; text: string; location?: string; rating?: number }[] = []
+  const breadcrumbs = [
+    { name: "Home", url: `https://${domain}` },
+    { name: service.title, url: `https://${domain}/${service.slug}` },
+  ]
+
+  const servicesForSchema = [service.title, ...otherServices.map((s) => s.label)].filter(Boolean)
+
   return (
     <div className="min-h-screen bg-white">
+      <SchemaMarkup
+        site={site}
+        domain={domain}
+        faq={faqItems}
+        reviews={testimonialItems}
+        services={servicesForSchema}
+        headline={content.heroHeadline}
+        description={content.heroSubheadline}
+        pageType="service"
+        serviceName={service.title}
+        breadcrumbs={breadcrumbs}
+      />
       <Header
         businessName={site.business_name}
         phone={site.phone}

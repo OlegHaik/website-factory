@@ -36,6 +36,7 @@ import { Testimonials } from "@/components/testimonials"
 import { CTASection } from "@/components/cta-section"
 import Footer from "@/components/footer"
 import { FloatingCall } from "@/components/floating-call"
+import { SchemaMarkup } from "@/components/schema-markup"
 
 export const dynamic = 'force-dynamic'
 
@@ -191,6 +192,10 @@ export default async function Home() {
     },
   }
 
+  const servicesForSchema = Object.values(serviceData)
+    .map((svc) => svc.title)
+    .filter(Boolean)
+
   const ctaHeadline = processContent(ctaContent?.headline_spintax || DEFAULT_CTA.headline_spintax, domain, variables)
   const ctaSubheadline = processContent(
     ctaContent?.subheadline_spintax || DEFAULT_CTA.subheadline_spintax,
@@ -276,6 +281,15 @@ export default async function Home() {
 
   return (
     <div className="min-h-screen bg-white">
+      <SchemaMarkup
+        site={site}
+        domain={domain}
+        faq={faqItems}
+        reviews={testimonialItems}
+        services={servicesForSchema}
+        headline={heroTitle}
+        description={heroDesc}
+      />
       <Header
         businessName={site.business_name}
         phone={site.phone}

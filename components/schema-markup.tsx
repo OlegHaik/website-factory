@@ -1,183 +1,269 @@
-import type { LocationData } from '@/lib/get-location-data';
+import Script from "next/script"
+import type { SiteData } from "@/lib/sites"
 
-interface SchemaMarkupProps {
-  locationData: LocationData;
-  headline?: string;
-  description?: string;
+interface FAQItem {
+  question: string
+  answer: string
 }
 
-export function SchemaMarkup({ locationData, headline, description }: SchemaMarkupProps) {
-  const { business_name, phone, address, city, state, postal_code, domain } = locationData;
+interface ReviewItem {
+  name: string
+  text: string
+  location?: string
+  rating?: number
+}
 
-  // LocalBusiness Schema
-  const localBusinessSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'RoofingContractor',
-    name: business_name,
-    image: `https://${domain}/apple-touch-icon.png`,
-    '@id': `https://${domain}`,
-    url: `https://${domain}`,
-    telephone: phone,
-    priceRange: '$$',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: address,
-      addressLocality: city,
-      addressRegion: state,
-      postalCode: postal_code,
-      addressCountry: 'US',
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: 0, // You would populate these from your database
-      longitude: 0,
-    },
-    openingHoursSpecification: [
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-        opens: '08:00',
-        closes: '18:00',
-      },
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: 'Saturday',
-        opens: '09:00',
-        closes: '16:00',
-      },
-    ],
-    sameAs: [],
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '5',
-      reviewCount: '127',
-    },
-  };
+interface BreadcrumbItem {
+  name: string
+  url: string
+}
 
-  // Service Schema
-  const serviceSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    serviceType: 'Roofing Services',
-    provider: {
-      '@type': 'RoofingContractor',
-      name: business_name,
-      telephone: phone,
+type SchemaPageType = "homepage" | "service" | "service-area" | "legal"
+
+interface SchemaMarkupProps {
+  site: SiteData
+  domain: string
+  faq: FAQItem[]
+  reviews: ReviewItem[]
+  services: string[]
+  headline?: string
+  description?: string
+  pageType?: SchemaPageType
+  serviceName?: string
+  areaServedOverride?: string
+  breadcrumbs?: BreadcrumbItem[]
+  parentOrgName?: string
+  parentOrgUrl?: string
+}
+
+function hashString(str: string): number {
+  let hash = 0
+  for (let i = 0; i < str.length; i++) {
+    hash = (hash << 5) - hash + str.charCodeAt(i)
+    hash |= 0
+  }
+  return Math.abs(hash)
+}
+
+function seededRandom(seed: string) {
+  let value = hashString(seed) || 1
+  return () => {
+    value = (value * 9301 + 49297) % 233280
+    return value / 233280
+  }
+}
+
+function randomFrom<T>(arr: T[], rand: () => number): T {
+  if (!arr.length) throw new Error("Cannot pick from empty array")
+  const idx = Math.floor(rand() * arr.length)
+  return arr[Math.min(arr.length - 1, idx)]
+}
+
+function randomInt(min: number, max: number, rand: () => number) {
+  return Math.floor(rand() * (max - min + 1)) + min
+}
+
+function parseAddress(address?: string | null) {
+  if (!address) return { streetAddress: null, postalCode: null }
+  const parts = address.split(",").map((p) => p.trim()).filter(Boolean)
+  return {
+    streetAddress: parts[0] || address.trim(),
+    postalCode: parts.find((p) => /\d{5}/.test(p)) || null,
+  }
+}
+
+function buildServices(category?: string): string[] {
+  const common = [
+    "Water Damage Restoration",
+    "Fire & Smoke Damage",
+    "Flood Cleanup",
+    "Burst Pipe Repair",
+    "Sewage Cleanup",
+    "Mold Remediation",
+  ]
+
+  if (!category) return common
+  const cat = category.toLowerCase()
+  if (cat.includes("water")) return common
+  if (cat.includes("mold")) {
+    return [
+      "Mold Inspection",
+      "Mold Testing",
+      "Mold Removal",
+      "Black Mold Remediation",
+      "Air Quality Testing",
+      "Mold Prevention",
+    ]
+  }
+  if (cat.includes("roof")) {
+    return [
+      "Roof Repair",
+      "Roof Replacement",
+      "Roof Inspection",
+      "Emergency Roofing",
+      "Shingle Repair",
+      "Flat Roof Services",
+    ]
+  }
+  if (cat.includes("fire")) return ["Fire & Smoke Damage", "Odor Removal", "Soot Cleanup"]
+  return common
+}
+
+export function SchemaMarkup({
+  site,
+  domain,
+  faq,
+  reviews,
+  services,
+  headline,
+  description,
+  pageType = "homepage",
+  serviceName,
+  areaServedOverride,
+  breadcrumbs = [],
+  parentOrgName,
+  parentOrgUrl,
+}: SchemaMarkupProps) {
+  const url = domain ? `https://${domain}` : `https://${site.domain_url || site.resolvedDomain || ""}`
+  const rand = seededRandom(`${site.domain_url || domain}-${site.slug || "home"}-${site.id || 0}`)
+  const ratingValue = randomFrom([4.9, 5], rand).toFixed(1)
+  const reviewCount = randomInt(500, 2000, rand)
+
+  const { streetAddress, postalCode } = parseAddress(site.address)
+
+  const offers = (services.length ? services : buildServices(site.category)).map((svc) => ({
+    "@type": "Offer",
+    itemOffered: {
+      "@type": "Service",
+      name: svc,
+    },
+  }))
+
+  const faqEntities = faq.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  }))
+
+  const reviewEntities = reviews.map((r) => ({
+    "@type": "Review",
+    author: {
+      "@type": "Person",
+      name: r.name,
+    },
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: r.rating ?? 5,
+      bestRating: 5,
+    },
+    reviewBody: r.text,
+  }))
+
+  const breadcrumbList = breadcrumbs.length
+    ? {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: breadcrumbs.map((b, idx) => ({
+          "@type": "ListItem",
+          position: idx + 1,
+          name: b.name,
+          item: b.url,
+        })),
+      }
+    : null
+
+  const serviceSchema = pageType === "service"
+    ? {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        name: serviceName || services[0] || "Service",
+        provider: {
+          "@type": "LocalBusiness",
+          name: site.business_name,
+          url,
+        },
+        areaServed: `${site.city || ""}, ${site.state || ""}`.trim(),
+        description: description || headline || "Professional services",
+      }
+    : null
+
+  const areaServed = areaServedOverride || `${site.city || ""}, ${site.state || ""} and surrounding areas`
+
+  const graph = [
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      name: site.business_name,
+      url,
+      telephone: site.phone,
       address: {
-        '@type': 'PostalAddress',
-        addressLocality: city,
-        addressRegion: state,
+        "@type": "PostalAddress",
+        streetAddress: streetAddress || site.address || "",
+        addressLocality: site.city || "",
+        addressRegion: site.state || "",
+        postalCode: postalCode || site.zip_code || "",
+        addressCountry: "US",
       },
-    },
-    areaServed: {
-      '@type': 'City',
-      name: city,
-      containedIn: {
-        '@type': 'State',
-        name: state,
-      },
-    },
-    hasOfferCatalog: {
-      '@type': 'OfferCatalog',
-      name: 'Roofing Services',
-      itemListElement: [
+      openingHoursSpecification: [
         {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'Roof Installation',
-            description: 'Professional roof installation with premium materials',
-          },
-        },
-        {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'Roof Repair',
-            description: 'Expert roof repair services for leaks and damage',
-          },
-        },
-        {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'Roof Replacement',
-            description: 'Complete roof replacement services',
-          },
-        },
-        {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'Roof Inspection',
-            description: 'Comprehensive roof inspection services',
-          },
-        },
-        {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'Storm Damage Repair',
-            description: 'Emergency storm damage repair and restoration',
-          },
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday",
+          ],
+          opens: "00:00",
+          closes: "23:59",
         },
       ],
-    },
-  };
-
-  // BreadcrumbList Schema
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: 'Home',
-        item: `https://${domain}`,
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue,
+        reviewCount,
       },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: `${city}, ${state}`,
-        item: `https://${domain}`,
+      areaServed,
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Services",
+        itemListElement: offers,
       },
-    ],
-  };
-
-  // WebPage Schema
-  const webPageSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'WebPage',
-    name: headline || `Professional Roofing Services in ${city}, ${state}`,
-    description:
-      description ||
-      `Expert roofing installation, repair, and replacement in ${city}, ${state}. Licensed, insured & trusted.`,
-    url: `https://${domain}`,
-    provider: {
-      '@type': 'RoofingContractor',
-      name: business_name,
+      review: reviewEntities,
+      parentOrganization:
+        pageType === "service-area" && (parentOrgName || parentOrgUrl)
+          ? {
+              "@type": "Organization",
+              name: parentOrgName || site.business_name,
+              url: parentOrgUrl || url,
+            }
+          : undefined,
     },
-  };
+    serviceSchema,
+    site.owner || site.email
+      ? {
+          "@context": "https://schema.org",
+          "@type": "Person",
+          name: site.owner || site.business_name,
+          email: site.email || undefined,
+        }
+      : null,
+    faqEntities.length
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqEntities,
+        }
+      : null,
+    breadcrumbList,
+  ].filter(Boolean)
 
-  return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
-      />
-    </>
-  );
+  const ldJson = JSON.stringify({ "@graph": graph })
+
+  return <Script id="schema-markup" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: ldJson }} />
 }

@@ -1,4 +1,5 @@
 import { createClient } from "@/lib/supabase/server"
+import { DEFAULT_TESTIMONIALS } from "@/lib/default-content"
 
 export interface ContentHeader {
   id: number
@@ -114,11 +115,35 @@ export interface ContentTestimonialItem {
   rating: number
 }
 
+export interface LinkRow {
+  id: number
+  site_id: number
+  title: string
+  url: string
+  description: string | null
+  sort_order: number | null
+  created_at: string | null
+}
+
 export interface ContentTestimonials {
   id: number
   heading_spintax: string
   subheading_spintax: string
   items: ContentTestimonialItem[] | unknown
+}
+
+type LegacyTestimonialsRow = {
+  heading_spintax?: string | null
+  subheading_spintax?: string | null
+  review1_text?: string | null
+  review2_text?: string | null
+  review3_text?: string | null
+  review1_author?: string | null
+  review2_author?: string | null
+  review3_author?: string | null
+  rating_count?: number | null
+  category?: string | null
+  items?: ContentTestimonialItem[] | unknown
 }
 
 export interface ContentMap {
@@ -305,7 +330,42 @@ export async function getContentTestimonials(category: string = "water_damage"):
     console.error("Failed to fetch content_testimonials:", error)
     return null
   }
-  return (data as ContentTestimonials) ?? null
+
+  const row = (data as LegacyTestimonialsRow) ?? null
+  if (!row) return null
+
+  // If the table already stores items as JSON, return as-is for downstream parsing.
+  if (row.items) return row as unknown as ContentTestimonials
+
+  const fallbackNameSpintax = "{Sarah|Jennifer|Michelle|Amanda|Lisa} {M|R|T|S|K}."
+  const fallbackTextSpintax =
+    "{They arrived fast and explained everything clearly|Professional service from start to finish|Quick response and thorough work}. " +
+    "The team was {professional|helpful|knowledgeable} and {helped us through|guided us through|assisted with} the {insurance process|entire process|restoration work}."
+
+  const fallbackTexts = [fallbackTextSpintax, fallbackTextSpintax, fallbackTextSpintax]
+  const items: ContentTestimonialItem[] = [1, 2, 3]
+    .map((idx) => {
+      const text = String((row as Record<string, unknown>)[`review${idx}_text`] ?? '').trim()
+      const author = String((row as Record<string, unknown>)[`review${idx}_author`] ?? '').trim()
+
+      const text_spintax = text || fallbackTexts[idx - 1]
+      const name = author || fallbackNameSpintax
+
+      return {
+        name,
+        location_spintax: "{{city}}, {{state}}",
+        text_spintax,
+        rating: 5,
+      }
+    })
+    .filter((item) => Boolean(item.text_spintax))
+
+  return {
+    id: (data as { id?: number }).id ?? 0,
+    heading_spintax: row.heading_spintax || DEFAULT_TESTIMONIALS.heading_spintax,
+    subheading_spintax: row.subheading_spintax || DEFAULT_TESTIMONIALS.subheading_spintax,
+    items,
+  }
 }
 
 function safeArray<T>(value: unknown): T[] {
@@ -363,4 +423,34 @@ export function parseContentMap(jsonData: unknown): ContentMap {
     }
   }
   return jsonData as ContentMap
+}
+
+export async function fetchLinks(siteId: number): Promise<LinkRow[]> {
+  const supabase = await createClient()
+
+  const { data, error } = await supabase
+    .from("links")
+    .select("id,site_id,title,url,description,sort_order,created_at")
+    .eq("site_id", siteId)
+    .order("sort_order", { ascending: true, nullsFirst: true })
+    .order("id", { ascending: true })
+
+  if (error) {
+    const msg = error.message || ""
+    if (msg.toLowerCase().includes("does not exist")) return []
+    throw new Error(`Supabase error fetching links: ${error.message}`)
+  }
+
+  return (data ?? []).map((row) => {
+    const r = row as Partial<LinkRow>
+    return {
+      id: Number(r.id ?? 0),
+      site_id: Number(r.site_id ?? siteId),
+      title: String(r.title ?? "").trim(),
+      url: String(r.url ?? "").trim(),
+      description: (r.description ?? null) as string | null,
+      sort_order: (r.sort_order ?? null) as number | null,
+      created_at: (r.created_at ?? null) as string | null,
+    }
+  })
 }
