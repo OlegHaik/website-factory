@@ -257,7 +257,7 @@ export default async function Home() {
   }
 
   const testimonialItems = parseTestimonialItems(testimonialsContent?.items ?? DEFAULT_TESTIMONIALS.items).map((item) => ({
-    name: item.name,
+    name: processContent(item.name, domain, variables),
     location: processContent(item.location_spintax, domain, variables),
     text: processContent(item.text_spintax, domain, variables),
     rating: item.rating,
