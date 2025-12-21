@@ -121,6 +121,7 @@ export interface LinkRow {
   title: string
   url: string
   description: string | null
+  category: string | null
   sort_order: number | null
   created_at: string | null
 }
@@ -430,7 +431,7 @@ export async function fetchLinks(siteId: number): Promise<LinkRow[]> {
 
   const { data, error } = await supabase
     .from("links")
-    .select("id,site_id,title,url,description,sort_order,created_at")
+    .select("id,site_id,title,url,description,category,sort_order,created_at")
     .eq("site_id", siteId)
     .order("sort_order", { ascending: true, nullsFirst: true })
     .order("id", { ascending: true })
@@ -443,12 +444,15 @@ export async function fetchLinks(siteId: number): Promise<LinkRow[]> {
 
   return (data ?? []).map((row) => {
     const r = row as Partial<LinkRow>
+    const categoryValue = r.category
+    const category = categoryValue == null ? null : String(categoryValue).trim()
     return {
       id: Number(r.id ?? 0),
       site_id: Number(r.site_id ?? siteId),
       title: String(r.title ?? "").trim(),
       url: String(r.url ?? "").trim(),
       description: (r.description ?? null) as string | null,
+      category,
       sort_order: (r.sort_order ?? null) as number | null,
       created_at: (r.created_at ?? null) as string | null,
     }

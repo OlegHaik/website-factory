@@ -37,11 +37,11 @@ export default async function LinksPage() {
 
   const supabase = await createClient()
 
-  async function getMainSiteIdForDomain(): Promise<number> {
-    if (site.is_main) return site.id
+  async function getMainSiteIdForDomain(currentSite: NonNullable<typeof site>): Promise<number> {
+    if (currentSite.is_main) return currentSite.id
 
-    const normalizedDomain = normalizeDomainUrl(site.domain_url || requestDomain || '')
-    if (!normalizedDomain) return site.id
+    const normalizedDomain = normalizeDomainUrl(currentSite.domain_url || requestDomain || '')
+    if (!normalizedDomain) return currentSite.id
 
     const candidates = [
       normalizedDomain,
@@ -62,14 +62,14 @@ export default async function LinksPage() {
 
     if (error) {
       console.error('Supabase error resolving main site for links', { domain, error })
-      return site.id
+      return currentSite.id
     }
 
     const mainRow = data?.[0] as { id?: number } | undefined
-    return mainRow?.id ?? site.id
+    return mainRow?.id ?? currentSite.id
   }
 
-  const mainSiteId = await getMainSiteIdForDomain()
+  const mainSiteId = await getMainSiteIdForDomain(site)
 
   let links = [] as Awaited<ReturnType<typeof fetchLinks>>
   try {
