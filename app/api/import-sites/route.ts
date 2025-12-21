@@ -291,12 +291,14 @@ export async function POST(request: Request) {
 
   const sites = parsed.map(buildSiteInput)
   const normalized = enforceMainPerDomain(sites)
+  // Ensure no user-provided id leaks into upsert payloads
+  const sanitizedSites = normalized.map(({ id, ...rest }) => ({ ...rest }))
   const { errors } = validateRows(normalized)
   if (errors.length > 0) {
     return NextResponse.json({ error: 'Validation failed', details: errors }, { status: 400 })
   }
 
-  const categories = Array.from(new Set(normalized.map((r) => r.category || DEFAULT_CATEGORY)))
+  const categories = Array.from(new Set(sanitizedSites.map((r) => r.category || DEFAULT_CATEGORY)))
   try {
     for (const category of categories) {
       await ensureCategoryContent(category, supabase)
@@ -307,7 +309,7 @@ export async function POST(request: Request) {
 
   const { data, error } = await supabase
     .from('sites')
-    .upsert(normalized, { onConflict: 'domain_url,slug' })
+    .upsert(sanitizedSites, { onConflict: 'domain_url,slug' })
     .select('id, domain_url, slug, is_main')
 
   if (error) {
