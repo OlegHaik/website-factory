@@ -131,7 +131,7 @@ export function SchemaMarkup({
 
   const { streetAddress, postalCode } = parseAddress(site.address)
 
-  const offers = (services.length ? services : buildServices(site.category)).map((svc) => ({
+  const offers = (services.length ? services : buildServices(site.category || undefined)).map((svc) => ({
     "@type": "Offer",
     itemOffered: {
       "@type": "Service",
