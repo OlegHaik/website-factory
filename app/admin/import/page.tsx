@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useRef } from "react"
-import { ExternalLink, UploadCloud, CheckCircle2, AlertCircle } from "lucide-react"
+import { ExternalLink, UploadCloud, CheckCircle2, AlertCircle, RotateCw } from "lucide-react"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 
@@ -14,9 +14,11 @@ interface ImportError {
 
 interface ImportResponse {
   success?: boolean
-  imported?: number
+  inserted?: number
+  upserted?: number
   slugs?: string[]
   errors?: ImportError[]
+  error?: string
   message?: string
 }
 
@@ -44,11 +46,30 @@ export default function AdminImportPage() {
         body: text,
       })
 
-      const json = (await resp.json()) as ImportResponse
-      if (!resp.ok) {
-        setError(json?.message || "Upload failed")
+      let json: ImportResponse
+      try {
+        json = (await resp.json()) as ImportResponse
+      } catch {
+        json = { success: false, error: "Invalid response from server" }
       }
-      setResult(json)
+
+      const hasError = !resp.ok || json.error
+      if (hasError) {
+        setError(json.error || json.message || "Upload failed")
+      }
+
+      // Normalize success flag for rendering
+      const normalized: ImportResponse = {
+        success: !hasError && (json.success ?? true),
+        inserted: json.inserted,
+        upserted: json.upserted,
+        slugs: json.slugs || [],
+        errors: json.errors || [],
+        message: json.message,
+        error: json.error,
+      }
+
+      setResult(normalized)
     } catch (err) {
       setError((err as Error).message || "Unexpected error")
     } finally {
@@ -71,6 +92,9 @@ export default function AdminImportPage() {
     }
     setFileName(file.name)
   }
+
+  const importedCount = result?.inserted ?? result?.upserted ?? 0
+  const hasErrors = Boolean(result?.errors && result.errors.length)
 
   return (
     <div className="min-h-screen bg-white py-12">
@@ -158,8 +182,14 @@ export default function AdminImportPage() {
                   <div className="flex items-center gap-2 rounded-md border border-emerald-200 bg-emerald-50 px-3 py-2 text-sm text-emerald-700">
                     <CheckCircle2 className="h-4 w-4" />
                     <span>
-                      Imported {result.imported ?? 0} row{(result.imported ?? 0) === 1 ? "" : "s"}.
+                      Imported {importedCount} row{importedCount === 1 ? "" : "s"} successfully.
                     </span>
+                  </div>
+                ) : null}
+                {!result.success && (result.error || result.message) ? (
+                  <div className="flex items-center gap-2 rounded-md border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-700">
+                    <AlertCircle className="h-4 w-4" />
+                    <span>{result.error || result.message}</span>
                   </div>
                 ) : null}
                 {result.slugs?.length ? (
@@ -167,7 +197,7 @@ export default function AdminImportPage() {
                     <span className="font-semibold text-slate-900">Slugs:</span> {result.slugs.join(", ")}
                   </div>
                 ) : null}
-                {result.errors?.length ? (
+                {hasErrors ? (
                   <div className="overflow-x-auto rounded-lg border border-slate-200">
                     <table className="min-w-full text-left text-sm">
                       <thead className="bg-slate-50 text-slate-700">
@@ -180,7 +210,7 @@ export default function AdminImportPage() {
                         </tr>
                       </thead>
                       <tbody className="divide-y divide-slate-100">
-                        {result.errors.map((err, idx) => (
+                        {result.errors?.map((err, idx) => (
                           <tr key={`${err.row}-${idx}`}>
                             <td className="px-3 py-2 text-slate-700">{err.row}</td>
                             <td className="px-3 py-2 text-slate-700">{err.slug || "—"}</td>
@@ -193,6 +223,22 @@ export default function AdminImportPage() {
                     </table>
                   </div>
                 ) : null}
+                <div className="flex gap-2">
+                  <Button
+                    type="button"
+                    variant="secondary"
+                    onClick={() => {
+                      setResult(null)
+                      setError("")
+                      setFileName("")
+                      if (fileInputRef.current) fileInputRef.current.value = ""
+                    }}
+                    className="flex items-center gap-2"
+                  >
+                    <RotateCw className="h-4 w-4" />
+                    Reset
+                  </Button>
+                </div>
               </div>
             ) : null}
           </CardContent>
