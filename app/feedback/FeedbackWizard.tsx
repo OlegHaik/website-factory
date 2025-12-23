@@ -49,10 +49,8 @@ function RatingScale({
             key={option}
             type="button"
             onClick={() => onChange(option)}
-            className={`flex h-14 w-14 items-center justify-center rounded-full border text-sm font-semibold transition-all focus:outline-none focus:ring-2 focus:ring-orange-200 focus:ring-offset-2 focus:ring-offset-white ${
-              value === option
-                ? "border-transparent bg-amber-100 text-amber-400 shadow-lg shadow-amber-200"
-                : "border-slate-200 bg-white text-slate-400 hover:border-slate-300"
+            className={`flex h-14 w-14 items-center justify-center rounded-full border border-transparent text-sm font-semibold transition-all focus:outline-none focus:ring-2 focus:ring-orange-200 focus:ring-offset-2 focus:ring-offset-white ${
+              value === option ? "text-amber-400" : "text-slate-300 hover:text-slate-400"
             }`}
           >
             {label === "stars" ? (
@@ -95,22 +93,22 @@ export function FeedbackWizard({ content, googleReviewLink }: FeedbackWizardProp
   const progressPercent = ((step + 1) / totalSteps) * 100
 
   return (
-    <div className="bg-white py-10 sm:py-14">
+    <div className="bg-[#f8fbff] py-12 sm:py-16">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-3xl text-center">
           <h1 className="text-3xl font-extrabold text-slate-900 sm:text-4xl">{content.title}</h1>
           <p className="mt-2 text-base text-slate-600">{content.subtitle}</p>
         </div>
 
-        <div className="mx-auto mt-8 max-w-3xl">
-          <div className="rounded-3xl border border-slate-100 bg-white p-6 shadow-2xl shadow-slate-200 sm:p-8">
-            <div className="mb-4 flex items-center justify-between text-xs font-semibold uppercase tracking-wide text-slate-600">
+        <div className="mx-auto mt-9 max-w-3xl">
+          <div className="rounded-[22px] bg-white p-6 shadow-[0_24px_60px_-26px_rgba(15,23,42,0.4)] sm:p-9">
+            <div className="mb-4 flex items-center justify-between text-[11px] font-semibold uppercase tracking-[0.08em] text-slate-500">
               <span>Step {step + 1} of {totalSteps}</span>
               <span>{Math.round(progressPercent)}% Complete</span>
             </div>
-            <div className="mb-6 h-2 w-full overflow-hidden rounded-full bg-slate-100">
+            <div className="mb-7 h-2 w-full overflow-hidden rounded-full bg-slate-200/60">
               <div
-                className="h-full rounded-full bg-gradient-to-r from-red-600 via-orange-500 to-teal-400 transition-all"
+                className="h-full rounded-full bg-gradient-to-r from-red-600 via-orange-500 to-emerald-400 transition-all"
                 style={{ width: `${progressPercent}%` }}
               />
             </div>
@@ -197,7 +195,7 @@ export function FeedbackWizard({ content, googleReviewLink }: FeedbackWizardProp
                   <button
                     type="button"
                     onClick={goBack}
-                    className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-slate-300 hover:bg-slate-50"
+                    className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:border-slate-300 hover:bg-slate-50"
                   >
                     <ArrowLeft className="h-4 w-4" /> Back
                   </button>
@@ -207,9 +205,9 @@ export function FeedbackWizard({ content, googleReviewLink }: FeedbackWizardProp
                     type="button"
                     onClick={goNext}
                     disabled={!canProceed}
-                    className={`inline-flex min-w-[130px] items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold text-white shadow-md transition ${
+                    className={`inline-flex min-w-[130px] items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white shadow-md transition ${
                       canProceed
-                        ? "bg-red-600 hover:bg-red-700"
+                        ? "bg-red-600 hover:bg-red-700 shadow-[0_14px_30px_-18px_rgba(220,38,38,0.8)]"
                         : "cursor-not-allowed bg-slate-200 text-slate-500"
                     }`}
                   >
