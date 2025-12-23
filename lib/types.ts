@@ -9,6 +9,8 @@ export interface SocialLinks {
   twitter?: string | null
   linkedin?: string | null
   yelp?: string | null
+  bing?: string | null
+  apple_maps?: string | null
 }
 
 export function parseSocialLinks(site: unknown): SocialLinks {
@@ -24,5 +26,7 @@ export function parseSocialLinks(site: unknown): SocialLinks {
     twitter: normalizeUrl(s.social_twitter || null) ?? null,
     linkedin: normalizeUrl(s.social_linkedin || null) ?? null,
     yelp: normalizeUrl(s.social_yelp || null) ?? null,
+    bing: normalizeUrl(s.social_bing || null) ?? null,
+    apple_maps: normalizeUrl(s.social_apple_maps || null) ?? null,
   }
 }

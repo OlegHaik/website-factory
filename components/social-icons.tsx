@@ -1,3 +1,4 @@
+import { MapPin, Search } from "lucide-react"
 import { normalizeUrl } from "@/lib/normalize-url"
 
 interface SocialIconsProps {
@@ -10,6 +11,8 @@ interface SocialIconsProps {
     twitter?: string | null
     linkedin?: string | null
     yelp?: string | null
+    bing?: string | null
+    apple_maps?: string | null
   }
   className?: string
   iconClassName?: string
@@ -70,6 +73,10 @@ const YelpIcon = ({ className }: { className?: string }) => (
   </svg>
 )
 
+const BingIcon = ({ className }: { className?: string }) => <Search className={className} strokeWidth={2} />
+
+const AppleMapsIcon = ({ className }: { className?: string }) => <MapPin className={className} strokeWidth={2} />
+
 const socialIcons = {
   google: GoogleIcon,
   facebook: FacebookIcon,
@@ -79,6 +86,8 @@ const socialIcons = {
   twitter: TwitterIcon,
   linkedin: LinkedInIcon,
   yelp: YelpIcon,
+  bing: BingIcon,
+  apple_maps: AppleMapsIcon,
 }
 
 export function SocialIcons({
