@@ -41,6 +41,27 @@ export interface ContentCTA {
   chat_button_spintax: string
 }
 
+export interface ContentQuestionnaire {
+  id: number
+  category?: string | null
+  h1_spintax: string | null
+  subheadline_spintax: string | null
+  step1_progress_spintax: string | null
+  step1_question_spintax: string | null
+  step2_progress_spintax: string | null
+  step2_question_spintax: string | null
+  step3_progress_spintax: string | null
+  step3_question_spintax: string | null
+  step3_helper_spintax: string | null
+  step4_progress_spintax: string | null
+  thank_you_headline_spintax: string | null
+  thank_you_text_spintax: string | null
+  review_prompt_spintax: string | null
+  button_text_spintax: string | null
+  cta_subtext_spintax: string | null
+  back_link_spintax: string | null
+}
+
 export interface ContentServicePage {
   id?: number
   service_slug: string
@@ -325,6 +346,23 @@ export async function getContentFAQ(category: string = "water_damage"): Promise<
     return null
   }
   return (data as ContentFAQ) ?? null
+}
+
+export async function fetchQuestionnaire(category: string = "water_damage"): Promise<ContentQuestionnaire | null> {
+  const supabase = await createClient()
+  const { data, error } = await supabase
+    .from("content_questionnaire")
+    .select("*")
+    .eq("category", category)
+    .limit(1)
+    .maybeSingle()
+
+  if (error) {
+    console.error("Failed to fetch content_questionnaire:", error)
+    return null
+  }
+
+  return (data as ContentQuestionnaire) ?? null
 }
 
 export async function getContentTestimonials(category: string = "water_damage"): Promise<ContentTestimonials | null> {

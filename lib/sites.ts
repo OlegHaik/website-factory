@@ -37,6 +37,8 @@ export interface SiteRow {
   social_linkedin?: string | null
   social_yelp?: string | null
 
+  google_review_link?: string | null
+
   facebook_url?: string | null
   youtube_url?: string | null
   pinterest_url?: string | null
