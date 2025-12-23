@@ -77,7 +77,7 @@ function RatingScale({
   )
 }
 
-export function FeedbackWizard({ content, googleReviewLink, backHref = "/" }: FeedbackWizardProps) {
+export function FeedbackWizard({ content, googleReviewLink }: FeedbackWizardProps) {
   const [step, setStep] = useState(0)
   const [rating, setRating] = useState(0)
   const [team, setTeam] = useState(0)
