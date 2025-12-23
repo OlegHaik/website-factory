@@ -1,14 +1,9 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
-import { Header } from "@/components/header"
-import Footer from "@/components/footer"
-import { FloatingCall } from "@/components/floating-call"
-import { DEFAULT_HEADER, DEFAULT_NAV, DEFAULT_SERVICE_NAV } from "@/lib/default-content"
-import { fetchQuestionnaire, getContentHeader } from "@/lib/fetch-content"
+import { fetchQuestionnaire } from "@/lib/fetch-content"
 import { processContent } from "@/lib/spintax"
-import { parseSocialLinks } from "@/lib/types"
 import { normalizeUrl } from "@/lib/normalize-url"
-import { getServiceAreaIndexForCurrentDomain, resolveSiteContext } from "@/lib/sites"
+import { resolveSiteContext } from "@/lib/sites"
 import type { QuestionnaireContent } from "./FeedbackWizard"
 import { FeedbackWizard } from "./FeedbackWizard"
 
@@ -53,36 +48,13 @@ export default async function FeedbackPage() {
   const domain = site.resolvedDomain || site.domain_url || requestDomain || "default"
   const category = site.category || "water_damage"
 
-  const headerContent = await getContentHeader(category)
   const questionnaireContent = await fetchQuestionnaire(category)
-
-  const areaIndex = await getServiceAreaIndexForCurrentDomain()
-  const serviceAreas = areaIndex.map((a) => ({ name: a.city, slug: a.slug }))
 
   const variables = {
     city: site.city || "",
     state: site.state || "",
     business_name: site.business_name,
     phone: site.phone,
-  }
-
-  const navLabels = {
-    home: processContent(headerContent?.nav_home || DEFAULT_NAV.home, domain, variables),
-    services: processContent(headerContent?.nav_services || DEFAULT_NAV.services, domain, variables),
-    areas: processContent(headerContent?.nav_areas || DEFAULT_NAV.areas, domain, variables),
-    contact: processContent(headerContent?.nav_contact || DEFAULT_NAV.contact, domain, variables),
-    callButton: processContent(headerContent?.call_button_text || DEFAULT_NAV.callButton, domain, variables),
-  }
-
-  const ourLinksLabel = processContent(headerContent?.our_links_spintax || DEFAULT_HEADER.ourLinks, domain, variables)
-
-  const serviceNavLabels = {
-    water: processContent(DEFAULT_SERVICE_NAV.water, domain, variables),
-    fire: processContent(DEFAULT_SERVICE_NAV.fire, domain, variables),
-    mold: processContent(DEFAULT_SERVICE_NAV.mold, domain, variables),
-    biohazard: processContent(DEFAULT_SERVICE_NAV.biohazard, domain, variables),
-    burst: processContent(DEFAULT_SERVICE_NAV.burst, domain, variables),
-    sewage: processContent(DEFAULT_SERVICE_NAV.sewage, domain, variables),
   }
 
   const q = questionnaireContent
@@ -125,40 +97,18 @@ export default async function FeedbackPage() {
       context: { domain, siteId: site.id, sourceKey: "feedback.google_review_link" },
     }) || null
 
-  const socialLinks = parseSocialLinks(site)
-
   return (
     <div className="min-h-screen bg-white">
-      <Header
-        businessName={site.business_name}
-        phone={site.phone}
-        phoneDisplay={site.phoneDisplay || undefined}
-        serviceAreas={serviceAreas}
-        domain={domain}
-        navLabels={navLabels}
-        serviceNavLabels={serviceNavLabels}
-      />
+      <header className="border-b border-slate-100 bg-white">
+        <div className="container mx-auto flex items-center justify-between px-4 py-4">
+          <div className="text-xl font-extrabold tracking-tight text-slate-900">{site.business_name}</div>
+          <div className="text-xs font-semibold uppercase text-slate-400">Feedback</div>
+        </div>
+      </header>
 
-      <main className="pt-16 sm:pt-24">
-        <FeedbackWizard content={content} googleReviewLink={googleReviewLink} backHref="/" />
+      <main className="pt-6 sm:pt-10">
+        <FeedbackWizard content={content} googleReviewLink={googleReviewLink} />
       </main>
-
-      <Footer
-        businessName={site.business_name}
-        siteId={site.id}
-        domain={domain}
-        phone={site.phone}
-        phoneDisplay={site.phoneDisplay || undefined}
-        address={site.address}
-        city={site.city}
-        state={site.state}
-        zipCode={site.zip_code}
-        email={site.email}
-        serviceAreas={serviceAreas}
-        socialLinks={socialLinks}
-        ourLinksLabel={ourLinksLabel}
-      />
-      <FloatingCall phone={site.phone} />
     </div>
   )
 }
