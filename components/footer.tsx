@@ -163,6 +163,9 @@ export default function Footer({
             <Link href="/terms-of-use" className="text-slate-400 hover:text-white">
               Terms of Use
             </Link>
+            <Link href="/feedback" className="text-slate-400 hover:text-white">
+              Feedback
+            </Link>
           </div>
         </div>
       </div>
