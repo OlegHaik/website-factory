@@ -110,12 +110,9 @@ export default function Footer({
                   {item.label}
                 </Link>
               ))}
-              <a
-                href="https://www.connorwaterfirerestoration.homes/links"
-                className="block text-slate-300 hover:text-white font-semibold"
-              >
+              <Link href="/links" className="block text-slate-300 hover:text-white font-semibold">
                 {ourLinksText}
-              </a>
+              </Link>
             </nav>
           </div>
 
