@@ -2,12 +2,12 @@ import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 
 import { getServiceAreaIndexForCurrentDomain, getSiteByDomainAndSlug, resolveSiteContext } from "@/lib/sites"
-import { DEFAULT_SERVICES } from "@/lib/water-damage"
 import { processContent } from "@/lib/spintax"
 import { generatePageMetadata } from "@/lib/generate-metadata"
 import { getContentHeader, getContentServiceArea } from "@/lib/fetch-content"
-import { DEFAULT_HEADER, DEFAULT_NAV, DEFAULT_SERVICE_AREA, DEFAULT_SERVICE_NAV } from "@/lib/default-content"
+import { DEFAULT_HEADER, DEFAULT_NAV, DEFAULT_SERVICE_AREA } from "@/lib/default-content"
 import { parseSocialLinks } from "@/lib/types"
+import { fetchCategoryServices } from "@/lib/services"
 
 import { Header } from "@/components/header"
 import { ServiceAreaHero } from "@/components/service-area-hero"
@@ -90,8 +90,6 @@ export default async function ServiceAreaPage({
     .filter((a) => a.slug !== areaSlug)
     .map((a) => ({ name: a.city, slug: a.slug }))
 
-  const services = DEFAULT_SERVICES.map((s) => ({ label: s.title, href: `/${s.slug}` }))
-
   const resolvedDomain = areaSite.resolvedDomain || domain || "default"
   const variables = {
     city: areaSite.city,
@@ -106,6 +104,8 @@ export default async function ServiceAreaPage({
         .replace(/\/$/, "")
         .replace(/^www\./, "")}`,
   }
+
+  const services = await fetchCategoryServices({ category, domain: resolvedDomain, variables })
 
   const headerContent = await getContentHeader(category)
   const areaContent = await getContentServiceArea(category)
@@ -181,15 +181,6 @@ export default async function ServiceAreaPage({
 
   const ourLinksLabel = processContent(headerContent?.our_links_spintax || DEFAULT_HEADER.ourLinks, resolvedDomain, variables)
 
-  const serviceNavLabels = {
-    water: processContent(DEFAULT_SERVICE_NAV.water, resolvedDomain, variables),
-    fire: processContent(DEFAULT_SERVICE_NAV.fire, resolvedDomain, variables),
-    mold: processContent(DEFAULT_SERVICE_NAV.mold, resolvedDomain, variables),
-    biohazard: processContent(DEFAULT_SERVICE_NAV.biohazard, resolvedDomain, variables),
-    burst: processContent(DEFAULT_SERVICE_NAV.burst, resolvedDomain, variables),
-    sewage: processContent(DEFAULT_SERVICE_NAV.sewage, resolvedDomain, variables),
-  }
-
   // Footer should always show the main business address
   const footerAddress = {
     address: mainSite.address,
@@ -213,7 +204,7 @@ export default async function ServiceAreaPage({
         domain={resolvedDomain}
         faq={faqItems}
         reviews={testimonialItems}
-        services={services.map((s) => s.label)}
+        services={services.map((s) => s.title)}
         headline={headline}
         description={paragraph1}
         pageType="service-area"
@@ -229,7 +220,7 @@ export default async function ServiceAreaPage({
         serviceAreas={serviceAreas}
         domain={resolvedDomain}
         navLabels={navLabels}
-        serviceNavLabels={serviceNavLabels}
+        servicesLinks={services.map((svc) => ({ href: svc.href, label: svc.title }))}
       />
       <ServiceAreaHero
         title={headline}
@@ -242,7 +233,7 @@ export default async function ServiceAreaPage({
       <ServiceAreaContent
         areaName={areaName}
         state={areaSite.state}
-        services={services}
+        services={services.map((svc) => ({ label: svc.title, href: svc.href }))}
         otherAreas={otherAreas}
         content={{
           introTitle: headline,
@@ -276,6 +267,7 @@ export default async function ServiceAreaPage({
         serviceAreas={serviceAreas}
         socialLinks={socialLinks}
         ourLinksLabel={ourLinksLabel}
+        servicesLinks={services.map((svc) => ({ href: svc.href, label: svc.title }))}
       />
       <FloatingCall phone={areaSite.phone} />
     </div>

@@ -2,12 +2,12 @@ import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 
 import { getServiceAreaIndexForCurrentDomain, resolveSiteContext } from "@/lib/sites"
-import { DEFAULT_SERVICES, getServiceBySlug } from "@/lib/water-damage"
 import { processContent } from "@/lib/spintax"
-import { getContentHeader, getContentServicePage } from "@/lib/fetch-content"
-import { DEFAULT_HEADER, DEFAULT_NAV, DEFAULT_SERVICE_NAV, DEFAULT_SERVICE_PAGE } from "@/lib/default-content"
+import { getContentHeader, getContentServicePage, getContentMeta } from "@/lib/fetch-content"
+import { DEFAULT_HEADER, DEFAULT_NAV, DEFAULT_SERVICE_PAGE } from "@/lib/default-content"
 import { generatePageMetadata } from "@/lib/generate-metadata"
 import { parseSocialLinks } from "@/lib/types"
+import { fetchCategoryServices } from "@/lib/services"
 
 import { Header } from "@/components/header"
 import { ServiceHero } from "@/components/service-hero"
@@ -20,10 +20,6 @@ import { SchemaMarkup } from "@/components/schema-markup"
 
 export const dynamic = 'force-dynamic'
 
-export async function generateStaticParams() {
-  return DEFAULT_SERVICES.map((s) => ({ service: s.slug }))
-}
-
 export async function generateMetadata({
   params,
 }: {
@@ -32,33 +28,45 @@ export async function generateMetadata({
   const { service: serviceSlug } = await params
   const { site, domain: requestDomain } = await resolveSiteContext()
 
-  const service = getServiceBySlug(serviceSlug)
-  if (!site || !service) {
+  if (!site) {
     return { title: 'Not Found', description: 'The requested page could not be found.' }
   }
 
   const domain = site.resolvedDomain || requestDomain || "default"
   const category = site.category || 'water_damage'
 
-  const serviceMetaMap: Record<string, "service_water" | "service_fire" | "service_mold" | "service_biohazard" | "service_burst" | "service_sewage"> = {
-    "water-damage-restoration": "service_water",
-    "fire-smoke-damage": "service_fire",
+  const variables = {
+    city: site.city || "",
+    state: site.state || "",
+    business_name: site.business_name || "Restoration Services",
+    phone: site.phone || "",
+  }
+
+  const services = await fetchCategoryServices({ category, domain, variables })
+  const service = services.find((svc) => svc.slug === serviceSlug)
+
+  if (!service) {
+    return { title: 'Not Found', description: 'The requested page could not be found.' }
+  }
+
+  const preferredMetaType = `service_${serviceSlug.replace(/-/g, "_")}`
+  const preferredMeta = await getContentMeta(preferredMetaType, category)
+
+  const legacyMetaMap: Record<string, string> = {
+    "water-damage-restoration": "service_water_damage",
+    "fire-smoke-damage": "service_fire_damage",
     "mold-remediation": "service_mold",
     "biohazard-cleanup": "service_biohazard",
-    "burst-pipe-repair": "service_burst",
+    "burst-pipe-repair": "service_burst_pipe",
     "sewage-cleanup": "service_sewage",
   }
 
-  const metaType = serviceMetaMap[serviceSlug] || "service_water"
+  const fallbackMetaType = legacyMetaMap[serviceSlug] || preferredMetaType
+  const metaType = preferredMeta ? preferredMetaType : fallbackMetaType
   return generatePageMetadata(
     metaType,
     domain,
-    {
-      city: site.city || "",
-      state: site.state || "",
-      business_name: site.business_name || "Restoration Services",
-      phone: site.phone || "",
-    },
+    variables,
     serviceSlug,
     category,
   )
@@ -88,26 +96,26 @@ export default async function ServicePage({
   if (!site.state) throw new Error('Site is missing required field: state')
   const category = site.category || 'water_damage'
 
-  const service = getServiceBySlug(serviceSlug)
-  if (!service) notFound()
-
-  const serviceKey = serviceKeyMap[serviceSlug]
-  if (!serviceKey) notFound()
-
-  const areaIndex = await getServiceAreaIndexForCurrentDomain()
-  const serviceAreas = areaIndex.map((a) => ({ name: a.city, slug: a.slug }))
-  const otherServices = DEFAULT_SERVICES.filter((s) => s.slug !== service.slug).map((s) => ({
-    label: s.title,
-    href: `/${s.slug}`,
-  }))
-
-  const domain = site.resolvedDomain || site.domain_url || requestDomain || "default"
   const variables = {
     city: site.city,
     state: site.state,
     business_name: site.business_name,
     phone: site.phone,
   }
+
+  const services = await fetchCategoryServices({ category, domain: site.resolvedDomain || requestDomain || "default", variables })
+  const service = services.find((svc) => svc.slug === serviceSlug)
+  if (!service) notFound()
+
+  const serviceKey = serviceKeyMap[serviceSlug] || "water"
+
+  const areaIndex = await getServiceAreaIndexForCurrentDomain()
+  const serviceAreas = areaIndex.map((a) => ({ name: a.city, slug: a.slug }))
+  const otherServices = services
+    .filter((s) => s.slug !== service.slug)
+    .map((s) => ({ label: s.title, href: s.href }))
+
+  const domain = site.resolvedDomain || site.domain_url || requestDomain || "default"
 
   const headerContent = await getContentHeader(category)
 
@@ -121,17 +129,8 @@ export default async function ServicePage({
 
   const ourLinksLabel = processContent(headerContent?.our_links_spintax || DEFAULT_HEADER.ourLinks, domain, variables)
 
-  const serviceNavLabels = {
-    water: processContent(DEFAULT_SERVICE_NAV.water, domain, variables),
-    fire: processContent(DEFAULT_SERVICE_NAV.fire, domain, variables),
-    mold: processContent(DEFAULT_SERVICE_NAV.mold, domain, variables),
-    biohazard: processContent(DEFAULT_SERVICE_NAV.biohazard, domain, variables),
-    burst: processContent(DEFAULT_SERVICE_NAV.burst, domain, variables),
-    sewage: processContent(DEFAULT_SERVICE_NAV.sewage, domain, variables),
-  }
-
   const pageContent = await getContentServicePage(serviceSlug, category)
-  const defaults = DEFAULT_SERVICE_PAGE[serviceKey]
+  const defaults = DEFAULT_SERVICE_PAGE[serviceKey] || DEFAULT_SERVICE_PAGE.water
 
   const seed = `${domain}:${serviceSlug}`
 
@@ -175,7 +174,7 @@ export default async function ServicePage({
     { name: service.title, url: `https://${domain}/${service.slug}` },
   ]
 
-  const servicesForSchema = [service.title, ...otherServices.map((s) => s.label)].filter(Boolean)
+  const servicesForSchema = services.map((s) => s.title).filter(Boolean)
 
   return (
     <div className="min-h-screen bg-white">
@@ -198,7 +197,7 @@ export default async function ServicePage({
         serviceAreas={serviceAreas}
         domain={domain}
         navLabels={navLabels}
-        serviceNavLabels={serviceNavLabels}
+        servicesLinks={services.map((svc) => ({ href: svc.href, label: svc.title }))}
       />
       <ServiceHero
         headline={content.heroHeadline}
@@ -211,7 +210,7 @@ export default async function ServicePage({
       />
       <ServiceContent
         serviceTitle={service.title}
-        serviceDescription={service.shortDescription}
+        serviceDescription={service.description}
         sectionHeadline={content.sectionHeadline}
         sectionBody={content.sectionBody}
         processHeadline={content.processHeadline}
@@ -245,6 +244,7 @@ export default async function ServicePage({
         serviceAreas={serviceAreas}
         socialLinks={socialLinks}
         ourLinksLabel={ourLinksLabel}
+        servicesLinks={services.map((svc) => ({ href: svc.href, label: svc.title }))}
       />
       <FloatingCall phone={site.phone} />
     </div>

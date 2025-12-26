@@ -3,13 +3,14 @@ import { notFound } from 'next/navigation'
 import { getServiceAreaIndexForCurrentDomain, resolveSiteContext } from '@/lib/sites'
 import { processContent } from '@/lib/spintax'
 import { getContentHeader, getContentLegal } from '@/lib/fetch-content'
-import { DEFAULT_HEADER, DEFAULT_LEGAL, DEFAULT_NAV, DEFAULT_SERVICE_NAV } from '@/lib/default-content'
+import { DEFAULT_HEADER, DEFAULT_LEGAL, DEFAULT_NAV } from '@/lib/default-content'
 import { generatePageMetadata } from '@/lib/generate-metadata'
 import { parseSocialLinks } from '@/lib/types'
 import { Header } from '@/components/header'
 import Footer from '@/components/footer'
 import { FloatingCall } from '@/components/floating-call'
 import { SchemaMarkup } from '@/components/schema-markup'
+import { fetchCategoryServices } from '@/lib/services'
 
 export const dynamic = 'force-dynamic'
 
@@ -69,6 +70,8 @@ export default async function PrivacyPolicyPage() {
 
   const socialLinks = parseSocialLinks(site)
 
+  const categoryServices = await fetchCategoryServices({ category, domain, variables })
+
   const headerContent = await getContentHeader(category)
 
   const navLabels = {
@@ -79,15 +82,6 @@ export default async function PrivacyPolicyPage() {
     callButton: processContent(headerContent?.call_button_text || DEFAULT_NAV.callButton, domain, variables),
   }
   const ourLinksLabel = processContent(headerContent?.our_links_spintax || DEFAULT_HEADER.ourLinks, domain, variables)
-
-  const serviceNavLabels = {
-    water: processContent(DEFAULT_SERVICE_NAV.water, domain, variables),
-    fire: processContent(DEFAULT_SERVICE_NAV.fire, domain, variables),
-    mold: processContent(DEFAULT_SERVICE_NAV.mold, domain, variables),
-    biohazard: processContent(DEFAULT_SERVICE_NAV.biohazard, domain, variables),
-    burst: processContent(DEFAULT_SERVICE_NAV.burst, domain, variables),
-    sewage: processContent(DEFAULT_SERVICE_NAV.sewage, domain, variables),
-  }
 
   return (
     <div className="min-h-screen bg-white">
@@ -112,7 +106,7 @@ export default async function PrivacyPolicyPage() {
         serviceAreas={serviceAreas}
         domain={domain}
         navLabels={navLabels}
-        serviceNavLabels={serviceNavLabels}
+        servicesLinks={categoryServices.map((svc) => ({ href: svc.href, label: svc.title }))}
       />
 
       <main className="pt-24">
@@ -145,6 +139,7 @@ export default async function PrivacyPolicyPage() {
         serviceAreas={serviceAreas}
         socialLinks={socialLinks}
         ourLinksLabel={ourLinksLabel}
+        servicesLinks={categoryServices.map((svc) => ({ href: svc.href, label: svc.title }))}
       />
       <FloatingCall phone={site.phone} />
     </div>

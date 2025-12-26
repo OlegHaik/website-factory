@@ -3,7 +3,7 @@ import { notFound } from "next/navigation"
 import { Header } from "@/components/header"
 import Footer from "@/components/footer"
 import { FloatingCall } from "@/components/floating-call"
-import { DEFAULT_HEADER, DEFAULT_NAV, DEFAULT_SERVICE_NAV } from "@/lib/default-content"
+import { DEFAULT_HEADER, DEFAULT_NAV } from "@/lib/default-content"
 import { fetchQuestionnaire, getContentHeader } from "@/lib/fetch-content"
 import { processContent } from "@/lib/spintax"
 import { parseSocialLinks } from "@/lib/types"
@@ -11,6 +11,7 @@ import { normalizeUrl } from "@/lib/normalize-url"
 import { getServiceAreaIndexForCurrentDomain, resolveSiteContext } from "@/lib/sites"
 import type { FeedbackContent } from "./FeedbackWizard"
 import { FeedbackWizard } from "./FeedbackWizard"
+import { fetchCategoryServices } from "@/lib/services"
 
 export const dynamic = "force-dynamic"
 
@@ -89,14 +90,7 @@ export default async function FeedbackPage() {
 
   const ourLinksLabel = processContent(headerContent?.our_links_spintax || DEFAULT_HEADER.ourLinks, domain, variables)
 
-  const serviceNavLabels = {
-    water: processContent(DEFAULT_SERVICE_NAV.water, domain, variables),
-    fire: processContent(DEFAULT_SERVICE_NAV.fire, domain, variables),
-    mold: processContent(DEFAULT_SERVICE_NAV.mold, domain, variables),
-    biohazard: processContent(DEFAULT_SERVICE_NAV.biohazard, domain, variables),
-    burst: processContent(DEFAULT_SERVICE_NAV.burst, domain, variables),
-    sewage: processContent(DEFAULT_SERVICE_NAV.sewage, domain, variables),
-  }
+  const categoryServices = await fetchCategoryServices({ category, domain, variables })
 
   const rawReviewLink = site.google_review_link || site.google_business_url || site.social_google || null
   const googleReviewLink =
@@ -117,7 +111,7 @@ export default async function FeedbackPage() {
         serviceAreas={serviceAreas}
         domain={domain}
         navLabels={navLabels}
-        serviceNavLabels={serviceNavLabels}
+        servicesLinks={categoryServices.map((svc) => ({ href: svc.href, label: svc.title }))}
       />
 
       <main className="px-4 pb-12 pt-12 sm:pt-16">
@@ -138,6 +132,7 @@ export default async function FeedbackPage() {
         serviceAreas={serviceAreas}
         socialLinks={socialLinks}
         ourLinksLabel={ourLinksLabel}
+        servicesLinks={categoryServices.map((svc) => ({ href: svc.href, label: svc.title }))}
       />
       <FloatingCall phone={site.phone} />
     </div>

@@ -18,9 +18,10 @@ interface FooterProps {
   serviceAreas?: Array<{ name: string; slug: string }>
   socialLinks?: SocialLinks
   ourLinksLabel?: string
+  servicesLinks?: Array<{ label: string; href: string }>
 }
 
-const servicesLinks = [
+const legacyServicesLinks = [
   { label: "Water Damage Restoration", href: "/water-damage-restoration" },
   { label: "Fire & Smoke Damage", href: "/fire-smoke-damage" },
   { label: "Mold Remediation", href: "/mold-remediation" },
@@ -43,10 +44,12 @@ export default function Footer({
   serviceAreas = [],
   socialLinks,
   ourLinksLabel,
+  servicesLinks,
 }: FooterProps) {
   const cleanPhone = phone.replace(/\D/g, "")
   const displayPhone = phoneDisplay || phone
   const ourLinksText = ourLinksLabel || "Our Links"
+  const resolvedServicesLinks = servicesLinks && servicesLinks.length > 0 ? servicesLinks : legacyServicesLinks
 
   const formatFullAddress = (
     street: string | null | undefined,
@@ -105,7 +108,7 @@ export default function Footer({
           <div>
             <h4 className="text-lg font-bold mb-6">Services</h4>
             <nav className="space-y-3">
-              {servicesLinks.map((item) => (
+              {resolvedServicesLinks.map((item) => (
                 <Link key={item.href} href={item.href} className="block text-slate-300 hover:text-white">
                   {item.label}
                 </Link>

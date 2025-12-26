@@ -30,9 +30,18 @@ interface HeaderProps {
     burst: string
     sewage: string
   }
+  servicesLinks?: Array<{ href: string; label: string }>
 }
 
-export function Header({ businessName, phone, phoneDisplay, serviceAreas = [], navLabels, serviceNavLabels }: HeaderProps) {
+export function Header({
+  businessName,
+  phone,
+  phoneDisplay,
+  serviceAreas = [],
+  navLabels,
+  serviceNavLabels,
+  servicesLinks,
+}: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
   const [mobileDropdown, setMobileDropdown] = useState<string | null>(null)
@@ -67,14 +76,17 @@ export function Header({ businessName, phone, phoneDisplay, serviceAreas = [], n
   }
 
 
-  const servicesLinks = [
-    { href: "/water-damage-restoration", label: serviceNavLabels?.water || "Water Damage Restoration" },
-    { href: "/fire-smoke-damage", label: serviceNavLabels?.fire || "Fire & Smoke Damage" },
-    { href: "/mold-remediation", label: serviceNavLabels?.mold || "Mold Remediation" },
-    { href: "/biohazard-cleanup", label: serviceNavLabels?.biohazard || "Biohazard Cleanup" },
-    { href: "/burst-pipe-repair", label: serviceNavLabels?.burst || "Burst Pipe Repair" },
-    { href: "/sewage-cleanup", label: serviceNavLabels?.sewage || "Sewage Cleanup" },
-  ]
+  const resolvedServicesLinks =
+    servicesLinks && servicesLinks.length > 0
+      ? servicesLinks
+      : [
+          { href: "/water-damage-restoration", label: serviceNavLabels?.water || "Water Damage Restoration" },
+          { href: "/fire-smoke-damage", label: serviceNavLabels?.fire || "Fire & Smoke Damage" },
+          { href: "/mold-remediation", label: serviceNavLabels?.mold || "Mold Remediation" },
+          { href: "/biohazard-cleanup", label: serviceNavLabels?.biohazard || "Biohazard Cleanup" },
+          { href: "/burst-pipe-repair", label: serviceNavLabels?.burst || "Burst Pipe Repair" },
+          { href: "/sewage-cleanup", label: serviceNavLabels?.sewage || "Sewage Cleanup" },
+        ]
 
   return (
     <>
@@ -125,7 +137,7 @@ export function Header({ businessName, phone, phoneDisplay, serviceAreas = [], n
                   <div className="absolute top-full left-0 pt-2 z-50">
                     <div className="absolute -top-2 left-0 right-0 h-4 bg-transparent" />
                     <div className="bg-white rounded-xl shadow-xl border border-slate-200 py-2 min-w-[240px]">
-                      {servicesLinks.map((item) => (
+                      {resolvedServicesLinks.map((item) => (
                         <Link
                           key={item.href}
                           href={item.href}
@@ -227,7 +239,7 @@ export function Header({ businessName, phone, phoneDisplay, serviceAreas = [], n
                 </button>
                 {mobileDropdown === "services" && (
                   <div className="pb-2">
-                    {servicesLinks.map((item) => (
+                    {resolvedServicesLinks.map((item) => (
                       <Link
                         key={item.href}
                         href={item.href}

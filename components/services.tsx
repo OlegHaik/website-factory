@@ -1,21 +1,18 @@
+import type { ComponentType } from "react"
 import { Droplets, Flame, Biohazard, Trash2, Wrench, ArrowRight } from "lucide-react"
 import Link from "next/link"
 
-interface ServiceData {
+type ServiceIconKey = "water" | "fire" | "mold" | "biohazard" | "burst-pipe" | "sewage"
+
+interface ServiceItem {
   title: string
-  description: string
+  description?: string
+  href: string
+  icon?: ServiceIconKey
 }
 
 interface ServicesProps {
-  domain?: string
-  serviceContent?: {
-    water: ServiceData
-    fire: ServiceData
-    mold: ServiceData
-    biohazard: ServiceData
-    burst: ServiceData
-    sewage: ServiceData
-  }
+  services: ServiceItem[]
 }
 
 const VirusIcon = ({ className }: { className?: string }) => (
@@ -49,82 +46,46 @@ const VirusIcon = ({ className }: { className?: string }) => (
   </svg>
 )
 
-export function Services({ serviceContent }: ServicesProps) {
-  const services = [
-    {
-      icon: Droplets,
-      title: serviceContent?.water.title || "Water Damage Restoration",
-      href: "/water-damage-restoration",
-      description:
-        serviceContent?.water.description ||
-        "Emergency water extraction and rapid drying services. We use hospital-grade dehumidifiers and thermal imaging to ensure zero hidden moisture remains in your property.",
-    },
-    {
-      icon: Flame,
-      title: serviceContent?.fire.title || "Fire & Smoke Damage",
-      href: "/fire-smoke-damage",
-      description:
-        serviceContent?.fire.description ||
-        "Comprehensive fire and smoke damage recovery. Our team handles soot removal, structural cleaning, and complete deodorization to return your property to pre-loss condition.",
-    },
-    {
-      icon: VirusIcon,
-      title: serviceContent?.mold.title || "Mold Remediation",
-      href: "/mold-remediation",
-      description:
-        serviceContent?.mold.description ||
-        "Certified mold inspection, containment, and removal. We follow strict IICRC protocols to safely eliminate black mold and restore healthy indoor air quality.",
-    },
-    {
-      icon: Biohazard,
-      title: serviceContent?.biohazard.title || "Biohazard Cleanup",
-      href: "/biohazard-cleanup",
-      description:
-        serviceContent?.biohazard.description ||
-        "Professional biohazard remediation for crime scenes, trauma, and hazardous materials. Our certified team follows OSHA protocols to safely decontaminate affected areas.",
-    },
-    {
-      icon: Wrench,
-      title: serviceContent?.burst.title || "Burst Pipe Repair",
-      href: "/burst-pipe-repair",
-      description:
-        serviceContent?.burst.description ||
-        "24/7 Response for frozen or burst plumbing pipes. We stop the water source immediately, repair the plumbing, and handle the full water damage cleanup process.",
-    },
-    {
-      icon: Trash2,
-      title: serviceContent?.sewage.title || "Sewage Cleanup",
-      href: "/sewage-cleanup",
-      description:
-        serviceContent?.sewage.description ||
-        "Emergency sewage and black water cleanup services. We safely remove contaminated water, sanitize affected areas, and restore your property to safe living conditions.",
-    },
-  ]
+const ICON_MAP: Record<ServiceIconKey, ComponentType<{ className?: string }>> = {
+  water: Droplets,
+  fire: Flame,
+  mold: VirusIcon,
+  biohazard: Biohazard,
+  "burst-pipe": Wrench,
+  sewage: Trash2,
+}
+const getIconComponent = (key?: ServiceIconKey) => (key ? ICON_MAP[key] : undefined) || Droplets
+
+export function Services({ services }: ServicesProps) {
+  const items = services || []
 
   return (
     <section id="services" className="py-24 lg:py-36 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 text-center mb-16">Our Services</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className="group bg-white rounded-2xl p-8 border border-slate-200 hover:border-slate-300 hover:shadow-xl transition-all duration-300"
-            >
-              <div className="w-14 h-14 bg-teal-50 rounded-2xl flex items-center justify-center mb-6">
-                <service.icon className="w-7 h-7 text-[var(--accent-hover)]" />
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-4">{service.title}</h3>
-              <p className="text-slate-600 leading-relaxed mb-6">{service.description}</p>
-              <Link
-                href={service.href}
-                className="inline-flex items-center text-[var(--accent-hover)] font-semibold hover:text-[var(--accent-hover)] transition-colors"
+          {items.map((service, index) => {
+            const IconComponent = getIconComponent(service.icon)
+            return (
+              <div
+                key={index}
+                className="group bg-white rounded-2xl p-8 border border-slate-200 hover:border-slate-300 hover:shadow-xl transition-all duration-300"
               >
-                Learn More
-                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </div>
-          ))}
+                <div className="w-14 h-14 bg-teal-50 rounded-2xl flex items-center justify-center mb-6">
+                  <IconComponent className="w-7 h-7 text-[var(--accent-hover)]" />
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-4">{service.title}</h3>
+                <p className="text-slate-600 leading-relaxed mb-6">{service.description}</p>
+                <Link
+                  href={service.href}
+                  className="inline-flex items-center text-[var(--accent-hover)] font-semibold hover:text-[var(--accent-hover)] transition-colors"
+                >
+                  Learn More
+                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
+            )
+          })}
         </div>
       </div>
     </section>

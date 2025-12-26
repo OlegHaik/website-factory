@@ -10,7 +10,6 @@ import {
   getContentHeader,
   getContentHero,
   getContentSeoBody,
-  getContentServices,
   getContentTestimonials,
   parseFAQItems,
   parseTestimonialItems,
@@ -22,10 +21,9 @@ import {
   DEFAULT_HERO,
   DEFAULT_NAV,
   DEFAULT_SEO_BODY,
-  DEFAULT_SERVICE_NAV,
-  DEFAULT_SERVICES,
   DEFAULT_TESTIMONIALS,
 } from "@/lib/default-content"
+import { fetchCategoryServices } from "@/lib/services"
 
 import { Header } from "@/components/header"
 import { Hero } from "@/components/hero"
@@ -100,7 +98,6 @@ export default async function Home() {
 
   const headerContent = await getContentHeader(category)
   const heroContent = await getContentHero(category)
-  const servicesContent = await getContentServices(category)
   const ctaContent = await getContentCTA(category)
   const seoBodyContent = await getContentSeoBody(category)
   const faqContent = await getContentFAQ(category)
@@ -116,15 +113,6 @@ export default async function Home() {
 
   const ourLinksLabel = processContent(headerContent?.our_links_spintax || DEFAULT_HEADER.ourLinks, domain, variables)
 
-  const serviceNavLabels = {
-    water: processContent(DEFAULT_SERVICE_NAV.water, domain, variables),
-    fire: processContent(DEFAULT_SERVICE_NAV.fire, domain, variables),
-    mold: processContent(DEFAULT_SERVICE_NAV.mold, domain, variables),
-    biohazard: processContent(DEFAULT_SERVICE_NAV.biohazard, domain, variables),
-    burst: processContent(DEFAULT_SERVICE_NAV.burst, domain, variables),
-    sewage: processContent(DEFAULT_SERVICE_NAV.sewage, domain, variables),
-  }
-
   const heroTitle = processContent(heroContent?.headline_spintax || DEFAULT_HERO.headline_spintax, domain, variables)
   const heroDesc = processContent(
     heroContent?.subheadline_spintax || DEFAULT_HERO.subheadline_spintax,
@@ -137,64 +125,8 @@ export default async function Home() {
     variables,
   )
 
-  const serviceData = {
-    water: {
-      title: processContent(servicesContent?.water_title || DEFAULT_SERVICES.water_title, domain, variables),
-      description: processContent(
-        servicesContent?.water_description || DEFAULT_SERVICES.water_description,
-        domain,
-        variables,
-      ),
-    },
-    fire: {
-      title: processContent(servicesContent?.fire_title || DEFAULT_SERVICES.fire_title, domain, variables),
-      description: processContent(
-        servicesContent?.fire_description || DEFAULT_SERVICES.fire_description,
-        domain,
-        variables,
-      ),
-    },
-    mold: {
-      title: processContent(servicesContent?.mold_title || DEFAULT_SERVICES.mold_title, domain, variables),
-      description: processContent(
-        servicesContent?.mold_description || DEFAULT_SERVICES.mold_description,
-        domain,
-        variables,
-      ),
-    },
-    biohazard: {
-      title: processContent(
-        servicesContent?.biohazard_title || DEFAULT_SERVICES.biohazard_title,
-        domain,
-        variables,
-      ),
-      description: processContent(
-        servicesContent?.biohazard_description || DEFAULT_SERVICES.biohazard_description,
-        domain,
-        variables,
-      ),
-    },
-    burst: {
-      title: processContent(servicesContent?.burst_title || DEFAULT_SERVICES.burst_title, domain, variables),
-      description: processContent(
-        servicesContent?.burst_description || DEFAULT_SERVICES.burst_description,
-        domain,
-        variables,
-      ),
-    },
-    sewage: {
-      title: processContent(servicesContent?.sewage_title || DEFAULT_SERVICES.sewage_title, domain, variables),
-      description: processContent(
-        servicesContent?.sewage_description || DEFAULT_SERVICES.sewage_description,
-        domain,
-        variables,
-      ),
-    },
-  }
-
-  const servicesForSchema = Object.values(serviceData)
-    .map((svc) => svc.title)
-    .filter(Boolean)
+  const categoryServices = await fetchCategoryServices({ category, domain, variables })
+  const servicesForSchema = categoryServices.map((svc) => svc.title).filter(Boolean)
 
   const ctaHeadline = processContent(ctaContent?.headline_spintax || DEFAULT_CTA.headline_spintax, domain, variables)
   const ctaSubheadline = processContent(
@@ -297,7 +229,7 @@ export default async function Home() {
         serviceAreas={serviceAreas}
         domain={domain}
         navLabels={navLabels}
-        serviceNavLabels={serviceNavLabels}
+        servicesLinks={categoryServices.map((svc) => ({ href: svc.href, label: svc.title }))}
       />
 
       <Hero
@@ -310,7 +242,7 @@ export default async function Home() {
         chatButtonText={chatButtonText}
       />
 
-      <Services domain={domain} serviceContent={serviceData} />
+      <Services services={categoryServices} />
       <About
         businessName={site.business_name}
         city={site.city}
@@ -344,6 +276,7 @@ export default async function Home() {
         serviceAreas={serviceAreas}
         socialLinks={socialLinks}
         ourLinksLabel={ourLinksLabel}
+        servicesLinks={categoryServices.map((svc) => ({ href: svc.href, label: svc.title }))}
       />
       <FloatingCall phone={site.phone} />
     </div>
