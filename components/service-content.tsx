@@ -7,7 +7,7 @@ interface LinkItem {
 
 interface ServiceContentProps {
   serviceTitle: string
-  serviceDescription?: string
+  serviceDescription: string
   intro?: string
   sectionHeadline?: string
   sectionBody?: string
@@ -30,7 +30,7 @@ function splitParagraphs(text: string): string[] {
 }
 
 export function ServiceContent({ serviceTitle, serviceDescription, intro, sectionHeadline, sectionBody, processHeadline, processBody, city, state, serviceAreas, otherServices }: ServiceContentProps) {
-  const introText = intro || serviceDescription || ""
+  const introText = intro || serviceDescription
   const headlineText = sectionHeadline || serviceTitle
   const bodyText = sectionBody || introText
   const processParagraphs = processBody ? splitParagraphs(processBody) : []
