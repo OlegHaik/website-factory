@@ -32,6 +32,18 @@ export interface ContentService {
   burst_description: string
   sewage_title: string
   sewage_description: string
+  roof_installation_title?: string | null
+  roof_installation_description?: string | null
+  roof_repair_title?: string | null
+  roof_repair_description?: string | null
+  shingle_roofing_title?: string | null
+  shingle_roofing_description?: string | null
+  metal_roofing_title?: string | null
+  metal_roofing_description?: string | null
+  commercial_roofing_title?: string | null
+  commercial_roofing_description?: string | null
+  emergency_leak_title?: string | null
+  emergency_leak_description?: string | null
 }
 
 export interface ContentCTA {

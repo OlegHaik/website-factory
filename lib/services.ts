@@ -12,7 +12,54 @@ export type CategoryService = {
   icon?: ServiceDefinition["icon"]
 }
 
-const LEGACY_SERVICE_FIELDS: Record<string, { titleKey: keyof ContentService; descriptionKey: keyof ContentService }> = {
+const ROOFING_SERVICES: ServiceDefinition[] = [
+  {
+    key: "roof-installation",
+    slug: "roof-installation",
+    title: "Roof Installation",
+    shortDescription: "New roof installation with durable materials and precise workmanship for long-term protection.",
+    icon: "water",
+  },
+  {
+    key: "roof-repair",
+    slug: "roof-repair",
+    title: "Roof Repair",
+    shortDescription: "Leak detection and targeted repairs to extend roof life and prevent interior damage.",
+    icon: "burst-pipe",
+  },
+  {
+    key: "shingle-roofing",
+    slug: "shingle-roofing",
+    title: "Shingle Roofing",
+    shortDescription: "Asphalt shingle installation and replacement tailored to your home and climate needs.",
+    icon: "water",
+  },
+  {
+    key: "metal-roofing",
+    slug: "metal-roofing",
+    title: "Metal Roofing",
+    shortDescription: "Energy-efficient metal roof systems designed for longevity and weather resistance.",
+    icon: "fire",
+  },
+  {
+    key: "commercial-roofing",
+    slug: "commercial-roofing",
+    title: "Commercial Roofing",
+    shortDescription: "Flat and low-slope roofing solutions with scheduled maintenance programs for businesses.",
+    icon: "sewage",
+  },
+  {
+    key: "emergency-leak",
+    slug: "emergency-leak",
+    title: "Emergency Leak Service",
+    shortDescription: "Rapid-response leak mitigation to stop active water intrusion and protect interiors.",
+    icon: "burst-pipe",
+  },
+]
+
+type LegacyFieldMap = Record<string, { titleKey: keyof ContentService; descriptionKey: keyof ContentService }>
+
+const LEGACY_SERVICE_FIELDS: LegacyFieldMap = {
   "water-damage-restoration": { titleKey: "water_title", descriptionKey: "water_description" },
   "fire-smoke-damage": { titleKey: "fire_title", descriptionKey: "fire_description" },
   "mold-remediation": { titleKey: "mold_title", descriptionKey: "mold_description" },
@@ -21,7 +68,17 @@ const LEGACY_SERVICE_FIELDS: Record<string, { titleKey: keyof ContentService; de
   "sewage-cleanup": { titleKey: "sewage_title", descriptionKey: "sewage_description" },
 }
 
+const ROOFING_SERVICE_FIELDS: LegacyFieldMap = {
+  "roof-installation": { titleKey: "roof_installation_title", descriptionKey: "roof_installation_description" },
+  "roof-repair": { titleKey: "roof_repair_title", descriptionKey: "roof_repair_description" },
+  "shingle-roofing": { titleKey: "shingle_roofing_title", descriptionKey: "shingle_roofing_description" },
+  "metal-roofing": { titleKey: "metal_roofing_title", descriptionKey: "metal_roofing_description" },
+  "commercial-roofing": { titleKey: "commercial_roofing_title", descriptionKey: "commercial_roofing_description" },
+  "emergency-leak": { titleKey: "emergency_leak_title", descriptionKey: "emergency_leak_description" },
+}
+
 const DEFAULT_ORDER = new Map(DEFAULT_SERVICES.map((svc, index) => [svc.slug, index]))
+const ROOFING_ORDER = new Map(ROOFING_SERVICES.map((svc, index) => [svc.slug, index]))
 
 const formatTitleFromSlug = (slug: string): string =>
   slug
@@ -35,11 +92,13 @@ const getLegacyContent = (
   servicesContent: ContentService | null,
   seed: string,
   variables: Record<string, string>,
+  legacyFields: LegacyFieldMap,
+  fallbackServices: ServiceDefinition[],
 ): { title?: string; description?: string } => {
-  const legacy = LEGACY_SERVICE_FIELDS[slug]
+  const legacy = legacyFields[slug]
   if (!legacy) return {}
 
-  const defaultFallback = DEFAULT_SERVICES.find((s) => s.slug === slug)
+  const defaultFallback = fallbackServices.find((s) => s.slug === slug)
   const title = processContent(
     (servicesContent?.[legacy.titleKey] as string | undefined) || defaultFallback?.title || formatTitleFromSlug(slug),
     seed,
@@ -74,12 +133,29 @@ type ContentServicePageRow = {
   category?: string | null
 }
 
+const getCategoryConfig = (category: string) => {
+  if (category === "roofing") {
+    return {
+      services: ROOFING_SERVICES,
+      legacyFields: ROOFING_SERVICE_FIELDS,
+      order: ROOFING_ORDER,
+    }
+  }
+
+  return {
+    services: DEFAULT_SERVICES,
+    legacyFields: LEGACY_SERVICE_FIELDS,
+    order: DEFAULT_ORDER,
+  }
+}
+
 export async function fetchCategoryServices(params: {
   category: string
   domain: string
   variables: Record<string, string>
 }): Promise<CategoryService[]> {
   const { category, domain, variables } = params
+  const { services: serviceDefinitions, legacyFields, order } = getCategoryConfig(category)
   const supabase = await createClient()
   const selectFields =
     "service_slug, service_title, hero_headline_spintax, hero_subheadline_spintax, section_body_spintax, process_body_spintax, category"
@@ -128,7 +204,7 @@ export async function fetchCategoryServices(params: {
 
   const baseRows: ContentServicePageRow[] = rows.length
     ? rows
-    : DEFAULT_SERVICES.map((svc) => ({ service_slug: svc.slug }))
+    : serviceDefinitions.map((svc) => ({ service_slug: svc.slug }))
 
   const mapped = baseRows
     .map((row) => {
@@ -136,7 +212,7 @@ export async function fetchCategoryServices(params: {
       if (!slug) return null
 
       const seed = `${seedPrefix}:${slug}`
-      const legacy = getLegacyContent(slug, servicesContent, seed, variables)
+      const legacy = getLegacyContent(slug, servicesContent, seed, variables, legacyFields, serviceDefinitions)
 
       const title =
         legacy.title ||
@@ -144,15 +220,15 @@ export async function fetchCategoryServices(params: {
 
       const description = legacy.description || pickDescriptionFromRow(row, seed, variables) || ""
 
-      const icon = DEFAULT_SERVICES.find((svc) => svc.slug === slug)?.icon
+      const icon = serviceDefinitions.find((svc) => svc.slug === slug)?.icon
 
       return { slug, title, description, href: `/${slug}`, icon }
     })
     .filter(Boolean) as CategoryService[]
 
   const sorted = mapped.sort((a, b) => {
-    const aOrder = DEFAULT_ORDER.get(a.slug) ?? Number.MAX_SAFE_INTEGER
-    const bOrder = DEFAULT_ORDER.get(b.slug) ?? Number.MAX_SAFE_INTEGER
+    const aOrder = order.get(a.slug) ?? Number.MAX_SAFE_INTEGER
+    const bOrder = order.get(b.slug) ?? Number.MAX_SAFE_INTEGER
     if (aOrder !== bOrder) return aOrder - bOrder
     return a.slug.localeCompare(b.slug)
   })
