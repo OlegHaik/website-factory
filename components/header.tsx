@@ -75,6 +75,10 @@ export function Header({
     callButton: navLabels?.callButton || "Call Now",
   }
 
+  const normalizeServiceLinks = (links: Array<{ href: string; label: string | null | undefined }>) =>
+    links
+      .map((item) => ({ ...item, label: String(item.label ?? "").trim() }))
+      .filter((item) => item.label.length > 0)
 
   const resolvedServicesLinks =
     servicesLinks && servicesLinks.length > 0
@@ -87,6 +91,9 @@ export function Header({
           { href: "/burst-pipe-repair", label: serviceNavLabels?.burst || "Burst Pipe Repair" },
           { href: "/sewage-cleanup", label: serviceNavLabels?.sewage || "Sewage Cleanup" },
         ]
+
+  const serviceMenuLinks = normalizeServiceLinks(resolvedServicesLinks)
+  const hasServiceMenu = serviceMenuLinks.length > 0
 
   return (
     <>
@@ -122,34 +129,36 @@ export function Header({
                 {labels.home}
               </Link>
 
-              <div
-                className="relative"
-                onMouseEnter={() => setOpenDropdown("services")}
-                onMouseLeave={() => setOpenDropdown(null)}
-              >
-                <button className="flex items-center gap-1 px-4 py-2 text-white/90 hover:text-white font-medium transition-colors">
-                  {labels.services}
-                  <ChevronDown
-                    className={`w-4 h-4 transition-transform ${openDropdown === "services" ? "rotate-180" : ""}`}
-                  />
-                </button>
-                {openDropdown === "services" && (
-                  <div className="absolute top-full left-0 pt-2 z-50">
-                    <div className="absolute -top-2 left-0 right-0 h-4 bg-transparent" />
-                    <div className="bg-white rounded-xl shadow-xl border border-slate-200 py-2 min-w-[240px]">
-                      {resolvedServicesLinks.map((item) => (
-                        <Link
-                          key={item.href}
-                          href={item.href}
-                          className="block px-4 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-[var(--accent-primary)] transition-colors"
-                        >
-                          {item.label}
-                        </Link>
-                      ))}
+              {hasServiceMenu && (
+                <div
+                  className="relative"
+                  onMouseEnter={() => setOpenDropdown("services")}
+                  onMouseLeave={() => setOpenDropdown(null)}
+                >
+                  <button className="flex items-center gap-1 px-4 py-2 text-white/90 hover:text-white font-medium transition-colors">
+                    {labels.services}
+                    <ChevronDown
+                      className={`w-4 h-4 transition-transform ${openDropdown === "services" ? "rotate-180" : ""}`}
+                    />
+                  </button>
+                  {openDropdown === "services" && (
+                    <div className="absolute top-full left-0 pt-2 z-50">
+                      <div className="absolute -top-2 left-0 right-0 h-4 bg-transparent" />
+                      <div className="bg-white rounded-xl shadow-xl border border-slate-200 py-2 min-w-[240px]">
+                        {serviceMenuLinks.map((item) => (
+                          <Link
+                            key={item.href}
+                            href={item.href}
+                            className="block px-4 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-[var(--accent-primary)] transition-colors"
+                          >
+                            {item.label}
+                          </Link>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                )}
-              </div>
+                  )}
+                </div>
+              )}
 
               <div
                 className="relative"
@@ -226,32 +235,34 @@ export function Header({
                 {labels.home}
               </Link>
 
-              <div className="border-t border-white/10">
-                <button
-                  type="button"
-                  onClick={() => setMobileDropdown(mobileDropdown === "services" ? null : "services")}
-                  className="flex items-center justify-between w-full py-3 text-white text-lg"
-                >
-                  {labels.services}
-                  <ChevronDown
-                    className={`w-5 h-5 transition-transform ${mobileDropdown === "services" ? "rotate-180" : ""}`}
-                  />
-                </button>
-                {mobileDropdown === "services" && (
-                  <div className="pb-2">
-                    {resolvedServicesLinks.map((item) => (
-                      <Link
-                        key={item.href}
-                        href={item.href}
-                        className="block py-2 pl-4 text-white/80"
-                        onClick={closeMobileMenu}
-                      >
-                        {item.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
+              {hasServiceMenu && (
+                <div className="border-t border-white/10">
+                  <button
+                    type="button"
+                    onClick={() => setMobileDropdown(mobileDropdown === "services" ? null : "services")}
+                    className="flex items-center justify-between w-full py-3 text-white text-lg"
+                  >
+                    {labels.services}
+                    <ChevronDown
+                      className={`w-5 h-5 transition-transform ${mobileDropdown === "services" ? "rotate-180" : ""}`}
+                    />
+                  </button>
+                  {mobileDropdown === "services" && (
+                    <div className="pb-2">
+                      {serviceMenuLinks.map((item) => (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          className="block py-2 pl-4 text-white/80"
+                          onClick={closeMobileMenu}
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
 
               {serviceAreas.length > 0 && (
                 <div className="border-t border-white/10">

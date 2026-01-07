@@ -49,7 +49,13 @@ export default function Footer({
   const cleanPhone = phone.replace(/\D/g, "")
   const displayPhone = phoneDisplay || phone
   const ourLinksText = ourLinksLabel || "Our Links"
+  const normalizeServiceLinks = (links: Array<{ label: string | null | undefined; href: string }>) =>
+    links
+      .map((item) => ({ ...item, label: String(item.label ?? "").trim() }))
+      .filter((item) => item.label.length > 0)
+
   const resolvedServicesLinks = servicesLinks && servicesLinks.length > 0 ? servicesLinks : legacyServicesLinks
+  const filteredServicesLinks = normalizeServiceLinks(resolvedServicesLinks)
 
   const formatFullAddress = (
     street: string | null | undefined,
@@ -108,7 +114,7 @@ export default function Footer({
           <div>
             <h4 className="text-lg font-bold mb-6">Services</h4>
             <nav className="space-y-3">
-              {resolvedServicesLinks.map((item) => (
+              {filteredServicesLinks.map((item) => (
                 <Link key={item.href} href={item.href} className="block text-slate-300 hover:text-white">
                   {item.label}
                 </Link>

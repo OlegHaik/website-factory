@@ -34,6 +34,9 @@ export function ServiceContent({ serviceTitle, serviceDescription, intro, sectio
   const headlineText = sectionHeadline || serviceTitle
   const bodyText = sectionBody || introText
   const processParagraphs = processBody ? splitParagraphs(processBody) : []
+  const filteredOtherServices = (otherServices || [])
+    .map((service) => ({ ...service, label: String(service.label ?? '').trim() }))
+    .filter((service) => service.label.length > 0)
 
   return (
     <section className="py-24 lg:py-32 bg-white">
@@ -88,11 +91,11 @@ export function ServiceContent({ serviceTitle, serviceDescription, intro, sectio
               </div>
             )}
 
-            {otherServices.length > 0 && (
+            {filteredOtherServices.length > 0 && (
               <div className="rounded-2xl border border-slate-200 p-8">
                 <h3 className="text-xl font-bold text-slate-900 mb-6">Other Services</h3>
                 <div className="space-y-3">
-                  {otherServices.map((s) => (
+                  {filteredOtherServices.map((s) => (
                     <Link key={s.href} href={s.href} className="block text-slate-700 hover:text-red-600">
                       {s.label}
                     </Link>

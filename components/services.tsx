@@ -57,7 +57,12 @@ const ICON_MAP: Record<ServiceIconKey, ComponentType<{ className?: string }>> = 
 const getIconComponent = (key?: ServiceIconKey) => (key ? ICON_MAP[key] : undefined) || Droplets
 
 export function Services({ services }: ServicesProps) {
-  const items = services || []
+  const items = (services || []).filter((svc) => {
+    const title = String(svc?.title ?? "").trim()
+    return title.length > 0
+  })
+
+  if (items.length === 0) return null
 
   return (
     <section id="services" className="py-24 lg:py-36 bg-white">
@@ -66,6 +71,8 @@ export function Services({ services }: ServicesProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {items.map((service, index) => {
             const IconComponent = getIconComponent(service.icon)
+            const title = String(service.title ?? "").trim()
+            const description = service.description || ""
             return (
               <div
                 key={index}
@@ -74,8 +81,8 @@ export function Services({ services }: ServicesProps) {
                 <div className="w-14 h-14 bg-teal-50 rounded-2xl flex items-center justify-center mb-6">
                   <IconComponent className="w-7 h-7 text-[var(--accent-hover)]" />
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-4">{service.title}</h3>
-                <p className="text-slate-600 leading-relaxed mb-6">{service.description}</p>
+                <h3 className="text-xl font-bold text-slate-900 mb-4">{title}</h3>
+                <p className="text-slate-600 leading-relaxed mb-6">{description}</p>
                 <Link
                   href={service.href}
                   className="inline-flex items-center text-[var(--accent-hover)] font-semibold hover:text-[var(--accent-hover)] transition-colors"
