@@ -44,6 +44,18 @@ export interface ContentService {
   commercial_roofing_description?: string | null
   emergency_leak_title?: string | null
   emergency_leak_description?: string | null
+  mold_inspection_title?: string | null
+  mold_inspection_description?: string | null
+  mold_remediation_title?: string | null
+  mold_remediation_description?: string | null
+  black_mold_title?: string | null
+  black_mold_description?: string | null
+  water_damage_restoration_title?: string | null
+  water_damage_restoration_description?: string | null
+  commercial_mold_title?: string | null
+  commercial_mold_description?: string | null
+  air_quality_testing_title?: string | null
+  air_quality_testing_description?: string | null
 }
 
 export interface ContentCTA {
