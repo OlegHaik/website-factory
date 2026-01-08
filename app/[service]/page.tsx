@@ -63,13 +63,44 @@ export async function generateMetadata({
 
   const fallbackMetaType = legacyMetaMap[serviceSlug] || preferredMetaType
   const metaType = preferredMeta ? preferredMetaType : fallbackMetaType
-  return generatePageMetadata(
+  const fallbackMeta = await generatePageMetadata(
     metaType,
     domain,
     variables,
     serviceSlug,
     category,
   )
+
+  if (category !== "roofing") return fallbackMeta
+
+  const pageContent = await getContentServicePage(serviceSlug, category)
+  const seed = `${domain}:${serviceSlug}:meta`
+
+  const metaTitle = pageContent?.meta_title_spintax
+    ? processContent(pageContent.meta_title_spintax, seed, variables)
+    : null
+  const metaDescription = pageContent?.meta_description_spintax
+    ? processContent(pageContent.meta_description_spintax, seed, variables)
+    : null
+
+  const title = metaTitle || fallbackMeta.title
+  const description = metaDescription || fallbackMeta.description
+
+  return {
+    ...fallbackMeta,
+    title,
+    description,
+    openGraph: {
+      ...(fallbackMeta.openGraph || {}),
+      title,
+      description,
+    },
+    twitter: {
+      ...(fallbackMeta.twitter || {}),
+      title,
+      description,
+    },
+  }
 }
 
 const serviceKeyMap: Record<string, keyof typeof DEFAULT_SERVICE_PAGE> = {

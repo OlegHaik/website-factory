@@ -100,6 +100,8 @@ export interface ContentServicePage {
   midpage_cta_subtext_spintax: string | null
   why_choose_headline_spintax: string | null
   trust_points_spintax: string | null
+  meta_title_spintax?: string | null
+  meta_description_spintax?: string | null
 }
 
 export interface ContentServiceArea {
