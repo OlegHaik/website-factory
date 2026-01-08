@@ -50,6 +50,51 @@ const ROOFING_SERVICES: ServiceDefinition[] = [
   },
 ]
 
+const MOLD_SERVICES: ServiceDefinition[] = [
+  {
+    key: "mold-inspection",
+    slug: "mold-inspection",
+    title: "Mold Inspection",
+    shortDescription: "Certified inspection and moisture tracing to identify mold sources and extent.",
+    icon: "mold",
+  },
+  {
+    key: "mold-remediation",
+    slug: "mold-remediation",
+    title: "Mold Remediation",
+    shortDescription: "Containment, removal, and HEPA filtration following IICRC mold protocols.",
+    icon: "mold",
+  },
+  {
+    key: "black-mold",
+    slug: "black-mold",
+    title: "Black Mold Removal",
+    shortDescription: "Targeted black mold cleanup with negative air and full PPE for safety.",
+    icon: "mold",
+  },
+  {
+    key: "water-damage-restoration",
+    slug: "water-damage-restoration",
+    title: "Water Damage Restoration",
+    shortDescription: "Drying, dehumidification, and sanitization to prevent secondary mold growth.",
+    icon: "water",
+  },
+  {
+    key: "commercial-mold",
+    slug: "commercial-mold",
+    title: "Commercial Mold",
+    shortDescription: "Large-loss and multi-unit mold remediation with business continuity planning.",
+    icon: "mold",
+  },
+  {
+    key: "air-quality-testing",
+    slug: "air-quality-testing",
+    title: "Air Quality Testing",
+    shortDescription: "Post-remediation clearance and air sampling to confirm a clean environment.",
+    icon: "mold",
+  },
+]
+
 const LEGACY_SERVICE_FIELDS: LegacyFieldMap = {
   "water-damage-restoration": { titleKey: "water_title", descriptionKey: "water_description" },
   "fire-smoke-damage": { titleKey: "fire_title", descriptionKey: "fire_description" },
@@ -68,6 +113,18 @@ const ROOFING_SERVICE_FIELDS: LegacyFieldMap = {
   "emergency-leak": { titleKey: "emergency_leak_title", descriptionKey: "emergency_leak_description" },
 }
 
+const MOLD_SERVICE_FIELDS: LegacyFieldMap = {
+  "mold-inspection": { titleKey: "mold_inspection_title", descriptionKey: "mold_inspection_description" },
+  "mold-remediation": { titleKey: "mold_remediation_title", descriptionKey: "mold_remediation_description" },
+  "black-mold": { titleKey: "black_mold_title", descriptionKey: "black_mold_description" },
+  "water-damage-restoration": {
+    titleKey: "water_damage_restoration_title",
+    descriptionKey: "water_damage_restoration_description",
+  },
+  "commercial-mold": { titleKey: "commercial_mold_title", descriptionKey: "commercial_mold_description" },
+  "air-quality-testing": { titleKey: "air_quality_testing_title", descriptionKey: "air_quality_testing_description" },
+}
+
 export type CategoryServiceConfig = {
   services: ServiceDefinition[]
   legacyFields: LegacyFieldMap
@@ -79,6 +136,7 @@ export const FALLBACK_CATEGORY = "water_damage"
 export const SERVICE_FIELD_MAPPING: Record<string, LegacyFieldMap> = {
   water_damage: LEGACY_SERVICE_FIELDS,
   roofing: ROOFING_SERVICE_FIELDS,
+  mold_remediation: MOLD_SERVICE_FIELDS,
 }
 
 export const CATEGORY_SERVICE_CONFIG: Record<string, CategoryServiceConfig> = {
@@ -91,6 +149,11 @@ export const CATEGORY_SERVICE_CONFIG: Record<string, CategoryServiceConfig> = {
     services: ROOFING_SERVICES,
     legacyFields: ROOFING_SERVICE_FIELDS,
     order: makeOrderMap(ROOFING_SERVICES),
+  },
+  mold_remediation: {
+    services: MOLD_SERVICES,
+    legacyFields: MOLD_SERVICE_FIELDS,
+    order: makeOrderMap(MOLD_SERVICES),
   },
 }
 
