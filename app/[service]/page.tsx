@@ -83,22 +83,22 @@ export async function generateMetadata({
     ? processContent(pageContent.meta_description_spintax, seed, variables)
     : null
 
-  const title = metaTitle || fallbackMeta.title
-  const description = metaDescription || fallbackMeta.description
+  const title = metaTitle ?? (fallbackMeta.title ?? undefined)
+  const description = metaDescription ?? (fallbackMeta.description ?? undefined)
 
   return {
     ...fallbackMeta,
-    title,
-    description,
+    ...(title ? { title } : {}),
+    ...(description ? { description } : {}),
     openGraph: {
       ...(fallbackMeta.openGraph || {}),
-      title,
-      description,
+      ...(title ? { title } : {}),
+      ...(description ? { description } : {}),
     },
     twitter: {
       ...(fallbackMeta.twitter || {}),
-      title,
-      description,
+      ...(title ? { title } : {}),
+      ...(description ? { description } : {}),
     },
   }
 }
