@@ -45,8 +45,10 @@ export default async function FeedbackPage() {
   const { site, domain: requestDomain } = await resolveSiteContext()
   if (!site) return notFound()
 
-  if (!site.business_name) throw new Error("Site is missing required field: business_name")
-  if (!site.phone) throw new Error("Site is missing required field: phone")
+  if (!site.business_name || !site.phone) {
+    console.error('Site missing required fields:', { business_name: !!site.business_name, phone: !!site.phone })
+    notFound()
+  }
 
   const domain = site.resolvedDomain || site.domain_url || requestDomain || "default"
   const category = site.category || "water_damage"

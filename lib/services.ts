@@ -93,28 +93,18 @@ export async function fetchCategoryServices(params: {
     }
 
     if (isMissingCategory) {
-      const fallback = await supabase
-        .from("content_service_pages")
-        .select(selectFields.replace(", category", ""))
-        .order("service_slug", { ascending: true })
-
-      if (fallback.error) {
-        console.error("Failed to fetch category services without category filter", { category, error: fallback.error })
-      }
-      rows = (fallback.data as ContentServicePageRow[]) ?? []
+      // Don't fall back to unfiltered query - use built-in service definitions instead
+      // This prevents category mixing (e.g., roofing site showing water_damage services)
+      console.warn(`[fetchCategoryServices] DB lacks category column, using built-in definitions for "${category}"`)
+      rows = []
     }
   }
 
-  if (!rows.length) {
-    const { data: fallbackData, error: fallbackError } = await supabase
-      .from("content_service_pages")
-      .select(selectFields.replace(", category", ""))
-      .order("service_slug", { ascending: true })
-
-    if (fallbackError) {
-      console.error("Failed to fetch services without category filter", { category, error: fallbackError })
-    }
-    rows = (fallbackData as ContentServicePageRow[]) ?? []
+  // If no category-specific rows found, we rely on the serviceDefinitions 
+  // from category-mapping.ts as the base (they are already category-aware).
+  // This ensures we never mix categories - a roofing site will only show roofing services.
+  if (!rows.length && process.env.NODE_ENV === 'development') {
+    console.log(`[fetchCategoryServices] No DB rows for category "${category}", using built-in service definitions`)
   }
 
   const servicesContent = await getContentServices(category)

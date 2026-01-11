@@ -18,10 +18,10 @@ import {
   DEFAULT_CTA,
   DEFAULT_FAQ,
   DEFAULT_HEADER,
-  DEFAULT_HERO,
   DEFAULT_NAV,
   DEFAULT_SEO_BODY,
   DEFAULT_TESTIMONIALS,
+  getDefaultHero,
 } from "@/lib/default-content"
 import { fetchCategoryServices } from "@/lib/services"
 
@@ -74,10 +74,16 @@ export default async function Home() {
 
   if (!site) notFound()
 
-  if (!site.business_name) throw new Error('Site is missing required field: business_name')
-  if (!site.phone) throw new Error('Site is missing required field: phone')
-  if (!site.city) throw new Error('Site is missing required field: city')
-  if (!site.state) throw new Error('Site is missing required field: state')
+  // Gracefully handle missing required fields
+  if (!site.business_name || !site.phone || !site.city || !site.state) {
+    console.error('Site missing required fields:', {
+      business_name: !!site.business_name,
+      phone: !!site.phone,
+      city: !!site.city,
+      state: !!site.state
+    })
+    notFound()
+  }
 
   const category = site.category || 'water_damage'
 
@@ -113,14 +119,15 @@ export default async function Home() {
 
   const ourLinksLabel = processContent(headerContent?.our_links_spintax || DEFAULT_HEADER.ourLinks, domain, variables)
 
-  const heroTitle = processContent(heroContent?.headline_spintax || DEFAULT_HERO.headline_spintax, domain, variables)
+  const heroDefaults = getDefaultHero(category)
+  const heroTitle = processContent(heroContent?.headline_spintax || heroDefaults.headline_spintax, domain, variables)
   const heroDesc = processContent(
-    heroContent?.subheadline_spintax || DEFAULT_HERO.subheadline_spintax,
+    heroContent?.subheadline_spintax || heroDefaults.subheadline_spintax,
     domain,
     variables,
   )
   const chatButtonText = processContent(
-    heroContent?.chat_button_spintax || DEFAULT_HERO.chat_button_spintax,
+    heroContent?.chat_button_spintax || heroDefaults.chat_button_spintax,
     domain,
     variables,
   )

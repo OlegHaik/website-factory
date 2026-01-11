@@ -35,8 +35,10 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function TermsOfUsePage() {
   const { site, domain: requestDomain } = await resolveSiteContext()
   if (!site) notFound()
-  if (!site.business_name) throw new Error('Site is missing required field: business_name')
-  if (!site.phone) throw new Error('Site is missing required field: phone')
+  if (!site.business_name || !site.phone) {
+    console.error('Site missing required fields:', { business_name: !!site.business_name, phone: !!site.phone })
+    notFound()
+  }
 
   const areaIndex = await getServiceAreaIndexForCurrentDomain()
   const serviceAreas = areaIndex.map((a) => ({ name: a.city, slug: a.slug }))

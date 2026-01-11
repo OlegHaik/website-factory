@@ -4,6 +4,9 @@ import { normalizeDomainUrl } from '@/lib/domain'
 
 export const runtime = 'nodejs'
 
+// API Key for import authentication - set this in environment variables
+const IMPORT_API_KEY = process.env.IMPORT_API_KEY
+
 const REQUIRED_FIELDS = ['domain_url', 'slug', 'business_name', 'city', 'state', 'phone'] as const
 const DEFAULT_CATEGORY = 'water_damage'
 const CATEGORY_CONTENT_TABLES = [
@@ -266,6 +269,23 @@ async function ensureCategoryContent(category: string, supabase: ReturnType<type
 }
 
 export async function POST(request: Request) {
+  // Authentication check - require API key
+  const apiKey = request.headers.get('x-api-key') || request.headers.get('authorization')?.replace('Bearer ', '')
+
+  if (!IMPORT_API_KEY) {
+    return NextResponse.json(
+      { error: 'Server misconfigured: IMPORT_API_KEY not set' },
+      { status: 500 }
+    )
+  }
+
+  if (apiKey !== IMPORT_API_KEY) {
+    return NextResponse.json(
+      { error: 'Unauthorized. Provide valid API key in x-api-key header.' },
+      { status: 401 }
+    )
+  }
+
   const contentType = request.headers.get('content-type') || ''
   if (request.method !== 'POST') {
     return NextResponse.json({ error: 'Method not allowed' }, { status: 405 })

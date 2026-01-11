@@ -142,6 +142,8 @@ export interface ContentSeoBody {
   why_choose_spintax: string
   process_title_spintax: string
   process_spintax: string
+  intro_paragraph?: string | null
+  section_title?: string | null
 }
 
 export interface ContentFAQItem {
@@ -355,7 +357,19 @@ export async function getContentSeoBody(category: string = "water_damage"): Prom
     console.error("Failed to fetch content_seo_body:", error)
     return null
   }
-  return (data as ContentSeoBody) ?? null
+  if (!data) return null
+
+  const row = data as ContentSeoBody
+
+  // Normalize newly named columns to the fields the app expects.
+  const intro_spintax = row.intro_spintax || row.intro_paragraph || ""
+  const process_title_spintax = row.process_title_spintax || row.section_title || ""
+
+  return {
+    ...row,
+    intro_spintax,
+    process_title_spintax,
+  }
 }
 
 export async function getContentFAQ(category: string = "water_damage"): Promise<ContentFAQ | null> {

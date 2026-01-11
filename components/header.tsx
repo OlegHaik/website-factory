@@ -80,27 +80,17 @@ export function Header({
       .map((item) => ({ ...item, label: String(item.label ?? "").trim() }))
       .filter((item) => item.label.length > 0)
 
-  const resolvedServicesLinks =
-    servicesLinks && servicesLinks.length > 0
-      ? servicesLinks
-      : [
-          { href: "/water-damage-restoration", label: serviceNavLabels?.water || "Water Damage Restoration" },
-          { href: "/fire-smoke-damage", label: serviceNavLabels?.fire || "Fire & Smoke Damage" },
-          { href: "/mold-remediation", label: serviceNavLabels?.mold || "Mold Remediation" },
-          { href: "/biohazard-cleanup", label: serviceNavLabels?.biohazard || "Biohazard Cleanup" },
-          { href: "/burst-pipe-repair", label: serviceNavLabels?.burst || "Burst Pipe Repair" },
-          { href: "/sewage-cleanup", label: serviceNavLabels?.sewage || "Sewage Cleanup" },
-        ]
-
-  const serviceMenuLinks = normalizeServiceLinks(resolvedServicesLinks)
+  // Only use provided services - no hardcoded fallback to prevent category mixing
+  const serviceMenuLinks = servicesLinks && servicesLinks.length > 0
+    ? normalizeServiceLinks(servicesLinks)
+    : []
   const hasServiceMenu = serviceMenuLinks.length > 0
 
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 overflow-visible transition-all duration-200 bg-slate-950/95 backdrop-blur-lg border-b border-white/15 ${
-          isScrolled ? 'shadow-lg' : ''
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 overflow-visible transition-all duration-200 bg-slate-950/95 backdrop-blur-lg border-b border-white/15 ${isScrolled ? 'shadow-lg' : ''
+          }`}
         style={{ paddingTop: 'env(safe-area-inset-top)' }}
       >
         <div className="absolute inset-0 overflow-hidden pointer-events-none">

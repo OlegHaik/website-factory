@@ -121,10 +121,16 @@ export default async function ServicePage({
   const { site, domain: requestDomain } = await resolveSiteContext()
   if (!site) notFound()
 
-  if (!site.business_name) throw new Error('Site is missing required field: business_name')
-  if (!site.phone) throw new Error('Site is missing required field: phone')
-  if (!site.city) throw new Error('Site is missing required field: city')
-  if (!site.state) throw new Error('Site is missing required field: state')
+  // Gracefully handle missing required fields
+  if (!site.business_name || !site.phone || !site.city || !site.state) {
+    console.error('Site missing required fields:', {
+      business_name: !!site.business_name,
+      phone: !!site.phone,
+      city: !!site.city,
+      state: !!site.state
+    })
+    notFound()
+  }
   const category = site.category || 'water_damage'
 
   const variables = {

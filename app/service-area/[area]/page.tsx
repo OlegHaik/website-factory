@@ -5,7 +5,7 @@ import { getServiceAreaIndexForCurrentDomain, getSiteByDomainAndSlug, resolveSit
 import { processContent } from "@/lib/spintax"
 import { generatePageMetadata } from "@/lib/generate-metadata"
 import { getContentHeader, getContentServiceArea } from "@/lib/fetch-content"
-import { DEFAULT_HEADER, DEFAULT_NAV, DEFAULT_SERVICE_AREA } from "@/lib/default-content"
+import { DEFAULT_HEADER, DEFAULT_NAV, getDefaultServiceArea } from "@/lib/default-content"
 import { parseSocialLinks } from "@/lib/types"
 import { fetchCategoryServices } from "@/lib/services"
 
@@ -77,10 +77,16 @@ export default async function ServiceAreaPage({
   }
   if (!areaSite) notFound()
 
-  if (!areaSite.business_name) throw new Error('Site is missing required field: business_name')
-  if (!areaSite.phone) throw new Error('Site is missing required field: phone')
-  if (!areaSite.city) throw new Error('Site is missing required field: city')
-  if (!areaSite.state) throw new Error('Site is missing required field: state')
+  // Gracefully handle missing required fields
+  if (!areaSite.business_name || !areaSite.phone || !areaSite.city || !areaSite.state) {
+    console.error('Area site missing required fields:', {
+      business_name: !!areaSite.business_name,
+      phone: !!areaSite.phone,
+      city: !!areaSite.city,
+      state: !!areaSite.state
+    })
+    notFound()
+  }
   const category = areaSite.category || mainSite.category || 'water_damage'
 
   const areaName = areaSite.city
@@ -112,59 +118,61 @@ export default async function ServiceAreaPage({
 
   const areaSeed = `${resolvedDomain}:${areaSlug}`
 
-  const headline = processContent(areaContent?.headline_spintax || DEFAULT_SERVICE_AREA.headline, areaSeed, variables)
+  const categoryDefaults = getDefaultServiceArea(category)
+
+  const headline = processContent(areaContent?.headline_spintax || categoryDefaults.headline, areaSeed, variables)
   const paragraph1 = processContent(
-    areaContent?.paragraph1_spintax || DEFAULT_SERVICE_AREA.paragraph1,
+    areaContent?.paragraph1_spintax || categoryDefaults.paragraph1,
     areaSeed,
     variables,
   )
   const paragraph2 = processContent(
-    areaContent?.paragraph2_spintax || DEFAULT_SERVICE_AREA.paragraph2,
+    areaContent?.paragraph2_spintax || categoryDefaults.paragraph2,
     areaSeed,
     variables,
   )
   const paragraph3 = processContent(
-    areaContent?.paragraph3_spintax || DEFAULT_SERVICE_AREA.paragraph3,
+    areaContent?.paragraph3_spintax || categoryDefaults.paragraph3,
     areaSeed,
     variables,
   )
   const paragraph4 = processContent(
-    areaContent?.paragraph4_spintax || DEFAULT_SERVICE_AREA.paragraph4,
+    areaContent?.paragraph4_spintax || categoryDefaults.paragraph4,
     areaSeed,
     variables,
   )
   const whyCityHeadline = processContent(
-    areaContent?.why_city_headline_spintax || DEFAULT_SERVICE_AREA.why_city_headline,
+    areaContent?.why_city_headline_spintax || categoryDefaults.why_city_headline,
     areaSeed,
     variables,
   )
   const whyCityParagraph = processContent(
-    areaContent?.why_city_paragraph_spintax || DEFAULT_SERVICE_AREA.why_city_paragraph,
+    areaContent?.why_city_paragraph_spintax || categoryDefaults.why_city_paragraph,
     areaSeed,
     variables,
   )
   const servicesListHeadline = processContent(
-    areaContent?.services_list_headline_spintax || DEFAULT_SERVICE_AREA.services_list_headline,
+    areaContent?.services_list_headline_spintax || categoryDefaults.services_list_headline,
     areaSeed,
     variables,
   )
   const whyChooseHeadline = processContent(
-    areaContent?.why_choose_headline_spintax || DEFAULT_SERVICE_AREA.why_choose_headline,
+    areaContent?.why_choose_headline_spintax || categoryDefaults.why_choose_headline,
     areaSeed,
     variables,
   )
   const trustPoints = processContent(
-    areaContent?.trust_points_spintax || DEFAULT_SERVICE_AREA.trust_points,
+    areaContent?.trust_points_spintax || categoryDefaults.trust_points,
     areaSeed,
     variables,
   )
   const ctaHeadline = processContent(
-    areaContent?.midpage_cta_headline_spintax || DEFAULT_SERVICE_AREA.midpage_cta_headline,
+    areaContent?.midpage_cta_headline_spintax || categoryDefaults.midpage_cta_headline,
     areaSeed,
     variables,
   )
   const ctaDescription = processContent(
-    areaContent?.midpage_cta_subtext_spintax || DEFAULT_SERVICE_AREA.midpage_cta_subtext,
+    areaContent?.midpage_cta_subtext_spintax || categoryDefaults.midpage_cta_subtext,
     areaSeed,
     variables,
   )

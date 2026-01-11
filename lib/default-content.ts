@@ -146,6 +146,62 @@ export const DEFAULT_SERVICE_AREA = {
   services_list_headline: "{Popular Services|Services We Provide in {{city}}}",
 }
 
+export const DEFAULT_SERVICE_AREA_ROOFING = {
+  headline: "{Trusted|Professional|Expert|Licensed|Local} Roofing Services in {{city}}, {{state}}",
+  paragraph1:
+    "{Looking for reliable roofing in|Need a trusted roofer in} {{city}}? Our team {delivers quality workmanship|provides expert roofing solutions} with {materials built to last|long-lasting results}.",
+  paragraph2:
+    "{Roof damage, leaks, and aging shingles|Roofing problems} can {happen without warning|affect your home's protection}. We help {assess damage, recommend solutions, and complete repairs|restore your roof's integrity quickly}.",
+  paragraph3:
+    "Our technicians use {quality materials|industry-leading products} and {proven techniques|expert craftsmanship} to {protect your home|deliver lasting results} in {{city}}, {{state}}.",
+  paragraph4:
+    "{Need a roofing estimate|Ready to get started}? Call {{phone}} for {a free consultation|expert advice} in {{city}}.",
+  why_city_headline: "{Why {{city}} Homeowners Choose Us|Your Trusted {{city}} Roofers}",
+  why_city_paragraph:
+    "We combine {quality materials|expert installation} with {transparent pricing|honest communication} and {experienced crews|proven processes} for homes in {{city}}, {{state}}.",
+  midpage_cta_headline: "{Need Roofing Help in {{city}}?|Get a Free Roofing Estimate}",
+  midpage_cta_subtext:
+    "Call for a free inspection and estimate. Our team handles everything from repairs to full replacements.",
+  why_choose_headline: "{Trusted by {{city}} Homeowners|Why Homeowners Recommend Us}",
+  trust_points:
+    "Licensed & insured\nQuality materials\nTransparent pricing\nExperienced crews\nWarranty protection",
+  services_list_headline: "{Our Roofing Services|Roofing Services in {{city}}}",
+}
+
+export const DEFAULT_SERVICE_AREA_MOLD = {
+  headline: "{Certified|Professional|Expert|Trusted|Local} Mold Remediation in {{city}}, {{state}}",
+  paragraph1:
+    "{Concerned about mold in|Need mold removal in} {{city}}? Our team {provides certified remediation|safely eliminates mold} with {proven protocols|IICRC-approved methods}.",
+  paragraph2:
+    "{Mold growth can spread quickly|Hidden mold poses health risks}. We help {identify the source, contain affected areas, and remediate safely|eliminate mold and prevent recurrence}.",
+  paragraph3:
+    "Our technicians use {HEPA filtration|professional containment} and {antimicrobial treatments|certified protocols} to {ensure safe indoor air|protect your family} in {{city}}, {{state}}.",
+  paragraph4:
+    "{Worried about mold|Ready to schedule an inspection}? Call {{phone}} for {expert guidance|a free consultation} in {{city}}.",
+  why_city_headline: "{Why {{city}} Homeowners Trust Us|Your Local Mold Experts}",
+  why_city_paragraph:
+    "We combine {certified technicians|proven protocols} with {clear communication|honest assessments} and {thorough remediation|lasting solutions} for properties in {{city}}, {{state}}.",
+  midpage_cta_headline: "{Mold Concerns in {{city}}?|Schedule a Mold Inspection}",
+  midpage_cta_subtext:
+    "Call for a professional assessment. Our team provides thorough inspections and effective remediation.",
+  why_choose_headline: "{Trusted Mold Remediation|Why Homeowners Choose Us}",
+  trust_points:
+    "Certified technicians\nIICRC protocols\nHEPA filtration\nMoisture source identification\nClearance testing",
+  services_list_headline: "{Our Mold Services|Mold Services in {{city}}}",
+}
+
+// Helper to get category-appropriate service area defaults
+export function getDefaultServiceArea(category: string) {
+  switch (category) {
+    case "roofing":
+      return DEFAULT_SERVICE_AREA_ROOFING
+    case "mold_remediation":
+      return DEFAULT_SERVICE_AREA_MOLD
+    default:
+      return DEFAULT_SERVICE_AREA
+  }
+}
+
 export const DEFAULT_META = {
   homepage: {
     title: "{Trusted|Professional|Expert} Fire & Water Restoration in {{city}}, {{state}} | {{business_name}}",
@@ -244,6 +300,32 @@ export const DEFAULT_HERO = {
   subheadline_spintax:
     "{Don't let water damage destroy your home|When disaster strikes, every second counts}. Our {{city}} team {uses advanced drying tech|responds within 60 minutes|is available 24/7} to restore your property fast. {Direct insurance billing available|We work with all insurance companies}.",
   chat_button_spintax: "{Chat With Us|Message Us|Text Us|Start Chat|Get Free Estimate}",
+}
+
+export const DEFAULT_HERO_ROOFING = {
+  headline_spintax: "{Trusted|Professional|Expert|Licensed} Roofing Contractors in {{city}}, {{state}}",
+  subheadline_spintax:
+    "{Protect your home with a quality roof|Your roof is your first line of defense}. Our {{city}} team {uses premium materials|delivers expert installation|provides lasting results}. {Free estimates available|Licensed and insured}.",
+  chat_button_spintax: "{Get Free Estimate|Chat With Us|Message Us|Request Quote}",
+}
+
+export const DEFAULT_HERO_MOLD = {
+  headline_spintax: "{Certified|Professional|Expert|Trusted} Mold Remediation in {{city}}, {{state}}",
+  subheadline_spintax:
+    "{Don't let mold compromise your health|Mold problems require professional solutions}. Our {{city}} team {follows IICRC protocols|uses certified methods|ensures safe indoor air}. {Free inspections available|We handle insurance claims}.",
+  chat_button_spintax: "{Schedule Inspection|Chat With Us|Message Us|Get Free Quote}",
+}
+
+// Helper to get category-appropriate hero defaults
+export function getDefaultHero(category: string) {
+  switch (category) {
+    case "roofing":
+      return DEFAULT_HERO_ROOFING
+    case "mold_remediation":
+      return DEFAULT_HERO_MOLD
+    default:
+      return DEFAULT_HERO
+  }
 }
 
 export const DEFAULT_SERVICES = {
