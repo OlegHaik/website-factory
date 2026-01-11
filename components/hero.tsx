@@ -1,4 +1,4 @@
-import { Phone, MessageSquare } from "lucide-react"
+import { Phone, Mail } from "lucide-react"
 import Link from "next/link"
 
 interface HeroProps {
@@ -9,17 +9,17 @@ interface HeroProps {
   businessName: string
   domain?: string
   chatButtonText?: string
+  email?: string
 }
 
-export function Hero({ title, description, phone, phoneDisplay, businessName, domain, chatButtonText }: HeroProps) {
-  const smsNumber = "+19492675767"
-  const smsMessage = encodeURIComponent(
-    `Hello, I'm reaching out from ${(businessName || '').replace(/&/g, 'and')} (${domain || 'our website'}), and would like to request a free estimate.`,
-  )
-  const smsLink = `sms:${smsNumber}?body=${smsMessage}`
+export function Hero({ title, description, phone, phoneDisplay, businessName, domain, chatButtonText, email }: HeroProps) {
+  const defaultEmail = email || `info@${(domain || 'example.com').replace(/^https?:\/\//, '').replace(/^www\./, '')}`
+  const emailSubject = encodeURIComponent(`Inquiry from ${businessName || 'Website'}`)
+  const emailBody = encodeURIComponent(`Hello,\n\nI'm reaching out from your website and would like to request more information.\n\nThank you.`)
+  const emailLink = `mailto:${defaultEmail}?subject=${emailSubject}&body=${emailBody}`
   const phoneHref = `tel:${phone.replace(/\D/g, '')}`
   const displayPhone = phoneDisplay || phone
-  const chatText = chatButtonText || 'Chat With Us'
+  const buttonText = chatButtonText || 'Email Us'
 
   return (
     <section className="relative bg-slate-950 overflow-hidden">
@@ -53,13 +53,13 @@ export function Hero({ title, description, phone, phoneDisplay, businessName, do
               <Phone className="w-4 h-4 mr-2" />
               {displayPhone}
             </Link>
-            <Link
-              href={smsLink}
+            <a
+              href={emailLink}
               className="inline-flex items-center justify-center border-2 border-white text-slate-900 bg-white hover:bg-[var(--accent-hover)] hover:border-[var(--accent-hover)] font-semibold px-6 py-3 text-base rounded-lg w-full sm:w-auto transition-all duration-300"
             >
-              <MessageSquare className="w-4 h-4 mr-2" />
-              {chatText}
-            </Link>
+              <Mail className="w-4 h-4 mr-2" />
+              {buttonText}
+            </a>
           </div>
         </div>
       </div>

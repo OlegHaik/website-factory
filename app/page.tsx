@@ -247,6 +247,7 @@ export default async function Home() {
         businessName={site.business_name}
         domain={site.resolvedDomain}
         chatButtonText={chatButtonText}
+        email={site.email || undefined}
       />
 
       <Services services={categoryServices} />
