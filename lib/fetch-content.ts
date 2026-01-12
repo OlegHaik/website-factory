@@ -359,16 +359,31 @@ export async function getContentSeoBody(category: string = "water_damage"): Prom
   }
   if (!data) return null
 
-  const row = data as ContentSeoBody
+  // Cast to any first to access both old and new column names
+  const row = data as Record<string, unknown>
 
-  // Normalize newly named columns to the fields the app expects.
-  const intro_spintax = row.intro_spintax || row.intro_paragraph || ""
-  const process_title_spintax = row.process_title_spintax || row.section_title || ""
+  // Normalize column names: DB uses different names than code expects
+  // DB columns -> Code expects
+  // intro_paragraph -> intro_spintax
+  // section_title -> process_title_spintax (H1 heading)
+  // why_choose_title -> why_choose_title_spintax
+  // why_choose_content -> why_choose_spintax
+  // process_content -> process_spintax
+  const intro_spintax = (row.intro_spintax as string) || (row.intro_paragraph as string) || ""
+  const process_title_spintax = (row.process_title_spintax as string) || (row.section_title as string) || ""
+  const why_choose_title_spintax = (row.why_choose_title_spintax as string) || (row.why_choose_title as string) || ""
+  const why_choose_spintax = (row.why_choose_spintax as string) || (row.why_choose_content as string) || ""
+  const process_spintax = (row.process_spintax as string) || (row.process_content as string) || ""
 
   return {
-    ...row,
+    id: row.id as number,
     intro_spintax,
+    why_choose_title_spintax,
+    why_choose_spintax,
     process_title_spintax,
+    process_spintax,
+    intro_paragraph: row.intro_paragraph as string | null,
+    section_title: row.section_title as string | null,
   }
 }
 

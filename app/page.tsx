@@ -109,6 +109,17 @@ export default async function Home() {
   const faqContent = await getContentFAQ(category)
   const testimonialsContent = await getContentTestimonials(category)
 
+  // DEBUG: Log category values to trace the issue
+  if (process.env.SITE_DEBUG === '1') {
+    console.log('=== SEO BODY DEBUG ===')
+    console.log('site.category from DB:', site.category)
+    console.log('Resolved category:', category)
+    console.log('seoBodyContent:', seoBodyContent ? 'FOUND' : 'NULL (using defaults)')
+    if (seoBodyContent) {
+      console.log('seoBodyContent intro (first 100 chars):', seoBodyContent.intro_spintax?.substring(0, 100))
+    }
+  }
+
   const navLabels = {
     home: processContent(headerContent?.nav_home || DEFAULT_NAV.home, domain, variables),
     services: processContent(headerContent?.nav_services || DEFAULT_NAV.services, domain, variables),
