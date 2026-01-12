@@ -1,5 +1,6 @@
 import { createClient } from "@/lib/supabase/server"
 import { DEFAULT_TESTIMONIALS } from "@/lib/default-content"
+import { normalizeCategory } from "@/lib/content-guard"
 
 export interface ContentHeader {
   id: number
@@ -208,11 +209,12 @@ export interface ContentMap {
 }
 
 export async function getContentHeader(category: string = "water_damage"): Promise<ContentHeader | null> {
+  const normalizedCategory = normalizeCategory(category)
   const supabase = await createClient()
   const { data, error } = await supabase
     .from("content_header")
     .select("*")
-    .eq("category", category)
+    .eq("category", normalizedCategory)
     .limit(1)
     .maybeSingle()
 
@@ -227,12 +229,13 @@ export async function getContentServicePage(
   serviceSlug: string,
   category: string = "water_damage",
 ): Promise<ContentServicePage | null> {
+  const normalizedCategory = normalizeCategory(category)
   const supabase = await createClient()
   const { data, error } = await supabase
     .from("content_service_pages")
     .select("*")
     .eq("service_slug", serviceSlug)
-    .eq("category", category)
+    .eq("category", normalizedCategory)
     .limit(1)
     .maybeSingle()
 
@@ -244,11 +247,12 @@ export async function getContentServicePage(
 }
 
 export async function getContentServiceArea(category: string = "water_damage"): Promise<ContentServiceArea | null> {
+  const normalizedCategory = normalizeCategory(category)
   const supabase = await createClient()
   const { data, error } = await supabase
     .from("content_service_area")
     .select("*")
-    .eq("category", category)
+    .eq("category", normalizedCategory)
     .limit(1)
     .maybeSingle()
 
@@ -297,11 +301,12 @@ export async function getContentLegal(
 }
 
 export async function getContentHero(category: string = "water_damage"): Promise<ContentHero | null> {
+  const normalizedCategory = normalizeCategory(category)
   const supabase = await createClient()
   const { data, error } = await supabase
     .from("content_hero")
     .select("*")
-    .eq("category", category)
+    .eq("category", normalizedCategory)
     .limit(1)
     .maybeSingle()
 
@@ -313,11 +318,12 @@ export async function getContentHero(category: string = "water_damage"): Promise
 }
 
 export async function getContentServices(category: string = "water_damage"): Promise<ContentService | null> {
+  const normalizedCategory = normalizeCategory(category)
   const supabase = await createClient()
   const { data, error } = await supabase
     .from("content_services")
     .select("*")
-    .eq("category", category)
+    .eq("category", normalizedCategory)
     .limit(1)
     .maybeSingle()
 
@@ -329,11 +335,12 @@ export async function getContentServices(category: string = "water_damage"): Pro
 }
 
 export async function getContentCTA(category: string = "water_damage"): Promise<ContentCTA | null> {
+  const normalizedCategory = normalizeCategory(category)
   const supabase = await createClient()
   const { data, error } = await supabase
     .from("content_cta")
     .select("*")
-    .eq("category", category)
+    .eq("category", normalizedCategory)
     .limit(1)
     .maybeSingle()
 
@@ -345,11 +352,12 @@ export async function getContentCTA(category: string = "water_damage"): Promise<
 }
 
 export async function getContentSeoBody(category: string = "water_damage"): Promise<ContentSeoBody | null> {
+  const normalizedCategory = normalizeCategory(category)
   const supabase = await createClient()
   const { data, error } = await supabase
     .from("content_seo_body")
     .select("*")
-    .eq("category", category)
+    .eq("category", normalizedCategory)
     .limit(1)
     .maybeSingle()
 
@@ -388,11 +396,12 @@ export async function getContentSeoBody(category: string = "water_damage"): Prom
 }
 
 export async function getContentFAQ(category: string = "water_damage"): Promise<ContentFAQ | null> {
+  const normalizedCategory = normalizeCategory(category)
   const supabase = await createClient()
   const { data, error } = await supabase
     .from("content_faq")
     .select("*")
-    .eq("category", category)
+    .eq("category", normalizedCategory)
     .limit(1)
     .maybeSingle()
 
@@ -421,11 +430,12 @@ export async function fetchQuestionnaire(category: string = "water_damage"): Pro
 }
 
 export async function getContentTestimonials(category: string = "water_damage"): Promise<ContentTestimonials | null> {
+  const normalizedCategory = normalizeCategory(category)
   const supabase = await createClient()
   const { data, error } = await supabase
     .from("content_testimonials")
     .select("*")
-    .eq("category", category)
+    .eq("category", normalizedCategory)
     .limit(1)
     .maybeSingle()
 
