@@ -189,13 +189,15 @@ export default async function ServiceAreaPage({
 
   const ourLinksLabel = processContent(headerContent?.our_links_spintax || DEFAULT_HEADER.ourLinks, resolvedDomain, variables)
 
-  // Footer shows the service area's own contact info
+  // Footer shows the service area's own contact info with fallback to main site
   const footerAddress = {
     address: areaSite.address || mainSite.address,
     city: areaSite.city || mainSite.city,
     state: areaSite.state || mainSite.state,
     zipCode: areaSite.zip_code || mainSite.zip_code,
     email: areaSite.email || mainSite.email,
+    phone: areaSite.phone || mainSite.phone,
+    phoneDisplay: areaSite.phoneDisplay || mainSite.phoneDisplay,
   }
 
   const faqItems: { question: string; answer: string }[] = []
@@ -266,8 +268,8 @@ export default async function ServiceAreaPage({
         businessName={areaSite.business_name}
         siteId={areaSite.id}
         domain={areaSite.resolvedDomain}
-        phone={areaSite.phone}
-        phoneDisplay={areaSite.phoneDisplay || undefined}
+        phone={footerAddress.phone || areaSite.phone}
+        phoneDisplay={footerAddress.phoneDisplay || undefined}
         address={footerAddress.address}
         city={footerAddress.city}
         state={footerAddress.state}
@@ -279,7 +281,7 @@ export default async function ServiceAreaPage({
         servicesLinks={services.map((svc) => ({ href: svc.href, label: svc.title }))}
         category={category}
       />
-      <FloatingCall phone={areaSite.phone} />
+      <FloatingCall phone={footerAddress.phone || areaSite.phone} />
     </div>
   )
 }
