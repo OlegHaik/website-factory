@@ -122,6 +122,42 @@ export const DEFAULT_SERVICE_PAGE = {
     trust_points:
       "Safety-first procedures\nProfessional disinfection\nFast emergency response\nClear scope and updates\nExperienced technicians",
   },
+  // Roofing service defaults
+  roofing_generic: {
+    hero_headline: "{Professional|Expert|Trusted|Licensed} Roofing Services in {{city}}, {{state}}",
+    hero_subheadline: "{Quality roofing installation and repairs|Expert roof solutions} by licensed contractors.",
+    hero_cta_secondary: "{Get a Free Estimate|Request a Quote|Contact Us}",
+    section_headline: "{Professional Roofing|Expert Roof Services} for {{city}} Homes & Businesses",
+    section_body:
+      "{Your roof protects everything beneath it|A quality roof is essential for your property}. Our {{city}} team provides {expert installation, repairs, and maintenance|comprehensive roofing solutions}.",
+    process_headline: "{Our Roofing Process|How We Complete Your Roof Project}",
+    process_body:
+      "We start with a thorough inspection, provide a detailed estimate, use quality materials, and ensure professional installation with cleanup.",
+    midpage_cta_headline: "{Need Roofing Help?|Get Your Free Roofing Estimate}",
+    midpage_cta_subtext: "Call now for a free inspection and estimate in {{city}}.",
+    why_choose_headline: "{Why {{city}} Homeowners Choose Us|Why Trust Our Roofing Team}",
+    trust_points:
+      "Licensed & insured\nQuality materials\nExperienced crews\nTransparent pricing\nWarranty protection",
+  },
+}
+
+// Category-to-fallback mapping for service pages
+const CATEGORY_SERVICE_FALLBACK: Record<string, string> = {
+  water_damage: "water",
+  roofing: "roofing_generic",
+  mold_remediation: "mold",
+  plumbing: "burst",
+}
+
+// Helper to get category-appropriate service page defaults
+export function getDefaultServicePageForCategory(serviceKey: string, category: string) {
+  // First try exact service key match
+  if (DEFAULT_SERVICE_PAGE[serviceKey as keyof typeof DEFAULT_SERVICE_PAGE]) {
+    return DEFAULT_SERVICE_PAGE[serviceKey as keyof typeof DEFAULT_SERVICE_PAGE]
+  }
+  // Fall back to category-appropriate default
+  const categoryFallback = CATEGORY_SERVICE_FALLBACK[category] || "water"
+  return DEFAULT_SERVICE_PAGE[categoryFallback as keyof typeof DEFAULT_SERVICE_PAGE] || DEFAULT_SERVICE_PAGE.roofing_generic
 }
 
 export const DEFAULT_SERVICE_AREA = {

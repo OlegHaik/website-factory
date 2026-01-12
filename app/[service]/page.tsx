@@ -4,7 +4,7 @@ import { notFound } from "next/navigation"
 import { getServiceAreaIndexForCurrentDomain, resolveSiteContext } from "@/lib/sites"
 import { processContent } from "@/lib/spintax"
 import { getContentHeader, getContentServicePage, getContentMeta } from "@/lib/fetch-content"
-import { DEFAULT_HEADER, DEFAULT_NAV, DEFAULT_SERVICE_PAGE } from "@/lib/default-content"
+import { DEFAULT_HEADER, DEFAULT_NAV, DEFAULT_SERVICE_PAGE, getDefaultServicePageForCategory } from "@/lib/default-content"
 import { generatePageMetadata } from "@/lib/generate-metadata"
 import { parseSocialLinks } from "@/lib/types"
 import { fetchCategoryServices } from "@/lib/services"
@@ -167,7 +167,7 @@ export default async function ServicePage({
   const ourLinksLabel = processContent(headerContent?.our_links_spintax || DEFAULT_HEADER.ourLinks, domain, variables)
 
   const pageContent = await getContentServicePage(serviceSlug, category)
-  const defaults = DEFAULT_SERVICE_PAGE[serviceKey] || DEFAULT_SERVICE_PAGE.water
+  const defaults = getDefaultServicePageForCategory(serviceKey, category)
 
   const seed = `${domain}:${serviceSlug}`
 
