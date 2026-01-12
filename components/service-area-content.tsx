@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { LicensedInsured, DEFAULT_LICENSED_INSURED } from "@/components/licensed-insured"
 
 interface LinkItem {
   label: string
@@ -72,10 +73,18 @@ interface ServiceAreaContentProps {
     whyCity: { headline: string; paragraph: string }
     servicesListHeadline: string
   }
+  licensedInsured?: {
+    title: string
+    body: string
+  }
 }
 
-export function ServiceAreaContent({ areaName, state, services, otherAreas, category = "water_damage", content }: ServiceAreaContentProps) {
+export function ServiceAreaContent({ areaName, state, services, otherAreas, category = "water_damage", content, licensedInsured }: ServiceAreaContentProps) {
   const categoryDefaults = CATEGORY_DEFAULTS[category] || DEFAULT_CATEGORY
+
+  // Use props or fall back to defaults
+  const liTitle = licensedInsured?.title || DEFAULT_LICENSED_INSURED.title
+  const liBody = licensedInsured?.body || DEFAULT_LICENSED_INSURED.body
 
   return (
     <section className="py-24 lg:py-32 bg-white">
@@ -143,12 +152,7 @@ export function ServiceAreaContent({ areaName, state, services, otherAreas, cate
               </div>
             )}
 
-            <div className="rounded-2xl border border-slate-200 p-8">
-              <h3 className="text-xl font-bold text-slate-900 mb-2">Licensed & Insured</h3>
-              <p className="text-slate-600 leading-relaxed">
-                Certified technicians, professional equipment, and proven service processes.
-              </p>
-            </div>
+            <LicensedInsured title={liTitle} body={liBody} variant="simple" />
           </aside>
         </div>
       </div>

@@ -1,5 +1,6 @@
-import { ShieldCheck, MapPin } from "lucide-react"
+import { MapPin } from "lucide-react"
 import Link from "next/link"
+import { LicensedInsured, DEFAULT_LICENSED_INSURED } from "@/components/licensed-insured"
 
 interface ServiceArea {
   name: string
@@ -18,14 +19,22 @@ interface AboutProps {
     processTitle: string
     process: string
   }
+  licensedInsured?: {
+    title: string
+    body: string
+  }
 }
 
-export function About({ businessName, city, state, serviceAreas, seoContent }: AboutProps) {
+export function About({ businessName, city, state, serviceAreas, seoContent, licensedInsured }: AboutProps) {
   const introText = seoContent.intro
   const whyChooseTitleText = seoContent.whyChooseTitle
   const whyChooseText = seoContent.whyChoose
   const processTitleText = seoContent.processTitle
   const processText = seoContent.process
+
+  // Use props or fall back to defaults
+  const liTitle = licensedInsured?.title || DEFAULT_LICENSED_INSURED.title
+  const liBody = licensedInsured?.body || DEFAULT_LICENSED_INSURED.body
 
   return (
     <section id="about" className="py-24 lg:py-36 bg-slate-50">
@@ -76,20 +85,11 @@ export function About({ businessName, city, state, serviceAreas, seoContent }: A
               )}
             </div>
 
-            <div className="bg-white rounded-2xl p-8 border border-slate-200">
-              <div className="flex justify-center mb-4">
-                <div className="w-14 h-14 bg-teal-50 rounded-full flex items-center justify-center">
-                  <ShieldCheck className="w-7 h-7 text-[var(--accent-hover)]" />
-                </div>
-              </div>
-              <h3 className="text-xl font-semibold text-slate-900 text-center mb-3">Licensed & Insured</h3>
-              <p className="text-slate-600 text-center leading-relaxed">
-                We are fully certified to handle all types of projects in {state}.
-              </p>
-            </div>
+            <LicensedInsured title={liTitle} body={liBody} variant="card" />
           </div>
         </div>
       </div>
     </section>
   )
 }
+

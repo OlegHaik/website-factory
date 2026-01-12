@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { LicensedInsured, DEFAULT_LICENSED_INSURED } from "@/components/licensed-insured"
 
 interface LinkItem {
   label: string
@@ -17,6 +18,10 @@ interface ServiceContentProps {
   state: string
   serviceAreas: Array<{ name: string; slug: string }>
   otherServices: LinkItem[]
+  licensedInsured?: {
+    title: string
+    body: string
+  }
 }
 
 function splitParagraphs(text: string): string[] {
@@ -29,7 +34,7 @@ function splitParagraphs(text: string): string[] {
   return parts.length > 0 ? parts : [String(text || '')]
 }
 
-export function ServiceContent({ serviceTitle, serviceDescription, intro, sectionHeadline, sectionBody, processHeadline, processBody, city, state, serviceAreas, otherServices }: ServiceContentProps) {
+export function ServiceContent({ serviceTitle, serviceDescription, intro, sectionHeadline, sectionBody, processHeadline, processBody, city, state, serviceAreas, otherServices, licensedInsured }: ServiceContentProps) {
   const introText = intro || serviceDescription
   const headlineText = sectionHeadline || serviceTitle
   const bodyText = sectionBody || introText
@@ -37,6 +42,10 @@ export function ServiceContent({ serviceTitle, serviceDescription, intro, sectio
   const filteredOtherServices = (otherServices || [])
     .map((service) => ({ ...service, label: String(service.label ?? '').trim() }))
     .filter((service) => service.label.length > 0)
+
+  // Use props or fall back to defaults
+  const liTitle = licensedInsured?.title || DEFAULT_LICENSED_INSURED.title
+  const liBody = licensedInsured?.body || DEFAULT_LICENSED_INSURED.body
 
   return (
     <section className="py-24 lg:py-32 bg-white">
@@ -104,12 +113,7 @@ export function ServiceContent({ serviceTitle, serviceDescription, intro, sectio
               </div>
             )}
 
-            <div className="rounded-2xl border border-slate-200 p-8">
-              <h3 className="text-xl font-bold text-slate-900 mb-2">Licensed & Insured</h3>
-              <p className="text-slate-600 leading-relaxed">
-                Certified technicians, professional equipment, and proven service processes.
-              </p>
-            </div>
+            <LicensedInsured title={liTitle} body={liBody} variant="simple" />
           </aside>
         </div>
       </div>

@@ -570,3 +570,75 @@ export async function fetchLinks(siteId: number): Promise<LinkRow[]> {
     }
   })
 }
+
+// =============================================
+// Static Sections (e.g., "Licensed & Insured")
+// =============================================
+
+export interface StaticSection {
+  id: number
+  section_key: string
+  category: string
+  site_id: number | null
+  title_spintax: string
+  body_spintax: string
+}
+
+/**
+ * Fetch a static section with site override priority.
+ * 1. If site-specific record exists, use it
+ * 2. Otherwise fall back to category default (site_id = NULL)
+ * 3. If neither exists, log warning and return null
+ */
+export async function getStaticSection(
+  sectionKey: string,
+  category: string,
+  siteId?: number | null
+): Promise<StaticSection | null> {
+  const normalizedCategory = normalizeCategory(category)
+  const supabase = await createClient()
+
+  // Try site-specific first (if siteId provided)
+  if (siteId != null) {
+    const { data: siteSpecific, error: siteError } = await supabase
+      .from("content_static_sections")
+      .select("*")
+      .eq("section_key", sectionKey)
+      .eq("category", normalizedCategory)
+      .eq("site_id", siteId)
+      .limit(1)
+      .maybeSingle()
+
+    if (!siteError && siteSpecific) {
+      return siteSpecific as StaticSection
+    }
+  }
+
+  // Fall back to category default (site_id IS NULL)
+  const { data: categoryDefault, error: catError } = await supabase
+    .from("content_static_sections")
+    .select("*")
+    .eq("section_key", sectionKey)
+    .eq("category", normalizedCategory)
+    .is("site_id", null)
+    .limit(1)
+    .maybeSingle()
+
+  if (catError) {
+    console.error("Failed to fetch static section:", catError)
+    return null
+  }
+
+  if (!categoryDefault) {
+    console.warn(
+      `[ContentGuard] missing_static_section:`,
+      `site_id=${siteId ?? "none"}`,
+      `category=${normalizedCategory}`,
+      `section_key=${sectionKey}`
+    )
+    return null
+  }
+
+  return categoryDefault as StaticSection
+}
+
