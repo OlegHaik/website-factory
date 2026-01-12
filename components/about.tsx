@@ -34,7 +34,7 @@ export function About({ businessName, city, state, serviceAreas, seoContent }: A
           <div className="lg:col-span-2 space-y-10">
             <div>
               <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-8">
-                Professional Water Damage Services in {city}
+                {processTitleText}
               </h2>
               <p className="text-slate-600 text-lg leading-relaxed">{introText}</p>
             </div>
@@ -84,7 +84,7 @@ export function About({ businessName, city, state, serviceAreas, seoContent }: A
               </div>
               <h3 className="text-xl font-semibold text-slate-900 text-center mb-3">Licensed & Insured</h3>
               <p className="text-slate-600 text-center leading-relaxed">
-                We are fully certified to handle hazardous water and mold situations in {state}.
+                We are fully certified to handle all types of projects in {state}.
               </p>
             </div>
           </div>
