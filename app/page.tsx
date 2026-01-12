@@ -15,13 +15,13 @@ import {
   parseTestimonialItems,
 } from "@/lib/fetch-content"
 import {
-  DEFAULT_CTA,
-  DEFAULT_FAQ,
   DEFAULT_HEADER,
   DEFAULT_NAV,
-  DEFAULT_SEO_BODY,
-  DEFAULT_TESTIMONIALS,
+  getDefaultCta,
+  getDefaultFaq,
   getDefaultHero,
+  getDefaultSeoBody,
+  getDefaultTestimonials,
 } from "@/lib/default-content"
 import { fetchCategoryServices } from "@/lib/services"
 
@@ -135,36 +135,38 @@ export default async function Home() {
   const categoryServices = await fetchCategoryServices({ category, domain, variables })
   const servicesForSchema = categoryServices.map((svc) => svc.title).filter(Boolean)
 
-  const ctaHeadline = processContent(ctaContent?.headline_spintax || DEFAULT_CTA.headline_spintax, domain, variables)
+  const ctaDefaults = getDefaultCta(category)
+  const ctaHeadline = processContent(ctaContent?.headline_spintax || ctaDefaults.headline_spintax, domain, variables)
   const ctaSubheadline = processContent(
-    ctaContent?.subheadline_spintax || DEFAULT_CTA.subheadline_spintax,
+    ctaContent?.subheadline_spintax || ctaDefaults.subheadline_spintax,
     domain,
     variables,
   )
   const ctaChatButtonText = processContent(
-    ctaContent?.chat_button_spintax || DEFAULT_CTA.chat_button_spintax,
+    ctaContent?.chat_button_spintax || ctaDefaults.chat_button_spintax,
     domain,
     variables,
   )
 
+  const seoDefaults = getDefaultSeoBody(category)
   const seoData = {
-    intro: processContent(seoBodyContent?.intro_spintax || DEFAULT_SEO_BODY.intro_spintax, domain, variables),
+    intro: processContent(seoBodyContent?.intro_spintax || seoDefaults.intro_spintax, domain, variables),
     whyChooseTitle: processContent(
-      seoBodyContent?.why_choose_title_spintax || DEFAULT_SEO_BODY.why_choose_title_spintax,
+      seoBodyContent?.why_choose_title_spintax || seoDefaults.why_choose_title_spintax,
       domain,
       variables,
     ),
     whyChoose: processContent(
-      seoBodyContent?.why_choose_spintax || DEFAULT_SEO_BODY.why_choose_spintax,
+      seoBodyContent?.why_choose_spintax || seoDefaults.why_choose_spintax,
       domain,
       variables,
     ),
     processTitle: processContent(
-      seoBodyContent?.process_title_spintax || DEFAULT_SEO_BODY.process_title_spintax,
+      seoBodyContent?.process_title_spintax || seoDefaults.process_title_spintax,
       domain,
       variables,
     ),
-    process: processContent(seoBodyContent?.process_spintax || DEFAULT_SEO_BODY.process_spintax, domain, variables),
+    process: processContent(seoBodyContent?.process_spintax || seoDefaults.process_spintax, domain, variables),
   }
 
   const normalizeForCompare = (value: string) =>
@@ -174,15 +176,16 @@ export default async function Home() {
       .trim()
 
   if (normalizeForCompare(seoData.whyChoose) === normalizeForCompare(seoData.process)) {
-    seoData.processTitle = processContent(DEFAULT_SEO_BODY.process_title_spintax, domain, variables)
-    seoData.process = processContent(DEFAULT_SEO_BODY.process_spintax, domain, variables)
+    seoData.processTitle = processContent(seoDefaults.process_title_spintax, domain, variables)
+    seoData.process = processContent(seoDefaults.process_spintax, domain, variables)
   }
 
-  const baseFaqItems = parseFAQItems(faqContent?.items ?? DEFAULT_FAQ.items)
+  const faqDefaults = getDefaultFaq(category)
+  const baseFaqItems = parseFAQItems(faqContent?.items ?? faqDefaults.items)
 
   const mergedFaqItems = [...baseFaqItems]
   if (mergedFaqItems.length < 5) {
-    mergedFaqItems.push(...DEFAULT_FAQ.items.slice(mergedFaqItems.length, 5))
+    mergedFaqItems.push(...faqDefaults.items.slice(mergedFaqItems.length, 5))
   }
 
   const faqItems = mergedFaqItems.map((item) => ({
@@ -191,11 +194,12 @@ export default async function Home() {
   }))
 
   const faqData = {
-    heading: processContent(faqContent?.heading_spintax || DEFAULT_FAQ.heading_spintax, domain, variables),
+    heading: processContent(faqContent?.heading_spintax || faqDefaults.heading_spintax, domain, variables),
     items: faqItems,
   }
 
-  const testimonialItems = parseTestimonialItems(testimonialsContent?.items ?? DEFAULT_TESTIMONIALS.items).map((item) => ({
+  const testimonialsDefaults = getDefaultTestimonials(category)
+  const testimonialItems = parseTestimonialItems(testimonialsContent?.items ?? testimonialsDefaults.items).map((item) => ({
     name: processContent(item.name, domain, variables),
     location: processContent(item.location_spintax, domain, variables),
     text: processContent(item.text_spintax, domain, variables),
@@ -204,12 +208,12 @@ export default async function Home() {
 
   const testimonialsData = {
     heading: processContent(
-      testimonialsContent?.heading_spintax || DEFAULT_TESTIMONIALS.heading_spintax,
+      testimonialsContent?.heading_spintax || testimonialsDefaults.heading_spintax,
       domain,
       variables,
     ),
     subheading: processContent(
-      testimonialsContent?.subheading_spintax || DEFAULT_TESTIMONIALS.subheading_spintax,
+      testimonialsContent?.subheading_spintax || testimonialsDefaults.subheading_spintax,
       domain,
       variables,
     ),

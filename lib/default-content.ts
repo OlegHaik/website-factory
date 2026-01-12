@@ -367,6 +367,40 @@ export const DEFAULT_SEO_BODY = {
     "Our process begins with a {thorough inspection|comprehensive assessment|detailed evaluation}. We document everything for your insurance claim to ensure you get the coverage you deserve. Next, we begin {water extraction|moisture removal|damage mitigation} using {truck-mounted pumps|professional equipment|industrial-grade tools}. Once standing water is gone, we install {industrial air movers and dehumidifiers|professional drying equipment|commercial-grade dryers}. Finally, we perform any necessary repairs to {bring your home back to normal|restore your property|complete the restoration}.",
 }
 
+export const DEFAULT_SEO_BODY_ROOFING = {
+  intro_spintax:
+    "{Your roof is your home's first line of defense|A strong roof protects everything underneath|Quality roofing matters for your home}. At {{business_name}}, we specialize in {professional roofing services|expert roof installation and repair|comprehensive roofing solutions} for homeowners in {{city}} and surrounding areas. Our team of {certified professionals|licensed roofers|trained specialists} is dedicated to {protecting your property|ensuring your home stays dry and secure|delivering top-quality roofing work} with {precision and care|expert craftsmanship|attention to detail}.",
+  why_choose_title_spintax: "{Why Choose Our Roofing Team?|Why Trust Us?|What Sets Us Apart?}",
+  why_choose_spintax:
+    "{Choosing the right roofing company can make the difference|Selecting the best team matters|The company you choose is critical} between a roof that lasts decades and one that {fails prematurely|needs constant repairs|causes ongoing problems}. We pride ourselves on {transparency, quality materials, and expert craftsmanship|honest pricing and superior work|professional service and lasting results}. We use {premium roofing materials|industry-leading products|top-quality shingles and components}. Our roofers are {licensed and insured|professionally trained|industry certified} and undergo {rigorous training|continuous education|extensive preparation} to handle everything from {minor repairs to complete roof replacements|shingle damage to structural issues|any roofing challenge}.",
+  process_title_spintax: "{Our Roofing Process|How We Work|Our Process}",
+  process_spintax:
+    "Our process begins with a {thorough roof inspection|comprehensive assessment|detailed evaluation}. We document everything and provide a {clear estimate|transparent quote|honest proposal} with no hidden fees. Next, we prepare your property with {protective measures|proper coverings|safety precautions}. Our skilled team then {installs or repairs your roof|completes the work|performs the roofing} using {premium materials and proven techniques|quality products and expert methods|industry-best practices}. Finally, we {clean up completely|remove all debris|leave your property spotless} and perform a final walkthrough to ensure your {complete satisfaction|total approval|happiness with the work}.",
+}
+
+export const DEFAULT_SEO_BODY_MOLD = {
+  intro_spintax:
+    "{Mold can pose serious health risks to your family|Hidden mold threatens your indoor air quality|Mold growth requires professional attention}. At {{business_name}}, we specialize in {professional mold remediation|expert mold removal|comprehensive mold solutions} for homes and businesses in {{city}} and surrounding areas. Our team of {certified professionals|licensed remediation experts|trained specialists} is dedicated to {eliminating mold at the source|restoring healthy indoor air|thoroughly removing mold contamination} with {safe, proven methods|industry-approved techniques|EPA-compliant procedures}.",
+  why_choose_title_spintax: "{Why Choose Our Mold Remediation Team?|Why Trust Us?|What Sets Us Apart?}",
+  why_choose_spintax:
+    "{Choosing the right mold remediation company can make the difference|Selecting the best team matters|The company you choose is critical} between {complete mold elimination|successful remediation|lasting results} and {recurring problems|ongoing mold issues|continued contamination}. We pride ourselves on {thorough testing, complete removal, and prevention|honest assessments and effective treatment|professional service and proven results}. We use {HEPA filtration and negative air pressure|advanced containment technologies|professional-grade equipment} to prevent mold spread. Our technicians are {IICRC certified|professionally trained|industry certified} and follow {strict safety protocols|established remediation standards|comprehensive procedures} to handle everything from {small bathroom mold to extensive contamination|localized growth to whole-home remediation|any mold situation}.",
+  process_title_spintax: "{The Mold Remediation Process|How We Work|Our Process}",
+  process_spintax:
+    "Our process begins with a {thorough mold inspection|comprehensive assessment|detailed evaluation} and {air quality testing|moisture analysis|contamination mapping}. We identify the {source of moisture|root cause|underlying issue} fueling mold growth. Next, we establish {proper containment|negative air pressure barriers|isolation zones} to prevent spore spread. Our team then performs {complete mold removal|thorough remediation|professional cleanup} using {HEPA vacuums and antimicrobial treatments|industry-approved methods|EPA-registered products}. Finally, we {address the moisture source|fix the underlying problem|ensure prevention} to {prevent future mold growth|stop recurrence|keep your home mold-free}.",
+}
+
+export function getDefaultSeoBody(category: string) {
+  switch (category) {
+    case 'roofing':
+      return DEFAULT_SEO_BODY_ROOFING
+    case 'mold_remediation':
+    case 'mold':
+      return DEFAULT_SEO_BODY_MOLD
+    default:
+      return DEFAULT_SEO_BODY
+  }
+}
+
 export const DEFAULT_FAQ = {
   heading_spintax: "{Frequently Asked Questions|Common Questions|Questions Homeowners Ask}",
   items: [
@@ -424,4 +458,184 @@ export const DEFAULT_TESTIMONIALS = {
       rating: 5,
     },
   ],
+}
+
+// ============================================
+// CATEGORY-SPECIFIC CTA DEFAULTS
+// ============================================
+
+export const DEFAULT_CTA_ROOFING = {
+  headline_spintax: "{Need Roofing Help?|Get a Free Roofing Estimate|Ready to Fix Your Roof?}",
+  subheadline_spintax:
+    "{Call for a free inspection and estimate|Contact us for expert roofing services}. Our team handles {roof repairs, replacements, and installations|all roofing projects} with {quality materials and expert craftsmanship|professionalism and care}.",
+  chat_button_spintax: "{Email Us|Get Free Estimate|Request Quote|Contact Us}",
+}
+
+export const DEFAULT_CTA_MOLD = {
+  headline_spintax: "{Concerned About Mold?|Need Mold Remediation?|Suspect Mold in Your Home?}",
+  subheadline_spintax:
+    "{Call for a professional mold assessment|Contact us for certified mold remediation}. Our team uses {HEPA filtration and safe removal techniques|proven remediation methods} to {restore healthy indoor air|eliminate mold at the source}.",
+  chat_button_spintax: "{Email Us|Get Free Estimate|Request Assessment|Contact Us}",
+}
+
+export function getDefaultCta(category: string) {
+  switch (category) {
+    case 'roofing':
+      return DEFAULT_CTA_ROOFING
+    case 'mold_remediation':
+    case 'mold':
+      return DEFAULT_CTA_MOLD
+    default:
+      return DEFAULT_CTA
+  }
+}
+
+// ============================================
+// CATEGORY-SPECIFIC FAQ DEFAULTS
+// ============================================
+
+export const DEFAULT_FAQ_ROOFING = {
+  heading_spintax: "{Frequently Asked Questions|Common Roofing Questions|Questions Homeowners Ask}",
+  items: [
+    {
+      question_spintax: "{How long does a roof replacement take?|What's the timeline for a new roof?|How long will my roof project take?}",
+      answer_spintax:
+        "{Most residential roof replacements take 1-3 days|A typical roof replacement takes a few days|We complete most roofs in 1-3 days}, depending on the {size and complexity|scope of work|roof type and weather conditions}.",
+    },
+    {
+      question_spintax: "{What roofing materials do you recommend?|What type of shingles should I choose?|Which roofing material is best?}",
+      answer_spintax:
+        "{We offer various options including asphalt, metal, and tile|We work with asphalt shingles, metal roofing, and more|We recommend materials based on your budget and climate}. Our team will help you {choose the best option|make an informed decision|select the right material} for your home.",
+    },
+    {
+      question_spintax: "{Do you offer free roof inspections?|Can I get a free estimate?|Is the inspection free?}",
+      answer_spintax:
+        "{Yes, we offer free inspections and estimates|Absolutely, our inspections are complimentary|We provide free estimates for all roofing projects} with {no obligation|no pressure|no strings attached}.",
+    },
+    {
+      question_spintax: "{How do I know if I need a new roof or just repairs?|Should I repair or replace my roof?|When is it time for a new roof?}",
+      answer_spintax:
+        "{Our inspection will reveal the extent of damage|We'll assess your roof's condition thoroughly|We provide honest recommendations}. Generally, if your roof is {over 20 years old or has widespread damage|showing major wear|nearing end of life}, replacement may be {more cost-effective|the better investment|recommended}.",
+    },
+    {
+      question_spintax: "{Do you handle insurance claims for roof damage?|Can you work with my insurance?|Do you help with storm damage claims?}",
+      answer_spintax:
+        "{Yes, we work with all major insurance companies|We assist with insurance claims|We provide documentation for your insurance} and can {help document damage|provide detailed reports|guide you through the process} for your claim.",
+    },
+  ],
+}
+
+export const DEFAULT_FAQ_MOLD = {
+  heading_spintax: "{Frequently Asked Questions|Common Mold Questions|Questions About Mold Remediation}",
+  items: [
+    {
+      question_spintax: "{Is mold dangerous to my family's health?|How harmful is mold?|Should I be worried about mold exposure?}",
+      answer_spintax:
+        "{Some mold types can cause health issues|Mold can be harmful, especially for those with allergies|Certain molds pose health risks}, which is why {professional remediation|expert removal|immediate action} is important.",
+    },
+    {
+      question_spintax: "{How do I know if I have mold in my home?|What are signs of mold?|How can I tell if there's hidden mold?}",
+      answer_spintax:
+        "{Common signs include musty odors, visible growth, and water stains|Look for discoloration, musty smells, or recent water damage|Signs include strange odors and visible spots}. We offer {professional mold inspections|thorough assessments|testing services} to identify hidden mold.",
+    },
+    {
+      question_spintax: "{How long does mold remediation take?|What's the timeline for mold removal?|How quickly can you remove mold?}",
+      answer_spintax:
+        "{Most projects take 1-5 days|Remediation typically takes a few days|Timeline depends on the extent of contamination}. {Larger or more complex|Extensive|Severe} cases may require additional time for {thorough removal|proper treatment|complete remediation}.",
+    },
+    {
+      question_spintax: "{Will the mold come back after remediation?|How do you prevent mold from returning?|Is mold removal permanent?}",
+      answer_spintax:
+        "{We address moisture sources to prevent recurrence|Our process includes prevention measures|We identify and fix the root cause}. By {controlling moisture|fixing leaks and improving ventilation|addressing humidity issues}, we help {prevent future mold growth|keep your home mold-free|reduce recurrence risk}.",
+    },
+    {
+      question_spintax: "{Does insurance cover mold remediation?|Will my insurance pay for mold removal?|Is mold damage covered by insurance?}",
+      answer_spintax:
+        "{Coverage varies by policy|It depends on your insurance and the cause of mold|Some policies cover mold from sudden events}. We can {provide documentation for your claim|help you understand your coverage|work with your insurance company} to assist with the process.",
+    },
+  ],
+}
+
+export function getDefaultFaq(category: string) {
+  switch (category) {
+    case 'roofing':
+      return DEFAULT_FAQ_ROOFING
+    case 'mold_remediation':
+    case 'mold':
+      return DEFAULT_FAQ_MOLD
+    default:
+      return DEFAULT_FAQ
+  }
+}
+
+// ============================================
+// CATEGORY-SPECIFIC TESTIMONIALS DEFAULTS
+// ============================================
+
+export const DEFAULT_TESTIMONIALS_ROOFING = {
+  heading_spintax: "{Trusted by Homeowners|What Our Customers Say|Roofing Reviews}",
+  subheading_spintax: "{Real reviews from customers we've helped|Feedback from satisfied homeowners}.",
+  items: [
+    {
+      name: "{John|Mike|Robert|William|James} {M|R|T|S|K}.",
+      location_spintax: "{{city}}, {{state}}",
+      text_spintax:
+        "{Great work on our new roof|Excellent roofing job|Very happy with our roof replacement}. The team was {professional|efficient|thorough} and {cleaned up well|left our property spotless|finished on time}. {Highly recommend|Would use again|Great experience}!",
+      rating: 5,
+    },
+    {
+      name: "{David|Michael|Jason|Carlos|Anthony} {P|L|V|H|N}.",
+      location_spintax: "{{city}}, {{state}}",
+      text_spintax:
+        "{Fair pricing and quality work|Honest estimate and great results|Professional from start to finish}. They {fixed our leak quickly|replaced our old shingles|handled storm damage} and {kept us informed|communicated well|were responsive} throughout.",
+      rating: 5,
+    },
+    {
+      name: "{Lauren|Emily|Rachel|Natalie|Kim} {B|C|D|F|G}.",
+      location_spintax: "{{city}}, {{state}}",
+      text_spintax:
+        "{Helped with our insurance claim|Made the process easy|Very knowledgeable crew}. The {new roof looks great|work exceeded expectations|finished product is beautiful}. {Would definitely recommend|Excellent company|5 stars}!",
+      rating: 5,
+    },
+  ],
+}
+
+export const DEFAULT_TESTIMONIALS_MOLD = {
+  heading_spintax: "{Trusted by Homeowners|What Our Customers Say|Mold Remediation Reviews}",
+  subheading_spintax: "{Real reviews from customers we've helped|Feedback from satisfied homeowners}.",
+  items: [
+    {
+      name: "{Sarah|Jennifer|Michelle|Amanda|Lisa} {M|R|T|S|K}.",
+      location_spintax: "{{city}}, {{state}}",
+      text_spintax:
+        "{Thorough mold inspection and removal|Professional mold remediation|Excellent service}. They {found hidden mold|identified the source|explained everything clearly} and {completely removed it|fixed the problem|restored our home}. {No more musty smell|Air quality is great|Highly recommend}!",
+      rating: 5,
+    },
+    {
+      name: "{David|Michael|Jason|Carlos|Anthony} {P|L|V|H|N}.",
+      location_spintax: "{{city}}, {{state}}",
+      text_spintax:
+        "{Fast response to our mold problem|Came out quickly for assessment|Professional and thorough}. The team {contained the area properly|used professional equipment|followed strict protocols} and {eliminated the mold|restored our basement|solved the issue}.",
+      rating: 5,
+    },
+    {
+      name: "{Lauren|Emily|Rachel|Natalie|Kim} {B|C|D|F|G}.",
+      location_spintax: "{{city}}, {{state}}",
+      text_spintax:
+        "{They explained the mold removal process clearly|Very knowledgeable about mold|Professional remediation team}. {Our home feels healthy again|No more mold concerns|Peace of mind knowing it's gone}. {Would recommend|Great company|Excellent work}!",
+      rating: 5,
+    },
+  ],
+}
+
+export function getDefaultTestimonials(category: string) {
+  switch (category) {
+    case 'roofing':
+      return DEFAULT_TESTIMONIALS_ROOFING
+    case 'mold_remediation':
+    case 'mold':
+      return DEFAULT_TESTIMONIALS_MOLD
+    default:
+      return DEFAULT_TESTIMONIALS
+  }
 }

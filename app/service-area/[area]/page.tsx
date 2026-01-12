@@ -189,13 +189,13 @@ export default async function ServiceAreaPage({
 
   const ourLinksLabel = processContent(headerContent?.our_links_spintax || DEFAULT_HEADER.ourLinks, resolvedDomain, variables)
 
-  // Footer should always show the main business address
+  // Footer shows the service area's own contact info
   const footerAddress = {
-    address: mainSite.address,
-    city: mainSite.city,
-    state: mainSite.state,
-    zipCode: mainSite.zip_code,
-    email: mainSite.email,
+    address: areaSite.address || mainSite.address,
+    city: areaSite.city || mainSite.city,
+    state: areaSite.state || mainSite.state,
+    zipCode: areaSite.zip_code || mainSite.zip_code,
+    email: areaSite.email || mainSite.email,
   }
 
   const faqItems: { question: string; answer: string }[] = []
