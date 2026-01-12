@@ -144,7 +144,9 @@ export default async function ServicePage({
   const service = services.find((svc) => svc.slug === serviceSlug)
   if (!service) notFound()
 
-  const serviceKey = serviceKeyMap[serviceSlug] || "water"
+  // Determine the serviceKey for fallback - use category-aware default if not in water damage map
+  const waterDamageDefaultKey = serviceKeyMap[serviceSlug]
+  const serviceKey = waterDamageDefaultKey || (category === "roofing" ? "roofing_generic" : "water")
 
   const areaIndex = await getServiceAreaIndexForCurrentDomain()
   const serviceAreas = areaIndex.map((a) => ({ name: a.city, slug: a.slug }))
