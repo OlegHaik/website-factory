@@ -34,7 +34,7 @@ export function CTASection({
   const headlineText = headline || "Need Help Right Now?"
   const subheadlineText =
     subheadline ||
-    "Call for immediate dispatch. Our team is available 24/7 for emergency cleanup, drying, and restoration."
+    "Call for immediate dispatch. Our team is available 24/7 for all your service needs."
   const chatText = chatButtonText || "Chat With Us"
 
   return (

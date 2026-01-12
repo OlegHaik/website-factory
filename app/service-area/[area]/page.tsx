@@ -243,6 +243,7 @@ export default async function ServiceAreaPage({
         state={areaSite.state}
         services={services.map((svc) => ({ label: svc.title, href: svc.href }))}
         otherAreas={otherAreas}
+        category={category}
         content={{
           introTitle: headline,
           paragraphs: [paragraph2, paragraph3, paragraph4].filter(Boolean),
@@ -276,6 +277,7 @@ export default async function ServiceAreaPage({
         socialLinks={socialLinks}
         ourLinksLabel={ourLinksLabel}
         servicesLinks={services.map((svc) => ({ href: svc.href, label: svc.title }))}
+        category={category}
       />
       <FloatingCall phone={areaSite.phone} />
     </div>

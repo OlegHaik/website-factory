@@ -19,16 +19,28 @@ interface FooterProps {
   socialLinks?: SocialLinks
   ourLinksLabel?: string
   servicesLinks?: Array<{ label: string; href: string }>
+  category?: string
 }
 
-const legacyServicesLinks = [
-  { label: "Water Damage Restoration", href: "/water-damage-restoration" },
-  { label: "Fire & Smoke Damage", href: "/fire-smoke-damage" },
-  { label: "Mold Remediation", href: "/mold-remediation" },
-  { label: "Biohazard Cleanup", href: "/biohazard-cleanup" },
-  { label: "Burst Pipe Repair", href: "/burst-pipe-repair" },
-  { label: "Sewage Cleanup", href: "/sewage-cleanup" },
-]
+// Category-specific footer descriptions
+const CATEGORY_DESCRIPTIONS: Record<string, string> = {
+  water_damage: "24/7 emergency restoration services. Fast response, expert technicians, and complete property restoration.",
+  roofing: "Professional roofing services. Quality craftsmanship, licensed contractors, and reliable roof solutions.",
+  mold_remediation: "Expert mold remediation services. Safe removal, thorough cleaning, and prevention solutions.",
+  plumbing: "Professional plumbing services. Fast repairs, quality installations, and reliable maintenance.",
+  bathroom_remodel: "Expert bathroom remodeling services. Quality design, professional installation, and beautiful results.",
+  kitchen_remodel: "Professional kitchen remodeling services. Custom designs, quality materials, and expert craftsmanship.",
+  air_duct: "Professional air duct cleaning services. Improved air quality, efficient systems, and healthier homes.",
+  chimney: "Expert chimney services. Professional cleaning, repairs, and inspections for safe operation.",
+  locksmith: "Professional locksmith services. Fast response, security solutions, and reliable service.",
+  garage_door: "Expert garage door services. Installation, repair, and maintenance for smooth operation.",
+  adu_builder: "Professional ADU construction services. Custom designs, quality builds, and expert project management.",
+  pool_contractor: "Professional pool services. Installation, maintenance, and repairs for beautiful pools.",
+}
+
+const DEFAULT_DESCRIPTION = "Professional services you can trust. Quality workmanship and customer satisfaction guaranteed."
+
+// Legacy services removed - now services come from parent component based on category
 
 export default function Footer({
   businessName,
@@ -45,7 +57,9 @@ export default function Footer({
   socialLinks,
   ourLinksLabel,
   servicesLinks,
+  category = "water_damage",
 }: FooterProps) {
+  const footerDescription = CATEGORY_DESCRIPTIONS[category] || DEFAULT_DESCRIPTION
   const cleanPhone = phone.replace(/\D/g, "")
   const displayPhone = phoneDisplay || phone
   const ourLinksText = ourLinksLabel || "Our Links"
@@ -54,8 +68,8 @@ export default function Footer({
       .map((item) => ({ ...item, label: String(item.label ?? "").trim() }))
       .filter((item) => item.label.length > 0)
 
-  const resolvedServicesLinks = servicesLinks && servicesLinks.length > 0 ? servicesLinks : legacyServicesLinks
-  const filteredServicesLinks = normalizeServiceLinks(resolvedServicesLinks)
+  // Only show services if provided - no fallback to hardcoded list
+  const filteredServicesLinks = servicesLinks && servicesLinks.length > 0 ? normalizeServiceLinks(servicesLinks) : []
 
   const formatFullAddress = (
     street: string | null | undefined,
@@ -97,7 +111,7 @@ export default function Footer({
               </span>
             </Link>
             <p className="text-slate-300 leading-relaxed">
-              24/7 emergency restoration services. Fast response, expert technicians, and complete property restoration.
+              {footerDescription}
             </p>
 
             <div className="mt-5">

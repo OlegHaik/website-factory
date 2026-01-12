@@ -5,11 +5,67 @@ interface LinkItem {
   href: string
 }
 
+// Category-specific default text
+const CATEGORY_DEFAULTS: Record<string, { title: string; description: string; helpItems: string[] }> = {
+  water_damage: {
+    title: "Water Damage Restoration",
+    description: "Trusted local help for cleanup, drying, and repairs",
+    helpItems: [
+      "Emergency response",
+      "Water extraction and structural drying",
+      "Mold prevention and odor control",
+      "Documentation support for insurance claims"
+    ]
+  },
+  roofing: {
+    title: "Professional Roofing Services",
+    description: "Expert roofing installation, repair, and maintenance",
+    helpItems: [
+      "Roof inspections and assessments",
+      "Shingle and tile replacement",
+      "Storm damage repair",
+      "Complete roof installations"
+    ]
+  },
+  mold_remediation: {
+    title: "Mold Remediation Services",
+    description: "Safe and thorough mold removal and prevention",
+    helpItems: [
+      "Mold inspection and testing",
+      "Safe mold removal",
+      "Air quality improvement",
+      "Prevention and sealing"
+    ]
+  },
+  plumbing: {
+    title: "Professional Plumbing Services",
+    description: "Expert plumbing repair and installation",
+    helpItems: [
+      "Leak detection and repair",
+      "Pipe installation and replacement",
+      "Drain cleaning",
+      "Water heater services"
+    ]
+  }
+}
+
+const DEFAULT_CATEGORY = {
+  title: "Professional Services",
+  description: "Expert local services you can trust",
+  helpItems: [
+    "Fast response times",
+    "Licensed and insured professionals",
+    "Quality workmanship",
+    "Customer satisfaction guaranteed"
+  ]
+}
+
 interface ServiceAreaContentProps {
   areaName: string
   state: string
   services: LinkItem[]
   otherAreas: Array<{ name: string; slug: string }>
+  category?: string
   content?: {
     introTitle: string
     paragraphs: string[]
@@ -18,7 +74,9 @@ interface ServiceAreaContentProps {
   }
 }
 
-export function ServiceAreaContent({ areaName, state, services, otherAreas, content }: ServiceAreaContentProps) {
+export function ServiceAreaContent({ areaName, state, services, otherAreas, category = "water_damage", content }: ServiceAreaContentProps) {
+  const categoryDefaults = CATEGORY_DEFAULTS[category] || DEFAULT_CATEGORY
+
   return (
     <section className="py-24 lg:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -26,7 +84,7 @@ export function ServiceAreaContent({ areaName, state, services, otherAreas, cont
           <div className="lg:col-span-2 space-y-10">
             <div>
               <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">
-                {content?.introTitle || `Water Damage Restoration in ${areaName}`}
+                {content?.introTitle || `${categoryDefaults.title} in ${areaName}`}
               </h2>
               {content?.paragraphs?.length ? (
                 <div className="mt-4 space-y-4 text-lg text-slate-600 leading-relaxed">
@@ -36,7 +94,7 @@ export function ServiceAreaContent({ areaName, state, services, otherAreas, cont
                 </div>
               ) : (
                 <p className="mt-4 text-lg text-slate-600 leading-relaxed">
-                  {`Trusted local help for cleanup, drying, and repairs in ${areaName}, ${state}.`}
+                  {`${categoryDefaults.description} in ${areaName}, ${state}.`}
                 </p>
               )}
             </div>
@@ -51,10 +109,9 @@ export function ServiceAreaContent({ areaName, state, services, otherAreas, cont
                 <>
                   <h3 className="text-xl font-bold text-slate-900">How We Help</h3>
                   <ul className="mt-4 space-y-2 text-slate-700">
-                    <li>Emergency response in {areaName} and surrounding areas</li>
-                    <li>Water extraction and structural drying</li>
-                    <li>Mold prevention and odor control</li>
-                    <li>Documentation support for insurance claims</li>
+                    {categoryDefaults.helpItems.map((item, idx) => (
+                      <li key={idx}>{item}{idx === 0 ? ` in ${areaName} and surrounding areas` : ''}</li>
+                    ))}
                   </ul>
                 </>
               )}
@@ -89,7 +146,7 @@ export function ServiceAreaContent({ areaName, state, services, otherAreas, cont
             <div className="rounded-2xl border border-slate-200 p-8">
               <h3 className="text-xl font-bold text-slate-900 mb-2">Licensed & Insured</h3>
               <p className="text-slate-600 leading-relaxed">
-                Certified technicians, professional equipment, and proven restoration processes.
+                Certified technicians, professional equipment, and proven service processes.
               </p>
             </div>
           </aside>
@@ -98,3 +155,4 @@ export function ServiceAreaContent({ areaName, state, services, otherAreas, cont
     </section>
   )
 }
+

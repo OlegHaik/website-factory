@@ -107,7 +107,7 @@ export function ServiceContent({ serviceTitle, serviceDescription, intro, sectio
             <div className="rounded-2xl border border-slate-200 p-8">
               <h3 className="text-xl font-bold text-slate-900 mb-2">Licensed & Insured</h3>
               <p className="text-slate-600 leading-relaxed">
-                Certified technicians, professional equipment, and proven restoration processes.
+                Certified technicians, professional equipment, and proven service processes.
               </p>
             </div>
           </aside>

@@ -282,6 +282,7 @@ export default async function ServicePage({
         socialLinks={socialLinks}
         ourLinksLabel={ourLinksLabel}
         servicesLinks={services.map((svc) => ({ href: svc.href, label: svc.title }))}
+        category={category}
       />
       <FloatingCall phone={site.phone} />
     </div>
