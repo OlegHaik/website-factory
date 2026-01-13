@@ -133,6 +133,14 @@ export default async function ServicePage({
   }
   const category = site.category || 'water_damage'
 
+  // TEMP DEBUG: Category resolution
+  console.log('[CategoryDebug] SERVICE PAGE:', {
+    serviceSlug,
+    domain: site.resolvedDomain || requestDomain,
+    mainSite: { id: site.id, slug: site.slug, category: site.category },
+    finalCategory: category,
+  })
+
   const variables = {
     city: site.city,
     state: site.state,

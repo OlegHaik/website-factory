@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import { createAdminClient } from '@/lib/supabase/admin'
 import { normalizeDomainUrl } from '@/lib/domain'
+import { CATEGORY_SERVICE_CONFIG, resolveCategoryConfig } from '@/lib/category-mapping'
 
 export const runtime = 'nodejs'
 
@@ -233,6 +234,17 @@ function enforceMainPerDomain(rows: SiteInput[]): SiteInput[] {
 }
 
 async function ensureCategoryContent(category: string, supabase: ReturnType<typeof createAdminClient>) {
+  // GUARD: Validate category is a known category key
+  const knownCategories = Object.keys(CATEGORY_SERVICE_CONFIG)
+  if (!knownCategories.includes(category)) {
+    console.error(`[ImportGuard] Invalid category "${category}" - must be one of: ${knownCategories.join(', ')}`)
+    throw new Error(`Invalid category: ${category}. Known categories: ${knownCategories.join(', ')}`)
+  }
+
+  // Get valid service slugs for the target category
+  const targetCategoryConfig = resolveCategoryConfig(category)
+  const validServiceSlugs = new Set(targetCategoryConfig.services.map((s) => s.slug))
+
   for (const table of CATEGORY_CONTENT_TABLES) {
     const existing = await supabase.from(table).select('id').eq('category', category).limit(1)
     if (!existing.error && existing.data && existing.data.length > 0) continue
@@ -245,7 +257,7 @@ async function ensureCategoryContent(category: string, supabase: ReturnType<type
       throw new Error(`Default content missing in ${table} for category ${DEFAULT_CATEGORY}`)
     }
 
-    const sanitized = source.data.map((row: Record<string, unknown>) => {
+    let sanitized = source.data.map((row: Record<string, unknown>) => {
       const clone: Record<string, unknown> = { ...row }
       delete clone.id
       delete clone.created_at
@@ -253,6 +265,33 @@ async function ensureCategoryContent(category: string, supabase: ReturnType<type
       clone.category = category
       return clone
     })
+
+    // GUARD: For content_service_pages, filter out rows with service_slug not valid for target category
+    if (table === 'content_service_pages') {
+      const beforeCount = sanitized.length
+      sanitized = sanitized.filter((row) => {
+        const serviceSlug = String(row.service_slug || '').trim()
+        if (!serviceSlug) return false
+
+        if (!validServiceSlugs.has(serviceSlug)) {
+          console.warn(
+            `[ImportGuard] Skipping service_slug="${serviceSlug}" for category="${category}" - not in valid slugs: ${[...validServiceSlugs].join(', ')}`
+          )
+          return false
+        }
+        return true
+      })
+      const skippedCount = beforeCount - sanitized.length
+      if (skippedCount > 0) {
+        console.log(`[ImportGuard] Filtered ${skippedCount} incompatible service rows for category="${category}"`)
+      }
+
+      // Skip insert if no valid rows remain
+      if (sanitized.length === 0) {
+        console.log(`[ImportGuard] No valid content_service_pages rows to insert for category="${category}"`)
+        continue
+      }
+    }
 
     const onConflict = CONTENT_CONFLICT_KEYS[table]
     const insertion = onConflict

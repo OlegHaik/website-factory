@@ -41,7 +41,29 @@ export async function generateMetadata({
   const resolvedDomain = areaSite.resolvedDomain || domain || "default"
   const category = areaSite.category || mainSite.category || 'water_damage'
 
-  return generatePageMetadata(
+  // Use areaSite.meta_title/meta_description if available (service-area rows have unique meta)
+  const hasMetaTitle = !!areaSite.meta_title
+  const hasMetaDescription = !!areaSite.meta_description
+
+  // Debug warning for missing meta on service-area rows
+  if (!hasMetaTitle || !hasMetaDescription) {
+    console.warn(
+      `[MetaGuard] missing_meta: domain=${domain} slug=${areaSlug} site_id=${areaSite.id}`,
+      `meta_title=${hasMetaTitle ? 'present' : 'MISSING'}`,
+      `meta_description=${hasMetaDescription ? 'present' : 'MISSING'}`
+    )
+  }
+
+  // If areaSite has meta fields, use them directly
+  if (hasMetaTitle && hasMetaDescription) {
+    return {
+      title: areaSite.meta_title!,
+      description: areaSite.meta_description!,
+    }
+  }
+
+  // Fallback to generated metadata
+  const generatedMeta = await generatePageMetadata(
     "service_area",
     resolvedDomain,
     {
@@ -53,6 +75,13 @@ export async function generateMetadata({
     areaSlug,
     category,
   )
+
+  // Override with areaSite meta if partially available
+  return {
+    ...generatedMeta,
+    title: areaSite.meta_title || generatedMeta.title,
+    description: areaSite.meta_description || generatedMeta.description,
+  }
 }
 
 export default async function ServiceAreaPage({
@@ -88,6 +117,15 @@ export default async function ServiceAreaPage({
     notFound()
   }
   const category = areaSite.category || mainSite.category || 'water_damage'
+
+  // TEMP DEBUG: Category resolution
+  console.log('[CategoryDebug] SERVICE-AREA PAGE:', {
+    areaSlug,
+    domain,
+    mainSite: { id: mainSite.id, slug: mainSite.slug, category: mainSite.category },
+    areaSite: { id: areaSite.id, slug: areaSite.slug, category: areaSite.category },
+    finalCategory: category,
+  })
 
   const areaName = areaSite.city
   const areaIndex = await getServiceAreaIndexForCurrentDomain()

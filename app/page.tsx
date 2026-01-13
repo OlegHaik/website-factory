@@ -89,6 +89,13 @@ export default async function Home() {
 
   const category = site.category || 'water_damage'
 
+  // TEMP DEBUG: Category resolution
+  console.log('[CategoryDebug] HOMEPAGE:', {
+    domain: site.resolvedDomain || requestDomain,
+    mainSite: { id: site.id, slug: site.slug, category: site.category },
+    finalCategory: category,
+  })
+
   const areaIndex = await getServiceAreaIndexForCurrentDomain()
   const serviceAreas =
     areaIndex.length > 0
