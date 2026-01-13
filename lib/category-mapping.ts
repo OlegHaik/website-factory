@@ -156,6 +156,19 @@ export const CATEGORY_SERVICE_CONFIG: Record<string, CategoryServiceConfig> = {
     legacyFields: MOLD_SERVICE_FIELDS,
     order: makeOrderMap(MOLD_SERVICES),
   },
+  // Generic / New Categories (rely on DB content completely)
+  adu_builder: { services: [], legacyFields: {}, order: new Map() },
+  air_conditioning: { services: [], legacyFields: {}, order: new Map() },
+  air_duct: { services: [], legacyFields: {}, order: new Map() },
+  bathroom_remodel: { services: [], legacyFields: {}, order: new Map() },
+  chimney: { services: [], legacyFields: {}, order: new Map() },
+  garage_door: { services: [], legacyFields: {}, order: new Map() },
+  heating: { services: [], legacyFields: {}, order: new Map() },
+  kitchen_remodel: { services: [], legacyFields: {}, order: new Map() },
+  locksmith: { services: [], legacyFields: {}, order: new Map() },
+  pest_control: { services: [], legacyFields: {}, order: new Map() },
+  plumbing: { services: [], legacyFields: {}, order: new Map() },
+  pool_contractor: { services: [], legacyFields: {}, order: new Map() },
 }
 
 export function resolveCategoryConfig(category: string): CategoryServiceConfig {

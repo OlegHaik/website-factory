@@ -36,11 +36,7 @@ export async function generateMetadata({
   const domain = site.resolvedDomain || requestDomain || "default"
   const category = site.category || 'water_damage'
 
-  // GUARD: Check if serviceSlug is allowed for this category
-  const allowedServiceSlugs = new Set(resolveCategoryConfig(category).services.map((s) => s.slug))
-  if (!allowedServiceSlugs.has(serviceSlug)) {
-    return { title: 'Not Found', description: 'The requested page could not be found.' }
-  }
+
 
   const variables = {
     city: site.city || "",
