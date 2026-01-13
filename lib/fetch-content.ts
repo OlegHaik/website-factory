@@ -642,3 +642,89 @@ export async function getStaticSection(
   return categoryDefault as StaticSection
 }
 
+// =============================================
+// Content Blocks (Structured Spintax Elements)
+// =============================================
+
+export interface ContentBlock {
+  id: number
+  category_key: string
+  page_type: string
+  section_key: string
+  element_type: string
+  element_order: number
+  site_id: number | null
+  content_spintax: string
+}
+
+/**
+ * Fetch a content block with site override priority.
+ * 1. If site-specific record exists (site_id = siteId), use it
+ * 2. Otherwise fall back to category/page default (site_id IS NULL)
+ * 3. If neither exists, log warning and return null
+ */
+export async function getContentBlock(params: {
+  categoryKey: string
+  pageType: string
+  sectionKey: string
+  elementType: string
+  elementOrder: number
+  siteId?: number | null
+}): Promise<ContentBlock | null> {
+  const { categoryKey, pageType, sectionKey, elementType, elementOrder, siteId } = params
+  const normalizedCategory = normalizeCategory(categoryKey)
+  const supabase = await createClient()
+
+  // Try site-specific first (if siteId provided)
+  if (siteId != null) {
+    const { data: siteSpecific, error: siteError } = await supabase
+      .from("content_blocks")
+      .select("*")
+      .eq("category_key", normalizedCategory)
+      .eq("page_type", pageType)
+      .eq("section_key", sectionKey)
+      .eq("element_type", elementType)
+      .eq("element_order", elementOrder)
+      .eq("site_id", siteId)
+      .limit(1)
+      .maybeSingle()
+
+    if (!siteError && siteSpecific) {
+      return siteSpecific as ContentBlock
+    }
+  }
+
+  // Fall back to category default (site_id IS NULL)
+  const { data: categoryDefault, error: catError } = await supabase
+    .from("content_blocks")
+    .select("*")
+    .eq("category_key", normalizedCategory)
+    .eq("page_type", pageType)
+    .eq("section_key", sectionKey)
+    .eq("element_type", elementType)
+    .eq("element_order", elementOrder)
+    .is("site_id", null)
+    .limit(1)
+    .maybeSingle()
+
+  if (catError) {
+    console.error("Failed to fetch content_block:", catError)
+    return null
+  }
+
+  if (!categoryDefault) {
+    console.warn(
+      `[ContentGuard] missing_content_blocks:`,
+      `site_id=${siteId ?? "none"}`,
+      `category_key=${normalizedCategory}`,
+      `page_type=${pageType}`,
+      `section_key=${sectionKey}`,
+      `element_type=${elementType}`,
+      `element_order=${elementOrder}`
+    )
+    return null
+  }
+
+  return categoryDefault as ContentBlock
+}
+

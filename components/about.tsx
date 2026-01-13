@@ -23,9 +23,10 @@ interface AboutProps {
     title: string
     body: string
   }
+  seoBodyArticleH1?: string | null
 }
 
-export function About({ businessName, city, state, serviceAreas, seoContent, licensedInsured }: AboutProps) {
+export function About({ businessName, city, state, serviceAreas, seoContent, licensedInsured, seoBodyArticleH1 }: AboutProps) {
   const introText = seoContent.intro
   const whyChooseTitleText = seoContent.whyChooseTitle
   const whyChooseText = seoContent.whyChoose
@@ -41,6 +42,13 @@ export function About({ businessName, city, state, serviceAreas, seoContent, lic
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
           <div className="lg:col-span-2 space-y-10">
+            {/* SEO Body Article H1 from content_blocks */}
+            {seoBodyArticleH1 && (
+              <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-8">
+                {seoBodyArticleH1}
+              </h1>
+            )}
+
             <div>
               <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-8">
                 {processTitleText}
