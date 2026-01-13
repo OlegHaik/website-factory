@@ -12,6 +12,7 @@ import {
   getContentSeoBody,
   getContentTestimonials,
   getContentBlocks,
+  getContentBlock,
   ContentBlock,
   parseFAQItems,
   parseTestimonialItems,
@@ -125,6 +126,24 @@ export default async function Home() {
     sectionKey: 'seo_body_article',
     siteId: site.id,
   })
+
+  // Fetch services section heading from content_blocks (try multiple section_key variants)
+  const servicesSectionKeys = ['services', 'service', 'home_services', 'services_section']
+  let servicesHeadingBlock: ContentBlock | null = null
+  for (const sectionKey of servicesSectionKeys) {
+    servicesHeadingBlock = await getContentBlock({
+      categoryKey: category,
+      pageType: 'home',
+      sectionKey,
+      elementType: 'h2',
+      elementOrder: 1,
+      siteId: site.id,
+    })
+    if (servicesHeadingBlock) break
+  }
+  const servicesHeading = servicesHeadingBlock?.value_spintax_html
+    ? processContent(servicesHeadingBlock.value_spintax_html, domain, variables)
+    : undefined
 
   const navLabels = {
     home: processContent(headerContent?.nav_home || DEFAULT_NAV.home, domain, variables),
@@ -271,7 +290,7 @@ export default async function Home() {
         email={site.email || undefined}
       />
 
-      <Services services={categoryServices} />
+      <Services services={categoryServices} heading={servicesHeading} />
       <About
         businessName={site.business_name}
         city={site.city}

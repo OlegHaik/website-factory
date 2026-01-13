@@ -13,6 +13,7 @@ interface ServiceItem {
 
 interface ServicesProps {
   services: ServiceItem[]
+  heading?: string
 }
 
 const VirusIcon = ({ className }: { className?: string }) => (
@@ -56,7 +57,7 @@ const ICON_MAP: Record<ServiceIconKey, ComponentType<{ className?: string }>> = 
 }
 const getIconComponent = (key?: ServiceIconKey) => (key ? ICON_MAP[key] : undefined) || Droplets
 
-export function Services({ services }: ServicesProps) {
+export function Services({ services, heading }: ServicesProps) {
   const items = (services || []).filter((svc) => {
     const title = String(svc?.title ?? "").trim()
     return title.length > 0
@@ -67,7 +68,7 @@ export function Services({ services }: ServicesProps) {
   return (
     <section id="services" className="py-24 lg:py-36 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 text-center mb-16">Our Services</h2>
+        <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 text-center mb-16">{heading || "Our Services"}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {items.map((service, index) => {
             const IconComponent = getIconComponent(service.icon)
