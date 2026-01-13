@@ -126,14 +126,6 @@ export default async function Home() {
     siteId: site.id,
   })
 
-  // TEMP DEBUG: Log block order to verify global_order sorting
-  if (seoBodyArticleBlocks.length > 0) {
-    console.log('[DEBUG] seo_body_article block order (first 16):')
-    seoBodyArticleBlocks.slice(0, 16).forEach((block, idx) => {
-      console.log(`  ${idx + 1}. global_order=${block.global_order} element_type=${block.element_type} element_order=${block.element_order}`)
-    })
-  }
-
   const navLabels = {
     home: processContent(headerContent?.nav_home || DEFAULT_NAV.home, domain, variables),
     services: processContent(headerContent?.nav_services || DEFAULT_NAV.services, domain, variables),

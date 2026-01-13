@@ -110,9 +110,12 @@ export async function fetchCategoryServices(params: {
   const servicesContent = await getContentServices(category)
   const seedPrefix = domain || "default"
 
-  const baseRows: ContentServicePageRow[] = rows.length
-    ? rows
-    : serviceDefinitions.map((svc) => ({ service_slug: svc.slug }))
+  // Merge DB rows with service definitions: use DB rows + any definitions missing from DB
+  const dbSlugs = new Set(rows.map((r) => String(r.service_slug || "").trim()).filter(Boolean))
+  const missingDefinitions = serviceDefinitions
+    .filter((svc) => !dbSlugs.has(svc.slug))
+    .map((svc) => ({ service_slug: svc.slug }))
+  const baseRows: ContentServicePageRow[] = [...rows, ...missingDefinitions]
 
   const mapped = baseRows
     .map((row) => {
