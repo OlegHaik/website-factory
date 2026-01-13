@@ -119,8 +119,8 @@ export default async function Home() {
     elementOrder: 1,
     siteId: site.id,
   })
-  const seoBodyArticleH1 = seoBodyArticleH1Block?.content_spintax
-    ? processContent(seoBodyArticleH1Block.content_spintax, domain, variables)
+  const seoBodyArticleH1 = seoBodyArticleH1Block?.value_spintax_html
+    ? processContent(seoBodyArticleH1Block.value_spintax_html, domain, variables)
     : null
 
   const navLabels = {

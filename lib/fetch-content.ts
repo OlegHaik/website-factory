@@ -654,7 +654,7 @@ export interface ContentBlock {
   element_type: string
   element_order: number
   site_id: number | null
-  content_spintax: string
+  value_spintax_html: string
 }
 
 /**
