@@ -4,7 +4,7 @@ import { notFound } from "next/navigation"
 import { getServiceAreaIndexForCurrentDomain, getSiteByDomainAndSlug, resolveSiteContext } from "@/lib/sites"
 import { processContent } from "@/lib/spintax"
 import { generatePageMetadata } from "@/lib/generate-metadata"
-import { getContentHeader, getContentServiceArea } from "@/lib/fetch-content"
+import { getContentHeader, getContentServiceArea, getContentBlock, ContentBlock } from "@/lib/fetch-content"
 import { DEFAULT_HEADER, DEFAULT_NAV, getDefaultServiceArea } from "@/lib/default-content"
 import { parseSocialLinks } from "@/lib/types"
 import { fetchCategoryServices } from "@/lib/services"
@@ -202,11 +202,28 @@ export default async function ServiceAreaPage({
     areaSeed,
     variables,
   )
-  const servicesListHeadline = processContent(
-    areaContent?.services_list_headline_spintax || categoryDefaults.services_list_headline,
-    areaSeed,
-    variables,
-  )
+  // Fetch services list heading from content_blocks with fallback to 'home' page_type
+  const servicesListSectionKeys = ['services', 'service', 'home_services', 'services_section', 'service_list']
+  let servicesListBlock: ContentBlock | null = null
+  for (const sectionKey of servicesListSectionKeys) {
+    servicesListBlock = await getContentBlock({
+      categoryKey: category,
+      pageType: 'home', // Use 'home' because DB rows for this heading are currently stored under page_type='home'
+      sectionKey,
+      elementType: 'h2',
+      elementOrder: 1,
+      siteId: areaSite.id,
+    })
+    if (servicesListBlock) break
+  }
+
+  const servicesListHeadline = servicesListBlock?.value_spintax_html
+    ? processContent(servicesListBlock.value_spintax_html, areaSeed, variables)
+    : processContent(
+      areaContent?.services_list_headline_spintax || categoryDefaults.services_list_headline,
+      areaSeed,
+      variables,
+    )
   const whyChooseHeadline = processContent(
     areaContent?.why_choose_headline_spintax || categoryDefaults.why_choose_headline,
     areaSeed,
