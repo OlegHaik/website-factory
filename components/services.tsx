@@ -58,15 +58,19 @@ const ICON_MAP: Record<ServiceIconKey, ComponentType<{ className?: string }>> = 
 const getIconComponent = (key?: ServiceIconKey) => (key ? ICON_MAP[key] : undefined) || Droplets
 
 export function Services({ services, heading }: ServicesProps) {
-  const seenTitles = new Set<string>()
+  const seenKeys = new Set<string>()
   const items = (services || []).filter((svc) => {
     const title = String(svc?.title ?? "").trim()
     if (title.length === 0) return false
 
-    const normalizedKey = title.toLowerCase()
-    if (seenTitles.has(normalizedKey)) return false
+    // Prefer dedupe by URL/slug (this fixes cases like:
+    // "Emergency Leak Repair" + "Roof Leak Repair" -> same "/leak-repair")
+    const href = String((svc as any)?.href ?? (svc as any)?.url ?? "").trim()
+    const slug = String((svc as any)?.slug ?? "").trim()
 
-    seenTitles.add(normalizedKey)
+    const key = (href || slug || title).toLowerCase()
+    if (seenKeys.has(key)) return false
+    seenKeys.add(key)
     return true
   })
 
