@@ -653,6 +653,7 @@ export interface ContentBlock {
   section_key: string
   element_type: string
   element_order: number
+  global_order: number
   site_id: number | null
   value_spintax_html: string
 }
@@ -726,5 +727,81 @@ export async function getContentBlock(params: {
   }
 
   return categoryDefault as ContentBlock
+}
+
+/**
+ * Fetch ALL content blocks for a section with site override priority.
+ * Returns blocks ordered by element_order.
+ * For each unique (element_type, element_order), prefers site-specific over default.
+ */
+export async function getContentBlocks(params: {
+  categoryKey: string
+  pageType: string
+  sectionKey: string
+  siteId?: number | null
+}): Promise<ContentBlock[]> {
+  const { categoryKey, pageType, sectionKey, siteId } = params
+  const normalizedCategory = normalizeCategory(categoryKey)
+  const supabase = await createClient()
+
+  // Fetch all matching blocks (both site-specific and defaults)
+  const { data, error } = await supabase
+    .from("content_blocks")
+    .select("*")
+    .eq("category_key", normalizedCategory)
+    .eq("page_type", pageType)
+    .eq("section_key", sectionKey)
+    .or(siteId != null ? `site_id.eq.${siteId},site_id.is.null` : "site_id.is.null")
+    .order("element_order", { ascending: true })
+
+  if (error) {
+    console.error("Failed to fetch content_blocks:", error)
+    return []
+  }
+
+  if (!data || data.length === 0) {
+    console.warn(
+      `[ContentGuard] missing_content_blocks:`,
+      `site_id=${siteId ?? "none"}`,
+      `category_key=${normalizedCategory}`,
+      `page_type=${pageType}`,
+      `section_key=${sectionKey}`
+    )
+    return []
+  }
+
+  // Deduplicate: for each (element_type, element_order), prefer site-specific
+  const blockMap = new Map<string, ContentBlock>()
+  for (const block of data as ContentBlock[]) {
+    const key = `${block.element_type}:${block.element_order}`
+    const existing = blockMap.get(key)
+
+    // If no existing, or current is site-specific and existing is not, use current
+    if (!existing || (block.site_id != null && existing.site_id == null)) {
+      blockMap.set(key, block)
+    }
+  }
+
+  // Element type priority (fallback): h1=0, h2=1, h3=2, p=3, bullets=4, cta=5, default=99
+  const typePriority: Record<string, number> = {
+    h1: 0,
+    h2: 1,
+    h3: 2,
+    p: 3,
+    bullets: 4,
+    cta: 5,
+  }
+
+  // Sort primarily by global_order, then by element_type priority and element_order as fallback
+  return Array.from(blockMap.values()).sort((a, b) => {
+    // Primary: global_order
+    if (a.global_order !== b.global_order) return a.global_order - b.global_order
+    // Fallback: element_type priority
+    const priorityA = typePriority[a.element_type] ?? 99
+    const priorityB = typePriority[b.element_type] ?? 99
+    if (priorityA !== priorityB) return priorityA - priorityB
+    // Fallback: element_order
+    return a.element_order - b.element_order
+  })
 }
 

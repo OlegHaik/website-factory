@@ -11,7 +11,8 @@ import {
   getContentHero,
   getContentSeoBody,
   getContentTestimonials,
-  getContentBlock,
+  getContentBlocks,
+  ContentBlock,
   parseFAQItems,
   parseTestimonialItems,
 } from "@/lib/fetch-content"
@@ -110,18 +111,13 @@ export default async function Home() {
   const faqContent = await getContentFAQ(category)
   const testimonialsContent = await getContentTestimonials(category)
 
-  // Fetch SEO body article H1 from content_blocks
-  const seoBodyArticleH1Block = await getContentBlock({
+  // Fetch ALL SEO body article blocks from content_blocks
+  const seoBodyArticleBlocks = await getContentBlocks({
     categoryKey: category,
     pageType: 'home',
     sectionKey: 'seo_body_article',
-    elementType: 'h1',
-    elementOrder: 1,
     siteId: site.id,
   })
-  const seoBodyArticleH1 = seoBodyArticleH1Block?.value_spintax_html
-    ? processContent(seoBodyArticleH1Block.value_spintax_html, domain, variables)
-    : null
 
   const navLabels = {
     home: processContent(headerContent?.nav_home || DEFAULT_NAV.home, domain, variables),
@@ -275,7 +271,9 @@ export default async function Home() {
         state={site.state}
         serviceAreas={serviceAreas}
         seoContent={seoData}
-        seoBodyArticleH1={seoBodyArticleH1}
+        seoBodyArticleBlocks={seoBodyArticleBlocks}
+        domain={domain}
+        variables={variables}
       />
       <FAQ content={faqData} />
       <Testimonials content={testimonialsData} />
