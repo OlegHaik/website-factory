@@ -33,6 +33,19 @@ interface HeaderProps {
   servicesLinks?: Array<{ href: string; label: string }>
 }
 
+// Helper to normalize path for filtering (removes trailing slashes)
+const normalizePath = (href: string) => {
+  if (!href) return ""
+  try {
+    const base = "http://placeholder.com"
+    const url = new URL(href, base)
+    return url.pathname.replace(/\/+$/, "")
+  } catch {
+    return ""
+  }
+}
+
+
 export function Header({
   businessName,
   phone,
@@ -83,6 +96,7 @@ export function Header({
   // Only use provided services - no hardcoded fallback to prevent category mixing
   const serviceMenuLinks = servicesLinks && servicesLinks.length > 0
     ? normalizeServiceLinks(servicesLinks)
+      .filter(link => normalizePath(link.href) !== "/leak-repair")
     : []
   const hasServiceMenu = serviceMenuLinks.length > 0
 

@@ -48,13 +48,7 @@ const ROOFING_SERVICES: ServiceDefinition[] = [
     shortDescription: "Rapid-response leak mitigation to stop active water intrusion and protect interiors.",
     icon: "burst-pipe",
   },
-  {
-    key: "leak-repair",
-    slug: "leak-repair",
-    title: "Leak Repair",
-    shortDescription: "Expert leak detection and repair to prevent water damage and protect your property.",
-    icon: "burst-pipe",
-  },
+
 ]
 
 const MOLD_SERVICES: ServiceDefinition[] = [

@@ -102,6 +102,19 @@ export default async function ServiceAreaPage({
 }: {
   params: Promise<{ area: string }>
 }) {
+
+  // Helper to normalize path for filtering
+  const normalizePath = (href: string) => {
+    if (!href) return ""
+    try {
+      const base = "http://placeholder.com"
+      const url = new URL(href, base)
+      return url.pathname.replace(/\/+$/, "")
+    } catch {
+      return ""
+    }
+  }
+
   const { area: areaSlug } = await params
   const { site: mainSite, domain } = await resolveSiteContext()
 
@@ -163,6 +176,10 @@ export default async function ServiceAreaPage({
   }
 
   const services = await fetchCategoryServices({ category, domain: resolvedDomain, variables })
+  const servicesForLists = services.filter(s => {
+    const normPath = normalizePath(s.href)
+    return normPath !== "/leak-repair" && s.slug !== "leak-repair"
+  })
 
   const headerContent = await getContentHeader(category)
   const areaContent = await getContentServiceArea(category)
@@ -282,7 +299,7 @@ export default async function ServiceAreaPage({
         domain={resolvedDomain}
         faq={faqItems}
         reviews={testimonialItems}
-        services={services.map((s) => s.title)}
+        services={servicesForLists.map((s) => s.title)}
         headline={headline}
         description={paragraph1}
         pageType="service-area"
@@ -298,7 +315,7 @@ export default async function ServiceAreaPage({
         serviceAreas={serviceAreas}
         domain={resolvedDomain}
         navLabels={navLabels}
-        servicesLinks={services.map((svc) => ({ href: svc.href, label: svc.title }))}
+        servicesLinks={servicesForLists.map((svc) => ({ href: svc.href, label: svc.title }))}
       />
       <ServiceAreaHero
         title={headline}
@@ -311,7 +328,7 @@ export default async function ServiceAreaPage({
       <ServiceAreaContent
         areaName={areaName}
         state={areaSite.state}
-        services={services.map((svc) => ({ label: svc.title, href: svc.href }))}
+        services={servicesForLists.map((svc) => ({ label: svc.title, href: svc.href }))}
         otherAreas={otherAreas}
         category={category}
         content={{
@@ -346,7 +363,7 @@ export default async function ServiceAreaPage({
         serviceAreas={serviceAreas}
         socialLinks={socialLinks}
         ourLinksLabel={ourLinksLabel}
-        servicesLinks={services.map((svc) => ({ href: svc.href, label: svc.title }))}
+        servicesLinks={servicesForLists.map((svc) => ({ href: svc.href, label: svc.title }))}
         category={category}
       />
       <FloatingCall phone={footerAddress.phone || areaSite.phone} />
