@@ -408,10 +408,13 @@ async function getMainSiteByDomain(domain: string): Promise<SiteData | null> {
 }
 
 export async function getSiteByDomainAndSlug(domain: string, slug: string): Promise<SiteData | null> {
-  const resolvedDomain = await getCurrentDomain()
   const supabase = createSupabaseClient()
 
-  const domainForCandidates = (domain || '').trim() || resolvedDomain
+  // Use passed domain first, fallback to getCurrentDomain only if empty
+  const passedDomain = (domain || '').trim()
+  const fallbackDomain = passedDomain || (await getCurrentDomain())
+  const domainForCandidates = fallbackDomain
+
   const candidates = buildDomainCandidates(domainForCandidates)
   if (candidates.length === 0) return null
 
@@ -434,7 +437,7 @@ export async function getSiteByDomainAndSlug(domain: string, slug: string): Prom
   const row = (data?.[0] as SiteRow | undefined) ?? null
   if (!row) return null
 
-  return withComputedFields(row, resolvedDomain)
+  return withComputedFields(row, domainForCandidates)
 }
 
 export async function getServiceAreaIndexForCurrentDomain(): Promise<ServiceAreaIndexItem[]> {

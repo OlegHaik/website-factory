@@ -28,12 +28,32 @@ export async function generateMetadata({
   const { area: areaSlug } = await params
   const { site: mainSite, domain } = await resolveSiteContext()
 
+  // TEMP DEBUG: Log domain resolution
+  console.log('[MetaDebug] service-area generateMetadata start:', { areaSlug, resolvedDomain: domain })
+
   if (!domain) {
+    console.log('[MetaDebug] No domain resolved, returning 404')
     return { title: 'Not Found', description: 'The requested page could not be found.' }
   }
 
   const areaSite = await getSiteByDomainAndSlug(domain, areaSlug)
+
+  // TEMP DEBUG: Log fetched areaSite details
+  console.log('[MetaDebug] areaSite lookup:', {
+    domainUsed: domain,
+    areaSlug,
+    areaSite: areaSite ? {
+      id: areaSite.id,
+      domain_url: areaSite.domain_url,
+      slug: areaSite.slug,
+      category: areaSite.category,
+      meta_title: areaSite.meta_title,
+      meta_description: areaSite.meta_description,
+    } : null,
+  })
+
   if (!mainSite || !areaSite) {
+    console.log('[MetaDebug] mainSite or areaSite missing, returning 404')
     return { title: 'Not Found', description: 'The requested page could not be found.' }
   }
 
@@ -41,28 +61,7 @@ export async function generateMetadata({
   const resolvedDomain = areaSite.resolvedDomain || domain || "default"
   const category = areaSite.category || mainSite.category || 'water_damage'
 
-  // Use areaSite.meta_title/meta_description if available (service-area rows have unique meta)
-  const hasMetaTitle = !!areaSite.meta_title
-  const hasMetaDescription = !!areaSite.meta_description
-
-  // Debug warning for missing meta on service-area rows
-  if (!hasMetaTitle || !hasMetaDescription) {
-    console.warn(
-      `[MetaGuard] missing_meta: domain=${domain} slug=${areaSlug} site_id=${areaSite.id}`,
-      `meta_title=${hasMetaTitle ? 'present' : 'MISSING'}`,
-      `meta_description=${hasMetaDescription ? 'present' : 'MISSING'}`
-    )
-  }
-
-  // If areaSite has meta fields, use them directly
-  if (hasMetaTitle && hasMetaDescription) {
-    return {
-      title: areaSite.meta_title!,
-      description: areaSite.meta_description!,
-    }
-  }
-
-  // Fallback to generated metadata
+  // Generate fallback metadata
   const generatedMeta = await generatePageMetadata(
     "service_area",
     resolvedDomain,
@@ -76,11 +75,25 @@ export async function generateMetadata({
     category,
   )
 
-  // Override with areaSite meta if partially available
+  // Build final metadata: ALWAYS prefer areaSite meta fields individually
+  const finalTitle = areaSite.meta_title ?? generatedMeta.title
+  const finalDescription = areaSite.meta_description ?? generatedMeta.description
+
+  // TEMP DEBUG: Log final metadata
+  console.log('[MetaDebug] Final metadata:', {
+    category,
+    areaSiteMetaTitle: areaSite.meta_title,
+    areaSiteMetaDesc: areaSite.meta_description,
+    generatedTitle: generatedMeta.title,
+    generatedDesc: generatedMeta.description,
+    finalTitle,
+    finalDescription,
+  })
+
   return {
     ...generatedMeta,
-    title: areaSite.meta_title || generatedMeta.title,
-    description: areaSite.meta_description || generatedMeta.description,
+    title: finalTitle,
+    description: finalDescription,
   }
 }
 
