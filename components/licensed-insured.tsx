@@ -30,7 +30,9 @@ export function LicensedInsured({ title, body, variant = "card" }: LicensedInsur
                     <ShieldCheck className="w-7 h-7 text-[var(--accent-hover)]" />
                 </div>
             </div>
-            <h3 className="text-xl font-semibold text-slate-900 text-center mb-3">{title}</h3>
+            {title && title.trim().length > 0 && (
+                <h3 className="text-xl font-semibold text-slate-900 text-center mb-3">{title}</h3>
+            )}
             <p className="text-slate-600 text-center leading-relaxed">{body}</p>
         </div>
     )

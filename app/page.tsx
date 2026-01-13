@@ -145,6 +145,55 @@ export default async function Home() {
     ? processContent(servicesHeadingBlock.value_spintax_html, domain, variables)
     : undefined
 
+  // Fetch 'Licensed & Insured' heading (which user wants to populate from 'service_list' keys)
+  // Re-using similar keys as services section but prioritizing 'service_list'
+  const licensedInsuredKeys = ['service_list', 'services', 'service', 'home_services', 'services_section']
+  let licensedInsuredBlock: ContentBlock | null = null
+  for (const sectionKey of licensedInsuredKeys) {
+    licensedInsuredBlock = await getContentBlock({
+      categoryKey: category,
+      pageType: 'home',
+      sectionKey,
+      elementType: 'h2', // DB rows are h2
+      elementOrder: 1,
+      siteId: site.id,
+    })
+    if (licensedInsuredBlock) break
+  }
+  // Fallback to 'service_area' page_type if not found in 'home'
+  if (!licensedInsuredBlock) {
+    for (const sectionKey of licensedInsuredKeys) {
+      licensedInsuredBlock = await getContentBlock({
+        categoryKey: category,
+        pageType: 'service_area',
+        sectionKey,
+        elementType: 'h2',
+        elementOrder: 1,
+        siteId: site.id,
+      })
+      if (licensedInsuredBlock) break
+    }
+  }
+
+  const licensedInsuredTitle = licensedInsuredBlock?.value_spintax_html
+    ? processContent(licensedInsuredBlock.value_spintax_html, domain, variables)
+    : undefined // Let component fallback to default if undefined, OR if empty string logic in component handles it.
+  // Note: if licensedInsuredTitle is undefined, About passes undefined, LicensedInsured uses default.
+  // The user wanted "Fix it so the heading is not rendered when the computed heading is empty".
+  // content_blocks might have valid text. If it does, we show it.
+  // If content_blocks is missing, licensedInsuredTitle is undefined.
+  // About component logic: `licensedInsured?.title || DEFAULT`.
+  // So if undefined, it shows "Licensed & Insured".
+  // If the user WANTS the "Roofing Solutions" text or NOTHING, then:
+  // If I found a block, use it. If not, what?
+  // The user said: "Wire this heading to content_blocks... The key success criterion: the blank space disappears and the heading shows up with the spintax result."
+  // So if block found -> show it.
+  // If block NOT found -> it will fallback to "Licensed & Insured" (default).
+  // The user complained about "EMPTY element". "Licensed & Insured" is not empty.
+  // So likely "Licensed & Insured" DEFAULT is NOT empty.
+  // The "EMPTY element" must have been caused by something else passing empty string, or my understanding of "LicensedInsured" usage was slightly off but the fix to conditional render protects against empty string.
+
+
   const navLabels = {
     home: processContent(headerContent?.nav_home || DEFAULT_NAV.home, domain, variables),
     services: processContent(headerContent?.nav_services || DEFAULT_NAV.services, domain, variables),
@@ -300,6 +349,10 @@ export default async function Home() {
         seoBodyArticleBlocks={seoBodyArticleBlocks}
         domain={domain}
         variables={variables}
+        licensedInsured={licensedInsuredTitle ? {
+          title: licensedInsuredTitle,
+          body: "Certified professionals, quality equipment, and trusted service."
+        } : undefined}
       />
       <FAQ content={faqData} />
       <Testimonials content={testimonialsData} />

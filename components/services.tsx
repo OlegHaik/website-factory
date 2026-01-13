@@ -58,9 +58,16 @@ const ICON_MAP: Record<ServiceIconKey, ComponentType<{ className?: string }>> = 
 const getIconComponent = (key?: ServiceIconKey) => (key ? ICON_MAP[key] : undefined) || Droplets
 
 export function Services({ services, heading }: ServicesProps) {
+  const seenTitles = new Set<string>()
   const items = (services || []).filter((svc) => {
     const title = String(svc?.title ?? "").trim()
-    return title.length > 0
+    if (title.length === 0) return false
+
+    const normalizedKey = title.toLowerCase()
+    if (seenTitles.has(normalizedKey)) return false
+
+    seenTitles.add(normalizedKey)
+    return true
   })
 
   if (items.length === 0) return null
