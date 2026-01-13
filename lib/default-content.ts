@@ -1,10 +1,19 @@
-export const DEFAULT_HEADER = {
+export const DEFAULT_HEADER_WATER = {
   nav_home: "Home",
   nav_services: "Services",
   nav_areas: "Service Areas",
   nav_contact: "Contact",
   call_button_text: "Call Now",
   ourLinks: "{Our Links|Links|Citations|Backlinks|References|Online References|External Links|Resources}",
+}
+
+export const DEFAULT_HEADER = {
+  nav_home: "Home",
+  nav_services: "Services",
+  nav_areas: "Locations",
+  nav_contact: "Contact",
+  call_button_text: "Contact Us",
+  ourLinks: "{Resources|Links|Useful Links}",
 }
 
 export const DEFAULT_NAV = {
@@ -139,6 +148,19 @@ export const DEFAULT_SERVICE_PAGE = {
     trust_points:
       "Licensed & insured\nQuality materials\nExperienced crews\nTransparent pricing\nWarranty protection",
   },
+  generic: {
+    hero_headline: "{Professional|Expert|Trusted} Services in {{city}}, {{state}}",
+    hero_subheadline: "{Quality solutions|Professional service} for your needs.",
+    hero_cta_secondary: "{Contact Us|Get a Quote}",
+    section_headline: "{Professional Service|Expert Solutions} in {{city}}",
+    section_body: "{We provide top-quality services|Our team delivers excellent results} for residential and commercial properties.",
+    process_headline: "{Our Process|How We Work}",
+    process_body: "We assess your needs, provide a clear plan, and execute the work with professionalism/care.",
+    midpage_cta_headline: "{Ready to Start?|Need Help?}",
+    midpage_cta_subtext: "Call us today to schedule.",
+    why_choose_headline: "{Why Choose Us|Sales Points}",
+    trust_points: "Experienced Team\nQuality Results\nCustomer Satisfaction\nReliable Service\nCompetitive Pricing",
+  },
 }
 
 // Category-to-fallback mapping for service pages
@@ -155,12 +177,12 @@ export function getDefaultServicePageForCategory(serviceKey: string, category: s
   if (DEFAULT_SERVICE_PAGE[serviceKey as keyof typeof DEFAULT_SERVICE_PAGE]) {
     return DEFAULT_SERVICE_PAGE[serviceKey as keyof typeof DEFAULT_SERVICE_PAGE]
   }
-  // Fall back to category-appropriate default
-  const categoryFallback = CATEGORY_SERVICE_FALLBACK[category] || "water"
-  return DEFAULT_SERVICE_PAGE[categoryFallback as keyof typeof DEFAULT_SERVICE_PAGE] || DEFAULT_SERVICE_PAGE.roofing_generic
+  // Fall back to category-appropriate default, or Generic if unknown
+  const categoryFallback = CATEGORY_SERVICE_FALLBACK[category] || "generic"
+  return DEFAULT_SERVICE_PAGE[categoryFallback as keyof typeof DEFAULT_SERVICE_PAGE] || DEFAULT_SERVICE_PAGE.generic
 }
 
-export const DEFAULT_SERVICE_AREA = {
+export const DEFAULT_SERVICE_AREA_WATER = {
   headline: "{Trusted|Professional|Expert|Certified|Local} Fire & Water Restoration in {{city}}, {{state}}",
   paragraph1:
     "{When disaster strikes in|Emergencies don't wait in} {{city}}, you need {fast, reliable restoration|immediate professional help}. Our team is {available 24/7|ready around the clock}.",
@@ -180,6 +202,26 @@ export const DEFAULT_SERVICE_AREA = {
   trust_points:
     "24/7 emergency response\nClear communication\nCertified technicians\nProfessional equipment\nInsurance-friendly documentation",
   services_list_headline: "{Popular Services|Services We Provide in {{city}}}",
+}
+
+export const DEFAULT_SERVICE_AREA = {
+  headline: "{Professional|Expert|Trusted} Services in {{city}}, {{state}}",
+  paragraph1:
+    "{Looking for professional services in|Need expert help in} {{city}}? Our team {provides top-quality solutions|delivers excellent results} and {reliable service|professional care}.",
+  paragraph2:
+    "{We understand the importance of quality|Your satisfaction is our priority}. We help {solve your problems|address your needs} with {efficient and effective solutions|proven methods}.",
+  paragraph3:
+    "Our technicians use {the best equipment|quality materials} to {ensure long-lasting results|deliver superior performance} and {meet your expectations|exceed industry standards}.",
+  paragraph4:
+    "{Ready to get started?|Need a quote?} Call {{phone}} for {service|a consultation} in {{city}}.",
+  why_city_headline: "{Why {{city}} Chooses Us|Your Local Experts}",
+  why_city_paragraph:
+    "We provide {reliable service|expert solutions} for customers in {{city}}, {{state}}, backed by {years of experience|professional expertise}.",
+  midpage_cta_headline: "{Need Services in {{city}}?|Get in Touch}",
+  midpage_cta_subtext: "Contact us today for a free consultation or estimate.",
+  why_choose_headline: "{Why Choose Us|Trusted Local Service}",
+  trust_points: "Professional Team\nQuality Service\nCustomer Satisfaction\nReliable Support\nCompetitive Rates",
+  services_list_headline: "{Our Services|Services in {{city}}}",
 }
 
 export const DEFAULT_SERVICE_AREA_ROOFING = {
@@ -233,12 +275,14 @@ export function getDefaultServiceArea(category: string) {
       return DEFAULT_SERVICE_AREA_ROOFING
     case "mold_remediation":
       return DEFAULT_SERVICE_AREA_MOLD
+    case "water_damage":
+      return DEFAULT_SERVICE_AREA_WATER
     default:
       return DEFAULT_SERVICE_AREA
   }
 }
 
-export const DEFAULT_META = {
+export const DEFAULT_META_WATER = {
   homepage: {
     title: "{Trusted|Professional|Expert} Fire & Water Restoration in {{city}}, {{state}} | {{business_name}}",
     description:
@@ -288,7 +332,28 @@ export const DEFAULT_META = {
   },
 }
 
-export const DEFAULT_LEGAL = {
+export const DEFAULT_META = {
+  homepage: {
+    title: "{Trusted|Professional|Expert} Services in {{city}}, {{state}} | {{business_name}}",
+    description:
+      "{{business_name}} provides professional services in {{city}}, {{state}}. Contact us today for a free estimate!",
+  },
+  service_area: {
+    title: "{Trusted|Professional} Services in {{city}}, {{state}} | {{business_name}}",
+    description:
+      "{{business_name}} serves {{city}}, {{state}} with professional services. Call for details!",
+  },
+  privacy_policy: {
+    title: "Privacy Policy | {{business_name}}",
+    description: "Learn how {{business_name}} collects, uses, and protects your information.",
+  },
+  terms_of_use: {
+    title: "Terms of Use | {{business_name}}",
+    description: "Read the terms and conditions for using {{business_name}}'s website and services.",
+  },
+}
+
+export const DEFAULT_LEGAL_WATER = {
   privacy_policy: {
     title: "Privacy Policy",
     last_updated_spintax:
@@ -331,11 +396,53 @@ Email: {{email}}`,
   },
 }
 
-export const DEFAULT_HERO = {
+export const DEFAULT_LEGAL = {
+  privacy_policy: {
+    title: "Privacy Policy",
+    last_updated_spintax: "{January|February|March} 2025",
+    content: `## 1. Introduction
+
+{{business_name}} values your privacy.
+
+## 2. Information We Collect
+
+We may collect personal information such as name, contact details, and service preferences.
+
+## 3. Contact Us
+
+{{business_name}}
+{{phone}}`,
+  },
+  terms_of_use: {
+    title: "Terms of Use",
+    last_updated_spintax: "{January|February|March} 2025",
+    content: `## 1. Acceptance of Terms
+
+Welcome to {{business_name}}. By using our site, you agree to these Terms.
+
+## 2. Services
+
+{{business_name}} provides professional services in {{city}}, {{state}}.
+
+## 3. Contact
+
+{{business_name}}
+{{phone}}`,
+  },
+}
+
+export const DEFAULT_HERO_WATER = {
   headline_spintax: "{Trusted|Professional|Expert|Certified} Fire & Water Restoration in {{city}}, {{state}}",
   subheadline_spintax:
     "{Don't let water damage destroy your home|When disaster strikes, every second counts}. Our {{city}} team {uses advanced drying tech|responds within 60 minutes|is available 24/7} to restore your property fast. {Direct insurance billing available|We work with all insurance companies}.",
   chat_button_spintax: "{Chat With Us|Message Us|Text Us|Start Chat|Get Free Estimate}",
+}
+
+export const DEFAULT_HERO = {
+  headline_spintax: "{Professional|Expert|Trusted} Services in {{city}}, {{state}}",
+  subheadline_spintax:
+    "{High quality results|Professional service} for your home or business. Our {{city}} team {is experienced|delivers excellence|provides top-tier service}. {Contact us today|Call for a free estimate}.",
+  chat_button_spintax: "{Contact Us|Get Free Estimate|Message Us}",
 }
 
 export const DEFAULT_HERO_ROOFING = {
@@ -359,6 +466,8 @@ export function getDefaultHero(category: string) {
       return DEFAULT_HERO_ROOFING
     case "mold_remediation":
       return DEFAULT_HERO_MOLD
+    case "water_damage":
+      return DEFAULT_HERO_WATER
     default:
       return DEFAULT_HERO
   }
@@ -385,14 +494,21 @@ export const DEFAULT_SERVICES = {
     "{Emergency sewage and black water cleanup services|Professional sewage removal}. We safely {remove contaminated water|extract sewage}, {sanitize affected areas|disinfect your property}, and restore your property.",
 }
 
-export const DEFAULT_CTA = {
+export const DEFAULT_CTA_WATER = {
   headline_spintax: "{Need Help Right Now?|Need Emergency Help?|Request Immediate Service|Get Help Fast}",
   subheadline_spintax:
     "{Call for immediate dispatch|Call now for fast response}. Our team is {available 24/7|on call day and night} for {emergency cleanup, drying, and restoration|water, fire, and mold emergencies}.",
   chat_button_spintax: "{Chat With Us|Message Us|Text Us|Get Free Estimate}",
 }
 
-export const DEFAULT_SEO_BODY = {
+export const DEFAULT_CTA = {
+  headline_spintax: "{Need Help?|Get a Free Estimate|Ready to Start?}",
+  subheadline_spintax:
+    "{Contact us today for professional service|Call now to schedule a consultation}. Our team is {ready to help|standing by|available} for all your needs.",
+  chat_button_spintax: "{Contact Us|Get Free Estimate|Request Service}",
+}
+
+export const DEFAULT_SEO_BODY_WATER = {
   intro_spintax:
     "{When disaster strikes, every second counts|Water damage can happen at any time|Emergencies don't wait}. At {{business_name}}, we understand the urgency of water damage, fire incidents, and mold growth. Our team of {certified professionals|licensed experts|trained specialists} is dedicated to restoring your property to its pre-loss condition {as quickly as possible|with speed and precision|efficiently and thoroughly}. Serving {{city}} and the surrounding areas, we are your local experts in {emergency mitigation|disaster recovery|property restoration}.",
   why_choose_title_spintax: "{Why Choose Our Restoration Team?|Why Trust Us?|What Sets Us Apart?}",
@@ -401,6 +517,17 @@ export const DEFAULT_SEO_BODY = {
   process_title_spintax: "{The Restoration Process|Our Process|How We Work}",
   process_spintax:
     "Our process begins with a {thorough inspection|comprehensive assessment|detailed evaluation}. We document everything for your insurance claim to ensure you get the coverage you deserve. Next, we begin {water extraction|moisture removal|damage mitigation} using {truck-mounted pumps|professional equipment|industrial-grade tools}. Once standing water is gone, we install {industrial air movers and dehumidifiers|professional drying equipment|commercial-grade dryers}. Finally, we perform any necessary repairs to {bring your home back to normal|restore your property|complete the restoration}.",
+}
+
+export const DEFAULT_SEO_BODY = {
+  intro_spintax:
+    "{Welcome to|About} {{business_name}}. We are a {leading|trusted|professional} provider of services in {{city}} and the surrounding areas. Our team of {experts|professionals|specialists} is dedicated to delivering {exceptional|high-quality|top-notch} results for your home or business.",
+  why_choose_title_spintax: "{Why Choose Us?|Our Advantage|Why We Are The Best}",
+  why_choose_spintax:
+    "We are committed to {excellence|quality|customer satisfaction}. Our team is {experienced|skilled|knowledgeable} and uses {the best materials|proven techniques|professional methods} to ensure the job is done right. We offer {competitive pricing|fair rates|great value} and {reliable service|dependable support}.",
+  process_title_spintax: "{Our Process|How We Work|What to Expect}",
+  process_spintax:
+    "We start with a {consultation|assessment|discussion} to understand your needs. Then, we {create a plan|develop a solution|outline the steps} tailored to your requirements. Our team {executes the work|completes the project|performs the service} with {care|precision|attention to detail}, ensuring {satisfaction|quality results}.",
 }
 
 export const DEFAULT_SEO_BODY_ROOFING = {
@@ -432,12 +559,14 @@ export function getDefaultSeoBody(category: string) {
     case 'mold_remediation':
     case 'mold':
       return DEFAULT_SEO_BODY_MOLD
+    case 'water_damage':
+      return DEFAULT_SEO_BODY_WATER
     default:
       return DEFAULT_SEO_BODY
   }
 }
 
-export const DEFAULT_FAQ = {
+export const DEFAULT_FAQ_WATER = {
   heading_spintax: "{Frequently Asked Questions|Common Questions|Questions Homeowners Ask}",
   items: [
     {
@@ -468,7 +597,28 @@ export const DEFAULT_FAQ = {
   ],
 }
 
-export const DEFAULT_TESTIMONIALS = {
+export const DEFAULT_FAQ = {
+  heading_spintax: "{Frequently Asked Questions|Common Questions|Q&A}",
+  items: [
+    {
+      question_spintax: "{What services do you offer?|How can you help?|What do you do?}",
+      answer_spintax:
+        "{We offer a full range of professional services|We provide comprehensive solutions|Our team handles all aspects of the job} for {residential and commercial|all} properties in {{city}}.",
+    },
+    {
+      question_spintax: "{Do you offer free estimates?|Can I get a quote?|Is the consultation free?}",
+      answer_spintax:
+        "{Yes, we offer free estimates|Absolutely, contact us for a free quote|We provide complimentary consultations} for all our services.",
+    },
+    {
+      question_spintax: "{Are you licensed and insured?|Is your team certified?|Do you have insurance?}",
+      answer_spintax:
+        "{Yes, we are fully licensed and insured|Our team is certified and insured|We maintain full licensing and insurance} for your protection and peace of mind.",
+    },
+  ],
+}
+
+export const DEFAULT_TESTIMONIALS_WATER = {
   heading_spintax: "{Trusted by Homeowners|Trusted Local Reviews|What Customers Say}",
   subheading_spintax: "{Real reviews from customers we've helped|Verified feedback from local homeowners}.",
   items: [
@@ -491,6 +641,27 @@ export const DEFAULT_TESTIMONIALS = {
       location_spintax: "{{city}}, {{state}}",
       text_spintax:
         "{They arrived fast and explained everything clearly|Professional service from start to finish|Quick response and thorough work}. The team was {professional|helpful|knowledgeable} and {helped us through|guided us through|assisted with} the {insurance process|entire process|restoration work}.",
+      rating: 5,
+    },
+  ],
+}
+
+export const DEFAULT_TESTIMONIALS = {
+  heading_spintax: "{Client Reviews|What Our Clients Say|Testimonials}",
+  subheading_spintax: "{Feedback from satisfied clients|See what others say about us}.",
+  items: [
+    {
+      name: "{John|Mike|Robert} {D|S|M}.",
+      location_spintax: "{{city}}, {{state}}",
+      text_spintax:
+        "{Great service provided|Excellent work|Highly recommended}. The team was {professional|courteous|efficient} and {did a great job|completed the work on time}. {Very happy with the results|Will definitely use again}.",
+      rating: 5,
+    },
+    {
+      name: "{Sarah|Jessica|Emily} {W|K|L}.",
+      location_spintax: "{{city}}, {{state}}",
+      text_spintax:
+        "{Very professional service|Reliable and trustworthy|Quality workmanship}. They {answered all my questions|were very helpful|exceeded expectations}. {Five stars|Great experience}.",
       rating: 5,
     },
   ],
@@ -521,6 +692,8 @@ export function getDefaultCta(category: string) {
     case 'mold_remediation':
     case 'mold':
       return DEFAULT_CTA_MOLD
+    case 'water_damage':
+      return DEFAULT_CTA_WATER
     default:
       return DEFAULT_CTA
   }
@@ -599,6 +772,8 @@ export function getDefaultFaq(category: string) {
     case 'mold_remediation':
     case 'mold':
       return DEFAULT_FAQ_MOLD
+    case 'water_damage':
+      return DEFAULT_FAQ_WATER
     default:
       return DEFAULT_FAQ
   }
@@ -671,6 +846,8 @@ export function getDefaultTestimonials(category: string) {
     case 'mold_remediation':
     case 'mold':
       return DEFAULT_TESTIMONIALS_MOLD
+    case 'water_damage':
+      return DEFAULT_TESTIMONIALS_WATER
     default:
       return DEFAULT_TESTIMONIALS
   }

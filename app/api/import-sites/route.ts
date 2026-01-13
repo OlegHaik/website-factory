@@ -245,6 +245,15 @@ async function ensureCategoryContent(category: string, supabase: ReturnType<type
   const targetCategoryConfig = resolveCategoryConfig(category)
   const validServiceSlugs = new Set(targetCategoryConfig.services.map((s) => s.slug))
 
+  // GUARD: Only seed content for categories that have a rich template (Water, Roofing, Mold).
+  // For generic categories (ADU, Locksmith, etc.), we intentionally do NOT seed.
+  // This allows them to fall back to the generic code defaults (lib/default-content.ts).
+  const SEEDED_CATEGORIES = ['water_damage', 'roofing', 'mold_remediation', 'mold']
+  if (!SEEDED_CATEGORIES.includes(category)) {
+    console.log(`[ImportGuard] Category "${category}" is generic. Skipping content seeding to use code defaults.`)
+    return
+  }
+
   for (const table of CATEGORY_CONTENT_TABLES) {
     const existing = await supabase.from(table).select('id').eq('category', category).limit(1)
     if (!existing.error && existing.data && existing.data.length > 0) continue
