@@ -8,6 +8,7 @@ import { DEFAULT_HEADER, DEFAULT_NAV, DEFAULT_SERVICE_PAGE, getDefaultServicePag
 import { generatePageMetadata } from "@/lib/generate-metadata"
 import { parseSocialLinks } from "@/lib/types"
 import { fetchCategoryServices } from "@/lib/services"
+import { resolveCategoryConfig } from "@/lib/category-mapping"
 
 import { Header } from "@/components/header"
 import { ServiceHero } from "@/components/service-hero"
@@ -34,6 +35,12 @@ export async function generateMetadata({
 
   const domain = site.resolvedDomain || requestDomain || "default"
   const category = site.category || 'water_damage'
+
+  // GUARD: Check if serviceSlug is allowed for this category
+  const allowedServiceSlugs = new Set(resolveCategoryConfig(category).services.map((s) => s.slug))
+  if (!allowedServiceSlugs.has(serviceSlug)) {
+    return { title: 'Not Found', description: 'The requested page could not be found.' }
+  }
 
   const variables = {
     city: site.city || "",
@@ -140,6 +147,13 @@ export default async function ServicePage({
     mainSite: { id: site.id, slug: site.slug, category: site.category },
     finalCategory: category,
   })
+
+  // GUARD: Check if serviceSlug is allowed for this category
+  const allowedServiceSlugs = new Set(resolveCategoryConfig(category).services.map((s) => s.slug))
+  if (!allowedServiceSlugs.has(serviceSlug)) {
+    console.warn(`[ServiceGuard] Blocking serviceSlug="${serviceSlug}" - not in category="${category}" allowed list: ${[...allowedServiceSlugs].join(', ')}`)
+    notFound()
+  }
 
   const variables = {
     city: site.city,
