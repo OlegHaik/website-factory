@@ -59,7 +59,7 @@ const pickDescriptionFromRow = (
 
 type ContentServicePageRow = {
   service_slug?: string | null
-  service_title?: string | null
+  service_title_spintax?: string | null
   hero_headline_spintax?: string | null
   hero_subheadline_spintax?: string | null
   section_body_spintax?: string | null
@@ -76,7 +76,7 @@ export async function fetchCategoryServices(params: {
   const { services: serviceDefinitions, legacyFields, order } = resolveCategoryConfig(category)
   const supabase = await createClient()
   const selectFields =
-    "service_slug, service_title, hero_headline_spintax, hero_subheadline_spintax, section_body_spintax, process_body_spintax, category"
+    "service_slug, service_title_spintax, hero_headline_spintax, hero_subheadline_spintax, section_body_spintax, process_body_spintax, category"
 
   const { data, error } = await supabase
     .from("content_service_pages")
@@ -124,7 +124,7 @@ export async function fetchCategoryServices(params: {
 
       const title =
         legacy.title ||
-        processContent(row.service_title || row.hero_headline_spintax || formatTitleFromSlug(slug), seed, variables)
+        processContent(row.service_title_spintax || row.hero_headline_spintax || formatTitleFromSlug(slug), seed, variables)
 
       const description = legacy.description || pickDescriptionFromRow(row, seed, variables) || ""
 
