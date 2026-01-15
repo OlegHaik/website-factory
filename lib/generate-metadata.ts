@@ -20,8 +20,8 @@ export async function generatePageMetadata(
 
   const seed = `${domain}${seedSuffix}`
 
-  const title = processContent(metaContent?.title_spintax || defaults.title, seed, variables)
-  const description = processContent(metaContent?.description_spintax || defaults.description, seed, variables)
+  const title = processContent(metaContent?.title || defaults.title, seed, variables)
+  const description = processContent(metaContent?.description || defaults.description, seed, variables)
 
   return {
     title,
