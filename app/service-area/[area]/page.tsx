@@ -264,16 +264,29 @@ export default async function ServiceAreaPage({
 
   const ourLinksLabel = processContent(headerContent?.our_links_spintax || DEFAULT_HEADER.ourLinks, resolvedDomain, variables)
 
-  // Footer shows the service area's own contact info with fallback to main site
-  const footerAddress = {
-    address: areaSite.address || mainSite.address,
-    city: areaSite.city || mainSite.city,
-    state: areaSite.state || mainSite.state,
-    zipCode: areaSite.zip_code || mainSite.zip_code,
-    email: areaSite.email || mainSite.email,
-    phone: areaSite.phone || mainSite.phone,
-    phoneDisplay: areaSite.phoneDisplay || mainSite.phoneDisplay,
-  }
+  // Footer address logic:
+  // If service area has its own street address, use service area's full address
+  // Otherwise, use main site's full address (to avoid mixing street from main + city from area)
+  const hasOwnAddress = Boolean(areaSite.address && areaSite.address.trim())
+  const footerAddress = hasOwnAddress
+    ? {
+        address: areaSite.address,
+        city: areaSite.city,
+        state: areaSite.state,
+        zipCode: areaSite.zip_code,
+        email: areaSite.email || mainSite.email,
+        phone: areaSite.phone || mainSite.phone,
+        phoneDisplay: areaSite.phoneDisplay || mainSite.phoneDisplay,
+      }
+    : {
+        address: mainSite.address,
+        city: mainSite.city,
+        state: mainSite.state,
+        zipCode: mainSite.zip_code,
+        email: areaSite.email || mainSite.email,
+        phone: areaSite.phone || mainSite.phone,
+        phoneDisplay: areaSite.phoneDisplay || mainSite.phoneDisplay,
+      }
 
   // Fetch FAQ content
   const faqContent = await getContentFAQ(category)
