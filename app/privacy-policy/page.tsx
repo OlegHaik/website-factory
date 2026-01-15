@@ -150,12 +150,33 @@ export default async function PrivacyPolicyPage() {
 }
 
 function formatLegalContent(content: string): string {
-  return String(content || '')
-    .replace(/^## (.+)$/gm, '<h2 class="text-xl font-semibold text-slate-900 mt-8 mb-4">$1</h2>')
-    .replace(/^### (.+)$/gm, '<h3 class="text-lg font-semibold text-slate-900 mt-6 mb-3">$1</h3>')
-    .replace(/^- (.+)$/gm, '<li class="text-slate-700">$1</li>')
-    .replace(/(<li.*<\/li>\n?)+/g, '<ul class="list-disc pl-6 space-y-2 mb-4">$&</ul>')
-    .replace(/^\d+\. (.+)$/gm, '<li class="text-slate-700">$1</li>')
-    .replace(/^(?!<[uh]|<li)(.+)$/gm, '<p class="text-slate-700 mb-4">$1</p>')
-    .replace(/<p class="text-slate-700 mb-4"><\/p>/g, '')
+  const lines = String(content || '').split('\n')
+  const result: string[] = []
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim()
+    const nextLine = lines[i + 1]?.trim() || ''
+
+    // Handle format: "H2" on one line, content on next
+    if (line === 'H2' && nextLine) {
+      result.push(`<h2 class="text-xl font-semibold text-slate-900 mt-8 mb-4">${nextLine}</h2>`)
+      i++ // Skip next line as we've used it
+    } else if (line === 'H3' && nextLine) {
+      result.push(`<h3 class="text-lg font-semibold text-slate-900 mt-6 mb-3">${nextLine}</h3>`)
+      i++
+    } else if (line === 'P' && nextLine) {
+      result.push(`<p class="text-slate-700 mb-4">${nextLine}</p>`)
+      i++
+    } else if (line === 'BULLETS' && nextLine) {
+      // Handle bullet points
+      const items = nextLine.split(/[•·]/).map(s => s.trim()).filter(Boolean)
+      result.push(`<ul class="list-disc pl-6 space-y-2 mb-4">${items.map(item => `<li class="text-slate-700">${item}</li>`).join('')}</ul>`)
+      i++
+    } else if (line && line !== 'H2' && line !== 'H3' && line !== 'P' && line !== 'BULLETS') {
+      // Regular paragraph if not a marker
+      result.push(`<p class="text-slate-700 mb-4">${line}</p>`)
+    }
+  }
+
+  return result.join('\n')
 }
