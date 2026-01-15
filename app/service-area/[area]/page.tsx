@@ -178,10 +178,13 @@ export default async function ServiceAreaPage({
   }
 
   const services = await fetchCategoryServices({ category, domain: resolvedDomain, variables })
-  const servicesForLists = services.filter(s => {
-    const normPath = normalizePath(s.href)
-    return normPath !== "/leak-repair" && s.slug !== "leak-repair"
-  })
+  // Only filter leak-repair for water_damage (duplicate of burst-pipe-repair)
+  const servicesForLists = category === "water_damage"
+    ? services.filter(s => {
+        const normPath = normalizePath(s.href)
+        return normPath !== "/leak-repair" && s.slug !== "leak-repair"
+      })
+    : services
 
   const headerContent = await getContentHeader(category)
   const areaContent = await getContentServiceArea(category)

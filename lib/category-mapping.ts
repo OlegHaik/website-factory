@@ -40,7 +40,13 @@ const ROOFING_SERVICES: ServiceDefinition[] = [
     shortDescription: "Flat and low-slope roofing solutions with scheduled maintenance programs for businesses.",
     icon: "sewage",
   },
-  // Note: leak-repair removed - roofing should have 5 services only
+  {
+    key: "leak-repair",
+    slug: "leak-repair",
+    title: "Leak Repair",
+    shortDescription: "Rapid-response leak mitigation to stop active water intrusion and protect interiors.",
+    icon: "burst-pipe",
+  },
 ]
 
 const MOLD_SERVICES: ServiceDefinition[] = [

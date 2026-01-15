@@ -94,9 +94,9 @@ export function Header({
       .filter((item) => item.label.length > 0)
 
   // Only use provided services - no hardcoded fallback to prevent category mixing
+  // Note: leak-repair filtering is handled by parent pages (category-aware)
   const serviceMenuLinks = servicesLinks && servicesLinks.length > 0
     ? normalizeServiceLinks(servicesLinks)
-      .filter(link => normalizePath(link.href) !== "/leak-repair")
     : []
   const hasServiceMenu = serviceMenuLinks.length > 0
 
