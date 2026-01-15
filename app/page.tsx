@@ -241,16 +241,23 @@ export default async function Home() {
   }
 
   const faqDefaults = getDefaultFaq(category)
-  const baseFaqItems = parseFAQItems(faqContent ?? faqDefaults.items)
+  // faqContent - array of ContentFAQItem {question, answer}
+  // faqDefaults.items - array of {question_spintax, answer_spintax}
+  const baseFaqItems = faqContent && faqContent.length > 0 ? faqContent : []
 
   const mergedFaqItems = [...baseFaqItems]
+  // Fill with defaults if needed
   if (mergedFaqItems.length < 5) {
-    mergedFaqItems.push(...faqDefaults.items.slice(mergedFaqItems.length, 5))
+    const defaultsToAdd = faqDefaults.items.slice(mergedFaqItems.length, 5).map(item => ({
+      question: item.question_spintax,
+      answer: item.answer_spintax
+    }))
+    mergedFaqItems.push(...defaultsToAdd)
   }
 
   const faqItems = mergedFaqItems.map((item) => ({
-    question: processContent(item.question || item.question_spintax || '', domain, variables),
-    answer: processContent(item.answer || item.answer_spintax || '', domain, variables),
+    question: processContent(item.question, domain, variables),
+    answer: processContent(item.answer, domain, variables),
   }))
 
   const faqData = {
@@ -259,24 +266,20 @@ export default async function Home() {
   }
 
   const testimonialsDefaults = getDefaultTestimonials(category)
-  const testimonialItems = parseTestimonialItems(testimonialsContent?.items ?? testimonialsDefaults.items).map((item) => ({
-    name: processContent(item.name, domain, variables),
-    location: processContent(item.location_spintax, domain, variables),
-    text: processContent(item.text_spintax, domain, variables),
+  // testimonialsContent - array of ContentTestimonialNew {name, text, rating}
+  const testimonialItems = (testimonialsContent && testimonialsContent.length > 0 
+    ? testimonialsContent 
+    : testimonialsDefaults.items
+  ).map((item) => ({
+    name: processContent(item.name || item.name_spintax || '', domain, variables),
+    location: processContent(item.location_spintax || '{{city}}, {{state}}', domain, variables),
+    text: processContent(item.text || item.text_spintax || '', domain, variables),
     rating: item.rating,
   }))
 
   const testimonialsData = {
-    heading: processContent(
-      testimonialsContent?.heading_spintax || testimonialsDefaults.heading_spintax,
-      domain,
-      variables,
-    ),
-    subheading: processContent(
-      testimonialsContent?.subheading_spintax || testimonialsDefaults.subheading_spintax,
-      domain,
-      variables,
-    ),
+    heading: processContent(testimonialsDefaults.heading_spintax, domain, variables),
+    subheading: processContent(testimonialsDefaults.subheading_spintax, domain, variables),
     items: testimonialItems,
   }
 
