@@ -1,6 +1,6 @@
 import { processContent } from "@/lib/spintax"
 import { createClient } from "@/lib/supabase/server"
-import type { ContentService } from "@/lib/fetch-content"
+import type { ContentServiceNew } from "@/lib/fetch-content"
 import { getContentServices } from "@/lib/fetch-content"
 import type { ServiceDefinition } from "@/lib/water-damage"
 import { resolveCategoryConfig } from "@/lib/category-mapping"
@@ -23,7 +23,7 @@ const formatTitleFromSlug = (slug: string): string =>
 
 const getLegacyContent = (
   slug: string,
-  servicesContent: ContentService | null,
+  servicesContent: ContentServiceNew | null,
   seed: string,
   variables: Record<string, string>,
   legacyFields: LegacyFieldMap,

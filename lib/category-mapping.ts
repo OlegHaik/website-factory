@@ -1,7 +1,7 @@
-import type { ContentService } from "@/lib/fetch-content"
+import type { ContentServiceNew } from "@/lib/fetch-content"
 import { DEFAULT_SERVICES, type ServiceDefinition } from "@/lib/water-damage"
 
-export type LegacyFieldMap = Record<string, { titleKey: keyof ContentService; descriptionKey: keyof ContentService }>
+export type LegacyFieldMap = Record<string, { titleKey: keyof ContentServiceNew; descriptionKey: keyof ContentServiceNew }>
 
 const makeOrderMap = (services: ServiceDefinition[]) => new Map(services.map((svc, index) => [svc.slug, index]))
 
