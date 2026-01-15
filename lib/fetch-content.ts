@@ -211,23 +211,33 @@ export async function getContentServicesNew(category: string = "water_damage"): 
   const normalizedCategory = normalizeCategory(category)
   const supabase = await createClient()
   
+  // Use content_service_pages instead of content_services_new since it's visible
   const { data, error } = await supabase
-    .from("content_services_new")
-    .select("*")
+    .from("content_service_pages")
+    .select("service_slug, service_title_spintax, service_description_spintax, hero_subheadline_spintax")
     .eq("category", normalizedCategory)
-    .order("service_id")
+    .order("service_slug")
   
-  if (error || !data) {
-    console.error("Failed to fetch content_services_new:", error)
+  if (error) {
+    // Table doesn't exist yet - return empty array to fallback to definitions
+    if (error.code === 'PGRST205' || error.message?.includes('does not exist') || error.message?.includes('not find')) {
+      console.warn(`content_service_pages table not found - using fallback definitions for "${normalizedCategory}"`)
+      return []
+    }
+    console.error("Failed to fetch content_service_pages:", error)
+    return []
+  }
+  
+  if (!data || data.length === 0) {
     return []
   }
   
   return data.map(s => ({
-    id: s.service_id,
-    name: s.service_name,
-    nameSpin: s.service_name_spin,
-    slug: s.service_slug,
-    description: s.svc_grid_desc
+    id: s.service_slug || '',
+    name: s.service_title_spintax || s.service_slug || '',
+    nameSpin: s.service_title_spintax || s.service_slug || '',
+    slug: s.service_slug || '',
+    description: s.service_description_spintax || s.hero_subheadline_spintax || ''
   }))
 }
 
@@ -371,9 +381,7 @@ export async function getContentBlock(category: string, blockKey: string) {
   return data as ContentBlock | null
 }
 
-export function parseFAQItems(faqs: ContentFAQItem[]) {
-  return faqs
-}
+
 
 export function parseTestimonialItems(testimonials: ContentTestimonialNew[]) {
   return testimonials

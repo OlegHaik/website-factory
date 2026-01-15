@@ -1,7 +1,6 @@
-import type { ContentServiceNew } from "@/lib/fetch-content"
 import { DEFAULT_SERVICES, type ServiceDefinition } from "@/lib/water-damage"
 
-export type LegacyFieldMap = Record<string, { titleKey: string; descriptionKey: string }>
+// Remove unused LegacyFieldMap type that referenced ContentServiceNew
 
 const makeOrderMap = (services: ServiceDefinition[]) => new Map(services.map((svc, index) => [svc.slug, index]))
 

@@ -14,7 +14,6 @@ import {
   ContentBlock,
   getContentBlocks,
   getContentSeoBody,
-  parseFAQItems,
   type ContentFAQItem,
 } from "@/lib/fetch-content"
 import {

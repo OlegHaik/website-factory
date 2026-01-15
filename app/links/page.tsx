@@ -73,7 +73,6 @@ export default async function LinksPage() {
   }
 
   const mainSiteId = await getMainSiteIdForDomain(site)
-  const siteCategory = site.category || 'water_damage'
 
   // Links not available in new structure
   const links: any[] = []
