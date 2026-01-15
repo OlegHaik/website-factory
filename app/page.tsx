@@ -185,15 +185,11 @@ export default async function Home() {
   const testimonialsDefaults = getDefaultTestimonials(category)
   const testimonialItems = (testimonialsContent && testimonialsContent.length > 0 
     ? testimonialsContent 
-    : testimonialsDefaults.items.map(item => ({
-        name: item.name_spintax,
-        text: item.text_spintax,
-        rating: item.rating
-      }))
+    : testimonialsDefaults.items
   ).map((item: any) => ({
-    name: processContent(item.name || '', domain, variables),
+    name: processContent(item.name || item.name_spintax || '', domain, variables),
     location: processContent('{{city}}, {{state}}', domain, variables),
-    text: processContent(item.text || '', domain, variables),
+    text: processContent(item.text || item.text_spintax || '', domain, variables),
     rating: item.rating,
   }))
 
