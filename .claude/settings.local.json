@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "Bash(tree:*)",
+      "Bash(node analyze-xlsx.js:*)",
+      "Bash(node check-db-state.js:*)",
+      "Bash(node analyze-xlsx-detailed.js:*)",
+      "Bash(node:*)",
+      "Bash(npm run build:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
+    ]
+  }
+}

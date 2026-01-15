@@ -473,17 +473,37 @@ export async function fetchLinks(category: string = "water_damage") {
   return []
 }
 
-export async function getContentLegal(legalType: string = "privacy_policy") {
+export async function getContentLegal(legalType: string = "privacy_policy", category: string = "water_damage") {
   const supabase = await createClient()
+  const normalizedCategory = normalizeCategory(category)
+
+  // Map page legal types to xlsx legal types
+  const typeMap: Record<string, string> = {
+    'terms_of_use': 'terms',
+    'privacy_policy': 'privacy',
+    'terms': 'terms',
+    'privacy': 'privacy'
+  }
+  const xlsxType = typeMap[legalType] || legalType
+
   const { data, error } = await supabase
     .from("content_legal")
     .select("*")
-    .eq("legal_type", legalType)
+    .eq("category", normalizedCategory)
+    .eq("legal_type", xlsxType)
     .maybeSingle()
-  
+
   if (error) {
     console.error("Failed to fetch content_legal:", error)
     return null
   }
-  return data
+
+  if (!data) return null
+
+  // Map to expected format
+  return {
+    title: legalType === 'terms_of_use' || legalType === 'terms' ? 'Terms of Use' : 'Privacy Policy',
+    content_spintax: data.content,
+    last_updated_spintax: '{January|February|March|April|May|June|July|August|September|October|November|December} {1|5|10|15|20|25}, 2024'
+  }
 }
