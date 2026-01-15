@@ -241,7 +241,7 @@ export default async function Home() {
   }
 
   const faqDefaults = getDefaultFaq(category)
-  const baseFaqItems = parseFAQItems(faqContent?.items ?? faqDefaults.items)
+  const baseFaqItems = parseFAQItems(faqContent ?? faqDefaults.items)
 
   const mergedFaqItems = [...baseFaqItems]
   if (mergedFaqItems.length < 5) {
@@ -249,12 +249,12 @@ export default async function Home() {
   }
 
   const faqItems = mergedFaqItems.map((item) => ({
-    question: processContent(item.question_spintax, domain, variables),
-    answer: processContent(item.answer_spintax, domain, variables),
+    question: processContent(item.question || item.question_spintax || '', domain, variables),
+    answer: processContent(item.answer || item.answer_spintax || '', domain, variables),
   }))
 
   const faqData = {
-    heading: processContent(faqContent?.heading_spintax || faqDefaults.heading_spintax, domain, variables),
+    heading: processContent(faqDefaults.heading_spintax, domain, variables),
     items: faqItems,
   }
 
