@@ -60,7 +60,7 @@ export default async function TermsOfUsePage() {
         .replace(/^www\./, '')}`,
   }
 
-  const legalContent = await getContentLegal('terms_of_use', category)
+  const legalContent = await getContentLegal(category)
   const defaults = DEFAULT_LEGAL.terms_of_use
   const title = legalContent?.title || defaults.title
   const content = processContent(legalContent?.content_spintax || defaults.content, domain, variables)

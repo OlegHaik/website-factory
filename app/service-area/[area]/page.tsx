@@ -219,23 +219,11 @@ export default async function ServiceAreaPage({
     areaSeed,
     variables,
   )
-  // Fetch services list heading from content_blocks with fallback to 'home' page_type
-  const servicesListSectionKeys = ['services', 'service', 'home_services', 'services_section', 'service_list']
-  let servicesListBlock: ContentBlock | null = null
-  for (const sectionKey of servicesListSectionKeys) {
-    servicesListBlock = await getContentBlock({
-      categoryKey: category,
-      pageType: 'home', // Use 'home' because DB rows for this heading are currently stored under page_type='home'
-      sectionKey,
-      elementType: 'h2',
-      elementOrder: 1,
-      siteId: areaSite.id,
-    })
-    if (servicesListBlock) break
-  }
+  // Fetch services list heading from content_blocks
+  const servicesListBlock = await getContentBlock(category, 'services')
 
-  const servicesListHeadline = servicesListBlock?.value_spintax_html
-    ? processContent(servicesListBlock.value_spintax_html, areaSeed, variables)
+  const servicesListHeadline = servicesListBlock?.heading_spintax
+    ? processContent(servicesListBlock.heading_spintax, areaSeed, variables)
     : processContent(
       areaContent?.services_list_headline_spintax || categoryDefaults.services_list_headline,
       areaSeed,
