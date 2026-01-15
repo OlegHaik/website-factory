@@ -7,9 +7,10 @@ interface ServiceCTAProps {
   domain?: string
   headline: string
   subheadline: string
+  email?: string
 }
 
-export function ServiceCTA({ phone, phoneDisplay, businessName, domain, headline, subheadline }: ServiceCTAProps) {
+export function ServiceCTA({ phone, phoneDisplay, businessName, domain, headline, subheadline, email }: ServiceCTAProps) {
   return (
     <CTASection
       phone={phone}
@@ -18,6 +19,7 @@ export function ServiceCTA({ phone, phoneDisplay, businessName, domain, headline
       domain={domain}
       headline={headline}
       subheadline={subheadline}
+      email={email}
     />
   )
 }

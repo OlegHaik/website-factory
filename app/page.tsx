@@ -269,6 +269,7 @@ export default async function Home() {
         headline={ctaHeadline}
         subheadline={ctaSubheadline}
         chatButtonText={ctaChatButtonText}
+        email={site.email || undefined}
       />
 
       <Footer

@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Phone, MessageSquare } from "lucide-react"
+import { Phone, Mail } from "lucide-react"
 
 interface CTASectionProps {
   phone: string
@@ -11,6 +11,7 @@ interface CTASectionProps {
   headline?: string
   subheadline?: string
   chatButtonText?: string
+  email?: string
 }
 
 export function CTASection({
@@ -21,21 +22,22 @@ export function CTASection({
   headline,
   subheadline,
   chatButtonText,
+  email,
 }: CTASectionProps) {
   const cleanPhone = phone.replace(/\D/g, "")
   const displayPhone = phoneDisplay || phone
 
-  const smsNumber = "+19492675767" // ALWAYS this number for SMS
-  const smsMessage = encodeURIComponent(
-    `Hello, I'm reaching out from ${(businessName || "").replace(/&/g, "and")} (${domain || "our website"}), and would like to request a free estimate.`,
-  )
-  const smsHref = `sms:${smsNumber}?body=${smsMessage}`
+  // Generate email address - use provided email or derive from domain
+  const emailAddress = email || (domain ? `info@${domain.replace(/^www\./, '')}` : 'info@example.com')
+  const emailSubject = encodeURIComponent(`Inquiry from ${businessName || 'Website'}`)
+  const emailBody = encodeURIComponent(`Hello,\n\nI'm reaching out from your website and would like to request a free estimate.\n\nThank you.`)
+  const emailHref = `mailto:${emailAddress}?subject=${emailSubject}&body=${emailBody}`
 
   const headlineText = headline || "Need Help Right Now?"
   const subheadlineText =
     subheadline ||
     "Call for immediate dispatch. Our team is available 24/7 for all your service needs."
-  const chatText = chatButtonText || "Chat With Us"
+  const emailButtonText = chatButtonText || "Email Us"
 
   return (
     <section id="cta" className="aurora-surface py-24 lg:py-36 overflow-hidden">
@@ -57,11 +59,11 @@ export function CTASection({
               </Link>
 
               <Link
-                href={smsHref}
+                href={emailHref}
                 className="inline-flex items-center justify-center rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold px-6 py-3.5 border border-white/15 transition-colors"
               >
-                <MessageSquare className="w-5 h-5 mr-2" />
-                {chatText}
+                <Mail className="w-5 h-5 mr-2" />
+                {emailButtonText}
               </Link>
             </div>
 

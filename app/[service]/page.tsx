@@ -306,6 +306,7 @@ export default async function ServicePage({
         domain={site.resolvedDomain}
         headline={content.midpageCtaHeadline}
         subheadline={content.midpageCtaSubtext}
+        email={site.email || undefined}
       />
       <Footer
         businessName={site.business_name}

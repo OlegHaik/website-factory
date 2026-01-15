@@ -1,6 +1,52 @@
 import type { HomeArticleElement } from "@/lib/fetch-content"
 import { processContent } from "@/lib/spintax"
 
+// Split bullet items by newlines, bullet chars, or pipes OUTSIDE of braces
+function splitBulletItems(text: string): string[] {
+  const normalized = String(text || '').trim()
+  if (!normalized) return []
+
+  // First try newlines
+  const byNewline = normalized.split('\n').map(s => s.trim()).filter(Boolean)
+  if (byNewline.length > 1) return byNewline
+
+  // Try bullet characters
+  const byBullet = normalized.split(/•|·/).map(s => s.trim()).filter(Boolean)
+  if (byBullet.length > 1) return byBullet
+
+  // Try semicolons
+  const bySemi = normalized.split(';').map(s => s.trim()).filter(Boolean)
+  if (bySemi.length > 1) return bySemi
+
+  // Try pipes outside of braces
+  const items: string[] = []
+  let current = ''
+  let braceDepth = 0
+
+  for (let i = 0; i < normalized.length; i++) {
+    const char = normalized[i]
+    if (char === '{') {
+      braceDepth++
+      current += char
+    } else if (char === '}') {
+      braceDepth--
+      current += char
+    } else if (char === '|' && braceDepth === 0) {
+      const trimmed = current.trim()
+      if (trimmed) items.push(trimmed)
+      current = ''
+    } else {
+      current += char
+    }
+  }
+  const last = current.trim()
+  if (last) items.push(last)
+
+  if (items.length > 1) return items
+
+  return normalized ? [normalized] : []
+}
+
 interface SeoArticleProps {
   elements: HomeArticleElement[]
   domain: string
@@ -35,8 +81,8 @@ export function SeoArticle({ elements, domain, variables }: SeoArticleProps) {
           </p>
         )
       case 'BULLETS':
-        // Split by newlines or bullet points
-        const items = content.split(/\n|•|·/).map(s => s.trim()).filter(Boolean)
+        // Split by newlines, bullet points, or pipes outside of braces
+        const items = splitBulletItems(content)
         return (
           <ul key={index} className="list-disc list-inside space-y-2 mb-4 text-slate-600">
             {items.map((item, i) => (

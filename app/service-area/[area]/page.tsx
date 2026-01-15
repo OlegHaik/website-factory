@@ -394,6 +394,7 @@ export default async function ServiceAreaPage({
         domain={areaSite.resolvedDomain}
         headline={ctaHeadline}
         subheadline={ctaDescription}
+        email={areaSite.email || mainSite.email || undefined}
       />
       <Footer
         businessName={areaSite.business_name}
