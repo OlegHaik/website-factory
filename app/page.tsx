@@ -132,64 +132,20 @@ export default async function Home() {
   const testimonialsContent = await getContentTestimonials(category)
 
   // Fetch ALL SEO body article blocks from content_blocks
-  const seoBodyArticleBlocks = await getContentBlocks({
-    categoryKey: category,
-    pageType: 'home',
-    sectionKey: 'seo_body_article',
-    siteId: site.id,
-  })
+  const seoBodyArticleBlocks = await getContentBlocks(category)
 
-  // Fetch services section heading from content_blocks (try multiple section_key variants)
-  const servicesSectionKeys = ['services', 'service', 'home_services', 'services_section']
-  let servicesHeadingBlock: ContentBlock | null = null
-  for (const sectionKey of servicesSectionKeys) {
-    servicesHeadingBlock = await getContentBlock({
-      categoryKey: category,
-      pageType: 'home',
-      sectionKey,
-      elementType: 'h2',
-      elementOrder: 1,
-      siteId: site.id,
-    })
-    if (servicesHeadingBlock) break
-  }
+  // Fetch services section heading from content_blocks
+  const servicesHeadingBlock = await getContentBlock(category, 'services')
   const servicesHeading = servicesHeadingBlock?.value_spintax_html
     ? processContent(servicesHeadingBlock.value_spintax_html, domain, variables)
     : undefined
 
-  // Fetch 'Licensed & Insured' heading (which user wants to populate from 'service_list' keys)
-  // Re-using similar keys as services section but prioritizing 'service_list'
-  const licensedInsuredKeys = ['service_list', 'services', 'service', 'home_services', 'services_section']
-  let licensedInsuredBlock: ContentBlock | null = null
-  for (const sectionKey of licensedInsuredKeys) {
-    licensedInsuredBlock = await getContentBlock({
-      categoryKey: category,
-      pageType: 'home',
-      sectionKey,
-      elementType: 'h2', // DB rows are h2
-      elementOrder: 1,
-      siteId: site.id,
-    })
-    if (licensedInsuredBlock) break
-  }
-  // Fallback to 'service_area' page_type if not found in 'home'
-  if (!licensedInsuredBlock) {
-    for (const sectionKey of licensedInsuredKeys) {
-      licensedInsuredBlock = await getContentBlock({
-        categoryKey: category,
-        pageType: 'service_area',
-        sectionKey,
-        elementType: 'h2',
-        elementOrder: 1,
-        siteId: site.id,
-      })
-      if (licensedInsuredBlock) break
-    }
-  }
+  // Fetch 'Licensed & Insured' heading
+  const licensedInsuredBlock = await getContentBlock(category, 'service_list')
 
-  const licensedInsuredTitle = licensedInsuredBlock?.value_spintax_html
-    ? processContent(licensedInsuredBlock.value_spintax_html, domain, variables)
-    : undefined // Let component fallback to default if undefined, OR if empty string logic in component handles it.
+  const licensedInsuredTitle = licensedInsuredBlock?.body_spintax
+    ? processContent(licensedInsuredBlock.body_spintax, domain, variables)
+    : undefined
   // Note: if licensedInsuredTitle is undefined, About passes undefined, LicensedInsured uses default.
   // The user wanted "Fix it so the heading is not rendered when the computed heading is empty".
   // content_blocks might have valid text. If it does, we show it.
