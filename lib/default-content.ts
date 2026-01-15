@@ -435,28 +435,28 @@ export const DEFAULT_HERO_WATER = {
   headline_spintax: "{Trusted|Professional|Expert|Certified} Fire & Water Restoration in {{city}}, {{state}}",
   subheadline_spintax:
     "{Don't let water damage destroy your home|When disaster strikes, every second counts}. Our {{city}} team {uses advanced drying tech|responds within 60 minutes|is available 24/7} to restore your property fast. {Direct insurance billing available|We work with all insurance companies}.",
-  chat_button_spintax: "{Chat With Us|Message Us|Text Us|Start Chat|Get Free Estimate}",
+  chat_button_spintax: "Email Us",
 }
 
 export const DEFAULT_HERO = {
   headline_spintax: "{Professional|Expert|Trusted} Services in {{city}}, {{state}}",
   subheadline_spintax:
     "{High quality results|Professional service} for your home or business. Our {{city}} team {is experienced|delivers excellence|provides top-tier service}. {Contact us today|Call for a free estimate}.",
-  chat_button_spintax: "{Contact Us|Get Free Estimate|Message Us}",
+  chat_button_spintax: "Email Us",
 }
 
 export const DEFAULT_HERO_ROOFING = {
   headline_spintax: "{Trusted|Professional|Expert|Licensed} Roofing Contractors in {{city}}, {{state}}",
   subheadline_spintax:
     "{Protect your home with a quality roof|Your roof is your first line of defense}. Our {{city}} team {uses premium materials|delivers expert installation|provides lasting results}. {Free estimates available|Licensed and insured}.",
-  chat_button_spintax: "{Get Free Estimate|Chat With Us|Message Us|Request Quote}",
+  chat_button_spintax: "Email Us",
 }
 
 export const DEFAULT_HERO_MOLD = {
   headline_spintax: "{Certified|Professional|Expert|Trusted} Mold Remediation in {{city}}, {{state}}",
   subheadline_spintax:
     "{Don't let mold compromise your health|Mold problems require professional solutions}. Our {{city}} team {follows IICRC protocols|uses certified methods|ensures safe indoor air}. {Free inspections available|We handle insurance claims}.",
-  chat_button_spintax: "{Schedule Inspection|Chat With Us|Message Us|Get Free Quote}",
+  chat_button_spintax: "Email Us",
 }
 
 // Helper to get category-appropriate hero defaults

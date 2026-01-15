@@ -342,12 +342,45 @@ export async function getContentSeoBody(category: string = "water_damage") {
     .select("*")
     .eq("category", normalizeCategory(category))
     .maybeSingle()
-  
+
   if (error) {
     console.error("Failed to fetch content_seo_body:", error)
     return null
   }
   return data
+}
+
+// =====================================================
+// HOME ARTICLE - SEO body content from xlsx
+// =====================================================
+
+export interface HomeArticleElement {
+  element_order: number
+  element_type: string
+  content: string
+}
+
+export async function getContentHomeArticle(category: string = "water_damage"): Promise<HomeArticleElement[]> {
+  const normalizedCategory = normalizeCategory(category)
+  const supabase = await createClient()
+
+  const { data, error } = await supabase
+    .from("content_home_article")
+    .select("element_order, element_type, content")
+    .eq("category", normalizedCategory)
+    .order("element_order")
+
+  if (error) {
+    // Table might not exist yet
+    if (error.message?.includes('does not exist') || error.code === 'PGRST205') {
+      console.warn("content_home_article table not found - using default SEO body")
+      return []
+    }
+    console.error("Failed to fetch content_home_article:", error)
+    return []
+  }
+
+  return data || []
 }
 
 export async function getContentBlocks(category: string = "water_damage") {

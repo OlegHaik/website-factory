@@ -11,6 +11,7 @@ import {
   getContentHero,
   getContentTestimonials,
   getContentServices,
+  getContentHomeArticle,
   ContentBlock,
   getContentBlocks,
   getContentSeoBody,
@@ -34,6 +35,7 @@ import { CTASection } from "@/components/cta-section"
 import Footer from "@/components/footer"
 import { FloatingCall } from "@/components/floating-call"
 import { SchemaMarkup } from "@/components/schema-markup"
+import { SeoArticle } from "@/components/seo-article"
 
 export const dynamic = 'force-dynamic'
 
@@ -114,6 +116,7 @@ export default async function Home() {
   const faqContent = await getContentFAQ(category)
   const testimonialsContent = await getContentTestimonials(category)
   const servicesContent = await getContentServices(category)
+  const homeArticleElements = await getContentHomeArticle(category)
 
   const navLabels = {
     home: processContent(headerContent?.nav_home || DEFAULT_NAV.home, domain, variables),
@@ -247,7 +250,7 @@ export default async function Home() {
       />
 
       <Services services={servicesForLists} />
-      {/* About component removed - no SEO body content in new structure */}
+      <SeoArticle elements={homeArticleElements} domain={domain} variables={variables} />
       <FAQ content={faqData} />
       <Testimonials content={testimonialsData} />
       <CTASection
