@@ -41,63 +41,25 @@ function renderContentBlock(
   variables: { city: string; state: string; business_name: string; phone: string }
 ) {
   // ContentBlock has heading_spintax and body_spintax
-  // Use heading_spintax for headings (h1, h2, h3) and body_spintax for paragraphs
-  const isHeading = block.element_type === 'h1' || block.element_type === 'h2' || block.element_type === 'h3'
-  const spintaxContent = isHeading ? block.heading_spintax : block.body_spintax
-  const content = processContent(spintaxContent || '', domain, variables)
+  // Render heading if present, then body
+  const heading = block.heading_spintax ? processContent(block.heading_spintax, domain, variables) : null
+  const body = block.body_spintax ? processContent(block.body_spintax, domain, variables) : null
 
-  switch (block.element_type) {
-    case 'h1':
-      // Render as H2 to avoid duplicate H1 (Hero has H1)
-      return (
-        <h2 key={block.id} className="text-4xl sm:text-5xl font-bold text-slate-900 mb-8">
-          {content}
+  return (
+    <div key={block.id} className="mb-6">
+      {heading && (
+        <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
+          {heading}
         </h2>
-      )
-    case 'h2':
-      return (
-        <h2 key={block.id} className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6">
-          {content}
-        </h2>
-      )
-    case 'h3':
-      return (
-        <h3 key={block.id} className="text-2xl font-semibold text-slate-900 mb-5">
-          {content}
-        </h3>
-      )
-    case 'p':
-      return (
-        <p key={block.id} className="text-slate-600 text-lg leading-relaxed mb-4">
-          {content}
-        </p>
-      )
-    case 'bullets':
-      // Split on Windows/Unix newlines, trim, remove leading bullet symbol, filter empty
-      const items = content
-        .split(/\r?\n/)
-        .map((line: string) => line.trim().replace(/^•\s*/, ''))
-        .filter((line: string) => line.length > 0)
-      return (
-        <ul key={block.id} className="list-disc list-inside text-slate-600 text-lg leading-relaxed mb-4 space-y-2">
-          {items.map((item: string, idx: number) => (
-            <li key={idx}>{item}</li>
-          ))}
-        </ul>
-      )
-    case 'cta':
-      return (
-        <div key={block.id} className="cta bg-slate-100 p-6 rounded-lg text-slate-700 text-lg mb-4">
-          {content}
-        </div>
-      )
-    default:
-      return (
-        <p key={block.id} className="text-slate-600 text-lg leading-relaxed mb-4">
-          {content}
-        </p>
-      )
-  }
+      )}
+      {body && (
+        <div 
+          className="text-slate-600 text-lg leading-relaxed prose prose-slate max-w-none"
+          dangerouslySetInnerHTML={{ __html: body }}
+        />
+      )}
+    </div>
+  )
 }
 
 export function About({ businessName, city, state, serviceAreas, seoContent, licensedInsured, seoBodyArticleBlocks, domain, variables }: AboutProps) {
