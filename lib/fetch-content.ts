@@ -70,13 +70,13 @@ export async function getContentHeroNew(category: string = "water_damage"): Prom
   const supabase = await createClient()
   
   const { data, error } = await supabase
-    .from("content_hero")
+    .from("content_hero_new")
     .select("*")
     .eq("category", normalizedCategory)
     .maybeSingle()
   
   if (error) {
-    console.error("Failed to fetch content_hero:", error)
+    console.error("Failed to fetch content_hero_new:", error)
     return null
   }
   
@@ -92,13 +92,13 @@ export async function getContentHeaderNew(category: string = "water_damage"): Pr
   const supabase = await createClient()
   
   const { data, error } = await supabase
-    .from("content_header")
+    .from("content_header_new")
     .select("*")
     .eq("category", normalizedCategory)
     .maybeSingle()
   
   if (error) {
-    console.error("Failed to fetch content_header:", error)
+    console.error("Failed to fetch content_header_new:", error)
     return null
   }
   
@@ -114,13 +114,13 @@ export async function getContentCTANew(category: string = "water_damage"): Promi
   const supabase = await createClient()
   
   const { data, error } = await supabase
-    .from("content_cta")
+    .from("content_cta_new")
     .select("*")
     .eq("category", normalizedCategory)
     .maybeSingle()
   
   if (error) {
-    console.error("Failed to fetch content_cta:", error)
+    console.error("Failed to fetch content_cta_new:", error)
     return null
   }
   
@@ -137,13 +137,13 @@ export async function getContentFAQNew(category: string = "water_damage"): Promi
   const supabase = await createClient()
   
   const { data, error } = await supabase
-    .from("content_faq")
+    .from("content_faq_new")
     .select("*")
     .eq("category", normalizedCategory)
     .order("faq_id")
   
   if (error || !data) {
-    console.error("Failed to fetch content_faq:", error)
+    console.error("Failed to fetch content_faq_new:", error)
     return []
   }
   
@@ -178,14 +178,14 @@ export async function getContentTestimonialsNew(
   const supabase = await createClient()
   
   const { data, error } = await supabase
-    .from("content_testimonials")
+    .from("content_testimonials_new")
     .select("*")
     .eq("category", normalizedCategory)
     .order("testimonial_num")
     .limit(limit)
   
   if (error || !data) {
-    console.error("Failed to fetch content_testimonials:", error)
+    console.error("Failed to fetch content_testimonials_new:", error)
     return []
   }
   
@@ -206,13 +206,13 @@ export async function getContentServicesNew(category: string = "water_damage"): 
   const supabase = await createClient()
   
   const { data, error } = await supabase
-    .from("content_services")
+    .from("content_services_new")
     .select("*")
     .eq("category", normalizedCategory)
     .order("service_id")
   
   if (error || !data) {
-    console.error("Failed to fetch content_services:", error)
+    console.error("Failed to fetch content_services_new:", error)
     return []
   }
   
@@ -230,7 +230,7 @@ export async function getContentServicesNew(category: string = "water_damage"): 
 // page_type: home, service, area, terms, privacy
 // =====================================================
 
-export async function getContentMetaNew(
+export async function getContentMeta(
   category: string = "water_damage",
   pageType: string = "home",
   serviceId?: string
@@ -239,7 +239,7 @@ export async function getContentMetaNew(
   const supabase = await createClient()
   
   let query = supabase
-    .from("content_meta")
+    .from("content_meta_new")
     .select("*")
     .eq("category", normalizedCategory)
     .eq("page_type", pageType)
@@ -254,7 +254,7 @@ export async function getContentMetaNew(
   const { data, error } = await query.maybeSingle()
   
   if (error) {
-    console.error("Failed to fetch content_meta:", error)
+    console.error("Failed to fetch content_meta_new:", error)
     return null
   }
   
@@ -280,7 +280,7 @@ export async function getAllContentNew(category: string = "water_damage") {
     getContentFAQNew(category),
     getContentTestimonialsNew(category, 3),
     getContentServicesNew(category),
-    getContentMetaNew(category, "home")
+    getContentMeta(category, "home")
   ])
   
   return {
@@ -304,7 +304,6 @@ export const getContentCTA = getContentCTANew
 export const getContentFAQ = getContentFAQNew
 export const getContentTestimonials = getContentTestimonialsNew
 export const getContentServices = getContentServicesNew
-export const getContentMeta = getContentMetaNew
 export const getAllContent = getAllContentNew
 
 // =====================================================
@@ -434,12 +433,11 @@ export async function fetchLinks(category: string = "water_damage") {
   return data
 }
 
-export async function getContentLegal(legalType: string = "privacy_policy", category: string = "water_damage") {
+export async function getContentLegal(legalType: string = "privacy_policy") {
   const supabase = await createClient()
   const { data, error } = await supabase
     .from("content_legal")
     .select("*")
-    .eq("category", normalizeCategory(category))
     .eq("legal_type", legalType)
     .maybeSingle()
   

@@ -53,7 +53,7 @@ export async function generateMetadata({
   }
 
   const preferredMetaType = `service_${serviceSlug.replace(/-/g, "_")}`
-  const preferredMeta = await getContentMeta(preferredMetaType, category)
+  const preferredMeta = await getContentMeta(category, preferredMetaType, serviceSlug)
 
   const legacyMetaMap: Record<string, string> = {
     "water-damage-restoration": "service_water_damage",

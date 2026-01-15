@@ -5,13 +5,17 @@ import { processContent } from "@/lib/spintax"
 import { generatePageMetadata } from "@/lib/generate-metadata"
 import { parseSocialLinks } from "@/lib/types"
 import {
-  getContentCTANew,
-  getContentFAQNew,
-  getContentHeaderNew,
-  getContentHeroNew,
-  getContentTestimonialsNew,
-  getContentServicesNew,
+  getContentCTA,
+  getContentFAQ,
+  getContentHeader,
+  getContentHero,
+  getContentTestimonials,
+  getContentServices,
   ContentBlock,
+  getContentBlocks,
+  getContentSeoBody,
+  parseFAQItems,
+  type ContentFAQItem,
 } from "@/lib/fetch-content"
 import {
   DEFAULT_HEADER,
@@ -105,12 +109,12 @@ export default async function Home() {
     phone: site.phone,
   }
 
-  const headerContent = await getContentHeaderNew(category)
-  const heroContent = await getContentHeroNew(category)
-  const ctaContent = await getContentCTANew(category)
-  const faqContent = await getContentFAQNew(category)
-  const testimonialsContent = await getContentTestimonialsNew(category)
-  const servicesContent = await getContentServicesNew(category)
+  const headerContent = await getContentHeader(category)
+  const heroContent = await getContentHero(category)
+  const ctaContent = await getContentCTA(category)
+  const faqContent = await getContentFAQ(category)
+  const testimonialsContent = await getContentTestimonials(category)
+  const servicesContent = await getContentServices(category)
 
   const navLabels = {
     home: processContent(headerContent?.nav_home || DEFAULT_NAV.home, domain, variables),
@@ -183,14 +187,17 @@ export default async function Home() {
   }
 
   const testimonialsDefaults = getDefaultTestimonials(category)
-  const testimonialItems = (testimonialsContent && testimonialsContent.length > 0 
-    ? testimonialsContent 
-    : testimonialsDefaults.items
-  ).map((item: any) => ({
-    name: processContent(item.name || item.name_spintax || '', domain, variables),
-    location: processContent('{{city}}, {{state}}', domain, variables),
-    text: processContent(item.text || item.text_spintax || '', domain, variables),
-    rating: item.rating,
+  
+  // Конвертуємо дані з БД (ContentTestimonialNew має name, text) 
+  // та дефолти ({name:string, text_spintax:string})
+  const dbItems = testimonialsContent && testimonialsContent.length > 0 ? testimonialsContent : []
+  const defaultItems = testimonialsDefaults.items || []
+  
+  const testimonialItems = [...dbItems, ...defaultItems].slice(0, 3).map((item) => ({
+    name: processContent((item as any).name || '', domain, variables),
+    location: processContent((item as any).location_spintax || '{{city}}, {{state}}', domain, variables),
+    text: processContent((item as any).text || (item as any).text_spintax || '', domain, variables),
+    rating: (item as any).rating || 5,
   }))
 
   const testimonialsData = {

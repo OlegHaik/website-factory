@@ -1,4 +1,3 @@
-import type { ContentServiceNew } from "@/lib/fetch-content"
 import { DEFAULT_SERVICES, type ServiceDefinition } from "@/lib/water-damage"
 
 const makeOrderMap = (services: ServiceDefinition[]) => new Map(services.map((svc, index) => [svc.slug, index]))

@@ -15,7 +15,7 @@ export async function generatePageMetadata(
   seedSuffix: string = "",
   category: string = "water_damage",
 ): Promise<Metadata> {
-  const metaContent = await getContentMeta(pageType, category)
+  const metaContent = await getContentMeta(category, pageType)
   const defaults = (DEFAULT_META as Record<string, MetaDefaults>)[pageType] || DEFAULT_META.homepage
 
   const seed = `${domain}${seedSuffix}`
