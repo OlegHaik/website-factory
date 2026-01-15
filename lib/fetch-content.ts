@@ -228,34 +228,34 @@ export async function getContentTestimonialsNew(
 export async function getContentServicesNew(category: string = "water_damage"): Promise<ContentServiceNew[]> {
   const normalizedCategory = normalizeCategory(category)
   const supabase = await createClient()
-  
-  // Use content_service_pages instead of content_services_new since it's visible
+
+  // Use content_services_new table (SERVICES_GRID data from xlsx)
   const { data, error } = await supabase
-    .from("content_service_pages")
-    .select("service_slug, service_title_spintax, service_description_spintax, hero_subheadline_spintax")
+    .from("content_services_new")
+    .select("service_slug, service_name, service_name_spin, service_description, sort_order")
     .eq("category", normalizedCategory)
-    .order("service_slug")
-  
+    .order("sort_order")
+
   if (error) {
     // Table doesn't exist yet - return empty array to fallback to definitions
     if (error.code === 'PGRST205' || error.message?.includes('does not exist') || error.message?.includes('not find')) {
-      console.warn(`content_service_pages table not found - using fallback definitions for "${normalizedCategory}"`)
+      console.warn(`content_services_new table not found - using fallback definitions for "${normalizedCategory}"`)
       return []
     }
-    console.error("Failed to fetch content_service_pages:", error)
+    console.error("Failed to fetch content_services_new:", error)
     return []
   }
-  
+
   if (!data || data.length === 0) {
     return []
   }
-  
+
   return data.map(s => ({
     id: s.service_slug || '',
-    name: s.service_title_spintax || s.service_slug || '',
-    nameSpin: s.service_title_spintax || s.service_slug || '',
+    name: s.service_name || s.service_slug || '',
+    nameSpin: s.service_name_spin || s.service_name || s.service_slug || '',
     slug: s.service_slug || '',
-    description: s.service_description_spintax || s.hero_subheadline_spintax || ''
+    description: s.service_description || ''
   }))
 }
 
