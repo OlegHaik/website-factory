@@ -293,3 +293,16 @@ export async function getAllContentNew(category: string = "water_damage") {
     meta
   }
 }
+
+// =====================================================
+// Alias для сумісності зі старим кодом
+// =====================================================
+
+export const getContentHero = getContentHeroNew
+export const getContentHeader = getContentHeaderNew
+export const getContentCTA = getContentCTANew
+export const getContentFAQ = getContentFAQNew
+export const getContentTestimonials = getContentTestimonialsNew
+export const getContentServices = getContentServicesNew
+export const getContentMeta = getContentMetaNew
+export const getAllContent = getAllContentNew
