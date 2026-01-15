@@ -138,35 +138,53 @@ export async function getContentCTANew(category: string = "water_damage"): Promi
 export async function getContentFAQNew(category: string = "water_damage"): Promise<ContentFAQItem[]> {
   const normalizedCategory = normalizeCategory(category)
   const supabase = await createClient()
-  
+
   const { data, error } = await supabase
     .from("content_faq_new")
     .select("*")
     .eq("category", normalizedCategory)
     .order("faq_id")
-  
+
   if (error || !data) {
     console.error("Failed to fetch content_faq_new:", error)
     return []
   }
-  
-  // Групуємо питання та відповіді (q1+a1, q2+a2, etc.)
+
+  // Групуємо питання та відповіді по номеру (q1+a1, q2+a2, etc.)
+  const questions: Record<string, string> = {}
+  const answers: Record<string, string> = {}
+
+  for (const row of data) {
+    if (!row?.faq_id || !row?.content) continue
+
+    const faqId = row.faq_id.toLowerCase()
+    // Extract number from faq_id (q1 -> 1, a1 -> 1, q12 -> 12, etc.)
+    const numMatch = faqId.match(/\d+/)
+    if (!numMatch) continue
+    const num = numMatch[0]
+
+    if (faqId.startsWith('q')) {
+      questions[num] = row.content
+    } else if (faqId.startsWith('a')) {
+      answers[num] = row.content
+    }
+  }
+
+  // Combine into FAQ items - only include pairs that have both question and answer
   const faqs: ContentFAQItem[] = []
-  
-  for (let i = 0; i < data.length; i += 2) {
-    const questionRow = data[i]
-    const answerRow = data[i + 1]
-    
-    if (questionRow?.faq_id.startsWith('q') && answerRow?.faq_id.startsWith('a')) {
+  const sortedNums = Object.keys(questions).sort((a, b) => parseInt(a) - parseInt(b))
+
+  for (const num of sortedNums) {
+    if (questions[num] && answers[num]) {
       faqs.push({
-        question: questionRow.content,
-        answer: answerRow.content,
-        question_spintax: questionRow.content,
-        answer_spintax: answerRow.content
+        question: questions[num],
+        answer: answers[num],
+        question_spintax: questions[num],
+        answer_spintax: answers[num]
       })
     }
   }
-  
+
   return faqs
 }
 

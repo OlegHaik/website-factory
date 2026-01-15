@@ -189,25 +189,33 @@ export default async function Home() {
   }
 
   const testimonialsDefaults = getDefaultTestimonials(category)
-  
-  // Конвертуємо дані з БД (ContentTestimonialNew має name, text) 
-  // та дефолти ({name:string, text_spintax:string})
-  const dbItems = testimonialsContent && testimonialsContent.length > 0 ? testimonialsContent : []
-  const defaultItems = testimonialsDefaults.items || []
-  
-  const testimonialItems = [...dbItems, ...defaultItems].slice(0, 3).map((item) => {
-    const name = 'name' in item ? item.name : ''
-    const text = 'text' in item ? item.text : ('text_spintax' in item ? item.text_spintax : '')
-    const location = 'location_spintax' in item ? item.location_spintax : '{{city}}, {{state}}'
-    const rating = 'rating' in item ? item.rating : 5
-    
-    return {
-      name: processContent(name, domain, variables),
-      location: processContent(location, domain, variables),
-      text: processContent(text, domain, variables),
-      rating,
-    }
-  })
+
+  // Нормалізуємо дані з БД та дефолтів до єдиної структури
+  const dbItems = (testimonialsContent && testimonialsContent.length > 0 ? testimonialsContent : [])
+    .map(item => ({
+      name: item.name || '',
+      text: item.text || '',
+      location: item.location_spintax || '{{city}}, {{state}}',
+      rating: item.rating || 5
+    }))
+
+  const defaultItems = (testimonialsDefaults.items || [])
+    .map(item => ({
+      name: item.name || '',
+      text: item.text_spintax || '',
+      location: item.location_spintax || '{{city}}, {{state}}',
+      rating: 5
+    }))
+
+  // Використовуємо БД дані, доповнюємо дефолтами якщо потрібно
+  const combinedItems = dbItems.length >= 3 ? dbItems : [...dbItems, ...defaultItems]
+
+  const testimonialItems = combinedItems.slice(0, 3).map((item) => ({
+    name: processContent(item.name, domain, variables),
+    location: processContent(item.location, domain, variables),
+    text: processContent(item.text, domain, variables),
+    rating: item.rating,
+  }))
 
   const testimonialsData = {
     heading: processContent(testimonialsDefaults.heading_spintax, domain, variables),

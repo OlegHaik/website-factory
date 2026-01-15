@@ -4,8 +4,8 @@ import { notFound } from "next/navigation"
 import { getServiceAreaIndexForCurrentDomain, getSiteByDomainAndSlug, resolveSiteContext } from "@/lib/sites"
 import { processContent } from "@/lib/spintax"
 import { generatePageMetadata } from "@/lib/generate-metadata"
-import { getContentHeader, getContentServiceArea, getContentBlock, ContentBlock } from "@/lib/fetch-content"
-import { DEFAULT_HEADER, DEFAULT_NAV, getDefaultServiceArea } from "@/lib/default-content"
+import { getContentHeader, getContentServiceArea, getContentBlock, getContentFAQ, getContentTestimonials, ContentBlock } from "@/lib/fetch-content"
+import { DEFAULT_HEADER, DEFAULT_NAV, getDefaultServiceArea, getDefaultFaq, getDefaultTestimonials } from "@/lib/default-content"
 import { parseSocialLinks } from "@/lib/types"
 import { fetchCategoryServices } from "@/lib/services"
 
@@ -14,6 +14,8 @@ import { ServiceAreaHero } from "@/components/service-area-hero"
 import { ServiceAreaContent } from "@/components/service-area-content"
 import { CTASection } from "@/components/cta-section"
 import { ServiceTrust } from "@/components/service-trust"
+import { FAQ } from "@/components/faq"
+import { Testimonials } from "@/components/testimonials"
 import Footer from "@/components/footer"
 import { FloatingCall } from "@/components/floating-call"
 import { SchemaMarkup } from "@/components/schema-markup"
@@ -273,8 +275,61 @@ export default async function ServiceAreaPage({
     phoneDisplay: areaSite.phoneDisplay || mainSite.phoneDisplay,
   }
 
-  const faqItems: { question: string; answer: string }[] = []
-  const testimonialItems: { name: string; text: string; location?: string; rating?: number }[] = []
+  // Fetch FAQ content
+  const faqContent = await getContentFAQ(category)
+  const faqDefaults = getDefaultFaq(category)
+  const baseFaqItems = faqContent && faqContent.length > 0 ? faqContent : []
+  const mergedFaqItems = [...baseFaqItems]
+  if (mergedFaqItems.length < 5) {
+    const defaultsToAdd = faqDefaults.items.slice(mergedFaqItems.length, 5).map(item => ({
+      question: item.question_spintax,
+      answer: item.answer_spintax
+    }))
+    mergedFaqItems.push(...defaultsToAdd)
+  }
+  const faqItems = mergedFaqItems.map((item) => ({
+    question: processContent(item.question, areaSeed, variables),
+    answer: processContent(item.answer, areaSeed, variables),
+  }))
+
+  // Fetch testimonials content
+  const testimonialsContent = await getContentTestimonials(category)
+  const testimonialsDefaults = getDefaultTestimonials(category)
+  const dbTestimonials = (testimonialsContent && testimonialsContent.length > 0 ? testimonialsContent : [])
+    .map(item => ({
+      name: item.name || '',
+      text: item.text || '',
+      location: item.location_spintax || '{{city}}, {{state}}',
+      rating: item.rating || 5
+    }))
+  const defaultTestimonials = (testimonialsDefaults.items || [])
+    .map(item => ({
+      name: item.name || '',
+      text: item.text_spintax || '',
+      location: item.location_spintax || '{{city}}, {{state}}',
+      rating: 5
+    }))
+  const combinedTestimonials = dbTestimonials.length >= 3 ? dbTestimonials : [...dbTestimonials, ...defaultTestimonials]
+  const testimonialItems = combinedTestimonials.slice(0, 3).map((item) => ({
+    name: processContent(item.name, areaSeed, variables),
+    text: processContent(item.text, areaSeed, variables),
+    location: processContent(item.location, areaSeed, variables),
+    rating: item.rating,
+  }))
+
+  // Prepare FAQ data for component
+  const faqData = {
+    heading: processContent(faqDefaults.heading_spintax, areaSeed, variables),
+    items: faqItems,
+  }
+
+  // Prepare Testimonials data for component
+  const testimonialsData = {
+    heading: processContent(testimonialsDefaults.heading_spintax, areaSeed, variables),
+    subheading: processContent(testimonialsDefaults.subheading_spintax, areaSeed, variables),
+    items: testimonialItems,
+  }
+
   const breadcrumbs = [
     { name: "Home", url: `https://${resolvedDomain}` },
     { name: areaName || "Service Area", url: `https://${resolvedDomain}/service-area/${areaSlug}` },
@@ -328,6 +383,9 @@ export default async function ServiceAreaPage({
       />
 
       <ServiceTrust headline={whyChooseHeadline} trustPoints={trustPoints} />
+
+      <FAQ content={faqData} />
+      <Testimonials content={testimonialsData} />
 
       <CTASection
         phone={areaSite.phone}
