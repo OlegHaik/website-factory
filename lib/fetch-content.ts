@@ -62,8 +62,6 @@ export interface ContentServiceNew {
 export interface ContentMetaNew {
   title: string
   description: string
-  title_spintax?: string
-  description_spintax?: string
 }
 
 // =====================================================
@@ -272,9 +270,7 @@ export async function getContentMeta(
   
   return {
     title: data.meta_title,
-    description: data.meta_desc,
-    title_spintax: data.meta_title,
-    description_spintax: data.meta_desc
+    description: data.meta_desc
   }
 }
 
