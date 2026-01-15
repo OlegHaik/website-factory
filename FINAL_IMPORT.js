@@ -32,6 +32,18 @@ function normalizeSlug(slug) {
   return SERVICE_SLUG_MAP[slug] || slug;
 }
 
+// Fix spintax format: {{options|like|this}} -> {options|like|this}
+// And variables: {{{{city}}}} -> {{city}}
+function normalizeSpintax(text) {
+  if (!text) return text;
+  let result = text;
+  // Convert {{options|like|this}} to {options|like|this}
+  result = result.replace(/\{\{([^{}]*\|[^{}]*)\}\}/g, '{$1}');
+  // Fix variables: {{{{city}}}} -> {{city}}
+  result = result.replace(/\{\{\{\{(\w+)\}\}\}\}/g, '{{$1}}');
+  return result;
+}
+
 function readSheet(workbook, sheetName) {
   const sheet = workbook.Sheets[sheetName];
   return sheet ? XLSX.utils.sheet_to_json(sheet, { defval: '' }) : [];
@@ -183,7 +195,7 @@ async function importServicesGrid(workbook) {
     service_name: row.service_name,
     service_name_spin: row.service_name_spin,
     service_slug: normalizeSlug(row.service_slug),
-    service_description: row.svc_grid_desc,
+    service_description: normalizeSpintax(row.svc_grid_desc),
     icon_key: 'default',
     sort_order: idx
   }));
