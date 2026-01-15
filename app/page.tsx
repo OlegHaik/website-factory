@@ -267,10 +267,11 @@ export default async function Home() {
 
   const testimonialsDefaults = getDefaultTestimonials(category)
   // testimonialsContent - array of ContentTestimonialNew {name, text, rating}
+  // testimonialsDefaults.items - array of {name_spintax, location_spintax, text_spintax, rating}
   const testimonialItems = (testimonialsContent && testimonialsContent.length > 0 
     ? testimonialsContent 
     : testimonialsDefaults.items
-  ).map((item) => ({
+  ).map((item: any) => ({
     name: processContent(item.name || item.name_spintax || '', domain, variables),
     location: processContent(item.location_spintax || '{{city}}, {{state}}', domain, variables),
     text: processContent(item.text || item.text_spintax || '', domain, variables),
