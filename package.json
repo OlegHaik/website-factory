@@ -6,7 +6,14 @@
     "build": "node -e \"require('fs').rmSync('.next',{recursive:true,force:true})\" && next build",
     "dev": "next dev",
     "lint": "eslint .",
-    "start": "next start"
+    "start": "next start",
+    "import:validate": "node validate-xlsx.js",
+    "import:simple": "node import-simple.js",
+    "import": "node import-xlsx-to-supabase.js",
+    "import:split": "node split-xlsx.js",
+    "import:analyze": "node analyze-xlsx.js",
+    "db:check": "node check-tables.js",
+    "db:export": "node export-from-supabase.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
@@ -45,6 +52,7 @@
     "clsx": "^2.1.1",
     "cmdk": "1.0.4",
     "date-fns": "4.1.0",
+    "dotenv": "^17.2.3",
     "embla-carousel-react": "8.5.1",
     "input-otp": "1.4.1",
     "lucide-react": "^0.454.0",
@@ -60,6 +68,7 @@
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7",
     "vaul": "^0.9.9",
+    "xlsx": "^0.18.5",
     "zod": "3.25.76"
   },
   "devDependencies": {

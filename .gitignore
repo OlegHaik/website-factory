@@ -44,3 +44,12 @@ next-env.d.ts
 *.swp
 *.swo
 *~
+
+# XLSX Import files
+*.xlsx
+!template.xlsx
+!example.xlsx
+backup-*.json
+backup-*.sql
+sql_out/import-*.sql
+*-part*.xlsx
