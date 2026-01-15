@@ -5,17 +5,13 @@ import { processContent } from "@/lib/spintax"
 import { generatePageMetadata } from "@/lib/generate-metadata"
 import { parseSocialLinks } from "@/lib/types"
 import {
-  getContentCTA,
-  getContentFAQ,
-  getContentHeader,
-  getContentHero,
-  getContentSeoBody,
-  getContentTestimonials,
-  getContentBlocks,
-  getContentBlock,
+  getContentCTANew,
+  getContentFAQNew,
+  getContentHeaderNew,
+  getContentHeroNew,
+  getContentTestimonialsNew,
+  getContentServicesNew,
   ContentBlock,
-  parseFAQItems,
-  parseTestimonialItems,
 } from "@/lib/fetch-content"
 import {
   DEFAULT_HEADER,
@@ -23,15 +19,12 @@ import {
   getDefaultCta,
   getDefaultFaq,
   getDefaultHero,
-  getDefaultSeoBody,
   getDefaultTestimonials,
 } from "@/lib/default-content"
-import { fetchCategoryServices } from "@/lib/services"
 
 import { Header } from "@/components/header"
 import { Hero } from "@/components/hero"
 import { Services } from "@/components/services"
-import { About } from "@/components/about"
 import { FAQ } from "@/components/faq"
 import { Testimonials } from "@/components/testimonials"
 import { CTASection } from "@/components/cta-section"
@@ -40,18 +33,6 @@ import { FloatingCall } from "@/components/floating-call"
 import { SchemaMarkup } from "@/components/schema-markup"
 
 export const dynamic = 'force-dynamic'
-
-// Helper to normalize path for filtering (removes trailing slashes)
-const normalizePath = (href: string) => {
-  if (!href) return ""
-  try {
-    const base = "http://placeholder.com"
-    const url = new URL(href, base)
-    return url.pathname.replace(/\/+$/, "")
-  } catch {
-    return ""
-  }
-}
 
 export async function generateMetadata(): Promise<Metadata> {
   const { site, domain: requestDomain } = await resolveSiteContext()
@@ -124,43 +105,12 @@ export default async function Home() {
     phone: site.phone,
   }
 
-  const headerContent = await getContentHeader(category)
-  const heroContent = await getContentHero(category)
-  const ctaContent = await getContentCTA(category)
-  const seoBodyContent = await getContentSeoBody(category)
-  const faqContent = await getContentFAQ(category)
-  const testimonialsContent = await getContentTestimonials(category)
-
-  // Fetch ALL SEO body article blocks from content_blocks
-  const seoBodyArticleBlocks = await getContentBlocks(category)
-
-  // Fetch services section heading from content_blocks
-  const servicesHeadingBlock = await getContentBlock(category, 'services')
-  const servicesHeading = servicesHeadingBlock?.heading_spintax
-    ? processContent(servicesHeadingBlock.heading_spintax, domain, variables)
-    : undefined
-
-  // Fetch 'Licensed & Insured' heading
-  const licensedInsuredBlock = await getContentBlock(category, 'service_list')
-
-  const licensedInsuredTitle = licensedInsuredBlock?.body_spintax
-    ? processContent(licensedInsuredBlock.body_spintax, domain, variables)
-    : undefined
-  // Note: if licensedInsuredTitle is undefined, About passes undefined, LicensedInsured uses default.
-  // The user wanted "Fix it so the heading is not rendered when the computed heading is empty".
-  // content_blocks might have valid text. If it does, we show it.
-  // If content_blocks is missing, licensedInsuredTitle is undefined.
-  // About component logic: `licensedInsured?.title || DEFAULT`.
-  // So if undefined, it shows "Licensed & Insured".
-  // If the user WANTS the "Roofing Solutions" text or NOTHING, then:
-  // If I found a block, use it. If not, what?
-  // The user said: "Wire this heading to content_blocks... The key success criterion: the blank space disappears and the heading shows up with the spintax result."
-  // So if block found -> show it.
-  // If block NOT found -> it will fallback to "Licensed & Insured" (default).
-  // The user complained about "EMPTY element". "Licensed & Insured" is not empty.
-  // So likely "Licensed & Insured" DEFAULT is NOT empty.
-  // The "EMPTY element" must have been caused by something else passing empty string, or my understanding of "LicensedInsured" usage was slightly off but the fix to conditional render protects against empty string.
-
+  const headerContent = await getContentHeaderNew(category)
+  const heroContent = await getContentHeroNew(category)
+  const ctaContent = await getContentCTANew(category)
+  const faqContent = await getContentFAQNew(category)
+  const testimonialsContent = await getContentTestimonialsNew(category)
+  const servicesContent = await getContentServicesNew(category)
 
   const navLabels = {
     home: processContent(headerContent?.nav_home || DEFAULT_NAV.home, domain, variables),
@@ -185,14 +135,13 @@ export default async function Home() {
     variables,
   )
 
-  const categoryServices = await fetchCategoryServices({ category, domain, variables })
-  const servicesForLists = categoryServices.filter(s => {
-    const normPath = normalizePath(s.href)
-    const isExcluded = normPath === "/leak-repair" || s.slug === "leak-repair"
-    // User requested to "Print the exact href values". 
-    // I cannot reliably print to console for user to see, but this logic catches exactly what is requested.
-    return !isExcluded
-  })
+  // Transform services from new structure
+  const servicesForLists = servicesContent.map(s => ({
+    title: processContent(s.nameSpin || s.name, domain, variables),
+    description: processContent(s.description, domain, variables),
+    href: `/${s.slug}`,
+    slug: s.slug,
+  })).filter(s => s.slug !== "leak-repair")
   const servicesForSchema = servicesForLists.map((svc) => svc.title).filter(Boolean)
 
   const ctaDefaults = getDefaultCta(category)
@@ -207,38 +156,6 @@ export default async function Home() {
     domain,
     variables,
   )
-
-  const seoDefaults = getDefaultSeoBody(category)
-  const seoData = {
-    intro: processContent(seoBodyContent?.intro_spintax || seoDefaults.intro_spintax, domain, variables),
-    whyChooseTitle: processContent(
-      seoBodyContent?.why_choose_title_spintax || seoDefaults.why_choose_title_spintax,
-      domain,
-      variables,
-    ),
-    whyChoose: processContent(
-      seoBodyContent?.why_choose_spintax || seoDefaults.why_choose_spintax,
-      domain,
-      variables,
-    ),
-    processTitle: processContent(
-      seoBodyContent?.process_title_spintax || seoDefaults.process_title_spintax,
-      domain,
-      variables,
-    ),
-    process: processContent(seoBodyContent?.process_spintax || seoDefaults.process_spintax, domain, variables),
-  }
-
-  const normalizeForCompare = (value: string) =>
-    String(value ?? '')
-      .toLowerCase()
-      .replace(/\s+/g, ' ')
-      .trim()
-
-  if (normalizeForCompare(seoData.whyChoose) === normalizeForCompare(seoData.process)) {
-    seoData.processTitle = processContent(seoDefaults.process_title_spintax, domain, variables)
-    seoData.process = processContent(seoDefaults.process_spintax, domain, variables)
-  }
 
   const faqDefaults = getDefaultFaq(category)
   // faqContent - array of ContentFAQItem {question, answer}
@@ -266,15 +183,17 @@ export default async function Home() {
   }
 
   const testimonialsDefaults = getDefaultTestimonials(category)
-  // testimonialsContent - array of ContentTestimonialNew {name, text, rating}
-  // testimonialsDefaults.items - array of {name_spintax, location_spintax, text_spintax, rating}
   const testimonialItems = (testimonialsContent && testimonialsContent.length > 0 
     ? testimonialsContent 
-    : testimonialsDefaults.items
+    : testimonialsDefaults.items.map(item => ({
+        name: item.name_spintax,
+        text: item.text_spintax,
+        rating: item.rating
+      }))
   ).map((item: any) => ({
-    name: processContent(item.name || item.name_spintax || '', domain, variables),
-    location: processContent(item.location_spintax || '{{city}}, {{state}}', domain, variables),
-    text: processContent(item.text || item.text_spintax || '', domain, variables),
+    name: processContent(item.name || '', domain, variables),
+    location: processContent('{{city}}, {{state}}', domain, variables),
+    text: processContent(item.text || '', domain, variables),
     rating: item.rating,
   }))
 
@@ -318,21 +237,8 @@ export default async function Home() {
         email={site.email || undefined}
       />
 
-      <Services services={servicesForLists} heading={servicesHeading} />
-      <About
-        businessName={site.business_name}
-        city={site.city}
-        state={site.state}
-        serviceAreas={serviceAreas}
-        seoContent={seoData}
-        seoBodyArticleBlocks={seoBodyArticleBlocks}
-        domain={domain}
-        variables={variables}
-        licensedInsured={licensedInsuredTitle ? {
-          title: licensedInsuredTitle,
-          body: "Certified professionals, quality equipment, and trusted service."
-        } : undefined}
-      />
+      <Services services={servicesForLists} />
+      {/* About component removed - no SEO body content in new structure */}
       <FAQ content={faqData} />
       <Testimonials content={testimonialsData} />
       <CTASection
