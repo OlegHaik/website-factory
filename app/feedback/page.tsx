@@ -4,7 +4,7 @@ import { Header } from "@/components/header"
 import Footer from "@/components/footer"
 import { FloatingCall } from "@/components/floating-call"
 import { DEFAULT_HEADER, DEFAULT_NAV } from "@/lib/default-content"
-import { fetchQuestionnaire, getContentHeader } from "@/lib/fetch-content"
+import { fetchQuestionnaire, getContentHeader, getContentMeta } from "@/lib/fetch-content"
 import { processContent } from "@/lib/spintax"
 import { parseSocialLinks } from "@/lib/types"
 import { normalizeUrl } from "@/lib/normalize-url"
@@ -32,12 +32,31 @@ const DEFAULT_QUESTIONNAIRE = {
 }
 
 export async function generateMetadata(): Promise<Metadata> {
-  const { site } = await resolveSiteContext()
+  const { site, domain: requestDomain } = await resolveSiteContext()
   const businessName = site?.business_name || "Company"
+  const domain = site?.resolvedDomain || requestDomain || "default"
+  const category = site?.category || "water_damage"
+
+  // Fetch meta from database
+  const metaContent = await getContentMeta(category, "feedback")
+
+  const variables = {
+    city: site?.city || "",
+    state: site?.state || "",
+    business_name: businessName,
+    phone: site?.phone || "",
+  }
+
+  const title = metaContent?.title
+    ? processContent(metaContent.title, domain, variables)
+    : `${businessName} | Feedback`
+  const description = metaContent?.description
+    ? processContent(metaContent.description, domain, variables)
+    : `Tell us how ${businessName} did and leave a review.`
 
   return {
-    title: `${businessName} | Feedback`,
-    description: `Tell us how ${businessName} did and leave a review.`,
+    title,
+    description,
   }
 }
 
