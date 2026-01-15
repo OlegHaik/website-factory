@@ -1,8 +1,6 @@
 import type { ContentServiceNew } from "@/lib/fetch-content"
 import { DEFAULT_SERVICES, type ServiceDefinition } from "@/lib/water-damage"
 
-export type LegacyFieldMap = Record<string, { titleKey: keyof ContentServiceNew; descriptionKey: keyof ContentServiceNew }>
-
 const makeOrderMap = (services: ServiceDefinition[]) => new Map(services.map((svc, index) => [svc.slug, index]))
 
 const ROOFING_SERVICES: ServiceDefinition[] = [
@@ -96,79 +94,39 @@ const MOLD_SERVICES: ServiceDefinition[] = [
   },
 ]
 
-const LEGACY_SERVICE_FIELDS: LegacyFieldMap = {
-  "water-damage-restoration": { titleKey: "water_title", descriptionKey: "water_description" },
-  "fire-smoke-damage": { titleKey: "fire_title", descriptionKey: "fire_description" },
-  "mold-remediation": { titleKey: "mold_title", descriptionKey: "mold_description" },
-  "biohazard-cleanup": { titleKey: "biohazard_title", descriptionKey: "biohazard_description" },
-  "burst-pipe-repair": { titleKey: "burst_title", descriptionKey: "burst_description" },
-  "sewage-cleanup": { titleKey: "sewage_title", descriptionKey: "sewage_description" },
-}
-
-const ROOFING_SERVICE_FIELDS: LegacyFieldMap = {
-  "roof-installation": { titleKey: "roof_installation_title", descriptionKey: "roof_installation_description" },
-  "roof-repair": { titleKey: "roof_repair_title", descriptionKey: "roof_repair_description" },
-  "shingle-roofing": { titleKey: "shingle_roofing_title", descriptionKey: "shingle_roofing_description" },
-  "metal-roofing": { titleKey: "metal_roofing_title", descriptionKey: "metal_roofing_description" },
-  "commercial-roofing": { titleKey: "commercial_roofing_title", descriptionKey: "commercial_roofing_description" },
-  "emergency-leak": { titleKey: "emergency_leak_title", descriptionKey: "emergency_leak_description" },
-}
-
-const MOLD_SERVICE_FIELDS: LegacyFieldMap = {
-  "mold-inspection": { titleKey: "mold_inspection_title", descriptionKey: "mold_inspection_description" },
-  "mold-remediation": { titleKey: "mold_remediation_title", descriptionKey: "mold_remediation_description" },
-  "black-mold": { titleKey: "black_mold_title", descriptionKey: "black_mold_description" },
-  "water-damage-restoration": {
-    titleKey: "water_damage_restoration_title",
-    descriptionKey: "water_damage_restoration_description",
-  },
-  "commercial-mold": { titleKey: "commercial_mold_title", descriptionKey: "commercial_mold_description" },
-  "air-quality-testing": { titleKey: "air_quality_testing_title", descriptionKey: "air_quality_testing_description" },
-}
-
 export type CategoryServiceConfig = {
   services: ServiceDefinition[]
-  legacyFields: LegacyFieldMap
   order: Map<string, number>
 }
 
 export const FALLBACK_CATEGORY = "water_damage"
 
-export const SERVICE_FIELD_MAPPING: Record<string, LegacyFieldMap> = {
-  water_damage: LEGACY_SERVICE_FIELDS,
-  roofing: ROOFING_SERVICE_FIELDS,
-  mold_remediation: MOLD_SERVICE_FIELDS,
-}
-
 export const CATEGORY_SERVICE_CONFIG: Record<string, CategoryServiceConfig> = {
   water_damage: {
     services: DEFAULT_SERVICES,
-    legacyFields: LEGACY_SERVICE_FIELDS,
     order: makeOrderMap(DEFAULT_SERVICES),
   },
   roofing: {
     services: ROOFING_SERVICES,
-    legacyFields: ROOFING_SERVICE_FIELDS,
     order: makeOrderMap(ROOFING_SERVICES),
   },
   mold_remediation: {
     services: MOLD_SERVICES,
-    legacyFields: MOLD_SERVICE_FIELDS,
     order: makeOrderMap(MOLD_SERVICES),
   },
   // Generic / New Categories (rely on DB content completely)
-  adu_builder: { services: [], legacyFields: {}, order: new Map() },
-  air_conditioning: { services: [], legacyFields: {}, order: new Map() },
-  air_duct: { services: [], legacyFields: {}, order: new Map() },
-  bathroom_remodel: { services: [], legacyFields: {}, order: new Map() },
-  chimney: { services: [], legacyFields: {}, order: new Map() },
-  garage_door: { services: [], legacyFields: {}, order: new Map() },
-  heating: { services: [], legacyFields: {}, order: new Map() },
-  kitchen_remodel: { services: [], legacyFields: {}, order: new Map() },
-  locksmith: { services: [], legacyFields: {}, order: new Map() },
-  pest_control: { services: [], legacyFields: {}, order: new Map() },
-  plumbing: { services: [], legacyFields: {}, order: new Map() },
-  pool_contractor: { services: [], legacyFields: {}, order: new Map() },
+  adu_builder: { services: [], order: new Map() },
+  air_conditioning: { services: [], order: new Map() },
+  air_duct: { services: [], order: new Map() },
+  bathroom_remodel: { services: [], order: new Map() },
+  chimney: { services: [], order: new Map() },
+  garage_door: { services: [], order: new Map() },
+  heating: { services: [], order: new Map() },
+  kitchen_remodel: { services: [], order: new Map() },
+  locksmith: { services: [], order: new Map() },
+  pest_control: { services: [], order: new Map() },
+  plumbing: { services: [], order: new Map() },
+  pool_contractor: { services: [], order: new Map() },
 }
 
 export function resolveCategoryConfig(category: string): CategoryServiceConfig {

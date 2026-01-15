@@ -4,7 +4,6 @@ import type { ContentServiceNew } from "@/lib/fetch-content"
 import { getContentServices } from "@/lib/fetch-content"
 import type { ServiceDefinition } from "@/lib/water-damage"
 import { resolveCategoryConfig } from "@/lib/category-mapping"
-import type { LegacyFieldMap } from "@/lib/category-mapping"
 
 export type CategoryService = {
   slug: string
@@ -20,32 +19,6 @@ const formatTitleFromSlug = (slug: string): string =>
     .filter(Boolean)
     .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
     .join(" ")
-
-const getLegacyContent = (
-  slug: string,
-  servicesContent: ContentServiceNew | null,
-  seed: string,
-  variables: Record<string, string>,
-  legacyFields: LegacyFieldMap,
-  fallbackServices: ServiceDefinition[],
-): { title?: string; description?: string } => {
-  const legacy = legacyFields[slug]
-  if (!legacy) return {}
-
-  const defaultFallback = fallbackServices.find((s) => s.slug === slug)
-  const title = processContent(
-    (servicesContent?.[legacy.titleKey] as string | undefined) || defaultFallback?.title || formatTitleFromSlug(slug),
-    seed,
-    variables,
-  )
-  const description = processContent(
-    (servicesContent?.[legacy.descriptionKey] as string | undefined) || defaultFallback?.shortDescription || "",
-    seed,
-    variables,
-  )
-
-  return { title, description }
-}
 
 const pickDescriptionFromRow = (
   row: Partial<ContentServicePageRow>,
@@ -73,7 +46,7 @@ export async function fetchCategoryServices(params: {
   variables: Record<string, string>
 }): Promise<CategoryService[]> {
   const { category, domain, variables } = params
-  const { services: serviceDefinitions, legacyFields, order } = resolveCategoryConfig(category)
+  const { services: serviceDefinitions, order } = resolveCategoryConfig(category)
   const supabase = await createClient()
   const selectFields =
     "service_slug, service_title_spintax, hero_headline_spintax, hero_subheadline_spintax, section_body_spintax, process_body_spintax, category"
@@ -110,6 +83,12 @@ export async function fetchCategoryServices(params: {
   const servicesContent = await getContentServices(category)
   const seedPrefix = domain || "default"
 
+  // servicesContent is ContentServiceNew[] from content_services_new table
+  // Create a map for quick lookup: slug -> service data
+  const servicesMap = new Map(
+    servicesContent.map(svc => [svc.slug, svc])
+  )
+
   // Merge DB rows with service definitions: use DB rows + any definitions missing from DB
   const dbSlugs = new Set(rows.map((r) => String(r.service_slug || "").trim()).filter(Boolean))
   const missingDefinitions = serviceDefinitions
@@ -123,15 +102,20 @@ export async function fetchCategoryServices(params: {
       if (!slug) return null
 
       const seed = `${seedPrefix}:${slug}`
-      const legacy = getLegacyContent(slug, servicesContent, seed, variables, legacyFields, serviceDefinitions)
+      
+      // Try to get data from content_services_new table first
+      const newService = servicesMap.get(slug)
+      const fallbackDef = serviceDefinitions.find((svc) => svc.slug === slug)
+      
+      const title = newService?.name
+        ? processContent(newService.nameSpin || newService.name, seed, variables)
+        : processContent(row.service_title_spintax || row.hero_headline_spintax || fallbackDef?.title || formatTitleFromSlug(slug), seed, variables)
 
-      const title =
-        legacy.title ||
-        processContent(row.service_title_spintax || row.hero_headline_spintax || formatTitleFromSlug(slug), seed, variables)
+      const description = newService?.description
+        ? processContent(newService.description, seed, variables)
+        : pickDescriptionFromRow(row, seed, variables) || (fallbackDef?.shortDescription ? processContent(fallbackDef.shortDescription, seed, variables) : "")
 
-      const description = legacy.description || pickDescriptionFromRow(row, seed, variables) || ""
-
-      const icon = serviceDefinitions.find((svc) => svc.slug === slug)?.icon
+      const icon = fallbackDef?.icon
 
       return { slug, title, description, href: `/${slug}`, icon }
     })
