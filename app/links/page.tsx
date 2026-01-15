@@ -73,7 +73,6 @@ export default async function LinksPage() {
   }
 
   const mainSiteId = await getMainSiteIdForDomain(site)
-  const category = site.category || 'water_damage'
 
   let links = [] as Awaited<ReturnType<typeof fetchLinks>>
   try {
