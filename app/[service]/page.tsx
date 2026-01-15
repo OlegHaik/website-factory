@@ -145,10 +145,14 @@ export default async function ServicePage({
   })
 
   // GUARD: Check if serviceSlug is allowed for this category
-  const allowedServiceSlugs = new Set(resolveCategoryConfig(category).services.map((s) => s.slug))
-  if (!allowedServiceSlugs.has(serviceSlug)) {
-    console.warn(`[ServiceGuard] Blocking serviceSlug="${serviceSlug}" - not in category="${category}" allowed list: ${[...allowedServiceSlugs].join(', ')}`)
-    notFound()
+  // Skip guard if config has no hardcoded services (relies on DB instead)
+  const categoryConfig = resolveCategoryConfig(category)
+  if (categoryConfig.services.length > 0) {
+    const allowedServiceSlugs = new Set(categoryConfig.services.map((s) => s.slug))
+    if (!allowedServiceSlugs.has(serviceSlug)) {
+      console.warn(`[ServiceGuard] Blocking serviceSlug="${serviceSlug}" - not in category="${category}" allowed list: ${[...allowedServiceSlugs].join(', ')}`)
+      notFound()
+    }
   }
 
   const variables = {
