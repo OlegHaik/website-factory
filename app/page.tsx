@@ -136,8 +136,8 @@ export default async function Home() {
 
   // Fetch services section heading from content_blocks
   const servicesHeadingBlock = await getContentBlock(category, 'services')
-  const servicesHeading = servicesHeadingBlock?.value_spintax_html
-    ? processContent(servicesHeadingBlock.value_spintax_html, domain, variables)
+  const servicesHeading = servicesHeadingBlock?.heading_spintax
+    ? processContent(servicesHeadingBlock.heading_spintax, domain, variables)
     : undefined
 
   // Fetch 'Licensed & Insured' heading
