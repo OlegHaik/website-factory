@@ -9,6 +9,7 @@ function splitTrustPoints(text: string): string[] {
   const normalized = String(text || '').replace(/\r\n/g, '\n').trim()
   if (!normalized) return []
 
+  // Try newlines first
   const lines = normalized
     .split('\n')
     .map((l) => l.trim())
@@ -16,10 +17,47 @@ function splitTrustPoints(text: string): string[] {
 
   if (lines.length > 1) return lines
 
-  return normalized
+  // Try semicolons
+  const semiSplit = normalized
     .split(';')
     .map((p) => p.trim())
     .filter(Boolean)
+
+  if (semiSplit.length > 1) return semiSplit
+
+  // Try pipe separators (but only outside of braces)
+  // This handles format: "{option1|option2} text | {option3|option4} text | ..."
+  const points: string[] = []
+  let current = ''
+  let braceDepth = 0
+
+  for (let i = 0; i < normalized.length; i++) {
+    const char = normalized[i]
+
+    if (char === '{') {
+      braceDepth++
+      current += char
+    } else if (char === '}') {
+      braceDepth--
+      current += char
+    } else if (char === '|' && braceDepth === 0) {
+      // Top-level pipe - this is a separator
+      const trimmed = current.trim()
+      if (trimmed) points.push(trimmed)
+      current = ''
+    } else {
+      current += char
+    }
+  }
+
+  // Don't forget the last segment
+  const lastTrimmed = current.trim()
+  if (lastTrimmed) points.push(lastTrimmed)
+
+  if (points.length > 1) return points
+
+  // Fallback: return as single item
+  return normalized ? [normalized] : []
 }
 
 export function ServiceTrust({ headline, trustPoints }: ServiceTrustProps) {

@@ -52,42 +52,58 @@ export async function generateMetadata({
     return { title: 'Not Found', description: 'The requested page could not be found.' }
   }
 
-  const preferredMetaType = `service_${serviceSlug.replace(/-/g, "_")}`
-  const preferredMeta = await getContentMeta(category, preferredMetaType, serviceSlug)
+  // Fetch meta from content_meta_new table (page_type='service', service_id=slug)
+  const serviceMeta = await getContentMeta(category, 'service', serviceSlug)
 
-  const legacyMetaMap: Record<string, string> = {
-    "water-damage-restoration": "service_water_damage",
-    "fire-smoke-damage": "service_fire_damage",
-    "mold-remediation": "service_mold",
-    "biohazard-cleanup": "service_biohazard",
-    "burst-pipe-repair": "service_burst_pipe",
-    "sewage-cleanup": "service_sewage",
-  }
-
-  const fallbackMetaType = legacyMetaMap[serviceSlug] || preferredMetaType
-  const metaType = preferredMeta ? preferredMetaType : fallbackMetaType
   const fallbackMeta = await generatePageMetadata(
-    metaType,
+    'service',
     domain,
     variables,
     serviceSlug,
     category,
   )
 
+  // If we have meta from DB, use it
+  const metaTitle = serviceMeta?.title
+    ? processContent(serviceMeta.title, `${domain}:${serviceSlug}:meta`, variables)
+    : null
+  const metaDesc = serviceMeta?.description
+    ? processContent(serviceMeta.description, `${domain}:${serviceSlug}:meta`, variables)
+    : null
+
+  if (metaTitle || metaDesc) {
+    return {
+      ...fallbackMeta,
+      ...(metaTitle ? { title: metaTitle } : {}),
+      ...(metaDesc ? { description: metaDesc } : {}),
+      openGraph: {
+        ...(fallbackMeta.openGraph || {}),
+        ...(metaTitle ? { title: metaTitle } : {}),
+        ...(metaDesc ? { description: metaDesc } : {}),
+      },
+      twitter: {
+        ...(fallbackMeta.twitter || {}),
+        ...(metaTitle ? { title: metaTitle } : {}),
+        ...(metaDesc ? { description: metaDesc } : {}),
+      },
+    }
+  }
+
   if (category !== "roofing") return fallbackMeta
 
+  // Roofing-specific: also check content_service_pages for meta
   const pageContent = await getContentServicePage(serviceSlug, category)
   const seed = `${domain}:${serviceSlug}:meta`
 
-  const metaTitle = pageContent?.meta_title_spintax
+  const roofingMetaTitle = pageContent?.meta_title_spintax
     ? processContent(pageContent.meta_title_spintax, seed, variables)
     : null
-  const metaDescription = pageContent?.meta_description_spintax
+  const roofingMetaDesc = pageContent?.meta_description_spintax
     ? processContent(pageContent.meta_description_spintax, seed, variables)
     : null
 
-  const title = metaTitle ?? (fallbackMeta.title ?? undefined)
-  const description = metaDescription ?? (fallbackMeta.description ?? undefined)
+  const title = roofingMetaTitle ?? (fallbackMeta.title ?? undefined)
+  const description = roofingMetaDesc ?? (fallbackMeta.description ?? undefined)
 
   return {
     ...fallbackMeta,
