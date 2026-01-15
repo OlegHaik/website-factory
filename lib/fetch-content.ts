@@ -40,12 +40,15 @@ export interface ContentCTANew {
 export interface ContentFAQItem {
   question: string
   answer: string
+  question_spintax?: string
+  answer_spintax?: string
 }
 
 export interface ContentTestimonialNew {
   name: string
   text: string
   rating: number
+  location_spintax?: string
 }
 
 export interface ContentServiceNew {
@@ -59,6 +62,8 @@ export interface ContentServiceNew {
 export interface ContentMetaNew {
   title: string
   description: string
+  title_spintax?: string
+  description_spintax?: string
 }
 
 // =====================================================
@@ -157,7 +162,9 @@ export async function getContentFAQNew(category: string = "water_damage"): Promi
     if (questionRow?.faq_id.startsWith('q') && answerRow?.faq_id.startsWith('a')) {
       faqs.push({
         question: questionRow.content,
-        answer: answerRow.content
+        answer: answerRow.content,
+        question_spintax: questionRow.content,
+        answer_spintax: answerRow.content
       })
     }
   }
@@ -192,7 +199,8 @@ export async function getContentTestimonialsNew(
   return data.map(t => ({
     name: t.testimonial_name,
     text: t.testimonial_body,
-    rating: t.rating || 5
+    rating: t.rating || 5,
+    location_spintax: t.testimonial_location || '{{city}}, {{state}}'
   }))
 }
 
@@ -264,7 +272,9 @@ export async function getContentMeta(
   
   return {
     title: data.meta_title,
-    description: data.meta_desc
+    description: data.meta_desc,
+    title_spintax: data.meta_title,
+    description_spintax: data.meta_desc
   }
 }
 
@@ -421,16 +431,9 @@ export async function fetchQuestionnaire(category: string = "water_damage") {
 
 export async function fetchLinks(category: string = "water_damage") {
   const supabase = await createClient()
-  const { data, error } = await supabase
-    .from("links")
-    .select("*")
-    .eq("site_id", category) // links table uses site_id, not category
-  
-  if (error) {
-    console.error("Failed to fetch links:", error)
-    return []
-  }
-  return data
+  // links table is not category-based, it's site-based
+  // Return empty array for now
+  return []
 }
 
 export async function getContentLegal(legalType: string = "privacy_policy") {

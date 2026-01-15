@@ -193,12 +193,19 @@ export default async function Home() {
   const dbItems = testimonialsContent && testimonialsContent.length > 0 ? testimonialsContent : []
   const defaultItems = testimonialsDefaults.items || []
   
-  const testimonialItems = [...dbItems, ...defaultItems].slice(0, 3).map((item) => ({
-    name: processContent((item as any).name || '', domain, variables),
-    location: processContent((item as any).location_spintax || '{{city}}, {{state}}', domain, variables),
-    text: processContent((item as any).text || (item as any).text_spintax || '', domain, variables),
-    rating: (item as any).rating || 5,
-  }))
+  const testimonialItems = [...dbItems, ...defaultItems].slice(0, 3).map((item) => {
+    const name = 'name' in item ? item.name : ''
+    const text = 'text' in item ? item.text : ('text_spintax' in item ? item.text_spintax : '')
+    const location = 'location_spintax' in item ? item.location_spintax : '{{city}}, {{state}}'
+    const rating = 'rating' in item ? item.rating : 5
+    
+    return {
+      name: processContent(name, domain, variables),
+      location: processContent(location, domain, variables),
+      text: processContent(text, domain, variables),
+      rating,
+    }
+  })
 
   const testimonialsData = {
     heading: processContent(testimonialsDefaults.heading_spintax, domain, variables),

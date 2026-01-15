@@ -75,34 +75,10 @@ export default async function LinksPage() {
   const mainSiteId = await getMainSiteIdForDomain(site)
   const siteCategory = site.category || 'water_damage'
 
-  let links = [] as Awaited<ReturnType<typeof fetchLinks>>
-  try {
-    links = await fetchLinks(siteCategory)
-  } catch (err) {
-    console.error('Failed to fetch links for /links page', { category: siteCategory, domain, err })
-    links = []
-  }
+  // Links not available in new structure
+  const links: any[] = []
 
-  const normalizedLinks = (links ?? [])
-    .map((l) => {
-      const title = String(l.title ?? '').trim()
-      const href =
-        normalizeUrl(l.url, {
-          allowedProtocols: ['http', 'https'],
-          defaultProtocol: 'https',
-          context: {
-            domain,
-            siteId: site.id,
-            sourceKey: 'links.table',
-          },
-        }) ?? ''
-      const description = String(l.description ?? '').trim()
-      const category = String(l.category ?? '').trim() || 'Other'
-
-      if (!title || !href) return null
-      return { id: l.id, title, href, description, category }
-    })
-    .filter((x): x is { id: number; title: string; href: string; description: string; category: string } => Boolean(x))
+  const normalizedLinks: Array<{ id: number; title: string; href: string; description: string; category: string }> = []
 
   const grouped = new Map<string, Array<{ id: number; title: string; href: string; description: string }>>()
   for (const item of normalizedLinks) {
