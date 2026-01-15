@@ -43,7 +43,7 @@ function renderContentBlock(
   // ContentBlock has heading_spintax and body_spintax
   // Render heading if present, then body
   const heading = block.heading_spintax ? processContent(block.heading_spintax, domain, variables) : null
-  const body = block.body_spintax ? processContent(block.body_spintax, domain, variables) : null
+  const body = block.body_spintax ? processContent(block.body_spintax || '', domain, variables) : null
 
   return (
     <div key={block.id} className="mb-6">

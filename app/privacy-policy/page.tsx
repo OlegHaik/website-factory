@@ -60,7 +60,7 @@ export default async function PrivacyPolicyPage() {
         .replace(/^www\./, '')}`,
   }
 
-  const legalContent = await getContentLegal(category)
+  const legalContent = await getContentLegal('privacy_policy')
   const defaults = DEFAULT_LEGAL.privacy_policy
   const title = legalContent?.title || defaults.title
   const content = processContent(legalContent?.content_spintax || defaults.content, domain, variables)

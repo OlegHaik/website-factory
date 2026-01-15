@@ -73,12 +73,13 @@ export default async function LinksPage() {
   }
 
   const mainSiteId = await getMainSiteIdForDomain(site)
+  const siteCategory = site.category || 'water_damage'
 
   let links = [] as Awaited<ReturnType<typeof fetchLinks>>
   try {
-    links = await fetchLinks(category)
+    links = await fetchLinks(siteCategory)
   } catch (err) {
-    console.error('Failed to fetch links for /links page', { category, domain, err })
+    console.error('Failed to fetch links for /links page', { category: siteCategory, domain, err })
     links = []
   }
 
