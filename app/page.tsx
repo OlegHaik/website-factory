@@ -143,12 +143,16 @@ export default async function Home() {
 
   // Transform services from new structure
   // Only filter leak-repair for water_damage (duplicate of burst-pipe-repair)
-  const servicesForLists = servicesContent.map(s => ({
-    title: processContent(s.nameSpin || s.name, domain, variables),
-    description: processContent(s.description, domain, variables),
-    href: `/${s.slug}`,
-    slug: s.slug,
-  })).filter(s => category !== "water_damage" || s.slug !== "leak-repair")
+  // Use unique seed per service (domain:slug) for varied spintax results
+  const servicesForLists = servicesContent.map(s => {
+    const serviceSeed = `${domain}:${s.slug}`
+    return {
+      title: processContent(s.nameSpin || s.name, serviceSeed, variables),
+      description: processContent(s.description, serviceSeed, variables),
+      href: `/${s.slug}`,
+      slug: s.slug,
+    }
+  }).filter(s => category !== "water_damage" || s.slug !== "leak-repair")
   const servicesForSchema = servicesForLists.map((svc) => svc.title).filter(Boolean)
 
   const ctaDefaults = getDefaultCta(category)
