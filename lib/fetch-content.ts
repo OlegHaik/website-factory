@@ -425,7 +425,7 @@ export async function fetchLinks(category: string = "water_damage") {
   const { data, error } = await supabase
     .from("links")
     .select("*")
-    .eq("category", normalizeCategory(category))
+    .eq("site_id", category) // links table uses site_id, not category
   
   if (error) {
     console.error("Failed to fetch links:", error)
@@ -434,12 +434,13 @@ export async function fetchLinks(category: string = "water_damage") {
   return data
 }
 
-export async function getContentLegal(category: string = "water_damage") {
+export async function getContentLegal(legalType: string = "privacy_policy", category: string = "water_damage") {
   const supabase = await createClient()
   const { data, error } = await supabase
     .from("content_legal")
     .select("*")
     .eq("category", normalizeCategory(category))
+    .eq("legal_type", legalType)
     .maybeSingle()
   
   if (error) {
