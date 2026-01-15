@@ -40,7 +40,11 @@ function renderContentBlock(
   domain: string,
   variables: { city: string; state: string; business_name: string; phone: string }
 ) {
-  const content = processContent(block.value_spintax_html, domain, variables)
+  // ContentBlock has heading_spintax and body_spintax
+  // Use heading_spintax for headings (h1, h2, h3) and body_spintax for paragraphs
+  const isHeading = block.element_type === 'h1' || block.element_type === 'h2' || block.element_type === 'h3'
+  const spintaxContent = isHeading ? block.heading_spintax : block.body_spintax
+  const content = processContent(spintaxContent || '', domain, variables)
 
   switch (block.element_type) {
     case 'h1':
