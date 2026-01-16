@@ -50,6 +50,9 @@ export const DEFAULT_SERVICE_PAGE = {
     why_choose_headline: "{Why {{city}} Residents Choose Us|Why Trust Our Team}",
     trust_points:
       "24/7 emergency response\nCertified technicians\nAdvanced drying equipment\nClear communication\nInsurance-friendly documentation",
+    whats_included_heading: "{What's Included|What We Include|What's Covered|Our Service Includes}",
+    whats_included_items:
+      "{Rapid on-site assessment and damage documentation|Fast on-site inspection and damage report|Quick assessment and detailed documentation}\n{Professional-grade equipment and proven processes|Industrial-grade drying equipment and certified methods|Advanced extraction equipment and tested protocols}\n{Clear communication and project updates|Ongoing updates and transparent communication|Regular status reports and clear timelines}\n{Support for insurance workflows when applicable|Insurance documentation and claim assistance|Help with insurance paperwork when needed}",
   },
   fire: {
     hero_headline: "{Professional|Expert|Certified|24/7} Fire & Smoke Damage Restoration in {{city}}, {{state}}",
@@ -66,6 +69,9 @@ export const DEFAULT_SERVICE_PAGE = {
     why_choose_headline: "{Why Choose Our Fire Restoration Team?|Why Trust Us After a Fire?}",
     trust_points:
       "24/7 emergency response\nDetailed documentation\nProfessional deodorization\nClear timelines\nInsurance coordination support",
+    whats_included_heading: "{What's Included|What We Include|What's Covered|Our Service Includes}",
+    whats_included_items:
+      "{Comprehensive damage assessment and documentation|Thorough inspection and detailed damage report|Complete fire damage evaluation}\n{Professional soot removal and deodorization|Expert smoke cleanup and odor elimination|Industrial-grade cleaning and deodorizing}\n{Clear communication and project updates|Ongoing updates and transparent timelines|Regular status reports throughout the process}\n{Support for insurance workflows when applicable|Insurance documentation and claim assistance|Help with insurance paperwork when needed}",
   },
   mold: {
     hero_headline: "{Certified|Professional|Expert} Mold Remediation in {{city}}, {{state}}",
@@ -82,6 +88,9 @@ export const DEFAULT_SERVICE_PAGE = {
     why_choose_headline: "{Why Homeowners Choose Us for Mold Remediation|Why Trust Our Mold Team}",
     trust_points:
       "Certified technicians\nContainment-first approach\nMoisture source guidance\nProfessional cleanup\nClear next steps",
+    whats_included_heading: "{What's Included|What We Include|What's Covered|Our Service Includes}",
+    whats_included_items:
+      "{Thorough mold inspection and moisture assessment|Complete mold evaluation and humidity testing|Detailed inspection and moisture mapping}\n{Professional containment and HEPA filtration|Proper isolation and air filtration|Certified containment and air cleaning}\n{Safe mold removal and surface treatment|Expert remediation and antimicrobial treatment|Complete removal and sanitization}\n{Moisture source identification and prevention guidance|Root cause analysis and prevention tips|Source detection and future prevention recommendations}",
   },
   biohazard: {
     hero_headline: "{Professional|Certified|Discreet} Biohazard Cleanup in {{city}}, {{state}}",
@@ -98,6 +107,9 @@ export const DEFAULT_SERVICE_PAGE = {
     why_choose_headline: "{Why Families Trust Our Biohazard Team|Why Choose Us for Biohazard Cleanup}",
     trust_points:
       "Discreet service\nCertified technicians\nProper disposal procedures\nFast response\nClear communication",
+    whats_included_heading: "{What's Included|What We Include|What's Covered|Our Service Includes}",
+    whats_included_items:
+      "{Confidential scene assessment and planning|Discreet evaluation and response plan|Private inspection and cleanup strategy}\n{Certified decontamination and sanitization|Professional disinfection and cleaning|Complete biohazard removal and treatment}\n{Proper disposal of contaminated materials|Safe removal and compliant disposal|Certified waste handling and removal}\n{Compassionate, discreet service throughout|Respectful and confidential support|Professional and private handling from start to finish}",
   },
   burst: {
     hero_headline: "{Emergency|24/7|Rapid} Burst Pipe Repair in {{city}}, {{state}}",
@@ -114,6 +126,9 @@ export const DEFAULT_SERVICE_PAGE = {
     why_choose_headline: "{Why Choose Us for Burst Pipe Emergencies|Why Trust Our Emergency Team}",
     trust_points:
       "Fast response\nProfessional drying\nMoisture monitoring\nClear documentation\nHelpful guidance",
+    whats_included_heading: "{What's Included|What We Include|What's Covered|Our Service Includes}",
+    whats_included_items:
+      "{Rapid emergency response and water shutoff assistance|Fast arrival and help stopping the water source|Quick response and damage mitigation}\n{Professional water extraction and structural drying|Industrial-grade pumps and drying equipment|Complete moisture removal and drying}\n{Moisture monitoring and damage documentation|Ongoing humidity tracking and detailed reports|Progress monitoring and insurance documentation}\n{Support for insurance workflows when applicable|Insurance paperwork assistance and claim support|Help with insurance documentation when needed}",
   },
   sewage: {
     hero_headline: "{Professional|Emergency|Certified} Sewage Cleanup in {{city}}, {{state}}",
@@ -130,6 +145,249 @@ export const DEFAULT_SERVICE_PAGE = {
     why_choose_headline: "{Why Trust Us for Sewage Cleanup|Why Choose Our Cleanup Team}",
     trust_points:
       "Safety-first procedures\nProfessional disinfection\nFast emergency response\nClear scope and updates\nExperienced technicians",
+    whats_included_heading: "{What's Included|What We Include|What's Covered|Our Service Includes}",
+    whats_included_items:
+      "{Safe contamination assessment and extraction|Professional hazard evaluation and removal|Complete contamination inspection and cleanup}\n{Thorough sanitization and disinfection|Professional-grade disinfecting and deodorizing|Complete sanitation and odor treatment}\n{Removal of affected materials when necessary|Safe disposal of contaminated items|Proper handling of damaged materials}\n{Clear communication and project updates|Ongoing status reports and transparent timelines|Regular updates throughout the cleanup process}",
+  },
+  // Bathroom remodel service defaults
+  bathroom_remodel: {
+    hero_headline: "{Professional|Expert|Quality|Trusted} Bathroom Remodeling in {{city}}, {{state}}",
+    hero_subheadline: "{Transform your bathroom|Create your dream bathroom|Upgrade your space} with expert craftsmanship and quality materials.",
+    hero_cta_secondary: "{Get a Free Quote|Request a Consultation|Contact Us}",
+    section_headline: "{Bathroom Remodeling|Custom Bathroom Renovation} for {{city}} Homes",
+    section_body:
+      "{Your bathroom should be a relaxing retreat|A beautiful bathroom adds value to your home}. Our {{city}} team provides {expert design, quality materials, and skilled installation|complete bathroom renovation services}.",
+    process_headline: "{Our Remodeling Process|How We Transform Your Bathroom}",
+    process_body:
+      "We start with a design consultation, create a detailed plan, handle all demolition and construction, and finish with quality fixtures and finishes.",
+    midpage_cta_headline: "{Ready for Your Dream Bathroom?|Start Your Bathroom Renovation}",
+    midpage_cta_subtext: "Call now for a free consultation and estimate in {{city}}.",
+    why_choose_headline: "{Why {{city}} Homeowners Choose Us|Why Trust Our Remodeling Team}",
+    trust_points:
+      "Licensed & insured\nQuality materials\nExperienced craftsmen\nTransparent pricing\nOn-time completion",
+    whats_included_heading: "{What's Included|What We Include|What's Covered|Our Service Includes}",
+    whats_included_items:
+      "{Free design consultation and detailed estimate|Complimentary planning session and transparent pricing|Initial consultation and honest quote}\n{Quality fixtures and materials from trusted brands|Premium products with manufacturer warranties|Top-grade materials built to last}\n{Professional installation by licensed craftsmen|Expert workmanship and attention to detail|Skilled installation and quality finishes}\n{Complete cleanup and final walkthrough|Job site cleanup and project review|Debris removal and satisfaction guarantee}",
+  },
+  // Kitchen remodel service defaults
+  kitchen_remodel: {
+    hero_headline: "{Professional|Expert|Quality|Trusted} Kitchen Remodeling in {{city}}, {{state}}",
+    hero_subheadline: "{Transform your kitchen|Create your dream kitchen|Upgrade your space} with expert design and quality craftsmanship.",
+    hero_cta_secondary: "{Get a Free Quote|Request a Consultation|Contact Us}",
+    section_headline: "{Kitchen Remodeling|Custom Kitchen Renovation} for {{city}} Homes",
+    section_body:
+      "{Your kitchen is the heart of your home|A beautiful kitchen adds value and function}. Our {{city}} team provides {expert design, quality materials, and skilled installation|complete kitchen renovation services}.",
+    process_headline: "{Our Remodeling Process|How We Transform Your Kitchen}",
+    process_body:
+      "We start with a design consultation, create a detailed plan, handle all demolition and construction, and finish with quality cabinets, countertops, and appliances.",
+    midpage_cta_headline: "{Ready for Your Dream Kitchen?|Start Your Kitchen Renovation}",
+    midpage_cta_subtext: "Call now for a free consultation and estimate in {{city}}.",
+    why_choose_headline: "{Why {{city}} Homeowners Choose Us|Why Trust Our Remodeling Team}",
+    trust_points:
+      "Licensed & insured\nQuality materials\nExperienced craftsmen\nTransparent pricing\nOn-time completion",
+    whats_included_heading: "{What's Included|What We Include|What's Covered|Our Service Includes}",
+    whats_included_items:
+      "{Free design consultation and detailed estimate|Complimentary planning session and transparent pricing|Initial consultation and honest quote}\n{Quality cabinets, countertops, and fixtures|Premium products with manufacturer warranties|Top-grade materials built to last}\n{Professional installation by licensed craftsmen|Expert workmanship and attention to detail|Skilled installation and quality finishes}\n{Complete cleanup and final walkthrough|Job site cleanup and project review|Debris removal and satisfaction guarantee}",
+  },
+  // Chimney service defaults
+  chimney: {
+    hero_headline: "{Professional|Expert|Certified|Trusted} Chimney Services in {{city}}, {{state}}",
+    hero_subheadline: "{Keep your chimney safe and efficient|Professional chimney care} by certified technicians.",
+    hero_cta_secondary: "{Get a Free Quote|Schedule Inspection|Contact Us}",
+    section_headline: "{Chimney Services|Professional Chimney Care} for {{city}} Homes",
+    section_body:
+      "{A well-maintained chimney is essential for safety|Regular chimney care prevents hazards}. Our {{city}} team provides {inspection, cleaning, and repair services|complete chimney solutions}.",
+    process_headline: "{Our Chimney Process|How We Service Your Chimney}",
+    process_body:
+      "We start with a thorough inspection, identify any issues, perform professional cleaning, and complete necessary repairs.",
+    midpage_cta_headline: "{Need Chimney Service?|Schedule Your Chimney Inspection}",
+    midpage_cta_subtext: "Call now for a free inspection and estimate in {{city}}.",
+    why_choose_headline: "{Why {{city}} Homeowners Choose Us|Why Trust Our Chimney Team}",
+    trust_points:
+      "Certified technicians\nThorough inspections\nSafety-focused service\nTransparent pricing\nSatisfaction guaranteed",
+    whats_included_heading: "{What's Included|What We Include|What's Covered|Our Service Includes}",
+    whats_included_items:
+      "{Comprehensive chimney inspection|Thorough safety evaluation|Complete chimney assessment}\n{Professional cleaning and debris removal|Expert soot and creosote removal|Full chimney sweep service}\n{Detailed condition report and recommendations|Written assessment and repair options|Clear findings and next steps}\n{Quality repairs by certified technicians|Expert craftsmanship and lasting results|Professional workmanship guaranteed}",
+  },
+  // Carpet cleaning service defaults
+  carpet_cleaning: {
+    hero_headline: "{Professional|Expert|Deep|Trusted} Carpet Cleaning in {{city}}, {{state}}",
+    hero_subheadline: "{Restore your carpets to like-new condition|Professional deep cleaning} for homes and businesses.",
+    hero_cta_secondary: "{Get a Free Quote|Schedule Cleaning|Contact Us}",
+    section_headline: "{Carpet Cleaning|Professional Carpet Care} for {{city}} Homes & Businesses",
+    section_body:
+      "{Clean carpets improve air quality and appearance|Regular carpet cleaning extends carpet life}. Our {{city}} team provides {deep cleaning, stain removal, and protection|complete carpet care services}.",
+    process_headline: "{Our Cleaning Process|How We Clean Your Carpets}",
+    process_body:
+      "We start with an inspection, pre-treat stains, deep clean with professional equipment, and finish with optional protection treatment.",
+    midpage_cta_headline: "{Need Carpet Cleaning?|Schedule Your Cleaning Today}",
+    midpage_cta_subtext: "Call now for a free estimate in {{city}}.",
+    why_choose_headline: "{Why {{city}} Residents Choose Us|Why Trust Our Cleaning Team}",
+    trust_points:
+      "Professional equipment\nEco-friendly solutions\nFast drying times\nStain removal experts\nSatisfaction guaranteed",
+    whats_included_heading: "{What's Included|What We Include|What's Covered|Our Service Includes}",
+    whats_included_items:
+      "{Pre-cleaning inspection and spot treatment|Initial assessment and stain pre-treatment|Evaluation and targeted spot care}\n{Deep cleaning with professional equipment|Hot water extraction and thorough cleaning|Industrial-grade deep cleaning}\n{Deodorizing and freshening treatment|Odor elimination and fresh scent|Complete deodorizing service}\n{Optional carpet protection application|Stain guard and protection treatment|Protective coating for lasting cleanliness}",
+  },
+  // Air duct cleaning service defaults
+  air_duct_cleaning: {
+    hero_headline: "{Professional|Expert|Complete|Trusted} Air Duct Cleaning in {{city}}, {{state}}",
+    hero_subheadline: "{Breathe cleaner air|Improve indoor air quality} with professional duct cleaning.",
+    hero_cta_secondary: "{Get a Free Quote|Schedule Cleaning|Contact Us}",
+    section_headline: "{Air Duct Cleaning|HVAC Duct Cleaning} for {{city}} Homes & Businesses",
+    section_body:
+      "{Clean air ducts improve air quality and HVAC efficiency|Dust and allergens accumulate in ductwork}. Our {{city}} team provides {thorough duct cleaning and sanitizing|complete air duct services}.",
+    process_headline: "{Our Cleaning Process|How We Clean Your Air Ducts}",
+    process_body:
+      "We inspect your duct system, use professional vacuum equipment to remove debris, clean all vents and registers, and optionally sanitize the system.",
+    midpage_cta_headline: "{Need Air Duct Cleaning?|Improve Your Indoor Air Quality}",
+    midpage_cta_subtext: "Call now for a free estimate in {{city}}.",
+    why_choose_headline: "{Why {{city}} Residents Choose Us|Why Trust Our Duct Cleaning Team}",
+    trust_points:
+      "Professional equipment\nCertified technicians\nComplete system cleaning\nImproved air quality\nEnergy efficiency boost",
+    whats_included_heading: "{What's Included|What We Include|What's Covered|Our Service Includes}",
+    whats_included_items:
+      "{Complete duct system inspection|Thorough HVAC evaluation|Full system assessment}\n{Professional vacuum and brush cleaning|High-powered debris removal|Industrial-grade duct cleaning}\n{All vents and registers cleaned|Supply and return vent service|Complete vent cleaning}\n{Optional sanitizing treatment|Antimicrobial treatment available|Duct sanitization service}",
+  },
+  // ADU builder service defaults
+  adu_builder: {
+    hero_headline: "{Professional|Expert|Custom|Trusted} ADU Construction in {{city}}, {{state}}",
+    hero_subheadline: "{Add living space and property value|Custom accessory dwelling units} by experienced builders.",
+    hero_cta_secondary: "{Get a Free Quote|Schedule Consultation|Contact Us}",
+    section_headline: "{ADU Construction|Accessory Dwelling Unit Building} in {{city}}",
+    section_body:
+      "{An ADU adds valuable living space|Accessory dwelling units provide flexibility and income potential}. Our {{city}} team provides {design, permits, and complete construction|full-service ADU building}.",
+    process_headline: "{Our Building Process|How We Build Your ADU}",
+    process_body:
+      "We start with design consultation, handle permits and approvals, manage all construction phases, and deliver a complete turnkey ADU.",
+    midpage_cta_headline: "{Ready to Build Your ADU?|Start Your ADU Project}",
+    midpage_cta_subtext: "Call now for a free consultation in {{city}}.",
+    why_choose_headline: "{Why {{city}} Homeowners Choose Us|Why Trust Our Building Team}",
+    trust_points:
+      "Licensed & insured\nPermit expertise\nQuality construction\nOn-time delivery\nTransparent pricing",
+    whats_included_heading: "{What's Included|What We Include|What's Covered|Our Service Includes}",
+    whats_included_items:
+      "{Free design consultation and site evaluation|Complimentary planning session and property assessment|Initial consultation and feasibility review}\n{Complete permit handling and approvals|Full permit management and city coordination|Permit acquisition and compliance}\n{Quality construction by licensed contractors|Expert building and craftsmanship|Professional construction and finishing}\n{Final inspection and walkthrough|Project completion and quality check|Turnkey delivery and satisfaction review}",
+  },
+  // Pool contractor service defaults
+  pool_contractor: {
+    hero_headline: "{Professional|Expert|Custom|Trusted} Pool Services in {{city}}, {{state}}",
+    hero_subheadline: "{Build or renovate your dream pool|Expert pool construction and remodeling} by licensed contractors.",
+    hero_cta_secondary: "{Get a Free Quote|Schedule Consultation|Contact Us}",
+    section_headline: "{Pool Construction & Renovation|Custom Pool Services} in {{city}}",
+    section_body:
+      "{A beautiful pool adds value and enjoyment|Your backyard oasis awaits}. Our {{city}} team provides {pool construction, renovation, and repair services|complete pool solutions}.",
+    process_headline: "{Our Pool Process|How We Build Your Pool}",
+    process_body:
+      "We start with design consultation, obtain permits, manage excavation and construction, and finish with equipment installation and startup.",
+    midpage_cta_headline: "{Ready for Your Dream Pool?|Start Your Pool Project}",
+    midpage_cta_subtext: "Call now for a free consultation in {{city}}.",
+    why_choose_headline: "{Why {{city}} Homeowners Choose Us|Why Trust Our Pool Team}",
+    trust_points:
+      "Licensed & insured\nCustom designs\nQuality materials\nExpert installation\nWarranty protection",
+    whats_included_heading: "{What's Included|What We Include|What's Covered|Our Service Includes}",
+    whats_included_items:
+      "{Free design consultation and 3D rendering|Complimentary planning and visualization|Custom design and project planning}\n{Complete permit handling and inspections|Full permit management and compliance|Permit acquisition and city approvals}\n{Quality construction and equipment installation|Expert building and professional equipment|Premium materials and installation}\n{Final startup, training, and warranty|Pool startup and owner orientation|Completion walkthrough and warranty coverage}",
+  },
+  // Garage door service defaults
+  garage_door: {
+    hero_headline: "{Professional|Expert|Fast|Trusted} Garage Door Services in {{city}}, {{state}}",
+    hero_subheadline: "{Repair or replace your garage door|Professional garage door solutions} by experienced technicians.",
+    hero_cta_secondary: "{Get a Free Quote|Schedule Service|Contact Us}",
+    section_headline: "{Garage Door Services|Garage Door Repair & Installation} in {{city}}",
+    section_body:
+      "{A working garage door is essential for security and convenience|Garage door problems need quick solutions}. Our {{city}} team provides {repair, installation, and maintenance|complete garage door services}.",
+    process_headline: "{Our Service Process|How We Fix Your Garage Door}",
+    process_body:
+      "We diagnose the issue, provide upfront pricing, complete repairs or installation, and test everything for proper operation.",
+    midpage_cta_headline: "{Garage Door Problems?|Get Fast Garage Door Service}",
+    midpage_cta_subtext: "Call now for same-day service in {{city}}.",
+    why_choose_headline: "{Why {{city}} Residents Choose Us|Why Trust Our Garage Door Team}",
+    trust_points:
+      "Fast response\nUpfront pricing\nQuality parts\nExperienced technicians\nSatisfaction guaranteed",
+    whats_included_heading: "{What's Included|What We Include|What's Covered|Our Service Includes}",
+    whats_included_items:
+      "{Complete diagnostic and inspection|Thorough problem identification|Full system evaluation}\n{Upfront pricing with no hidden fees|Transparent quotes before work begins|Honest pricing and clear estimates}\n{Quality repairs using durable parts|Professional-grade components and installation|Premium parts and expert workmanship}\n{Testing and safety check|Operation verification and safety inspection|Final testing and adjustments}",
+  },
+  // Locksmith service defaults
+  locksmith: {
+    hero_headline: "{Professional|Expert|Fast|24/7} Locksmith Services in {{city}}, {{state}}",
+    hero_subheadline: "{Locked out? Need new locks?|Fast, reliable locksmith services} when you need them.",
+    hero_cta_secondary: "{Call Now|Get Help Fast|Contact Us}",
+    section_headline: "{Locksmith Services|Professional Lock Solutions} in {{city}}",
+    section_body:
+      "{Lock emergencies happen anytime|Security is essential for your property}. Our {{city}} team provides {lockout service, rekeying, and lock installation|complete locksmith solutions}.",
+    process_headline: "{Our Service Process|How We Help You}",
+    process_body:
+      "We respond quickly, assess your situation, provide upfront pricing, and complete the work efficiently and professionally.",
+    midpage_cta_headline: "{Need a Locksmith?|Get Fast Lock Service}",
+    midpage_cta_subtext: "Call now for fast response in {{city}}.",
+    why_choose_headline: "{Why {{city}} Residents Choose Us|Why Trust Our Locksmith Team}",
+    trust_points:
+      "Fast response\n24/7 availability\nUpfront pricing\nLicensed technicians\nAll lock types",
+    whats_included_heading: "{What's Included|What We Include|What's Covered|Our Service Includes}",
+    whats_included_items:
+      "{Fast response to your location|Quick arrival and professional service|Rapid dispatch to your address}\n{Upfront pricing before work begins|Transparent quotes with no surprises|Clear pricing and honest estimates}\n{Professional service for all lock types|Expert handling of any lock situation|Skilled work on residential and commercial locks}\n{Warranty on parts and labor|Quality guarantee on all work|Service warranty and satisfaction assurance}",
+  },
+  // Pest control service defaults
+  pest_control: {
+    hero_headline: "{Professional|Expert|Effective|Trusted} Pest Control in {{city}}, {{state}}",
+    hero_subheadline: "{Eliminate pests from your property|Safe, effective pest solutions} for homes and businesses.",
+    hero_cta_secondary: "{Get a Free Quote|Schedule Service|Contact Us}",
+    section_headline: "{Pest Control Services|Professional Pest Elimination} in {{city}}",
+    section_body:
+      "{Pests can damage property and pose health risks|Effective pest control requires professional solutions}. Our {{city}} team provides {inspection, treatment, and prevention|complete pest control services}.",
+    process_headline: "{Our Treatment Process|How We Eliminate Pests}",
+    process_body:
+      "We inspect your property, identify pest types and entry points, apply targeted treatments, and provide prevention recommendations.",
+    midpage_cta_headline: "{Pest Problems?|Get Effective Pest Control}",
+    midpage_cta_subtext: "Call now for a free inspection in {{city}}.",
+    why_choose_headline: "{Why {{city}} Residents Choose Us|Why Trust Our Pest Control Team}",
+    trust_points:
+      "Licensed technicians\nSafe treatments\nEffective solutions\nPreventive programs\nSatisfaction guaranteed",
+    whats_included_heading: "{What's Included|What We Include|What's Covered|Our Service Includes}",
+    whats_included_items:
+      "{Thorough property inspection|Complete pest evaluation|Full interior and exterior assessment}\n{Targeted treatment for identified pests|Specific solutions for your pest problem|Effective treatment protocols}\n{Safe products for family and pets|EPA-approved treatments|Environmentally responsible solutions}\n{Prevention recommendations and follow-up|Ongoing protection advice|Future prevention strategies}",
+  },
+  // Air conditioning service defaults
+  air_conditioning: {
+    hero_headline: "{Professional|Expert|Fast|Trusted} AC Services in {{city}}, {{state}}",
+    hero_subheadline: "{Stay cool with reliable AC service|Professional air conditioning repair and installation}.",
+    hero_cta_secondary: "{Get a Free Quote|Schedule Service|Contact Us}",
+    section_headline: "{Air Conditioning Services|AC Repair & Installation} in {{city}}",
+    section_body:
+      "{A working AC is essential in {{city}}|Don't suffer through the heat}. Our {{city}} team provides {repair, maintenance, and installation|complete AC services}.",
+    process_headline: "{Our Service Process|How We Keep You Cool}",
+    process_body:
+      "We diagnose the issue, explain your options, complete repairs or installation, and ensure your system runs efficiently.",
+    midpage_cta_headline: "{AC Not Working?|Get Fast AC Service}",
+    midpage_cta_subtext: "Call now for same-day service in {{city}}.",
+    why_choose_headline: "{Why {{city}} Residents Choose Us|Why Trust Our AC Team}",
+    trust_points:
+      "Fast response\nCertified technicians\nUpfront pricing\nAll brands serviced\nWarranty on repairs",
+    whats_included_heading: "{What's Included|What We Include|What's Covered|Our Service Includes}",
+    whats_included_items:
+      "{Complete system diagnostic|Thorough AC evaluation|Full system inspection}\n{Upfront pricing and repair options|Transparent quotes and recommendations|Clear pricing before work begins}\n{Professional repair or installation|Expert service by certified technicians|Quality workmanship guaranteed}\n{System testing and efficiency check|Performance verification|Final testing and optimization}",
+  },
+  // Heating service defaults
+  heating: {
+    hero_headline: "{Professional|Expert|Fast|Trusted} Heating Services in {{city}}, {{state}}",
+    hero_subheadline: "{Stay warm with reliable heating service|Professional furnace and heating solutions}.",
+    hero_cta_secondary: "{Get a Free Quote|Schedule Service|Contact Us}",
+    section_headline: "{Heating Services|Furnace Repair & Installation} in {{city}}",
+    section_body:
+      "{Reliable heating is essential for comfort|Don't get left in the cold}. Our {{city}} team provides {repair, maintenance, and installation|complete heating services}.",
+    process_headline: "{Our Service Process|How We Keep You Warm}",
+    process_body:
+      "We diagnose the issue, explain your options, complete repairs or installation, and ensure your system heats efficiently.",
+    midpage_cta_headline: "{Heating Problems?|Get Fast Heating Service}",
+    midpage_cta_subtext: "Call now for same-day service in {{city}}.",
+    why_choose_headline: "{Why {{city}} Residents Choose Us|Why Trust Our Heating Team}",
+    trust_points:
+      "Fast response\nCertified technicians\nUpfront pricing\nAll brands serviced\nWarranty on repairs",
+    whats_included_heading: "{What's Included|What We Include|What's Covered|Our Service Includes}",
+    whats_included_items:
+      "{Complete system diagnostic|Thorough heating evaluation|Full system inspection}\n{Upfront pricing and repair options|Transparent quotes and recommendations|Clear pricing before work begins}\n{Professional repair or installation|Expert service by certified technicians|Quality workmanship guaranteed}\n{System testing and efficiency check|Performance verification|Final testing and safety inspection}",
   },
   // Roofing service defaults
   roofing_generic: {
@@ -147,6 +405,9 @@ export const DEFAULT_SERVICE_PAGE = {
     why_choose_headline: "{Why {{city}} Homeowners Choose Us|Why Trust Our Roofing Team}",
     trust_points:
       "Licensed & insured\nQuality materials\nExperienced crews\nTransparent pricing\nWarranty protection",
+    whats_included_heading: "{What's Included|What We Include|What's Covered|Our Service Includes}",
+    whats_included_items:
+      "{Thorough roof inspection and detailed estimate|Complete assessment and transparent pricing|Full inspection and honest quote}\n{Quality materials from trusted manufacturers|Premium roofing products with warranties|Top-grade materials built to last}\n{Professional installation by experienced crews|Expert workmanship and attention to detail|Skilled installation and quality craftsmanship}\n{Complete cleanup and final walkthrough|Job site cleanup and project review|Debris removal and satisfaction check}",
   },
   generic: {
     hero_headline: "{Professional|Expert|Trusted} Services in {{city}}, {{state}}",
@@ -160,6 +421,9 @@ export const DEFAULT_SERVICE_PAGE = {
     midpage_cta_subtext: "Call us today to schedule.",
     why_choose_headline: "{Why Choose Us|Sales Points}",
     trust_points: "Experienced Team\nQuality Results\nCustomer Satisfaction\nReliable Service\nCompetitive Pricing",
+    whats_included_heading: "{What's Included|What We Include|What's Covered|Our Service Includes}",
+    whats_included_items:
+      "{Thorough assessment and detailed plan|Complete evaluation and clear proposal|Full inspection and honest estimate}\n{Professional-grade equipment and methods|Quality tools and proven processes|Industry-standard equipment and techniques}\n{Clear communication and project updates|Regular updates and transparent timelines|Ongoing communication throughout the project}\n{Customer satisfaction guarantee|Quality assurance and follow-up|Commitment to your complete satisfaction}",
   },
 }
 
@@ -168,7 +432,19 @@ const CATEGORY_SERVICE_FALLBACK: Record<string, string> = {
   water_damage: "water",
   roofing: "roofing_generic",
   mold_remediation: "mold",
+  bathroom_remodel: "bathroom_remodel",
+  kitchen_remodel: "kitchen_remodel",
   plumbing: "burst",
+  chimney: "chimney",
+  carpet_cleaning: "carpet_cleaning",
+  air_duct_cleaning: "air_duct_cleaning",
+  adu_builder: "adu_builder",
+  pool_contractor: "pool_contractor",
+  garage_door: "garage_door",
+  locksmith: "locksmith",
+  pest_control: "pest_control",
+  air_conditioning: "air_conditioning",
+  heating: "heating",
 }
 
 // Helper to get category-appropriate service page defaults

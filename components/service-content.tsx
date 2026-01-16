@@ -22,6 +22,8 @@ interface ServiceContentProps {
     title: string
     body: string
   }
+  whatsIncludedHeading?: string
+  whatsIncludedItems?: string[]
 }
 
 function splitParagraphs(text: string): string[] {
@@ -34,7 +36,7 @@ function splitParagraphs(text: string): string[] {
   return parts.length > 0 ? parts : [String(text || '')]
 }
 
-export function ServiceContent({ serviceTitle, serviceDescription, intro, sectionHeadline, sectionBody, processHeadline, processBody, city, state, serviceAreas, otherServices, licensedInsured }: ServiceContentProps) {
+export function ServiceContent({ serviceTitle, serviceDescription, intro, sectionHeadline, sectionBody, processHeadline, processBody, city, state, serviceAreas, otherServices, licensedInsured, whatsIncludedHeading, whatsIncludedItems }: ServiceContentProps) {
   const introText = intro || serviceDescription
   const headlineText = sectionHeadline || serviceTitle
   const bodyText = sectionBody || introText
@@ -69,12 +71,20 @@ export function ServiceContent({ serviceTitle, serviceDescription, intro, sectio
             )}
 
             <div className="rounded-2xl border border-slate-200 bg-slate-50 p-8">
-              <h3 className="text-xl font-bold text-slate-900">What’s Included</h3>
+              <h3 className="text-xl font-bold text-slate-900">{whatsIncludedHeading || "What's Included"}</h3>
               <ul className="mt-4 space-y-2 text-slate-700">
-                <li>Rapid on-site assessment and damage documentation</li>
-                <li>Professional-grade equipment and proven processes</li>
-                <li>Clear communication and project updates</li>
-                <li>Support for insurance workflows when applicable</li>
+                {(whatsIncludedItems && whatsIncludedItems.length > 0) ? (
+                  whatsIncludedItems.map((item, idx) => (
+                    <li key={idx}>{item}</li>
+                  ))
+                ) : (
+                  <>
+                    <li>Rapid on-site assessment and damage documentation</li>
+                    <li>Professional-grade equipment and proven processes</li>
+                    <li>Clear communication and project updates</li>
+                    <li>Support for insurance workflows when applicable</li>
+                  </>
+                )}
               </ul>
             </div>
 

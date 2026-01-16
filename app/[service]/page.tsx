@@ -182,9 +182,28 @@ export default async function ServicePage({
   const service = services.find((svc) => svc.slug === serviceSlug)
   if (!service) notFound()
 
-  // Determine the serviceKey for fallback - use category-aware default if not in water damage map
-  const waterDamageDefaultKey = serviceKeyMap[serviceSlug]
-  const serviceKey = waterDamageDefaultKey || (category === "roofing" ? "roofing_generic" : "water")
+  // Determine the serviceKey for fallback - use category-aware default if not in service key map
+  const serviceKeyFromMap = serviceKeyMap[serviceSlug]
+  // Category-based fallback when service slug not in map
+  const categoryFallbackMap: Record<string, string> = {
+    water_damage: "water",
+    mold_remediation: "mold",
+    roofing: "roofing_generic",
+    plumbing: "burst",
+    bathroom_remodel: "bathroom_remodel",
+    kitchen_remodel: "kitchen_remodel",
+    chimney: "chimney",
+    carpet_cleaning: "carpet_cleaning",
+    air_duct_cleaning: "air_duct_cleaning",
+    adu_builder: "adu_builder",
+    pool_contractor: "pool_contractor",
+    garage_door: "garage_door",
+    locksmith: "locksmith",
+    pest_control: "pest_control",
+    air_conditioning: "air_conditioning",
+    heating: "heating",
+  }
+  const serviceKey = serviceKeyFromMap || categoryFallbackMap[category] || "generic"
 
   const areaIndex = await getServiceAreaIndexForCurrentDomain()
   const serviceAreas = areaIndex.map((a) => ({ name: a.city, slug: a.slug }))
@@ -212,6 +231,12 @@ export default async function ServicePage({
   const seed = `${domain}:${serviceSlug}`
 
   // Process all fields with spintax
+  const whatsIncludedItemsRaw = pageContent?.whats_included_items_spintax || defaults.whats_included_items || ""
+  const whatsIncludedItems = whatsIncludedItemsRaw
+    .split("\n")
+    .map((item: string) => processContent(item.trim(), seed, variables))
+    .filter((item: string) => item.length > 0)
+
   const content = {
     heroHeadline: processContent(pageContent?.hero_headline_spintax || defaults.hero_headline, seed, variables),
     heroSubheadline: processContent(pageContent?.hero_subheadline_spintax || defaults.hero_subheadline, seed, variables),
@@ -240,6 +265,12 @@ export default async function ServicePage({
       variables,
     ),
     trustPoints: processContent(pageContent?.trust_points_spintax || defaults.trust_points, seed, variables),
+    whatsIncludedHeading: processContent(
+      pageContent?.whats_included_heading_spintax || defaults.whats_included_heading || "What's Included",
+      seed,
+      variables,
+    ),
+    whatsIncludedItems,
   }
 
   const socialLinks = parseSocialLinks(site)
@@ -296,6 +327,8 @@ export default async function ServicePage({
         state={site.state}
         serviceAreas={serviceAreas}
         otherServices={otherServices}
+        whatsIncludedHeading={content.whatsIncludedHeading}
+        whatsIncludedItems={content.whatsIncludedItems}
       />
       <ServiceTrust headline={content.whyChooseHeadline} trustPoints={content.trustPoints} />
 
