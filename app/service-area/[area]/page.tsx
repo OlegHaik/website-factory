@@ -268,10 +268,12 @@ export default async function ServiceAreaPage({
   const ourLinksLabel = processContent(headerContent?.our_links_spintax || DEFAULT_HEADER.ourLinks, resolvedDomain, variables)
 
   // Footer address logic:
-  // Case 1: Service area has NO street address (only city different) → use ALL main site info
-  // Case 2: Service area HAS its own street address → use ALL service area info
-  const hasOwnAddress = Boolean(areaSite.address && areaSite.address.trim())
-  const footerAddress = hasOwnAddress
+  // Case 1: Service area has NO unique address (empty OR same as main) → use ALL main site info
+  // Case 2: Service area HAS its own UNIQUE street address → use ALL service area info
+  const areaAddr = (areaSite.address || '').trim()
+  const mainAddr = (mainSite.address || '').trim()
+  const hasUniqueAddress = areaAddr.length > 0 && areaAddr !== mainAddr
+  const footerAddress = hasUniqueAddress
     ? {
         // Case 2: Service area has unique address - use service area's full business info
         address: areaSite.address,
@@ -283,7 +285,7 @@ export default async function ServiceAreaPage({
         phoneDisplay: areaSite.phoneDisplay || mainSite.phoneDisplay,
       }
     : {
-        // Case 1: Only city different - use main site's full business info
+        // Case 1: No unique address - use main site's full business info
         address: mainSite.address,
         city: mainSite.city,
         state: mainSite.state,
