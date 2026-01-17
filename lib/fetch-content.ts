@@ -271,35 +271,71 @@ export async function getContentMeta(
 ): Promise<ContentMetaNew | null> {
   const normalizedCategory = normalizeCategory(category)
   const supabase = await createClient()
-  
-  let query = supabase
-    .from("content_meta_new")
-    .select("*")
-    .eq("category", normalizedCategory)
-    .eq("page_type", pageType)
-  
-  // Якщо є service_id - фільтруємо по ньому
+
+  // Map page types to match database values
+  const pageTypeMap: Record<string, string> = {
+    'home': 'home',
+    'homepage': 'home',
+    'service': 'service',
+    'service_page': 'service',
+    'service_area': 'area',
+    'area': 'area',
+    'service_area_page': 'area',
+  }
+  const mappedPageType = pageTypeMap[pageType] || pageType
+
+  // Try content_meta table
+  // First try exact match with service_id (if provided)
   if (serviceId) {
-    query = query.eq("service_id", serviceId)
+    const { data: exactMatch } = await supabase
+      .from("content_meta")
+      .select("*")
+      .eq("category", normalizedCategory)
+      .eq("page_type", mappedPageType)
+      .eq("service_id", serviceId)
+      .maybeSingle()
+
+    if (exactMatch) {
+      return {
+        title: exactMatch.meta_title,
+        description: exactMatch.meta_desc
+      }
+    }
+
+    // If no exact match, try without service_id to get category-level meta
+    const { data: categoryMatch } = await supabase
+      .from("content_meta")
+      .select("*")
+      .eq("category", normalizedCategory)
+      .eq("page_type", mappedPageType)
+      .is("service_id", null)
+      .maybeSingle()
+
+    if (categoryMatch) {
+      return {
+        title: categoryMatch.meta_title,
+        description: categoryMatch.meta_desc
+      }
+    }
   } else {
-    query = query.is("service_id", null)
+    // No service_id - look for category-level meta
+    const { data } = await supabase
+      .from("content_meta")
+      .select("*")
+      .eq("category", normalizedCategory)
+      .eq("page_type", mappedPageType)
+      .is("service_id", null)
+      .maybeSingle()
+
+    if (data) {
+      return {
+        title: data.meta_title,
+        description: data.meta_desc
+      }
+    }
   }
-  
-  const { data, error } = await query.maybeSingle()
-  
-  if (error) {
-    console.error("Failed to fetch content_meta_new:", error)
-    return null
-  }
-  
-  if (!data) {
-    return null
-  }
-  
-  return {
-    title: data.meta_title,
-    description: data.meta_desc
-  }
+
+  return null
 }
 
 // =====================================================

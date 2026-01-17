@@ -4,7 +4,7 @@ import { notFound } from "next/navigation"
 import { getServiceAreaIndexForCurrentDomain, getSiteByDomainAndSlug, resolveSiteContext } from "@/lib/sites"
 import { processContent } from "@/lib/spintax"
 import { generatePageMetadata } from "@/lib/generate-metadata"
-import { getContentHeader, getContentServiceArea, getContentBlock, getContentFAQ, getContentTestimonials, ContentBlock } from "@/lib/fetch-content"
+import { getContentHeader, getContentServiceArea, getContentBlock, getContentFAQ, getContentTestimonials, getContentMeta, ContentBlock } from "@/lib/fetch-content"
 import { DEFAULT_HEADER, DEFAULT_NAV, getDefaultServiceArea, getDefaultFaq, getDefaultTestimonials } from "@/lib/default-content"
 import { parseSocialLinks } from "@/lib/types"
 import { fetchCategoryServices } from "@/lib/services"
@@ -63,29 +63,44 @@ export async function generateMetadata({
   const resolvedDomain = areaSite.resolvedDomain || domain || "default"
   const category = areaSite.category || mainSite.category || 'water_damage'
 
+  const variables = {
+    city: areaSite.city || mainSite.city || "",
+    state: areaSite.state || mainSite.state || "",
+    business_name: businessName,
+    phone: areaSite.phone || mainSite.phone || "",
+  }
+
+  // Try to get meta from content_meta table (category-based spintax)
+  const contentMeta = await getContentMeta(category, 'service_area')
+
+  // Process spintax if we have content meta
+  const contentMetaTitle = contentMeta?.title
+    ? processContent(contentMeta.title, `${resolvedDomain}:${areaSlug}:meta`, variables)
+    : null
+  const contentMetaDesc = contentMeta?.description
+    ? processContent(contentMeta.description, `${resolvedDomain}:${areaSlug}:meta`, variables)
+    : null
+
   // Generate fallback metadata
   const generatedMeta = await generatePageMetadata(
     "service_area",
     resolvedDomain,
-    {
-      city: areaSite.city || mainSite.city || "",
-      state: areaSite.state || mainSite.state || "",
-      business_name: businessName,
-      phone: areaSite.phone || mainSite.phone || "",
-    },
+    variables,
     areaSlug,
     category,
   )
 
-  // Build final metadata: ALWAYS prefer areaSite meta fields individually
-  const finalTitle = areaSite.meta_title ?? generatedMeta.title
-  const finalDescription = areaSite.meta_description ?? generatedMeta.description
+  // Priority: 1) areaSite.meta_* (site-specific) 2) contentMeta (category spintax) 3) generatedMeta (fallback)
+  const finalTitle = areaSite.meta_title ?? contentMetaTitle ?? generatedMeta.title
+  const finalDescription = areaSite.meta_description ?? contentMetaDesc ?? generatedMeta.description
 
   // TEMP DEBUG: Log final metadata
   console.log('[MetaDebug] Final metadata:', {
     category,
     areaSiteMetaTitle: areaSite.meta_title,
     areaSiteMetaDesc: areaSite.meta_description,
+    contentMetaTitle,
+    contentMetaDesc,
     generatedTitle: generatedMeta.title,
     generatedDesc: generatedMeta.description,
     finalTitle,
