@@ -154,9 +154,17 @@ function formatLegalContent(content: string): string {
   const lines = String(content || '').split('\n')
   const result: string[] = []
 
+  // Pattern to detect date-like first lines (e.g., "Effective Date: ...", "Last Updated: ...", or just a date)
+  const dateLinePattern = /^(effective\s+date|last\s+updated|updated|date)?\s*:?\s*\{?[a-z,|]+\}?\s*\d{0,2},?\s*\d{4}/i
+
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i].trim()
     const nextLine = lines[i + 1]?.trim() || ''
+
+    // Skip date-like lines at the very beginning of content
+    if (i === 0 && dateLinePattern.test(line)) {
+      continue
+    }
 
     // Handle format: "H2" on one line, content on next
     if (line === 'H2' && nextLine) {
