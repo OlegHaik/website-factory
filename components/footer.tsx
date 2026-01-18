@@ -1,6 +1,8 @@
 import Link from "next/link"
 import { MapPin, Phone } from "lucide-react"
 import { SocialIcons } from "@/components/social-icons"
+import { processContent } from "@/lib/spintax"
+import { getFooterDescriptionSpintext } from "@/lib/default-content"
 
 import type { SocialLinks } from "@/lib/types"
 
@@ -22,24 +24,6 @@ interface FooterProps {
   category?: string
 }
 
-// Category-specific footer descriptions
-const CATEGORY_DESCRIPTIONS: Record<string, string> = {
-  water_damage: "24/7 emergency restoration services. Fast response, expert technicians, and complete property restoration.",
-  roofing: "Professional roofing services. Quality craftsmanship, licensed contractors, and reliable roof solutions.",
-  mold_remediation: "Expert mold remediation services. Safe removal, thorough cleaning, and prevention solutions.",
-  plumbing: "Professional plumbing services. Fast repairs, quality installations, and reliable maintenance.",
-  bathroom_remodel: "Expert bathroom remodeling services. Quality design, professional installation, and beautiful results.",
-  kitchen_remodel: "Professional kitchen remodeling services. Custom designs, quality materials, and expert craftsmanship.",
-  air_duct: "Professional air duct cleaning services. Improved air quality, efficient systems, and healthier homes.",
-  chimney: "Expert chimney services. Professional cleaning, repairs, and inspections for safe operation.",
-  locksmith: "Professional locksmith services. Fast response, security solutions, and reliable service.",
-  garage_door: "Expert garage door services. Installation, repair, and maintenance for smooth operation.",
-  adu_builder: "Professional ADU construction services. Custom designs, quality builds, and expert project management.",
-  pool_contractor: "Professional pool services. Installation, maintenance, and repairs for beautiful pools.",
-}
-
-const DEFAULT_DESCRIPTION = "Professional services you can trust. Quality workmanship and customer satisfaction guaranteed."
-
 // Legacy services removed - now services come from parent component based on category
 
 export default function Footer({
@@ -59,7 +43,15 @@ export default function Footer({
   servicesLinks,
   category = "water_damage",
 }: FooterProps) {
-  const footerDescription = CATEGORY_DESCRIPTIONS[category] || DEFAULT_DESCRIPTION
+  // Generate footer description from spintext template
+  const footerSpintext = getFooterDescriptionSpintext(category)
+  const seed = `${domain || 'default'}:footer`
+  const variables = {
+    business_name: businessName,
+    city: city || '',
+    state: state || '',
+  }
+  const footerDescription = processContent(footerSpintext, seed, variables)
   const cleanPhone = phone.replace(/\D/g, "")
   const displayPhone = phoneDisplay || phone
   const ourLinksText = ourLinksLabel || "Our Links"
