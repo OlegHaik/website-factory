@@ -3,7 +3,35 @@
 -- Виконайте в Supabase SQL Editor
 -- =====================================================
 
--- config_styles та content_blocks вже створені раніше
+-- CONFIG_STYLES (160 theme presets)
+CREATE TABLE IF NOT EXISTS config_styles (
+  id SERIAL PRIMARY KEY,
+  theme_name TEXT,
+  warm_dark TEXT,
+  warm_med TEXT,
+  warm_bright TEXT,
+  cool_dark TEXT,
+  cool_med TEXT,
+  cool_accent TEXT,
+  accent_primary TEXT,
+  accent_hover TEXT,
+  font_family TEXT
+);
+
+-- CONTENT_BLOCKS (270 universal content blocks)
+CREATE TABLE IF NOT EXISTS content_blocks (
+  id SERIAL PRIMARY KEY,
+  site_id INTEGER,
+  category_key TEXT,
+  page_type TEXT,
+  section_key TEXT,
+  element_type TEXT,
+  element_order INTEGER,
+  value_spintax_html TEXT,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW(),
+  global_order INTEGER
+);
 
 -- CONTENT_META (without _new suffix - used in code)
 CREATE TABLE IF NOT EXISTS content_meta (
@@ -175,7 +203,8 @@ CREATE TABLE IF NOT EXISTS content_services (
 -- ENABLE RLS FOR ALL NEW TABLES
 -- =====================================================
 
--- Skip already enabled tables (config_styles, content_blocks)
+ALTER TABLE config_styles ENABLE ROW LEVEL SECURITY;
+ALTER TABLE content_blocks ENABLE ROW LEVEL SECURITY;
 ALTER TABLE content_meta ENABLE ROW LEVEL SECURITY;
 ALTER TABLE content_service_pages ENABLE ROW LEVEL SECURITY;
 ALTER TABLE content_service_area ENABLE ROW LEVEL SECURITY;
@@ -192,7 +221,8 @@ ALTER TABLE content_services ENABLE ROW LEVEL SECURITY;
 -- CREATE PUBLIC READ POLICIES
 -- =====================================================
 
--- Skip already existing policies (config_styles, content_blocks)
+CREATE POLICY "Allow public read" ON config_styles FOR SELECT USING (true);
+CREATE POLICY "Allow public read" ON content_blocks FOR SELECT USING (true);
 CREATE POLICY "Allow public read" ON content_meta FOR SELECT USING (true);
 CREATE POLICY "Allow public read" ON content_service_pages FOR SELECT USING (true);
 CREATE POLICY "Allow public read" ON content_service_area FOR SELECT USING (true);
