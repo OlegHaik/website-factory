@@ -1,0 +1,514 @@
+[
+  {
+    "id": 1,
+    "category": "water_damage",
+    "element_order": 1,
+    "element_type": "H1",
+    "content": "{We'd|We Would|We Truly|We Genuinely|We Really} {Love|Appreciate|Value|Welcome|Enjoy} {Your|Customer|Client|Honest} {Feedback|Review|Opinion|Experience|Input|Thoughts}",
+    "created_at": "2026-01-15T20:10:59.490576+00:00"
+  },
+  {
+    "id": 2,
+    "category": "water_damage",
+    "element_order": 2,
+    "element_type": "P",
+    "content": "{Your|Customer|Client} {feedback|reviews|opinions|input|thoughts|comments} {helps|help|assists|allows|enables} {us|{{business_name}}|our team|our company} {improve|get better|enhance|refine|perfect|grow} {our|the} {services|service|work|quality|offerings} and {serve|help|assist|support|care for} {you|our customers|our clients|the community} {better|more effectively|more efficiently}. {Please|We invite you to|We encourage you to|We'd appreciate if you|We ask that you} {take|spend} {a few|a couple of|just a few|a} {moments|minutes|seconds} to {share|tell us about|describe|provide} {your|the} {experience|feedback|thoughts|opinion|review} with {us|{{business_name}}|our team}.",
+    "created_at": "2026-01-15T20:10:59.490576+00:00"
+  },
+  {
+    "id": 3,
+    "category": "water_damage",
+    "element_order": 3,
+    "element_type": "H3",
+    "content": "{Share|Leave|Submit|Provide|Give|Post} {Your|A|Your Honest|Customer} {Review|Feedback|Experience|Opinion|Thoughts|Comments}",
+    "created_at": "2026-01-15T20:10:59.490576+00:00"
+  },
+  {
+    "id": 4,
+    "category": "water_damage",
+    "element_order": 4,
+    "element_type": "P",
+    "content": "{We|{{business_name}}|Our team|Our company} {value|appreciate|treasure|welcome|respect} {all|every|each|any} {feedback|review|comment|opinion|input} — {positive|good|favorable} or {constructive|critical|negative|areas for improvement}. {Your|Customer|Client|Honest} {input|feedback|reviews|opinions|thoughts|comments} {helps|help|assists|enables|allows} {us|our team|{{business_name}}|our company} {maintain|keep|uphold|continue|preserve} {our|the} {high|highest|exceptional|outstanding|excellent|superior|top} {standards|quality|level|bar} of {service|work|quality|care|excellence} and {identify|find|discover|spot|recognize|uncover} {areas|ways|opportunities} for {improvement|growth|enhancement|development}.",
+    "created_at": "2026-01-15T20:10:59.490576+00:00"
+  },
+  {
+    "id": 5,
+    "category": "mold_remediation",
+    "element_order": 1,
+    "element_type": "H1",
+    "content": "{We'd|We Would|We Truly|We Genuinely|We Really} {Love|Appreciate|Value|Welcome|Enjoy} {Your|Customer|Client|Honest} {Feedback|Review|Opinion|Experience|Input|Thoughts}",
+    "created_at": "2026-01-15T20:10:59.490576+00:00"
+  },
+  {
+    "id": 6,
+    "category": "mold_remediation",
+    "element_order": 2,
+    "element_type": "P",
+    "content": "{Your|Customer|Client} {feedback|reviews|opinions|input|thoughts|comments} {helps|help|assists|allows|enables} {us|{{business_name}}|our team|our company} {improve|get better|enhance|refine|perfect|grow} {our|the} {services|service|work|quality|offerings} and {serve|help|assist|support|care for} {you|our customers|our clients|the community} {better|more effectively|more efficiently}. {Please|We invite you to|We encourage you to|We'd appreciate if you|We ask that you} {take|spend} {a few|a couple of|just a few|a} {moments|minutes|seconds} to {share|tell us about|describe|provide} {your|the} {experience|feedback|thoughts|opinion|review} with {us|{{business_name}}|our team}.",
+    "created_at": "2026-01-15T20:10:59.490576+00:00"
+  },
+  {
+    "id": 7,
+    "category": "mold_remediation",
+    "element_order": 3,
+    "element_type": "H3",
+    "content": "{Share|Leave|Submit|Provide|Give|Post} {Your|A|Your Honest|Customer} {Review|Feedback|Experience|Opinion|Thoughts|Comments}",
+    "created_at": "2026-01-15T20:10:59.490576+00:00"
+  },
+  {
+    "id": 8,
+    "category": "mold_remediation",
+    "element_order": 4,
+    "element_type": "P",
+    "content": "{We|{{business_name}}|Our team|Our company} {value|appreciate|treasure|welcome|respect} {all|every|each|any} {feedback|review|comment|opinion|input} — {positive|good|favorable} or {constructive|critical|negative|areas for improvement}. {Your|Customer|Client|Honest} {input|feedback|reviews|opinions|thoughts|comments} {helps|help|assists|enables|allows} {us|our team|{{business_name}}|our company} {maintain|keep|uphold|continue|preserve} {our|the} {high|highest|exceptional|outstanding|excellent|superior|top} {standards|quality|level|bar} of {service|work|quality|care|excellence} and {identify|find|discover|spot|recognize|uncover} {areas|ways|opportunities} for {improvement|growth|enhancement|development}.",
+    "created_at": "2026-01-15T20:10:59.490576+00:00"
+  },
+  {
+    "id": 9,
+    "category": "roofing",
+    "element_order": 1,
+    "element_type": "H1",
+    "content": "{We'd|We Would|We Truly|We Genuinely|We Really} {Love|Appreciate|Value|Welcome|Enjoy} {Your|Customer|Client|Honest} {Feedback|Review|Opinion|Experience|Input|Thoughts}",
+    "created_at": "2026-01-15T20:10:59.490576+00:00"
+  },
+  {
+    "id": 10,
+    "category": "roofing",
+    "element_order": 2,
+    "element_type": "P",
+    "content": "{Your|Customer|Client} {feedback|reviews|opinions|input|thoughts|comments} {helps|help|assists|allows|enables} {us|{{business_name}}|our team|our company} {improve|get better|enhance|refine|perfect|grow} {our|the} {services|service|work|quality|offerings} and {serve|help|assist|support|care for} {you|our customers|our clients|the community} {better|more effectively|more efficiently}. {Please|We invite you to|We encourage you to|We'd appreciate if you|We ask that you} {take|spend} {a few|a couple of|just a few|a} {moments|minutes|seconds} to {share|tell us about|describe|provide} {your|the} {experience|feedback|thoughts|opinion|review} with {us|{{business_name}}|our team}.",
+    "created_at": "2026-01-15T20:10:59.490576+00:00"
+  },
+  {
+    "id": 11,
+    "category": "roofing",
+    "element_order": 3,
+    "element_type": "H3",
+    "content": "{Share|Leave|Submit|Provide|Give|Post} {Your|A|Your Honest|Customer} {Review|Feedback|Experience|Opinion|Thoughts|Comments}",
+    "created_at": "2026-01-15T20:10:59.490576+00:00"
+  },
+  {
+    "id": 12,
+    "category": "roofing",
+    "element_order": 4,
+    "element_type": "P",
+    "content": "{We|{{business_name}}|Our team|Our company} {value|appreciate|treasure|welcome|respect} {all|every|each|any} {feedback|review|comment|opinion|input} — {positive|good|favorable} or {constructive|critical|negative|areas for improvement}. {Your|Customer|Client|Honest} {input|feedback|reviews|opinions|thoughts|comments} {helps|help|assists|enables|allows} {us|our team|{{business_name}}|our company} {maintain|keep|uphold|continue|preserve} {our|the} {high|highest|exceptional|outstanding|excellent|superior|top} {standards|quality|level|bar} of {service|work|quality|care|excellence} and {identify|find|discover|spot|recognize|uncover} {areas|ways|opportunities} for {improvement|growth|enhancement|development}.",
+    "created_at": "2026-01-15T20:10:59.490576+00:00"
+  },
+  {
+    "id": 13,
+    "category": "chimney",
+    "element_order": 1,
+    "element_type": "H1",
+    "content": "{We'd|We Would|We Truly|We Genuinely|We Really} {Love|Appreciate|Value|Welcome|Enjoy} {Your|Customer|Client|Honest} {Feedback|Review|Opinion|Experience|Input|Thoughts}",
+    "created_at": "2026-01-15T20:10:59.490576+00:00"
+  },
+  {
+    "id": 14,
+    "category": "chimney",
+    "element_order": 2,
+    "element_type": "P",
+    "content": "{Your|Customer|Client} {feedback|reviews|opinions|input|thoughts|comments} {helps|help|assists|allows|enables} {us|{{business_name}}|our team|our company} {improve|get better|enhance|refine|perfect|grow} {our|the} {services|service|work|quality|offerings} and {serve|help|assist|support|care for} {you|our customers|our clients|the community} {better|more effectively|more efficiently}. {Please|We invite you to|We encourage you to|We'd appreciate if you|We ask that you} {take|spend} {a few|a couple of|just a few|a} {moments|minutes|seconds} to {share|tell us about|describe|provide} {your|the} {experience|feedback|thoughts|opinion|review} with {us|{{business_name}}|our team}.",
+    "created_at": "2026-01-15T20:10:59.490576+00:00"
+  },
+  {
+    "id": 15,
+    "category": "chimney",
+    "element_order": 3,
+    "element_type": "H3",
+    "content": "{Share|Leave|Submit|Provide|Give|Post} {Your|A|Your Honest|Customer} {Review|Feedback|Experience|Opinion|Thoughts|Comments}",
+    "created_at": "2026-01-15T20:10:59.490576+00:00"
+  },
+  {
+    "id": 16,
+    "category": "chimney",
+    "element_order": 4,
+    "element_type": "P",
+    "content": "{We|{{business_name}}|Our team|Our company} {value|appreciate|treasure|welcome|respect} {all|every|each|any} {feedback|review|comment|opinion|input} — {positive|good|favorable} or {constructive|critical|negative|areas for improvement}. {Your|Customer|Client|Honest} {input|feedback|reviews|opinions|thoughts|comments} {helps|help|assists|enables|allows} {us|our team|{{business_name}}|our company} {maintain|keep|uphold|continue|preserve} {our|the} {high|highest|exceptional|outstanding|excellent|superior|top} {standards|quality|level|bar} of {service|work|quality|care|excellence} and {identify|find|discover|spot|recognize|uncover} {areas|ways|opportunities} for {improvement|growth|enhancement|development}.",
+    "created_at": "2026-01-15T20:10:59.490576+00:00"
+  },
+  {
+    "id": 17,
+    "category": "kitchen_remodel",
+    "element_order": 1,
+    "element_type": "H1",
+    "content": "{We'd|We Would|We Truly|We Genuinely|We Really} {Love|Appreciate|Value|Welcome|Enjoy} {Your|Customer|Client|Honest} {Feedback|Review|Opinion|Experience|Input|Thoughts}",
+    "created_at": "2026-01-15T20:10:59.490576+00:00"
+  },
+  {
+    "id": 18,
+    "category": "kitchen_remodel",
+    "element_order": 2,
+    "element_type": "P",
+    "content": "{Your|Customer|Client} {feedback|reviews|opinions|input|thoughts|comments} {helps|help|assists|allows|enables} {us|{{business_name}}|our team|our company} {improve|get better|enhance|refine|perfect|grow} {our|the} {services|service|work|quality|offerings} and {serve|help|assist|support|care for} {you|our customers|our clients|the community} {better|more effectively|more efficiently}. {Please|We invite you to|We encourage you to|We'd appreciate if you|We ask that you} {take|spend} {a few|a couple of|just a few|a} {moments|minutes|seconds} to {share|tell us about|describe|provide} {your|the} {experience|feedback|thoughts|opinion|review} with {us|{{business_name}}|our team}.",
+    "created_at": "2026-01-15T20:10:59.490576+00:00"
+  },
+  {
+    "id": 19,
+    "category": "kitchen_remodel",
+    "element_order": 3,
+    "element_type": "H3",
+    "content": "{Share|Leave|Submit|Provide|Give|Post} {Your|A|Your Honest|Customer} {Review|Feedback|Experience|Opinion|Thoughts|Comments}",
+    "created_at": "2026-01-15T20:10:59.490576+00:00"
+  },
+  {
+    "id": 20,
+    "category": "kitchen_remodel",
+    "element_order": 4,
+    "element_type": "P",
+    "content": "{We|{{business_name}}|Our team|Our company} {value|appreciate|treasure|welcome|respect} {all|every|each|any} {feedback|review|comment|opinion|input} — {positive|good|favorable} or {constructive|critical|negative|areas for improvement}. {Your|Customer|Client|Honest} {input|feedback|reviews|opinions|thoughts|comments} {helps|help|assists|enables|allows} {us|our team|{{business_name}}|our company} {maintain|keep|uphold|continue|preserve} {our|the} {high|highest|exceptional|outstanding|excellent|superior|top} {standards|quality|level|bar} of {service|work|quality|care|excellence} and {identify|find|discover|spot|recognize|uncover} {areas|ways|opportunities} for {improvement|growth|enhancement|development}.",
+    "created_at": "2026-01-15T20:10:59.490576+00:00"
+  },
+  {
+    "id": 21,
+    "category": "carpet_cleaning",
+    "element_order": 1,
+    "element_type": "H1",
+    "content": "{We'd|We Would|We Truly|We Genuinely|We Really} {Love|Appreciate|Value|Welcome|Enjoy} {Your|Customer|Client|Honest} {Feedback|Review|Opinion|Experience|Input|Thoughts}",
+    "created_at": "2026-01-15T20:10:59.490576+00:00"
+  },
+  {
+    "id": 22,
+    "category": "carpet_cleaning",
+    "element_order": 2,
+    "element_type": "P",
+    "content": "{Your|Customer|Client} {feedback|reviews|opinions|input|thoughts|comments} {helps|help|assists|allows|enables} {us|{{business_name}}|our team|our company} {improve|get better|enhance|refine|perfect|grow} {our|the} {services|service|work|quality|offerings} and {serve|help|assist|support|care for} {you|our customers|our clients|the community} {better|more effectively|more efficiently}. {Please|We invite you to|We encourage you to|We'd appreciate if you|We ask that you} {take|spend} {a few|a couple of|just a few|a} {moments|minutes|seconds} to {share|tell us about|describe|provide} {your|the} {experience|feedback|thoughts|opinion|review} with {us|{{business_name}}|our team}.",
+    "created_at": "2026-01-15T20:10:59.490576+00:00"
+  },
+  {
+    "id": 23,
+    "category": "carpet_cleaning",
+    "element_order": 3,
+    "element_type": "H3",
+    "content": "{Share|Leave|Submit|Provide|Give|Post} {Your|A|Your Honest|Customer} {Review|Feedback|Experience|Opinion|Thoughts|Comments}",
+    "created_at": "2026-01-15T20:10:59.490576+00:00"
+  },
+  {
+    "id": 24,
+    "category": "carpet_cleaning",
+    "element_order": 4,
+    "element_type": "P",
+    "content": "{We|{{business_name}}|Our team|Our company} {value|appreciate|treasure|welcome|respect} {all|every|each|any} {feedback|review|comment|opinion|input} — {positive|good|favorable} or {constructive|critical|negative|areas for improvement}. {Your|Customer|Client|Honest} {input|feedback|reviews|opinions|thoughts|comments} {helps|help|assists|enables|allows} {us|our team|{{business_name}}|our company} {maintain|keep|uphold|continue|preserve} {our|the} {high|highest|exceptional|outstanding|excellent|superior|top} {standards|quality|level|bar} of {service|work|quality|care|excellence} and {identify|find|discover|spot|recognize|uncover} {areas|ways|opportunities} for {improvement|growth|enhancement|development}.",
+    "created_at": "2026-01-15T20:10:59.490576+00:00"
+  },
+  {
+    "id": 25,
+    "category": "bathroom_remodel",
+    "element_order": 1,
+    "element_type": "H1",
+    "content": "{We'd|We Would|We Truly|We Genuinely|We Really} {Love|Appreciate|Value|Welcome|Enjoy} {Your|Customer|Client|Honest} {Feedback|Review|Opinion|Experience|Input|Thoughts}",
+    "created_at": "2026-01-15T20:10:59.490576+00:00"
+  },
+  {
+    "id": 26,
+    "category": "bathroom_remodel",
+    "element_order": 2,
+    "element_type": "P",
+    "content": "{Your|Customer|Client} {feedback|reviews|opinions|input|thoughts|comments} {helps|help|assists|allows|enables} {us|{{business_name}}|our team|our company} {improve|get better|enhance|refine|perfect|grow} {our|the} {services|service|work|quality|offerings} and {serve|help|assist|support|care for} {you|our customers|our clients|the community} {better|more effectively|more efficiently}. {Please|We invite you to|We encourage you to|We'd appreciate if you|We ask that you} {take|spend} {a few|a couple of|just a few|a} {moments|minutes|seconds} to {share|tell us about|describe|provide} {your|the} {experience|feedback|thoughts|opinion|review} with {us|{{business_name}}|our team}.",
+    "created_at": "2026-01-15T20:10:59.490576+00:00"
+  },
+  {
+    "id": 27,
+    "category": "bathroom_remodel",
+    "element_order": 3,
+    "element_type": "H3",
+    "content": "{Share|Leave|Submit|Provide|Give|Post} {Your|A|Your Honest|Customer} {Review|Feedback|Experience|Opinion|Thoughts|Comments}",
+    "created_at": "2026-01-15T20:10:59.490576+00:00"
+  },
+  {
+    "id": 28,
+    "category": "bathroom_remodel",
+    "element_order": 4,
+    "element_type": "P",
+    "content": "{We|{{business_name}}|Our team|Our company} {value|appreciate|treasure|welcome|respect} {all|every|each|any} {feedback|review|comment|opinion|input} — {positive|good|favorable} or {constructive|critical|negative|areas for improvement}. {Your|Customer|Client|Honest} {input|feedback|reviews|opinions|thoughts|comments} {helps|help|assists|enables|allows} {us|our team|{{business_name}}|our company} {maintain|keep|uphold|continue|preserve} {our|the} {high|highest|exceptional|outstanding|excellent|superior|top} {standards|quality|level|bar} of {service|work|quality|care|excellence} and {identify|find|discover|spot|recognize|uncover} {areas|ways|opportunities} for {improvement|growth|enhancement|development}.",
+    "created_at": "2026-01-15T20:10:59.490576+00:00"
+  },
+  {
+    "id": 29,
+    "category": "air_duct_cleaning",
+    "element_order": 1,
+    "element_type": "H1",
+    "content": "{We'd|We Would|We Truly|We Genuinely|We Really} {Love|Appreciate|Value|Welcome|Enjoy} {Your|Customer|Client|Honest} {Feedback|Review|Opinion|Experience|Input|Thoughts}",
+    "created_at": "2026-01-15T20:10:59.490576+00:00"
+  },
+  {
+    "id": 30,
+    "category": "air_duct_cleaning",
+    "element_order": 2,
+    "element_type": "P",
+    "content": "{Your|Customer|Client} {feedback|reviews|opinions|input|thoughts|comments} {helps|help|assists|allows|enables} {us|{{business_name}}|our team|our company} {improve|get better|enhance|refine|perfect|grow} {our|the} {services|service|work|quality|offerings} and {serve|help|assist|support|care for} {you|our customers|our clients|the community} {better|more effectively|more efficiently}. {Please|We invite you to|We encourage you to|We'd appreciate if you|We ask that you} {take|spend} {a few|a couple of|just a few|a} {moments|minutes|seconds} to {share|tell us about|describe|provide} {your|the} {experience|feedback|thoughts|opinion|review} with {us|{{business_name}}|our team}.",
+    "created_at": "2026-01-15T20:10:59.490576+00:00"
+  },
+  {
+    "id": 31,
+    "category": "air_duct_cleaning",
+    "element_order": 3,
+    "element_type": "H3",
+    "content": "{Share|Leave|Submit|Provide|Give|Post} {Your|A|Your Honest|Customer} {Review|Feedback|Experience|Opinion|Thoughts|Comments}",
+    "created_at": "2026-01-15T20:10:59.490576+00:00"
+  },
+  {
+    "id": 32,
+    "category": "air_duct_cleaning",
+    "element_order": 4,
+    "element_type": "P",
+    "content": "{We|{{business_name}}|Our team|Our company} {value|appreciate|treasure|welcome|respect} {all|every|each|any} {feedback|review|comment|opinion|input} — {positive|good|favorable} or {constructive|critical|negative|areas for improvement}. {Your|Customer|Client|Honest} {input|feedback|reviews|opinions|thoughts|comments} {helps|help|assists|enables|allows} {us|our team|{{business_name}}|our company} {maintain|keep|uphold|continue|preserve} {our|the} {high|highest|exceptional|outstanding|excellent|superior|top} {standards|quality|level|bar} of {service|work|quality|care|excellence} and {identify|find|discover|spot|recognize|uncover} {areas|ways|opportunities} for {improvement|growth|enhancement|development}.",
+    "created_at": "2026-01-15T20:10:59.490576+00:00"
+  },
+  {
+    "id": 33,
+    "category": "adu_builder",
+    "element_order": 1,
+    "element_type": "H1",
+    "content": "{We'd|We Would|We Truly|We Genuinely|We Really} {Love|Appreciate|Value|Welcome|Enjoy} {Your|Customer|Client|Honest} {Feedback|Review|Opinion|Experience|Input|Thoughts}",
+    "created_at": "2026-01-15T20:10:59.490576+00:00"
+  },
+  {
+    "id": 34,
+    "category": "adu_builder",
+    "element_order": 2,
+    "element_type": "P",
+    "content": "{Your|Customer|Client} {feedback|reviews|opinions|input|thoughts|comments} {helps|help|assists|allows|enables} {us|{{business_name}}|our team|our company} {improve|get better|enhance|refine|perfect|grow} {our|the} {services|service|work|quality|offerings} and {serve|help|assist|support|care for} {you|our customers|our clients|the community} {better|more effectively|more efficiently}. {Please|We invite you to|We encourage you to|We'd appreciate if you|We ask that you} {take|spend} {a few|a couple of|just a few|a} {moments|minutes|seconds} to {share|tell us about|describe|provide} {your|the} {experience|feedback|thoughts|opinion|review} with {us|{{business_name}}|our team}.",
+    "created_at": "2026-01-15T20:10:59.490576+00:00"
+  },
+  {
+    "id": 35,
+    "category": "adu_builder",
+    "element_order": 3,
+    "element_type": "H3",
+    "content": "{Share|Leave|Submit|Provide|Give|Post} {Your|A|Your Honest|Customer} {Review|Feedback|Experience|Opinion|Thoughts|Comments}",
+    "created_at": "2026-01-15T20:10:59.490576+00:00"
+  },
+  {
+    "id": 36,
+    "category": "adu_builder",
+    "element_order": 4,
+    "element_type": "P",
+    "content": "{We|{{business_name}}|Our team|Our company} {value|appreciate|treasure|welcome|respect} {all|every|each|any} {feedback|review|comment|opinion|input} — {positive|good|favorable} or {constructive|critical|negative|areas for improvement}. {Your|Customer|Client|Honest} {input|feedback|reviews|opinions|thoughts|comments} {helps|help|assists|enables|allows} {us|our team|{{business_name}}|our company} {maintain|keep|uphold|continue|preserve} {our|the} {high|highest|exceptional|outstanding|excellent|superior|top} {standards|quality|level|bar} of {service|work|quality|care|excellence} and {identify|find|discover|spot|recognize|uncover} {areas|ways|opportunities} for {improvement|growth|enhancement|development}.",
+    "created_at": "2026-01-15T20:10:59.490576+00:00"
+  },
+  {
+    "id": 37,
+    "category": "pool_contractor",
+    "element_order": 1,
+    "element_type": "H1",
+    "content": "{We'd|We Would|We Truly|We Genuinely|We Really} {Love|Appreciate|Value|Welcome|Enjoy} {Your|Customer|Client|Honest} {Feedback|Review|Opinion|Experience|Input|Thoughts}",
+    "created_at": "2026-01-15T20:10:59.490576+00:00"
+  },
+  {
+    "id": 38,
+    "category": "pool_contractor",
+    "element_order": 2,
+    "element_type": "P",
+    "content": "{Your|Customer|Client} {feedback|reviews|opinions|input|thoughts|comments} {helps|help|assists|allows|enables} {us|{{business_name}}|our team|our company} {improve|get better|enhance|refine|perfect|grow} {our|the} {services|service|work|quality|offerings} and {serve|help|assist|support|care for} {you|our customers|our clients|the community} {better|more effectively|more efficiently}. {Please|We invite you to|We encourage you to|We'd appreciate if you|We ask that you} {take|spend} {a few|a couple of|just a few|a} {moments|minutes|seconds} to {share|tell us about|describe|provide} {your|the} {experience|feedback|thoughts|opinion|review} with {us|{{business_name}}|our team}.",
+    "created_at": "2026-01-15T20:10:59.490576+00:00"
+  },
+  {
+    "id": 39,
+    "category": "pool_contractor",
+    "element_order": 3,
+    "element_type": "H3",
+    "content": "{Share|Leave|Submit|Provide|Give|Post} {Your|A|Your Honest|Customer} {Review|Feedback|Experience|Opinion|Thoughts|Comments}",
+    "created_at": "2026-01-15T20:10:59.490576+00:00"
+  },
+  {
+    "id": 40,
+    "category": "pool_contractor",
+    "element_order": 4,
+    "element_type": "P",
+    "content": "{We|{{business_name}}|Our team|Our company} {value|appreciate|treasure|welcome|respect} {all|every|each|any} {feedback|review|comment|opinion|input} — {positive|good|favorable} or {constructive|critical|negative|areas for improvement}. {Your|Customer|Client|Honest} {input|feedback|reviews|opinions|thoughts|comments} {helps|help|assists|enables|allows} {us|our team|{{business_name}}|our company} {maintain|keep|uphold|continue|preserve} {our|the} {high|highest|exceptional|outstanding|excellent|superior|top} {standards|quality|level|bar} of {service|work|quality|care|excellence} and {identify|find|discover|spot|recognize|uncover} {areas|ways|opportunities} for {improvement|growth|enhancement|development}.",
+    "created_at": "2026-01-15T20:10:59.490576+00:00"
+  },
+  {
+    "id": 41,
+    "category": "garage_door",
+    "element_order": 1,
+    "element_type": "H1",
+    "content": "{We'd|We Would|We Truly|We Genuinely|We Really} {Love|Appreciate|Value|Welcome|Enjoy} {Your|Customer|Client|Honest} {Feedback|Review|Opinion|Experience|Input|Thoughts}",
+    "created_at": "2026-01-15T20:10:59.490576+00:00"
+  },
+  {
+    "id": 42,
+    "category": "garage_door",
+    "element_order": 2,
+    "element_type": "P",
+    "content": "{Your|Customer|Client} {feedback|reviews|opinions|input|thoughts|comments} {helps|help|assists|allows|enables} {us|{{business_name}}|our team|our company} {improve|get better|enhance|refine|perfect|grow} {our|the} {services|service|work|quality|offerings} and {serve|help|assist|support|care for} {you|our customers|our clients|the community} {better|more effectively|more efficiently}. {Please|We invite you to|We encourage you to|We'd appreciate if you|We ask that you} {take|spend} {a few|a couple of|just a few|a} {moments|minutes|seconds} to {share|tell us about|describe|provide} {your|the} {experience|feedback|thoughts|opinion|review} with {us|{{business_name}}|our team}.",
+    "created_at": "2026-01-15T20:10:59.490576+00:00"
+  },
+  {
+    "id": 43,
+    "category": "garage_door",
+    "element_order": 3,
+    "element_type": "H3",
+    "content": "{Share|Leave|Submit|Provide|Give|Post} {Your|A|Your Honest|Customer} {Review|Feedback|Experience|Opinion|Thoughts|Comments}",
+    "created_at": "2026-01-15T20:10:59.490576+00:00"
+  },
+  {
+    "id": 44,
+    "category": "garage_door",
+    "element_order": 4,
+    "element_type": "P",
+    "content": "{We|{{business_name}}|Our team|Our company} {value|appreciate|treasure|welcome|respect} {all|every|each|any} {feedback|review|comment|opinion|input} — {positive|good|favorable} or {constructive|critical|negative|areas for improvement}. {Your|Customer|Client|Honest} {input|feedback|reviews|opinions|thoughts|comments} {helps|help|assists|enables|allows} {us|our team|{{business_name}}|our company} {maintain|keep|uphold|continue|preserve} {our|the} {high|highest|exceptional|outstanding|excellent|superior|top} {standards|quality|level|bar} of {service|work|quality|care|excellence} and {identify|find|discover|spot|recognize|uncover} {areas|ways|opportunities} for {improvement|growth|enhancement|development}.",
+    "created_at": "2026-01-15T20:10:59.490576+00:00"
+  },
+  {
+    "id": 45,
+    "category": "locksmith",
+    "element_order": 1,
+    "element_type": "H1",
+    "content": "{We'd|We Would|We Truly|We Genuinely|We Really} {Love|Appreciate|Value|Welcome|Enjoy} {Your|Customer|Client|Honest} {Feedback|Review|Opinion|Experience|Input|Thoughts}",
+    "created_at": "2026-01-15T20:10:59.490576+00:00"
+  },
+  {
+    "id": 46,
+    "category": "locksmith",
+    "element_order": 2,
+    "element_type": "P",
+    "content": "{Your|Customer|Client} {feedback|reviews|opinions|input|thoughts|comments} {helps|help|assists|allows|enables} {us|{{business_name}}|our team|our company} {improve|get better|enhance|refine|perfect|grow} {our|the} {services|service|work|quality|offerings} and {serve|help|assist|support|care for} {you|our customers|our clients|the community} {better|more effectively|more efficiently}. {Please|We invite you to|We encourage you to|We'd appreciate if you|We ask that you} {take|spend} {a few|a couple of|just a few|a} {moments|minutes|seconds} to {share|tell us about|describe|provide} {your|the} {experience|feedback|thoughts|opinion|review} with {us|{{business_name}}|our team}.",
+    "created_at": "2026-01-15T20:10:59.490576+00:00"
+  },
+  {
+    "id": 47,
+    "category": "locksmith",
+    "element_order": 3,
+    "element_type": "H3",
+    "content": "{Share|Leave|Submit|Provide|Give|Post} {Your|A|Your Honest|Customer} {Review|Feedback|Experience|Opinion|Thoughts|Comments}",
+    "created_at": "2026-01-15T20:10:59.490576+00:00"
+  },
+  {
+    "id": 48,
+    "category": "locksmith",
+    "element_order": 4,
+    "element_type": "P",
+    "content": "{We|{{business_name}}|Our team|Our company} {value|appreciate|treasure|welcome|respect} {all|every|each|any} {feedback|review|comment|opinion|input} — {positive|good|favorable} or {constructive|critical|negative|areas for improvement}. {Your|Customer|Client|Honest} {input|feedback|reviews|opinions|thoughts|comments} {helps|help|assists|enables|allows} {us|our team|{{business_name}}|our company} {maintain|keep|uphold|continue|preserve} {our|the} {high|highest|exceptional|outstanding|excellent|superior|top} {standards|quality|level|bar} of {service|work|quality|care|excellence} and {identify|find|discover|spot|recognize|uncover} {areas|ways|opportunities} for {improvement|growth|enhancement|development}.",
+    "created_at": "2026-01-15T20:10:59.490576+00:00"
+  },
+  {
+    "id": 49,
+    "category": "plumbing",
+    "element_order": 1,
+    "element_type": "H1",
+    "content": "{We'd|We Would|We Truly|We Genuinely|We Really} {Love|Appreciate|Value|Welcome|Enjoy} {Your|Customer|Client|Honest} {Feedback|Review|Opinion|Experience|Input|Thoughts}",
+    "created_at": "2026-01-15T20:10:59.490576+00:00"
+  },
+  {
+    "id": 50,
+    "category": "plumbing",
+    "element_order": 2,
+    "element_type": "P",
+    "content": "{Your|Customer|Client} {feedback|reviews|opinions|input|thoughts|comments} {helps|help|assists|allows|enables} {us|{{business_name}}|our team|our company} {improve|get better|enhance|refine|perfect|grow} {our|the} {services|service|work|quality|offerings} and {serve|help|assist|support|care for} {you|our customers|our clients|the community} {better|more effectively|more efficiently}. {Please|We invite you to|We encourage you to|We'd appreciate if you|We ask that you} {take|spend} {a few|a couple of|just a few|a} {moments|minutes|seconds} to {share|tell us about|describe|provide} {your|the} {experience|feedback|thoughts|opinion|review} with {us|{{business_name}}|our team}.",
+    "created_at": "2026-01-15T20:10:59.490576+00:00"
+  },
+  {
+    "id": 51,
+    "category": "plumbing",
+    "element_order": 3,
+    "element_type": "H3",
+    "content": "{Share|Leave|Submit|Provide|Give|Post} {Your|A|Your Honest|Customer} {Review|Feedback|Experience|Opinion|Thoughts|Comments}",
+    "created_at": "2026-01-15T20:10:59.780405+00:00"
+  },
+  {
+    "id": 52,
+    "category": "plumbing",
+    "element_order": 4,
+    "element_type": "P",
+    "content": "{We|{{business_name}}|Our team|Our company} {value|appreciate|treasure|welcome|respect} {all|every|each|any} {feedback|review|comment|opinion|input} — {positive|good|favorable} or {constructive|critical|negative|areas for improvement}. {Your|Customer|Client|Honest} {input|feedback|reviews|opinions|thoughts|comments} {helps|help|assists|enables|allows} {us|our team|{{business_name}}|our company} {maintain|keep|uphold|continue|preserve} {our|the} {high|highest|exceptional|outstanding|excellent|superior|top} {standards|quality|level|bar} of {service|work|quality|care|excellence} and {identify|find|discover|spot|recognize|uncover} {areas|ways|opportunities} for {improvement|growth|enhancement|development}.",
+    "created_at": "2026-01-15T20:10:59.780405+00:00"
+  },
+  {
+    "id": 53,
+    "category": "pest_control",
+    "element_order": 1,
+    "element_type": "H1",
+    "content": "{We'd|We Would|We Truly|We Genuinely|We Really} {Love|Appreciate|Value|Welcome|Enjoy} {Your|Customer|Client|Honest} {Feedback|Review|Opinion|Experience|Input|Thoughts}",
+    "created_at": "2026-01-15T20:10:59.780405+00:00"
+  },
+  {
+    "id": 54,
+    "category": "pest_control",
+    "element_order": 2,
+    "element_type": "P",
+    "content": "{Your|Customer|Client} {feedback|reviews|opinions|input|thoughts|comments} {helps|help|assists|allows|enables} {us|{{business_name}}|our team|our company} {improve|get better|enhance|refine|perfect|grow} {our|the} {services|service|work|quality|offerings} and {serve|help|assist|support|care for} {you|our customers|our clients|the community} {better|more effectively|more efficiently}. {Please|We invite you to|We encourage you to|We'd appreciate if you|We ask that you} {take|spend} {a few|a couple of|just a few|a} {moments|minutes|seconds} to {share|tell us about|describe|provide} {your|the} {experience|feedback|thoughts|opinion|review} with {us|{{business_name}}|our team}.",
+    "created_at": "2026-01-15T20:10:59.780405+00:00"
+  },
+  {
+    "id": 55,
+    "category": "pest_control",
+    "element_order": 3,
+    "element_type": "H3",
+    "content": "{Share|Leave|Submit|Provide|Give|Post} {Your|A|Your Honest|Customer} {Review|Feedback|Experience|Opinion|Thoughts|Comments}",
+    "created_at": "2026-01-15T20:10:59.780405+00:00"
+  },
+  {
+    "id": 56,
+    "category": "pest_control",
+    "element_order": 4,
+    "element_type": "P",
+    "content": "{We|{{business_name}}|Our team|Our company} {value|appreciate|treasure|welcome|respect} {all|every|each|any} {feedback|review|comment|opinion|input} — {positive|good|favorable} or {constructive|critical|negative|areas for improvement}. {Your|Customer|Client|Honest} {input|feedback|reviews|opinions|thoughts|comments} {helps|help|assists|enables|allows} {us|our team|{{business_name}}|our company} {maintain|keep|uphold|continue|preserve} {our|the} {high|highest|exceptional|outstanding|excellent|superior|top} {standards|quality|level|bar} of {service|work|quality|care|excellence} and {identify|find|discover|spot|recognize|uncover} {areas|ways|opportunities} for {improvement|growth|enhancement|development}.",
+    "created_at": "2026-01-15T20:10:59.780405+00:00"
+  },
+  {
+    "id": 57,
+    "category": "air_conditioning",
+    "element_order": 1,
+    "element_type": "H1",
+    "content": "{We'd|We Would|We Truly|We Genuinely|We Really} {Love|Appreciate|Value|Welcome|Enjoy} {Your|Customer|Client|Honest} {Feedback|Review|Opinion|Experience|Input|Thoughts}",
+    "created_at": "2026-01-15T20:10:59.780405+00:00"
+  },
+  {
+    "id": 58,
+    "category": "air_conditioning",
+    "element_order": 2,
+    "element_type": "P",
+    "content": "{Your|Customer|Client} {feedback|reviews|opinions|input|thoughts|comments} {helps|help|assists|allows|enables} {us|{{business_name}}|our team|our company} {improve|get better|enhance|refine|perfect|grow} {our|the} {services|service|work|quality|offerings} and {serve|help|assist|support|care for} {you|our customers|our clients|the community} {better|more effectively|more efficiently}. {Please|We invite you to|We encourage you to|We'd appreciate if you|We ask that you} {take|spend} {a few|a couple of|just a few|a} {moments|minutes|seconds} to {share|tell us about|describe|provide} {your|the} {experience|feedback|thoughts|opinion|review} with {us|{{business_name}}|our team}.",
+    "created_at": "2026-01-15T20:10:59.780405+00:00"
+  },
+  {
+    "id": 59,
+    "category": "air_conditioning",
+    "element_order": 3,
+    "element_type": "H3",
+    "content": "{Share|Leave|Submit|Provide|Give|Post} {Your|A|Your Honest|Customer} {Review|Feedback|Experience|Opinion|Thoughts|Comments}",
+    "created_at": "2026-01-15T20:10:59.780405+00:00"
+  },
+  {
+    "id": 60,
+    "category": "air_conditioning",
+    "element_order": 4,
+    "element_type": "P",
+    "content": "{We|{{business_name}}|Our team|Our company} {value|appreciate|treasure|welcome|respect} {all|every|each|any} {feedback|review|comment|opinion|input} — {positive|good|favorable} or {constructive|critical|negative|areas for improvement}. {Your|Customer|Client|Honest} {input|feedback|reviews|opinions|thoughts|comments} {helps|help|assists|enables|allows} {us|our team|{{business_name}}|our company} {maintain|keep|uphold|continue|preserve} {our|the} {high|highest|exceptional|outstanding|excellent|superior|top} {standards|quality|level|bar} of {service|work|quality|care|excellence} and {identify|find|discover|spot|recognize|uncover} {areas|ways|opportunities} for {improvement|growth|enhancement|development}.",
+    "created_at": "2026-01-15T20:10:59.780405+00:00"
+  },
+  {
+    "id": 61,
+    "category": "heating",
+    "element_order": 1,
+    "element_type": "H1",
+    "content": "{We'd|We Would|We Truly|We Genuinely|We Really} {Love|Appreciate|Value|Welcome|Enjoy} {Your|Customer|Client|Honest} {Feedback|Review|Opinion|Experience|Input|Thoughts}",
+    "created_at": "2026-01-15T20:10:59.780405+00:00"
+  },
+  {
+    "id": 62,
+    "category": "heating",
+    "element_order": 2,
+    "element_type": "P",
+    "content": "{Your|Customer|Client} {feedback|reviews|opinions|input|thoughts|comments} {helps|help|assists|allows|enables} {us|{{business_name}}|our team|our company} {improve|get better|enhance|refine|perfect|grow} {our|the} {services|service|work|quality|offerings} and {serve|help|assist|support|care for} {you|our customers|our clients|the community} {better|more effectively|more efficiently}. {Please|We invite you to|We encourage you to|We'd appreciate if you|We ask that you} {take|spend} {a few|a couple of|just a few|a} {moments|minutes|seconds} to {share|tell us about|describe|provide} {your|the} {experience|feedback|thoughts|opinion|review} with {us|{{business_name}}|our team}.",
+    "created_at": "2026-01-15T20:10:59.780405+00:00"
+  },
+  {
+    "id": 63,
+    "category": "heating",
+    "element_order": 3,
+    "element_type": "H3",
+    "content": "{Share|Leave|Submit|Provide|Give|Post} {Your|A|Your Honest|Customer} {Review|Feedback|Experience|Opinion|Thoughts|Comments}",
+    "created_at": "2026-01-15T20:10:59.780405+00:00"
+  },
+  {
+    "id": 64,
+    "category": "heating",
+    "element_order": 4,
+    "element_type": "P",
+    "content": "{We|{{business_name}}|Our team|Our company} {value|appreciate|treasure|welcome|respect} {all|every|each|any} {feedback|review|comment|opinion|input} — {positive|good|favorable} or {constructive|critical|negative|areas for improvement}. {Your|Customer|Client|Honest} {input|feedback|reviews|opinions|thoughts|comments} {helps|help|assists|enables|allows} {us|our team|{{business_name}}|our company} {maintain|keep|uphold|continue|preserve} {our|the} {high|highest|exceptional|outstanding|excellent|superior|top} {standards|quality|level|bar} of {service|work|quality|care|excellence} and {identify|find|discover|spot|recognize|uncover} {areas|ways|opportunities} for {improvement|growth|enhancement|development}.",
+    "created_at": "2026-01-15T20:10:59.780405+00:00"
+  }
+]

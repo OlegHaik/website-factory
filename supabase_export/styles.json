@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "category": "water_damage",
+    "primary_color": "#0066cc",
+    "secondary_color": "#004080",
+    "accent_color": "#00a8ff",
+    "font_heading": "Inter",
+    "font_body": "Inter",
+    "created_at": "2026-01-15T17:54:56.639634+00:00"
+  },
+  {
+    "id": 2,
+    "category": "fire_damage",
+    "primary_color": "#dc2626",
+    "secondary_color": "#991b1b",
+    "accent_color": "#ff6b6b",
+    "font_heading": "Inter",
+    "font_body": "Inter",
+    "created_at": "2026-01-15T17:54:56.639634+00:00"
+  },
+  {
+    "id": 3,
+    "category": "mold_remediation",
+    "primary_color": "#16a34a",
+    "secondary_color": "#15803d",
+    "accent_color": "#4ade80",
+    "font_heading": "Inter",
+    "font_body": "Inter",
+    "created_at": "2026-01-15T17:54:56.639634+00:00"
+  },
+  {
+    "id": 4,
+    "category": "biohazard",
+    "primary_color": "#9333ea",
+    "secondary_color": "#7e22ce",
+    "accent_color": "#c084fc",
+    "font_heading": "Inter",
+    "font_body": "Inter",
+    "created_at": "2026-01-15T17:54:56.639634+00:00"
+  },
+  {
+    "id": 5,
+    "category": "storm_damage",
+    "primary_color": "#ea580c",
+    "secondary_color": "#c2410c",
+    "accent_color": "#fb923c",
+    "font_heading": "Inter",
+    "font_body": "Inter",
+    "created_at": "2026-01-15T17:54:56.639634+00:00"
+  },
+  {
+    "id": 6,
+    "category": "reconstruction",
+    "primary_color": "#0891b2",
+    "secondary_color": "#0e7490",
+    "accent_color": "#22d3ee",
+    "font_heading": "Inter",
+    "font_body": "Inter",
+    "created_at": "2026-01-15T17:54:56.639634+00:00"
+  }
+]

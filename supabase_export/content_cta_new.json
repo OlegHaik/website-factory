@@ -1,0 +1,130 @@
+[
+  {
+    "id": 33,
+    "category": "water_damage",
+    "headline_spintax": "{Ready|Prepared|Need|Looking|Want|Time|Eager|Set|Planning|Thinking} to {Get Started|Begin|Take Action|Move Forward|Schedule|Book|Make It Happen|Take the Next Step|Get Help|Solve Your Problem}?",
+    "subheadline_spintax": "{Contact|Call|Reach|Phone|Get in touch with} {{business_name}} {today|now|right now|this moment} for {professional|expert|quality|trusted|reliable|certified|licensed} water damage {services|solutions|help|assistance|work} in {{city}} and {the surrounding|nearby|neighboring|local|all surrounding} {areas|communities|cities|regions|neighborhoods}. {Our|The|{{business_name}}'s} {team|specialists|experts|professionals|technicians} {is|are} {ready|standing by|available|prepared|waiting|here} to {help|assist|serve|support} {you|homeowners|property owners|clients|customers}.",
+    "button_text_spintax": "{Get|Request|Schedule|Book|Claim|Start} {Your|A|My} {Free|Complimentary|No-Cost|No-Obligation} {Quote|Estimate|Consultation|Assessment|Inspection} {Now|Today|→}",
+    "created_at": "2026-01-15T19:04:16.22209+00:00"
+  },
+  {
+    "id": 34,
+    "category": "mold_remediation",
+    "headline_spintax": "{Ready|Prepared|Need|Looking|Want|Time|Eager|Set|Planning|Thinking} to {Get Started|Begin|Take Action|Move Forward|Schedule|Book|Make It Happen|Take the Next Step|Get Help|Solve Your Problem}?",
+    "subheadline_spintax": "{Contact|Call|Reach|Phone|Get in touch with} {{business_name}} {today|now|right now|this moment} for {professional|expert|quality|trusted|reliable|certified|licensed} mold remediation {services|solutions|help|assistance|work} in {{city}} and {the surrounding|nearby|neighboring|local|all surrounding} {areas|communities|cities|regions|neighborhoods}. {Our|The|{{business_name}}'s} {team|specialists|experts|professionals|technicians} {is|are} {ready|standing by|available|prepared|waiting|here} to {help|assist|serve|support} {you|homeowners|property owners|clients|customers}.",
+    "button_text_spintax": "{Get|Request|Schedule|Book|Claim|Start} {Your|A|My} {Free|Complimentary|No-Cost|No-Obligation} {Quote|Estimate|Consultation|Assessment|Inspection} {Now|Today|→}",
+    "created_at": "2026-01-15T19:04:16.22209+00:00"
+  },
+  {
+    "id": 35,
+    "category": "roofing",
+    "headline_spintax": "{Ready|Prepared|Need|Looking|Want|Time|Eager|Set|Planning|Thinking} to {Get Started|Begin|Take Action|Move Forward|Schedule|Book|Make It Happen|Take the Next Step|Get Help|Solve Your Problem}?",
+    "subheadline_spintax": "{Contact|Call|Reach|Phone|Get in touch with} {{business_name}} {today|now|right now|this moment} for {professional|expert|quality|trusted|reliable|certified|licensed} roofing {services|solutions|help|assistance|work} in {{city}} and {the surrounding|nearby|neighboring|local|all surrounding} {areas|communities|cities|regions|neighborhoods}. {Our|The|{{business_name}}'s} {team|specialists|experts|professionals|technicians} {is|are} {ready|standing by|available|prepared|waiting|here} to {help|assist|serve|support} {you|homeowners|property owners|clients|customers}.",
+    "button_text_spintax": "{Get|Request|Schedule|Book|Claim|Start} {Your|A|My} {Free|Complimentary|No-Cost|No-Obligation} {Quote|Estimate|Consultation|Assessment|Inspection} {Now|Today|→}",
+    "created_at": "2026-01-15T19:04:16.22209+00:00"
+  },
+  {
+    "id": 36,
+    "category": "chimney",
+    "headline_spintax": "{Ready|Prepared|Need|Looking|Want|Time|Eager|Set|Planning|Thinking} to {Get Started|Begin|Take Action|Move Forward|Schedule|Book|Make It Happen|Take the Next Step|Get Help|Solve Your Problem}?",
+    "subheadline_spintax": "{Contact|Call|Reach|Phone|Get in touch with} {{business_name}} {today|now|right now|this moment} for {professional|expert|quality|trusted|reliable|certified|licensed} chimney {services|solutions|help|assistance|work} in {{city}} and {the surrounding|nearby|neighboring|local|all surrounding} {areas|communities|cities|regions|neighborhoods}. {Our|The|{{business_name}}'s} {team|specialists|experts|professionals|technicians} {is|are} {ready|standing by|available|prepared|waiting|here} to {help|assist|serve|support} {you|homeowners|property owners|clients|customers}.",
+    "button_text_spintax": "{Get|Request|Schedule|Book|Claim|Start} {Your|A|My} {Free|Complimentary|No-Cost|No-Obligation} {Quote|Estimate|Consultation|Assessment|Inspection} {Now|Today|→}",
+    "created_at": "2026-01-15T19:04:16.22209+00:00"
+  },
+  {
+    "id": 37,
+    "category": "kitchen_remodel",
+    "headline_spintax": "{Ready|Prepared|Need|Looking|Want|Time|Eager|Set|Planning|Thinking} to {Get Started|Begin|Take Action|Move Forward|Schedule|Book|Make It Happen|Take the Next Step|Get Help|Solve Your Problem}?",
+    "subheadline_spintax": "{Contact|Call|Reach|Phone|Get in touch with} {{business_name}} {today|now|right now|this moment} for {professional|expert|quality|trusted|reliable|certified|licensed} kitchen remodel {services|solutions|help|assistance|work} in {{city}} and {the surrounding|nearby|neighboring|local|all surrounding} {areas|communities|cities|regions|neighborhoods}. {Our|The|{{business_name}}'s} {team|specialists|experts|professionals|technicians} {is|are} {ready|standing by|available|prepared|waiting|here} to {help|assist|serve|support} {you|homeowners|property owners|clients|customers}.",
+    "button_text_spintax": "{Get|Request|Schedule|Book|Claim|Start} {Your|A|My} {Free|Complimentary|No-Cost|No-Obligation} {Quote|Estimate|Consultation|Assessment|Inspection} {Now|Today|→}",
+    "created_at": "2026-01-15T19:04:16.22209+00:00"
+  },
+  {
+    "id": 38,
+    "category": "carpet_cleaning",
+    "headline_spintax": "{Ready|Prepared|Need|Looking|Want|Time|Eager|Set|Planning|Thinking} to {Get Started|Begin|Take Action|Move Forward|Schedule|Book|Make It Happen|Take the Next Step|Get Help|Solve Your Problem}?",
+    "subheadline_spintax": "{Contact|Call|Reach|Phone|Get in touch with} {{business_name}} {today|now|right now|this moment} for {professional|expert|quality|trusted|reliable|certified|licensed} carpet cleaning {services|solutions|help|assistance|work} in {{city}} and {the surrounding|nearby|neighboring|local|all surrounding} {areas|communities|cities|regions|neighborhoods}. {Our|The|{{business_name}}'s} {team|specialists|experts|professionals|technicians} {is|are} {ready|standing by|available|prepared|waiting|here} to {help|assist|serve|support} {you|homeowners|property owners|clients|customers}.",
+    "button_text_spintax": "{Get|Request|Schedule|Book|Claim|Start} {Your|A|My} {Free|Complimentary|No-Cost|No-Obligation} {Quote|Estimate|Consultation|Assessment|Inspection} {Now|Today|→}",
+    "created_at": "2026-01-15T19:04:16.22209+00:00"
+  },
+  {
+    "id": 39,
+    "category": "bathroom_remodel",
+    "headline_spintax": "{Ready|Prepared|Need|Looking|Want|Time|Eager|Set|Planning|Thinking} to {Get Started|Begin|Take Action|Move Forward|Schedule|Book|Make It Happen|Take the Next Step|Get Help|Solve Your Problem}?",
+    "subheadline_spintax": "{Contact|Call|Reach|Phone|Get in touch with} {{business_name}} {today|now|right now|this moment} for {professional|expert|quality|trusted|reliable|certified|licensed} bathroom remodel {services|solutions|help|assistance|work} in {{city}} and {the surrounding|nearby|neighboring|local|all surrounding} {areas|communities|cities|regions|neighborhoods}. {Our|The|{{business_name}}'s} {team|specialists|experts|professionals|technicians} {is|are} {ready|standing by|available|prepared|waiting|here} to {help|assist|serve|support} {you|homeowners|property owners|clients|customers}.",
+    "button_text_spintax": "{Get|Request|Schedule|Book|Claim|Start} {Your|A|My} {Free|Complimentary|No-Cost|No-Obligation} {Quote|Estimate|Consultation|Assessment|Inspection} {Now|Today|→}",
+    "created_at": "2026-01-15T19:04:16.22209+00:00"
+  },
+  {
+    "id": 40,
+    "category": "air_duct_cleaning",
+    "headline_spintax": "{Ready|Prepared|Need|Looking|Want|Time|Eager|Set|Planning|Thinking} to {Get Started|Begin|Take Action|Move Forward|Schedule|Book|Make It Happen|Take the Next Step|Get Help|Solve Your Problem}?",
+    "subheadline_spintax": "{Contact|Call|Reach|Phone|Get in touch with} {{business_name}} {today|now|right now|this moment} for {professional|expert|quality|trusted|reliable|certified|licensed} air duct cleaning {services|solutions|help|assistance|work} in {{city}} and {the surrounding|nearby|neighboring|local|all surrounding} {areas|communities|cities|regions|neighborhoods}. {Our|The|{{business_name}}'s} {team|specialists|experts|professionals|technicians} {is|are} {ready|standing by|available|prepared|waiting|here} to {help|assist|serve|support} {you|homeowners|property owners|clients|customers}.",
+    "button_text_spintax": "{Get|Request|Schedule|Book|Claim|Start} {Your|A|My} {Free|Complimentary|No-Cost|No-Obligation} {Quote|Estimate|Consultation|Assessment|Inspection} {Now|Today|→}",
+    "created_at": "2026-01-15T19:04:16.22209+00:00"
+  },
+  {
+    "id": 41,
+    "category": "adu_builder",
+    "headline_spintax": "{Ready|Prepared|Need|Looking|Want|Time|Eager|Set|Planning|Thinking} to {Get Started|Begin|Take Action|Move Forward|Schedule|Book|Make It Happen|Take the Next Step|Get Help|Solve Your Problem}?",
+    "subheadline_spintax": "{Contact|Call|Reach|Phone|Get in touch with} {{business_name}} {today|now|right now|this moment} for {professional|expert|quality|trusted|reliable|certified|licensed} adu builder {services|solutions|help|assistance|work} in {{city}} and {the surrounding|nearby|neighboring|local|all surrounding} {areas|communities|cities|regions|neighborhoods}. {Our|The|{{business_name}}'s} {team|specialists|experts|professionals|technicians} {is|are} {ready|standing by|available|prepared|waiting|here} to {help|assist|serve|support} {you|homeowners|property owners|clients|customers}.",
+    "button_text_spintax": "{Get|Request|Schedule|Book|Claim|Start} {Your|A|My} {Free|Complimentary|No-Cost|No-Obligation} {Quote|Estimate|Consultation|Assessment|Inspection} {Now|Today|→}",
+    "created_at": "2026-01-15T19:04:16.22209+00:00"
+  },
+  {
+    "id": 42,
+    "category": "pool_contractor",
+    "headline_spintax": "{Ready|Prepared|Need|Looking|Want|Time|Eager|Set|Planning|Thinking} to {Get Started|Begin|Take Action|Move Forward|Schedule|Book|Make It Happen|Take the Next Step|Get Help|Solve Your Problem}?",
+    "subheadline_spintax": "{Contact|Call|Reach|Phone|Get in touch with} {{business_name}} {today|now|right now|this moment} for {professional|expert|quality|trusted|reliable|certified|licensed} pool contractor {services|solutions|help|assistance|work} in {{city}} and {the surrounding|nearby|neighboring|local|all surrounding} {areas|communities|cities|regions|neighborhoods}. {Our|The|{{business_name}}'s} {team|specialists|experts|professionals|technicians} {is|are} {ready|standing by|available|prepared|waiting|here} to {help|assist|serve|support} {you|homeowners|property owners|clients|customers}.",
+    "button_text_spintax": "{Get|Request|Schedule|Book|Claim|Start} {Your|A|My} {Free|Complimentary|No-Cost|No-Obligation} {Quote|Estimate|Consultation|Assessment|Inspection} {Now|Today|→}",
+    "created_at": "2026-01-15T19:04:16.22209+00:00"
+  },
+  {
+    "id": 43,
+    "category": "garage_door",
+    "headline_spintax": "{Ready|Prepared|Need|Looking|Want|Time|Eager|Set|Planning|Thinking} to {Get Started|Begin|Take Action|Move Forward|Schedule|Book|Make It Happen|Take the Next Step|Get Help|Solve Your Problem}?",
+    "subheadline_spintax": "{Contact|Call|Reach|Phone|Get in touch with} {{business_name}} {today|now|right now|this moment} for {professional|expert|quality|trusted|reliable|certified|licensed} garage door {services|solutions|help|assistance|work} in {{city}} and {the surrounding|nearby|neighboring|local|all surrounding} {areas|communities|cities|regions|neighborhoods}. {Our|The|{{business_name}}'s} {team|specialists|experts|professionals|technicians} {is|are} {ready|standing by|available|prepared|waiting|here} to {help|assist|serve|support} {you|homeowners|property owners|clients|customers}.",
+    "button_text_spintax": "{Get|Request|Schedule|Book|Claim|Start} {Your|A|My} {Free|Complimentary|No-Cost|No-Obligation} {Quote|Estimate|Consultation|Assessment|Inspection} {Now|Today|→}",
+    "created_at": "2026-01-15T19:04:16.22209+00:00"
+  },
+  {
+    "id": 44,
+    "category": "locksmith",
+    "headline_spintax": "{Ready|Prepared|Need|Looking|Want|Time|Eager|Set|Planning|Thinking} to {Get Started|Begin|Take Action|Move Forward|Schedule|Book|Make It Happen|Take the Next Step|Get Help|Solve Your Problem}?",
+    "subheadline_spintax": "{Contact|Call|Reach|Phone|Get in touch with} {{business_name}} {today|now|right now|this moment} for {professional|expert|quality|trusted|reliable|certified|licensed} locksmith {services|solutions|help|assistance|work} in {{city}} and {the surrounding|nearby|neighboring|local|all surrounding} {areas|communities|cities|regions|neighborhoods}. {Our|The|{{business_name}}'s} {team|specialists|experts|professionals|technicians} {is|are} {ready|standing by|available|prepared|waiting|here} to {help|assist|serve|support} {you|homeowners|property owners|clients|customers}.",
+    "button_text_spintax": "{Get|Request|Schedule|Book|Claim|Start} {Your|A|My} {Free|Complimentary|No-Cost|No-Obligation} {Quote|Estimate|Consultation|Assessment|Inspection} {Now|Today|→}",
+    "created_at": "2026-01-15T19:04:16.22209+00:00"
+  },
+  {
+    "id": 45,
+    "category": "plumbing",
+    "headline_spintax": "{Ready|Prepared|Need|Looking|Want|Time|Eager|Set|Planning|Thinking} to {Get Started|Begin|Take Action|Move Forward|Schedule|Book|Make It Happen|Take the Next Step|Get Help|Solve Your Problem}?",
+    "subheadline_spintax": "{Contact|Call|Reach|Phone|Get in touch with} {{business_name}} {today|now|right now|this moment} for {professional|expert|quality|trusted|reliable|certified|licensed} plumbing {services|solutions|help|assistance|work} in {{city}} and {the surrounding|nearby|neighboring|local|all surrounding} {areas|communities|cities|regions|neighborhoods}. {Our|The|{{business_name}}'s} {team|specialists|experts|professionals|technicians} {is|are} {ready|standing by|available|prepared|waiting|here} to {help|assist|serve|support} {you|homeowners|property owners|clients|customers}.",
+    "button_text_spintax": "{Get|Request|Schedule|Book|Claim|Start} {Your|A|My} {Free|Complimentary|No-Cost|No-Obligation} {Quote|Estimate|Consultation|Assessment|Inspection} {Now|Today|→}",
+    "created_at": "2026-01-15T19:04:16.22209+00:00"
+  },
+  {
+    "id": 46,
+    "category": "pest_control",
+    "headline_spintax": "{Ready|Prepared|Need|Looking|Want|Time|Eager|Set|Planning|Thinking} to {Get Started|Begin|Take Action|Move Forward|Schedule|Book|Make It Happen|Take the Next Step|Get Help|Solve Your Problem}?",
+    "subheadline_spintax": "{Contact|Call|Reach|Phone|Get in touch with} {{business_name}} {today|now|right now|this moment} for {professional|expert|quality|trusted|reliable|certified|licensed} pest control {services|solutions|help|assistance|work} in {{city}} and {the surrounding|nearby|neighboring|local|all surrounding} {areas|communities|cities|regions|neighborhoods}. {Our|The|{{business_name}}'s} {team|specialists|experts|professionals|technicians} {is|are} {ready|standing by|available|prepared|waiting|here} to {help|assist|serve|support} {you|homeowners|property owners|clients|customers}.",
+    "button_text_spintax": "{Get|Request|Schedule|Book|Claim|Start} {Your|A|My} {Free|Complimentary|No-Cost|No-Obligation} {Quote|Estimate|Consultation|Assessment|Inspection} {Now|Today|→}",
+    "created_at": "2026-01-15T19:04:16.22209+00:00"
+  },
+  {
+    "id": 47,
+    "category": "air_conditioning",
+    "headline_spintax": "{Ready|Prepared|Need|Looking|Want|Time|Eager|Set|Planning|Thinking} to {Get Started|Begin|Take Action|Move Forward|Schedule|Book|Make It Happen|Take the Next Step|Get Help|Solve Your Problem}?",
+    "subheadline_spintax": "{Contact|Call|Reach|Phone|Get in touch with} {{business_name}} {today|now|right now|this moment} for {professional|expert|quality|trusted|reliable|certified|licensed} air conditioning {services|solutions|help|assistance|work} in {{city}} and {the surrounding|nearby|neighboring|local|all surrounding} {areas|communities|cities|regions|neighborhoods}. {Our|The|{{business_name}}'s} {team|specialists|experts|professionals|technicians} {is|are} {ready|standing by|available|prepared|waiting|here} to {help|assist|serve|support} {you|homeowners|property owners|clients|customers}.",
+    "button_text_spintax": "{Get|Request|Schedule|Book|Claim|Start} {Your|A|My} {Free|Complimentary|No-Cost|No-Obligation} {Quote|Estimate|Consultation|Assessment|Inspection} {Now|Today|→}",
+    "created_at": "2026-01-15T19:04:16.22209+00:00"
+  },
+  {
+    "id": 48,
+    "category": "heating",
+    "headline_spintax": "{Ready|Prepared|Need|Looking|Want|Time|Eager|Set|Planning|Thinking} to {Get Started|Begin|Take Action|Move Forward|Schedule|Book|Make It Happen|Take the Next Step|Get Help|Solve Your Problem}?",
+    "subheadline_spintax": "{Contact|Call|Reach|Phone|Get in touch with} {{business_name}} {today|now|right now|this moment} for {professional|expert|quality|trusted|reliable|certified|licensed} heating {services|solutions|help|assistance|work} in {{city}} and {the surrounding|nearby|neighboring|local|all surrounding} {areas|communities|cities|regions|neighborhoods}. {Our|The|{{business_name}}'s} {team|specialists|experts|professionals|technicians} {is|are} {ready|standing by|available|prepared|waiting|here} to {help|assist|serve|support} {you|homeowners|property owners|clients|customers}.",
+    "button_text_spintax": "{Get|Request|Schedule|Book|Claim|Start} {Your|A|My} {Free|Complimentary|No-Cost|No-Obligation} {Quote|Estimate|Consultation|Assessment|Inspection} {Now|Today|→}",
+    "created_at": "2026-01-15T19:04:16.22209+00:00"
+  }
+]

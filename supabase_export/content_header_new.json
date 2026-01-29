@@ -1,0 +1,162 @@
+[
+  {
+    "id": 33,
+    "category": "water_damage",
+    "nav_home": "{Home|Main|Start|Welcome|Homepage|Home Page|Front|Landing|Intro|Begin}",
+    "nav_services": "{Services|Our Services|What We Do|Solutions|Restoration|Water Services|Our Work|Offerings|Help|Service List}",
+    "nav_areas": "{Areas|Service Areas|Locations|Where We Work|Coverage|Our Areas|Nearby|Local Areas|Zones|Regions}",
+    "nav_contact": "{Contact|Contact Us|Get In Touch|Reach Us|Call Us|Connect|Talk To Us|Message Us|Enquire|Get Help}",
+    "call_button_text": "{Call Now|Get Help|Emergency|24/7 Help|Call Today|Free Quote|Contact Now|Book Now|Get Started|Reach Out}",
+    "created_at": "2026-01-15T19:04:15.757694+00:00"
+  },
+  {
+    "id": 35,
+    "category": "roofing",
+    "nav_home": "{Home|Main|Start|Welcome|Homepage|Home Page|Front|Landing|Intro|Begin}",
+    "nav_services": "{Services|Roofing|Our Services|Roof Work|Solutions|What We Do|Roof Services|Offerings|Our Work|Help}",
+    "nav_areas": "{Areas|Service Areas|Locations|Where We Work|Coverage|Our Areas|Nearby|Local Areas|Zones|Regions}",
+    "nav_contact": "{Contact|Contact Us|Get In Touch|Reach Us|Call Us|Connect|Talk To Us|Message Us|Enquire|Get Help}",
+    "call_button_text": "{Call Now|Get Quote|Free Estimate|Book Now|Contact Now|Call Today|Schedule|Reach Out|Get Started|Enquire}",
+    "created_at": "2026-01-15T19:04:15.757694+00:00"
+  },
+  {
+    "id": 36,
+    "category": "chimney",
+    "nav_home": "{Home|Main|Start|Welcome|Homepage|Home Page|Front|Landing|Intro|Begin}",
+    "nav_services": "{Services|Chimney Work|Our Services|Solutions|What We Do|Chimney Care|Offerings|Our Work|Service List|Help}",
+    "nav_areas": "{Areas|Service Areas|Locations|Where We Work|Coverage|Our Areas|Nearby|Local Areas|Zones|Regions}",
+    "nav_contact": "{Contact|Contact Us|Get In Touch|Reach Us|Call Us|Connect|Talk To Us|Message Us|Enquire|Get Help}",
+    "call_button_text": "{Call Now|Get Quote|Book Now|Contact Now|Free Estimate|Call Today|Schedule|Reach Out|Get Started|Enquire}",
+    "created_at": "2026-01-15T19:04:15.757694+00:00"
+  },
+  {
+    "id": 37,
+    "category": "kitchen_remodel",
+    "nav_home": "{Home|Main|Start|Welcome|Homepage|Home Page|Front|Landing|Intro|Begin}",
+    "nav_services": "{Services|Our Services|Remodeling|Kitchen Work|Solutions|What We Do|Renovations|Offerings|Our Work|Help}",
+    "nav_areas": "{Areas|Service Areas|Locations|Where We Work|Coverage|Our Areas|Nearby|Local Areas|Zones|Regions}",
+    "nav_contact": "{Contact|Contact Us|Get In Touch|Reach Us|Call Us|Connect|Talk To Us|Message Us|Enquire|Get Help}",
+    "call_button_text": "{Call Now|Get Quote|Free Consult|Book Now|Contact Now|Call Today|Schedule|Reach Out|Get Started|Enquire}",
+    "created_at": "2026-01-15T19:04:15.757694+00:00"
+  },
+  {
+    "id": 38,
+    "category": "carpet_cleaning",
+    "nav_home": "{Home|Main|Start|Welcome|Homepage|Home Page|Front|Landing|Intro|Begin}",
+    "nav_services": "{Services|Our Services|Cleaning|Carpet Care|Solutions|What We Do|Offerings|Our Work|Help|Treatments}",
+    "nav_areas": "{Areas|Service Areas|Locations|Where We Work|Coverage|Our Areas|Nearby|Local Areas|Zones|Regions}",
+    "nav_contact": "{Contact|Contact Us|Get In Touch|Reach Us|Call Us|Connect|Talk To Us|Message Us|Enquire|Get Help}",
+    "call_button_text": "{Call Now|Get Quote|Book Now|Contact Now|Free Estimate|Call Today|Schedule|Reach Out|Get Started|Enquire}",
+    "created_at": "2026-01-15T19:04:15.757694+00:00"
+  },
+  {
+    "id": 39,
+    "category": "bathroom_remodel",
+    "nav_home": "{Home|Main|Start|Welcome|Homepage|Home Page|Front|Landing|Intro|Begin}",
+    "nav_services": "{Services|Our Services|Remodeling|Bath Work|Solutions|What We Do|Renovations|Offerings|Our Work|Help}",
+    "nav_areas": "{Areas|Service Areas|Locations|Where We Work|Coverage|Our Areas|Nearby|Local Areas|Zones|Regions}",
+    "nav_contact": "{Contact|Contact Us|Get In Touch|Reach Us|Call Us|Connect|Talk To Us|Message Us|Enquire|Get Help}",
+    "call_button_text": "{Call Now|Get Quote|Free Consult|Book Now|Contact Now|Call Today|Schedule|Reach Out|Get Started|Enquire}",
+    "created_at": "2026-01-15T19:04:15.757694+00:00"
+  },
+  {
+    "id": 40,
+    "category": "air_duct_cleaning",
+    "nav_home": "{Home|Main|Start|Welcome|Homepage|Home Page|Front|Landing|Intro|Begin}",
+    "nav_services": "{Services|Our Services|Duct Cleaning|Air Services|Solutions|What We Do|HVAC Care|Offerings|Our Work|Help}",
+    "nav_areas": "{Areas|Service Areas|Locations|Where We Work|Coverage|Our Areas|Nearby|Local Areas|Zones|Regions}",
+    "nav_contact": "{Contact|Contact Us|Get In Touch|Reach Us|Call Us|Connect|Talk To Us|Message Us|Enquire|Get Help}",
+    "call_button_text": "{Call Now|Get Quote|Book Now|Contact Now|Free Estimate|Call Today|Schedule|Reach Out|Get Started|Enquire}",
+    "created_at": "2026-01-15T19:04:15.757694+00:00"
+  },
+  {
+    "id": 41,
+    "category": "adu_builder",
+    "nav_home": "{Home|Main|Start|Welcome|Homepage|Home Page|Front|Landing|Intro|Begin}",
+    "nav_services": "{Services|Our Services|ADU Work|Building|Solutions|What We Do|Construction|Offerings|Our Work|Help}",
+    "nav_areas": "{Areas|Service Areas|Locations|Where We Work|Coverage|Our Areas|Nearby|Local Areas|Zones|Regions}",
+    "nav_contact": "{Contact|Contact Us|Get In Touch|Reach Us|Call Us|Connect|Talk To Us|Message Us|Enquire|Get Help}",
+    "call_button_text": "{Call Now|Get Quote|Free Consult|Book Now|Contact Now|Call Today|Schedule|Reach Out|Get Started|Enquire}",
+    "created_at": "2026-01-15T19:04:15.757694+00:00"
+  },
+  {
+    "id": 42,
+    "category": "pool_contractor",
+    "nav_home": "{Home|Main|Start|Welcome|Homepage|Home Page|Front|Landing|Intro|Begin}",
+    "nav_services": "{Services|Our Services|Pool Work|Solutions|What We Do|Pool Care|Construction|Offerings|Our Work|Help}",
+    "nav_areas": "{Areas|Service Areas|Locations|Where We Work|Coverage|Our Areas|Nearby|Local Areas|Zones|Regions}",
+    "nav_contact": "{Contact|Contact Us|Get In Touch|Reach Us|Call Us|Connect|Talk To Us|Message Us|Enquire|Get Help}",
+    "call_button_text": "{Call Now|Get Quote|Free Consult|Book Now|Contact Now|Call Today|Schedule|Reach Out|Get Started|Enquire}",
+    "created_at": "2026-01-15T19:04:15.757694+00:00"
+  },
+  {
+    "id": 43,
+    "category": "garage_door",
+    "nav_home": "{Home|Main|Start|Welcome|Homepage|Home Page|Front|Landing|Intro|Begin}",
+    "nav_services": "{Services|Our Services|Garage Work|Door Services|Solutions|What We Do|Repairs|Offerings|Our Work|Help}",
+    "nav_areas": "{Areas|Service Areas|Locations|Where We Work|Coverage|Our Areas|Nearby|Local Areas|Zones|Regions}",
+    "nav_contact": "{Contact|Contact Us|Get In Touch|Reach Us|Call Us|Connect|Talk To Us|Message Us|Enquire|Get Help}",
+    "call_button_text": "{Call Now|Get Help|Emergency|24/7 Help|Free Quote|Contact Now|Book Now|Call Today|Reach Out|Get Started}",
+    "created_at": "2026-01-15T19:04:15.757694+00:00"
+  },
+  {
+    "id": 44,
+    "category": "locksmith",
+    "nav_home": "{Home|Main|Start|Welcome|Homepage|Home Page|Front|Landing|Intro|Begin}",
+    "nav_services": "{Services|Our Services|Lock Services|Solutions|What We Do|Security|Offerings|Our Work|Lock Help|Help}",
+    "nav_areas": "{Areas|Service Areas|Locations|Where We Work|Coverage|Our Areas|Nearby|Local Areas|Zones|Regions}",
+    "nav_contact": "{Contact|Contact Us|Get In Touch|Reach Us|Call Us|Connect|Talk To Us|Message Us|Enquire|Get Help}",
+    "call_button_text": "{Call Now|Get Help|Emergency|24/7 Help|Call Today|Contact Now|Book Now|Get Started|Reach Out|Unlock Now}",
+    "created_at": "2026-01-15T19:04:15.757694+00:00"
+  },
+  {
+    "id": 45,
+    "category": "plumbing",
+    "nav_home": "{Home|Main|Start|Welcome|Homepage|Home Page|Front|Landing|Intro|Begin}",
+    "nav_services": "{Services|Our Services|Plumbing|Pipe Work|Solutions|What We Do|Repairs|Offerings|Our Work|Help}",
+    "nav_areas": "{Areas|Service Areas|Locations|Where We Work|Coverage|Our Areas|Nearby|Local Areas|Zones|Regions}",
+    "nav_contact": "{Contact|Contact Us|Get In Touch|Reach Us|Call Us|Connect|Talk To Us|Message Us|Enquire|Get Help}",
+    "call_button_text": "{Call Now|Get Help|Emergency|24/7 Help|Free Quote|Contact Now|Book Now|Call Today|Reach Out|Get Started}",
+    "created_at": "2026-01-15T19:04:15.757694+00:00"
+  },
+  {
+    "id": 34,
+    "category": "mold_remediation",
+    "nav_home": "{Home|Main|Start|Welcome|Homepage|Home Page|Front|Landing|Intro|Begin}",
+    "nav_services": "{Services|Our Services|Mold Services|Solutions|Remediation|What We Do|Our Work|Offerings|Help|Treatments}",
+    "nav_areas": "{Areas|Service Areas|Locations|Where We Work|Coverage|Our Areas|Nearby|Local Areas|Zones|Regions}",
+    "nav_contact": "{Contact|Contact Us|Get In Touch|Reach Us|Call Us|Connect|Talk To Us|Message Us|Enquire|Get Help}",
+    "call_button_text": "{Call Now|Get Help|Free Quote|Book Now|Contact Now|Get Inspection|Call Today|Schedule|Reach Out|Get Started}",
+    "created_at": "2026-01-15T19:04:15.757694+00:00"
+  },
+  {
+    "id": 46,
+    "category": "pest_control",
+    "nav_home": "{Home|Main|Start|Welcome|Homepage|Home Page|Front|Landing|Intro|Begin}",
+    "nav_services": "{Services|Our Services|Pest Control|Treatments|Solutions|What We Do|Removal|Offerings|Our Work|Help}",
+    "nav_areas": "{Areas|Service Areas|Locations|Where We Work|Coverage|Our Areas|Nearby|Local Areas|Zones|Regions}",
+    "nav_contact": "{Contact|Contact Us|Get In Touch|Reach Us|Call Us|Connect|Talk To Us|Message Us|Enquire|Get Help}",
+    "call_button_text": "{Call Now|Get Quote|Book Now|Contact Now|Free Estimate|Call Today|Schedule|Reach Out|Get Started|Enquire}",
+    "created_at": "2026-01-15T19:04:15.757694+00:00"
+  },
+  {
+    "id": 47,
+    "category": "air_conditioning",
+    "nav_home": "{Home|Main|Start|Welcome|Homepage|Home Page|Front|Landing|Intro|Begin}",
+    "nav_services": "{Services|Our Services|AC Services|Cooling|Solutions|What We Do|HVAC|Offerings|Our Work|Help}",
+    "nav_areas": "{Areas|Service Areas|Locations|Where We Work|Coverage|Our Areas|Nearby|Local Areas|Zones|Regions}",
+    "nav_contact": "{Contact|Contact Us|Get In Touch|Reach Us|Call Us|Connect|Talk To Us|Message Us|Enquire|Get Help}",
+    "call_button_text": "{Call Now|Get Help|Emergency|24/7 Help|Free Quote|Contact Now|Book Now|Call Today|Reach Out|Get Started}",
+    "created_at": "2026-01-15T19:04:15.757694+00:00"
+  },
+  {
+    "id": 48,
+    "category": "heating",
+    "nav_home": "{Home|Main|Start|Welcome|Homepage|Home Page|Front|Landing|Intro|Begin}",
+    "nav_services": "{Services|Our Services|Heating|Furnace Work|Solutions|What We Do|HVAC|Offerings|Our Work|Help}",
+    "nav_areas": "{Areas|Service Areas|Locations|Where We Work|Coverage|Our Areas|Nearby|Local Areas|Zones|Regions}",
+    "nav_contact": "{Contact|Contact Us|Get In Touch|Reach Us|Call Us|Connect|Talk To Us|Message Us|Enquire|Get Help}",
+    "call_button_text": "{Call Now|Get Help|Emergency|24/7 Help|Free Quote|Contact Now|Book Now|Call Today|Reach Out|Get Started}",
+    "created_at": "2026-01-15T19:04:15.757694+00:00"
+  }
+]
