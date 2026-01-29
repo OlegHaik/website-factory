@@ -1,0 +1,1762 @@
+[
+  {
+    "id": 18,
+    "category": "water_damage",
+    "page_type": "home",
+    "service_id": null,
+    "meta_title": "Water Damage {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Trusted|Certified|Licensed|Quality|Reliable|Local|Top-Rated} water damage {services|solutions|company|experts|contractors} in {{city}}. {Call|Contact|Phone} {{phone}} for {free|complimentary} {estimates|quotes|consultation}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 25,
+    "category": "water_damage",
+    "page_type": "area",
+    "service_id": null,
+    "meta_title": "Water Damage {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Local|Trusted|Professional|Expert|Reliable|Certified} water damage {services|company|experts|contractors} {serving|in} {{city}}. {Fast|Quick|Prompt|Same-day} {service|response}. {Call|Contact} {{phone}}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 26,
+    "category": "water_damage",
+    "page_type": "terms",
+    "service_id": null,
+    "meta_title": "Terms of Use - {{business_name}}",
+    "meta_desc": "Terms of Use - {{business_name}}",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 27,
+    "category": "water_damage",
+    "page_type": "privacy",
+    "service_id": null,
+    "meta_title": "Privacy Policy - {{business_name}}",
+    "meta_desc": "Privacy Policy - {{business_name}}",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 28,
+    "category": "water_damage",
+    "page_type": "feedback",
+    "service_id": null,
+    "meta_title": "Feedback - {{business_name}}",
+    "meta_desc": "Feedback - {{business_name}}",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 29,
+    "category": "mold_remediation",
+    "page_type": "home",
+    "service_id": null,
+    "meta_title": "Mold Remediation {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Trusted|Certified|Licensed|Quality|Reliable|Local|Top-Rated} mold remediation {services|solutions|company|experts|contractors} in {{city}}. {Call|Contact|Phone} {{phone}} for {free|complimentary} {estimates|quotes|consultation}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 36,
+    "category": "mold_remediation",
+    "page_type": "area",
+    "service_id": null,
+    "meta_title": "Mold Remediation {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Local|Trusted|Professional|Expert|Reliable|Certified} mold remediation {services|company|experts|contractors} {serving|in} {{city}}. {Fast|Quick|Prompt|Same-day} {service|response}. {Call|Contact} {{phone}}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 37,
+    "category": "mold_remediation",
+    "page_type": "terms",
+    "service_id": null,
+    "meta_title": "Terms of Use - {{business_name}}",
+    "meta_desc": "Terms of Use - {{business_name}}",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 38,
+    "category": "mold_remediation",
+    "page_type": "privacy",
+    "service_id": null,
+    "meta_title": "Privacy Policy - {{business_name}}",
+    "meta_desc": "Privacy Policy - {{business_name}}",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 39,
+    "category": "mold_remediation",
+    "page_type": "feedback",
+    "service_id": null,
+    "meta_title": "Feedback - {{business_name}}",
+    "meta_desc": "Feedback - {{business_name}}",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 40,
+    "category": "roofing",
+    "page_type": "home",
+    "service_id": null,
+    "meta_title": "Roofing {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Trusted|Certified|Licensed|Quality|Reliable|Local|Top-Rated} roofing {services|solutions|company|experts|contractors} in {{city}}. {Call|Contact|Phone} {{phone}} for {free|complimentary} {estimates|quotes|consultation}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 47,
+    "category": "roofing",
+    "page_type": "area",
+    "service_id": null,
+    "meta_title": "Roofing {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Local|Trusted|Professional|Expert|Reliable|Certified} roofing {services|company|experts|contractors} {serving|in} {{city}}. {Fast|Quick|Prompt|Same-day} {service|response}. {Call|Contact} {{phone}}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 48,
+    "category": "roofing",
+    "page_type": "terms",
+    "service_id": null,
+    "meta_title": "Terms of Use - {{business_name}}",
+    "meta_desc": "Terms of Use - {{business_name}}",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 49,
+    "category": "roofing",
+    "page_type": "privacy",
+    "service_id": null,
+    "meta_title": "Privacy Policy - {{business_name}}",
+    "meta_desc": "Privacy Policy - {{business_name}}",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 50,
+    "category": "roofing",
+    "page_type": "feedback",
+    "service_id": null,
+    "meta_title": "Feedback - {{business_name}}",
+    "meta_desc": "Feedback - {{business_name}}",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 51,
+    "category": "chimney",
+    "page_type": "home",
+    "service_id": null,
+    "meta_title": "Chimney {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Trusted|Certified|Licensed|Quality|Reliable|Local|Top-Rated} chimney {services|solutions|company|experts|contractors} in {{city}}. {Call|Contact|Phone} {{phone}} for {free|complimentary} {estimates|quotes|consultation}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 58,
+    "category": "chimney",
+    "page_type": "area",
+    "service_id": null,
+    "meta_title": "Chimney {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Local|Trusted|Professional|Expert|Reliable|Certified} chimney {services|company|experts|contractors} {serving|in} {{city}}. {Fast|Quick|Prompt|Same-day} {service|response}. {Call|Contact} {{phone}}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 59,
+    "category": "chimney",
+    "page_type": "terms",
+    "service_id": null,
+    "meta_title": "Terms of Use - {{business_name}}",
+    "meta_desc": "Terms of Use - {{business_name}}",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 60,
+    "category": "chimney",
+    "page_type": "privacy",
+    "service_id": null,
+    "meta_title": "Privacy Policy - {{business_name}}",
+    "meta_desc": "Privacy Policy - {{business_name}}",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 61,
+    "category": "chimney",
+    "page_type": "feedback",
+    "service_id": null,
+    "meta_title": "Feedback - {{business_name}}",
+    "meta_desc": "Feedback - {{business_name}}",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 62,
+    "category": "kitchen_remodel",
+    "page_type": "home",
+    "service_id": null,
+    "meta_title": "Kitchen Remodel {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Trusted|Certified|Licensed|Quality|Reliable|Local|Top-Rated} kitchen remodel {services|solutions|company|experts|contractors} in {{city}}. {Call|Contact|Phone} {{phone}} for {free|complimentary} {estimates|quotes|consultation}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 69,
+    "category": "kitchen_remodel",
+    "page_type": "area",
+    "service_id": null,
+    "meta_title": "Kitchen Remodel {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Local|Trusted|Professional|Expert|Reliable|Certified} kitchen remodel {services|company|experts|contractors} {serving|in} {{city}}. {Fast|Quick|Prompt|Same-day} {service|response}. {Call|Contact} {{phone}}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 70,
+    "category": "kitchen_remodel",
+    "page_type": "terms",
+    "service_id": null,
+    "meta_title": "Terms of Use - {{business_name}}",
+    "meta_desc": "Terms of Use - {{business_name}}",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 71,
+    "category": "kitchen_remodel",
+    "page_type": "privacy",
+    "service_id": null,
+    "meta_title": "Privacy Policy - {{business_name}}",
+    "meta_desc": "Privacy Policy - {{business_name}}",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 72,
+    "category": "kitchen_remodel",
+    "page_type": "feedback",
+    "service_id": null,
+    "meta_title": "Feedback - {{business_name}}",
+    "meta_desc": "Feedback - {{business_name}}",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 73,
+    "category": "carpet_cleaning",
+    "page_type": "home",
+    "service_id": null,
+    "meta_title": "Carpet Cleaning {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Trusted|Certified|Licensed|Quality|Reliable|Local|Top-Rated} carpet cleaning {services|solutions|company|experts|contractors} in {{city}}. {Call|Contact|Phone} {{phone}} for {free|complimentary} {estimates|quotes|consultation}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 80,
+    "category": "carpet_cleaning",
+    "page_type": "area",
+    "service_id": null,
+    "meta_title": "Carpet Cleaning {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Local|Trusted|Professional|Expert|Reliable|Certified} carpet cleaning {services|company|experts|contractors} {serving|in} {{city}}. {Fast|Quick|Prompt|Same-day} {service|response}. {Call|Contact} {{phone}}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 81,
+    "category": "carpet_cleaning",
+    "page_type": "terms",
+    "service_id": null,
+    "meta_title": "Terms of Use - {{business_name}}",
+    "meta_desc": "Terms of Use - {{business_name}}",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 82,
+    "category": "carpet_cleaning",
+    "page_type": "privacy",
+    "service_id": null,
+    "meta_title": "Privacy Policy - {{business_name}}",
+    "meta_desc": "Privacy Policy - {{business_name}}",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 83,
+    "category": "carpet_cleaning",
+    "page_type": "feedback",
+    "service_id": null,
+    "meta_title": "Feedback - {{business_name}}",
+    "meta_desc": "Feedback - {{business_name}}",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 84,
+    "category": "bathroom_remodel",
+    "page_type": "home",
+    "service_id": null,
+    "meta_title": "Bathroom Remodel {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Trusted|Certified|Licensed|Quality|Reliable|Local|Top-Rated} bathroom remodel {services|solutions|company|experts|contractors} in {{city}}. {Call|Contact|Phone} {{phone}} for {free|complimentary} {estimates|quotes|consultation}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 91,
+    "category": "bathroom_remodel",
+    "page_type": "area",
+    "service_id": null,
+    "meta_title": "Bathroom Remodel {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Local|Trusted|Professional|Expert|Reliable|Certified} bathroom remodel {services|company|experts|contractors} {serving|in} {{city}}. {Fast|Quick|Prompt|Same-day} {service|response}. {Call|Contact} {{phone}}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 92,
+    "category": "bathroom_remodel",
+    "page_type": "terms",
+    "service_id": null,
+    "meta_title": "Terms of Use - {{business_name}}",
+    "meta_desc": "Terms of Use - {{business_name}}",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 93,
+    "category": "bathroom_remodel",
+    "page_type": "privacy",
+    "service_id": null,
+    "meta_title": "Privacy Policy - {{business_name}}",
+    "meta_desc": "Privacy Policy - {{business_name}}",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 94,
+    "category": "bathroom_remodel",
+    "page_type": "feedback",
+    "service_id": null,
+    "meta_title": "Feedback - {{business_name}}",
+    "meta_desc": "Feedback - {{business_name}}",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 95,
+    "category": "air_duct_cleaning",
+    "page_type": "home",
+    "service_id": null,
+    "meta_title": "Air Duct Cleaning {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Trusted|Certified|Licensed|Quality|Reliable|Local|Top-Rated} air duct cleaning {services|solutions|company|experts|contractors} in {{city}}. {Call|Contact|Phone} {{phone}} for {free|complimentary} {estimates|quotes|consultation}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 102,
+    "category": "air_duct_cleaning",
+    "page_type": "area",
+    "service_id": null,
+    "meta_title": "Air Duct Cleaning {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Local|Trusted|Professional|Expert|Reliable|Certified} air duct cleaning {services|company|experts|contractors} {serving|in} {{city}}. {Fast|Quick|Prompt|Same-day} {service|response}. {Call|Contact} {{phone}}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 103,
+    "category": "air_duct_cleaning",
+    "page_type": "terms",
+    "service_id": null,
+    "meta_title": "Terms of Use - {{business_name}}",
+    "meta_desc": "Terms of Use - {{business_name}}",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 104,
+    "category": "air_duct_cleaning",
+    "page_type": "privacy",
+    "service_id": null,
+    "meta_title": "Privacy Policy - {{business_name}}",
+    "meta_desc": "Privacy Policy - {{business_name}}",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 105,
+    "category": "air_duct_cleaning",
+    "page_type": "feedback",
+    "service_id": null,
+    "meta_title": "Feedback - {{business_name}}",
+    "meta_desc": "Feedback - {{business_name}}",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 106,
+    "category": "adu_builder",
+    "page_type": "home",
+    "service_id": null,
+    "meta_title": "ADU Builder {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Trusted|Certified|Licensed|Quality|Reliable|Local|Top-Rated} adu builder {services|solutions|company|experts|contractors} in {{city}}. {Call|Contact|Phone} {{phone}} for {free|complimentary} {estimates|quotes|consultation}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 113,
+    "category": "adu_builder",
+    "page_type": "area",
+    "service_id": null,
+    "meta_title": "ADU Builder {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Local|Trusted|Professional|Expert|Reliable|Certified} adu builder {services|company|experts|contractors} {serving|in} {{city}}. {Fast|Quick|Prompt|Same-day} {service|response}. {Call|Contact} {{phone}}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 114,
+    "category": "adu_builder",
+    "page_type": "terms",
+    "service_id": null,
+    "meta_title": "Terms of Use - {{business_name}}",
+    "meta_desc": "Terms of Use - {{business_name}}",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 115,
+    "category": "adu_builder",
+    "page_type": "privacy",
+    "service_id": null,
+    "meta_title": "Privacy Policy - {{business_name}}",
+    "meta_desc": "Privacy Policy - {{business_name}}",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 116,
+    "category": "adu_builder",
+    "page_type": "feedback",
+    "service_id": null,
+    "meta_title": "Feedback - {{business_name}}",
+    "meta_desc": "Feedback - {{business_name}}",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 117,
+    "category": "pool_contractor",
+    "page_type": "home",
+    "service_id": null,
+    "meta_title": "Pool Contractor {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Trusted|Certified|Licensed|Quality|Reliable|Local|Top-Rated} pool contractor {services|solutions|company|experts|contractors} in {{city}}. {Call|Contact|Phone} {{phone}} for {free|complimentary} {estimates|quotes|consultation}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 89,
+    "category": "bathroom_remodel",
+    "page_type": "service",
+    "service_id": "bathtub-install",
+    "meta_title": "Bathtub Install {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} bathtub install {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 124,
+    "category": "pool_contractor",
+    "page_type": "area",
+    "service_id": null,
+    "meta_title": "Pool Contractor {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Local|Trusted|Professional|Expert|Reliable|Certified} pool contractor {services|company|experts|contractors} {serving|in} {{city}}. {Fast|Quick|Prompt|Same-day} {service|response}. {Call|Contact} {{phone}}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 125,
+    "category": "pool_contractor",
+    "page_type": "terms",
+    "service_id": null,
+    "meta_title": "Terms of Use - {{business_name}}",
+    "meta_desc": "Terms of Use - {{business_name}}",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 126,
+    "category": "pool_contractor",
+    "page_type": "privacy",
+    "service_id": null,
+    "meta_title": "Privacy Policy - {{business_name}}",
+    "meta_desc": "Privacy Policy - {{business_name}}",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 127,
+    "category": "pool_contractor",
+    "page_type": "feedback",
+    "service_id": null,
+    "meta_title": "Feedback - {{business_name}}",
+    "meta_desc": "Feedback - {{business_name}}",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 128,
+    "category": "garage_door",
+    "page_type": "home",
+    "service_id": null,
+    "meta_title": "Garage Door {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Trusted|Certified|Licensed|Quality|Reliable|Local|Top-Rated} garage door {services|solutions|company|experts|contractors} in {{city}}. {Call|Contact|Phone} {{phone}} for {free|complimentary} {estimates|quotes|consultation}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 135,
+    "category": "garage_door",
+    "page_type": "area",
+    "service_id": null,
+    "meta_title": "Garage Door {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Local|Trusted|Professional|Expert|Reliable|Certified} garage door {services|company|experts|contractors} {serving|in} {{city}}. {Fast|Quick|Prompt|Same-day} {service|response}. {Call|Contact} {{phone}}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 136,
+    "category": "garage_door",
+    "page_type": "terms",
+    "service_id": null,
+    "meta_title": "Terms of Use - {{business_name}}",
+    "meta_desc": "Terms of Use - {{business_name}}",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 137,
+    "category": "garage_door",
+    "page_type": "privacy",
+    "service_id": null,
+    "meta_title": "Privacy Policy - {{business_name}}",
+    "meta_desc": "Privacy Policy - {{business_name}}",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 138,
+    "category": "garage_door",
+    "page_type": "feedback",
+    "service_id": null,
+    "meta_title": "Feedback - {{business_name}}",
+    "meta_desc": "Feedback - {{business_name}}",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 139,
+    "category": "locksmith",
+    "page_type": "home",
+    "service_id": null,
+    "meta_title": "Locksmith {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Trusted|Certified|Licensed|Quality|Reliable|Local|Top-Rated} locksmith {services|solutions|company|experts|contractors} in {{city}}. {Call|Contact|Phone} {{phone}} for {free|complimentary} {estimates|quotes|consultation}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 122,
+    "category": "pool_contractor",
+    "page_type": "service",
+    "service_id": "hot-tub",
+    "meta_title": "Hot Tub {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} hot tub {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 146,
+    "category": "locksmith",
+    "page_type": "area",
+    "service_id": null,
+    "meta_title": "Locksmith {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Local|Trusted|Professional|Expert|Reliable|Certified} locksmith {services|company|experts|contractors} {serving|in} {{city}}. {Fast|Quick|Prompt|Same-day} {service|response}. {Call|Contact} {{phone}}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 147,
+    "category": "locksmith",
+    "page_type": "terms",
+    "service_id": null,
+    "meta_title": "Terms of Use - {{business_name}}",
+    "meta_desc": "Terms of Use - {{business_name}}",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 148,
+    "category": "locksmith",
+    "page_type": "privacy",
+    "service_id": null,
+    "meta_title": "Privacy Policy - {{business_name}}",
+    "meta_desc": "Privacy Policy - {{business_name}}",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 149,
+    "category": "locksmith",
+    "page_type": "feedback",
+    "service_id": null,
+    "meta_title": "Feedback - {{business_name}}",
+    "meta_desc": "Feedback - {{business_name}}",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 150,
+    "category": "plumbing",
+    "page_type": "home",
+    "service_id": null,
+    "meta_title": "Plumbing {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Trusted|Certified|Licensed|Quality|Reliable|Local|Top-Rated} plumbing {services|solutions|company|experts|contractors} in {{city}}. {Call|Contact|Phone} {{phone}} for {free|complimentary} {estimates|quotes|consultation}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 157,
+    "category": "plumbing",
+    "page_type": "area",
+    "service_id": null,
+    "meta_title": "Plumbing {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Local|Trusted|Professional|Expert|Reliable|Certified} plumbing {services|company|experts|contractors} {serving|in} {{city}}. {Fast|Quick|Prompt|Same-day} {service|response}. {Call|Contact} {{phone}}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 158,
+    "category": "plumbing",
+    "page_type": "terms",
+    "service_id": null,
+    "meta_title": "Terms of Use - {{business_name}}",
+    "meta_desc": "Terms of Use - {{business_name}}",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 159,
+    "category": "plumbing",
+    "page_type": "privacy",
+    "service_id": null,
+    "meta_title": "Privacy Policy - {{business_name}}",
+    "meta_desc": "Privacy Policy - {{business_name}}",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 160,
+    "category": "plumbing",
+    "page_type": "feedback",
+    "service_id": null,
+    "meta_title": "Feedback - {{business_name}}",
+    "meta_desc": "Feedback - {{business_name}}",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 161,
+    "category": "pest_control",
+    "page_type": "home",
+    "service_id": null,
+    "meta_title": "Pest Control {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Trusted|Certified|Licensed|Quality|Reliable|Local|Top-Rated} pest control {services|solutions|company|experts|contractors} in {{city}}. {Call|Contact|Phone} {{phone}} for {free|complimentary} {estimates|quotes|consultation}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 168,
+    "category": "pest_control",
+    "page_type": "area",
+    "service_id": null,
+    "meta_title": "Pest Control {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Local|Trusted|Professional|Expert|Reliable|Certified} pest control {services|company|experts|contractors} {serving|in} {{city}}. {Fast|Quick|Prompt|Same-day} {service|response}. {Call|Contact} {{phone}}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 169,
+    "category": "pest_control",
+    "page_type": "terms",
+    "service_id": null,
+    "meta_title": "Terms of Use - {{business_name}}",
+    "meta_desc": "Terms of Use - {{business_name}}",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 170,
+    "category": "pest_control",
+    "page_type": "privacy",
+    "service_id": null,
+    "meta_title": "Privacy Policy - {{business_name}}",
+    "meta_desc": "Privacy Policy - {{business_name}}",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 171,
+    "category": "pest_control",
+    "page_type": "feedback",
+    "service_id": null,
+    "meta_title": "Feedback - {{business_name}}",
+    "meta_desc": "Feedback - {{business_name}}",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 172,
+    "category": "air_conditioning",
+    "page_type": "home",
+    "service_id": null,
+    "meta_title": "Air Conditioning {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Trusted|Certified|Licensed|Quality|Reliable|Local|Top-Rated} air conditioning {services|solutions|company|experts|contractors} in {{city}}. {Call|Contact|Phone} {{phone}} for {free|complimentary} {estimates|quotes|consultation}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 179,
+    "category": "air_conditioning",
+    "page_type": "area",
+    "service_id": null,
+    "meta_title": "Air Conditioning {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Local|Trusted|Professional|Expert|Reliable|Certified} air conditioning {services|company|experts|contractors} {serving|in} {{city}}. {Fast|Quick|Prompt|Same-day} {service|response}. {Call|Contact} {{phone}}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 180,
+    "category": "air_conditioning",
+    "page_type": "terms",
+    "service_id": null,
+    "meta_title": "Terms of Use - {{business_name}}",
+    "meta_desc": "Terms of Use - {{business_name}}",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 181,
+    "category": "air_conditioning",
+    "page_type": "privacy",
+    "service_id": null,
+    "meta_title": "Privacy Policy - {{business_name}}",
+    "meta_desc": "Privacy Policy - {{business_name}}",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 182,
+    "category": "air_conditioning",
+    "page_type": "feedback",
+    "service_id": null,
+    "meta_title": "Feedback - {{business_name}}",
+    "meta_desc": "Feedback - {{business_name}}",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 183,
+    "category": "heating",
+    "page_type": "home",
+    "service_id": null,
+    "meta_title": "Heating {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Trusted|Certified|Licensed|Quality|Reliable|Local|Top-Rated} heating {services|solutions|company|experts|contractors} in {{city}}. {Call|Contact|Phone} {{phone}} for {free|complimentary} {estimates|quotes|consultation}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 190,
+    "category": "heating",
+    "page_type": "area",
+    "service_id": null,
+    "meta_title": "Heating {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Local|Trusted|Professional|Expert|Reliable|Certified} heating {services|company|experts|contractors} {serving|in} {{city}}. {Fast|Quick|Prompt|Same-day} {service|response}. {Call|Contact} {{phone}}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 191,
+    "category": "heating",
+    "page_type": "terms",
+    "service_id": null,
+    "meta_title": "Terms of Use - {{business_name}}",
+    "meta_desc": "Terms of Use - {{business_name}}",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 192,
+    "category": "heating",
+    "page_type": "privacy",
+    "service_id": null,
+    "meta_title": "Privacy Policy - {{business_name}}",
+    "meta_desc": "Privacy Policy - {{business_name}}",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 193,
+    "category": "heating",
+    "page_type": "feedback",
+    "service_id": null,
+    "meta_title": "Feedback - {{business_name}}",
+    "meta_desc": "Feedback - {{business_name}}",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 19,
+    "category": "water_damage",
+    "page_type": "service",
+    "service_id": "water-damage-restoration",
+    "meta_title": "Water Restoration {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} water restoration {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 20,
+    "category": "water_damage",
+    "page_type": "service",
+    "service_id": "fire-smoke-damage",
+    "meta_title": "Fire Damage {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} fire damage {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 21,
+    "category": "water_damage",
+    "page_type": "service",
+    "service_id": "mold-remediation",
+    "meta_title": "Mold Remediation {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} mold remediation {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 22,
+    "category": "water_damage",
+    "page_type": "service",
+    "service_id": "biohazard-cleanup",
+    "meta_title": "Biohazard Cleanup {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} biohazard cleanup {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 23,
+    "category": "water_damage",
+    "page_type": "service",
+    "service_id": "burst-pipe-repair",
+    "meta_title": "Burst Pipe {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} burst pipe {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 24,
+    "category": "water_damage",
+    "page_type": "service",
+    "service_id": "sewage-cleanup",
+    "meta_title": "Sewage Cleanup {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} sewage cleanup {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 30,
+    "category": "mold_remediation",
+    "page_type": "service",
+    "service_id": "mold-inspection",
+    "meta_title": "Mold Inspection {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} mold inspection {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 31,
+    "category": "mold_remediation",
+    "page_type": "service",
+    "service_id": "mold-removal",
+    "meta_title": "Mold Removal {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} mold removal {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 32,
+    "category": "mold_remediation",
+    "page_type": "service",
+    "service_id": "black-mold",
+    "meta_title": "Black Mold {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} black mold {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 33,
+    "category": "mold_remediation",
+    "page_type": "service",
+    "service_id": "mold-repair",
+    "meta_title": "Mold Repair {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} mold repair {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 34,
+    "category": "mold_remediation",
+    "page_type": "service",
+    "service_id": "air-testing",
+    "meta_title": "Air Testing {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} air testing {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 35,
+    "category": "mold_remediation",
+    "page_type": "service",
+    "service_id": "mold-prevention",
+    "meta_title": "Mold Prevention {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} mold prevention {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 41,
+    "category": "roofing",
+    "page_type": "service",
+    "service_id": "roof-installation",
+    "meta_title": "Roof Installation {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} roof installation {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 42,
+    "category": "roofing",
+    "page_type": "service",
+    "service_id": "roof-repair",
+    "meta_title": "Roof Repair {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} roof repair {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 43,
+    "category": "roofing",
+    "page_type": "service",
+    "service_id": "shingle-roofing",
+    "meta_title": "Shingle Roofing {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} shingle roofing {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 44,
+    "category": "roofing",
+    "page_type": "service",
+    "service_id": "metal-roofing",
+    "meta_title": "Metal Roofing {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} metal roofing {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 45,
+    "category": "roofing",
+    "page_type": "service",
+    "service_id": "commercial-roofing",
+    "meta_title": "Commercial Roofing {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} commercial roofing {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 46,
+    "category": "roofing",
+    "page_type": "service",
+    "service_id": "leak-repair",
+    "meta_title": "Leak Repair {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} leak repair {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 52,
+    "category": "chimney",
+    "page_type": "service",
+    "service_id": "chimney-inspection",
+    "meta_title": "Chimney Inspection {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} chimney inspection {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 53,
+    "category": "chimney",
+    "page_type": "service",
+    "service_id": "chimney-sweep",
+    "meta_title": "Chimney Sweep {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} chimney sweep {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 54,
+    "category": "chimney",
+    "page_type": "service",
+    "service_id": "chimney-repair",
+    "meta_title": "Chimney Repair {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} chimney repair {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 55,
+    "category": "chimney",
+    "page_type": "service",
+    "service_id": "chimney-liner",
+    "meta_title": "Chimney Liner {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} chimney liner {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 56,
+    "category": "chimney",
+    "page_type": "service",
+    "service_id": "chimney-cap",
+    "meta_title": "Chimney Cap {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} chimney cap {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 57,
+    "category": "chimney",
+    "page_type": "service",
+    "service_id": "chimney-rebuild",
+    "meta_title": "Chimney Rebuild {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} chimney rebuild {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 63,
+    "category": "kitchen_remodel",
+    "page_type": "service",
+    "service_id": "kitchen-remodel",
+    "meta_title": "Kitchen Remodel {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} kitchen remodel {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 64,
+    "category": "kitchen_remodel",
+    "page_type": "service",
+    "service_id": "kitchen-design",
+    "meta_title": "Kitchen Design {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} kitchen design {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 65,
+    "category": "kitchen_remodel",
+    "page_type": "service",
+    "service_id": "cabinet-install",
+    "meta_title": "Cabinet Install {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} cabinet install {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 66,
+    "category": "kitchen_remodel",
+    "page_type": "service",
+    "service_id": "countertop-install",
+    "meta_title": "Countertop Install {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} countertop install {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 67,
+    "category": "kitchen_remodel",
+    "page_type": "service",
+    "service_id": "kitchen-flooring",
+    "meta_title": "Kitchen Flooring {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} kitchen flooring {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 68,
+    "category": "kitchen_remodel",
+    "page_type": "service",
+    "service_id": "backsplash",
+    "meta_title": "Backsplash {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} backsplash {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 74,
+    "category": "carpet_cleaning",
+    "page_type": "service",
+    "service_id": "residential-cleaning",
+    "meta_title": "Residential Cleaning {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} residential cleaning {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 75,
+    "category": "carpet_cleaning",
+    "page_type": "service",
+    "service_id": "commercial-cleaning",
+    "meta_title": "Commercial Cleaning {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} commercial cleaning {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 76,
+    "category": "carpet_cleaning",
+    "page_type": "service",
+    "service_id": "steam-cleaning",
+    "meta_title": "Steam Cleaning {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} steam cleaning {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 77,
+    "category": "carpet_cleaning",
+    "page_type": "service",
+    "service_id": "stain-removal",
+    "meta_title": "Stain Removal {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} stain removal {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 78,
+    "category": "carpet_cleaning",
+    "page_type": "service",
+    "service_id": "pet-odor",
+    "meta_title": "Pet Odor {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} pet odor {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 79,
+    "category": "carpet_cleaning",
+    "page_type": "service",
+    "service_id": "upholstery",
+    "meta_title": "Upholstery {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} upholstery {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 85,
+    "category": "bathroom_remodel",
+    "page_type": "service",
+    "service_id": "bathroom-remodel",
+    "meta_title": "Bathroom Remodel {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} bathroom remodel {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 86,
+    "category": "bathroom_remodel",
+    "page_type": "service",
+    "service_id": "bathroom-design",
+    "meta_title": "Bathroom Design {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} bathroom design {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 87,
+    "category": "bathroom_remodel",
+    "page_type": "service",
+    "service_id": "vanity-install",
+    "meta_title": "Vanity Install {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} vanity install {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 88,
+    "category": "bathroom_remodel",
+    "page_type": "service",
+    "service_id": "shower-install",
+    "meta_title": "Shower Install {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} shower install {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 90,
+    "category": "bathroom_remodel",
+    "page_type": "service",
+    "service_id": "tile-install",
+    "meta_title": "Tile Install {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} tile install {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 96,
+    "category": "air_duct_cleaning",
+    "page_type": "service",
+    "service_id": "duct-cleaning",
+    "meta_title": "Duct Cleaning {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} duct cleaning {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 97,
+    "category": "air_duct_cleaning",
+    "page_type": "service",
+    "service_id": "vent-cleaning",
+    "meta_title": "Vent Cleaning {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} vent cleaning {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 98,
+    "category": "air_duct_cleaning",
+    "page_type": "service",
+    "service_id": "dryer-vent",
+    "meta_title": "Dryer Vent {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} dryer vent {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 99,
+    "category": "air_duct_cleaning",
+    "page_type": "service",
+    "service_id": "hvac-cleaning",
+    "meta_title": "HVAC Cleaning {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} hvac cleaning {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 100,
+    "category": "air_duct_cleaning",
+    "page_type": "service",
+    "service_id": "duct-sanitizing",
+    "meta_title": "Duct Sanitizing {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} duct sanitizing {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 101,
+    "category": "air_duct_cleaning",
+    "page_type": "service",
+    "service_id": "air-quality",
+    "meta_title": "Air Quality {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} air quality {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 107,
+    "category": "adu_builder",
+    "page_type": "service",
+    "service_id": "detached-adu",
+    "meta_title": "Detached ADU {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} detached adu {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 108,
+    "category": "adu_builder",
+    "page_type": "service",
+    "service_id": "garage-conversion",
+    "meta_title": "Garage Conversion {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} garage conversion {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 109,
+    "category": "adu_builder",
+    "page_type": "service",
+    "service_id": "attached-adu",
+    "meta_title": "Attached ADU {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} attached adu {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 110,
+    "category": "adu_builder",
+    "page_type": "service",
+    "service_id": "junior-adu",
+    "meta_title": "Junior ADU {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} junior adu {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 111,
+    "category": "adu_builder",
+    "page_type": "service",
+    "service_id": "adu-design",
+    "meta_title": "ADU Design {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} adu design {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 112,
+    "category": "adu_builder",
+    "page_type": "service",
+    "service_id": "home-additions",
+    "meta_title": "Home Additions {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} home additions {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:28.854396+00:00",
+    "updated_at": "2026-01-15T00:34:28.854396+00:00"
+  },
+  {
+    "id": 118,
+    "category": "pool_contractor",
+    "page_type": "service",
+    "service_id": "pool-construction",
+    "meta_title": "Pool Construction {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} pool construction {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 119,
+    "category": "pool_contractor",
+    "page_type": "service",
+    "service_id": "pool-remodeling",
+    "meta_title": "Pool Remodeling {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} pool remodeling {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 120,
+    "category": "pool_contractor",
+    "page_type": "service",
+    "service_id": "pool-replaster",
+    "meta_title": "Pool Replaster {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} pool replaster {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 121,
+    "category": "pool_contractor",
+    "page_type": "service",
+    "service_id": "pool-landscaping",
+    "meta_title": "Pool Landscaping {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} pool landscaping {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 123,
+    "category": "pool_contractor",
+    "page_type": "service",
+    "service_id": "pool-hardscape",
+    "meta_title": "Pool Hardscape {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} pool hardscape {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 129,
+    "category": "garage_door",
+    "page_type": "service",
+    "service_id": "garage-door-repair",
+    "meta_title": "Door Repair {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} door repair {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 130,
+    "category": "garage_door",
+    "page_type": "service",
+    "service_id": "garage-door-installation",
+    "meta_title": "Door Installation {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} door installation {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 131,
+    "category": "garage_door",
+    "page_type": "service",
+    "service_id": "garage-door-spring-repair",
+    "meta_title": "Spring Repair {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} spring repair {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 132,
+    "category": "garage_door",
+    "page_type": "service",
+    "service_id": "garage-door-opener-repair",
+    "meta_title": "Opener Repair {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} opener repair {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 133,
+    "category": "garage_door",
+    "page_type": "service",
+    "service_id": "emergency-garage-door-repair",
+    "meta_title": "Emergency Repair {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} emergency repair {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 134,
+    "category": "garage_door",
+    "page_type": "service",
+    "service_id": "garage-door-maintenance",
+    "meta_title": "Door Maintenance {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} door maintenance {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 140,
+    "category": "locksmith",
+    "page_type": "service",
+    "service_id": "emergency-locksmith",
+    "meta_title": "Emergency Locksmith {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} emergency locksmith {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 141,
+    "category": "locksmith",
+    "page_type": "service",
+    "service_id": "residential-locksmith",
+    "meta_title": "Residential Locksmith {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} residential locksmith {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 142,
+    "category": "locksmith",
+    "page_type": "service",
+    "service_id": "commercial-locksmith",
+    "meta_title": "Commercial Locksmith {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} commercial locksmith {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 143,
+    "category": "locksmith",
+    "page_type": "service",
+    "service_id": "lock-replacement",
+    "meta_title": "Lock Replacement {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} lock replacement {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 144,
+    "category": "locksmith",
+    "page_type": "service",
+    "service_id": "upvc-locks",
+    "meta_title": "UPVC Locks {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} upvc locks {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 145,
+    "category": "locksmith",
+    "page_type": "service",
+    "service_id": "auto-locksmith",
+    "meta_title": "Auto Locksmith {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} auto locksmith {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 151,
+    "category": "plumbing",
+    "page_type": "service",
+    "service_id": "general-plumbing",
+    "meta_title": "General Plumbing {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} general plumbing {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 152,
+    "category": "plumbing",
+    "page_type": "service",
+    "service_id": "drain-cleaning",
+    "meta_title": "Drain Cleaning {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} drain cleaning {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 153,
+    "category": "plumbing",
+    "page_type": "service",
+    "service_id": "water-heater",
+    "meta_title": "Water Heater {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} water heater {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 154,
+    "category": "plumbing",
+    "page_type": "service",
+    "service_id": "emergency-plumbing",
+    "meta_title": "Emergency Plumbing {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} emergency plumbing {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 155,
+    "category": "plumbing",
+    "page_type": "service",
+    "service_id": "leak-detection",
+    "meta_title": "Leak Detection {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} leak detection {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 156,
+    "category": "plumbing",
+    "page_type": "service",
+    "service_id": "pipe-repair",
+    "meta_title": "Pipe Repair {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} pipe repair {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 162,
+    "category": "pest_control",
+    "page_type": "service",
+    "service_id": "general-pest",
+    "meta_title": "General Pest {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} general pest {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 163,
+    "category": "pest_control",
+    "page_type": "service",
+    "service_id": "rodent-control",
+    "meta_title": "Rodent Control {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} rodent control {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 164,
+    "category": "pest_control",
+    "page_type": "service",
+    "service_id": "termite-control",
+    "meta_title": "Termite Control {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} termite control {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 165,
+    "category": "pest_control",
+    "page_type": "service",
+    "service_id": "bed-bug",
+    "meta_title": "Bed Bug {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} bed bug {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 166,
+    "category": "pest_control",
+    "page_type": "service",
+    "service_id": "roach-control",
+    "meta_title": "Roach Control {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} roach control {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 167,
+    "category": "pest_control",
+    "page_type": "service",
+    "service_id": "flea-tick",
+    "meta_title": "Flea Tick {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} flea tick {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 173,
+    "category": "air_conditioning",
+    "page_type": "service",
+    "service_id": "ac-installation",
+    "meta_title": "AC Installation {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} ac installation {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 174,
+    "category": "air_conditioning",
+    "page_type": "service",
+    "service_id": "ac-repair",
+    "meta_title": "AC Repair {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} ac repair {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 175,
+    "category": "air_conditioning",
+    "page_type": "service",
+    "service_id": "ac-maintenance",
+    "meta_title": "AC Maintenance {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} ac maintenance {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 176,
+    "category": "air_conditioning",
+    "page_type": "service",
+    "service_id": "emergency-ac",
+    "meta_title": "Emergency AC {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} emergency ac {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 177,
+    "category": "air_conditioning",
+    "page_type": "service",
+    "service_id": "mini-split",
+    "meta_title": "Mini Split {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} mini split {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 178,
+    "category": "air_conditioning",
+    "page_type": "service",
+    "service_id": "heat-pump-cool",
+    "meta_title": "Heat Pump Cool {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} heat pump cool {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 184,
+    "category": "heating",
+    "page_type": "service",
+    "service_id": "furnace-install",
+    "meta_title": "Furnace Install {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} furnace install {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 185,
+    "category": "heating",
+    "page_type": "service",
+    "service_id": "furnace-repair",
+    "meta_title": "Furnace Repair {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} furnace repair {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 186,
+    "category": "heating",
+    "page_type": "service",
+    "service_id": "boiler-install",
+    "meta_title": "Boiler Install {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} boiler install {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 187,
+    "category": "heating",
+    "page_type": "service",
+    "service_id": "boiler-repair",
+    "meta_title": "Boiler Repair {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} boiler repair {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 188,
+    "category": "heating",
+    "page_type": "service",
+    "service_id": "heat-pump-install",
+    "meta_title": "Heat Pump Install {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} heat pump install {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  },
+  {
+    "id": 189,
+    "category": "heating",
+    "page_type": "service",
+    "service_id": "emergency-heating",
+    "meta_title": "Emergency Heating {{city}} - {{phone}} - {{business_name}}",
+    "meta_desc": "{Professional|Expert|Quality|Trusted|Reliable|Certified} emergency heating {services|solutions} in {{city}}. {Call|Contact} {{phone}} {today|now} for {service|help|assistance}.",
+    "created_at": "2026-01-15T00:34:29.069542+00:00",
+    "updated_at": "2026-01-15T00:34:29.069542+00:00"
+  }
+]

@@ -1,0 +1,146 @@
+[
+  {
+    "id": 1,
+    "category": "water_damage",
+    "headline_spintax": "{Professional|Licensed|Certified|Insured|Experienced|Trusted|Reliable|Reputable|Established|Local|Expert|Qualified|Verified|Dependable|Well-Reviewed|Top-Rated|Highly-Rated|Customer-Approved|Industry-Recognised|Proven|Respected|Recommended|Accredited|Vetted|Authorised|Fully-Qualified|Background-Checked|Security-Focused|Results-Driven|Service-Oriented|Best Rated|Your Local|Your Professional|Your Expert|Most Trusted|Most Experienced|Your Certified|Your Licensed|Most Professional|Licensed & Bonded|Licensed & Verified|Your Qualified|Most Reliable|Your Trusted|Your Reliable|Proficient|Precise|Your Precise|Your Reputable|Most Reputable|Your Most Reputable|Most Dependable} {Water Damage|Water Damage Restoration|Flood Damage|Water Restoration|Emergency Water Damage} {Services|Restoration|Company|Experts|Specialists|Contractors|Pros|Team|Solutions} in {{city}}",
+    "subheadline_spintax": "{Fast|Rapid|Quick|Immediate|24/7|Emergency|Urgent|Same-Day|Prompt|Swift} {water damage|flood damage|water|moisture|storm damage} {restoration|cleanup|repair|removal|extraction|mitigation} {services|solutions|help|assistance|response} for {homes|residences|properties|homeowners|businesses} {throughout|across|in|serving} {{city}}. {Call|Contact|Phone|Reach} {{phone}} {now|today|for help|for service|for assistance}.",
+    "chat_button_spintax": "{Contact Us|Email Our Team|Get In Touch}",
+    "created_at": "2026-01-15T00:30:50.320362+00:00",
+    "updated_at": "2026-01-15T00:30:50.320362+00:00"
+  },
+  {
+    "id": 2,
+    "category": "mold_remediation",
+    "headline_spintax": "{Professional|Licensed|Certified|Insured|Experienced|Trusted|Reliable|Reputable|Established|Local|Expert|Qualified|Verified|Dependable|Well-Reviewed|Top-Rated|Highly-Rated|Customer-Approved|Industry-Recognised|Proven|Respected|Recommended|Accredited|Vetted|Authorised|Fully-Qualified|Background-Checked|Security-Focused|Results-Driven|Service-Oriented|Best Rated|Your Local|Your Professional|Your Expert|Most Trusted|Most Experienced|Your Certified|Your Licensed|Most Professional|Licensed & Bonded|Licensed & Verified|Your Qualified|Most Reliable|Your Trusted|Your Reliable|Proficient|Precise|Your Precise|Your Reputable|Most Reputable|Your Most Reputable|Most Dependable} {Mold Remediation|Mold Removal|Mold Treatment|Mold Cleanup|Mold Restoration} {Services|Company|Experts|Specialists|Contractors|Team|Pros|Solutions} in {{city}}",
+    "subheadline_spintax": "{Certified|Licensed|Professional|Expert|Trained|Qualified|Experienced} {mold remediation|mold removal|mold treatment|mold cleanup|mold inspection} {services|solutions|help|team|experts} for {homes|residences|properties|homeowners|businesses} {throughout|across|in|serving} {{city}}. {Free|Complimentary|No-cost|No-obligation} {inspection|assessment|quote|estimate}. {Call|Contact|Phone} {{phone}}.",
+    "chat_button_spintax": "{Contact Us|Email Our Team|Get In Touch}",
+    "created_at": "2026-01-15T00:30:50.320362+00:00",
+    "updated_at": "2026-01-15T00:30:50.320362+00:00"
+  },
+  {
+    "id": 3,
+    "category": "roofing",
+    "headline_spintax": "{Professional|Licensed|Certified|Insured|Experienced|Trusted|Reliable|Reputable|Established|Local|Expert|Qualified|Verified|Dependable|Well-Reviewed|Top-Rated|Highly-Rated|Customer-Approved|Industry-Recognised|Proven|Respected|Recommended|Accredited|Vetted|Authorised|Fully-Qualified|Background-Checked|Security-Focused|Results-Driven|Service-Oriented|Best Rated|Your Local|Your Professional|Your Expert|Most Trusted|Most Experienced|Your Certified|Your Licensed|Most Professional|Licensed & Bonded|Licensed & Verified|Your Qualified|Most Reliable|Your Trusted|Your Reliable|Proficient|Precise|Your Precise|Your Reputable|Most Reputable|Your Most Reputable|Most Dependable} {Roofing|Roof Repair|Roof Installation|Roofing Services|Roof Replacement} {Services|Company|Contractors|Experts|Specialists|Pros|Team} in {{city}}",
+    "subheadline_spintax": "{Quality|Professional|Expert|Trusted|Reliable|Experienced|Skilled} {roofing|roof repair|roof installation|roof replacement|roofing services} for {homes|residences|properties|homeowners|businesses|commercial properties} {throughout|across|in|serving} {{city}}. {Free|Complimentary|No-obligation} {estimates|quotes|inspections|consultations}. {Call|Contact|Phone} {{phone}}.",
+    "chat_button_spintax": "{Contact Us|Email Our Team|Get In Touch}",
+    "created_at": "2026-01-15T00:30:50.320362+00:00",
+    "updated_at": "2026-01-15T00:30:50.320362+00:00"
+  },
+  {
+    "id": 4,
+    "category": "chimney",
+    "headline_spintax": "{Professional|Licensed|Certified|Insured|Experienced|Trusted|Reliable|Reputable|Established|Local|Expert|Qualified|Verified|Dependable|Well-Reviewed|Top-Rated|Highly-Rated|Customer-Approved|Industry-Recognised|Proven|Respected|Recommended|Accredited|Vetted|Authorised|Fully-Qualified|Background-Checked|Security-Focused|Results-Driven|Service-Oriented|Best Rated|Your Local|Your Professional|Your Expert|Most Trusted|Most Experienced|Your Certified|Your Licensed|Most Professional|Licensed & Bonded|Licensed & Verified|Your Qualified|Most Reliable|Your Trusted|Your Reliable|Proficient|Precise|Your Precise|Your Reputable|Most Reputable|Your Most Reputable|Most Dependable} {Chimney|Chimney Sweep|Chimney Repair|Chimney Services|Chimney Cleaning} {Services|Company|Experts|Specialists|Contractors|Pros|Team} in {{city}}",
+    "subheadline_spintax": "{Professional|Expert|Certified|Trusted|Reliable|Experienced|Quality} {chimney|chimney sweep|chimney repair|chimney cleaning|chimney inspection} {services|solutions|work|care} for {homes|residences|properties|homeowners} {throughout|across|in|serving} {{city}}. {Call|Contact|Phone} {{phone}} {today|now|for service}.",
+    "chat_button_spintax": "{Contact Us|Email Our Team|Get In Touch}",
+    "created_at": "2026-01-15T00:30:50.320362+00:00",
+    "updated_at": "2026-01-15T00:30:50.320362+00:00"
+  },
+  {
+    "id": 5,
+    "category": "kitchen_remodel",
+    "headline_spintax": "{Professional|Licensed|Certified|Insured|Experienced|Trusted|Reliable|Reputable|Established|Local|Expert|Qualified|Verified|Dependable|Well-Reviewed|Top-Rated|Highly-Rated|Customer-Approved|Industry-Recognised|Proven|Respected|Recommended|Accredited|Vetted|Authorised|Fully-Qualified|Background-Checked|Security-Focused|Results-Driven|Service-Oriented|Best Rated|Your Local|Your Professional|Your Expert|Most Trusted|Most Experienced|Your Certified|Your Licensed|Most Professional|Licensed & Bonded|Licensed & Verified|Your Qualified|Most Reliable|Your Trusted|Your Reliable|Proficient|Precise|Your Precise|Your Reputable|Most Reputable|Your Most Reputable|Most Dependable} {Kitchen Remodel|Kitchen Renovation|Kitchen Remodeling|Kitchen Design|Kitchen Contractor} {Services|Company|Experts|Specialists|Contractors|Pros|Team} in {{city}}",
+    "subheadline_spintax": "{Transform|Upgrade|Renovate|Remodel|Redesign|Update|Refresh} your {kitchen|dream kitchen|space|home} with {professional|expert|quality|custom|beautiful|stunning} {kitchen remodeling|kitchen renovation|remodeling|design} {services|solutions|work} in {{city}}. {Free|Complimentary|No-obligation} {consultation|estimate|quote|design}. {Call|Contact|Phone} {{phone}}.",
+    "chat_button_spintax": "{Contact Us|Email Our Team|Get In Touch}",
+    "created_at": "2026-01-15T00:30:50.320362+00:00",
+    "updated_at": "2026-01-15T00:30:50.320362+00:00"
+  },
+  {
+    "id": 6,
+    "category": "carpet_cleaning",
+    "headline_spintax": "{Professional|Licensed|Certified|Insured|Experienced|Trusted|Reliable|Reputable|Established|Local|Expert|Qualified|Verified|Dependable|Well-Reviewed|Top-Rated|Highly-Rated|Customer-Approved|Industry-Recognised|Proven|Respected|Recommended|Accredited|Vetted|Authorised|Fully-Qualified|Background-Checked|Security-Focused|Results-Driven|Service-Oriented|Best Rated|Your Local|Your Professional|Your Expert|Most Trusted|Most Experienced|Your Certified|Your Licensed|Most Professional|Licensed & Bonded|Licensed & Verified|Your Qualified|Most Reliable|Your Trusted|Your Reliable|Proficient|Precise|Your Precise|Your Reputable|Most Reputable|Your Most Reputable|Most Dependable} {Carpet Cleaning|Carpet Care|Steam Cleaning|Carpet Cleaners|Carpet Cleaning Services} {Services|Company|Experts|Specialists|Pros|Team} in {{city}}",
+    "subheadline_spintax": "{Deep|Professional|Expert|Thorough|Quality|Premium} {carpet cleaning|steam cleaning|carpet care|carpet treatment} {services|solutions|results} for {homes|residences|properties|homeowners|businesses} {throughout|across|in|serving} {{city}}. {Eco-friendly|Safe|Non-toxic|Green|Family-safe} {products|solutions|cleaning}. {Call|Contact|Phone} {{phone}}.",
+    "chat_button_spintax": "{Contact Us|Email Our Team|Get In Touch}",
+    "created_at": "2026-01-15T00:30:50.320362+00:00",
+    "updated_at": "2026-01-15T00:30:50.320362+00:00"
+  },
+  {
+    "id": 7,
+    "category": "bathroom_remodel",
+    "headline_spintax": "{Professional|Licensed|Certified|Insured|Experienced|Trusted|Reliable|Reputable|Established|Local|Expert|Qualified|Verified|Dependable|Well-Reviewed|Top-Rated|Highly-Rated|Customer-Approved|Industry-Recognised|Proven|Respected|Recommended|Accredited|Vetted|Authorised|Fully-Qualified|Background-Checked|Security-Focused|Results-Driven|Service-Oriented|Best Rated|Your Local|Your Professional|Your Expert|Most Trusted|Most Experienced|Your Certified|Your Licensed|Most Professional|Licensed & Bonded|Licensed & Verified|Your Qualified|Most Reliable|Your Trusted|Your Reliable|Proficient|Precise|Your Precise|Your Reputable|Most Reputable|Your Most Reputable|Most Dependable} {Bathroom Remodel|Bathroom Renovation|Bathroom Remodeling|Bath Remodel|Bathroom Contractor} {Services|Company|Experts|Specialists|Contractors|Pros|Team} in {{city}}",
+    "subheadline_spintax": "{Transform|Upgrade|Renovate|Remodel|Redesign|Update|Refresh} your {bathroom|bath|space|master bath} with {professional|expert|quality|custom|beautiful|stunning} {bathroom remodeling|bathroom renovation|remodeling|design} {services|solutions|work} in {{city}}. {Free|Complimentary|No-obligation} {consultation|estimate|quote}. {Call|Contact|Phone} {{phone}}.",
+    "chat_button_spintax": "{Contact Us|Email Our Team|Get In Touch}",
+    "created_at": "2026-01-15T00:30:50.320362+00:00",
+    "updated_at": "2026-01-15T00:30:50.320362+00:00"
+  },
+  {
+    "id": 8,
+    "category": "air_duct_cleaning",
+    "headline_spintax": "{Professional|Licensed|Certified|Insured|Experienced|Trusted|Reliable|Reputable|Established|Local|Expert|Qualified|Verified|Dependable|Well-Reviewed|Top-Rated|Highly-Rated|Customer-Approved|Industry-Recognised|Proven|Respected|Recommended|Accredited|Vetted|Authorised|Fully-Qualified|Background-Checked|Security-Focused|Results-Driven|Service-Oriented|Best Rated|Your Local|Your Professional|Your Expert|Most Trusted|Most Experienced|Your Certified|Your Licensed|Most Professional|Licensed & Bonded|Licensed & Verified|Your Qualified|Most Reliable|Your Trusted|Your Reliable|Proficient|Precise|Your Precise|Your Reputable|Most Reputable|Your Most Reputable|Most Dependable} {Air Duct Cleaning|Duct Cleaning|HVAC Cleaning|Vent Cleaning|Air Duct Services} {Services|Company|Experts|Specialists|Pros|Team} in {{city}}",
+    "subheadline_spintax": "{Professional|Expert|Thorough|Complete|Certified|Quality} {air duct|duct|HVAC|vent|dryer vent} {cleaning|services|care|maintenance} for {homes|residences|properties|homeowners|businesses} {throughout|across|in|serving} {{city}}. {Improve|Enhance|Better|Cleaner} {air quality|indoor air|breathing air}. {Call|Contact|Phone} {{phone}}.",
+    "chat_button_spintax": "{Contact Us|Email Our Team|Get In Touch}",
+    "created_at": "2026-01-15T00:30:50.320362+00:00",
+    "updated_at": "2026-01-15T00:30:50.320362+00:00"
+  },
+  {
+    "id": 9,
+    "category": "adu_builder",
+    "headline_spintax": "{Professional|Licensed|Certified|Insured|Experienced|Trusted|Reliable|Reputable|Established|Local|Expert|Qualified|Verified|Dependable|Well-Reviewed|Top-Rated|Highly-Rated|Customer-Approved|Industry-Recognised|Proven|Respected|Recommended|Accredited|Vetted|Authorised|Fully-Qualified|Background-Checked|Security-Focused|Results-Driven|Service-Oriented|Best Rated|Your Local|Your Professional|Your Expert|Most Trusted|Most Experienced|Your Certified|Your Licensed|Most Professional|Licensed & Bonded|Licensed & Verified|Your Qualified|Most Reliable|Your Trusted|Your Reliable|Proficient|Precise|Your Precise|Your Reputable|Most Reputable|Your Most Reputable|Most Dependable} {ADU Builder|ADU Construction|ADU Contractor|Accessory Dwelling Unit|ADU Building} {Services|Company|Experts|Specialists|Contractors|Pros|Team} in {{city}}",
+    "subheadline_spintax": "{Custom|Quality|Professional|Expert|Experienced|Trusted} {ADU|accessory dwelling unit|guest house|granny flat|in-law suite} {construction|building|design|development} {services|solutions} in {{city}}. {Maximize|Increase|Add|Boost} your {property value|home value|space|rental income}. {Call|Contact|Phone} {{phone}}.",
+    "chat_button_spintax": "{Contact Us|Email Our Team|Get In Touch}",
+    "created_at": "2026-01-15T00:30:50.320362+00:00",
+    "updated_at": "2026-01-15T00:30:50.320362+00:00"
+  },
+  {
+    "id": 10,
+    "category": "pool_contractor",
+    "headline_spintax": "{Professional|Licensed|Certified|Insured|Experienced|Trusted|Reliable|Reputable|Established|Local|Expert|Qualified|Verified|Dependable|Well-Reviewed|Top-Rated|Highly-Rated|Customer-Approved|Industry-Recognised|Proven|Respected|Recommended|Accredited|Vetted|Authorised|Fully-Qualified|Background-Checked|Security-Focused|Results-Driven|Service-Oriented|Best Rated|Your Local|Your Professional|Your Expert|Most Trusted|Most Experienced|Your Certified|Your Licensed|Most Professional|Licensed & Bonded|Licensed & Verified|Your Qualified|Most Reliable|Your Trusted|Your Reliable|Proficient|Precise|Your Precise|Your Reputable|Most Reputable|Your Most Reputable|Most Dependable} {Pool Contractor|Pool Builder|Pool Construction|Swimming Pool|Pool Services} {Services|Company|Experts|Specialists|Contractors|Pros|Team} in {{city}}",
+    "subheadline_spintax": "{Custom|Quality|Professional|Expert|Experienced|Luxury|Dream} {pool|swimming pool|backyard pool|inground pool} {construction|building|design|installation|remodeling} {services|solutions} in {{city}}. {Transform|Create|Build|Design} your {backyard|outdoor space|dream pool|oasis}. {Call|Contact|Phone} {{phone}}.",
+    "chat_button_spintax": "{Contact Us|Email Our Team|Get In Touch}",
+    "created_at": "2026-01-15T00:30:50.320362+00:00",
+    "updated_at": "2026-01-15T00:30:50.320362+00:00"
+  },
+  {
+    "id": 11,
+    "category": "garage_door",
+    "headline_spintax": "{Professional|Licensed|Certified|Insured|Experienced|Trusted|Reliable|Reputable|Established|Local|Expert|Qualified|Verified|Dependable|Well-Reviewed|Top-Rated|Highly-Rated|Customer-Approved|Industry-Recognised|Proven|Respected|Recommended|Accredited|Vetted|Authorised|Fully-Qualified|Background-Checked|Security-Focused|Results-Driven|Service-Oriented|Best Rated|Your Local|Your Professional|Your Expert|Most Trusted|Most Experienced|Your Certified|Your Licensed|Most Professional|Licensed & Bonded|Licensed & Verified|Your Qualified|Most Reliable|Your Trusted|Your Reliable|Proficient|Precise|Your Precise|Your Reputable|Most Reputable|Your Most Reputable|Most Dependable} {Garage Door|Garage Door Repair|Garage Door Installation|Garage Door Services|Garage Door Company} {Services|Repair|Company|Experts|Specialists|Contractors|Pros|Team} in {{city}}",
+    "subheadline_spintax": "{Fast|Quick|Same-day|24/7|Emergency|Prompt|Reliable} {garage door|garage door repair|garage door installation|garage door service} for {homes|residences|properties|homeowners|businesses} {throughout|across|in|serving} {{city}}. {All|Most|Major} {brands|makes|models} {serviced|repaired|installed}. {Call|Contact|Phone} {{phone}}.",
+    "chat_button_spintax": "{Contact Us|Email Our Team|Get In Touch}",
+    "created_at": "2026-01-15T00:30:50.320362+00:00",
+    "updated_at": "2026-01-15T00:30:50.320362+00:00"
+  },
+  {
+    "id": 12,
+    "category": "locksmith",
+    "headline_spintax": "{Professional|Licensed|Certified|Insured|Experienced|Trusted|Reliable|Reputable|Established|Local|Expert|Qualified|Verified|Dependable|Well-Reviewed|Top-Rated|Highly-Rated|Customer-Approved|Industry-Recognised|Proven|Respected|Recommended|Accredited|Vetted|Authorised|Fully-Qualified|Background-Checked|Security-Focused|Results-Driven|Service-Oriented|Best Rated|Your Local|Your Professional|Your Expert|Most Trusted|Most Experienced|Your Certified|Your Licensed|Most Professional|Licensed & Bonded|Licensed & Verified|Your Qualified|Most Reliable|Your Trusted|Your Reliable|Proficient|Precise|Your Precise|Your Reputable|Most Reputable|Your Most Reputable|Most Dependable} {Locksmith|Locksmith Services|Lock Services|Emergency Locksmith|Local Locksmith} {Services|Company|Experts|Specialists|Pros|Team} in {{city}}",
+    "subheadline_spintax": "{Fast|Quick|24/7|Emergency|Rapid|Prompt|Reliable} {locksmith|lock|security|key} {services|solutions|help|assistance} for {homes|residences|properties|homeowners|businesses|vehicles} {throughout|across|in|serving} {{city}}. {Licensed|Certified|Insured|Bonded} {technicians|locksmiths|experts}. {Call|Contact|Phone} {{phone}}.",
+    "chat_button_spintax": "{Contact Us|Email Our Team|Get In Touch}",
+    "created_at": "2026-01-15T00:30:50.320362+00:00",
+    "updated_at": "2026-01-15T00:30:50.320362+00:00"
+  },
+  {
+    "id": 13,
+    "category": "plumbing",
+    "headline_spintax": "{Professional|Licensed|Certified|Insured|Experienced|Trusted|Reliable|Reputable|Established|Local|Expert|Qualified|Verified|Dependable|Well-Reviewed|Top-Rated|Highly-Rated|Customer-Approved|Industry-Recognised|Proven|Respected|Recommended|Accredited|Vetted|Authorised|Fully-Qualified|Background-Checked|Security-Focused|Results-Driven|Service-Oriented|Best Rated|Your Local|Your Professional|Your Expert|Most Trusted|Most Experienced|Your Certified|Your Licensed|Most Professional|Licensed & Bonded|Licensed & Verified|Your Qualified|Most Reliable|Your Trusted|Your Reliable|Proficient|Precise|Your Precise|Your Reputable|Most Reputable|Your Most Reputable|Most Dependable} {Plumbing|Plumber|Plumbing Services|Plumbing Company|Plumbing Contractor} {Services|Company|Experts|Specialists|Contractors|Pros|Team} in {{city}}",
+    "subheadline_spintax": "{Professional|Expert|Reliable|Trusted|Licensed|Quality|24/7} {plumbing|plumber|plumbing services|plumbing repair} for {homes|residences|properties|homeowners|businesses} {throughout|across|in|serving} {{city}}. {No job|No problem} too {big|small|complex|simple}. {Call|Contact|Phone} {{phone}}.",
+    "chat_button_spintax": "{Contact Us|Email Our Team|Get In Touch}",
+    "created_at": "2026-01-15T00:30:50.320362+00:00",
+    "updated_at": "2026-01-15T00:30:50.320362+00:00"
+  },
+  {
+    "id": 14,
+    "category": "pest_control",
+    "headline_spintax": "{Professional|Licensed|Certified|Insured|Experienced|Trusted|Reliable|Reputable|Established|Local|Expert|Qualified|Verified|Dependable|Well-Reviewed|Top-Rated|Highly-Rated|Customer-Approved|Industry-Recognised|Proven|Respected|Recommended|Accredited|Vetted|Authorised|Fully-Qualified|Background-Checked|Security-Focused|Results-Driven|Service-Oriented|Best Rated|Your Local|Your Professional|Your Expert|Most Trusted|Most Experienced|Your Certified|Your Licensed|Most Professional|Licensed & Bonded|Licensed & Verified|Your Qualified|Most Reliable|Your Trusted|Your Reliable|Proficient|Precise|Your Precise|Your Reputable|Most Reputable|Your Most Reputable|Most Dependable} {Pest Control|Exterminator|Pest Management|Pest Services|Pest Removal} {Services|Company|Experts|Specialists|Pros|Team} in {{city}}",
+    "subheadline_spintax": "{Effective|Professional|Safe|Reliable|Trusted|Expert|Complete} {pest control|extermination|pest removal|pest management|pest treatment} for {homes|residences|properties|homeowners|businesses} {throughout|across|in|serving} {{city}}. {Eliminate|Remove|Get rid of|Eradicate} {pests|bugs|rodents|insects} {fast|quickly|for good|permanently}. {Call|Contact|Phone} {{phone}}.",
+    "chat_button_spintax": "{Contact Us|Email Our Team|Get In Touch}",
+    "created_at": "2026-01-15T00:30:50.320362+00:00",
+    "updated_at": "2026-01-15T00:30:50.320362+00:00"
+  },
+  {
+    "id": 15,
+    "category": "air_conditioning",
+    "headline_spintax": "{Professional|Licensed|Certified|Insured|Experienced|Trusted|Reliable|Reputable|Established|Local|Expert|Qualified|Verified|Dependable|Well-Reviewed|Top-Rated|Highly-Rated|Customer-Approved|Industry-Recognised|Proven|Respected|Recommended|Accredited|Vetted|Authorised|Fully-Qualified|Background-Checked|Security-Focused|Results-Driven|Service-Oriented|Best Rated|Your Local|Your Professional|Your Expert|Most Trusted|Most Experienced|Your Certified|Your Licensed|Most Professional|Licensed & Bonded|Licensed & Verified|Your Qualified|Most Reliable|Your Trusted|Your Reliable|Proficient|Precise|Your Precise|Your Reputable|Most Reputable|Your Most Reputable|Most Dependable} {Air Conditioning|AC Repair|AC Installation|HVAC|AC Services} {Services|Company|Experts|Specialists|Contractors|Pros|Team} in {{city}}",
+    "subheadline_spintax": "{Professional|Expert|Reliable|Fast|24/7|Same-day|Quality} {air conditioning|AC|cooling|HVAC} {repair|installation|service|maintenance} for {homes|residences|properties|homeowners|businesses} {throughout|across|in|serving} {{city}}. {Stay cool|Beat the heat|Keep comfortable} {all summer|year-round}. {Call|Contact|Phone} {{phone}}.",
+    "chat_button_spintax": "{Contact Us|Email Our Team|Get In Touch}",
+    "created_at": "2026-01-15T00:30:50.320362+00:00",
+    "updated_at": "2026-01-15T00:30:50.320362+00:00"
+  },
+  {
+    "id": 16,
+    "category": "heating",
+    "headline_spintax": "{Professional|Licensed|Certified|Insured|Experienced|Trusted|Reliable|Reputable|Established|Local|Expert|Qualified|Verified|Dependable|Well-Reviewed|Top-Rated|Highly-Rated|Customer-Approved|Industry-Recognised|Proven|Respected|Recommended|Accredited|Vetted|Authorised|Fully-Qualified|Background-Checked|Security-Focused|Results-Driven|Service-Oriented|Best Rated|Your Local|Your Professional|Your Expert|Most Trusted|Most Experienced|Your Certified|Your Licensed|Most Professional|Licensed & Bonded|Licensed & Verified|Your Qualified|Most Reliable|Your Trusted|Your Reliable|Proficient|Precise|Your Precise|Your Reputable|Most Reputable|Your Most Reputable|Most Dependable} {Heating|Furnace|Heating Services|HVAC|Furnace Repair} {Services|Company|Experts|Specialists|Contractors|Pros|Team} in {{city}}",
+    "subheadline_spintax": "{Professional|Expert|Reliable|Fast|24/7|Same-day|Quality} {heating|furnace|HVAC|boiler|heat pump} {repair|installation|service|maintenance} for {homes|residences|properties|homeowners|businesses} {throughout|across|in|serving} {{city}}. {Stay warm|Keep comfortable|Beat the cold} {all winter|year-round}. {Call|Contact|Phone} {{phone}}.",
+    "chat_button_spintax": "{Contact Us|Email Our Team|Get In Touch}",
+    "created_at": "2026-01-15T00:30:50.320362+00:00",
+    "updated_at": "2026-01-15T00:30:50.320362+00:00"
+  }
+]

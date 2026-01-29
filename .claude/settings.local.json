@@ -11,7 +11,15 @@
       "Bash(npm run build:*)",
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(grep:*)",
+      "Bash(wc:*)",
+      "Bash(npx tsc:*)",
+      "Bash(git reset:*)",
+      "Bash(cd:*)",
+      "Bash(gh auth:*)",
+      "Bash(git remote:*)",
+      "Bash(git remote add:*)"
     ]
   }
 }

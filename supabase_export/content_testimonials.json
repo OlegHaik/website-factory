@@ -1,0 +1,1002 @@
+[
+  {
+    "id": 12,
+    "category": "water_damage",
+    "testimonial_num": 12,
+    "testimonial_body": "\"The \r\n{insurance process|insurance claim|claims process} was \r\n{handled perfectly|much easier than expected|completely stress-free}. \r\n{{business_name}} \r\n{worked directly with my insurance|handled all insurance communication|took care of the paperwork}. \r\nThey \r\n{kept me updated|explained everything clearly|answered all my questions}. \r\n{Huge relief|Very grateful|Couldn’t ask for better support}.\"\r\n",
+    "testimonial_name": "{Angela K.|Amanda K.|Ashley K.|Alyssa K.|Allison K.|April K.|Ariana K.|Autumn K.|Abigail K.|Alexis K.}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 2,
+    "category": "water_damage",
+    "testimonial_num": 2,
+    "testimonial_body": "{I|We} {could not|couldn't} {be|have been} {happier|more satisfied|more pleased|more impressed|more grateful|more delighted} with {the|their} {service|work|results|job|performance|outcome}! {They|The team|The technicians|The crew|The staff} {were|was} {professional|excellent|outstanding|fantastic|amazing|wonderful|superb}, {efficient|quick|fast|prompt|timely}, and {the|their} {results|work|outcome|job} {exceeded|surpassed|beat|went beyond} {my|our|all} {expectations|hopes|standards}. {Will|Would|Definitely will|Absolutely will} {definitely|certainly|absolutely|for sure} {use|hire|call|recommend|choose} {them|this company} {again|in the future|next time|for all future needs}.",
+    "testimonial_name": "{Jennifer Smith|Sarah Williams|Jessica Brown|Ashley Jones|Amanda Taylor|Stephanie Davis|Nicole Miller|Michelle Wilson|Elizabeth Moore|Rebecca Anderson|Laura Thomas|Kimberly Jackson|Christina White|Emily Harris|Megan Martin|Rachel Robinson|Samantha Clark|Katherine Lewis|Brittany Walker|Heather Young}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 3,
+    "category": "water_damage",
+    "testimonial_num": 3,
+    "testimonial_body": "{Outstanding|Excellent|Exceptional|Amazing|Fantastic|Wonderful|Superb|Remarkable|Impressive} {service|work|experience|job|company|team|professionals}! {From|Starting from} {start|beginning|the quote|the estimate|the first call} to {finish|completion|end|the final result}, {everything|the whole process|every step|all aspects} was {smooth|seamless|easy|hassle-free|professional|effortless} and {professional|efficient|well-organized|well-handled}. {The|Their} {team|crew|technicians|staff|workers|professionals} {clearly|obviously|evidently|certainly} {knows|know|understands|understand} {what they are doing|their craft|their trade|their business}. {Great|Excellent|Wonderful|Fantastic|Amazing|Superb|Outstanding} {job|work|service|experience}!",
+    "testimonial_name": "{John Peterson|Mark Campbell|Steven Phillips|Paul Turner|Kenneth Parker|George Evans|Edward Edwards|Ronald Collins|Timothy Stewart|Jason Sanchez|Jeffrey Morris|Frank Rogers|Scott Reed|Raymond Cook|Patrick Morgan|Jack Bailey|Henry Rivera|Dennis Cooper|Jerry Richardson|Carl Cox}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 1,
+    "category": "water_damage",
+    "testimonial_num": 1,
+    "testimonial_body": "{From|Right from|Starting from} {the first|the initial|my first|our first} {call|phone call|contact|conversation}, {the|this|their} {service|experience|team|company} {was|proved to be|felt} {exceptional|outstanding|excellent|impressive|remarkable|professional|top-notch|first-class}. {The|Their|Our} {technician|specialist|professional|expert|team member} {arrived|showed up|came|got here} {on time|promptly|when promised|as scheduled|right on time}, {was|proved} {professional|courteous|friendly|knowledgeable|respectful|polite} and {courteous|professional|efficient|thorough|skilled}, and {completed|finished|did|performed|handled} {the|our|my} {work|job|project|service|task} {perfectly|flawlessly|excellently|beautifully|to perfection}. {Highly|Strongly|Definitely|Absolutely|Totally|Completely} {recommend|recommended|suggest|endorse}!",
+    "testimonial_name": "{Michael Thompson|David Anderson|James Wilson|Robert Martinez|William Johnson|Christopher Davis|Daniel Garcia|Matthew Brown|Anthony Rodriguez|Joshua Miller|Andrew Taylor|Ryan Moore|Brandon Jackson|Justin White|Kevin Harris|Brian Martin|Tyler Robinson|Zachary Clark|Nicholas Lewis|Eric Walker}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 4,
+    "category": "water_damage",
+    "testimonial_num": 4,
+    "testimonial_body": "{Very|Extremely|Highly|Really|Truly|Incredibly} {impressed|satisfied|pleased|happy|grateful|delighted} with {the|their} {work|service|job|results|performance|quality}. {The|Their} {team|crew|technicians|staff} {showed up|arrived|came} {on time|promptly|as scheduled|when expected}, {worked|operated|performed|functioned} {efficiently|quickly|professionally|diligently|thoroughly}, and {left|made sure} {the|my|our} {area|space|property|home} {clean|spotless|tidy|neat|immaculate}. {Fair|Honest|Transparent|Reasonable|Good|Great} {pricing|prices|rates|cost} {too|as well|also}. {Would|Will} {highly|definitely|absolutely|certainly|strongly} {recommend|suggest|endorse}!",
+    "testimonial_name": "{Linda Howard|Patricia Ward|Barbara Torres|Susan Peterson|Margaret Campbell|Dorothy Phillips|Lisa Turner|Nancy Parker|Karen Evans|Betty Edwards|Helen Collins|Sandra Stewart|Donna Sanchez|Carol Morris|Ruth Rogers|Sharon Reed|Michelle Cook|Laura Morgan|Deborah Bailey|Cynthia Rivera}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 5,
+    "category": "water_damage",
+    "testimonial_num": 5,
+    "testimonial_body": "{Best|Greatest|Top|Most professional|Most reliable|Most trustworthy} {service|company|team|experience|professionals} {I have|we have|I've|we've} {ever|} {used|hired|worked with|experienced|encountered}. {They|The team|The company|The staff} {went|go} {above and beyond|the extra mile|beyond expectations|out of their way} to {make sure|ensure|guarantee|see that} {everything|the job|the work|all aspects} was {done|completed|finished|handled|executed} {right|correctly|properly|perfectly|to perfection}. {Cannot|Can't} {say|speak} {enough|highly enough} {good things|positive things|praise} about {them|this company|their service}!",
+    "testimonial_name": "{Christopher Hughes|Daniel Flores|Matthew Washington|Anthony Butler|Joshua Barnes|Andrew Ross|Ryan Henderson|Brandon Coleman|Justin Jenkins|Kevin Perry|Brian Powell|Tyler Long|Zachary Patterson|Nicholas Gray|Eric Ramirez|Adam Foster|Sean Bryant|Nathan Alexander|Jesse Russell|Ethan Griffin}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 6,
+    "category": "water_damage",
+    "testimonial_num": 6,
+    "testimonial_body": "\"I {woke up to|discovered|was shocked to find} a \r\n{flooded kitchen|kitchen full of water|major water leak} at \r\n{2 AM|late at night|the middle of the night} and \r\n{didn’t know what to do|wasn’t sure what to do next|felt completely overwhelmed}. \r\n{{business_name}} {arrived|showed up|got to my home} within \r\n{45 minutes|an hour|less than an hour} and \r\n{immediately started|quickly began|wasted no time} \r\n{extracting water|removing the water|handling the cleanup}. \r\nThey {saved my cabinets|prevented damage to my cabinets|protected my kitchen cabinets} and \r\n{handled the entire insurance process|took care of the insurance paperwork|worked directly with my insurance}. \r\n{Highly recommended|I highly recommend them|Couldn’t ask for better service}!\"",
+    "testimonial_name": "{Jennifer W.|Jessica W.|Jasmine W.|Julia W.|Janet W.|Joanna W.|Jillian W.|Joyce W.|Jamie W.|Jordan W.}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 7,
+    "category": "water_damage",
+    "testimonial_num": 7,
+    "testimonial_body": "\"{Professional|Courteous|Extremely professional}, \r\n{polite|respectful|friendly}, and \r\n{incredibly thorough|very detailed|extremely careful}. \r\nWe had a \r\n{hidden mold issue|concealed mold problem|mold problem we didn’t know about} in the \r\n{bathroom|bathroom walls|bathroom area}, and their team \r\n{found it|identified it|located the source}, \r\n{contained it|isolated the area|set up proper containment}, and \r\n{removed it safely|handled the removal safely|completed the remediation properly}. \r\nThe \r\n{air quality test|post-remediation air test|air testing results} came back \r\n{perfect|clean|excellent} \r\n{afterwards|once everything was finished|after the work was completed}. \r\n{Thank you|Very thankful|Highly appreciative of the team}!\"\r\n",
+    "testimonial_name": "{Daniel M.|David M.|Derek M.|Dylan M.|Dominic M.|Dean M.|Dustin M.|Douglas M.|Darren M.|Damian M.}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 8,
+    "category": "water_damage",
+    "testimonial_num": 8,
+    "testimonial_body": "\"{Best|Top|Most reliable} \r\n{restoration company|restoration service|damage restoration team} in \r\n{{city}}. \r\nThey \r\n{explained|walked me through|clearly explained} \r\n{every step|each step|the entire process} of the \r\n{drying process|restoration process|water mitigation process} and were \r\n{very respectful|extremely respectful|careful} of \r\n{my home|my property|my space}. \r\nThe \r\n{pricing was transparent|costs were clearly explained|estimate was straightforward} and they \r\n{stuck to their estimate|didn’t change the price|honored the original quote}. \r\n{Would definitely use them again|I would hire them again|Highly trustworthy company}.\"\r\n",
+    "testimonial_name": "{Lisa F.|Laura F.|Linda F.|Lauren F.|Lena F.|Lily F.|Leah F.|Lucy F.|Logan F.|Lori F.}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 9,
+    "category": "water_damage",
+    "testimonial_num": 9,
+    "testimonial_body": "\"{After a small fire|Following a kitchen fire|After smoke damage filled our home}, we were \r\n{overwhelmed|stressed|not sure where to start}. \r\n{{business_name}} \r\n{responded quickly|arrived fast|came out the same day} and \r\n{handled everything|took control immediately|managed the entire cleanup}. \r\nThey \r\n{removed smoke odor|cleaned all soot damage|restored the affected areas} and \r\n{kept us informed|explained each step|communicated clearly} throughout the process. \r\n{Extremely professional|Very reassuring|Highly impressed} with their service.\"\r\n",
+    "testimonial_name": "{Michael R.|Matthew R.|Mark R.|Miles R.|Martin R.|Mason R.|Mitchell R.|Marcus R.|Max R.|Malcolm R.}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 10,
+    "category": "water_damage",
+    "testimonial_num": 10,
+    "testimonial_body": "\"We had a \r\n{sewage backup|sewer backup|major sewage issue} that \r\n{made our home unsafe|caused serious concerns|created a health risk}. \r\nThe team at {{business_name}} \r\n{arrived quickly|responded immediately|came out fast} and \r\n{handled the cleanup safely|removed all contamination|fully sanitized the area}. \r\nThey were \r\n{professional|respectful|careful} and \r\n{made sure everything was safe again|restored our home properly|eliminated all odors}. \r\n{Very thankful|Highly recommend them|Couldn’t be happier}.\"",
+    "testimonial_name": "{Sarah L.|Samantha L.|Sophia L.|Stephanie L.|Shannon L.|Stacey L.|Sydney L.|Sierra L.|Savannah L.|Sabrina L.}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 11,
+    "category": "water_damage",
+    "testimonial_num": 11,
+    "testimonial_body": "\"{Fast response|Quick arrival|Immediate help} made \r\n{all the difference|a huge difference|everything easier}. \r\n{{business_name}} \r\n{showed up within an hour|arrived very quickly|was on-site fast} and \r\n{stopped the damage from spreading|prevented further damage|contained the situation}. \r\nThe crew was \r\n{knowledgeable|experienced|clearly trained} and \r\n{worked efficiently|handled everything smoothly|completed the job fast}. \r\n{Excellent service|Very impressed|Highly satisfied}.\"",
+    "testimonial_name": "{Chris P.|Carlos P.|Cameron P.|Caleb P.|Christian P.|Connor P.|Cole P.|Chase P.|Colin P.|Cody P.}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 13,
+    "category": "water_damage",
+    "testimonial_num": 13,
+    "testimonial_body": "\"I was \r\n{convinced my floors were ruined|sure the hardwood would need replacing|worried my floors were beyond saving}. \r\n{{business_name}} \r\n{used specialized drying|applied advanced drying methods|implemented professional floor drying} and \r\n{saved my hardwood floors|restored the flooring|prevented replacement}. \r\nTheir \r\n{attention to detail|knowledge|experience} \r\n{really showed|made the difference|stood out}. \r\n{Amazing results|So relieved|Very impressed}.\"",
+    "testimonial_name": "{Brian T.|Brandon T.|Benjamin T.|Blake T.|Bryan T.|Brett T.|Bruce T.|Bo T.|Brad T.|Brody T.}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 14,
+    "category": "water_damage",
+    "testimonial_num": 14,
+    "testimonial_body": "\"{Clear communication|Great communication|Excellent communication} from \r\n{start to finish|the first call to completion|beginning to end}. \r\n{{business_name}} \r\n{kept me informed|updated me daily|explained everything clearly}. \r\nI \r\n{felt comfortable|felt confident|felt reassured} having them \r\n{in my home|handle the restoration|manage the project}. \r\n{Very trustworthy|Highly dependable|Would recommend without hesitation}.\"",
+    "testimonial_name": "{Emily H.|Emma H.|Ella H.|Erica H.|Elena H.|Eva H.|Evelyn H.|Erin H.|Elise H.|Eden H.}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 15,
+    "category": "water_damage",
+    "testimonial_num": 15,
+    "testimonial_body": "\"From the \r\n{first phone call|initial contact|moment I reached out}, the experience was \r\n{excellent|smooth|stress-free}. \r\n{{business_name}} \r\n{handled everything|took care of the entire process|managed the restoration professionally}. \r\nThe results were \r\n{better than expected|exactly what was promised|outstanding}. \r\n{Would absolutely use them again|Highly recommend this company|Five-star experience all around}.\"",
+    "testimonial_name": "{Kevin S.|Kyle S.|Kurt S.|Keith S.|Kenneth S.|Kenny S.|Kieran S.|Kaden S.|Klaus S.|Kris S.}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 16,
+    "category": "mold_remediation",
+    "testimonial_num": 1,
+    "testimonial_body": "{From|Right from|Starting from} {the first|the initial|my first|our first} {call|phone call|contact|conversation}, {the|this|their} {service|experience|team|company} {was|proved to be|felt} {exceptional|outstanding|excellent|impressive|remarkable|professional|top-notch|first-class}. {The|Their|Our} {technician|specialist|professional|expert|team member} {arrived|showed up|came|got here} {on time|promptly|when promised|as scheduled|right on time}, {was|proved} {professional|courteous|friendly|knowledgeable|respectful|polite} and {courteous|professional|efficient|thorough|skilled}, and {completed|finished|did|performed|handled} {the|our|my} {work|job|project|service|task} {perfectly|flawlessly|excellently|beautifully|to perfection}. {Highly|Strongly|Definitely|Absolutely|Totally|Completely} {recommend|recommended|suggest|endorse}!",
+    "testimonial_name": "{Michael Thompson|David Anderson|James Wilson|Robert Martinez|William Johnson|Christopher Davis|Daniel Garcia|Matthew Brown|Anthony Rodriguez|Joshua Miller|Andrew Taylor|Ryan Moore|Brandon Jackson|Justin White|Kevin Harris|Brian Martin|Tyler Robinson|Zachary Clark|Nicholas Lewis|Eric Walker}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 17,
+    "category": "mold_remediation",
+    "testimonial_num": 2,
+    "testimonial_body": "{I|We} {could not|couldn't} {be|have been} {happier|more satisfied|more pleased|more impressed|more grateful|more delighted} with {the|their} {service|work|results|job|performance|outcome}! {They|The team|The technicians|The crew|The staff} {were|was} {professional|excellent|outstanding|fantastic|amazing|wonderful|superb}, {efficient|quick|fast|prompt|timely}, and {the|their} {results|work|outcome|job} {exceeded|surpassed|beat|went beyond} {my|our|all} {expectations|hopes|standards}. {Will|Would|Definitely will|Absolutely will} {definitely|certainly|absolutely|for sure} {use|hire|call|recommend|choose} {them|this company} {again|in the future|next time|for all future needs}.",
+    "testimonial_name": "{Jennifer Smith|Sarah Williams|Jessica Brown|Ashley Jones|Amanda Taylor|Stephanie Davis|Nicole Miller|Michelle Wilson|Elizabeth Moore|Rebecca Anderson|Laura Thomas|Kimberly Jackson|Christina White|Emily Harris|Megan Martin|Rachel Robinson|Samantha Clark|Katherine Lewis|Brittany Walker|Heather Young}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 18,
+    "category": "mold_remediation",
+    "testimonial_num": 3,
+    "testimonial_body": "{Outstanding|Excellent|Exceptional|Amazing|Fantastic|Wonderful|Superb|Remarkable|Impressive} {service|work|experience|job|company|team|professionals}! {From|Starting from} {start|beginning|the quote|the estimate|the first call} to {finish|completion|end|the final result}, {everything|the whole process|every step|all aspects} was {smooth|seamless|easy|hassle-free|professional|effortless} and {professional|efficient|well-organized|well-handled}. {The|Their} {team|crew|technicians|staff|workers|professionals} {clearly|obviously|evidently|certainly} {knows|know|understands|understand} {what they are doing|their craft|their trade|their business}. {Great|Excellent|Wonderful|Fantastic|Amazing|Superb|Outstanding} {job|work|service|experience}!",
+    "testimonial_name": "{John Peterson|Mark Campbell|Steven Phillips|Paul Turner|Kenneth Parker|George Evans|Edward Edwards|Ronald Collins|Timothy Stewart|Jason Sanchez|Jeffrey Morris|Frank Rogers|Scott Reed|Raymond Cook|Patrick Morgan|Jack Bailey|Henry Rivera|Dennis Cooper|Jerry Richardson|Carl Cox}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 19,
+    "category": "mold_remediation",
+    "testimonial_num": 4,
+    "testimonial_body": "{Very|Extremely|Highly|Really|Truly|Incredibly} {impressed|satisfied|pleased|happy|grateful|delighted} with {the|their} {work|service|job|results|performance|quality}. {The|Their} {team|crew|technicians|staff} {showed up|arrived|came} {on time|promptly|as scheduled|when expected}, {worked|operated|performed|functioned} {efficiently|quickly|professionally|diligently|thoroughly}, and {left|made sure} {the|my|our} {area|space|property|home} {clean|spotless|tidy|neat|immaculate}. {Fair|Honest|Transparent|Reasonable|Good|Great} {pricing|prices|rates|cost} {too|as well|also}. {Would|Will} {highly|definitely|absolutely|certainly|strongly} {recommend|suggest|endorse}!",
+    "testimonial_name": "{Linda Howard|Patricia Ward|Barbara Torres|Susan Peterson|Margaret Campbell|Dorothy Phillips|Lisa Turner|Nancy Parker|Karen Evans|Betty Edwards|Helen Collins|Sandra Stewart|Donna Sanchez|Carol Morris|Ruth Rogers|Sharon Reed|Michelle Cook|Laura Morgan|Deborah Bailey|Cynthia Rivera}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 20,
+    "category": "mold_remediation",
+    "testimonial_num": 5,
+    "testimonial_body": "{Best|Greatest|Top|Most professional|Most reliable|Most trustworthy} {service|company|team|experience|professionals} {I have|we have|I've|we've} {ever|} {used|hired|worked with|experienced|encountered}. {They|The team|The company|The staff} {went|go} {above and beyond|the extra mile|beyond expectations|out of their way} to {make sure|ensure|guarantee|see that} {everything|the job|the work|all aspects} was {done|completed|finished|handled|executed} {right|correctly|properly|perfectly|to perfection}. {Cannot|Can't} {say|speak} {enough|highly enough} {good things|positive things|praise} about {them|this company|their service}!",
+    "testimonial_name": "{Christopher Hughes|Daniel Flores|Matthew Washington|Anthony Butler|Joshua Barnes|Andrew Ross|Ryan Henderson|Brandon Coleman|Justin Jenkins|Kevin Perry|Brian Powell|Tyler Long|Zachary Patterson|Nicholas Gray|Eric Ramirez|Adam Foster|Sean Bryant|Nathan Alexander|Jesse Russell|Ethan Griffin}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 21,
+    "category": "roofing",
+    "testimonial_num": 1,
+    "testimonial_body": "{From|Right from|Starting from} {the first|the initial|my first|our first} {call|phone call|contact|conversation}, {the|this|their} {service|experience|team|company} {was|proved to be|felt} {exceptional|outstanding|excellent|impressive|remarkable|professional|top-notch|first-class}. {The|Their|Our} {technician|specialist|professional|expert|team member} {arrived|showed up|came|got here} {on time|promptly|when promised|as scheduled|right on time}, {was|proved} {professional|courteous|friendly|knowledgeable|respectful|polite} and {courteous|professional|efficient|thorough|skilled}, and {completed|finished|did|performed|handled} {the|our|my} {work|job|project|service|task} {perfectly|flawlessly|excellently|beautifully|to perfection}. {Highly|Strongly|Definitely|Absolutely|Totally|Completely} {recommend|recommended|suggest|endorse}!",
+    "testimonial_name": "{Michael Thompson|David Anderson|James Wilson|Robert Martinez|William Johnson|Christopher Davis|Daniel Garcia|Matthew Brown|Anthony Rodriguez|Joshua Miller|Andrew Taylor|Ryan Moore|Brandon Jackson|Justin White|Kevin Harris|Brian Martin|Tyler Robinson|Zachary Clark|Nicholas Lewis|Eric Walker}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 22,
+    "category": "roofing",
+    "testimonial_num": 2,
+    "testimonial_body": "{I|We} {could not|couldn't} {be|have been} {happier|more satisfied|more pleased|more impressed|more grateful|more delighted} with {the|their} {service|work|results|job|performance|outcome}! {They|The team|The technicians|The crew|The staff} {were|was} {professional|excellent|outstanding|fantastic|amazing|wonderful|superb}, {efficient|quick|fast|prompt|timely}, and {the|their} {results|work|outcome|job} {exceeded|surpassed|beat|went beyond} {my|our|all} {expectations|hopes|standards}. {Will|Would|Definitely will|Absolutely will} {definitely|certainly|absolutely|for sure} {use|hire|call|recommend|choose} {them|this company} {again|in the future|next time|for all future needs}.",
+    "testimonial_name": "{Jennifer Smith|Sarah Williams|Jessica Brown|Ashley Jones|Amanda Taylor|Stephanie Davis|Nicole Miller|Michelle Wilson|Elizabeth Moore|Rebecca Anderson|Laura Thomas|Kimberly Jackson|Christina White|Emily Harris|Megan Martin|Rachel Robinson|Samantha Clark|Katherine Lewis|Brittany Walker|Heather Young}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 23,
+    "category": "roofing",
+    "testimonial_num": 3,
+    "testimonial_body": "{Outstanding|Excellent|Exceptional|Amazing|Fantastic|Wonderful|Superb|Remarkable|Impressive} {service|work|experience|job|company|team|professionals}! {From|Starting from} {start|beginning|the quote|the estimate|the first call} to {finish|completion|end|the final result}, {everything|the whole process|every step|all aspects} was {smooth|seamless|easy|hassle-free|professional|effortless} and {professional|efficient|well-organized|well-handled}. {The|Their} {team|crew|technicians|staff|workers|professionals} {clearly|obviously|evidently|certainly} {knows|know|understands|understand} {what they are doing|their craft|their trade|their business}. {Great|Excellent|Wonderful|Fantastic|Amazing|Superb|Outstanding} {job|work|service|experience}!",
+    "testimonial_name": "{John Peterson|Mark Campbell|Steven Phillips|Paul Turner|Kenneth Parker|George Evans|Edward Edwards|Ronald Collins|Timothy Stewart|Jason Sanchez|Jeffrey Morris|Frank Rogers|Scott Reed|Raymond Cook|Patrick Morgan|Jack Bailey|Henry Rivera|Dennis Cooper|Jerry Richardson|Carl Cox}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 24,
+    "category": "roofing",
+    "testimonial_num": 4,
+    "testimonial_body": "{Very|Extremely|Highly|Really|Truly|Incredibly} {impressed|satisfied|pleased|happy|grateful|delighted} with {the|their} {work|service|job|results|performance|quality}. {The|Their} {team|crew|technicians|staff} {showed up|arrived|came} {on time|promptly|as scheduled|when expected}, {worked|operated|performed|functioned} {efficiently|quickly|professionally|diligently|thoroughly}, and {left|made sure} {the|my|our} {area|space|property|home} {clean|spotless|tidy|neat|immaculate}. {Fair|Honest|Transparent|Reasonable|Good|Great} {pricing|prices|rates|cost} {too|as well|also}. {Would|Will} {highly|definitely|absolutely|certainly|strongly} {recommend|suggest|endorse}!",
+    "testimonial_name": "{Linda Howard|Patricia Ward|Barbara Torres|Susan Peterson|Margaret Campbell|Dorothy Phillips|Lisa Turner|Nancy Parker|Karen Evans|Betty Edwards|Helen Collins|Sandra Stewart|Donna Sanchez|Carol Morris|Ruth Rogers|Sharon Reed|Michelle Cook|Laura Morgan|Deborah Bailey|Cynthia Rivera}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 25,
+    "category": "roofing",
+    "testimonial_num": 5,
+    "testimonial_body": "{Best|Greatest|Top|Most professional|Most reliable|Most trustworthy} {service|company|team|experience|professionals} {I have|we have|I've|we've} {ever|} {used|hired|worked with|experienced|encountered}. {They|The team|The company|The staff} {went|go} {above and beyond|the extra mile|beyond expectations|out of their way} to {make sure|ensure|guarantee|see that} {everything|the job|the work|all aspects} was {done|completed|finished|handled|executed} {right|correctly|properly|perfectly|to perfection}. {Cannot|Can't} {say|speak} {enough|highly enough} {good things|positive things|praise} about {them|this company|their service}!",
+    "testimonial_name": "{Christopher Hughes|Daniel Flores|Matthew Washington|Anthony Butler|Joshua Barnes|Andrew Ross|Ryan Henderson|Brandon Coleman|Justin Jenkins|Kevin Perry|Brian Powell|Tyler Long|Zachary Patterson|Nicholas Gray|Eric Ramirez|Adam Foster|Sean Bryant|Nathan Alexander|Jesse Russell|Ethan Griffin}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 26,
+    "category": "roofing",
+    "testimonial_num": 6,
+    "testimonial_body": "{The|This} {entire|overall|complete} {experience|process|journey} {was|felt|proved} {exceptionally|extremely|remarkably} {smooth|seamless|stress-free|well-coordinated}, {starting|beginning} {from|with} {the|my} {initial|first|early} {contact|conversation|interaction} {and|through} {ending|finishing} {with|in} {results|outcomes} {that|which} {clearly|genuinely} {exceeded|surpassed|outperformed} {expectations|what I expected} {through|via} {professional|skilled|experienced|knowledgeable} {execution|workmanship|service} {and|plus} {consistent|clear|transparent} {communication|updates|guidance}.",
+    "testimonial_name": "{Laura A|Monica B|Elena C|Sophie D|Natalie E|Rebecca F|Vanessa G|Kimberly H|Angela I|Danielle J|Melissa K|Lauren L|Allison M|Brittany N|Christina O|Courtney P|Stephanie Q|Michelle R|Alyssa S|Jasmine T|Paige U|Erica V|Hannah W|Tiffany X|Megan Y}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 27,
+    "category": "roofing",
+    "testimonial_num": 7,
+    "testimonial_body": "{I|We} {was|were} {very|truly|genuinely} {impressed|satisfied|pleased} {by|with} {the|their} {organized|professional|efficient|methodical} {approach|process|workflow}, {combined|paired} {with|alongside} {prompt|responsive|reliable} {service|support|assistance}, {which|that} {made|helped make} {every|each} {step|stage} feel {simple|clear|manageable|well-handled} {without|minus} {stress|confusion|delays}.",
+    "testimonial_name": "{Daniel A|Michael B|Anthony C|Robert D|Kevin E|Jason F|Brandon G|Joshua H|Andrew I|Ryan J|Matthew K|Justin L|Nicholas M|Tyler N|Zachary O|Benjamin P|Jonathan Q|Christian R|Steven S|Eric T|Adam U|Nathan V|Patrick W|Dylan X|Kyle Y}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 28,
+    "category": "roofing",
+    "testimonial_num": 8,
+    "testimonial_body": "{From|Starting with} {day one|the beginning|the first step} {to|through} {completion|final delivery|project closeout}, {everything|each detail} {was|felt} {handled|managed|executed} {with|using} {care|precision|attention|expertise}, {supported|reinforced} {by|with} {ongoing|consistent|clear} {communication|updates}, {resulting|leading} {in|to} {durable|long-lasting|high-quality} {results|outcomes} {worth|deserving of} {recommendation|recognition|praise}.",
+    "testimonial_name": "{Isabella A|Camila B|Valeria C|Daniela D|Lucia E|Mariana F|Adriana G|Natalia H|Paola I|Gabriela J|Fernanda K|Andrea L|Carolina M|Daniela N|Sofia O|Juliana P|Alejandra Q|Monica R|Renata S|Lorena T|Patricia U|Claudia V|Rosa W|Elisa X|Bianca Y}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 29,
+    "category": "roofing",
+    "testimonial_num": 9,
+    "testimonial_body": "{What|The aspect that} {stood out|impressed me most} {was|remained} {the|their} {honesty|integrity|transparency|professionalism}, {paired|combined} {with|alongside} {structured|organized|efficient} {execution|planning|coordination}, {which|that} {created|built} {confidence|trust|assurance} {throughout|during} {the|entire} {process|project|job}.",
+    "testimonial_name": "{Mark A|Paul B|George C|Henry D|Frank E|Raymond F|Walter G|Edward H|Albert I|Bruce J|Carl K|Roger L|Harold M|Arthur N|Gerald O|Philip P|Lawrence Q|Wayne R|Ralph S|Howard T|Eugene U|Victor V|Leonard W|Bernard X|Stanley Y}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 30,
+    "category": "roofing",
+    "testimonial_num": 10,
+    "testimonial_body": "{Everything|All work} {was|felt} {completed|finished|delivered} {on-time|as scheduled|promptly}, {using|with} {care|accuracy|precision|attention to detail}, {supported|backed} {by|with} {fair|clear|upfront|transparent} {pricing|costs|estimates}, {leaving|resulting in} {solid|dependable|professionally finished} {results|outcomes}.",
+    "testimonial_name": "{Aiden A|Liam B|Noah C|Ethan D|Logan E|Lucas F|Mason G|Caleb H|Owen I|Wyatt J|Isaac K|Levi L|Elijah M|Hudson N|Asher O|Julian P|Grayson Q|Carter R|Lincoln S|Jaxon T|Mateo U|Ezra V|Theodore W|Silas X|Rowan Y}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 31,
+    "category": "roofing",
+    "testimonial_num": 11,
+    "testimonial_body": "{The|This} {overall|entire} {process|experience} {was|felt} {efficient|smooth|well-managed|coordinated}, {thanks|due} {to|in part to} {friendly|respectful|knowledgeable} {professionals|staff|team members}, {and|plus} {results|outcomes} {that|which} {clearly|strongly} {reflect|demonstrate|showcase} {quality|craftsmanship|professional standards}.",
+    "testimonial_name": "{Priya A|Anjali B|Kavita C|Neha D|Pooja E|Rina F|Meera G|Sonia H|Aarti I|Divya J|Nisha K|Shreya L|Kiran M|Sunita N|Ritu O|Alka P|Jyoti Q|Seema R|Rekha S|Manju T|Payal U|Isha V|Tanvi W|Bhavna X|Swati Y}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 32,
+    "category": "roofing",
+    "testimonial_num": 12,
+    "testimonial_body": "{I|We} {truly|genuinely|really} {appreciated|valued} {the|their} {consistent|clear|open} {communication|updates|explanations}, {professional|organized|reliable} {handling|execution}, {and|plus} {peace|confidence} {knowing|from knowing} {everything|all work} {was|felt} {done|handled} {correctly|properly|right}.",
+    "testimonial_name": "{Yuki A|Haruka B|Aiko C|Sakura D|Emi E|Mika F|Rina G|Ayumi H|Naomi I|Kana J|Misaki K|Reina L|Hana M|Natsumi N|Kiko O|Mai P|Chihiro Q|Yuna R|Asuka S|Moe T|Akari U|Saki V|Riko W|Hitomi X|Tomoko Y}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 33,
+    "category": "roofing",
+    "testimonial_num": 13,
+    "testimonial_body": "{The|Their} {level|standard|quality} {of|for} {service|care|attention} {was|felt} {outstanding|excellent|impressive}, {supported|reinforced} {by|with} {timely|responsive|dependable} {communication|support}, {fair|transparent|reasonable} {pricing|rates|costs}, {and|plus} {results|outcomes} {that|which} {fully|completely} {met|matched|fulfilled} {expectations|needs}.",
+    "testimonial_name": "{Omar A|Hassan B|Yusuf C|Ali D|Karim E|Samir F|Tariq G|Zaid H|Faisal I|Imran J|Nabil K|Rashid L|Bilal M|Hamza N|Adnan O|Khalid P|Salman Q|Farid R|Ammar S|Ibrahim T|Mustafa U|Anwar V|Jamal W|Mahmoud X|Saeed Y}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 34,
+    "category": "roofing",
+    "testimonial_num": 14,
+    "testimonial_body": "{The|Final} {results|outcome} {look|appear} {fantastic|excellent|high-end|professional}, {while|and} {the|entire} {experience|process} {was|felt} {smooth|well-managed|stress-free}, {supported|guided} {by|with} {strong|clear|consistent} {coordination|communication|oversight}.",
+    "testimonial_name": "{Luca A|Marco B|Giovanni C|Alessandro D|Matteo E|Francesco F|Davide G|Simone H|Andrea I|Riccardo J|Stefano K|Gabriele L|Federico M|Nicola N|Paolo O|Enrico P|Filippo Q|Angelo R|Salvatore S|Vincenzo T|Roberto U|Claudio V|Dario W|Bruno X|Massimo Y}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 35,
+    "category": "roofing",
+    "testimonial_num": 15,
+    "testimonial_body": "{I|We} {would|will} {confidently|absolutely|easily} {recommend|suggest|endorse} {this|their} {team|service|company} {to|for} {anyone|others} {seeking|looking for} {reliable|professional|experienced|trusted} {service|results}, {based|driven} {on|by} {consistent|high-quality} {performance|outcomes|delivery}.",
+    "testimonial_name": "{Chen A|Li B|Wang C|Zhang D|Liu E|Yang F|Zhao G|Huang H|Wu I|Zhou J|Xu K|Sun L|Ma M|Zhu N|Hu O|Guo P|He Q|Gao R|Lin S|Luo T|Tang U|Deng V|Cao W|Fan X|Qin Y}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 36,
+    "category": "chimney",
+    "testimonial_num": 1,
+    "testimonial_body": "{From|Right from|Starting from} {the first|the initial|my first|our first} {call|phone call|contact|conversation}, {the|this|their} {service|experience|team|company} {was|proved to be|felt} {exceptional|outstanding|excellent|impressive|remarkable|professional|top-notch|first-class}. {The|Their|Our} {technician|specialist|professional|expert|team member} {arrived|showed up|came|got here} {on time|promptly|when promised|as scheduled|right on time}, {was|proved} {professional|courteous|friendly|knowledgeable|respectful|polite} and {courteous|professional|efficient|thorough|skilled}, and {completed|finished|did|performed|handled} {the|our|my} {work|job|project|service|task} {perfectly|flawlessly|excellently|beautifully|to perfection}. {Highly|Strongly|Definitely|Absolutely|Totally|Completely} {recommend|recommended|suggest|endorse}!",
+    "testimonial_name": "{Michael Thompson|David Anderson|James Wilson|Robert Martinez|William Johnson|Christopher Davis|Daniel Garcia|Matthew Brown|Anthony Rodriguez|Joshua Miller|Andrew Taylor|Ryan Moore|Brandon Jackson|Justin White|Kevin Harris|Brian Martin|Tyler Robinson|Zachary Clark|Nicholas Lewis|Eric Walker}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 37,
+    "category": "chimney",
+    "testimonial_num": 2,
+    "testimonial_body": "{I|We} {could not|couldn't} {be|have been} {happier|more satisfied|more pleased|more impressed|more grateful|more delighted} with {the|their} {service|work|results|job|performance|outcome}! {They|The team|The technicians|The crew|The staff} {were|was} {professional|excellent|outstanding|fantastic|amazing|wonderful|superb}, {efficient|quick|fast|prompt|timely}, and {the|their} {results|work|outcome|job} {exceeded|surpassed|beat|went beyond} {my|our|all} {expectations|hopes|standards}. {Will|Would|Definitely will|Absolutely will} {definitely|certainly|absolutely|for sure} {use|hire|call|recommend|choose} {them|this company} {again|in the future|next time|for all future needs}.",
+    "testimonial_name": "{Jennifer Smith|Sarah Williams|Jessica Brown|Ashley Jones|Amanda Taylor|Stephanie Davis|Nicole Miller|Michelle Wilson|Elizabeth Moore|Rebecca Anderson|Laura Thomas|Kimberly Jackson|Christina White|Emily Harris|Megan Martin|Rachel Robinson|Samantha Clark|Katherine Lewis|Brittany Walker|Heather Young}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 38,
+    "category": "chimney",
+    "testimonial_num": 3,
+    "testimonial_body": "{Outstanding|Excellent|Exceptional|Amazing|Fantastic|Wonderful|Superb|Remarkable|Impressive} {service|work|experience|job|company|team|professionals}! {From|Starting from} {start|beginning|the quote|the estimate|the first call} to {finish|completion|end|the final result}, {everything|the whole process|every step|all aspects} was {smooth|seamless|easy|hassle-free|professional|effortless} and {professional|efficient|well-organized|well-handled}. {The|Their} {team|crew|technicians|staff|workers|professionals} {clearly|obviously|evidently|certainly} {knows|know|understands|understand} {what they are doing|their craft|their trade|their business}. {Great|Excellent|Wonderful|Fantastic|Amazing|Superb|Outstanding} {job|work|service|experience}!",
+    "testimonial_name": "{John Peterson|Mark Campbell|Steven Phillips|Paul Turner|Kenneth Parker|George Evans|Edward Edwards|Ronald Collins|Timothy Stewart|Jason Sanchez|Jeffrey Morris|Frank Rogers|Scott Reed|Raymond Cook|Patrick Morgan|Jack Bailey|Henry Rivera|Dennis Cooper|Jerry Richardson|Carl Cox}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 39,
+    "category": "chimney",
+    "testimonial_num": 4,
+    "testimonial_body": "{Very|Extremely|Highly|Really|Truly|Incredibly} {impressed|satisfied|pleased|happy|grateful|delighted} with {the|their} {work|service|job|results|performance|quality}. {The|Their} {team|crew|technicians|staff} {showed up|arrived|came} {on time|promptly|as scheduled|when expected}, {worked|operated|performed|functioned} {efficiently|quickly|professionally|diligently|thoroughly}, and {left|made sure} {the|my|our} {area|space|property|home} {clean|spotless|tidy|neat|immaculate}. {Fair|Honest|Transparent|Reasonable|Good|Great} {pricing|prices|rates|cost} {too|as well|also}. {Would|Will} {highly|definitely|absolutely|certainly|strongly} {recommend|suggest|endorse}!",
+    "testimonial_name": "{Linda Howard|Patricia Ward|Barbara Torres|Susan Peterson|Margaret Campbell|Dorothy Phillips|Lisa Turner|Nancy Parker|Karen Evans|Betty Edwards|Helen Collins|Sandra Stewart|Donna Sanchez|Carol Morris|Ruth Rogers|Sharon Reed|Michelle Cook|Laura Morgan|Deborah Bailey|Cynthia Rivera}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 40,
+    "category": "chimney",
+    "testimonial_num": 5,
+    "testimonial_body": "{Best|Greatest|Top|Most professional|Most reliable|Most trustworthy} {service|company|team|experience|professionals} {I have|we have|I've|we've} {ever|} {used|hired|worked with|experienced|encountered}. {They|The team|The company|The staff} {went|go} {above and beyond|the extra mile|beyond expectations|out of their way} to {make sure|ensure|guarantee|see that} {everything|the job|the work|all aspects} was {done|completed|finished|handled|executed} {right|correctly|properly|perfectly|to perfection}. {Cannot|Can't} {say|speak} {enough|highly enough} {good things|positive things|praise} about {them|this company|their service}!",
+    "testimonial_name": "{Christopher Hughes|Daniel Flores|Matthew Washington|Anthony Butler|Joshua Barnes|Andrew Ross|Ryan Henderson|Brandon Coleman|Justin Jenkins|Kevin Perry|Brian Powell|Tyler Long|Zachary Patterson|Nicholas Gray|Eric Ramirez|Adam Foster|Sean Bryant|Nathan Alexander|Jesse Russell|Ethan Griffin}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 41,
+    "category": "kitchen_remodel",
+    "testimonial_num": 1,
+    "testimonial_body": "{From|Right from|Starting from} {the first|the initial|my first|our first} {call|phone call|contact|conversation}, {the|this|their} {service|experience|team|company} {was|proved to be|felt} {exceptional|outstanding|excellent|impressive|remarkable|professional|top-notch|first-class}. {The|Their|Our} {technician|specialist|professional|expert|team member} {arrived|showed up|came|got here} {on time|promptly|when promised|as scheduled|right on time}, {was|proved} {professional|courteous|friendly|knowledgeable|respectful|polite} and {courteous|professional|efficient|thorough|skilled}, and {completed|finished|did|performed|handled} {the|our|my} {work|job|project|service|task} {perfectly|flawlessly|excellently|beautifully|to perfection}. {Highly|Strongly|Definitely|Absolutely|Totally|Completely} {recommend|recommended|suggest|endorse}!",
+    "testimonial_name": "{Michael Thompson|David Anderson|James Wilson|Robert Martinez|William Johnson|Christopher Davis|Daniel Garcia|Matthew Brown|Anthony Rodriguez|Joshua Miller|Andrew Taylor|Ryan Moore|Brandon Jackson|Justin White|Kevin Harris|Brian Martin|Tyler Robinson|Zachary Clark|Nicholas Lewis|Eric Walker}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 42,
+    "category": "kitchen_remodel",
+    "testimonial_num": 2,
+    "testimonial_body": "{I|We} {could not|couldn't} {be|have been} {happier|more satisfied|more pleased|more impressed|more grateful|more delighted} with {the|their} {service|work|results|job|performance|outcome}! {They|The team|The technicians|The crew|The staff} {were|was} {professional|excellent|outstanding|fantastic|amazing|wonderful|superb}, {efficient|quick|fast|prompt|timely}, and {the|their} {results|work|outcome|job} {exceeded|surpassed|beat|went beyond} {my|our|all} {expectations|hopes|standards}. {Will|Would|Definitely will|Absolutely will} {definitely|certainly|absolutely|for sure} {use|hire|call|recommend|choose} {them|this company} {again|in the future|next time|for all future needs}.",
+    "testimonial_name": "{Jennifer Smith|Sarah Williams|Jessica Brown|Ashley Jones|Amanda Taylor|Stephanie Davis|Nicole Miller|Michelle Wilson|Elizabeth Moore|Rebecca Anderson|Laura Thomas|Kimberly Jackson|Christina White|Emily Harris|Megan Martin|Rachel Robinson|Samantha Clark|Katherine Lewis|Brittany Walker|Heather Young}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 43,
+    "category": "kitchen_remodel",
+    "testimonial_num": 3,
+    "testimonial_body": "{Outstanding|Excellent|Exceptional|Amazing|Fantastic|Wonderful|Superb|Remarkable|Impressive} {service|work|experience|job|company|team|professionals}! {From|Starting from} {start|beginning|the quote|the estimate|the first call} to {finish|completion|end|the final result}, {everything|the whole process|every step|all aspects} was {smooth|seamless|easy|hassle-free|professional|effortless} and {professional|efficient|well-organized|well-handled}. {The|Their} {team|crew|technicians|staff|workers|professionals} {clearly|obviously|evidently|certainly} {knows|know|understands|understand} {what they are doing|their craft|their trade|their business}. {Great|Excellent|Wonderful|Fantastic|Amazing|Superb|Outstanding} {job|work|service|experience}!",
+    "testimonial_name": "{John Peterson|Mark Campbell|Steven Phillips|Paul Turner|Kenneth Parker|George Evans|Edward Edwards|Ronald Collins|Timothy Stewart|Jason Sanchez|Jeffrey Morris|Frank Rogers|Scott Reed|Raymond Cook|Patrick Morgan|Jack Bailey|Henry Rivera|Dennis Cooper|Jerry Richardson|Carl Cox}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 44,
+    "category": "kitchen_remodel",
+    "testimonial_num": 4,
+    "testimonial_body": "{Very|Extremely|Highly|Really|Truly|Incredibly} {impressed|satisfied|pleased|happy|grateful|delighted} with {the|their} {work|service|job|results|performance|quality}. {The|Their} {team|crew|technicians|staff} {showed up|arrived|came} {on time|promptly|as scheduled|when expected}, {worked|operated|performed|functioned} {efficiently|quickly|professionally|diligently|thoroughly}, and {left|made sure} {the|my|our} {area|space|property|home} {clean|spotless|tidy|neat|immaculate}. {Fair|Honest|Transparent|Reasonable|Good|Great} {pricing|prices|rates|cost} {too|as well|also}. {Would|Will} {highly|definitely|absolutely|certainly|strongly} {recommend|suggest|endorse}!",
+    "testimonial_name": "{Linda Howard|Patricia Ward|Barbara Torres|Susan Peterson|Margaret Campbell|Dorothy Phillips|Lisa Turner|Nancy Parker|Karen Evans|Betty Edwards|Helen Collins|Sandra Stewart|Donna Sanchez|Carol Morris|Ruth Rogers|Sharon Reed|Michelle Cook|Laura Morgan|Deborah Bailey|Cynthia Rivera}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 45,
+    "category": "kitchen_remodel",
+    "testimonial_num": 5,
+    "testimonial_body": "{Best|Greatest|Top|Most professional|Most reliable|Most trustworthy} {service|company|team|experience|professionals} {I have|we have|I've|we've} {ever|} {used|hired|worked with|experienced|encountered}. {They|The team|The company|The staff} {went|go} {above and beyond|the extra mile|beyond expectations|out of their way} to {make sure|ensure|guarantee|see that} {everything|the job|the work|all aspects} was {done|completed|finished|handled|executed} {right|correctly|properly|perfectly|to perfection}. {Cannot|Can't} {say|speak} {enough|highly enough} {good things|positive things|praise} about {them|this company|their service}!",
+    "testimonial_name": "{Christopher Hughes|Daniel Flores|Matthew Washington|Anthony Butler|Joshua Barnes|Andrew Ross|Ryan Henderson|Brandon Coleman|Justin Jenkins|Kevin Perry|Brian Powell|Tyler Long|Zachary Patterson|Nicholas Gray|Eric Ramirez|Adam Foster|Sean Bryant|Nathan Alexander|Jesse Russell|Ethan Griffin}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 46,
+    "category": "carpet_cleaning",
+    "testimonial_num": 1,
+    "testimonial_body": "{From|Right from|Starting from} {the first|the initial|my first|our first} {call|phone call|contact|conversation}, {the|this|their} {service|experience|team|company} {was|proved to be|felt} {exceptional|outstanding|excellent|impressive|remarkable|professional|top-notch|first-class}. {The|Their|Our} {technician|specialist|professional|expert|team member} {arrived|showed up|came|got here} {on time|promptly|when promised|as scheduled|right on time}, {was|proved} {professional|courteous|friendly|knowledgeable|respectful|polite} and {courteous|professional|efficient|thorough|skilled}, and {completed|finished|did|performed|handled} {the|our|my} {work|job|project|service|task} {perfectly|flawlessly|excellently|beautifully|to perfection}. {Highly|Strongly|Definitely|Absolutely|Totally|Completely} {recommend|recommended|suggest|endorse}!",
+    "testimonial_name": "{Michael Thompson|David Anderson|James Wilson|Robert Martinez|William Johnson|Christopher Davis|Daniel Garcia|Matthew Brown|Anthony Rodriguez|Joshua Miller|Andrew Taylor|Ryan Moore|Brandon Jackson|Justin White|Kevin Harris|Brian Martin|Tyler Robinson|Zachary Clark|Nicholas Lewis|Eric Walker}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 47,
+    "category": "carpet_cleaning",
+    "testimonial_num": 2,
+    "testimonial_body": "{I|We} {could not|couldn't} {be|have been} {happier|more satisfied|more pleased|more impressed|more grateful|more delighted} with {the|their} {service|work|results|job|performance|outcome}! {They|The team|The technicians|The crew|The staff} {were|was} {professional|excellent|outstanding|fantastic|amazing|wonderful|superb}, {efficient|quick|fast|prompt|timely}, and {the|their} {results|work|outcome|job} {exceeded|surpassed|beat|went beyond} {my|our|all} {expectations|hopes|standards}. {Will|Would|Definitely will|Absolutely will} {definitely|certainly|absolutely|for sure} {use|hire|call|recommend|choose} {them|this company} {again|in the future|next time|for all future needs}.",
+    "testimonial_name": "{Jennifer Smith|Sarah Williams|Jessica Brown|Ashley Jones|Amanda Taylor|Stephanie Davis|Nicole Miller|Michelle Wilson|Elizabeth Moore|Rebecca Anderson|Laura Thomas|Kimberly Jackson|Christina White|Emily Harris|Megan Martin|Rachel Robinson|Samantha Clark|Katherine Lewis|Brittany Walker|Heather Young}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 48,
+    "category": "carpet_cleaning",
+    "testimonial_num": 3,
+    "testimonial_body": "{Outstanding|Excellent|Exceptional|Amazing|Fantastic|Wonderful|Superb|Remarkable|Impressive} {service|work|experience|job|company|team|professionals}! {From|Starting from} {start|beginning|the quote|the estimate|the first call} to {finish|completion|end|the final result}, {everything|the whole process|every step|all aspects} was {smooth|seamless|easy|hassle-free|professional|effortless} and {professional|efficient|well-organized|well-handled}. {The|Their} {team|crew|technicians|staff|workers|professionals} {clearly|obviously|evidently|certainly} {knows|know|understands|understand} {what they are doing|their craft|their trade|their business}. {Great|Excellent|Wonderful|Fantastic|Amazing|Superb|Outstanding} {job|work|service|experience}!",
+    "testimonial_name": "{John Peterson|Mark Campbell|Steven Phillips|Paul Turner|Kenneth Parker|George Evans|Edward Edwards|Ronald Collins|Timothy Stewart|Jason Sanchez|Jeffrey Morris|Frank Rogers|Scott Reed|Raymond Cook|Patrick Morgan|Jack Bailey|Henry Rivera|Dennis Cooper|Jerry Richardson|Carl Cox}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 49,
+    "category": "carpet_cleaning",
+    "testimonial_num": 4,
+    "testimonial_body": "{Very|Extremely|Highly|Really|Truly|Incredibly} {impressed|satisfied|pleased|happy|grateful|delighted} with {the|their} {work|service|job|results|performance|quality}. {The|Their} {team|crew|technicians|staff} {showed up|arrived|came} {on time|promptly|as scheduled|when expected}, {worked|operated|performed|functioned} {efficiently|quickly|professionally|diligently|thoroughly}, and {left|made sure} {the|my|our} {area|space|property|home} {clean|spotless|tidy|neat|immaculate}. {Fair|Honest|Transparent|Reasonable|Good|Great} {pricing|prices|rates|cost} {too|as well|also}. {Would|Will} {highly|definitely|absolutely|certainly|strongly} {recommend|suggest|endorse}!",
+    "testimonial_name": "{Linda Howard|Patricia Ward|Barbara Torres|Susan Peterson|Margaret Campbell|Dorothy Phillips|Lisa Turner|Nancy Parker|Karen Evans|Betty Edwards|Helen Collins|Sandra Stewart|Donna Sanchez|Carol Morris|Ruth Rogers|Sharon Reed|Michelle Cook|Laura Morgan|Deborah Bailey|Cynthia Rivera}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 50,
+    "category": "carpet_cleaning",
+    "testimonial_num": 5,
+    "testimonial_body": "{Best|Greatest|Top|Most professional|Most reliable|Most trustworthy} {service|company|team|experience|professionals} {I have|we have|I've|we've} {ever|} {used|hired|worked with|experienced|encountered}. {They|The team|The company|The staff} {went|go} {above and beyond|the extra mile|beyond expectations|out of their way} to {make sure|ensure|guarantee|see that} {everything|the job|the work|all aspects} was {done|completed|finished|handled|executed} {right|correctly|properly|perfectly|to perfection}. {Cannot|Can't} {say|speak} {enough|highly enough} {good things|positive things|praise} about {them|this company|their service}!",
+    "testimonial_name": "{Christopher Hughes|Daniel Flores|Matthew Washington|Anthony Butler|Joshua Barnes|Andrew Ross|Ryan Henderson|Brandon Coleman|Justin Jenkins|Kevin Perry|Brian Powell|Tyler Long|Zachary Patterson|Nicholas Gray|Eric Ramirez|Adam Foster|Sean Bryant|Nathan Alexander|Jesse Russell|Ethan Griffin}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 51,
+    "category": "bathroom_remodel",
+    "testimonial_num": 1,
+    "testimonial_body": "{From|Right from|Starting from} {the first|the initial|my first|our first} {call|phone call|contact|conversation}, {the|this|their} {service|experience|team|company} {was|proved to be|felt} {exceptional|outstanding|excellent|impressive|remarkable|professional|top-notch|first-class}. {The|Their|Our} {technician|specialist|professional|expert|team member} {arrived|showed up|came|got here} {on time|promptly|when promised|as scheduled|right on time}, {was|proved} {professional|courteous|friendly|knowledgeable|respectful|polite} and {courteous|professional|efficient|thorough|skilled}, and {completed|finished|did|performed|handled} {the|our|my} {work|job|project|service|task} {perfectly|flawlessly|excellently|beautifully|to perfection}. {Highly|Strongly|Definitely|Absolutely|Totally|Completely} {recommend|recommended|suggest|endorse}!",
+    "testimonial_name": "{Michael Thompson|David Anderson|James Wilson|Robert Martinez|William Johnson|Christopher Davis|Daniel Garcia|Matthew Brown|Anthony Rodriguez|Joshua Miller|Andrew Taylor|Ryan Moore|Brandon Jackson|Justin White|Kevin Harris|Brian Martin|Tyler Robinson|Zachary Clark|Nicholas Lewis|Eric Walker}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 52,
+    "category": "bathroom_remodel",
+    "testimonial_num": 2,
+    "testimonial_body": "{I|We} {could not|couldn't} {be|have been} {happier|more satisfied|more pleased|more impressed|more grateful|more delighted} with {the|their} {service|work|results|job|performance|outcome}! {They|The team|The technicians|The crew|The staff} {were|was} {professional|excellent|outstanding|fantastic|amazing|wonderful|superb}, {efficient|quick|fast|prompt|timely}, and {the|their} {results|work|outcome|job} {exceeded|surpassed|beat|went beyond} {my|our|all} {expectations|hopes|standards}. {Will|Would|Definitely will|Absolutely will} {definitely|certainly|absolutely|for sure} {use|hire|call|recommend|choose} {them|this company} {again|in the future|next time|for all future needs}.",
+    "testimonial_name": "{Jennifer Smith|Sarah Williams|Jessica Brown|Ashley Jones|Amanda Taylor|Stephanie Davis|Nicole Miller|Michelle Wilson|Elizabeth Moore|Rebecca Anderson|Laura Thomas|Kimberly Jackson|Christina White|Emily Harris|Megan Martin|Rachel Robinson|Samantha Clark|Katherine Lewis|Brittany Walker|Heather Young}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 53,
+    "category": "bathroom_remodel",
+    "testimonial_num": 3,
+    "testimonial_body": "{Outstanding|Excellent|Exceptional|Amazing|Fantastic|Wonderful|Superb|Remarkable|Impressive} {service|work|experience|job|company|team|professionals}! {From|Starting from} {start|beginning|the quote|the estimate|the first call} to {finish|completion|end|the final result}, {everything|the whole process|every step|all aspects} was {smooth|seamless|easy|hassle-free|professional|effortless} and {professional|efficient|well-organized|well-handled}. {The|Their} {team|crew|technicians|staff|workers|professionals} {clearly|obviously|evidently|certainly} {knows|know|understands|understand} {what they are doing|their craft|their trade|their business}. {Great|Excellent|Wonderful|Fantastic|Amazing|Superb|Outstanding} {job|work|service|experience}!",
+    "testimonial_name": "{John Peterson|Mark Campbell|Steven Phillips|Paul Turner|Kenneth Parker|George Evans|Edward Edwards|Ronald Collins|Timothy Stewart|Jason Sanchez|Jeffrey Morris|Frank Rogers|Scott Reed|Raymond Cook|Patrick Morgan|Jack Bailey|Henry Rivera|Dennis Cooper|Jerry Richardson|Carl Cox}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 54,
+    "category": "bathroom_remodel",
+    "testimonial_num": 4,
+    "testimonial_body": "{Very|Extremely|Highly|Really|Truly|Incredibly} {impressed|satisfied|pleased|happy|grateful|delighted} with {the|their} {work|service|job|results|performance|quality}. {The|Their} {team|crew|technicians|staff} {showed up|arrived|came} {on time|promptly|as scheduled|when expected}, {worked|operated|performed|functioned} {efficiently|quickly|professionally|diligently|thoroughly}, and {left|made sure} {the|my|our} {area|space|property|home} {clean|spotless|tidy|neat|immaculate}. {Fair|Honest|Transparent|Reasonable|Good|Great} {pricing|prices|rates|cost} {too|as well|also}. {Would|Will} {highly|definitely|absolutely|certainly|strongly} {recommend|suggest|endorse}!",
+    "testimonial_name": "{Linda Howard|Patricia Ward|Barbara Torres|Susan Peterson|Margaret Campbell|Dorothy Phillips|Lisa Turner|Nancy Parker|Karen Evans|Betty Edwards|Helen Collins|Sandra Stewart|Donna Sanchez|Carol Morris|Ruth Rogers|Sharon Reed|Michelle Cook|Laura Morgan|Deborah Bailey|Cynthia Rivera}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 55,
+    "category": "bathroom_remodel",
+    "testimonial_num": 5,
+    "testimonial_body": "{Best|Greatest|Top|Most professional|Most reliable|Most trustworthy} {service|company|team|experience|professionals} {I have|we have|I've|we've} {ever|} {used|hired|worked with|experienced|encountered}. {They|The team|The company|The staff} {went|go} {above and beyond|the extra mile|beyond expectations|out of their way} to {make sure|ensure|guarantee|see that} {everything|the job|the work|all aspects} was {done|completed|finished|handled|executed} {right|correctly|properly|perfectly|to perfection}. {Cannot|Can't} {say|speak} {enough|highly enough} {good things|positive things|praise} about {them|this company|their service}!",
+    "testimonial_name": "{Christopher Hughes|Daniel Flores|Matthew Washington|Anthony Butler|Joshua Barnes|Andrew Ross|Ryan Henderson|Brandon Coleman|Justin Jenkins|Kevin Perry|Brian Powell|Tyler Long|Zachary Patterson|Nicholas Gray|Eric Ramirez|Adam Foster|Sean Bryant|Nathan Alexander|Jesse Russell|Ethan Griffin}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 56,
+    "category": "air_duct_cleaning",
+    "testimonial_num": 1,
+    "testimonial_body": "{From|Right from|Starting from} {the first|the initial|my first|our first} {call|phone call|contact|conversation}, {the|this|their} {service|experience|team|company} {was|proved to be|felt} {exceptional|outstanding|excellent|impressive|remarkable|professional|top-notch|first-class}. {The|Their|Our} {technician|specialist|professional|expert|team member} {arrived|showed up|came|got here} {on time|promptly|when promised|as scheduled|right on time}, {was|proved} {professional|courteous|friendly|knowledgeable|respectful|polite} and {courteous|professional|efficient|thorough|skilled}, and {completed|finished|did|performed|handled} {the|our|my} {work|job|project|service|task} {perfectly|flawlessly|excellently|beautifully|to perfection}. {Highly|Strongly|Definitely|Absolutely|Totally|Completely} {recommend|recommended|suggest|endorse}!",
+    "testimonial_name": "{Michael Thompson|David Anderson|James Wilson|Robert Martinez|William Johnson|Christopher Davis|Daniel Garcia|Matthew Brown|Anthony Rodriguez|Joshua Miller|Andrew Taylor|Ryan Moore|Brandon Jackson|Justin White|Kevin Harris|Brian Martin|Tyler Robinson|Zachary Clark|Nicholas Lewis|Eric Walker}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 57,
+    "category": "air_duct_cleaning",
+    "testimonial_num": 2,
+    "testimonial_body": "{I|We} {could not|couldn't} {be|have been} {happier|more satisfied|more pleased|more impressed|more grateful|more delighted} with {the|their} {service|work|results|job|performance|outcome}! {They|The team|The technicians|The crew|The staff} {were|was} {professional|excellent|outstanding|fantastic|amazing|wonderful|superb}, {efficient|quick|fast|prompt|timely}, and {the|their} {results|work|outcome|job} {exceeded|surpassed|beat|went beyond} {my|our|all} {expectations|hopes|standards}. {Will|Would|Definitely will|Absolutely will} {definitely|certainly|absolutely|for sure} {use|hire|call|recommend|choose} {them|this company} {again|in the future|next time|for all future needs}.",
+    "testimonial_name": "{Jennifer Smith|Sarah Williams|Jessica Brown|Ashley Jones|Amanda Taylor|Stephanie Davis|Nicole Miller|Michelle Wilson|Elizabeth Moore|Rebecca Anderson|Laura Thomas|Kimberly Jackson|Christina White|Emily Harris|Megan Martin|Rachel Robinson|Samantha Clark|Katherine Lewis|Brittany Walker|Heather Young}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 58,
+    "category": "air_duct_cleaning",
+    "testimonial_num": 3,
+    "testimonial_body": "{Outstanding|Excellent|Exceptional|Amazing|Fantastic|Wonderful|Superb|Remarkable|Impressive} {service|work|experience|job|company|team|professionals}! {From|Starting from} {start|beginning|the quote|the estimate|the first call} to {finish|completion|end|the final result}, {everything|the whole process|every step|all aspects} was {smooth|seamless|easy|hassle-free|professional|effortless} and {professional|efficient|well-organized|well-handled}. {The|Their} {team|crew|technicians|staff|workers|professionals} {clearly|obviously|evidently|certainly} {knows|know|understands|understand} {what they are doing|their craft|their trade|their business}. {Great|Excellent|Wonderful|Fantastic|Amazing|Superb|Outstanding} {job|work|service|experience}!",
+    "testimonial_name": "{John Peterson|Mark Campbell|Steven Phillips|Paul Turner|Kenneth Parker|George Evans|Edward Edwards|Ronald Collins|Timothy Stewart|Jason Sanchez|Jeffrey Morris|Frank Rogers|Scott Reed|Raymond Cook|Patrick Morgan|Jack Bailey|Henry Rivera|Dennis Cooper|Jerry Richardson|Carl Cox}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 59,
+    "category": "air_duct_cleaning",
+    "testimonial_num": 4,
+    "testimonial_body": "{Very|Extremely|Highly|Really|Truly|Incredibly} {impressed|satisfied|pleased|happy|grateful|delighted} with {the|their} {work|service|job|results|performance|quality}. {The|Their} {team|crew|technicians|staff} {showed up|arrived|came} {on time|promptly|as scheduled|when expected}, {worked|operated|performed|functioned} {efficiently|quickly|professionally|diligently|thoroughly}, and {left|made sure} {the|my|our} {area|space|property|home} {clean|spotless|tidy|neat|immaculate}. {Fair|Honest|Transparent|Reasonable|Good|Great} {pricing|prices|rates|cost} {too|as well|also}. {Would|Will} {highly|definitely|absolutely|certainly|strongly} {recommend|suggest|endorse}!",
+    "testimonial_name": "{Linda Howard|Patricia Ward|Barbara Torres|Susan Peterson|Margaret Campbell|Dorothy Phillips|Lisa Turner|Nancy Parker|Karen Evans|Betty Edwards|Helen Collins|Sandra Stewart|Donna Sanchez|Carol Morris|Ruth Rogers|Sharon Reed|Michelle Cook|Laura Morgan|Deborah Bailey|Cynthia Rivera}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 60,
+    "category": "air_duct_cleaning",
+    "testimonial_num": 5,
+    "testimonial_body": "{Best|Greatest|Top|Most professional|Most reliable|Most trustworthy} {service|company|team|experience|professionals} {I have|we have|I've|we've} {ever|} {used|hired|worked with|experienced|encountered}. {They|The team|The company|The staff} {went|go} {above and beyond|the extra mile|beyond expectations|out of their way} to {make sure|ensure|guarantee|see that} {everything|the job|the work|all aspects} was {done|completed|finished|handled|executed} {right|correctly|properly|perfectly|to perfection}. {Cannot|Can't} {say|speak} {enough|highly enough} {good things|positive things|praise} about {them|this company|their service}!",
+    "testimonial_name": "{Christopher Hughes|Daniel Flores|Matthew Washington|Anthony Butler|Joshua Barnes|Andrew Ross|Ryan Henderson|Brandon Coleman|Justin Jenkins|Kevin Perry|Brian Powell|Tyler Long|Zachary Patterson|Nicholas Gray|Eric Ramirez|Adam Foster|Sean Bryant|Nathan Alexander|Jesse Russell|Ethan Griffin}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 61,
+    "category": "adu_builder",
+    "testimonial_num": 1,
+    "testimonial_body": "{From|Right from|Starting from} {the first|the initial|my first|our first} {call|phone call|contact|conversation}, {the|this|their} {service|experience|team|company} {was|proved to be|felt} {exceptional|outstanding|excellent|impressive|remarkable|professional|top-notch|first-class}. {The|Their|Our} {technician|specialist|professional|expert|team member} {arrived|showed up|came|got here} {on time|promptly|when promised|as scheduled|right on time}, {was|proved} {professional|courteous|friendly|knowledgeable|respectful|polite} and {courteous|professional|efficient|thorough|skilled}, and {completed|finished|did|performed|handled} {the|our|my} {work|job|project|service|task} {perfectly|flawlessly|excellently|beautifully|to perfection}. {Highly|Strongly|Definitely|Absolutely|Totally|Completely} {recommend|recommended|suggest|endorse}!",
+    "testimonial_name": "{Michael Thompson|David Anderson|James Wilson|Robert Martinez|William Johnson|Christopher Davis|Daniel Garcia|Matthew Brown|Anthony Rodriguez|Joshua Miller|Andrew Taylor|Ryan Moore|Brandon Jackson|Justin White|Kevin Harris|Brian Martin|Tyler Robinson|Zachary Clark|Nicholas Lewis|Eric Walker}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 62,
+    "category": "adu_builder",
+    "testimonial_num": 2,
+    "testimonial_body": "{I|We} {could not|couldn't} {be|have been} {happier|more satisfied|more pleased|more impressed|more grateful|more delighted} with {the|their} {service|work|results|job|performance|outcome}! {They|The team|The technicians|The crew|The staff} {were|was} {professional|excellent|outstanding|fantastic|amazing|wonderful|superb}, {efficient|quick|fast|prompt|timely}, and {the|their} {results|work|outcome|job} {exceeded|surpassed|beat|went beyond} {my|our|all} {expectations|hopes|standards}. {Will|Would|Definitely will|Absolutely will} {definitely|certainly|absolutely|for sure} {use|hire|call|recommend|choose} {them|this company} {again|in the future|next time|for all future needs}.",
+    "testimonial_name": "{Jennifer Smith|Sarah Williams|Jessica Brown|Ashley Jones|Amanda Taylor|Stephanie Davis|Nicole Miller|Michelle Wilson|Elizabeth Moore|Rebecca Anderson|Laura Thomas|Kimberly Jackson|Christina White|Emily Harris|Megan Martin|Rachel Robinson|Samantha Clark|Katherine Lewis|Brittany Walker|Heather Young}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 63,
+    "category": "adu_builder",
+    "testimonial_num": 3,
+    "testimonial_body": "{Outstanding|Excellent|Exceptional|Amazing|Fantastic|Wonderful|Superb|Remarkable|Impressive} {service|work|experience|job|company|team|professionals}! {From|Starting from} {start|beginning|the quote|the estimate|the first call} to {finish|completion|end|the final result}, {everything|the whole process|every step|all aspects} was {smooth|seamless|easy|hassle-free|professional|effortless} and {professional|efficient|well-organized|well-handled}. {The|Their} {team|crew|technicians|staff|workers|professionals} {clearly|obviously|evidently|certainly} {knows|know|understands|understand} {what they are doing|their craft|their trade|their business}. {Great|Excellent|Wonderful|Fantastic|Amazing|Superb|Outstanding} {job|work|service|experience}!",
+    "testimonial_name": "{John Peterson|Mark Campbell|Steven Phillips|Paul Turner|Kenneth Parker|George Evans|Edward Edwards|Ronald Collins|Timothy Stewart|Jason Sanchez|Jeffrey Morris|Frank Rogers|Scott Reed|Raymond Cook|Patrick Morgan|Jack Bailey|Henry Rivera|Dennis Cooper|Jerry Richardson|Carl Cox}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 64,
+    "category": "adu_builder",
+    "testimonial_num": 4,
+    "testimonial_body": "{Very|Extremely|Highly|Really|Truly|Incredibly} {impressed|satisfied|pleased|happy|grateful|delighted} with {the|their} {work|service|job|results|performance|quality}. {The|Their} {team|crew|technicians|staff} {showed up|arrived|came} {on time|promptly|as scheduled|when expected}, {worked|operated|performed|functioned} {efficiently|quickly|professionally|diligently|thoroughly}, and {left|made sure} {the|my|our} {area|space|property|home} {clean|spotless|tidy|neat|immaculate}. {Fair|Honest|Transparent|Reasonable|Good|Great} {pricing|prices|rates|cost} {too|as well|also}. {Would|Will} {highly|definitely|absolutely|certainly|strongly} {recommend|suggest|endorse}!",
+    "testimonial_name": "{Linda Howard|Patricia Ward|Barbara Torres|Susan Peterson|Margaret Campbell|Dorothy Phillips|Lisa Turner|Nancy Parker|Karen Evans|Betty Edwards|Helen Collins|Sandra Stewart|Donna Sanchez|Carol Morris|Ruth Rogers|Sharon Reed|Michelle Cook|Laura Morgan|Deborah Bailey|Cynthia Rivera}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 65,
+    "category": "adu_builder",
+    "testimonial_num": 5,
+    "testimonial_body": "{Best|Greatest|Top|Most professional|Most reliable|Most trustworthy} {service|company|team|experience|professionals} {I have|we have|I've|we've} {ever|} {used|hired|worked with|experienced|encountered}. {They|The team|The company|The staff} {went|go} {above and beyond|the extra mile|beyond expectations|out of their way} to {make sure|ensure|guarantee|see that} {everything|the job|the work|all aspects} was {done|completed|finished|handled|executed} {right|correctly|properly|perfectly|to perfection}. {Cannot|Can't} {say|speak} {enough|highly enough} {good things|positive things|praise} about {them|this company|their service}!",
+    "testimonial_name": "{Christopher Hughes|Daniel Flores|Matthew Washington|Anthony Butler|Joshua Barnes|Andrew Ross|Ryan Henderson|Brandon Coleman|Justin Jenkins|Kevin Perry|Brian Powell|Tyler Long|Zachary Patterson|Nicholas Gray|Eric Ramirez|Adam Foster|Sean Bryant|Nathan Alexander|Jesse Russell|Ethan Griffin}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 66,
+    "category": "pool_contractor",
+    "testimonial_num": 1,
+    "testimonial_body": "{From|Right from|Starting from} {the first|the initial|my first|our first} {call|phone call|contact|conversation}, {the|this|their} {service|experience|team|company} {was|proved to be|felt} {exceptional|outstanding|excellent|impressive|remarkable|professional|top-notch|first-class}. {The|Their|Our} {technician|specialist|professional|expert|team member} {arrived|showed up|came|got here} {on time|promptly|when promised|as scheduled|right on time}, {was|proved} {professional|courteous|friendly|knowledgeable|respectful|polite} and {courteous|professional|efficient|thorough|skilled}, and {completed|finished|did|performed|handled} {the|our|my} {work|job|project|service|task} {perfectly|flawlessly|excellently|beautifully|to perfection}. {Highly|Strongly|Definitely|Absolutely|Totally|Completely} {recommend|recommended|suggest|endorse}!",
+    "testimonial_name": "{Michael Thompson|David Anderson|James Wilson|Robert Martinez|William Johnson|Christopher Davis|Daniel Garcia|Matthew Brown|Anthony Rodriguez|Joshua Miller|Andrew Taylor|Ryan Moore|Brandon Jackson|Justin White|Kevin Harris|Brian Martin|Tyler Robinson|Zachary Clark|Nicholas Lewis|Eric Walker}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 67,
+    "category": "pool_contractor",
+    "testimonial_num": 2,
+    "testimonial_body": "{I|We} {could not|couldn't} {be|have been} {happier|more satisfied|more pleased|more impressed|more grateful|more delighted} with {the|their} {service|work|results|job|performance|outcome}! {They|The team|The technicians|The crew|The staff} {were|was} {professional|excellent|outstanding|fantastic|amazing|wonderful|superb}, {efficient|quick|fast|prompt|timely}, and {the|their} {results|work|outcome|job} {exceeded|surpassed|beat|went beyond} {my|our|all} {expectations|hopes|standards}. {Will|Would|Definitely will|Absolutely will} {definitely|certainly|absolutely|for sure} {use|hire|call|recommend|choose} {them|this company} {again|in the future|next time|for all future needs}.",
+    "testimonial_name": "{Jennifer Smith|Sarah Williams|Jessica Brown|Ashley Jones|Amanda Taylor|Stephanie Davis|Nicole Miller|Michelle Wilson|Elizabeth Moore|Rebecca Anderson|Laura Thomas|Kimberly Jackson|Christina White|Emily Harris|Megan Martin|Rachel Robinson|Samantha Clark|Katherine Lewis|Brittany Walker|Heather Young}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 68,
+    "category": "pool_contractor",
+    "testimonial_num": 3,
+    "testimonial_body": "{Outstanding|Excellent|Exceptional|Amazing|Fantastic|Wonderful|Superb|Remarkable|Impressive} {service|work|experience|job|company|team|professionals}! {From|Starting from} {start|beginning|the quote|the estimate|the first call} to {finish|completion|end|the final result}, {everything|the whole process|every step|all aspects} was {smooth|seamless|easy|hassle-free|professional|effortless} and {professional|efficient|well-organized|well-handled}. {The|Their} {team|crew|technicians|staff|workers|professionals} {clearly|obviously|evidently|certainly} {knows|know|understands|understand} {what they are doing|their craft|their trade|their business}. {Great|Excellent|Wonderful|Fantastic|Amazing|Superb|Outstanding} {job|work|service|experience}!",
+    "testimonial_name": "{John Peterson|Mark Campbell|Steven Phillips|Paul Turner|Kenneth Parker|George Evans|Edward Edwards|Ronald Collins|Timothy Stewart|Jason Sanchez|Jeffrey Morris|Frank Rogers|Scott Reed|Raymond Cook|Patrick Morgan|Jack Bailey|Henry Rivera|Dennis Cooper|Jerry Richardson|Carl Cox}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 69,
+    "category": "pool_contractor",
+    "testimonial_num": 4,
+    "testimonial_body": "{Very|Extremely|Highly|Really|Truly|Incredibly} {impressed|satisfied|pleased|happy|grateful|delighted} with {the|their} {work|service|job|results|performance|quality}. {The|Their} {team|crew|technicians|staff} {showed up|arrived|came} {on time|promptly|as scheduled|when expected}, {worked|operated|performed|functioned} {efficiently|quickly|professionally|diligently|thoroughly}, and {left|made sure} {the|my|our} {area|space|property|home} {clean|spotless|tidy|neat|immaculate}. {Fair|Honest|Transparent|Reasonable|Good|Great} {pricing|prices|rates|cost} {too|as well|also}. {Would|Will} {highly|definitely|absolutely|certainly|strongly} {recommend|suggest|endorse}!",
+    "testimonial_name": "{Linda Howard|Patricia Ward|Barbara Torres|Susan Peterson|Margaret Campbell|Dorothy Phillips|Lisa Turner|Nancy Parker|Karen Evans|Betty Edwards|Helen Collins|Sandra Stewart|Donna Sanchez|Carol Morris|Ruth Rogers|Sharon Reed|Michelle Cook|Laura Morgan|Deborah Bailey|Cynthia Rivera}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 70,
+    "category": "pool_contractor",
+    "testimonial_num": 5,
+    "testimonial_body": "{Best|Greatest|Top|Most professional|Most reliable|Most trustworthy} {service|company|team|experience|professionals} {I have|we have|I've|we've} {ever|} {used|hired|worked with|experienced|encountered}. {They|The team|The company|The staff} {went|go} {above and beyond|the extra mile|beyond expectations|out of their way} to {make sure|ensure|guarantee|see that} {everything|the job|the work|all aspects} was {done|completed|finished|handled|executed} {right|correctly|properly|perfectly|to perfection}. {Cannot|Can't} {say|speak} {enough|highly enough} {good things|positive things|praise} about {them|this company|their service}!",
+    "testimonial_name": "{Christopher Hughes|Daniel Flores|Matthew Washington|Anthony Butler|Joshua Barnes|Andrew Ross|Ryan Henderson|Brandon Coleman|Justin Jenkins|Kevin Perry|Brian Powell|Tyler Long|Zachary Patterson|Nicholas Gray|Eric Ramirez|Adam Foster|Sean Bryant|Nathan Alexander|Jesse Russell|Ethan Griffin}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 71,
+    "category": "garage_door",
+    "testimonial_num": 1,
+    "testimonial_body": "{From|Right from|Starting from} {the first|the initial|my first|our first} {call|phone call|contact|conversation}, {the|this|their} {service|experience|team|company} {was|proved to be|felt} {exceptional|outstanding|excellent|impressive|remarkable|professional|top-notch|first-class}. {The|Their|Our} {technician|specialist|professional|expert|team member} {arrived|showed up|came|got here} {on time|promptly|when promised|as scheduled|right on time}, {was|proved} {professional|courteous|friendly|knowledgeable|respectful|polite} and {courteous|professional|efficient|thorough|skilled}, and {completed|finished|did|performed|handled} {the|our|my} {work|job|project|service|task} {perfectly|flawlessly|excellently|beautifully|to perfection}. {Highly|Strongly|Definitely|Absolutely|Totally|Completely} {recommend|recommended|suggest|endorse}!",
+    "testimonial_name": "{Michael Thompson|David Anderson|James Wilson|Robert Martinez|William Johnson|Christopher Davis|Daniel Garcia|Matthew Brown|Anthony Rodriguez|Joshua Miller|Andrew Taylor|Ryan Moore|Brandon Jackson|Justin White|Kevin Harris|Brian Martin|Tyler Robinson|Zachary Clark|Nicholas Lewis|Eric Walker}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 72,
+    "category": "garage_door",
+    "testimonial_num": 2,
+    "testimonial_body": "{I|We} {could not|couldn't} {be|have been} {happier|more satisfied|more pleased|more impressed|more grateful|more delighted} with {the|their} {service|work|results|job|performance|outcome}! {They|The team|The technicians|The crew|The staff} {were|was} {professional|excellent|outstanding|fantastic|amazing|wonderful|superb}, {efficient|quick|fast|prompt|timely}, and {the|their} {results|work|outcome|job} {exceeded|surpassed|beat|went beyond} {my|our|all} {expectations|hopes|standards}. {Will|Would|Definitely will|Absolutely will} {definitely|certainly|absolutely|for sure} {use|hire|call|recommend|choose} {them|this company} {again|in the future|next time|for all future needs}.",
+    "testimonial_name": "{Jennifer Smith|Sarah Williams|Jessica Brown|Ashley Jones|Amanda Taylor|Stephanie Davis|Nicole Miller|Michelle Wilson|Elizabeth Moore|Rebecca Anderson|Laura Thomas|Kimberly Jackson|Christina White|Emily Harris|Megan Martin|Rachel Robinson|Samantha Clark|Katherine Lewis|Brittany Walker|Heather Young}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 73,
+    "category": "garage_door",
+    "testimonial_num": 3,
+    "testimonial_body": "{Outstanding|Excellent|Exceptional|Amazing|Fantastic|Wonderful|Superb|Remarkable|Impressive} {service|work|experience|job|company|team|professionals}! {From|Starting from} {start|beginning|the quote|the estimate|the first call} to {finish|completion|end|the final result}, {everything|the whole process|every step|all aspects} was {smooth|seamless|easy|hassle-free|professional|effortless} and {professional|efficient|well-organized|well-handled}. {The|Their} {team|crew|technicians|staff|workers|professionals} {clearly|obviously|evidently|certainly} {knows|know|understands|understand} {what they are doing|their craft|their trade|their business}. {Great|Excellent|Wonderful|Fantastic|Amazing|Superb|Outstanding} {job|work|service|experience}!",
+    "testimonial_name": "{John Peterson|Mark Campbell|Steven Phillips|Paul Turner|Kenneth Parker|George Evans|Edward Edwards|Ronald Collins|Timothy Stewart|Jason Sanchez|Jeffrey Morris|Frank Rogers|Scott Reed|Raymond Cook|Patrick Morgan|Jack Bailey|Henry Rivera|Dennis Cooper|Jerry Richardson|Carl Cox}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 74,
+    "category": "garage_door",
+    "testimonial_num": 4,
+    "testimonial_body": "{Very|Extremely|Highly|Really|Truly|Incredibly} {impressed|satisfied|pleased|happy|grateful|delighted} with {the|their} {work|service|job|results|performance|quality}. {The|Their} {team|crew|technicians|staff} {showed up|arrived|came} {on time|promptly|as scheduled|when expected}, {worked|operated|performed|functioned} {efficiently|quickly|professionally|diligently|thoroughly}, and {left|made sure} {the|my|our} {area|space|property|home} {clean|spotless|tidy|neat|immaculate}. {Fair|Honest|Transparent|Reasonable|Good|Great} {pricing|prices|rates|cost} {too|as well|also}. {Would|Will} {highly|definitely|absolutely|certainly|strongly} {recommend|suggest|endorse}!",
+    "testimonial_name": "{Linda Howard|Patricia Ward|Barbara Torres|Susan Peterson|Margaret Campbell|Dorothy Phillips|Lisa Turner|Nancy Parker|Karen Evans|Betty Edwards|Helen Collins|Sandra Stewart|Donna Sanchez|Carol Morris|Ruth Rogers|Sharon Reed|Michelle Cook|Laura Morgan|Deborah Bailey|Cynthia Rivera}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 75,
+    "category": "garage_door",
+    "testimonial_num": 5,
+    "testimonial_body": "{Best|Greatest|Top|Most professional|Most reliable|Most trustworthy} {service|company|team|experience|professionals} {I have|we have|I've|we've} {ever|} {used|hired|worked with|experienced|encountered}. {They|The team|The company|The staff} {went|go} {above and beyond|the extra mile|beyond expectations|out of their way} to {make sure|ensure|guarantee|see that} {everything|the job|the work|all aspects} was {done|completed|finished|handled|executed} {right|correctly|properly|perfectly|to perfection}. {Cannot|Can't} {say|speak} {enough|highly enough} {good things|positive things|praise} about {them|this company|their service}!",
+    "testimonial_name": "{Christopher Hughes|Daniel Flores|Matthew Washington|Anthony Butler|Joshua Barnes|Andrew Ross|Ryan Henderson|Brandon Coleman|Justin Jenkins|Kevin Perry|Brian Powell|Tyler Long|Zachary Patterson|Nicholas Gray|Eric Ramirez|Adam Foster|Sean Bryant|Nathan Alexander|Jesse Russell|Ethan Griffin}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 76,
+    "category": "locksmith",
+    "testimonial_num": 1,
+    "testimonial_body": "{From|Right from|Starting from} {the first|the initial|my first|our first} {call|phone call|contact|conversation}, {the|this|their} {service|experience|team|company} {was|proved to be|felt} {exceptional|outstanding|excellent|impressive|remarkable|professional|top-notch|first-class}. {The|Their|Our} {technician|specialist|professional|expert|team member} {arrived|showed up|came|got here} {on time|promptly|when promised|as scheduled|right on time}, {was|proved} {professional|courteous|friendly|knowledgeable|respectful|polite} and {courteous|professional|efficient|thorough|skilled}, and {completed|finished|did|performed|handled} {the|our|my} {work|job|project|service|task} {perfectly|flawlessly|excellently|beautifully|to perfection}. {Highly|Strongly|Definitely|Absolutely|Totally|Completely} {recommend|recommended|suggest|endorse}!",
+    "testimonial_name": "{Michael Thompson|David Anderson|James Wilson|Robert Martinez|William Johnson|Christopher Davis|Daniel Garcia|Matthew Brown|Anthony Rodriguez|Joshua Miller|Andrew Taylor|Ryan Moore|Brandon Jackson|Justin White|Kevin Harris|Brian Martin|Tyler Robinson|Zachary Clark|Nicholas Lewis|Eric Walker}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 77,
+    "category": "locksmith",
+    "testimonial_num": 2,
+    "testimonial_body": "{I|We} {could not|couldn't} {be|have been} {happier|more satisfied|more pleased|more impressed|more grateful|more delighted} with {the|their} {service|work|results|job|performance|outcome}! {They|The team|The technicians|The crew|The staff} {were|was} {professional|excellent|outstanding|fantastic|amazing|wonderful|superb}, {efficient|quick|fast|prompt|timely}, and {the|their} {results|work|outcome|job} {exceeded|surpassed|beat|went beyond} {my|our|all} {expectations|hopes|standards}. {Will|Would|Definitely will|Absolutely will} {definitely|certainly|absolutely|for sure} {use|hire|call|recommend|choose} {them|this company} {again|in the future|next time|for all future needs}.",
+    "testimonial_name": "{Jennifer Smith|Sarah Williams|Jessica Brown|Ashley Jones|Amanda Taylor|Stephanie Davis|Nicole Miller|Michelle Wilson|Elizabeth Moore|Rebecca Anderson|Laura Thomas|Kimberly Jackson|Christina White|Emily Harris|Megan Martin|Rachel Robinson|Samantha Clark|Katherine Lewis|Brittany Walker|Heather Young}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 78,
+    "category": "locksmith",
+    "testimonial_num": 3,
+    "testimonial_body": "{Outstanding|Excellent|Exceptional|Amazing|Fantastic|Wonderful|Superb|Remarkable|Impressive} {service|work|experience|job|company|team|professionals}! {From|Starting from} {start|beginning|the quote|the estimate|the first call} to {finish|completion|end|the final result}, {everything|the whole process|every step|all aspects} was {smooth|seamless|easy|hassle-free|professional|effortless} and {professional|efficient|well-organized|well-handled}. {The|Their} {team|crew|technicians|staff|workers|professionals} {clearly|obviously|evidently|certainly} {knows|know|understands|understand} {what they are doing|their craft|their trade|their business}. {Great|Excellent|Wonderful|Fantastic|Amazing|Superb|Outstanding} {job|work|service|experience}!",
+    "testimonial_name": "{John Peterson|Mark Campbell|Steven Phillips|Paul Turner|Kenneth Parker|George Evans|Edward Edwards|Ronald Collins|Timothy Stewart|Jason Sanchez|Jeffrey Morris|Frank Rogers|Scott Reed|Raymond Cook|Patrick Morgan|Jack Bailey|Henry Rivera|Dennis Cooper|Jerry Richardson|Carl Cox}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 79,
+    "category": "locksmith",
+    "testimonial_num": 4,
+    "testimonial_body": "{Very|Extremely|Highly|Really|Truly|Incredibly} {impressed|satisfied|pleased|happy|grateful|delighted} with {the|their} {work|service|job|results|performance|quality}. {The|Their} {team|crew|technicians|staff} {showed up|arrived|came} {on time|promptly|as scheduled|when expected}, {worked|operated|performed|functioned} {efficiently|quickly|professionally|diligently|thoroughly}, and {left|made sure} {the|my|our} {area|space|property|home} {clean|spotless|tidy|neat|immaculate}. {Fair|Honest|Transparent|Reasonable|Good|Great} {pricing|prices|rates|cost} {too|as well|also}. {Would|Will} {highly|definitely|absolutely|certainly|strongly} {recommend|suggest|endorse}!",
+    "testimonial_name": "{Linda Howard|Patricia Ward|Barbara Torres|Susan Peterson|Margaret Campbell|Dorothy Phillips|Lisa Turner|Nancy Parker|Karen Evans|Betty Edwards|Helen Collins|Sandra Stewart|Donna Sanchez|Carol Morris|Ruth Rogers|Sharon Reed|Michelle Cook|Laura Morgan|Deborah Bailey|Cynthia Rivera}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 80,
+    "category": "locksmith",
+    "testimonial_num": 5,
+    "testimonial_body": "{Best|Greatest|Top|Most professional|Most reliable|Most trustworthy} {service|company|team|experience|professionals} {I have|we have|I've|we've} {ever|} {used|hired|worked with|experienced|encountered}. {They|The team|The company|The staff} {went|go} {above and beyond|the extra mile|beyond expectations|out of their way} to {make sure|ensure|guarantee|see that} {everything|the job|the work|all aspects} was {done|completed|finished|handled|executed} {right|correctly|properly|perfectly|to perfection}. {Cannot|Can't} {say|speak} {enough|highly enough} {good things|positive things|praise} about {them|this company|their service}!",
+    "testimonial_name": "{Christopher Hughes|Daniel Flores|Matthew Washington|Anthony Butler|Joshua Barnes|Andrew Ross|Ryan Henderson|Brandon Coleman|Justin Jenkins|Kevin Perry|Brian Powell|Tyler Long|Zachary Patterson|Nicholas Gray|Eric Ramirez|Adam Foster|Sean Bryant|Nathan Alexander|Jesse Russell|Ethan Griffin}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 81,
+    "category": "plumbing",
+    "testimonial_num": 1,
+    "testimonial_body": "{From|Right from|Starting from} {the first|the initial|my first|our first} {call|phone call|contact|conversation}, {the|this|their} {service|experience|team|company} {was|proved to be|felt} {exceptional|outstanding|excellent|impressive|remarkable|professional|top-notch|first-class}. {The|Their|Our} {technician|specialist|professional|expert|team member} {arrived|showed up|came|got here} {on time|promptly|when promised|as scheduled|right on time}, {was|proved} {professional|courteous|friendly|knowledgeable|respectful|polite} and {courteous|professional|efficient|thorough|skilled}, and {completed|finished|did|performed|handled} {the|our|my} {work|job|project|service|task} {perfectly|flawlessly|excellently|beautifully|to perfection}. {Highly|Strongly|Definitely|Absolutely|Totally|Completely} {recommend|recommended|suggest|endorse}!",
+    "testimonial_name": "{Michael Thompson|David Anderson|James Wilson|Robert Martinez|William Johnson|Christopher Davis|Daniel Garcia|Matthew Brown|Anthony Rodriguez|Joshua Miller|Andrew Taylor|Ryan Moore|Brandon Jackson|Justin White|Kevin Harris|Brian Martin|Tyler Robinson|Zachary Clark|Nicholas Lewis|Eric Walker}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 82,
+    "category": "plumbing",
+    "testimonial_num": 2,
+    "testimonial_body": "{I|We} {could not|couldn't} {be|have been} {happier|more satisfied|more pleased|more impressed|more grateful|more delighted} with {the|their} {service|work|results|job|performance|outcome}! {They|The team|The technicians|The crew|The staff} {were|was} {professional|excellent|outstanding|fantastic|amazing|wonderful|superb}, {efficient|quick|fast|prompt|timely}, and {the|their} {results|work|outcome|job} {exceeded|surpassed|beat|went beyond} {my|our|all} {expectations|hopes|standards}. {Will|Would|Definitely will|Absolutely will} {definitely|certainly|absolutely|for sure} {use|hire|call|recommend|choose} {them|this company} {again|in the future|next time|for all future needs}.",
+    "testimonial_name": "{Jennifer Smith|Sarah Williams|Jessica Brown|Ashley Jones|Amanda Taylor|Stephanie Davis|Nicole Miller|Michelle Wilson|Elizabeth Moore|Rebecca Anderson|Laura Thomas|Kimberly Jackson|Christina White|Emily Harris|Megan Martin|Rachel Robinson|Samantha Clark|Katherine Lewis|Brittany Walker|Heather Young}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 83,
+    "category": "plumbing",
+    "testimonial_num": 3,
+    "testimonial_body": "{Outstanding|Excellent|Exceptional|Amazing|Fantastic|Wonderful|Superb|Remarkable|Impressive} {service|work|experience|job|company|team|professionals}! {From|Starting from} {start|beginning|the quote|the estimate|the first call} to {finish|completion|end|the final result}, {everything|the whole process|every step|all aspects} was {smooth|seamless|easy|hassle-free|professional|effortless} and {professional|efficient|well-organized|well-handled}. {The|Their} {team|crew|technicians|staff|workers|professionals} {clearly|obviously|evidently|certainly} {knows|know|understands|understand} {what they are doing|their craft|their trade|their business}. {Great|Excellent|Wonderful|Fantastic|Amazing|Superb|Outstanding} {job|work|service|experience}!",
+    "testimonial_name": "{John Peterson|Mark Campbell|Steven Phillips|Paul Turner|Kenneth Parker|George Evans|Edward Edwards|Ronald Collins|Timothy Stewart|Jason Sanchez|Jeffrey Morris|Frank Rogers|Scott Reed|Raymond Cook|Patrick Morgan|Jack Bailey|Henry Rivera|Dennis Cooper|Jerry Richardson|Carl Cox}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 84,
+    "category": "plumbing",
+    "testimonial_num": 4,
+    "testimonial_body": "{Very|Extremely|Highly|Really|Truly|Incredibly} {impressed|satisfied|pleased|happy|grateful|delighted} with {the|their} {work|service|job|results|performance|quality}. {The|Their} {team|crew|technicians|staff} {showed up|arrived|came} {on time|promptly|as scheduled|when expected}, {worked|operated|performed|functioned} {efficiently|quickly|professionally|diligently|thoroughly}, and {left|made sure} {the|my|our} {area|space|property|home} {clean|spotless|tidy|neat|immaculate}. {Fair|Honest|Transparent|Reasonable|Good|Great} {pricing|prices|rates|cost} {too|as well|also}. {Would|Will} {highly|definitely|absolutely|certainly|strongly} {recommend|suggest|endorse}!",
+    "testimonial_name": "{Linda Howard|Patricia Ward|Barbara Torres|Susan Peterson|Margaret Campbell|Dorothy Phillips|Lisa Turner|Nancy Parker|Karen Evans|Betty Edwards|Helen Collins|Sandra Stewart|Donna Sanchez|Carol Morris|Ruth Rogers|Sharon Reed|Michelle Cook|Laura Morgan|Deborah Bailey|Cynthia Rivera}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 85,
+    "category": "plumbing",
+    "testimonial_num": 5,
+    "testimonial_body": "{Best|Greatest|Top|Most professional|Most reliable|Most trustworthy} {service|company|team|experience|professionals} {I have|we have|I've|we've} {ever|} {used|hired|worked with|experienced|encountered}. {They|The team|The company|The staff} {went|go} {above and beyond|the extra mile|beyond expectations|out of their way} to {make sure|ensure|guarantee|see that} {everything|the job|the work|all aspects} was {done|completed|finished|handled|executed} {right|correctly|properly|perfectly|to perfection}. {Cannot|Can't} {say|speak} {enough|highly enough} {good things|positive things|praise} about {them|this company|their service}!",
+    "testimonial_name": "{Christopher Hughes|Daniel Flores|Matthew Washington|Anthony Butler|Joshua Barnes|Andrew Ross|Ryan Henderson|Brandon Coleman|Justin Jenkins|Kevin Perry|Brian Powell|Tyler Long|Zachary Patterson|Nicholas Gray|Eric Ramirez|Adam Foster|Sean Bryant|Nathan Alexander|Jesse Russell|Ethan Griffin}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 86,
+    "category": "pest_control",
+    "testimonial_num": 1,
+    "testimonial_body": "{From|Right from|Starting from} {the first|the initial|my first|our first} {call|phone call|contact|conversation}, {the|this|their} {service|experience|team|company} {was|proved to be|felt} {exceptional|outstanding|excellent|impressive|remarkable|professional|top-notch|first-class}. {The|Their|Our} {technician|specialist|professional|expert|team member} {arrived|showed up|came|got here} {on time|promptly|when promised|as scheduled|right on time}, {was|proved} {professional|courteous|friendly|knowledgeable|respectful|polite} and {courteous|professional|efficient|thorough|skilled}, and {completed|finished|did|performed|handled} {the|our|my} {work|job|project|service|task} {perfectly|flawlessly|excellently|beautifully|to perfection}. {Highly|Strongly|Definitely|Absolutely|Totally|Completely} {recommend|recommended|suggest|endorse}!",
+    "testimonial_name": "{Michael Thompson|David Anderson|James Wilson|Robert Martinez|William Johnson|Christopher Davis|Daniel Garcia|Matthew Brown|Anthony Rodriguez|Joshua Miller|Andrew Taylor|Ryan Moore|Brandon Jackson|Justin White|Kevin Harris|Brian Martin|Tyler Robinson|Zachary Clark|Nicholas Lewis|Eric Walker}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 87,
+    "category": "pest_control",
+    "testimonial_num": 2,
+    "testimonial_body": "{I|We} {could not|couldn't} {be|have been} {happier|more satisfied|more pleased|more impressed|more grateful|more delighted} with {the|their} {service|work|results|job|performance|outcome}! {They|The team|The technicians|The crew|The staff} {were|was} {professional|excellent|outstanding|fantastic|amazing|wonderful|superb}, {efficient|quick|fast|prompt|timely}, and {the|their} {results|work|outcome|job} {exceeded|surpassed|beat|went beyond} {my|our|all} {expectations|hopes|standards}. {Will|Would|Definitely will|Absolutely will} {definitely|certainly|absolutely|for sure} {use|hire|call|recommend|choose} {them|this company} {again|in the future|next time|for all future needs}.",
+    "testimonial_name": "{Jennifer Smith|Sarah Williams|Jessica Brown|Ashley Jones|Amanda Taylor|Stephanie Davis|Nicole Miller|Michelle Wilson|Elizabeth Moore|Rebecca Anderson|Laura Thomas|Kimberly Jackson|Christina White|Emily Harris|Megan Martin|Rachel Robinson|Samantha Clark|Katherine Lewis|Brittany Walker|Heather Young}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 88,
+    "category": "pest_control",
+    "testimonial_num": 3,
+    "testimonial_body": "{Outstanding|Excellent|Exceptional|Amazing|Fantastic|Wonderful|Superb|Remarkable|Impressive} {service|work|experience|job|company|team|professionals}! {From|Starting from} {start|beginning|the quote|the estimate|the first call} to {finish|completion|end|the final result}, {everything|the whole process|every step|all aspects} was {smooth|seamless|easy|hassle-free|professional|effortless} and {professional|efficient|well-organized|well-handled}. {The|Their} {team|crew|technicians|staff|workers|professionals} {clearly|obviously|evidently|certainly} {knows|know|understands|understand} {what they are doing|their craft|their trade|their business}. {Great|Excellent|Wonderful|Fantastic|Amazing|Superb|Outstanding} {job|work|service|experience}!",
+    "testimonial_name": "{John Peterson|Mark Campbell|Steven Phillips|Paul Turner|Kenneth Parker|George Evans|Edward Edwards|Ronald Collins|Timothy Stewart|Jason Sanchez|Jeffrey Morris|Frank Rogers|Scott Reed|Raymond Cook|Patrick Morgan|Jack Bailey|Henry Rivera|Dennis Cooper|Jerry Richardson|Carl Cox}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 89,
+    "category": "pest_control",
+    "testimonial_num": 4,
+    "testimonial_body": "{Very|Extremely|Highly|Really|Truly|Incredibly} {impressed|satisfied|pleased|happy|grateful|delighted} with {the|their} {work|service|job|results|performance|quality}. {The|Their} {team|crew|technicians|staff} {showed up|arrived|came} {on time|promptly|as scheduled|when expected}, {worked|operated|performed|functioned} {efficiently|quickly|professionally|diligently|thoroughly}, and {left|made sure} {the|my|our} {area|space|property|home} {clean|spotless|tidy|neat|immaculate}. {Fair|Honest|Transparent|Reasonable|Good|Great} {pricing|prices|rates|cost} {too|as well|also}. {Would|Will} {highly|definitely|absolutely|certainly|strongly} {recommend|suggest|endorse}!",
+    "testimonial_name": "{Linda Howard|Patricia Ward|Barbara Torres|Susan Peterson|Margaret Campbell|Dorothy Phillips|Lisa Turner|Nancy Parker|Karen Evans|Betty Edwards|Helen Collins|Sandra Stewart|Donna Sanchez|Carol Morris|Ruth Rogers|Sharon Reed|Michelle Cook|Laura Morgan|Deborah Bailey|Cynthia Rivera}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 90,
+    "category": "pest_control",
+    "testimonial_num": 5,
+    "testimonial_body": "{Best|Greatest|Top|Most professional|Most reliable|Most trustworthy} {service|company|team|experience|professionals} {I have|we have|I've|we've} {ever|} {used|hired|worked with|experienced|encountered}. {They|The team|The company|The staff} {went|go} {above and beyond|the extra mile|beyond expectations|out of their way} to {make sure|ensure|guarantee|see that} {everything|the job|the work|all aspects} was {done|completed|finished|handled|executed} {right|correctly|properly|perfectly|to perfection}. {Cannot|Can't} {say|speak} {enough|highly enough} {good things|positive things|praise} about {them|this company|their service}!",
+    "testimonial_name": "{Christopher Hughes|Daniel Flores|Matthew Washington|Anthony Butler|Joshua Barnes|Andrew Ross|Ryan Henderson|Brandon Coleman|Justin Jenkins|Kevin Perry|Brian Powell|Tyler Long|Zachary Patterson|Nicholas Gray|Eric Ramirez|Adam Foster|Sean Bryant|Nathan Alexander|Jesse Russell|Ethan Griffin}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 91,
+    "category": "air_conditioning",
+    "testimonial_num": 1,
+    "testimonial_body": "{From|Right from|Starting from} {the first|the initial|my first|our first} {call|phone call|contact|conversation}, {the|this|their} {service|experience|team|company} {was|proved to be|felt} {exceptional|outstanding|excellent|impressive|remarkable|professional|top-notch|first-class}. {The|Their|Our} {technician|specialist|professional|expert|team member} {arrived|showed up|came|got here} {on time|promptly|when promised|as scheduled|right on time}, {was|proved} {professional|courteous|friendly|knowledgeable|respectful|polite} and {courteous|professional|efficient|thorough|skilled}, and {completed|finished|did|performed|handled} {the|our|my} {work|job|project|service|task} {perfectly|flawlessly|excellently|beautifully|to perfection}. {Highly|Strongly|Definitely|Absolutely|Totally|Completely} {recommend|recommended|suggest|endorse}!",
+    "testimonial_name": "{Michael Thompson|David Anderson|James Wilson|Robert Martinez|William Johnson|Christopher Davis|Daniel Garcia|Matthew Brown|Anthony Rodriguez|Joshua Miller|Andrew Taylor|Ryan Moore|Brandon Jackson|Justin White|Kevin Harris|Brian Martin|Tyler Robinson|Zachary Clark|Nicholas Lewis|Eric Walker}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 92,
+    "category": "air_conditioning",
+    "testimonial_num": 2,
+    "testimonial_body": "{I|We} {could not|couldn't} {be|have been} {happier|more satisfied|more pleased|more impressed|more grateful|more delighted} with {the|their} {service|work|results|job|performance|outcome}! {They|The team|The technicians|The crew|The staff} {were|was} {professional|excellent|outstanding|fantastic|amazing|wonderful|superb}, {efficient|quick|fast|prompt|timely}, and {the|their} {results|work|outcome|job} {exceeded|surpassed|beat|went beyond} {my|our|all} {expectations|hopes|standards}. {Will|Would|Definitely will|Absolutely will} {definitely|certainly|absolutely|for sure} {use|hire|call|recommend|choose} {them|this company} {again|in the future|next time|for all future needs}.",
+    "testimonial_name": "{Jennifer Smith|Sarah Williams|Jessica Brown|Ashley Jones|Amanda Taylor|Stephanie Davis|Nicole Miller|Michelle Wilson|Elizabeth Moore|Rebecca Anderson|Laura Thomas|Kimberly Jackson|Christina White|Emily Harris|Megan Martin|Rachel Robinson|Samantha Clark|Katherine Lewis|Brittany Walker|Heather Young}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 93,
+    "category": "air_conditioning",
+    "testimonial_num": 3,
+    "testimonial_body": "{Outstanding|Excellent|Exceptional|Amazing|Fantastic|Wonderful|Superb|Remarkable|Impressive} {service|work|experience|job|company|team|professionals}! {From|Starting from} {start|beginning|the quote|the estimate|the first call} to {finish|completion|end|the final result}, {everything|the whole process|every step|all aspects} was {smooth|seamless|easy|hassle-free|professional|effortless} and {professional|efficient|well-organized|well-handled}. {The|Their} {team|crew|technicians|staff|workers|professionals} {clearly|obviously|evidently|certainly} {knows|know|understands|understand} {what they are doing|their craft|their trade|their business}. {Great|Excellent|Wonderful|Fantastic|Amazing|Superb|Outstanding} {job|work|service|experience}!",
+    "testimonial_name": "{John Peterson|Mark Campbell|Steven Phillips|Paul Turner|Kenneth Parker|George Evans|Edward Edwards|Ronald Collins|Timothy Stewart|Jason Sanchez|Jeffrey Morris|Frank Rogers|Scott Reed|Raymond Cook|Patrick Morgan|Jack Bailey|Henry Rivera|Dennis Cooper|Jerry Richardson|Carl Cox}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 94,
+    "category": "air_conditioning",
+    "testimonial_num": 4,
+    "testimonial_body": "{Very|Extremely|Highly|Really|Truly|Incredibly} {impressed|satisfied|pleased|happy|grateful|delighted} with {the|their} {work|service|job|results|performance|quality}. {The|Their} {team|crew|technicians|staff} {showed up|arrived|came} {on time|promptly|as scheduled|when expected}, {worked|operated|performed|functioned} {efficiently|quickly|professionally|diligently|thoroughly}, and {left|made sure} {the|my|our} {area|space|property|home} {clean|spotless|tidy|neat|immaculate}. {Fair|Honest|Transparent|Reasonable|Good|Great} {pricing|prices|rates|cost} {too|as well|also}. {Would|Will} {highly|definitely|absolutely|certainly|strongly} {recommend|suggest|endorse}!",
+    "testimonial_name": "{Linda Howard|Patricia Ward|Barbara Torres|Susan Peterson|Margaret Campbell|Dorothy Phillips|Lisa Turner|Nancy Parker|Karen Evans|Betty Edwards|Helen Collins|Sandra Stewart|Donna Sanchez|Carol Morris|Ruth Rogers|Sharon Reed|Michelle Cook|Laura Morgan|Deborah Bailey|Cynthia Rivera}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 95,
+    "category": "air_conditioning",
+    "testimonial_num": 5,
+    "testimonial_body": "{Best|Greatest|Top|Most professional|Most reliable|Most trustworthy} {service|company|team|experience|professionals} {I have|we have|I've|we've} {ever|} {used|hired|worked with|experienced|encountered}. {They|The team|The company|The staff} {went|go} {above and beyond|the extra mile|beyond expectations|out of their way} to {make sure|ensure|guarantee|see that} {everything|the job|the work|all aspects} was {done|completed|finished|handled|executed} {right|correctly|properly|perfectly|to perfection}. {Cannot|Can't} {say|speak} {enough|highly enough} {good things|positive things|praise} about {them|this company|their service}!",
+    "testimonial_name": "{Christopher Hughes|Daniel Flores|Matthew Washington|Anthony Butler|Joshua Barnes|Andrew Ross|Ryan Henderson|Brandon Coleman|Justin Jenkins|Kevin Perry|Brian Powell|Tyler Long|Zachary Patterson|Nicholas Gray|Eric Ramirez|Adam Foster|Sean Bryant|Nathan Alexander|Jesse Russell|Ethan Griffin}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 96,
+    "category": "heating",
+    "testimonial_num": 1,
+    "testimonial_body": "{From|Right from|Starting from} {the first|the initial|my first|our first} {call|phone call|contact|conversation}, {the|this|their} {service|experience|team|company} {was|proved to be|felt} {exceptional|outstanding|excellent|impressive|remarkable|professional|top-notch|first-class}. {The|Their|Our} {technician|specialist|professional|expert|team member} {arrived|showed up|came|got here} {on time|promptly|when promised|as scheduled|right on time}, {was|proved} {professional|courteous|friendly|knowledgeable|respectful|polite} and {courteous|professional|efficient|thorough|skilled}, and {completed|finished|did|performed|handled} {the|our|my} {work|job|project|service|task} {perfectly|flawlessly|excellently|beautifully|to perfection}. {Highly|Strongly|Definitely|Absolutely|Totally|Completely} {recommend|recommended|suggest|endorse}!",
+    "testimonial_name": "{Michael Thompson|David Anderson|James Wilson|Robert Martinez|William Johnson|Christopher Davis|Daniel Garcia|Matthew Brown|Anthony Rodriguez|Joshua Miller|Andrew Taylor|Ryan Moore|Brandon Jackson|Justin White|Kevin Harris|Brian Martin|Tyler Robinson|Zachary Clark|Nicholas Lewis|Eric Walker}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 97,
+    "category": "heating",
+    "testimonial_num": 2,
+    "testimonial_body": "{I|We} {could not|couldn't} {be|have been} {happier|more satisfied|more pleased|more impressed|more grateful|more delighted} with {the|their} {service|work|results|job|performance|outcome}! {They|The team|The technicians|The crew|The staff} {were|was} {professional|excellent|outstanding|fantastic|amazing|wonderful|superb}, {efficient|quick|fast|prompt|timely}, and {the|their} {results|work|outcome|job} {exceeded|surpassed|beat|went beyond} {my|our|all} {expectations|hopes|standards}. {Will|Would|Definitely will|Absolutely will} {definitely|certainly|absolutely|for sure} {use|hire|call|recommend|choose} {them|this company} {again|in the future|next time|for all future needs}.",
+    "testimonial_name": "{Jennifer Smith|Sarah Williams|Jessica Brown|Ashley Jones|Amanda Taylor|Stephanie Davis|Nicole Miller|Michelle Wilson|Elizabeth Moore|Rebecca Anderson|Laura Thomas|Kimberly Jackson|Christina White|Emily Harris|Megan Martin|Rachel Robinson|Samantha Clark|Katherine Lewis|Brittany Walker|Heather Young}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 98,
+    "category": "heating",
+    "testimonial_num": 3,
+    "testimonial_body": "{Outstanding|Excellent|Exceptional|Amazing|Fantastic|Wonderful|Superb|Remarkable|Impressive} {service|work|experience|job|company|team|professionals}! {From|Starting from} {start|beginning|the quote|the estimate|the first call} to {finish|completion|end|the final result}, {everything|the whole process|every step|all aspects} was {smooth|seamless|easy|hassle-free|professional|effortless} and {professional|efficient|well-organized|well-handled}. {The|Their} {team|crew|technicians|staff|workers|professionals} {clearly|obviously|evidently|certainly} {knows|know|understands|understand} {what they are doing|their craft|their trade|their business}. {Great|Excellent|Wonderful|Fantastic|Amazing|Superb|Outstanding} {job|work|service|experience}!",
+    "testimonial_name": "{John Peterson|Mark Campbell|Steven Phillips|Paul Turner|Kenneth Parker|George Evans|Edward Edwards|Ronald Collins|Timothy Stewart|Jason Sanchez|Jeffrey Morris|Frank Rogers|Scott Reed|Raymond Cook|Patrick Morgan|Jack Bailey|Henry Rivera|Dennis Cooper|Jerry Richardson|Carl Cox}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 99,
+    "category": "heating",
+    "testimonial_num": 4,
+    "testimonial_body": "{Very|Extremely|Highly|Really|Truly|Incredibly} {impressed|satisfied|pleased|happy|grateful|delighted} with {the|their} {work|service|job|results|performance|quality}. {The|Their} {team|crew|technicians|staff} {showed up|arrived|came} {on time|promptly|as scheduled|when expected}, {worked|operated|performed|functioned} {efficiently|quickly|professionally|diligently|thoroughly}, and {left|made sure} {the|my|our} {area|space|property|home} {clean|spotless|tidy|neat|immaculate}. {Fair|Honest|Transparent|Reasonable|Good|Great} {pricing|prices|rates|cost} {too|as well|also}. {Would|Will} {highly|definitely|absolutely|certainly|strongly} {recommend|suggest|endorse}!",
+    "testimonial_name": "{Linda Howard|Patricia Ward|Barbara Torres|Susan Peterson|Margaret Campbell|Dorothy Phillips|Lisa Turner|Nancy Parker|Karen Evans|Betty Edwards|Helen Collins|Sandra Stewart|Donna Sanchez|Carol Morris|Ruth Rogers|Sharon Reed|Michelle Cook|Laura Morgan|Deborah Bailey|Cynthia Rivera}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  },
+  {
+    "id": 100,
+    "category": "heating",
+    "testimonial_num": 5,
+    "testimonial_body": "{Best|Greatest|Top|Most professional|Most reliable|Most trustworthy} {service|company|team|experience|professionals} {I have|we have|I've|we've} {ever|} {used|hired|worked with|experienced|encountered}. {They|The team|The company|The staff} {went|go} {above and beyond|the extra mile|beyond expectations|out of their way} to {make sure|ensure|guarantee|see that} {everything|the job|the work|all aspects} was {done|completed|finished|handled|executed} {right|correctly|properly|perfectly|to perfection}. {Cannot|Can't} {say|speak} {enough|highly enough} {good things|positive things|praise} about {them|this company|their service}!",
+    "testimonial_name": "{Christopher Hughes|Daniel Flores|Matthew Washington|Anthony Butler|Joshua Barnes|Andrew Ross|Ryan Henderson|Brandon Coleman|Justin Jenkins|Kevin Perry|Brian Powell|Tyler Long|Zachary Patterson|Nicholas Gray|Eric Ramirez|Adam Foster|Sean Bryant|Nathan Alexander|Jesse Russell|Ethan Griffin}",
+    "rating": 5,
+    "created_at": "2026-01-15T00:23:20.251784+00:00",
+    "updated_at": "2026-01-15T00:23:20.251784+00:00"
+  }
+]

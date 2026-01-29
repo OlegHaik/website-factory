@@ -81,6 +81,24 @@ CREATE TABLE IF NOT EXISTS styles (
 );
 
 -- =====================================================
+-- 3.1 ТАБЛИЦЯ CONFIG_STYLES (160 theme presets)
+-- =====================================================
+
+CREATE TABLE IF NOT EXISTS config_styles (
+  id SERIAL PRIMARY KEY,
+  theme_name TEXT,
+  warm_dark TEXT,
+  warm_med TEXT,
+  warm_bright TEXT,
+  cool_dark TEXT,
+  cool_med TEXT,
+  cool_accent TEXT,
+  accent_primary TEXT,
+  accent_hover TEXT,
+  font_family TEXT
+);
+
+-- =====================================================
 -- 4. КОНТЕНТ ТАБЛИЦІ
 -- =====================================================
 
@@ -222,6 +240,21 @@ CREATE TABLE IF NOT EXISTS content_legal (
   UNIQUE(category, legal_type)
 );
 
+-- CONTENT BLOCKS (universal content blocks)
+CREATE TABLE IF NOT EXISTS content_blocks (
+  id SERIAL PRIMARY KEY,
+  site_id INTEGER,
+  category_key TEXT,
+  page_type TEXT,
+  section_key TEXT,
+  element_type TEXT,
+  element_order INTEGER,
+  value_spintax_html TEXT,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW(),
+  global_order INTEGER
+);
+
 -- =====================================================
 -- 5. ENABLE ROW LEVEL SECURITY
 -- =====================================================
@@ -229,6 +262,8 @@ CREATE TABLE IF NOT EXISTS content_legal (
 ALTER TABLE sites ENABLE ROW LEVEL SECURITY;
 ALTER TABLE services ENABLE ROW LEVEL SECURITY;
 ALTER TABLE styles ENABLE ROW LEVEL SECURITY;
+ALTER TABLE config_styles ENABLE ROW LEVEL SECURITY;
+ALTER TABLE content_blocks ENABLE ROW LEVEL SECURITY;
 ALTER TABLE content_hero_new ENABLE ROW LEVEL SECURITY;
 ALTER TABLE content_header_new ENABLE ROW LEVEL SECURITY;
 ALTER TABLE content_cta_new ENABLE ROW LEVEL SECURITY;
@@ -249,6 +284,8 @@ ALTER TABLE content_legal ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "Allow public read" ON sites FOR SELECT USING (true);
 CREATE POLICY "Allow public read" ON services FOR SELECT USING (true);
 CREATE POLICY "Allow public read" ON styles FOR SELECT USING (true);
+CREATE POLICY "Allow public read" ON config_styles FOR SELECT USING (true);
+CREATE POLICY "Allow public read" ON content_blocks FOR SELECT USING (true);
 CREATE POLICY "Allow public read" ON content_hero_new FOR SELECT USING (true);
 CREATE POLICY "Allow public read" ON content_header_new FOR SELECT USING (true);
 CREATE POLICY "Allow public read" ON content_cta_new FOR SELECT USING (true);

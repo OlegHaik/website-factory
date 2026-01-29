@@ -26,12 +26,16 @@ const EXPORT_DIR = './supabase_export';
 
 // Порядок імпорту (залежності!)
 const IMPORT_ORDER = [
-  'sites',           // Основна таблиця
+  'sites',           // Основна таблиця (692)
   'services',        // Залежить від sites
   'service_areas',   // Залежить від sites
   'site_service_areas',
   'site_services',
-  'styles',
+  'styles',          // 6 category styles
+  'config_styles',   // 160 theme presets
+  'content_blocks',  // 270 universal content blocks
+
+  // _new версії таблиць
   'content_hero_new',
   'content_header_new',
   'content_cta_new',
@@ -43,7 +47,20 @@ const IMPORT_ORDER = [
   'content_service_pages_elements',
   'content_area_pages',
   'content_feedback',
-  'content_legal'
+  'content_legal',
+
+  // Legacy таблиці (без _new) - використовуються в коді
+  'content_meta',           // 176
+  'content_service_pages',  // 96
+  'content_service_area',   // 16
+  'content_questionnaire',  // 10
+  'content_seo_body',       // 11
+  'content_hero',           // 16
+  'content_header',         // 16
+  'content_cta',            // 16
+  'content_faq',            // 192
+  'content_testimonials',   // 100
+  'content_services',       // 96
 ];
 
 async function importTable(tableName) {

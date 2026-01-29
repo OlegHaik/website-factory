@@ -1,0 +1,1538 @@
+[
+  {
+    "id": 188,
+    "category": "heating",
+    "faq_id": "a4",
+    "content": "{Yes|Absolutely|Definitely|Certainly|Of course}! {All|Every one of|Each of} {our|{{business_name}}'s|the} {technicians|professionals|specialists|team members|staff|workers} {are|is} {fully|completely|properly|appropriately|thoroughly} {licensed|certified|trained|qualified|credentialed}, {insured|bonded|covered|protected}, and {background-checked|vetted|screened|verified}. {We|{{business_name}}|Our company} {maintain|carry|hold|have} {comprehensive|full|complete|proper|adequate} {liability|general liability|business} {insurance|coverage|protection} and {workers'|worker's|workman's} {compensation|comp} {coverage|insurance|protection} to {protect|safeguard|cover|shield} {both|} {our|the} {team|workers|staff|employees} and {your|the|client} {property|home|premises|belongings}.",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 7,
+    "category": "water_damage",
+    "faq_id": "q4",
+    "content": "{Is|Are|Will|Can} {mold|mold growth|mold contamination|fungal growth} {a|an} {concern|risk|problem|issue|worry|possibility|danger} after {water damage|flooding|water intrusion|a flood|water in my home}?",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 189,
+    "category": "heating",
+    "faq_id": "q5",
+    "content": "{Do|Can|Will} {you|{{business_name}}|your team|your company} {offer|provide|give|have} {free|complimentary|no-cost|no-obligation} {estimates|quotes|consultations|assessments|inspections}?",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 190,
+    "category": "heating",
+    "faq_id": "a5",
+    "content": "{Yes|Absolutely|Definitely|Certainly|Of course}! {We|{{business_name}}|Our team|Our company} {offer|provide|give} {free|complimentary|no-cost|no-obligation|zero-cost}, {no-obligation|obligation-free|pressure-free|hassle-free} {estimates|quotes|consultations|assessments} for {all|any|every|most} heating {services|projects|work|jobs}. {Contact|Call|Reach|Phone|Get in touch with} {us|our team|{{business_name}}|our office} {today|now|anytime} at {{phone}} to {schedule|book|arrange|set up} {your|a|an} {free|complimentary} {consultation|estimate|quote|assessment}.",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 11,
+    "category": "water_damage",
+    "faq_id": "q6",
+    "content": "{Do|Should|Can|Will} {you|your team|your company|your technicians|{{business_name}}} {offer|provide|have|give} {emergency|24/7|after-hours|urgent|immediate|round-the-clock} {water damage|water|flood damage|water restoration|emergency} {services|response|help|assistance|availability}?",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 51,
+    "category": "kitchen_remodel",
+    "faq_id": "q2",
+    "content": "{How much|What|What's the cost|What are typical prices|How expensive is} {does|will|should} kitchen remodel {services|work|a project|the work|a job} {cost|run|typically cost|generally cost|price at}?",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 53,
+    "category": "kitchen_remodel",
+    "faq_id": "q3",
+    "content": "{How long|What's the timeframe|How much time|What duration} {does|will|should} {a typical|an average|a standard|most} kitchen remodel {project|job|service|work} {take|require|need|last}?",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 191,
+    "category": "heating",
+    "faq_id": "q6",
+    "content": "{What|Which} {areas|cities|locations|regions|communities} {do|does} {you|{{business_name}}|your company|your team} {serve|service|cover|work in|operate in}?",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 192,
+    "category": "heating",
+    "faq_id": "a6",
+    "content": "{We|{{business_name}}|Our team|Our company} {proudly|happily|gladly} {serve|service|cover|operate in|work throughout} {{city}} and {the|all} {surrounding|nearby|neighboring|adjacent|local} {areas|communities|cities|neighborhoods|regions|towns}. {Contact|Call|Reach|Phone} {us|our team|our office|{{business_name}}} at {{phone}} to {confirm|verify|check|see if} {service|coverage|availability} in {your|a specific|any particular} {area|location|city|neighborhood|community}.",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 24,
+    "category": "mold_remediation",
+    "faq_id": "a6",
+    "content": "{We|{{business_name}}|Our team|Our company} {proudly|happily|gladly} {serve|service|cover|operate in|work throughout} {{city}} and {the|all} {surrounding|nearby|neighboring|adjacent|local} {areas|communities|cities|neighborhoods|regions|towns}. {Contact|Call|Reach|Phone} {us|our team|our office|{{business_name}}} at {{phone}} to {confirm|verify|check|see if} {service|coverage|availability} in {your|a specific|any particular} {area|location|city|neighborhood|community}.",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 25,
+    "category": "roofing",
+    "faq_id": "q1",
+    "content": "{Why|What makes|How does|What are the benefits of|What's the advantage of} {should I|choosing|hiring|working with} {choose|hire|select|trust|work with|call} {a|a professional|an expert|a certified|a licensed} {professional|certified|expert|licensed|experienced} roofing {company|contractor|service|specialist|expert|team}?",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 2,
+    "category": "water_damage",
+    "faq_id": "a1",
+    "content": "{First|The first step is to|Immediately|Right away|As soon as possible|Your first priority should be to}, {turn off|shut off|stop|cut|disconnect} {the|any|all} {water source|water supply|main water|source of water} if {possible|safe|you can|it's safe to do so|accessible}. {Then|Next|After that|Following that|Subsequently}, {call|contact|phone|reach out to|get in touch with} {a|our|your local|a professional|an emergency} {professional|certified|licensed|expert|emergency} {water damage|restoration|water|flood damage} {restoration|repair|cleanup|response|mitigation} {company|team|service|specialists|experts|professionals} {immediately|right away|as soon as possible|without delay|promptly|urgently}. {Avoid|Don't|Never|Refrain from|Do not} {using|turning on|operating} {electrical|any electrical|electric} {appliances|devices|equipment|items} in {affected|flooded|wet|water-damaged|damp} {areas|zones|rooms|spaces}. {Document|Take photos of|Photograph|Record|Capture images of} {the|all|any} {damage|affected areas|water damage|flooding} for {insurance|your insurance|insurance claim|documentation|record} {purposes|claims|records|files}.",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 3,
+    "category": "water_damage",
+    "faq_id": "q2",
+    "content": "{How long|What's the timeframe for|How much time does|What duration is needed for|How many days does} {does|will|should} {the|a|typical|standard|average} {water damage|water|flood damage|restoration|water damage restoration} {restoration|repair|cleanup|drying|recovery} {process|procedure|work|job|project} {take|require|need|last|typically take}?",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 4,
+    "category": "water_damage",
+    "faq_id": "a2",
+    "content": "{The|A typical|An average|Most|Standard} {timeframe|duration|timeline|time|length} {varies|differs|depends|changes|ranges} {based on|depending on|according to|influenced by} {the|several|various|multiple|a number of} {extent|severity|scope|level|degree|amount} of {damage|the damage|water damage|flooding|water intrusion}. {Minor|Small|Simple|Limited|Contained|Basic} {water damage|damage|flooding|leaks} {may|might|can|could|typically} {take|require|need|last} {2-3|two to three|a couple of|several|a few} {days|business days}, while {more|larger|extensive|severe|significant|major|serious} {damage|flooding|water damage|situations|cases} {can|may|might|could} {take|require|need|last} {1-2|one to two|several} {weeks|week period} or {more|longer|even longer|additional time}. {Our|The|{{business_name}}'s|A professional} {team|technicians|specialists|experts} will {provide|give|offer|supply} {a|an|you with a|a detailed|an accurate} {detailed|specific|accurate|realistic|honest|clear} {timeline|estimate|timeframe|projection|assessment} after {the|our|an|the initial} {initial|first|preliminary|comprehensive} {assessment|inspection|evaluation|examination|survey}.",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 101,
+    "category": "adu_builder",
+    "faq_id": "q3",
+    "content": "{How long|What's the timeframe|How much time|What duration} {does|will|should} {a typical|an average|a standard|most} adu builder {project|job|service|work} {take|require|need|last}?",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 5,
+    "category": "water_damage",
+    "faq_id": "q3",
+    "content": "{Will|Does|Can|Is it true that|Should} {my|our|your|the|a typical} {homeowner's|homeowners|home|property|insurance} {insurance|policy|coverage|plan} {cover|pay for|handle|include|reimburse} {water damage|water damage restoration|flood damage|water|the restoration} {restoration|repair|cleanup|costs|expenses|work}?",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 6,
+    "category": "water_damage",
+    "faq_id": "a3",
+    "content": "{Most|Many|Typical|Standard|The majority of} {homeowner's|homeowners|home|property} {insurance|insurance policies|policies|coverage|plans} {cover|include|pay for|handle|reimburse} {water damage|water damage restoration|flood damage|water} {caused by|resulting from|due to|from} {sudden|unexpected|accidental|unforeseen} {and|or} {accidental|unexpected|sudden|unforeseen} {events|incidents|occurrences|situations}, {such as|like|including|for example} {burst pipes|pipe bursts|broken pipes|plumbing failures}, {appliance|water heater|washing machine} {malfunctions|failures|leaks}, {or|and} {storm|weather|natural} {damage|events|disasters}. {However|But|That said|Keep in mind|Note that}, {flood|flooding|natural flood|external flood} {damage|events|disasters} {typically|usually|often|generally|commonly} {requires|needs|demands|calls for} {separate|additional|specific|dedicated|special} {flood|flood damage|flooding} {insurance|coverage|policy|protection}. {Our|The|{{business_name}}'s|A} {team|staff|specialists|experts} {can|will|is happy to|would be glad to} {help|assist|work with|support} {you|homeowners|you with|clients} {navigate|understand|work through|handle|manage|deal with} {the|your|any|all} {insurance|claim|claims|insurance claim} {claims|process|procedures|paperwork|documentation} {process|procedures|requirements|system}.",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 103,
+    "category": "adu_builder",
+    "faq_id": "q4",
+    "content": "{Are|Is} {your|the|{{business_name}}'s} {technicians|team|staff|workers|professionals|specialists} {licensed|certified|insured|bonded|qualified} and {insured|certified|licensed|bonded}?",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 73,
+    "category": "bathroom_remodel",
+    "faq_id": "q1",
+    "content": "{Why|What makes|How does|What are the benefits of|What's the advantage of} {should I|choosing|hiring|working with} {choose|hire|select|trust|work with|call} {a|a professional|an expert|a certified|a licensed} {professional|certified|expert|licensed|experienced} bathroom remodel {company|contractor|service|specialist|expert|team}?",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 96,
+    "category": "air_duct_cleaning",
+    "faq_id": "a6",
+    "content": "{We|{{business_name}}|Our team|Our company} {proudly|happily|gladly} {serve|service|cover|operate in|work throughout} {{city}} and {the|all} {surrounding|nearby|neighboring|adjacent|local} {areas|communities|cities|neighborhoods|regions|towns}. {Contact|Call|Reach|Phone} {us|our team|our office|{{business_name}}} at {{phone}} to {confirm|verify|check|see if} {service|coverage|availability} in {your|a specific|any particular} {area|location|city|neighborhood|community}.",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 99,
+    "category": "adu_builder",
+    "faq_id": "q2",
+    "content": "{How much|What|What's the cost|What are typical prices|How expensive is} {does|will|should} adu builder {services|work|a project|the work|a job} {cost|run|typically cost|generally cost|price at}?",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 105,
+    "category": "adu_builder",
+    "faq_id": "q5",
+    "content": "{Do|Can|Will} {you|{{business_name}}|your team|your company} {offer|provide|give|have} {free|complimentary|no-cost|no-obligation} {estimates|quotes|consultations|assessments|inspections}?",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 107,
+    "category": "adu_builder",
+    "faq_id": "q6",
+    "content": "{What|Which} {areas|cities|locations|regions|communities} {do|does} {you|{{business_name}}|your company|your team} {serve|service|cover|work in|operate in}?",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 184,
+    "category": "heating",
+    "faq_id": "a2",
+    "content": "{Cost|Pricing|Price|The cost|Pricing for} heating {varies|differs|ranges|depends|changes} {based on|depending on|according to|influenced by} {several|many|various|multiple|a number of} {factors|variables|considerations|elements} {including|such as|like|particularly} {the|project} {scope|size|complexity|extent|scale} of {the|your|each|any} {project|job|work|service}, {materials|products|supplies|equipment} {needed|required|used|selected|chosen}, {and|plus|as well as} {local|area|regional|market} {labor|service|pricing|market} {rates|costs|prices|charges}. {We|{{business_name}}|Our team|Our company} {offer|provide|give|supply} {free|complimentary|no-cost|no-obligation} {estimates|quotes|assessments|consultations|pricing} so {you|homeowners|customers|clients} {know|understand|see|get} {exactly|precisely|clearly} {what|the} {to expect|to budget|costs are|pricing is} {before|prior to|ahead of} {any|the} {work|service|project|job} {begins|starts|commences}.",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 186,
+    "category": "heating",
+    "faq_id": "a3",
+    "content": "{Project|Job|Service|Work} {duration|timeline|timeframe|length|time} {depends on|varies based on|is influenced by|changes based on} {the|} {scope|size|complexity|extent|scale} and {complexity|nature|type|specifics} of {the|your|each} {work|project|job|service}. {Simple|Basic|Minor|Small|Straightforward} {jobs|projects|services|tasks} {may|might|can|could} {take|require|be completed in|last} {a few|several|just a couple of} {hours|days}, {while|whereas|but} {larger|more complex|extensive|major|bigger} {projects|jobs|work|services} {can|may|might|could} {take|require|span|last} {several|multiple|a few} {days|weeks} or {longer|more|even longer}. {We|{{business_name}}|Our team} {provide|give|offer|supply} {accurate|realistic|honest|detailed|clear} {timeline|timeframe|schedule|estimate} {estimates|projections|information} {during|at|with} {our|the|your} {initial|free|first} {consultation|assessment|estimate|quote}.",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 102,
+    "category": "adu_builder",
+    "faq_id": "a3",
+    "content": "{Project|Job|Service|Work} {duration|timeline|timeframe|length|time} {depends on|varies based on|is influenced by|changes based on} {the|} {scope|size|complexity|extent|scale} and {complexity|nature|type|specifics} of {the|your|each} {work|project|job|service}. {Simple|Basic|Minor|Small|Straightforward} {jobs|projects|services|tasks} {may|might|can|could} {take|require|be completed in|last} {a few|several|just a couple of} {hours|days}, {while|whereas|but} {larger|more complex|extensive|major|bigger} {projects|jobs|work|services} {can|may|might|could} {take|require|span|last} {several|multiple|a few} {days|weeks} or {longer|more|even longer}. {We|{{business_name}}|Our team} {provide|give|offer|supply} {accurate|realistic|honest|detailed|clear} {timeline|timeframe|schedule|estimate} {estimates|projections|information} {during|at|with} {our|the|your} {initial|free|first} {consultation|assessment|estimate|quote}.",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 111,
+    "category": "pool_contractor",
+    "faq_id": "q2",
+    "content": "{How much|What|What's the cost|What are typical prices|How expensive is} {does|will|should} pool contractor {services|work|a project|the work|a job} {cost|run|typically cost|generally cost|price at}?",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 8,
+    "category": "water_damage",
+    "faq_id": "a4",
+    "content": "{Yes|Absolutely|Definitely|Indeed|Certainly}, {mold|mold growth|fungal growth|mold contamination|mold development} {can|may|will|could|often does} {begin|start|develop|form|appear|grow|occur} {within|in as little as|in just|in|after} {24-48|24 to 48|twenty-four to forty-eight} {hours|hours of|hours after|hours following} {of|after|following} {water|moisture|water damage|flooding|water intrusion|the water|the flooding} {exposure|contact|presence|damage|event|incident}. {That's|This is|Which is} {why|the reason|exactly why} {fast|quick|rapid|immediate|prompt|swift|speedy|urgent|timely} {water|moisture|water damage} {extraction|removal|cleanup|mitigation|drying} and {proper|thorough|complete|professional|effective|adequate|comprehensive} {drying|dehumidification|moisture removal|drying out} {is|are|remains|proves|stays} {critical|essential|crucial|vital|important|key|paramount|necessary}. {Our|The|{{business_name}}'s|A professional|Our certified} {team|technicians|specialists|professionals|experts} {uses|utilizes|employs|operates|brings} {professional|industrial|commercial|advanced|specialized|powerful} {dehumidifiers|drying equipment|air movers|drying systems|moisture removal equipment} and {air movers|fans|blowers|air circulation equipment|drying fans} to {thoroughly|completely|properly|fully|entirely|effectively} {dry|dehydrate|remove moisture from} {affected|damaged|wet|damp|water-damaged} {areas|zones|spaces|rooms|sections} and {prevent|stop|inhibit|avoid|minimize|reduce the risk of} {mold|mold growth|fungal growth|mold development|mold formation|mold problems}.",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 9,
+    "category": "water_damage",
+    "faq_id": "q5",
+    "content": "{What|Which} {areas|rooms|spaces|parts of my home|zones} {are|is} {most|particularly|especially|highly|commonly} {susceptible|prone|vulnerable|at risk|likely} to {water damage|water damage problems|flooding|water intrusion|water issues|water-related damage}?",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 117,
+    "category": "pool_contractor",
+    "faq_id": "q5",
+    "content": "{Do|Can|Will} {you|{{business_name}}|your team|your company} {offer|provide|give|have} {free|complimentary|no-cost|no-obligation} {estimates|quotes|consultations|assessments|inspections}?",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 135,
+    "category": "locksmith",
+    "faq_id": "q2",
+    "content": "{How much|What|What's the cost|What are typical prices|How expensive is} {does|will|should} locksmith {services|work|a project|the work|a job} {cost|run|typically cost|generally cost|price at}?",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 144,
+    "category": "locksmith",
+    "faq_id": "a6",
+    "content": "{We|{{business_name}}|Our team|Our company} {proudly|happily|gladly} {serve|service|cover|operate in|work throughout} {{city}} and {the|all} {surrounding|nearby|neighboring|adjacent|local} {areas|communities|cities|neighborhoods|regions|towns}. {Contact|Call|Reach|Phone} {us|our team|our office|{{business_name}}} at {{phone}} to {confirm|verify|check|see if} {service|coverage|availability} in {your|a specific|any particular} {area|location|city|neighborhood|community}.",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 64,
+    "category": "carpet_cleaning",
+    "faq_id": "a2",
+    "content": "{Cost|Pricing|Price|The cost|Pricing for} carpet cleaning {varies|differs|ranges|depends|changes} {based on|depending on|according to|influenced by} {several|many|various|multiple|a number of} {factors|variables|considerations|elements} {including|such as|like|particularly} {the|project} {scope|size|complexity|extent|scale} of {the|your|each|any} {project|job|work|service}, {materials|products|supplies|equipment} {needed|required|used|selected|chosen}, {and|plus|as well as} {local|area|regional|market} {labor|service|pricing|market} {rates|costs|prices|charges}. {We|{{business_name}}|Our team|Our company} {offer|provide|give|supply} {free|complimentary|no-cost|no-obligation} {estimates|quotes|assessments|consultations|pricing} so {you|homeowners|customers|clients} {know|understand|see|get} {exactly|precisely|clearly} {what|the} {to expect|to budget|costs are|pricing is} {before|prior to|ahead of} {any|the} {work|service|project|job} {begins|starts|commences}.",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 145,
+    "category": "plumbing",
+    "faq_id": "q1",
+    "content": "{Why|What makes|How does|What are the benefits of|What's the advantage of} {should I|choosing|hiring|working with} {choose|hire|select|trust|work with|call} {a|a professional|an expert|a certified|a licensed} {professional|certified|expert|licensed|experienced} plumbing {company|contractor|service|specialist|expert|team}?",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 119,
+    "category": "pool_contractor",
+    "faq_id": "q6",
+    "content": "{What|Which} {areas|cities|locations|regions|communities} {do|does} {you|{{business_name}}|your company|your team} {serve|service|cover|work in|operate in}?",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 10,
+    "category": "water_damage",
+    "faq_id": "a5",
+    "content": "{Common|Typical|Frequent|The most common|High-risk} {areas|spaces|rooms|zones|locations} {include|are|consist of|encompass} {basements|basement areas|lower levels|below-grade areas}, {bathrooms|bathroom areas|bath areas}, {kitchens|kitchen areas|cooking areas}, {laundry rooms|laundry areas|utility rooms}, {areas|spaces|rooms|locations} {around|near|close to|by|adjacent to} {water heaters|hot water heaters|water heating systems}, {and|plus|as well as} {any|all|every} {room|space|area} with {plumbing|pipes|plumbing fixtures|water connections|water lines}. {Attics|Attic spaces|Roof areas|Upper areas} and {crawl spaces|crawlspaces|under-house areas} {can|may|might|could} also {be|become|prove to be|turn out to be} {vulnerable|susceptible|at risk|prone} {due to|because of|from|as a result of} {roof|roofing} {leaks|damage|problems|issues} or {poor|inadequate|insufficient|improper|bad} {ventilation|air flow|drainage|moisture control}. {Regular|Routine|Periodic|Ongoing|Scheduled} {maintenance|inspection|checks|monitoring} and {inspection|maintenance|checks|review} {can|will|helps|helps to} {help|assist in|aid in} {prevent|avoid|reduce|minimize|catch early} {water damage|problems|issues|damage} in {these|all|such|high-risk} {areas|spaces|zones|locations}.",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 12,
+    "category": "water_damage",
+    "faq_id": "a6",
+    "content": "{Yes|Absolutely|Definitely|Indeed|Certainly|Of course}! {We|{{business_name}}|Our team|Our company|Our specialists} {offer|provide|have|maintain|deliver} {24/7|round-the-clock|around-the-clock|24-hour|all-hours|day and night} {emergency|urgent|immediate} {water damage|water|flood damage|water restoration|emergency} {response|services|assistance|help|support} {services|availability|coverage} for {{city}} and {the|all} {surrounding|nearby|neighboring|local|adjacent} {areas|communities|cities|regions|neighborhoods}. {Water damage|Flooding|Water emergencies|Water intrusion|Pipe bursts|Leaks} {doesn't|does not|won't|never does} {wait|hold off|stop} for {convenient|regular|business|normal|standard} {hours|times|schedules}, {and neither do we|so neither do we|and we don't either|which is why we're always available}. {Call|Contact|Phone|Reach} {us|our team|{{business_name}}|our emergency line} {anytime|any time|at any hour|day or night|whenever you need us} at {{phone}} for {immediate|fast|quick|rapid|prompt|urgent|emergency} {assistance|help|response|service|support}.",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 13,
+    "category": "mold_remediation",
+    "faq_id": "q1",
+    "content": "{Why|What makes|How does|What are the benefits of|What's the advantage of} {should I|choosing|hiring|working with} {choose|hire|select|trust|work with|call} {a|a professional|an expert|a certified|a licensed} {professional|certified|expert|licensed|experienced} mold remediation {company|contractor|service|specialist|expert|team}?",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 176,
+    "category": "air_conditioning",
+    "faq_id": "a4",
+    "content": "{Yes|Absolutely|Definitely|Certainly|Of course}! {All|Every one of|Each of} {our|{{business_name}}'s|the} {technicians|professionals|specialists|team members|staff|workers} {are|is} {fully|completely|properly|appropriately|thoroughly} {licensed|certified|trained|qualified|credentialed}, {insured|bonded|covered|protected}, and {background-checked|vetted|screened|verified}. {We|{{business_name}}|Our company} {maintain|carry|hold|have} {comprehensive|full|complete|proper|adequate} {liability|general liability|business} {insurance|coverage|protection} and {workers'|worker's|workman's} {compensation|comp} {coverage|insurance|protection} to {protect|safeguard|cover|shield} {both|} {our|the} {team|workers|staff|employees} and {your|the|client} {property|home|premises|belongings}.",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 179,
+    "category": "air_conditioning",
+    "faq_id": "q6",
+    "content": "{What|Which} {areas|cities|locations|regions|communities} {do|does} {you|{{business_name}}|your company|your team} {serve|service|cover|work in|operate in}?",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 1,
+    "category": "water_damage",
+    "faq_id": "q1",
+    "content": "{How|What's the best way to|What should I do to|How do I|How can I|What steps should I take to} {quickly|fast|rapidly|immediately|right away|promptly|as soon as possible|urgently} {respond to|handle|deal with|address|manage|tackle|react to} {water damage|flooding|a flood|water intrusion|a water emergency|water in my home|a burst pipe|a leak}?",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 66,
+    "category": "carpet_cleaning",
+    "faq_id": "a3",
+    "content": "{Project|Job|Service|Work} {duration|timeline|timeframe|length|time} {depends on|varies based on|is influenced by|changes based on} {the|} {scope|size|complexity|extent|scale} and {complexity|nature|type|specifics} of {the|your|each} {work|project|job|service}. {Simple|Basic|Minor|Small|Straightforward} {jobs|projects|services|tasks} {may|might|can|could} {take|require|be completed in|last} {a few|several|just a couple of} {hours|days}, {while|whereas|but} {larger|more complex|extensive|major|bigger} {projects|jobs|work|services} {can|may|might|could} {take|require|span|last} {several|multiple|a few} {days|weeks} or {longer|more|even longer}. {We|{{business_name}}|Our team} {provide|give|offer|supply} {accurate|realistic|honest|detailed|clear} {timeline|timeframe|schedule|estimate} {estimates|projections|information} {during|at|with} {our|the|your} {initial|free|first} {consultation|assessment|estimate|quote}.",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 187,
+    "category": "heating",
+    "faq_id": "q4",
+    "content": "{Are|Is} {your|the|{{business_name}}'s} {technicians|team|staff|workers|professionals|specialists} {licensed|certified|insured|bonded|qualified} and {insured|certified|licensed|bonded}?",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 14,
+    "category": "mold_remediation",
+    "faq_id": "a1",
+    "content": "{Professional|Expert|Certified|Licensed|Experienced} mold remediation {companies|contractors|services|specialists|experts|professionals} {bring|provide|offer|have|deliver} {years|extensive|significant|considerable} of {experience|expertise|knowledge|skill|training}, {proper|appropriate|correct|right|necessary} {equipment|tools|technology|gear|resources}, {and|plus|as well as|along with} {industry|professional|specialized|expert} {knowledge|expertise|know-how|skills|training} to {ensure|guarantee|deliver|provide|achieve} {quality|excellent|superior|professional|outstanding} {results|work|outcomes|service|performance}. {They|We|Professionals|Experts} {also|additionally|furthermore} {carry|have|maintain|hold} {proper|adequate|appropriate|necessary|required} {insurance|liability coverage|coverage|protection|bonding} and {licensing|licenses|certifications|credentials|permits}, {protecting|safeguarding|covering|shielding} {you|homeowners|customers|clients|your property} from {liability|risk|problems|issues|potential problems}. {DIY|Do-it-yourself|Amateur|Self-done|Unprofessional} {attempts|work|efforts|jobs} {can|may|might|could|often} {lead to|result in|cause|create|end up with} {costly|expensive|serious|significant|major} {mistakes|errors|problems|issues|damage} and {safety|health|injury|accident} {hazards|risks|concerns|issues|problems}.",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 15,
+    "category": "mold_remediation",
+    "faq_id": "q2",
+    "content": "{How much|What|What's the cost|What are typical prices|How expensive is} {does|will|should} mold remediation {services|work|a project|the work|a job} {cost|run|typically cost|generally cost|price at}?",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 16,
+    "category": "mold_remediation",
+    "faq_id": "a2",
+    "content": "{Cost|Pricing|Price|The cost|Pricing for} mold remediation {varies|differs|ranges|depends|changes} {based on|depending on|according to|influenced by} {several|many|various|multiple|a number of} {factors|variables|considerations|elements} {including|such as|like|particularly} {the|project} {scope|size|complexity|extent|scale} of {the|your|each|any} {project|job|work|service}, {materials|products|supplies|equipment} {needed|required|used|selected|chosen}, {and|plus|as well as} {local|area|regional|market} {labor|service|pricing|market} {rates|costs|prices|charges}. {We|{{business_name}}|Our team|Our company} {offer|provide|give|supply} {free|complimentary|no-cost|no-obligation} {estimates|quotes|assessments|consultations|pricing} so {you|homeowners|customers|clients} {know|understand|see|get} {exactly|precisely|clearly} {what|the} {to expect|to budget|costs are|pricing is} {before|prior to|ahead of} {any|the} {work|service|project|job} {begins|starts|commences}.",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 17,
+    "category": "mold_remediation",
+    "faq_id": "q3",
+    "content": "{How long|What's the timeframe|How much time|What duration} {does|will|should} {a typical|an average|a standard|most} mold remediation {project|job|service|work} {take|require|need|last}?",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 18,
+    "category": "mold_remediation",
+    "faq_id": "a3",
+    "content": "{Project|Job|Service|Work} {duration|timeline|timeframe|length|time} {depends on|varies based on|is influenced by|changes based on} {the|} {scope|size|complexity|extent|scale} and {complexity|nature|type|specifics} of {the|your|each} {work|project|job|service}. {Simple|Basic|Minor|Small|Straightforward} {jobs|projects|services|tasks} {may|might|can|could} {take|require|be completed in|last} {a few|several|just a couple of} {hours|days}, {while|whereas|but} {larger|more complex|extensive|major|bigger} {projects|jobs|work|services} {can|may|might|could} {take|require|span|last} {several|multiple|a few} {days|weeks} or {longer|more|even longer}. {We|{{business_name}}|Our team} {provide|give|offer|supply} {accurate|realistic|honest|detailed|clear} {timeline|timeframe|schedule|estimate} {estimates|projections|information} {during|at|with} {our|the|your} {initial|free|first} {consultation|assessment|estimate|quote}.",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 19,
+    "category": "mold_remediation",
+    "faq_id": "q4",
+    "content": "{Are|Is} {your|the|{{business_name}}'s} {technicians|team|staff|workers|professionals|specialists} {licensed|certified|insured|bonded|qualified} and {insured|certified|licensed|bonded}?",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 20,
+    "category": "mold_remediation",
+    "faq_id": "a4",
+    "content": "{Yes|Absolutely|Definitely|Certainly|Of course}! {All|Every one of|Each of} {our|{{business_name}}'s|the} {technicians|professionals|specialists|team members|staff|workers} {are|is} {fully|completely|properly|appropriately|thoroughly} {licensed|certified|trained|qualified|credentialed}, {insured|bonded|covered|protected}, and {background-checked|vetted|screened|verified}. {We|{{business_name}}|Our company} {maintain|carry|hold|have} {comprehensive|full|complete|proper|adequate} {liability|general liability|business} {insurance|coverage|protection} and {workers'|worker's|workman's} {compensation|comp} {coverage|insurance|protection} to {protect|safeguard|cover|shield} {both|} {our|the} {team|workers|staff|employees} and {your|the|client} {property|home|premises|belongings}.",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 21,
+    "category": "mold_remediation",
+    "faq_id": "q5",
+    "content": "{Do|Can|Will} {you|{{business_name}}|your team|your company} {offer|provide|give|have} {free|complimentary|no-cost|no-obligation} {estimates|quotes|consultations|assessments|inspections}?",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 22,
+    "category": "mold_remediation",
+    "faq_id": "a5",
+    "content": "{Yes|Absolutely|Definitely|Certainly|Of course}! {We|{{business_name}}|Our team|Our company} {offer|provide|give} {free|complimentary|no-cost|no-obligation|zero-cost}, {no-obligation|obligation-free|pressure-free|hassle-free} {estimates|quotes|consultations|assessments} for {all|any|every|most} mold remediation {services|projects|work|jobs}. {Contact|Call|Reach|Phone|Get in touch with} {us|our team|{{business_name}}|our office} {today|now|anytime} at {{phone}} to {schedule|book|arrange|set up} {your|a|an} {free|complimentary} {consultation|estimate|quote|assessment}.",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 23,
+    "category": "mold_remediation",
+    "faq_id": "q6",
+    "content": "{What|Which} {areas|cities|locations|regions|communities} {do|does} {you|{{business_name}}|your company|your team} {serve|service|cover|work in|operate in}?",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 26,
+    "category": "roofing",
+    "faq_id": "a1",
+    "content": "{Professional|Expert|Certified|Licensed|Experienced} roofing {companies|contractors|services|specialists|experts|professionals} {bring|provide|offer|have|deliver} {years|extensive|significant|considerable} of {experience|expertise|knowledge|skill|training}, {proper|appropriate|correct|right|necessary} {equipment|tools|technology|gear|resources}, {and|plus|as well as|along with} {industry|professional|specialized|expert} {knowledge|expertise|know-how|skills|training} to {ensure|guarantee|deliver|provide|achieve} {quality|excellent|superior|professional|outstanding} {results|work|outcomes|service|performance}. {They|We|Professionals|Experts} {also|additionally|furthermore} {carry|have|maintain|hold} {proper|adequate|appropriate|necessary|required} {insurance|liability coverage|coverage|protection|bonding} and {licensing|licenses|certifications|credentials|permits}, {protecting|safeguarding|covering|shielding} {you|homeowners|customers|clients|your property} from {liability|risk|problems|issues|potential problems}. {DIY|Do-it-yourself|Amateur|Self-done|Unprofessional} {attempts|work|efforts|jobs} {can|may|might|could|often} {lead to|result in|cause|create|end up with} {costly|expensive|serious|significant|major} {mistakes|errors|problems|issues|damage} and {safety|health|injury|accident} {hazards|risks|concerns|issues|problems}.",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 27,
+    "category": "roofing",
+    "faq_id": "q2",
+    "content": "{How much|What|What's the cost|What are typical prices|How expensive is} {does|will|should} roofing {services|work|a project|the work|a job} {cost|run|typically cost|generally cost|price at}?",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 28,
+    "category": "roofing",
+    "faq_id": "a2",
+    "content": "{Cost|Pricing|Price|The cost|Pricing for} roofing {varies|differs|ranges|depends|changes} {based on|depending on|according to|influenced by} {several|many|various|multiple|a number of} {factors|variables|considerations|elements} {including|such as|like|particularly} {the|project} {scope|size|complexity|extent|scale} of {the|your|each|any} {project|job|work|service}, {materials|products|supplies|equipment} {needed|required|used|selected|chosen}, {and|plus|as well as} {local|area|regional|market} {labor|service|pricing|market} {rates|costs|prices|charges}. {We|{{business_name}}|Our team|Our company} {offer|provide|give|supply} {free|complimentary|no-cost|no-obligation} {estimates|quotes|assessments|consultations|pricing} so {you|homeowners|customers|clients} {know|understand|see|get} {exactly|precisely|clearly} {what|the} {to expect|to budget|costs are|pricing is} {before|prior to|ahead of} {any|the} {work|service|project|job} {begins|starts|commences}.",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 29,
+    "category": "roofing",
+    "faq_id": "q3",
+    "content": "{How long|What's the timeframe|How much time|What duration} {does|will|should} {a typical|an average|a standard|most} roofing {project|job|service|work} {take|require|need|last}?",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 30,
+    "category": "roofing",
+    "faq_id": "a3",
+    "content": "{Project|Job|Service|Work} {duration|timeline|timeframe|length|time} {depends on|varies based on|is influenced by|changes based on} {the|} {scope|size|complexity|extent|scale} and {complexity|nature|type|specifics} of {the|your|each} {work|project|job|service}. {Simple|Basic|Minor|Small|Straightforward} {jobs|projects|services|tasks} {may|might|can|could} {take|require|be completed in|last} {a few|several|just a couple of} {hours|days}, {while|whereas|but} {larger|more complex|extensive|major|bigger} {projects|jobs|work|services} {can|may|might|could} {take|require|span|last} {several|multiple|a few} {days|weeks} or {longer|more|even longer}. {We|{{business_name}}|Our team} {provide|give|offer|supply} {accurate|realistic|honest|detailed|clear} {timeline|timeframe|schedule|estimate} {estimates|projections|information} {during|at|with} {our|the|your} {initial|free|first} {consultation|assessment|estimate|quote}.",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 31,
+    "category": "roofing",
+    "faq_id": "q4",
+    "content": "{Are|Is} {your|the|{{business_name}}'s} {technicians|team|staff|workers|professionals|specialists} {licensed|certified|insured|bonded|qualified} and {insured|certified|licensed|bonded}?",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 32,
+    "category": "roofing",
+    "faq_id": "a4",
+    "content": "{Yes|Absolutely|Definitely|Certainly|Of course}! {All|Every one of|Each of} {our|{{business_name}}'s|the} {technicians|professionals|specialists|team members|staff|workers} {are|is} {fully|completely|properly|appropriately|thoroughly} {licensed|certified|trained|qualified|credentialed}, {insured|bonded|covered|protected}, and {background-checked|vetted|screened|verified}. {We|{{business_name}}|Our company} {maintain|carry|hold|have} {comprehensive|full|complete|proper|adequate} {liability|general liability|business} {insurance|coverage|protection} and {workers'|worker's|workman's} {compensation|comp} {coverage|insurance|protection} to {protect|safeguard|cover|shield} {both|} {our|the} {team|workers|staff|employees} and {your|the|client} {property|home|premises|belongings}.",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 33,
+    "category": "roofing",
+    "faq_id": "q5",
+    "content": "{Do|Can|Will} {you|{{business_name}}|your team|your company} {offer|provide|give|have} {free|complimentary|no-cost|no-obligation} {estimates|quotes|consultations|assessments|inspections}?",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 34,
+    "category": "roofing",
+    "faq_id": "a5",
+    "content": "{Yes|Absolutely|Definitely|Certainly|Of course}! {We|{{business_name}}|Our team|Our company} {offer|provide|give} {free|complimentary|no-cost|no-obligation|zero-cost}, {no-obligation|obligation-free|pressure-free|hassle-free} {estimates|quotes|consultations|assessments} for {all|any|every|most} roofing {services|projects|work|jobs}. {Contact|Call|Reach|Phone|Get in touch with} {us|our team|{{business_name}}|our office} {today|now|anytime} at {{phone}} to {schedule|book|arrange|set up} {your|a|an} {free|complimentary} {consultation|estimate|quote|assessment}.",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 36,
+    "category": "roofing",
+    "faq_id": "a6",
+    "content": "{We|{{business_name}}|Our team|Our company} {proudly|happily|gladly} {serve|service|cover|operate in|work throughout} {{city}} and {the|all} {surrounding|nearby|neighboring|adjacent|local} {areas|communities|cities|neighborhoods|regions|towns}. {Contact|Call|Reach|Phone} {us|our team|our office|{{business_name}}} at {{phone}} to {confirm|verify|check|see if} {service|coverage|availability} in {your|a specific|any particular} {area|location|city|neighborhood|community}.",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 37,
+    "category": "chimney",
+    "faq_id": "q1",
+    "content": "{Why|What makes|How does|What are the benefits of|What's the advantage of} {should I|choosing|hiring|working with} {choose|hire|select|trust|work with|call} {a|a professional|an expert|a certified|a licensed} {professional|certified|expert|licensed|experienced} chimney {company|contractor|service|specialist|expert|team}?",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 38,
+    "category": "chimney",
+    "faq_id": "a1",
+    "content": "{Professional|Expert|Certified|Licensed|Experienced} chimney {companies|contractors|services|specialists|experts|professionals} {bring|provide|offer|have|deliver} {years|extensive|significant|considerable} of {experience|expertise|knowledge|skill|training}, {proper|appropriate|correct|right|necessary} {equipment|tools|technology|gear|resources}, {and|plus|as well as|along with} {industry|professional|specialized|expert} {knowledge|expertise|know-how|skills|training} to {ensure|guarantee|deliver|provide|achieve} {quality|excellent|superior|professional|outstanding} {results|work|outcomes|service|performance}. {They|We|Professionals|Experts} {also|additionally|furthermore} {carry|have|maintain|hold} {proper|adequate|appropriate|necessary|required} {insurance|liability coverage|coverage|protection|bonding} and {licensing|licenses|certifications|credentials|permits}, {protecting|safeguarding|covering|shielding} {you|homeowners|customers|clients|your property} from {liability|risk|problems|issues|potential problems}. {DIY|Do-it-yourself|Amateur|Self-done|Unprofessional} {attempts|work|efforts|jobs} {can|may|might|could|often} {lead to|result in|cause|create|end up with} {costly|expensive|serious|significant|major} {mistakes|errors|problems|issues|damage} and {safety|health|injury|accident} {hazards|risks|concerns|issues|problems}.",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 39,
+    "category": "chimney",
+    "faq_id": "q2",
+    "content": "{How much|What|What's the cost|What are typical prices|How expensive is} {does|will|should} chimney {services|work|a project|the work|a job} {cost|run|typically cost|generally cost|price at}?",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 40,
+    "category": "chimney",
+    "faq_id": "a2",
+    "content": "{Cost|Pricing|Price|The cost|Pricing for} chimney {varies|differs|ranges|depends|changes} {based on|depending on|according to|influenced by} {several|many|various|multiple|a number of} {factors|variables|considerations|elements} {including|such as|like|particularly} {the|project} {scope|size|complexity|extent|scale} of {the|your|each|any} {project|job|work|service}, {materials|products|supplies|equipment} {needed|required|used|selected|chosen}, {and|plus|as well as} {local|area|regional|market} {labor|service|pricing|market} {rates|costs|prices|charges}. {We|{{business_name}}|Our team|Our company} {offer|provide|give|supply} {free|complimentary|no-cost|no-obligation} {estimates|quotes|assessments|consultations|pricing} so {you|homeowners|customers|clients} {know|understand|see|get} {exactly|precisely|clearly} {what|the} {to expect|to budget|costs are|pricing is} {before|prior to|ahead of} {any|the} {work|service|project|job} {begins|starts|commences}.",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 41,
+    "category": "chimney",
+    "faq_id": "q3",
+    "content": "{How long|What's the timeframe|How much time|What duration} {does|will|should} {a typical|an average|a standard|most} chimney {project|job|service|work} {take|require|need|last}?",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 35,
+    "category": "roofing",
+    "faq_id": "q6",
+    "content": "{What|Which} {areas|cities|locations|regions|communities} {do|does} {you|{{business_name}}|your company|your team} {serve|service|cover|work in|operate in}?",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 42,
+    "category": "chimney",
+    "faq_id": "a3",
+    "content": "{Project|Job|Service|Work} {duration|timeline|timeframe|length|time} {depends on|varies based on|is influenced by|changes based on} {the|} {scope|size|complexity|extent|scale} and {complexity|nature|type|specifics} of {the|your|each} {work|project|job|service}. {Simple|Basic|Minor|Small|Straightforward} {jobs|projects|services|tasks} {may|might|can|could} {take|require|be completed in|last} {a few|several|just a couple of} {hours|days}, {while|whereas|but} {larger|more complex|extensive|major|bigger} {projects|jobs|work|services} {can|may|might|could} {take|require|span|last} {several|multiple|a few} {days|weeks} or {longer|more|even longer}. {We|{{business_name}}|Our team} {provide|give|offer|supply} {accurate|realistic|honest|detailed|clear} {timeline|timeframe|schedule|estimate} {estimates|projections|information} {during|at|with} {our|the|your} {initial|free|first} {consultation|assessment|estimate|quote}.",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 43,
+    "category": "chimney",
+    "faq_id": "q4",
+    "content": "{Are|Is} {your|the|{{business_name}}'s} {technicians|team|staff|workers|professionals|specialists} {licensed|certified|insured|bonded|qualified} and {insured|certified|licensed|bonded}?",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 44,
+    "category": "chimney",
+    "faq_id": "a4",
+    "content": "{Yes|Absolutely|Definitely|Certainly|Of course}! {All|Every one of|Each of} {our|{{business_name}}'s|the} {technicians|professionals|specialists|team members|staff|workers} {are|is} {fully|completely|properly|appropriately|thoroughly} {licensed|certified|trained|qualified|credentialed}, {insured|bonded|covered|protected}, and {background-checked|vetted|screened|verified}. {We|{{business_name}}|Our company} {maintain|carry|hold|have} {comprehensive|full|complete|proper|adequate} {liability|general liability|business} {insurance|coverage|protection} and {workers'|worker's|workman's} {compensation|comp} {coverage|insurance|protection} to {protect|safeguard|cover|shield} {both|} {our|the} {team|workers|staff|employees} and {your|the|client} {property|home|premises|belongings}.",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 45,
+    "category": "chimney",
+    "faq_id": "q5",
+    "content": "{Do|Can|Will} {you|{{business_name}}|your team|your company} {offer|provide|give|have} {free|complimentary|no-cost|no-obligation} {estimates|quotes|consultations|assessments|inspections}?",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 46,
+    "category": "chimney",
+    "faq_id": "a5",
+    "content": "{Yes|Absolutely|Definitely|Certainly|Of course}! {We|{{business_name}}|Our team|Our company} {offer|provide|give} {free|complimentary|no-cost|no-obligation|zero-cost}, {no-obligation|obligation-free|pressure-free|hassle-free} {estimates|quotes|consultations|assessments} for {all|any|every|most} chimney {services|projects|work|jobs}. {Contact|Call|Reach|Phone|Get in touch with} {us|our team|{{business_name}}|our office} {today|now|anytime} at {{phone}} to {schedule|book|arrange|set up} {your|a|an} {free|complimentary} {consultation|estimate|quote|assessment}.",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 47,
+    "category": "chimney",
+    "faq_id": "q6",
+    "content": "{What|Which} {areas|cities|locations|regions|communities} {do|does} {you|{{business_name}}|your company|your team} {serve|service|cover|work in|operate in}?",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 48,
+    "category": "chimney",
+    "faq_id": "a6",
+    "content": "{We|{{business_name}}|Our team|Our company} {proudly|happily|gladly} {serve|service|cover|operate in|work throughout} {{city}} and {the|all} {surrounding|nearby|neighboring|adjacent|local} {areas|communities|cities|neighborhoods|regions|towns}. {Contact|Call|Reach|Phone} {us|our team|our office|{{business_name}}} at {{phone}} to {confirm|verify|check|see if} {service|coverage|availability} in {your|a specific|any particular} {area|location|city|neighborhood|community}.",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 49,
+    "category": "kitchen_remodel",
+    "faq_id": "q1",
+    "content": "{Why|What makes|How does|What are the benefits of|What's the advantage of} {should I|choosing|hiring|working with} {choose|hire|select|trust|work with|call} {a|a professional|an expert|a certified|a licensed} {professional|certified|expert|licensed|experienced} kitchen remodel {company|contractor|service|specialist|expert|team}?",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 50,
+    "category": "kitchen_remodel",
+    "faq_id": "a1",
+    "content": "{Professional|Expert|Certified|Licensed|Experienced} kitchen remodel {companies|contractors|services|specialists|experts|professionals} {bring|provide|offer|have|deliver} {years|extensive|significant|considerable} of {experience|expertise|knowledge|skill|training}, {proper|appropriate|correct|right|necessary} {equipment|tools|technology|gear|resources}, {and|plus|as well as|along with} {industry|professional|specialized|expert} {knowledge|expertise|know-how|skills|training} to {ensure|guarantee|deliver|provide|achieve} {quality|excellent|superior|professional|outstanding} {results|work|outcomes|service|performance}. {They|We|Professionals|Experts} {also|additionally|furthermore} {carry|have|maintain|hold} {proper|adequate|appropriate|necessary|required} {insurance|liability coverage|coverage|protection|bonding} and {licensing|licenses|certifications|credentials|permits}, {protecting|safeguarding|covering|shielding} {you|homeowners|customers|clients|your property} from {liability|risk|problems|issues|potential problems}. {DIY|Do-it-yourself|Amateur|Self-done|Unprofessional} {attempts|work|efforts|jobs} {can|may|might|could|often} {lead to|result in|cause|create|end up with} {costly|expensive|serious|significant|major} {mistakes|errors|problems|issues|damage} and {safety|health|injury|accident} {hazards|risks|concerns|issues|problems}.",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 52,
+    "category": "kitchen_remodel",
+    "faq_id": "a2",
+    "content": "{Cost|Pricing|Price|The cost|Pricing for} kitchen remodel {varies|differs|ranges|depends|changes} {based on|depending on|according to|influenced by} {several|many|various|multiple|a number of} {factors|variables|considerations|elements} {including|such as|like|particularly} {the|project} {scope|size|complexity|extent|scale} of {the|your|each|any} {project|job|work|service}, {materials|products|supplies|equipment} {needed|required|used|selected|chosen}, {and|plus|as well as} {local|area|regional|market} {labor|service|pricing|market} {rates|costs|prices|charges}. {We|{{business_name}}|Our team|Our company} {offer|provide|give|supply} {free|complimentary|no-cost|no-obligation} {estimates|quotes|assessments|consultations|pricing} so {you|homeowners|customers|clients} {know|understand|see|get} {exactly|precisely|clearly} {what|the} {to expect|to budget|costs are|pricing is} {before|prior to|ahead of} {any|the} {work|service|project|job} {begins|starts|commences}.",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 54,
+    "category": "kitchen_remodel",
+    "faq_id": "a3",
+    "content": "{Project|Job|Service|Work} {duration|timeline|timeframe|length|time} {depends on|varies based on|is influenced by|changes based on} {the|} {scope|size|complexity|extent|scale} and {complexity|nature|type|specifics} of {the|your|each} {work|project|job|service}. {Simple|Basic|Minor|Small|Straightforward} {jobs|projects|services|tasks} {may|might|can|could} {take|require|be completed in|last} {a few|several|just a couple of} {hours|days}, {while|whereas|but} {larger|more complex|extensive|major|bigger} {projects|jobs|work|services} {can|may|might|could} {take|require|span|last} {several|multiple|a few} {days|weeks} or {longer|more|even longer}. {We|{{business_name}}|Our team} {provide|give|offer|supply} {accurate|realistic|honest|detailed|clear} {timeline|timeframe|schedule|estimate} {estimates|projections|information} {during|at|with} {our|the|your} {initial|free|first} {consultation|assessment|estimate|quote}.",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 55,
+    "category": "kitchen_remodel",
+    "faq_id": "q4",
+    "content": "{Are|Is} {your|the|{{business_name}}'s} {technicians|team|staff|workers|professionals|specialists} {licensed|certified|insured|bonded|qualified} and {insured|certified|licensed|bonded}?",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 56,
+    "category": "kitchen_remodel",
+    "faq_id": "a4",
+    "content": "{Yes|Absolutely|Definitely|Certainly|Of course}! {All|Every one of|Each of} {our|{{business_name}}'s|the} {technicians|professionals|specialists|team members|staff|workers} {are|is} {fully|completely|properly|appropriately|thoroughly} {licensed|certified|trained|qualified|credentialed}, {insured|bonded|covered|protected}, and {background-checked|vetted|screened|verified}. {We|{{business_name}}|Our company} {maintain|carry|hold|have} {comprehensive|full|complete|proper|adequate} {liability|general liability|business} {insurance|coverage|protection} and {workers'|worker's|workman's} {compensation|comp} {coverage|insurance|protection} to {protect|safeguard|cover|shield} {both|} {our|the} {team|workers|staff|employees} and {your|the|client} {property|home|premises|belongings}.",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 57,
+    "category": "kitchen_remodel",
+    "faq_id": "q5",
+    "content": "{Do|Can|Will} {you|{{business_name}}|your team|your company} {offer|provide|give|have} {free|complimentary|no-cost|no-obligation} {estimates|quotes|consultations|assessments|inspections}?",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 58,
+    "category": "kitchen_remodel",
+    "faq_id": "a5",
+    "content": "{Yes|Absolutely|Definitely|Certainly|Of course}! {We|{{business_name}}|Our team|Our company} {offer|provide|give} {free|complimentary|no-cost|no-obligation|zero-cost}, {no-obligation|obligation-free|pressure-free|hassle-free} {estimates|quotes|consultations|assessments} for {all|any|every|most} kitchen remodel {services|projects|work|jobs}. {Contact|Call|Reach|Phone|Get in touch with} {us|our team|{{business_name}}|our office} {today|now|anytime} at {{phone}} to {schedule|book|arrange|set up} {your|a|an} {free|complimentary} {consultation|estimate|quote|assessment}.",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 59,
+    "category": "kitchen_remodel",
+    "faq_id": "q6",
+    "content": "{What|Which} {areas|cities|locations|regions|communities} {do|does} {you|{{business_name}}|your company|your team} {serve|service|cover|work in|operate in}?",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 60,
+    "category": "kitchen_remodel",
+    "faq_id": "a6",
+    "content": "{We|{{business_name}}|Our team|Our company} {proudly|happily|gladly} {serve|service|cover|operate in|work throughout} {{city}} and {the|all} {surrounding|nearby|neighboring|adjacent|local} {areas|communities|cities|neighborhoods|regions|towns}. {Contact|Call|Reach|Phone} {us|our team|our office|{{business_name}}} at {{phone}} to {confirm|verify|check|see if} {service|coverage|availability} in {your|a specific|any particular} {area|location|city|neighborhood|community}.",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 61,
+    "category": "carpet_cleaning",
+    "faq_id": "q1",
+    "content": "{Why|What makes|How does|What are the benefits of|What's the advantage of} {should I|choosing|hiring|working with} {choose|hire|select|trust|work with|call} {a|a professional|an expert|a certified|a licensed} {professional|certified|expert|licensed|experienced} carpet cleaning {company|contractor|service|specialist|expert|team}?",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 62,
+    "category": "carpet_cleaning",
+    "faq_id": "a1",
+    "content": "{Professional|Expert|Certified|Licensed|Experienced} carpet cleaning {companies|contractors|services|specialists|experts|professionals} {bring|provide|offer|have|deliver} {years|extensive|significant|considerable} of {experience|expertise|knowledge|skill|training}, {proper|appropriate|correct|right|necessary} {equipment|tools|technology|gear|resources}, {and|plus|as well as|along with} {industry|professional|specialized|expert} {knowledge|expertise|know-how|skills|training} to {ensure|guarantee|deliver|provide|achieve} {quality|excellent|superior|professional|outstanding} {results|work|outcomes|service|performance}. {They|We|Professionals|Experts} {also|additionally|furthermore} {carry|have|maintain|hold} {proper|adequate|appropriate|necessary|required} {insurance|liability coverage|coverage|protection|bonding} and {licensing|licenses|certifications|credentials|permits}, {protecting|safeguarding|covering|shielding} {you|homeowners|customers|clients|your property} from {liability|risk|problems|issues|potential problems}. {DIY|Do-it-yourself|Amateur|Self-done|Unprofessional} {attempts|work|efforts|jobs} {can|may|might|could|often} {lead to|result in|cause|create|end up with} {costly|expensive|serious|significant|major} {mistakes|errors|problems|issues|damage} and {safety|health|injury|accident} {hazards|risks|concerns|issues|problems}.",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 63,
+    "category": "carpet_cleaning",
+    "faq_id": "q2",
+    "content": "{How much|What|What's the cost|What are typical prices|How expensive is} {does|will|should} carpet cleaning {services|work|a project|the work|a job} {cost|run|typically cost|generally cost|price at}?",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 65,
+    "category": "carpet_cleaning",
+    "faq_id": "q3",
+    "content": "{How long|What's the timeframe|How much time|What duration} {does|will|should} {a typical|an average|a standard|most} carpet cleaning {project|job|service|work} {take|require|need|last}?",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 67,
+    "category": "carpet_cleaning",
+    "faq_id": "q4",
+    "content": "{Are|Is} {your|the|{{business_name}}'s} {technicians|team|staff|workers|professionals|specialists} {licensed|certified|insured|bonded|qualified} and {insured|certified|licensed|bonded}?",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 68,
+    "category": "carpet_cleaning",
+    "faq_id": "a4",
+    "content": "{Yes|Absolutely|Definitely|Certainly|Of course}! {All|Every one of|Each of} {our|{{business_name}}'s|the} {technicians|professionals|specialists|team members|staff|workers} {are|is} {fully|completely|properly|appropriately|thoroughly} {licensed|certified|trained|qualified|credentialed}, {insured|bonded|covered|protected}, and {background-checked|vetted|screened|verified}. {We|{{business_name}}|Our company} {maintain|carry|hold|have} {comprehensive|full|complete|proper|adequate} {liability|general liability|business} {insurance|coverage|protection} and {workers'|worker's|workman's} {compensation|comp} {coverage|insurance|protection} to {protect|safeguard|cover|shield} {both|} {our|the} {team|workers|staff|employees} and {your|the|client} {property|home|premises|belongings}.",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 69,
+    "category": "carpet_cleaning",
+    "faq_id": "q5",
+    "content": "{Do|Can|Will} {you|{{business_name}}|your team|your company} {offer|provide|give|have} {free|complimentary|no-cost|no-obligation} {estimates|quotes|consultations|assessments|inspections}?",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 70,
+    "category": "carpet_cleaning",
+    "faq_id": "a5",
+    "content": "{Yes|Absolutely|Definitely|Certainly|Of course}! {We|{{business_name}}|Our team|Our company} {offer|provide|give} {free|complimentary|no-cost|no-obligation|zero-cost}, {no-obligation|obligation-free|pressure-free|hassle-free} {estimates|quotes|consultations|assessments} for {all|any|every|most} carpet cleaning {services|projects|work|jobs}. {Contact|Call|Reach|Phone|Get in touch with} {us|our team|{{business_name}}|our office} {today|now|anytime} at {{phone}} to {schedule|book|arrange|set up} {your|a|an} {free|complimentary} {consultation|estimate|quote|assessment}.",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 71,
+    "category": "carpet_cleaning",
+    "faq_id": "q6",
+    "content": "{What|Which} {areas|cities|locations|regions|communities} {do|does} {you|{{business_name}}|your company|your team} {serve|service|cover|work in|operate in}?",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 72,
+    "category": "carpet_cleaning",
+    "faq_id": "a6",
+    "content": "{We|{{business_name}}|Our team|Our company} {proudly|happily|gladly} {serve|service|cover|operate in|work throughout} {{city}} and {the|all} {surrounding|nearby|neighboring|adjacent|local} {areas|communities|cities|neighborhoods|regions|towns}. {Contact|Call|Reach|Phone} {us|our team|our office|{{business_name}}} at {{phone}} to {confirm|verify|check|see if} {service|coverage|availability} in {your|a specific|any particular} {area|location|city|neighborhood|community}.",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 74,
+    "category": "bathroom_remodel",
+    "faq_id": "a1",
+    "content": "{Professional|Expert|Certified|Licensed|Experienced} bathroom remodel {companies|contractors|services|specialists|experts|professionals} {bring|provide|offer|have|deliver} {years|extensive|significant|considerable} of {experience|expertise|knowledge|skill|training}, {proper|appropriate|correct|right|necessary} {equipment|tools|technology|gear|resources}, {and|plus|as well as|along with} {industry|professional|specialized|expert} {knowledge|expertise|know-how|skills|training} to {ensure|guarantee|deliver|provide|achieve} {quality|excellent|superior|professional|outstanding} {results|work|outcomes|service|performance}. {They|We|Professionals|Experts} {also|additionally|furthermore} {carry|have|maintain|hold} {proper|adequate|appropriate|necessary|required} {insurance|liability coverage|coverage|protection|bonding} and {licensing|licenses|certifications|credentials|permits}, {protecting|safeguarding|covering|shielding} {you|homeowners|customers|clients|your property} from {liability|risk|problems|issues|potential problems}. {DIY|Do-it-yourself|Amateur|Self-done|Unprofessional} {attempts|work|efforts|jobs} {can|may|might|could|often} {lead to|result in|cause|create|end up with} {costly|expensive|serious|significant|major} {mistakes|errors|problems|issues|damage} and {safety|health|injury|accident} {hazards|risks|concerns|issues|problems}.",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 75,
+    "category": "bathroom_remodel",
+    "faq_id": "q2",
+    "content": "{How much|What|What's the cost|What are typical prices|How expensive is} {does|will|should} bathroom remodel {services|work|a project|the work|a job} {cost|run|typically cost|generally cost|price at}?",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 76,
+    "category": "bathroom_remodel",
+    "faq_id": "a2",
+    "content": "{Cost|Pricing|Price|The cost|Pricing for} bathroom remodel {varies|differs|ranges|depends|changes} {based on|depending on|according to|influenced by} {several|many|various|multiple|a number of} {factors|variables|considerations|elements} {including|such as|like|particularly} {the|project} {scope|size|complexity|extent|scale} of {the|your|each|any} {project|job|work|service}, {materials|products|supplies|equipment} {needed|required|used|selected|chosen}, {and|plus|as well as} {local|area|regional|market} {labor|service|pricing|market} {rates|costs|prices|charges}. {We|{{business_name}}|Our team|Our company} {offer|provide|give|supply} {free|complimentary|no-cost|no-obligation} {estimates|quotes|assessments|consultations|pricing} so {you|homeowners|customers|clients} {know|understand|see|get} {exactly|precisely|clearly} {what|the} {to expect|to budget|costs are|pricing is} {before|prior to|ahead of} {any|the} {work|service|project|job} {begins|starts|commences}.",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 77,
+    "category": "bathroom_remodel",
+    "faq_id": "q3",
+    "content": "{How long|What's the timeframe|How much time|What duration} {does|will|should} {a typical|an average|a standard|most} bathroom remodel {project|job|service|work} {take|require|need|last}?",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 78,
+    "category": "bathroom_remodel",
+    "faq_id": "a3",
+    "content": "{Project|Job|Service|Work} {duration|timeline|timeframe|length|time} {depends on|varies based on|is influenced by|changes based on} {the|} {scope|size|complexity|extent|scale} and {complexity|nature|type|specifics} of {the|your|each} {work|project|job|service}. {Simple|Basic|Minor|Small|Straightforward} {jobs|projects|services|tasks} {may|might|can|could} {take|require|be completed in|last} {a few|several|just a couple of} {hours|days}, {while|whereas|but} {larger|more complex|extensive|major|bigger} {projects|jobs|work|services} {can|may|might|could} {take|require|span|last} {several|multiple|a few} {days|weeks} or {longer|more|even longer}. {We|{{business_name}}|Our team} {provide|give|offer|supply} {accurate|realistic|honest|detailed|clear} {timeline|timeframe|schedule|estimate} {estimates|projections|information} {during|at|with} {our|the|your} {initial|free|first} {consultation|assessment|estimate|quote}.",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 79,
+    "category": "bathroom_remodel",
+    "faq_id": "q4",
+    "content": "{Are|Is} {your|the|{{business_name}}'s} {technicians|team|staff|workers|professionals|specialists} {licensed|certified|insured|bonded|qualified} and {insured|certified|licensed|bonded}?",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 80,
+    "category": "bathroom_remodel",
+    "faq_id": "a4",
+    "content": "{Yes|Absolutely|Definitely|Certainly|Of course}! {All|Every one of|Each of} {our|{{business_name}}'s|the} {technicians|professionals|specialists|team members|staff|workers} {are|is} {fully|completely|properly|appropriately|thoroughly} {licensed|certified|trained|qualified|credentialed}, {insured|bonded|covered|protected}, and {background-checked|vetted|screened|verified}. {We|{{business_name}}|Our company} {maintain|carry|hold|have} {comprehensive|full|complete|proper|adequate} {liability|general liability|business} {insurance|coverage|protection} and {workers'|worker's|workman's} {compensation|comp} {coverage|insurance|protection} to {protect|safeguard|cover|shield} {both|} {our|the} {team|workers|staff|employees} and {your|the|client} {property|home|premises|belongings}.",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 81,
+    "category": "bathroom_remodel",
+    "faq_id": "q5",
+    "content": "{Do|Can|Will} {you|{{business_name}}|your team|your company} {offer|provide|give|have} {free|complimentary|no-cost|no-obligation} {estimates|quotes|consultations|assessments|inspections}?",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 82,
+    "category": "bathroom_remodel",
+    "faq_id": "a5",
+    "content": "{Yes|Absolutely|Definitely|Certainly|Of course}! {We|{{business_name}}|Our team|Our company} {offer|provide|give} {free|complimentary|no-cost|no-obligation|zero-cost}, {no-obligation|obligation-free|pressure-free|hassle-free} {estimates|quotes|consultations|assessments} for {all|any|every|most} bathroom remodel {services|projects|work|jobs}. {Contact|Call|Reach|Phone|Get in touch with} {us|our team|{{business_name}}|our office} {today|now|anytime} at {{phone}} to {schedule|book|arrange|set up} {your|a|an} {free|complimentary} {consultation|estimate|quote|assessment}.",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 83,
+    "category": "bathroom_remodel",
+    "faq_id": "q6",
+    "content": "{What|Which} {areas|cities|locations|regions|communities} {do|does} {you|{{business_name}}|your company|your team} {serve|service|cover|work in|operate in}?",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 84,
+    "category": "bathroom_remodel",
+    "faq_id": "a6",
+    "content": "{We|{{business_name}}|Our team|Our company} {proudly|happily|gladly} {serve|service|cover|operate in|work throughout} {{city}} and {the|all} {surrounding|nearby|neighboring|adjacent|local} {areas|communities|cities|neighborhoods|regions|towns}. {Contact|Call|Reach|Phone} {us|our team|our office|{{business_name}}} at {{phone}} to {confirm|verify|check|see if} {service|coverage|availability} in {your|a specific|any particular} {area|location|city|neighborhood|community}.",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 85,
+    "category": "air_duct_cleaning",
+    "faq_id": "q1",
+    "content": "{Why|What makes|How does|What are the benefits of|What's the advantage of} {should I|choosing|hiring|working with} {choose|hire|select|trust|work with|call} {a|a professional|an expert|a certified|a licensed} {professional|certified|expert|licensed|experienced} air duct cleaning {company|contractor|service|specialist|expert|team}?",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 86,
+    "category": "air_duct_cleaning",
+    "faq_id": "a1",
+    "content": "{Professional|Expert|Certified|Licensed|Experienced} air duct cleaning {companies|contractors|services|specialists|experts|professionals} {bring|provide|offer|have|deliver} {years|extensive|significant|considerable} of {experience|expertise|knowledge|skill|training}, {proper|appropriate|correct|right|necessary} {equipment|tools|technology|gear|resources}, {and|plus|as well as|along with} {industry|professional|specialized|expert} {knowledge|expertise|know-how|skills|training} to {ensure|guarantee|deliver|provide|achieve} {quality|excellent|superior|professional|outstanding} {results|work|outcomes|service|performance}. {They|We|Professionals|Experts} {also|additionally|furthermore} {carry|have|maintain|hold} {proper|adequate|appropriate|necessary|required} {insurance|liability coverage|coverage|protection|bonding} and {licensing|licenses|certifications|credentials|permits}, {protecting|safeguarding|covering|shielding} {you|homeowners|customers|clients|your property} from {liability|risk|problems|issues|potential problems}. {DIY|Do-it-yourself|Amateur|Self-done|Unprofessional} {attempts|work|efforts|jobs} {can|may|might|could|often} {lead to|result in|cause|create|end up with} {costly|expensive|serious|significant|major} {mistakes|errors|problems|issues|damage} and {safety|health|injury|accident} {hazards|risks|concerns|issues|problems}.",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 87,
+    "category": "air_duct_cleaning",
+    "faq_id": "q2",
+    "content": "{How much|What|What's the cost|What are typical prices|How expensive is} {does|will|should} air duct cleaning {services|work|a project|the work|a job} {cost|run|typically cost|generally cost|price at}?",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 88,
+    "category": "air_duct_cleaning",
+    "faq_id": "a2",
+    "content": "{Cost|Pricing|Price|The cost|Pricing for} air duct cleaning {varies|differs|ranges|depends|changes} {based on|depending on|according to|influenced by} {several|many|various|multiple|a number of} {factors|variables|considerations|elements} {including|such as|like|particularly} {the|project} {scope|size|complexity|extent|scale} of {the|your|each|any} {project|job|work|service}, {materials|products|supplies|equipment} {needed|required|used|selected|chosen}, {and|plus|as well as} {local|area|regional|market} {labor|service|pricing|market} {rates|costs|prices|charges}. {We|{{business_name}}|Our team|Our company} {offer|provide|give|supply} {free|complimentary|no-cost|no-obligation} {estimates|quotes|assessments|consultations|pricing} so {you|homeowners|customers|clients} {know|understand|see|get} {exactly|precisely|clearly} {what|the} {to expect|to budget|costs are|pricing is} {before|prior to|ahead of} {any|the} {work|service|project|job} {begins|starts|commences}.",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 89,
+    "category": "air_duct_cleaning",
+    "faq_id": "q3",
+    "content": "{How long|What's the timeframe|How much time|What duration} {does|will|should} {a typical|an average|a standard|most} air duct cleaning {project|job|service|work} {take|require|need|last}?",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 90,
+    "category": "air_duct_cleaning",
+    "faq_id": "a3",
+    "content": "{Project|Job|Service|Work} {duration|timeline|timeframe|length|time} {depends on|varies based on|is influenced by|changes based on} {the|} {scope|size|complexity|extent|scale} and {complexity|nature|type|specifics} of {the|your|each} {work|project|job|service}. {Simple|Basic|Minor|Small|Straightforward} {jobs|projects|services|tasks} {may|might|can|could} {take|require|be completed in|last} {a few|several|just a couple of} {hours|days}, {while|whereas|but} {larger|more complex|extensive|major|bigger} {projects|jobs|work|services} {can|may|might|could} {take|require|span|last} {several|multiple|a few} {days|weeks} or {longer|more|even longer}. {We|{{business_name}}|Our team} {provide|give|offer|supply} {accurate|realistic|honest|detailed|clear} {timeline|timeframe|schedule|estimate} {estimates|projections|information} {during|at|with} {our|the|your} {initial|free|first} {consultation|assessment|estimate|quote}.",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 91,
+    "category": "air_duct_cleaning",
+    "faq_id": "q4",
+    "content": "{Are|Is} {your|the|{{business_name}}'s} {technicians|team|staff|workers|professionals|specialists} {licensed|certified|insured|bonded|qualified} and {insured|certified|licensed|bonded}?",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 92,
+    "category": "air_duct_cleaning",
+    "faq_id": "a4",
+    "content": "{Yes|Absolutely|Definitely|Certainly|Of course}! {All|Every one of|Each of} {our|{{business_name}}'s|the} {technicians|professionals|specialists|team members|staff|workers} {are|is} {fully|completely|properly|appropriately|thoroughly} {licensed|certified|trained|qualified|credentialed}, {insured|bonded|covered|protected}, and {background-checked|vetted|screened|verified}. {We|{{business_name}}|Our company} {maintain|carry|hold|have} {comprehensive|full|complete|proper|adequate} {liability|general liability|business} {insurance|coverage|protection} and {workers'|worker's|workman's} {compensation|comp} {coverage|insurance|protection} to {protect|safeguard|cover|shield} {both|} {our|the} {team|workers|staff|employees} and {your|the|client} {property|home|premises|belongings}.",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 93,
+    "category": "air_duct_cleaning",
+    "faq_id": "q5",
+    "content": "{Do|Can|Will} {you|{{business_name}}|your team|your company} {offer|provide|give|have} {free|complimentary|no-cost|no-obligation} {estimates|quotes|consultations|assessments|inspections}?",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 94,
+    "category": "air_duct_cleaning",
+    "faq_id": "a5",
+    "content": "{Yes|Absolutely|Definitely|Certainly|Of course}! {We|{{business_name}}|Our team|Our company} {offer|provide|give} {free|complimentary|no-cost|no-obligation|zero-cost}, {no-obligation|obligation-free|pressure-free|hassle-free} {estimates|quotes|consultations|assessments} for {all|any|every|most} air duct cleaning {services|projects|work|jobs}. {Contact|Call|Reach|Phone|Get in touch with} {us|our team|{{business_name}}|our office} {today|now|anytime} at {{phone}} to {schedule|book|arrange|set up} {your|a|an} {free|complimentary} {consultation|estimate|quote|assessment}.",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 95,
+    "category": "air_duct_cleaning",
+    "faq_id": "q6",
+    "content": "{What|Which} {areas|cities|locations|regions|communities} {do|does} {you|{{business_name}}|your company|your team} {serve|service|cover|work in|operate in}?",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 97,
+    "category": "adu_builder",
+    "faq_id": "q1",
+    "content": "{Why|What makes|How does|What are the benefits of|What's the advantage of} {should I|choosing|hiring|working with} {choose|hire|select|trust|work with|call} {a|a professional|an expert|a certified|a licensed} {professional|certified|expert|licensed|experienced} adu builder {company|contractor|service|specialist|expert|team}?",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 98,
+    "category": "adu_builder",
+    "faq_id": "a1",
+    "content": "{Professional|Expert|Certified|Licensed|Experienced} adu builder {companies|contractors|services|specialists|experts|professionals} {bring|provide|offer|have|deliver} {years|extensive|significant|considerable} of {experience|expertise|knowledge|skill|training}, {proper|appropriate|correct|right|necessary} {equipment|tools|technology|gear|resources}, {and|plus|as well as|along with} {industry|professional|specialized|expert} {knowledge|expertise|know-how|skills|training} to {ensure|guarantee|deliver|provide|achieve} {quality|excellent|superior|professional|outstanding} {results|work|outcomes|service|performance}. {They|We|Professionals|Experts} {also|additionally|furthermore} {carry|have|maintain|hold} {proper|adequate|appropriate|necessary|required} {insurance|liability coverage|coverage|protection|bonding} and {licensing|licenses|certifications|credentials|permits}, {protecting|safeguarding|covering|shielding} {you|homeowners|customers|clients|your property} from {liability|risk|problems|issues|potential problems}. {DIY|Do-it-yourself|Amateur|Self-done|Unprofessional} {attempts|work|efforts|jobs} {can|may|might|could|often} {lead to|result in|cause|create|end up with} {costly|expensive|serious|significant|major} {mistakes|errors|problems|issues|damage} and {safety|health|injury|accident} {hazards|risks|concerns|issues|problems}.",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 100,
+    "category": "adu_builder",
+    "faq_id": "a2",
+    "content": "{Cost|Pricing|Price|The cost|Pricing for} adu builder {varies|differs|ranges|depends|changes} {based on|depending on|according to|influenced by} {several|many|various|multiple|a number of} {factors|variables|considerations|elements} {including|such as|like|particularly} {the|project} {scope|size|complexity|extent|scale} of {the|your|each|any} {project|job|work|service}, {materials|products|supplies|equipment} {needed|required|used|selected|chosen}, {and|plus|as well as} {local|area|regional|market} {labor|service|pricing|market} {rates|costs|prices|charges}. {We|{{business_name}}|Our team|Our company} {offer|provide|give|supply} {free|complimentary|no-cost|no-obligation} {estimates|quotes|assessments|consultations|pricing} so {you|homeowners|customers|clients} {know|understand|see|get} {exactly|precisely|clearly} {what|the} {to expect|to budget|costs are|pricing is} {before|prior to|ahead of} {any|the} {work|service|project|job} {begins|starts|commences}.",
+    "created_at": "2026-01-15T00:23:19.723089+00:00",
+    "updated_at": "2026-01-15T00:23:19.723089+00:00"
+  },
+  {
+    "id": 172,
+    "category": "air_conditioning",
+    "faq_id": "a2",
+    "content": "{Cost|Pricing|Price|The cost|Pricing for} air conditioning {varies|differs|ranges|depends|changes} {based on|depending on|according to|influenced by} {several|many|various|multiple|a number of} {factors|variables|considerations|elements} {including|such as|like|particularly} {the|project} {scope|size|complexity|extent|scale} of {the|your|each|any} {project|job|work|service}, {materials|products|supplies|equipment} {needed|required|used|selected|chosen}, {and|plus|as well as} {local|area|regional|market} {labor|service|pricing|market} {rates|costs|prices|charges}. {We|{{business_name}}|Our team|Our company} {offer|provide|give|supply} {free|complimentary|no-cost|no-obligation} {estimates|quotes|assessments|consultations|pricing} so {you|homeowners|customers|clients} {know|understand|see|get} {exactly|precisely|clearly} {what|the} {to expect|to budget|costs are|pricing is} {before|prior to|ahead of} {any|the} {work|service|project|job} {begins|starts|commences}.",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 104,
+    "category": "adu_builder",
+    "faq_id": "a4",
+    "content": "{Yes|Absolutely|Definitely|Certainly|Of course}! {All|Every one of|Each of} {our|{{business_name}}'s|the} {technicians|professionals|specialists|team members|staff|workers} {are|is} {fully|completely|properly|appropriately|thoroughly} {licensed|certified|trained|qualified|credentialed}, {insured|bonded|covered|protected}, and {background-checked|vetted|screened|verified}. {We|{{business_name}}|Our company} {maintain|carry|hold|have} {comprehensive|full|complete|proper|adequate} {liability|general liability|business} {insurance|coverage|protection} and {workers'|worker's|workman's} {compensation|comp} {coverage|insurance|protection} to {protect|safeguard|cover|shield} {both|} {our|the} {team|workers|staff|employees} and {your|the|client} {property|home|premises|belongings}.",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 106,
+    "category": "adu_builder",
+    "faq_id": "a5",
+    "content": "{Yes|Absolutely|Definitely|Certainly|Of course}! {We|{{business_name}}|Our team|Our company} {offer|provide|give} {free|complimentary|no-cost|no-obligation|zero-cost}, {no-obligation|obligation-free|pressure-free|hassle-free} {estimates|quotes|consultations|assessments} for {all|any|every|most} adu builder {services|projects|work|jobs}. {Contact|Call|Reach|Phone|Get in touch with} {us|our team|{{business_name}}|our office} {today|now|anytime} at {{phone}} to {schedule|book|arrange|set up} {your|a|an} {free|complimentary} {consultation|estimate|quote|assessment}.",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 108,
+    "category": "adu_builder",
+    "faq_id": "a6",
+    "content": "{We|{{business_name}}|Our team|Our company} {proudly|happily|gladly} {serve|service|cover|operate in|work throughout} {{city}} and {the|all} {surrounding|nearby|neighboring|adjacent|local} {areas|communities|cities|neighborhoods|regions|towns}. {Contact|Call|Reach|Phone} {us|our team|our office|{{business_name}}} at {{phone}} to {confirm|verify|check|see if} {service|coverage|availability} in {your|a specific|any particular} {area|location|city|neighborhood|community}.",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 109,
+    "category": "pool_contractor",
+    "faq_id": "q1",
+    "content": "{Why|What makes|How does|What are the benefits of|What's the advantage of} {should I|choosing|hiring|working with} {choose|hire|select|trust|work with|call} {a|a professional|an expert|a certified|a licensed} {professional|certified|expert|licensed|experienced} pool contractor {company|contractor|service|specialist|expert|team}?",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 110,
+    "category": "pool_contractor",
+    "faq_id": "a1",
+    "content": "{Professional|Expert|Certified|Licensed|Experienced} pool contractor {companies|contractors|services|specialists|experts|professionals} {bring|provide|offer|have|deliver} {years|extensive|significant|considerable} of {experience|expertise|knowledge|skill|training}, {proper|appropriate|correct|right|necessary} {equipment|tools|technology|gear|resources}, {and|plus|as well as|along with} {industry|professional|specialized|expert} {knowledge|expertise|know-how|skills|training} to {ensure|guarantee|deliver|provide|achieve} {quality|excellent|superior|professional|outstanding} {results|work|outcomes|service|performance}. {They|We|Professionals|Experts} {also|additionally|furthermore} {carry|have|maintain|hold} {proper|adequate|appropriate|necessary|required} {insurance|liability coverage|coverage|protection|bonding} and {licensing|licenses|certifications|credentials|permits}, {protecting|safeguarding|covering|shielding} {you|homeowners|customers|clients|your property} from {liability|risk|problems|issues|potential problems}. {DIY|Do-it-yourself|Amateur|Self-done|Unprofessional} {attempts|work|efforts|jobs} {can|may|might|could|often} {lead to|result in|cause|create|end up with} {costly|expensive|serious|significant|major} {mistakes|errors|problems|issues|damage} and {safety|health|injury|accident} {hazards|risks|concerns|issues|problems}.",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 112,
+    "category": "pool_contractor",
+    "faq_id": "a2",
+    "content": "{Cost|Pricing|Price|The cost|Pricing for} pool contractor {varies|differs|ranges|depends|changes} {based on|depending on|according to|influenced by} {several|many|various|multiple|a number of} {factors|variables|considerations|elements} {including|such as|like|particularly} {the|project} {scope|size|complexity|extent|scale} of {the|your|each|any} {project|job|work|service}, {materials|products|supplies|equipment} {needed|required|used|selected|chosen}, {and|plus|as well as} {local|area|regional|market} {labor|service|pricing|market} {rates|costs|prices|charges}. {We|{{business_name}}|Our team|Our company} {offer|provide|give|supply} {free|complimentary|no-cost|no-obligation} {estimates|quotes|assessments|consultations|pricing} so {you|homeowners|customers|clients} {know|understand|see|get} {exactly|precisely|clearly} {what|the} {to expect|to budget|costs are|pricing is} {before|prior to|ahead of} {any|the} {work|service|project|job} {begins|starts|commences}.",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 113,
+    "category": "pool_contractor",
+    "faq_id": "q3",
+    "content": "{How long|What's the timeframe|How much time|What duration} {does|will|should} {a typical|an average|a standard|most} pool contractor {project|job|service|work} {take|require|need|last}?",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 114,
+    "category": "pool_contractor",
+    "faq_id": "a3",
+    "content": "{Project|Job|Service|Work} {duration|timeline|timeframe|length|time} {depends on|varies based on|is influenced by|changes based on} {the|} {scope|size|complexity|extent|scale} and {complexity|nature|type|specifics} of {the|your|each} {work|project|job|service}. {Simple|Basic|Minor|Small|Straightforward} {jobs|projects|services|tasks} {may|might|can|could} {take|require|be completed in|last} {a few|several|just a couple of} {hours|days}, {while|whereas|but} {larger|more complex|extensive|major|bigger} {projects|jobs|work|services} {can|may|might|could} {take|require|span|last} {several|multiple|a few} {days|weeks} or {longer|more|even longer}. {We|{{business_name}}|Our team} {provide|give|offer|supply} {accurate|realistic|honest|detailed|clear} {timeline|timeframe|schedule|estimate} {estimates|projections|information} {during|at|with} {our|the|your} {initial|free|first} {consultation|assessment|estimate|quote}.",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 115,
+    "category": "pool_contractor",
+    "faq_id": "q4",
+    "content": "{Are|Is} {your|the|{{business_name}}'s} {technicians|team|staff|workers|professionals|specialists} {licensed|certified|insured|bonded|qualified} and {insured|certified|licensed|bonded}?",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 116,
+    "category": "pool_contractor",
+    "faq_id": "a4",
+    "content": "{Yes|Absolutely|Definitely|Certainly|Of course}! {All|Every one of|Each of} {our|{{business_name}}'s|the} {technicians|professionals|specialists|team members|staff|workers} {are|is} {fully|completely|properly|appropriately|thoroughly} {licensed|certified|trained|qualified|credentialed}, {insured|bonded|covered|protected}, and {background-checked|vetted|screened|verified}. {We|{{business_name}}|Our company} {maintain|carry|hold|have} {comprehensive|full|complete|proper|adequate} {liability|general liability|business} {insurance|coverage|protection} and {workers'|worker's|workman's} {compensation|comp} {coverage|insurance|protection} to {protect|safeguard|cover|shield} {both|} {our|the} {team|workers|staff|employees} and {your|the|client} {property|home|premises|belongings}.",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 118,
+    "category": "pool_contractor",
+    "faq_id": "a5",
+    "content": "{Yes|Absolutely|Definitely|Certainly|Of course}! {We|{{business_name}}|Our team|Our company} {offer|provide|give} {free|complimentary|no-cost|no-obligation|zero-cost}, {no-obligation|obligation-free|pressure-free|hassle-free} {estimates|quotes|consultations|assessments} for {all|any|every|most} pool contractor {services|projects|work|jobs}. {Contact|Call|Reach|Phone|Get in touch with} {us|our team|{{business_name}}|our office} {today|now|anytime} at {{phone}} to {schedule|book|arrange|set up} {your|a|an} {free|complimentary} {consultation|estimate|quote|assessment}.",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 120,
+    "category": "pool_contractor",
+    "faq_id": "a6",
+    "content": "{We|{{business_name}}|Our team|Our company} {proudly|happily|gladly} {serve|service|cover|operate in|work throughout} {{city}} and {the|all} {surrounding|nearby|neighboring|adjacent|local} {areas|communities|cities|neighborhoods|regions|towns}. {Contact|Call|Reach|Phone} {us|our team|our office|{{business_name}}} at {{phone}} to {confirm|verify|check|see if} {service|coverage|availability} in {your|a specific|any particular} {area|location|city|neighborhood|community}.",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 121,
+    "category": "garage_door",
+    "faq_id": "q1",
+    "content": "{Why|What makes|How does|What are the benefits of|What's the advantage of} {should I|choosing|hiring|working with} {choose|hire|select|trust|work with|call} {a|a professional|an expert|a certified|a licensed} {professional|certified|expert|licensed|experienced} garage door {company|contractor|service|specialist|expert|team}?",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 122,
+    "category": "garage_door",
+    "faq_id": "a1",
+    "content": "{Professional|Expert|Certified|Licensed|Experienced} garage door {companies|contractors|services|specialists|experts|professionals} {bring|provide|offer|have|deliver} {years|extensive|significant|considerable} of {experience|expertise|knowledge|skill|training}, {proper|appropriate|correct|right|necessary} {equipment|tools|technology|gear|resources}, {and|plus|as well as|along with} {industry|professional|specialized|expert} {knowledge|expertise|know-how|skills|training} to {ensure|guarantee|deliver|provide|achieve} {quality|excellent|superior|professional|outstanding} {results|work|outcomes|service|performance}. {They|We|Professionals|Experts} {also|additionally|furthermore} {carry|have|maintain|hold} {proper|adequate|appropriate|necessary|required} {insurance|liability coverage|coverage|protection|bonding} and {licensing|licenses|certifications|credentials|permits}, {protecting|safeguarding|covering|shielding} {you|homeowners|customers|clients|your property} from {liability|risk|problems|issues|potential problems}. {DIY|Do-it-yourself|Amateur|Self-done|Unprofessional} {attempts|work|efforts|jobs} {can|may|might|could|often} {lead to|result in|cause|create|end up with} {costly|expensive|serious|significant|major} {mistakes|errors|problems|issues|damage} and {safety|health|injury|accident} {hazards|risks|concerns|issues|problems}.",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 123,
+    "category": "garage_door",
+    "faq_id": "q2",
+    "content": "{How much|What|What's the cost|What are typical prices|How expensive is} {does|will|should} garage door {services|work|a project|the work|a job} {cost|run|typically cost|generally cost|price at}?",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 124,
+    "category": "garage_door",
+    "faq_id": "a2",
+    "content": "{Cost|Pricing|Price|The cost|Pricing for} garage door {varies|differs|ranges|depends|changes} {based on|depending on|according to|influenced by} {several|many|various|multiple|a number of} {factors|variables|considerations|elements} {including|such as|like|particularly} {the|project} {scope|size|complexity|extent|scale} of {the|your|each|any} {project|job|work|service}, {materials|products|supplies|equipment} {needed|required|used|selected|chosen}, {and|plus|as well as} {local|area|regional|market} {labor|service|pricing|market} {rates|costs|prices|charges}. {We|{{business_name}}|Our team|Our company} {offer|provide|give|supply} {free|complimentary|no-cost|no-obligation} {estimates|quotes|assessments|consultations|pricing} so {you|homeowners|customers|clients} {know|understand|see|get} {exactly|precisely|clearly} {what|the} {to expect|to budget|costs are|pricing is} {before|prior to|ahead of} {any|the} {work|service|project|job} {begins|starts|commences}.",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 125,
+    "category": "garage_door",
+    "faq_id": "q3",
+    "content": "{How long|What's the timeframe|How much time|What duration} {does|will|should} {a typical|an average|a standard|most} garage door {project|job|service|work} {take|require|need|last}?",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 126,
+    "category": "garage_door",
+    "faq_id": "a3",
+    "content": "{Project|Job|Service|Work} {duration|timeline|timeframe|length|time} {depends on|varies based on|is influenced by|changes based on} {the|} {scope|size|complexity|extent|scale} and {complexity|nature|type|specifics} of {the|your|each} {work|project|job|service}. {Simple|Basic|Minor|Small|Straightforward} {jobs|projects|services|tasks} {may|might|can|could} {take|require|be completed in|last} {a few|several|just a couple of} {hours|days}, {while|whereas|but} {larger|more complex|extensive|major|bigger} {projects|jobs|work|services} {can|may|might|could} {take|require|span|last} {several|multiple|a few} {days|weeks} or {longer|more|even longer}. {We|{{business_name}}|Our team} {provide|give|offer|supply} {accurate|realistic|honest|detailed|clear} {timeline|timeframe|schedule|estimate} {estimates|projections|information} {during|at|with} {our|the|your} {initial|free|first} {consultation|assessment|estimate|quote}.",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 127,
+    "category": "garage_door",
+    "faq_id": "q4",
+    "content": "{Are|Is} {your|the|{{business_name}}'s} {technicians|team|staff|workers|professionals|specialists} {licensed|certified|insured|bonded|qualified} and {insured|certified|licensed|bonded}?",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 128,
+    "category": "garage_door",
+    "faq_id": "a4",
+    "content": "{Yes|Absolutely|Definitely|Certainly|Of course}! {All|Every one of|Each of} {our|{{business_name}}'s|the} {technicians|professionals|specialists|team members|staff|workers} {are|is} {fully|completely|properly|appropriately|thoroughly} {licensed|certified|trained|qualified|credentialed}, {insured|bonded|covered|protected}, and {background-checked|vetted|screened|verified}. {We|{{business_name}}|Our company} {maintain|carry|hold|have} {comprehensive|full|complete|proper|adequate} {liability|general liability|business} {insurance|coverage|protection} and {workers'|worker's|workman's} {compensation|comp} {coverage|insurance|protection} to {protect|safeguard|cover|shield} {both|} {our|the} {team|workers|staff|employees} and {your|the|client} {property|home|premises|belongings}.",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 129,
+    "category": "garage_door",
+    "faq_id": "q5",
+    "content": "{Do|Can|Will} {you|{{business_name}}|your team|your company} {offer|provide|give|have} {free|complimentary|no-cost|no-obligation} {estimates|quotes|consultations|assessments|inspections}?",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 130,
+    "category": "garage_door",
+    "faq_id": "a5",
+    "content": "{Yes|Absolutely|Definitely|Certainly|Of course}! {We|{{business_name}}|Our team|Our company} {offer|provide|give} {free|complimentary|no-cost|no-obligation|zero-cost}, {no-obligation|obligation-free|pressure-free|hassle-free} {estimates|quotes|consultations|assessments} for {all|any|every|most} garage door {services|projects|work|jobs}. {Contact|Call|Reach|Phone|Get in touch with} {us|our team|{{business_name}}|our office} {today|now|anytime} at {{phone}} to {schedule|book|arrange|set up} {your|a|an} {free|complimentary} {consultation|estimate|quote|assessment}.",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 131,
+    "category": "garage_door",
+    "faq_id": "q6",
+    "content": "{What|Which} {areas|cities|locations|regions|communities} {do|does} {you|{{business_name}}|your company|your team} {serve|service|cover|work in|operate in}?",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 132,
+    "category": "garage_door",
+    "faq_id": "a6",
+    "content": "{We|{{business_name}}|Our team|Our company} {proudly|happily|gladly} {serve|service|cover|operate in|work throughout} {{city}} and {the|all} {surrounding|nearby|neighboring|adjacent|local} {areas|communities|cities|neighborhoods|regions|towns}. {Contact|Call|Reach|Phone} {us|our team|our office|{{business_name}}} at {{phone}} to {confirm|verify|check|see if} {service|coverage|availability} in {your|a specific|any particular} {area|location|city|neighborhood|community}.",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 133,
+    "category": "locksmith",
+    "faq_id": "q1",
+    "content": "{Why|What makes|How does|What are the benefits of|What's the advantage of} {should I|choosing|hiring|working with} {choose|hire|select|trust|work with|call} {a|a professional|an expert|a certified|a licensed} {professional|certified|expert|licensed|experienced} locksmith {company|contractor|service|specialist|expert|team}?",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 134,
+    "category": "locksmith",
+    "faq_id": "a1",
+    "content": "{Professional|Expert|Certified|Licensed|Experienced} locksmith {companies|contractors|services|specialists|experts|professionals} {bring|provide|offer|have|deliver} {years|extensive|significant|considerable} of {experience|expertise|knowledge|skill|training}, {proper|appropriate|correct|right|necessary} {equipment|tools|technology|gear|resources}, {and|plus|as well as|along with} {industry|professional|specialized|expert} {knowledge|expertise|know-how|skills|training} to {ensure|guarantee|deliver|provide|achieve} {quality|excellent|superior|professional|outstanding} {results|work|outcomes|service|performance}. {They|We|Professionals|Experts} {also|additionally|furthermore} {carry|have|maintain|hold} {proper|adequate|appropriate|necessary|required} {insurance|liability coverage|coverage|protection|bonding} and {licensing|licenses|certifications|credentials|permits}, {protecting|safeguarding|covering|shielding} {you|homeowners|customers|clients|your property} from {liability|risk|problems|issues|potential problems}. {DIY|Do-it-yourself|Amateur|Self-done|Unprofessional} {attempts|work|efforts|jobs} {can|may|might|could|often} {lead to|result in|cause|create|end up with} {costly|expensive|serious|significant|major} {mistakes|errors|problems|issues|damage} and {safety|health|injury|accident} {hazards|risks|concerns|issues|problems}.",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 136,
+    "category": "locksmith",
+    "faq_id": "a2",
+    "content": "{Cost|Pricing|Price|The cost|Pricing for} locksmith {varies|differs|ranges|depends|changes} {based on|depending on|according to|influenced by} {several|many|various|multiple|a number of} {factors|variables|considerations|elements} {including|such as|like|particularly} {the|project} {scope|size|complexity|extent|scale} of {the|your|each|any} {project|job|work|service}, {materials|products|supplies|equipment} {needed|required|used|selected|chosen}, {and|plus|as well as} {local|area|regional|market} {labor|service|pricing|market} {rates|costs|prices|charges}. {We|{{business_name}}|Our team|Our company} {offer|provide|give|supply} {free|complimentary|no-cost|no-obligation} {estimates|quotes|assessments|consultations|pricing} so {you|homeowners|customers|clients} {know|understand|see|get} {exactly|precisely|clearly} {what|the} {to expect|to budget|costs are|pricing is} {before|prior to|ahead of} {any|the} {work|service|project|job} {begins|starts|commences}.",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 137,
+    "category": "locksmith",
+    "faq_id": "q3",
+    "content": "{How long|What's the timeframe|How much time|What duration} {does|will|should} {a typical|an average|a standard|most} locksmith {project|job|service|work} {take|require|need|last}?",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 138,
+    "category": "locksmith",
+    "faq_id": "a3",
+    "content": "{Project|Job|Service|Work} {duration|timeline|timeframe|length|time} {depends on|varies based on|is influenced by|changes based on} {the|} {scope|size|complexity|extent|scale} and {complexity|nature|type|specifics} of {the|your|each} {work|project|job|service}. {Simple|Basic|Minor|Small|Straightforward} {jobs|projects|services|tasks} {may|might|can|could} {take|require|be completed in|last} {a few|several|just a couple of} {hours|days}, {while|whereas|but} {larger|more complex|extensive|major|bigger} {projects|jobs|work|services} {can|may|might|could} {take|require|span|last} {several|multiple|a few} {days|weeks} or {longer|more|even longer}. {We|{{business_name}}|Our team} {provide|give|offer|supply} {accurate|realistic|honest|detailed|clear} {timeline|timeframe|schedule|estimate} {estimates|projections|information} {during|at|with} {our|the|your} {initial|free|first} {consultation|assessment|estimate|quote}.",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 139,
+    "category": "locksmith",
+    "faq_id": "q4",
+    "content": "{Are|Is} {your|the|{{business_name}}'s} {technicians|team|staff|workers|professionals|specialists} {licensed|certified|insured|bonded|qualified} and {insured|certified|licensed|bonded}?",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 140,
+    "category": "locksmith",
+    "faq_id": "a4",
+    "content": "{Yes|Absolutely|Definitely|Certainly|Of course}! {All|Every one of|Each of} {our|{{business_name}}'s|the} {technicians|professionals|specialists|team members|staff|workers} {are|is} {fully|completely|properly|appropriately|thoroughly} {licensed|certified|trained|qualified|credentialed}, {insured|bonded|covered|protected}, and {background-checked|vetted|screened|verified}. {We|{{business_name}}|Our company} {maintain|carry|hold|have} {comprehensive|full|complete|proper|adequate} {liability|general liability|business} {insurance|coverage|protection} and {workers'|worker's|workman's} {compensation|comp} {coverage|insurance|protection} to {protect|safeguard|cover|shield} {both|} {our|the} {team|workers|staff|employees} and {your|the|client} {property|home|premises|belongings}.",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 141,
+    "category": "locksmith",
+    "faq_id": "q5",
+    "content": "{Do|Can|Will} {you|{{business_name}}|your team|your company} {offer|provide|give|have} {free|complimentary|no-cost|no-obligation} {estimates|quotes|consultations|assessments|inspections}?",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 142,
+    "category": "locksmith",
+    "faq_id": "a5",
+    "content": "{Yes|Absolutely|Definitely|Certainly|Of course}! {We|{{business_name}}|Our team|Our company} {offer|provide|give} {free|complimentary|no-cost|no-obligation|zero-cost}, {no-obligation|obligation-free|pressure-free|hassle-free} {estimates|quotes|consultations|assessments} for {all|any|every|most} locksmith {services|projects|work|jobs}. {Contact|Call|Reach|Phone|Get in touch with} {us|our team|{{business_name}}|our office} {today|now|anytime} at {{phone}} to {schedule|book|arrange|set up} {your|a|an} {free|complimentary} {consultation|estimate|quote|assessment}.",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 143,
+    "category": "locksmith",
+    "faq_id": "q6",
+    "content": "{What|Which} {areas|cities|locations|regions|communities} {do|does} {you|{{business_name}}|your company|your team} {serve|service|cover|work in|operate in}?",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 146,
+    "category": "plumbing",
+    "faq_id": "a1",
+    "content": "{Professional|Expert|Certified|Licensed|Experienced} plumbing {companies|contractors|services|specialists|experts|professionals} {bring|provide|offer|have|deliver} {years|extensive|significant|considerable} of {experience|expertise|knowledge|skill|training}, {proper|appropriate|correct|right|necessary} {equipment|tools|technology|gear|resources}, {and|plus|as well as|along with} {industry|professional|specialized|expert} {knowledge|expertise|know-how|skills|training} to {ensure|guarantee|deliver|provide|achieve} {quality|excellent|superior|professional|outstanding} {results|work|outcomes|service|performance}. {They|We|Professionals|Experts} {also|additionally|furthermore} {carry|have|maintain|hold} {proper|adequate|appropriate|necessary|required} {insurance|liability coverage|coverage|protection|bonding} and {licensing|licenses|certifications|credentials|permits}, {protecting|safeguarding|covering|shielding} {you|homeowners|customers|clients|your property} from {liability|risk|problems|issues|potential problems}. {DIY|Do-it-yourself|Amateur|Self-done|Unprofessional} {attempts|work|efforts|jobs} {can|may|might|could|often} {lead to|result in|cause|create|end up with} {costly|expensive|serious|significant|major} {mistakes|errors|problems|issues|damage} and {safety|health|injury|accident} {hazards|risks|concerns|issues|problems}.",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 147,
+    "category": "plumbing",
+    "faq_id": "q2",
+    "content": "{How much|What|What's the cost|What are typical prices|How expensive is} {does|will|should} plumbing {services|work|a project|the work|a job} {cost|run|typically cost|generally cost|price at}?",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 148,
+    "category": "plumbing",
+    "faq_id": "a2",
+    "content": "{Cost|Pricing|Price|The cost|Pricing for} plumbing {varies|differs|ranges|depends|changes} {based on|depending on|according to|influenced by} {several|many|various|multiple|a number of} {factors|variables|considerations|elements} {including|such as|like|particularly} {the|project} {scope|size|complexity|extent|scale} of {the|your|each|any} {project|job|work|service}, {materials|products|supplies|equipment} {needed|required|used|selected|chosen}, {and|plus|as well as} {local|area|regional|market} {labor|service|pricing|market} {rates|costs|prices|charges}. {We|{{business_name}}|Our team|Our company} {offer|provide|give|supply} {free|complimentary|no-cost|no-obligation} {estimates|quotes|assessments|consultations|pricing} so {you|homeowners|customers|clients} {know|understand|see|get} {exactly|precisely|clearly} {what|the} {to expect|to budget|costs are|pricing is} {before|prior to|ahead of} {any|the} {work|service|project|job} {begins|starts|commences}.",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 149,
+    "category": "plumbing",
+    "faq_id": "q3",
+    "content": "{How long|What's the timeframe|How much time|What duration} {does|will|should} {a typical|an average|a standard|most} plumbing {project|job|service|work} {take|require|need|last}?",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 150,
+    "category": "plumbing",
+    "faq_id": "a3",
+    "content": "{Project|Job|Service|Work} {duration|timeline|timeframe|length|time} {depends on|varies based on|is influenced by|changes based on} {the|} {scope|size|complexity|extent|scale} and {complexity|nature|type|specifics} of {the|your|each} {work|project|job|service}. {Simple|Basic|Minor|Small|Straightforward} {jobs|projects|services|tasks} {may|might|can|could} {take|require|be completed in|last} {a few|several|just a couple of} {hours|days}, {while|whereas|but} {larger|more complex|extensive|major|bigger} {projects|jobs|work|services} {can|may|might|could} {take|require|span|last} {several|multiple|a few} {days|weeks} or {longer|more|even longer}. {We|{{business_name}}|Our team} {provide|give|offer|supply} {accurate|realistic|honest|detailed|clear} {timeline|timeframe|schedule|estimate} {estimates|projections|information} {during|at|with} {our|the|your} {initial|free|first} {consultation|assessment|estimate|quote}.",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 151,
+    "category": "plumbing",
+    "faq_id": "q4",
+    "content": "{Are|Is} {your|the|{{business_name}}'s} {technicians|team|staff|workers|professionals|specialists} {licensed|certified|insured|bonded|qualified} and {insured|certified|licensed|bonded}?",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 152,
+    "category": "plumbing",
+    "faq_id": "a4",
+    "content": "{Yes|Absolutely|Definitely|Certainly|Of course}! {All|Every one of|Each of} {our|{{business_name}}'s|the} {technicians|professionals|specialists|team members|staff|workers} {are|is} {fully|completely|properly|appropriately|thoroughly} {licensed|certified|trained|qualified|credentialed}, {insured|bonded|covered|protected}, and {background-checked|vetted|screened|verified}. {We|{{business_name}}|Our company} {maintain|carry|hold|have} {comprehensive|full|complete|proper|adequate} {liability|general liability|business} {insurance|coverage|protection} and {workers'|worker's|workman's} {compensation|comp} {coverage|insurance|protection} to {protect|safeguard|cover|shield} {both|} {our|the} {team|workers|staff|employees} and {your|the|client} {property|home|premises|belongings}.",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 153,
+    "category": "plumbing",
+    "faq_id": "q5",
+    "content": "{Do|Can|Will} {you|{{business_name}}|your team|your company} {offer|provide|give|have} {free|complimentary|no-cost|no-obligation} {estimates|quotes|consultations|assessments|inspections}?",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 154,
+    "category": "plumbing",
+    "faq_id": "a5",
+    "content": "{Yes|Absolutely|Definitely|Certainly|Of course}! {We|{{business_name}}|Our team|Our company} {offer|provide|give} {free|complimentary|no-cost|no-obligation|zero-cost}, {no-obligation|obligation-free|pressure-free|hassle-free} {estimates|quotes|consultations|assessments} for {all|any|every|most} plumbing {services|projects|work|jobs}. {Contact|Call|Reach|Phone|Get in touch with} {us|our team|{{business_name}}|our office} {today|now|anytime} at {{phone}} to {schedule|book|arrange|set up} {your|a|an} {free|complimentary} {consultation|estimate|quote|assessment}.",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 155,
+    "category": "plumbing",
+    "faq_id": "q6",
+    "content": "{What|Which} {areas|cities|locations|regions|communities} {do|does} {you|{{business_name}}|your company|your team} {serve|service|cover|work in|operate in}?",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 156,
+    "category": "plumbing",
+    "faq_id": "a6",
+    "content": "{We|{{business_name}}|Our team|Our company} {proudly|happily|gladly} {serve|service|cover|operate in|work throughout} {{city}} and {the|all} {surrounding|nearby|neighboring|adjacent|local} {areas|communities|cities|neighborhoods|regions|towns}. {Contact|Call|Reach|Phone} {us|our team|our office|{{business_name}}} at {{phone}} to {confirm|verify|check|see if} {service|coverage|availability} in {your|a specific|any particular} {area|location|city|neighborhood|community}.",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 157,
+    "category": "pest_control",
+    "faq_id": "q1",
+    "content": "{Why|What makes|How does|What are the benefits of|What's the advantage of} {should I|choosing|hiring|working with} {choose|hire|select|trust|work with|call} {a|a professional|an expert|a certified|a licensed} {professional|certified|expert|licensed|experienced} pest control {company|contractor|service|specialist|expert|team}?",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 158,
+    "category": "pest_control",
+    "faq_id": "a1",
+    "content": "{Professional|Expert|Certified|Licensed|Experienced} pest control {companies|contractors|services|specialists|experts|professionals} {bring|provide|offer|have|deliver} {years|extensive|significant|considerable} of {experience|expertise|knowledge|skill|training}, {proper|appropriate|correct|right|necessary} {equipment|tools|technology|gear|resources}, {and|plus|as well as|along with} {industry|professional|specialized|expert} {knowledge|expertise|know-how|skills|training} to {ensure|guarantee|deliver|provide|achieve} {quality|excellent|superior|professional|outstanding} {results|work|outcomes|service|performance}. {They|We|Professionals|Experts} {also|additionally|furthermore} {carry|have|maintain|hold} {proper|adequate|appropriate|necessary|required} {insurance|liability coverage|coverage|protection|bonding} and {licensing|licenses|certifications|credentials|permits}, {protecting|safeguarding|covering|shielding} {you|homeowners|customers|clients|your property} from {liability|risk|problems|issues|potential problems}. {DIY|Do-it-yourself|Amateur|Self-done|Unprofessional} {attempts|work|efforts|jobs} {can|may|might|could|often} {lead to|result in|cause|create|end up with} {costly|expensive|serious|significant|major} {mistakes|errors|problems|issues|damage} and {safety|health|injury|accident} {hazards|risks|concerns|issues|problems}.",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 159,
+    "category": "pest_control",
+    "faq_id": "q2",
+    "content": "{How much|What|What's the cost|What are typical prices|How expensive is} {does|will|should} pest control {services|work|a project|the work|a job} {cost|run|typically cost|generally cost|price at}?",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 160,
+    "category": "pest_control",
+    "faq_id": "a2",
+    "content": "{Cost|Pricing|Price|The cost|Pricing for} pest control {varies|differs|ranges|depends|changes} {based on|depending on|according to|influenced by} {several|many|various|multiple|a number of} {factors|variables|considerations|elements} {including|such as|like|particularly} {the|project} {scope|size|complexity|extent|scale} of {the|your|each|any} {project|job|work|service}, {materials|products|supplies|equipment} {needed|required|used|selected|chosen}, {and|plus|as well as} {local|area|regional|market} {labor|service|pricing|market} {rates|costs|prices|charges}. {We|{{business_name}}|Our team|Our company} {offer|provide|give|supply} {free|complimentary|no-cost|no-obligation} {estimates|quotes|assessments|consultations|pricing} so {you|homeowners|customers|clients} {know|understand|see|get} {exactly|precisely|clearly} {what|the} {to expect|to budget|costs are|pricing is} {before|prior to|ahead of} {any|the} {work|service|project|job} {begins|starts|commences}.",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 161,
+    "category": "pest_control",
+    "faq_id": "q3",
+    "content": "{How long|What's the timeframe|How much time|What duration} {does|will|should} {a typical|an average|a standard|most} pest control {project|job|service|work} {take|require|need|last}?",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 162,
+    "category": "pest_control",
+    "faq_id": "a3",
+    "content": "{Project|Job|Service|Work} {duration|timeline|timeframe|length|time} {depends on|varies based on|is influenced by|changes based on} {the|} {scope|size|complexity|extent|scale} and {complexity|nature|type|specifics} of {the|your|each} {work|project|job|service}. {Simple|Basic|Minor|Small|Straightforward} {jobs|projects|services|tasks} {may|might|can|could} {take|require|be completed in|last} {a few|several|just a couple of} {hours|days}, {while|whereas|but} {larger|more complex|extensive|major|bigger} {projects|jobs|work|services} {can|may|might|could} {take|require|span|last} {several|multiple|a few} {days|weeks} or {longer|more|even longer}. {We|{{business_name}}|Our team} {provide|give|offer|supply} {accurate|realistic|honest|detailed|clear} {timeline|timeframe|schedule|estimate} {estimates|projections|information} {during|at|with} {our|the|your} {initial|free|first} {consultation|assessment|estimate|quote}.",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 163,
+    "category": "pest_control",
+    "faq_id": "q4",
+    "content": "{Are|Is} {your|the|{{business_name}}'s} {technicians|team|staff|workers|professionals|specialists} {licensed|certified|insured|bonded|qualified} and {insured|certified|licensed|bonded}?",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 164,
+    "category": "pest_control",
+    "faq_id": "a4",
+    "content": "{Yes|Absolutely|Definitely|Certainly|Of course}! {All|Every one of|Each of} {our|{{business_name}}'s|the} {technicians|professionals|specialists|team members|staff|workers} {are|is} {fully|completely|properly|appropriately|thoroughly} {licensed|certified|trained|qualified|credentialed}, {insured|bonded|covered|protected}, and {background-checked|vetted|screened|verified}. {We|{{business_name}}|Our company} {maintain|carry|hold|have} {comprehensive|full|complete|proper|adequate} {liability|general liability|business} {insurance|coverage|protection} and {workers'|worker's|workman's} {compensation|comp} {coverage|insurance|protection} to {protect|safeguard|cover|shield} {both|} {our|the} {team|workers|staff|employees} and {your|the|client} {property|home|premises|belongings}.",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 165,
+    "category": "pest_control",
+    "faq_id": "q5",
+    "content": "{Do|Can|Will} {you|{{business_name}}|your team|your company} {offer|provide|give|have} {free|complimentary|no-cost|no-obligation} {estimates|quotes|consultations|assessments|inspections}?",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 166,
+    "category": "pest_control",
+    "faq_id": "a5",
+    "content": "{Yes|Absolutely|Definitely|Certainly|Of course}! {We|{{business_name}}|Our team|Our company} {offer|provide|give} {free|complimentary|no-cost|no-obligation|zero-cost}, {no-obligation|obligation-free|pressure-free|hassle-free} {estimates|quotes|consultations|assessments} for {all|any|every|most} pest control {services|projects|work|jobs}. {Contact|Call|Reach|Phone|Get in touch with} {us|our team|{{business_name}}|our office} {today|now|anytime} at {{phone}} to {schedule|book|arrange|set up} {your|a|an} {free|complimentary} {consultation|estimate|quote|assessment}.",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 167,
+    "category": "pest_control",
+    "faq_id": "q6",
+    "content": "{What|Which} {areas|cities|locations|regions|communities} {do|does} {you|{{business_name}}|your company|your team} {serve|service|cover|work in|operate in}?",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 168,
+    "category": "pest_control",
+    "faq_id": "a6",
+    "content": "{We|{{business_name}}|Our team|Our company} {proudly|happily|gladly} {serve|service|cover|operate in|work throughout} {{city}} and {the|all} {surrounding|nearby|neighboring|adjacent|local} {areas|communities|cities|neighborhoods|regions|towns}. {Contact|Call|Reach|Phone} {us|our team|our office|{{business_name}}} at {{phone}} to {confirm|verify|check|see if} {service|coverage|availability} in {your|a specific|any particular} {area|location|city|neighborhood|community}.",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 169,
+    "category": "air_conditioning",
+    "faq_id": "q1",
+    "content": "{Why|What makes|How does|What are the benefits of|What's the advantage of} {should I|choosing|hiring|working with} {choose|hire|select|trust|work with|call} {a|a professional|an expert|a certified|a licensed} {professional|certified|expert|licensed|experienced} air conditioning {company|contractor|service|specialist|expert|team}?",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 170,
+    "category": "air_conditioning",
+    "faq_id": "a1",
+    "content": "{Professional|Expert|Certified|Licensed|Experienced} air conditioning {companies|contractors|services|specialists|experts|professionals} {bring|provide|offer|have|deliver} {years|extensive|significant|considerable} of {experience|expertise|knowledge|skill|training}, {proper|appropriate|correct|right|necessary} {equipment|tools|technology|gear|resources}, {and|plus|as well as|along with} {industry|professional|specialized|expert} {knowledge|expertise|know-how|skills|training} to {ensure|guarantee|deliver|provide|achieve} {quality|excellent|superior|professional|outstanding} {results|work|outcomes|service|performance}. {They|We|Professionals|Experts} {also|additionally|furthermore} {carry|have|maintain|hold} {proper|adequate|appropriate|necessary|required} {insurance|liability coverage|coverage|protection|bonding} and {licensing|licenses|certifications|credentials|permits}, {protecting|safeguarding|covering|shielding} {you|homeowners|customers|clients|your property} from {liability|risk|problems|issues|potential problems}. {DIY|Do-it-yourself|Amateur|Self-done|Unprofessional} {attempts|work|efforts|jobs} {can|may|might|could|often} {lead to|result in|cause|create|end up with} {costly|expensive|serious|significant|major} {mistakes|errors|problems|issues|damage} and {safety|health|injury|accident} {hazards|risks|concerns|issues|problems}.",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 171,
+    "category": "air_conditioning",
+    "faq_id": "q2",
+    "content": "{How much|What|What's the cost|What are typical prices|How expensive is} {does|will|should} air conditioning {services|work|a project|the work|a job} {cost|run|typically cost|generally cost|price at}?",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 173,
+    "category": "air_conditioning",
+    "faq_id": "q3",
+    "content": "{How long|What's the timeframe|How much time|What duration} {does|will|should} {a typical|an average|a standard|most} air conditioning {project|job|service|work} {take|require|need|last}?",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 174,
+    "category": "air_conditioning",
+    "faq_id": "a3",
+    "content": "{Project|Job|Service|Work} {duration|timeline|timeframe|length|time} {depends on|varies based on|is influenced by|changes based on} {the|} {scope|size|complexity|extent|scale} and {complexity|nature|type|specifics} of {the|your|each} {work|project|job|service}. {Simple|Basic|Minor|Small|Straightforward} {jobs|projects|services|tasks} {may|might|can|could} {take|require|be completed in|last} {a few|several|just a couple of} {hours|days}, {while|whereas|but} {larger|more complex|extensive|major|bigger} {projects|jobs|work|services} {can|may|might|could} {take|require|span|last} {several|multiple|a few} {days|weeks} or {longer|more|even longer}. {We|{{business_name}}|Our team} {provide|give|offer|supply} {accurate|realistic|honest|detailed|clear} {timeline|timeframe|schedule|estimate} {estimates|projections|information} {during|at|with} {our|the|your} {initial|free|first} {consultation|assessment|estimate|quote}.",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 175,
+    "category": "air_conditioning",
+    "faq_id": "q4",
+    "content": "{Are|Is} {your|the|{{business_name}}'s} {technicians|team|staff|workers|professionals|specialists} {licensed|certified|insured|bonded|qualified} and {insured|certified|licensed|bonded}?",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 177,
+    "category": "air_conditioning",
+    "faq_id": "q5",
+    "content": "{Do|Can|Will} {you|{{business_name}}|your team|your company} {offer|provide|give|have} {free|complimentary|no-cost|no-obligation} {estimates|quotes|consultations|assessments|inspections}?",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 178,
+    "category": "air_conditioning",
+    "faq_id": "a5",
+    "content": "{Yes|Absolutely|Definitely|Certainly|Of course}! {We|{{business_name}}|Our team|Our company} {offer|provide|give} {free|complimentary|no-cost|no-obligation|zero-cost}, {no-obligation|obligation-free|pressure-free|hassle-free} {estimates|quotes|consultations|assessments} for {all|any|every|most} air conditioning {services|projects|work|jobs}. {Contact|Call|Reach|Phone|Get in touch with} {us|our team|{{business_name}}|our office} {today|now|anytime} at {{phone}} to {schedule|book|arrange|set up} {your|a|an} {free|complimentary} {consultation|estimate|quote|assessment}.",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 180,
+    "category": "air_conditioning",
+    "faq_id": "a6",
+    "content": "{We|{{business_name}}|Our team|Our company} {proudly|happily|gladly} {serve|service|cover|operate in|work throughout} {{city}} and {the|all} {surrounding|nearby|neighboring|adjacent|local} {areas|communities|cities|neighborhoods|regions|towns}. {Contact|Call|Reach|Phone} {us|our team|our office|{{business_name}}} at {{phone}} to {confirm|verify|check|see if} {service|coverage|availability} in {your|a specific|any particular} {area|location|city|neighborhood|community}.",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 181,
+    "category": "heating",
+    "faq_id": "q1",
+    "content": "{Why|What makes|How does|What are the benefits of|What's the advantage of} {should I|choosing|hiring|working with} {choose|hire|select|trust|work with|call} {a|a professional|an expert|a certified|a licensed} {professional|certified|expert|licensed|experienced} heating {company|contractor|service|specialist|expert|team}?",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 182,
+    "category": "heating",
+    "faq_id": "a1",
+    "content": "{Professional|Expert|Certified|Licensed|Experienced} heating {companies|contractors|services|specialists|experts|professionals} {bring|provide|offer|have|deliver} {years|extensive|significant|considerable} of {experience|expertise|knowledge|skill|training}, {proper|appropriate|correct|right|necessary} {equipment|tools|technology|gear|resources}, {and|plus|as well as|along with} {industry|professional|specialized|expert} {knowledge|expertise|know-how|skills|training} to {ensure|guarantee|deliver|provide|achieve} {quality|excellent|superior|professional|outstanding} {results|work|outcomes|service|performance}. {They|We|Professionals|Experts} {also|additionally|furthermore} {carry|have|maintain|hold} {proper|adequate|appropriate|necessary|required} {insurance|liability coverage|coverage|protection|bonding} and {licensing|licenses|certifications|credentials|permits}, {protecting|safeguarding|covering|shielding} {you|homeowners|customers|clients|your property} from {liability|risk|problems|issues|potential problems}. {DIY|Do-it-yourself|Amateur|Self-done|Unprofessional} {attempts|work|efforts|jobs} {can|may|might|could|often} {lead to|result in|cause|create|end up with} {costly|expensive|serious|significant|major} {mistakes|errors|problems|issues|damage} and {safety|health|injury|accident} {hazards|risks|concerns|issues|problems}.",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 183,
+    "category": "heating",
+    "faq_id": "q2",
+    "content": "{How much|What|What's the cost|What are typical prices|How expensive is} {does|will|should} heating {services|work|a project|the work|a job} {cost|run|typically cost|generally cost|price at}?",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  },
+  {
+    "id": 185,
+    "category": "heating",
+    "faq_id": "q3",
+    "content": "{How long|What's the timeframe|How much time|What duration} {does|will|should} {a typical|an average|a standard|most} heating {project|job|service|work} {take|require|need|last}?",
+    "created_at": "2026-01-15T00:23:19.96409+00:00",
+    "updated_at": "2026-01-15T00:23:19.96409+00:00"
+  }
+]
